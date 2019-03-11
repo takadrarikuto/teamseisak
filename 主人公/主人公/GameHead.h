@@ -9,7 +9,8 @@ enum OBJ_NAME
 	OBJ_HERO,
 	OBJ_TIME,
 	OBJ_ENEMY,
-	OBJ_OBJECT
+	OBJ_OBJECT,
+	OBJ_STARPICBOOK,
 };
 //------------------------------------------------
 
@@ -55,12 +56,12 @@ struct UserData
 //ゲームシーンオブジェクトヘッダ------------------
 #include "GameHead.h"
 #include "ObjHero.h"
-
+#include"CObjStarPicbook.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
-
+#include"SceneStarPicbook.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
