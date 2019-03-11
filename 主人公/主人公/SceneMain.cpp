@@ -1,16 +1,17 @@
-//STLデバッグ機能OFF
+//STLデバック機能をOFFにする
 #define _SECURE_SCL (0)
 #define _HAS_ITERATOR_DEBUGGING (0)
 
-//GemeLで使用するヘッダー
-#include "GemeL\SceneObjManager.h"
+//GameLで使用するヘッダー
+#include "GameL\SceneObjManager.h"
+#include "GameL\DrawTexture.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 //使用ヘッダー
-#include"SceneMain.h"
-#include"GameHead.h"
+#include "SceneMain.h"
+#include "GameHead.h"
 
 //コンストラクタ
 CSceneMain::CSceneMain()
@@ -24,13 +25,13 @@ CSceneMain::~CSceneMain()
 
 }
 
-//初期化メソッド
+//初期化メゾット
 void CSceneMain::InitScene()
 {
 
 }
 
-//実行中メソッド
+//実行中メゾット
 void CSceneMain::Scene()
 {
 
