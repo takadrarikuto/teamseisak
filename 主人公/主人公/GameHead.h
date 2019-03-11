@@ -7,18 +7,8 @@ enum OBJ_NAME
 	//ゲームで使うオブジェクトの名前
 	//OBJ_○○と表記
 	OBJ_HERO,
-	OBJ_BULLET,
-	OBJ_ENEMY,
-    OBJ_ATTACK_ENEMY,
-	OBJ_BULLET_ENEMY,
-	OBJ_SIN_ENEMY,
-	OBJ_DIFFUSION_ENEMY,
-	OBJ_ANGLE_BULLET,
-	OBJ_HOMING_ENEMY,
-	OBJ_HOMING_BULLET,
-	OBJ_BOSS_ENEMY,
-	OBJ_BACKGROUND,
-
+	OBJ_STARPICBOOK,
+	
 	OBJ_TITLE,
 	OBJ_GAME_OVER,
 	OBJ_CLEAR
@@ -65,15 +55,14 @@ struct UserData
 //------------------------------------------------
 
 //ゲームシーンオブジェクトヘッダ------------------
-
-
-
+#include"CObjStarPicbook.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
+#include "SceneStarPicbook.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-//#define SET_GAME_START  CSceneTitle
+#define SET_GAME_START  CSceneStarPicbook
 //-----------------------------------------------
