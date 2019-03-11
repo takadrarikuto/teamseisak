@@ -11,6 +11,7 @@ enum OBJ_NAME
 	OBJ_ENEMY,
 	OBJ_OBJECT,
 	OBJ_STARPICBOOK,
+	OBJ_MARS,
 };
 //------------------------------------------------
 
@@ -56,14 +57,16 @@ struct UserData
 //ゲームシーンオブジェクトヘッダ------------------
 #include "ObjHero.h"
 #include"CObjStarPicbook.h"
+#include"ObjMars.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
-#include "SceneMain.h"
+#include "SceneSpaceShip.h"
 #include"SceneStarPicbook.h"
+#include "SceneMars.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START  CSceneMain
+#define SET_GAME_START  CSceneSpaceShip
 //-----------------------------------------------

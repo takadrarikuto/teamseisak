@@ -63,14 +63,20 @@
     <ClCompile Include="ObjHero.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SceneMain.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="CObjStarPicbook.cpp">
       <Filter>ソース ファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="SceneStarPicbook.cpp">
       <Filter>ソース ファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMars.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMars.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSpaceShip.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,14 +128,20 @@
     <ClInclude Include="ObjHero.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SceneMain.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="CObjStarPicbook.h">
       <Filter>ソース ファイル\星図鑑</Filter>
     </ClInclude>
     <ClInclude Include="SceneStarPicbook.h">
       <Filter>ソース ファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMars.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMars.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneSpaceShip.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,13 +6,13 @@
 using namespace GameL;
 
 //シーンメイン
-class CSceneMain:public CScene
+class CSceneSpaceShip :public CScene
 {
 public:
-	CSceneMain();
-	~CSceneMain();
+	CSceneSpaceShip();
+	~CSceneSpaceShip();
 	void InitScene(); //初期化メゾット
 	void Scene(); //実行中メゾット
 private:
-
+	bool m_key_flag;//キーフラグ
 };
