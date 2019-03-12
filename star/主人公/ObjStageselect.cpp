@@ -20,6 +20,19 @@ void CObjStageselect::Init()
 //ƒAƒNƒVƒ‡ƒ“
 void CObjStageselect::Action()
 {
+	m_mous_l = Input::GetMouButtonL();
+
+	if (m_mous_l == true)
+	{
+		if (m_start_flag == true)
+		{
+			Scene::SetScene(new CSceneMars());
+		}
+	}
+	else
+	{
+		m_start_flag = true;
+	}
 
 }
 
