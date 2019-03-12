@@ -6,7 +6,7 @@
 
 #include "GameHead.h"
 #include "ObjStageselect.h"
-#include "SceneMain.h"
+
 
 //使用するネームスペース
 using namespace GameL;
@@ -14,25 +14,12 @@ using namespace GameL;
 //イニシャライズ
 void CObjStageselect::Init()
 {
-	m_mous_l = false;
+	
 }
 
 //アクション
 void CObjStageselect::Action()
 {
-	m_mous_l = Input::GetMouButtonL();
-
-	if (m_mous_l == true)
-	{
-		if (m_start_flag == true)
-		{
-			Scene::SetScene(new CSceneMain());
-		}
-	}
-	else
-	{
-		m_start_flag = true;
-	}
 
 }
 
@@ -42,6 +29,7 @@ void CObjStageselect::Draw()
 
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
 
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置

@@ -16,7 +16,6 @@ public:
 	void Draw();
 
 private:
-	bool m_mous_l;
-	bool m_start_flag;
+	
 
 };
