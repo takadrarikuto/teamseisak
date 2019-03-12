@@ -18,6 +18,17 @@
     </Filter>
     <Filter Include="ソース ファイル\Mars">
       <UniqueIdentifier>{9387f980-e4f4-4226-b05c-2b9832ddab9d}</UniqueIdentifier>
+    <Filter Include="ソース ファイル\タイトル">
+      <UniqueIdentifier>{9b2f145d-02f0-4048-a6d3-da748cb43855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\タイトル">
+      <UniqueIdentifier>{9081111c-0ba9-4620-b57f-4d7c4c0b6281}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ステージ選択">
+      <UniqueIdentifier>{e720daf0-06ea-4c2b-949d-13ee1e4ad705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\ステージ選択">
+      <UniqueIdentifier>{16112f54-ec96-4687-95d8-6af33ec54032}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +88,8 @@
     </ClCompile>
     <ClCompile Include="ObjStageselect.cpp">
       <Filter>ソース ファイル</Filter>
+    <ClCompile Include="SceneMars.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjTitle.cpp">
       <Filter>ソース ファイル</Filter>
@@ -89,12 +102,16 @@
     </ClCompile>
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソース ファイル</Filter>
+    <ClCompile Include="ObjMars.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="SceneSpaceShip.cpp">
+      <Filter>ソース ファイル</Filter>
     <ClCompile Include="ObjMars.cpp">
       <Filter>ソース ファイル\Mars</Filter>
     </ClCompile>
-    <ClCompile Include="SceneMars.cpp">
-      <Filter>ソース ファイル\Mars</Filter>
+    <ClCompile Include="ObjSelectPlanet.cpp">
+      <Filter>ソース ファイル\ステージ選択</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -160,7 +177,11 @@
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="SceneMars.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="ObjMars.h">
+      <Filter>ソース ファイル</Filter>
     <ClInclude Include="SceneMain.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -175,6 +196,8 @@
     </ClInclude>
     <ClInclude Include="SceneMars.h">
       <Filter>ソース ファイル\Mars</Filter>
+    <ClInclude Include="SceneSpaceShip.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
