@@ -128,10 +128,12 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjHero.h" />
+    <ClInclude Include="ObjMars.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
     <ClInclude Include="ObjStageselect.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneMain.h" />
+    <ClInclude Include="SceneMars.h" />
     <ClInclude Include="SceneStageselect.h" />
     <ClInclude Include="SceneStarPicbook.h" />
     <ClInclude Include="SceneTitle.h" />
@@ -153,10 +155,12 @@
     <ClCompile Include="GameL\WICTextureLoader.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjHero.cpp" />
+    <ClCompile Include="ObjMars.cpp" />
     <ClCompile Include="ObjSelectPlanet.cpp" />
     <ClCompile Include="ObjStageselect.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneMain.cpp" />
+    <ClCompile Include="SceneMars.cpp" />
     <ClCompile Include="SceneStageselect.cpp" />
     <ClCompile Include="SceneStarPicbook.cpp" />
     <ClCompile Include="SceneTitle.cpp" />

@@ -26,7 +26,7 @@ void CObjStageselect::Action()
 	{
 		if (m_start_flag == true)
 		{
-			Scene::SetScene(new CSceneMain());
+			Scene::SetScene(new CSceneMars());
 		}
 	}
 	else

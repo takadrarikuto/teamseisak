@@ -24,7 +24,7 @@ void CObjMars::Action()
 	{
 		if (m_key_flag == true)
 		{
-			Scene::SetScene(new CSceneSpaceShip());
+			Scene::SetScene(new CSceneStageselect());
 			m_key_flag = false;
 		}
 	}
