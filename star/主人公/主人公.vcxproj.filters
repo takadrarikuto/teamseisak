@@ -16,6 +16,12 @@
     <Filter Include="ソース ファイル\星図鑑">
       <UniqueIdentifier>{b439f7f4-c6e0-4c85-a1a8-4597eaf779c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\ステージ選択">
+      <UniqueIdentifier>{8909f8af-6e59-41de-8ff6-9ce67328baa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\タイトル">
+      <UniqueIdentifier>{478980f7-71b9-43be-9d9b-aa150f652bfe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -63,20 +69,29 @@
     <ClCompile Include="ObjHero.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="SceneMain.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="CObjStarPicbook.cpp">
       <Filter>ソース ファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="SceneStarPicbook.cpp">
       <Filter>ソース ファイル\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="SceneMars.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="SceneStageselect.cpp">
+      <Filter>ソース ファイル\ステージ選択</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMars.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="ObjStageselect.cpp">
+      <Filter>ソース ファイル\ステージ選択</Filter>
     </ClCompile>
-    <ClCompile Include="SceneSpaceShip.cpp">
-      <Filter>ソース ファイル</Filter>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSelectPlanet.cpp">
+      <Filter>ソース ファイル\ステージ選択</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,23 +140,32 @@
     <ClInclude Include="main.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjHero.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="CObjStarPicbook.h">
       <Filter>ソース ファイル\星図鑑</Filter>
     </ClInclude>
     <ClInclude Include="SceneStarPicbook.h">
       <Filter>ソース ファイル\星図鑑</Filter>
     </ClInclude>
-    <ClInclude Include="SceneMars.h">
+    <ClInclude Include="ObjHero.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjMars.h">
+    <ClInclude Include="SceneMain.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SceneSpaceShip.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="SceneStageselect.h">
+      <Filter>ソース ファイル\ステージ選択</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStageselect.h">
+      <Filter>ソース ファイル\ステージ選択</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTitle.h">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSelectPlanet.h">
+      <Filter>ソース ファイル\ステージ選択</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

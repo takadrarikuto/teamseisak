@@ -13,7 +13,7 @@ using namespace GameL;
 void CObjHero::Init()
 {
 	//位置初期化
-	m_px = 0.0f;
+	m_px = 400.0f;
 	m_py = 520.0f;
 
 	//移動ベクトル初期化
@@ -21,6 +21,10 @@ void CObjHero::Init()
 
 	//主人公向き初期化
 	m_pos = 3.0f;
+
+	m_ani_time = 0;
+	m_ani_frame = 1;	//静止フレームを初期にする
+
 }
 
 //アクション
@@ -32,19 +36,37 @@ void CObjHero::Action()
 	//主人公向き固定
 	m_pos = 3.0f;
 
+
 	//移動処理
 	//左
 	if (Input::GetVKey(VK_LEFT) == true)
 	{
-		m_vx -= 3.0f;
+		m_vx -= 4.0f;
 		m_pos = 1.0f;
+		m_ani_time += 1;
+	}
+	//右
+	else if (Input::GetVKey(VK_RIGHT) == true)
+	{
+		m_vx += 4.0f;
+		m_pos = 2.0f;
+		m_ani_time += 1;
+	}
+	else
+	{
+		m_ani_time = 0; //アニメーション停止
+		m_ani_frame = 1; //キー入力が無い場合は静止フレームにする
 	}
 
-	//右
-	if (Input::GetVKey(VK_RIGHT) == true)
+	if (m_ani_time > 4)
 	{
-		m_vx += 3.0f;
-		m_pos = 2.0f;
+		m_ani_frame += 1;
+		m_ani_time = 0;
+	}
+
+	if (m_ani_frame == 4)
+	{
+		m_ani_frame = 0;
 	}
 
 	m_px += m_vx;
@@ -79,8 +101,8 @@ void CObjHero::Draw()
 
 	//切り取り位置の位置
 	src.m_top = (65.0f* m_pos);
-	src.m_left = 0.0f;
-	src.m_right = 60.0f;
+	src.m_left = 0.0f + AniData[m_ani_frame] * 64;
+	src.m_right = 60.0f + AniData[m_ani_frame] * 64;
 	src.m_bottom = (65 + 65.0f *m_pos);
 
 	//表示位置の設定
