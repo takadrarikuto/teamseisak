@@ -14,6 +14,7 @@ enum OBJ_NAME
 	OBJ_ENEMY,
 	OBJ_OBJECT,
 	OBJ_STARPICBOOK,
+	OBJ_MARS,
 };
 //------------------------------------------------
 
@@ -61,7 +62,8 @@ struct UserData
 #include "ObjTitle.h"
 #include "ObjStageselect.h"
 #include "ObjSelectPlanet.h"
-#include"CObjStarPicbook.h"
+#include "CObjStarPicbook.h"
+#include "ObjMars.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -69,6 +71,7 @@ struct UserData
 #include "SceneTitle.h"
 #include "SceneStageselect.h"
 #include"SceneStarPicbook.h"
+#include "SceneMars.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------

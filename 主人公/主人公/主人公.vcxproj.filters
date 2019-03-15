@@ -16,6 +16,12 @@
     <Filter Include="ソース ファイル\星図鑑">
       <UniqueIdentifier>{b439f7f4-c6e0-4c85-a1a8-4597eaf779c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\ステージ選択">
+      <UniqueIdentifier>{8909f8af-6e59-41de-8ff6-9ce67328baa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\タイトル">
+      <UniqueIdentifier>{478980f7-71b9-43be-9d9b-aa150f652bfe}</UniqueIdentifier>
+    </Filter>
     <Filter Include="ソース ファイル\操作説明">
       <UniqueIdentifier>{e3297ccd-dc84-448e-af20-8226baed4f5c}</UniqueIdentifier>
     </Filter>
@@ -74,6 +80,21 @@
     </ClCompile>
     <ClCompile Include="SceneStarPicbook.cpp">
       <Filter>ソース ファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStageselect.cpp">
+      <Filter>ソース ファイル\ステージ選択</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStageselect.cpp">
+      <Filter>ソース ファイル\ステージ選択</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSelectPlanet.cpp">
+      <Filter>ソース ファイル\ステージ選択</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +155,29 @@
     <ClInclude Include="SceneMain.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="SceneStageselect.h">
+      <Filter>ソース ファイル\ステージ選択</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStageselect.h">
+      <Filter>ソース ファイル\ステージ選択</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ソース ファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTitle.h">
+      <Filter>ソース ファイル\タイトル</Filter>
+    <ClInclude Include="CObjStarPicbook.h">
+      <Filter>ソース ファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSelectPlanet.h">
+      <Filter>ソース ファイル\ステージ選択</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHero.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMain.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl">
@@ -144,5 +188,10 @@
     <Library Include="GameL\DirectXTex.lib">
       <Filter>リソース ファイル</Filter>
     </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="星図鑑.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

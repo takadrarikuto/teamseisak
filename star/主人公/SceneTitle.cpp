@@ -10,35 +10,35 @@
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneMain.h"
+#include "SceneTitle.h"
 #include "GameHead.h"
 
 //コンストラクタ
-CSceneMain::CSceneMain()
+CSceneTitle::CSceneTitle()
 {
 
 }
 
 //デストラクタ
-CSceneMain::~CSceneMain()
+CSceneTitle::~CSceneTitle()
 {
 
 }
 
 //初期化メゾット
-void CSceneMain::InitScene()
+void CSceneTitle::InitScene()
 {
 	//グラフィック読み込み
-	Draw::LoadImage(L"主人公（仮）.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"タイトル(修正版).png", 11, TEX_SIZE_512);
 
-	//仮主人公オブジェクト生成
-	CObjHero* obj = new CObjHero();
-	Objs::InsertObj(obj, OBJ_HERO, 10);
+	//タイトルオブジェクト生成
+	CObjTitle* obj_t = new CObjTitle();
+	Objs::InsertObj(obj_t, OBJ_TITLE, 11);
 
 }
 
 //実行中メゾット
-void CSceneMain::Scene()
+void CSceneTitle::Scene()
 {
 
 }
