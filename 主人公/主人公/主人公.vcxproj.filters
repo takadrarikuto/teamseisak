@@ -16,6 +16,9 @@
     <Filter Include="ソース ファイル\星図鑑">
       <UniqueIdentifier>{b439f7f4-c6e0-4c85-a1a8-4597eaf779c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\操作説明">
+      <UniqueIdentifier>{e3297ccd-dc84-448e-af20-8226baed4f5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameL\Audio.cpp">
@@ -119,17 +122,17 @@
     <ClInclude Include="main.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjHero.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMain.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="CObjStarPicbook.h">
       <Filter>ソース ファイル\星図鑑</Filter>
     </ClInclude>
     <ClInclude Include="SceneStarPicbook.h">
       <Filter>ソース ファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHero.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMain.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
