@@ -33,7 +33,7 @@ void CObjSelectPlanet::Action()
 		{
 			if (m_start_flag == true)
 			{
-				Scene::SetScene(new CSceneMain());
+				Scene::SetScene(new CSceneMar());
 			}
 		}
 		else

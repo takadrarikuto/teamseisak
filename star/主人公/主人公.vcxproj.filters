@@ -43,12 +43,6 @@
     <ClCompile Include="ObjTitle.cpp">
       <Filter>ソースファイル\Obj</Filter>
     </ClCompile>
-    <ClCompile Include="SceneMain.cpp">
-      <Filter>ソースファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneSpaceShip.cpp">
-      <Filter>ソースファイル\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソースファイル\Scene</Filter>
     </ClCompile>
@@ -78,6 +72,12 @@
     </ClCompile>
     <ClCompile Include="SceneStageselect.cpp">
       <Filter>ソースファイル\Scene\ステージ選択</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMar.cpp">
+      <Filter>ソースファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjAncer.cpp">
+      <Filter>ソースファイル\Obj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -126,23 +126,11 @@
     <ClInclude Include="ObjTitle.h">
       <Filter>ヘッダーファイル\Obj</Filter>
     </ClInclude>
-    <ClInclude Include="SceneMain.h">
-      <Filter>ヘッダーファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneSpaceShip.h">
-      <Filter>ヘッダーファイル\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="SceneTitle.h">
       <Filter>ヘッダーファイル\Scene</Filter>
     </ClInclude>
     <ClInclude Include="CObjStarPicbook.h">
       <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMar.h">
-      <Filter>ヘッダーファイル\Obj\火星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMars.h">
-      <Filter>ヘッダーファイル\Obj\火星</Filter>
     </ClInclude>
     <ClInclude Include="ObjSelectPlanet.h">
       <Filter>ヘッダーファイル\Obj\ステージ選択</Filter>
@@ -164,6 +152,18 @@
     </ClInclude>
     <ClInclude Include="SceneStarPicbook.h">
       <Filter>ヘッダーファイル\Scene\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMar.h">
+      <Filter>ヘッダーファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMar.h">
+      <Filter>ヘッダーファイル\Scene\火星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMars.h">
+      <Filter>ヘッダーファイル\Obj\火星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjAncer.h">
+      <Filter>ヘッダーファイル\Obj</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

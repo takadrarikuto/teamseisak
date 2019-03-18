@@ -19,19 +19,6 @@ void CObjMars::Init()
 //アクション
 void CObjMars::Action()
 {
-	//エンターキーを押してシーン：ゲームメインに移行する
-	if (Input::GetVKey(VK_RETURN) == true)
-	{
-		if (m_key_flag == true)
-		{
-			Scene::SetScene(new CSceneStageselect());
-			m_key_flag = false;
-		}
-	}
-	else
-	{
-		m_key_flag = true;
-	}
 
 }
 //ドロー
@@ -42,7 +29,7 @@ void CObjMars::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-			   //切り取り位置の設定
+	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 1920.0f;
@@ -56,5 +43,5 @@ void CObjMars::Draw()
 	dst.m_bottom = 600.0f;
 
 	//描画
-	Draw::Draw(4, &src, &dst, c, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.0f);
 }
