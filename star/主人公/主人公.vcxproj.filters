@@ -1,214 +1,226 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="ObjHero.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjMars.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSelectPlanet.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStageselect.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMain.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMars.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\SceneObjManager.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStageselect.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStarPicbook.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="GameL\Audio.cpp">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\DirectXDevice.cpp">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\Draw2DTex_Source.cpp">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソースファイル\Scene</Filter>
     <ClCompile Include="GameL\DrawFont.cpp">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\DrawTexture.cpp">
-      <Filter>ライブラリ</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\HitBoxManager.cpp">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\GameL_Main.cpp">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\HitBoxManager.cpp">
+      <Filter>リソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\MultiThread.cpp">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameL\SceneManager.cpp">
-      <Filter>ライブラリ</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\SetWindow.cpp">
-      <Filter>ライブラリ</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\UserData.cpp">
-      <Filter>ライブラリ</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\WinInputs.cpp">
-      <Filter>ライブラリ</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\WICTextureLoader.cpp">
-      <Filter>ライブラリ</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjStarPicbook.cpp">
-      <Filter>ソースファイル</Filter>
+    <ClCompile Include="ObjAncer.cpp">
+      <Filter>リソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="ObjFirstStar.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="GameL\SceneManager.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\SceneObjManager.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\SetWindow.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\UserData.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\WICTextureLoader.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\WinInputs.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjStarPicbook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStageselect.cpp">
+      <Filter>ソースファイル\ステージ選択画面</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMars.cpp">
+      <Filter>ソースファイル\火星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHero.cpp">
+      <Filter>ソースファイル\主人公</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSelectPlanet.cpp">
+      <Filter>ソースファイル\ステージ選択画面</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMars.cpp">
+      <Filter>ソースファイル\火星</Filter>
+    </ClCompile>
     <ClCompile Include="SceneStageselect.cpp">
-      <Filter>ソースファイル\Scene\ステージ選択</Filter>
+      <Filter>ソースファイル\ステージ選択画面</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStarPicbook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
     </ClCompile>
     <ClCompile Include="SceneMar.cpp">
-      <Filter>ソースファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjAncer.cpp">
-      <Filter>ソースファイル\Obj</Filter>
+      <Filter>ソースファイル\火星</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameHead.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjHero.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMars.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjSelectPlanet.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStageselect.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjTitle.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMain.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMars.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\SceneObjManager.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneStageselect.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneStarPicbook.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
     <ClInclude Include="GameL\Audio.h">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\DirectXDevice.h">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\DirectXTex.h">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\DrawFont.h">
-      <Filter>ライブラリ</Filter>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>ヘッダーファイル\Scene</Filter>
+      <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\DrawTexture.h">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjSelectPlanet.h">
-      <Filter>ヘッダーファイル\Obj\ステージ選択</Filter>
     <ClInclude Include="GameL\HitBoxManager.h">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\MultiThread.h">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameL\SceneManager.h">
-      <Filter>ライブラリ</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\SetWindow.h">
-      <Filter>ライブラリ</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\UserData.h">
-      <Filter>ライブラリ</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\WICTextureLoader.h">
-      <Filter>ライブラリ</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\WinInputs.h">
-      <Filter>ライブラリ</Filter>
-    </ClInclude>
-    <ClInclude Include="CObjStarPicbook.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjFirstStar.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMar.h">
-      <Filter>ヘッダーファイル\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMar.h">
-      <Filter>ヘッダーファイル\Scene\火星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMars.h">
-      <Filter>ヘッダーファイル\Obj\火星</Filter>
+    <ClInclude Include="GameHead.h">
+      <Filter>ヘッダーファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjAncer.h">
-      <Filter>ヘッダーファイル\Obj</Filter>
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjFirstStar.h">
+      <Filter>ヘッダーファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\SceneManager.h">
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\SceneObjManager.h">
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\SetWindow.h">
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\UserData.h">
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\WICTextureLoader.h">
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\WinInputs.h">
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjStarPicbook.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHero.h">
+      <Filter>ヘッダーファイル\主人公</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMars.h">
+      <Filter>ヘッダーファイル\火星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSelectPlanet.h">
+      <Filter>ヘッダーファイル\ステージ選択画面</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStageselect.h">
+      <Filter>ヘッダーファイル\ステージ選択画面</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTitle.h">
+      <Filter>ヘッダーファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMars.h">
+      <Filter>ヘッダーファイル\火星</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStageselect.h">
+      <Filter>ヘッダーファイル\ステージ選択画面</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStarPicbook.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ヘッダーファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMar.h">
+      <Filter>ヘッダーファイル\火星</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMar.h">
+      <Filter>ヘッダーファイル\火星</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ソースファイル">
-      <UniqueIdentifier>{b898c00f-8cfe-407a-af50-3a5bb9ab45ba}</UniqueIdentifier>
+      <UniqueIdentifier>{9bde6f93-3758-48c5-90e4-3aca6d2e6413}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ライブラリ">
-      <UniqueIdentifier>{e96f8434-932e-4eff-bd76-121d49fef0dd}</UniqueIdentifier>
+    <Filter Include="リソースファイル">
+      <UniqueIdentifier>{be17b2ef-3545-4802-860f-18e51b469eac}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー">
-      <UniqueIdentifier>{7df07420-2396-4fe9-859a-87fe89709e50}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル">
+      <UniqueIdentifier>{0d05a7ce-dc83-48c7-9d19-f2ca4d9e672d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\火星">
+      <UniqueIdentifier>{11ab226b-b98a-45c3-aeb2-618d25d820fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\星図鑑">
+      <UniqueIdentifier>{555219cd-b3d9-4847-aa42-22ff5f72482d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\ステージ選択画面">
+      <UniqueIdentifier>{df289f61-514a-49ca-8691-47bb2d3e86ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\主人公">
+      <UniqueIdentifier>{4cec6988-d1ab-4596-9076-e2b8ac566918}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\タイトル">
+      <UniqueIdentifier>{905f7956-8d93-42dd-b16e-2160a316395a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\星図鑑">
+      <UniqueIdentifier>{82aeb342-ca64-4a57-80c2-3d829219446c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\タイトル">
+      <UniqueIdentifier>{c824ac62-2784-47f0-bae3-3b547281faca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\火星">
+      <UniqueIdentifier>{ec126b3a-0add-47d3-835c-70ba9ec802f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\主人公">
+      <UniqueIdentifier>{edf18fe9-4215-4a5c-8308-2a1736a4a31d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\ステージ選択画面">
+      <UniqueIdentifier>{9fccc201-c156-421b-8b86-af3347240654}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Library Include="GameL\DirectXTex.lib">
-      <Filter>ライブラリ</Filter>
+      <Filter>リソースファイル</Filter>
     </Library>
   </ItemGroup>
 </Project>
