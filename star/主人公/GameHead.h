@@ -7,6 +7,7 @@ enum OBJ_NAME
 	//ゲームで使うオブジェクトの名前
 	//OBJ_○○と表記
 	OBJ_HERO,
+	OBJ_ANCER,
 	OBJ_TIME,
 	OBJ_TITLE,
 	OBJ_STAGESELECT,
@@ -15,6 +16,9 @@ enum OBJ_NAME
 	OBJ_OBJECT,
 	OBJ_STARPICBOOK,
 	OBJ_MARS,
+	OBJ_FIRSTSTAR,
+	OBJ_SECONDSTAR,
+	OBJ_OTHERSTAR,
 };
 //------------------------------------------------
 
@@ -28,6 +32,7 @@ enum HIT_ELEMENTS
 	ELEMENT_ENEMY,
 	ELEMENT_ITEM,
 	ELEMENT_MAGIC,
+	ELEMENT_ANCER,
 	ELEMENT_FIELD,
 	ELEMENT_RED,
 	ELEMENT_GREEN,
@@ -64,10 +69,12 @@ struct UserData
 #include "ObjSelectPlanet.h"
 #include "CObjStarPicbook.h"
 #include "ObjMars.h"
+#include "ObjAncer.h"
+#include "ObjFirstStar.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
-#include "SceneMain.h"
+#include "SceneMar.h"
 #include "SceneTitle.h"
 #include "SceneStageselect.h"
 #include"SceneStarPicbook.h"

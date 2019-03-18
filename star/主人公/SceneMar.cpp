@@ -10,35 +10,47 @@
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneMain.h"
+#include "SceneMar.h"
 #include "GameHead.h"
 
 //コンストラクタ
-CSceneMain::CSceneMain()
+CSceneMar::CSceneMar()
 {
 
 }
 
 //デストラクタ
-CSceneMain::~CSceneMain()
+CSceneMar::~CSceneMar()
 {
 
 }
 
 //初期化メゾット
-void CSceneMain::InitScene()
+void CSceneMar::InitScene()
 {
 	//グラフィック読み込み
+	//背景
+	Draw::LoadImage(L"火星.png", 9, TEX_SIZE_512);
+	//主人公
 	Draw::LoadImage(L"主人公（仮）.png", 10, TEX_SIZE_512);
+	//アンカー
+	Draw::LoadImage(L"アンカー（仮　透過済み）.png", 11, TEX_SIZE_512);
 
 	//仮主人公オブジェクト生成
 	CObjHero* obj = new CObjHero();
 	Objs::InsertObj(obj, OBJ_HERO, 10);
 
+	//アンカーオブジェクト作成
+	CObjAncer* obj_a = new CObjAncer();
+	Objs::InsertObj(obj_a, OBJ_ANCER, 11);
+
+	//背景オブジェクト生成
+	CObjMars* obj_m = new CObjMars();
+	Objs::InsertObj(obj_m, OBJ_MARS, 9);
 }
 
 //実行中メゾット
-void CSceneMain::Scene()
+void CSceneMar::Scene()
 {
 
 }

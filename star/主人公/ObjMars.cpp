@@ -19,19 +19,6 @@ void CObjMars::Init()
 //アクション
 void CObjMars::Action()
 {
-	//エンターキーを押してシーン：ゲームメインに移行する
-	if (Input::GetVKey(VK_RETURN) == true)
-	{
-		if (m_key_flag == true)
-		{
-			Scene::SetScene(new CSceneStageselect());
-			m_key_flag = false;
-		}
-	}
-	else
-	{
-		m_key_flag = true;
-	}
 
 }
 //ドロー
@@ -55,5 +42,5 @@ void CObjMars::Draw()
 	dst.m_bottom = 600.0f;
 
 	//描画
-	Draw::Draw(4, &src, &dst, c, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.0f);
 }

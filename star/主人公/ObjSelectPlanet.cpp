@@ -27,13 +27,13 @@ void CObjSelectPlanet::Action()
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
-	if (m_mous_x > 50 && m_mous_x < 190 && m_mous_y>115 && m_mous_y < 335)
+	if (m_mous_x > 70 && m_mous_x < 190 && m_mous_y>135 && m_mous_y < 325)
 	{
 		if (m_mous_l == true)
 		{
 			if (m_start_flag == true)
 			{
-				Scene::SetScene(new CSceneMain());
+				Scene::SetScene(new CSceneMar());
 			}
 		}
 		else
@@ -53,8 +53,8 @@ void CObjSelectPlanet::Draw()
 
 	//仮マウス位置
 	wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mous_x, m_mous_y);
-	Font::StrDraw(str, 20, 20, 30, c);
+	swprintf_s(str, L"x=%d,y=%d", (int)m_mous_x,(int) m_mous_y);
+	Font::StrDraw(str, 10, 20, 30, c);
 
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
@@ -66,10 +66,10 @@ void CObjSelectPlanet::Draw()
 	src.m_bottom = 250.0f;
 
 	//表示位置の設定
-	dst.m_top = 100.0f;
-	dst.m_left = 60.0f;
+	dst.m_top = 170.0f;
+	dst.m_left = 70.0f;
 	dst.m_right = 760.0f;
-	dst.m_bottom = 400.0f;
+	dst.m_bottom = 370.0f;
 
 	Draw::Draw(12, &src, &dst, c, 0.0f);
 }

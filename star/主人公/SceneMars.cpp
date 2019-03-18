@@ -25,9 +25,20 @@ void CSceneMars::InitScene()
 	//外部グラフィックを読み込み4番に登録(512×512ピクセル)
 	Draw::LoadImage(L"火星.png", 4, TEX_SIZE_512);
 
-	//火星オブジェクト作成
+	//火星背景オブジェクト作成
 	CObjMars* mars = new CObjMars();       //タイトルオブジェクト作成
 	Objs::InsertObj(mars, OBJ_MARS, 4);    //タイトルオブジェクト登録
+
+	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
+	Draw::LoadImage(L"firststar.png", 5, TEX_SIZE_512);
+
+	CObjFirstStar* star = new CObjFirstStar();       //タイトルオブジェクト作成
+	Objs::InsertObj(star, OBJ_MARS, 5);    //タイトルオブジェクト登録
+
+	//一等星オブジェクト作成
+
+
+
 }
 
 //ゲームメイン実行中メソッド
