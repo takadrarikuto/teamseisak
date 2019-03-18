@@ -2,6 +2,7 @@
 #include "GameL\SceneManager.h"
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
+#include "GameL\HitBoxManager.h"
 
 #include "GameHead.h"
 #include "ObjHero.h"
@@ -12,9 +13,12 @@ using namespace GameL;
 //イニシャライズ
 void CObjHero::Init()
 {
-	//位置初期化
+	//主人公位置初期化
 	m_px = 400.0f;
 	m_py = 520.0f;
+	//アンカー位置初期化
+	m_ax = 450.0f;
+	m_ay = 520.0f;
 
 	//移動ベクトル初期化
 	m_vx = 0.0f;
@@ -24,6 +28,15 @@ void CObjHero::Init()
 
 	m_ani_time = 0;
 	m_ani_frame = 1;	//静止フレームを初期にする
+
+	m_return_flag = false;
+
+	//当たり判定用のHitBoxを作成
+
+	//主人公
+	Hits::SetHitBox(this, m_px, m_py, 50, 50, ELEMENT_PLAYER, OBJ_HERO, 10);
+	//アンカー本体
+	//Hits::SetHitBox(this, m_px + 50.0f, m_py, 20, 50, ELEMENT_ANCER, OBJ_ANCER, 10);
 
 }
 
@@ -58,6 +71,37 @@ void CObjHero::Action()
 		m_ani_frame = 1; //キー入力が無い場合は静止フレームにする
 	}
 
+	//ステージ選択画面に戻る
+	if (Input::GetVKey('B') == true)
+	{
+		if (m_return_flag = true)
+		{
+			Scene::SetScene(new CSceneStageselect());
+		}
+	}
+	else
+	{
+		m_return_flag = true;
+	}
+
+	//アイテム使用
+	if (Input::GetVKey('A') == true)
+	{
+
+	}
+
+	//現在所持している星の数確認画面に移動
+	if (Input::GetVKey('S') == true)
+	{
+
+	}
+
+	//ポーズへ移動
+	if (Input::GetVKey(VK_SPACE) == true)
+	{
+
+	}
+
 	if (m_ani_time > 4)
 	{
 		m_ani_frame += 1;
@@ -69,6 +113,7 @@ void CObjHero::Action()
 		m_ani_frame = 0;
 	}
 
+	//位置更新
 	m_px += m_vx;
 
 	//画面外に出ない処理
@@ -76,11 +121,16 @@ void CObjHero::Action()
 	{
 		m_px = 0.0f;
 	}
-	if (m_px + 50.0f > 800.0f)
+	if (m_px + 50.0f > 777.0f)
 	{
-		m_px = 800.0f - 50.0f;
+		m_px = 777.0f - 50.0f;
 	}
 
+	//自身のHitBoxを持ってくる
+	CHitBox* hit = Hits::GetHitBox(this);
+
+	//HitBoxの位置の変更
+	hit->SetPos(m_px, m_py);
 
 }
 

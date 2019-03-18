@@ -36,6 +36,7 @@ void CSceneStageselect::InitScene()
 	CObjStageselect* obj_ss = new CObjStageselect();
 	Objs::InsertObj(obj_ss, OBJ_STAGESELECT, 11);
 
+	//星選択オブジェクト作成
 	CObjSelectPlanet* obj_sp = new CObjSelectPlanet();
 	Objs::InsertObj(obj_sp, OBJ_STAGESELECTPLANET, 12);
 

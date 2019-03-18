@@ -20,27 +20,57 @@ void CObjStarPicbook::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
-	//マウスの位置とクリックする場所で当たり判定
-	if (m_mou_x > 230 && m_mou_x < 450 && m_mou_y>400 && m_mou_y < 430)
-	{
-		//マウスのボタンが押されたらメインに遷移
-		if (m_mou_r == true || m_mou_l == true)
-		{
-			
-		}
-
-	}
+	
 }
 
 void CObjStarPicbook::Draw()
 {
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
-	
+
+	RECT_F src;//描画元切り取り位置
+	RECT_F dst;//描画先表示位置
+
+	//切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 300.0f;
+	src.m_bottom = 461.0f;
+
+	//表示位置の設定
+	dst.m_top = 300.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 100.0f;
+	dst.m_bottom = 600.0f;
+
+	//描画
+	Draw::Draw(9, &src, &dst, c, 0.0f);
+
+	//マウスの位置とクリックする場所で当たり判定
+	if (m_mou_x > 230 && m_mou_x < 450 && m_mou_y>400 && m_mou_y < 430)
+	{
 	Font::StrDraw(L"◆test", 230, 400, 30, c);
-	
+	}
+
+	//切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 300.0f;
+	src.m_bottom = 30.0f;
+
+	//表示位置の設定
+	dst.m_top = 0.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 100.0f;
+	dst.m_bottom = 300.0f;
+
+	//描画
+	Draw::Draw(9, &src, &dst, c, 0.0f);
+
 	//仮マウス位置表示
 	wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
 	Font::StrDraw(str, 20, 20, 12, c);
+
+
 }
