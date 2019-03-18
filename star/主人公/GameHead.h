@@ -15,6 +15,7 @@ enum OBJ_NAME
 	OBJ_OBJECT,
 	OBJ_STARPICBOOK,
 	OBJ_MARS,
+	OBJ_OPERATION,
 };
 //------------------------------------------------
 
@@ -64,6 +65,7 @@ struct UserData
 #include "ObjSelectPlanet.h"
 #include "CObjStarPicbook.h"
 #include "ObjMars.h"
+#include "CObjOperation.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -72,10 +74,11 @@ struct UserData
 #include "SceneStageselect.h"
 #include"SceneStarPicbook.h"
 #include "SceneMars.h"
-//-----------------------------------------------
+#include"SceneOperation.h"
+//------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
 //#define SET_GAME_START  CSceneMain
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneOperation
 //-----------------------------------------------
