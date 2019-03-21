@@ -31,4 +31,8 @@ private:
 	float m_vy;
 
 	bool m_mous_l;
+	float time;
+
+	bool flag;
+	int a_time;
 };

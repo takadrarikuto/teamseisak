@@ -38,6 +38,7 @@ void CObjHero::Init()
 	//アンカー本体
 	//Hits::SetHitBox(this, m_px + 50.0f, m_py, 20, 50, ELEMENT_ANCER, OBJ_ANCER, 10);
 
+	m_mous_l = false;
 }
 
 //アクション
@@ -49,26 +50,31 @@ void CObjHero::Action()
 	//主人公向き固定
 	m_pos = 3.0f;
 
+	m_mous_l = Input::GetMouButtonL();
 
-	//移動処理
-	//左
-	if (Input::GetVKey(VK_LEFT) == true)
+	//左クリックしている時移動禁止
+	if (m_mous_l == false)
 	{
-		m_vx -= 4.0f;
-		m_pos = 1.0f;
-		m_ani_time += 1;
-	}
-	//右
-	else if (Input::GetVKey(VK_RIGHT) == true)
-	{
-		m_vx += 4.0f;
-		m_pos = 2.0f;
-		m_ani_time += 1;
-	}
-	else
-	{
-		m_ani_time = 0; //アニメーション停止
-		m_ani_frame = 1; //キー入力が無い場合は静止フレームにする
+		//移動処理
+		//左
+		if (Input::GetVKey(VK_LEFT) == true)
+		{
+			m_vx -= 4.0f;
+			m_pos = 1.0f;
+			m_ani_time += 1;
+		}
+		//右
+		else if (Input::GetVKey(VK_RIGHT) == true)
+		{
+			m_vx += 4.0f;
+			m_pos = 2.0f;
+			m_ani_time += 1;
+		}
+		else
+		{
+			m_ani_time = 0; //アニメーション停止
+			m_ani_frame = 1; //キー入力が無い場合は静止フレームにする
+		}
 	}
 
 	//ステージ選択画面に戻る

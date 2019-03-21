@@ -19,10 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F6B49877-F43D-449E-8E75-95C9B702D215}</ProjectGuid>
-    <RootNamespace>主人公</RootNamespace>
+    <ProjectGuid>{C6216286-0DFA-499A-AD30-01F9147EFB16}</ProjectGuid>
+    <RootNamespace>操作説明</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>star collection</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -111,72 +110,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CObjStarPicbook.h" />
-    <ClInclude Include="GameHead.h" />
-    <ClInclude Include="GameL\Audio.h" />
-    <ClInclude Include="GameL\DirectXDevice.h" />
-    <ClInclude Include="GameL\DirectXTex.h" />
-    <ClInclude Include="GameL\DrawFont.h" />
-    <ClInclude Include="GameL\DrawTexture.h" />
-    <ClInclude Include="GameL\HitBoxManager.h" />
-    <ClInclude Include="GameL\MultiThread.h" />
-    <ClInclude Include="GameL\SceneManager.h" />
-    <ClInclude Include="GameL\SceneObjManager.h" />
-    <ClInclude Include="GameL\SetWindow.h" />
-    <ClInclude Include="GameL\UserData.h" />
-    <ClInclude Include="GameL\WICTextureLoader.h" />
-    <ClInclude Include="GameL\WinInputs.h" />
-    <ClInclude Include="main.h" />
-    <ClInclude Include="ObjFirstStar.h" />
-    <ClInclude Include="ObjAncer.h" />
-    <ClInclude Include="ObjHero.h" />
-    <ClInclude Include="ObjMar.h" />
-    <ClInclude Include="ObjMars.h" />
-    <ClInclude Include="ObjSelectPlanet.h" />
-    <ClInclude Include="Objstage.h" />
-    <ClInclude Include="ObjStageselect.h" />
-    <ClInclude Include="ObjTitle.h" />
-    <ClInclude Include="SceneMar.h" />
-    <ClInclude Include="SceneMars.h" />
-    <ClInclude Include="SceneStageselect.h" />
-    <ClInclude Include="SceneStarPicbook.h" />
-    <ClInclude Include="SceneTitle.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="CObjStarPicbook.cpp" />
-    <ClCompile Include="GameL\Audio.cpp" />
-    <ClCompile Include="GameL\DirectXDevice.cpp" />
-    <ClCompile Include="GameL\Draw2DTex_Source.cpp" />
-    <ClCompile Include="GameL\DrawFont.cpp" />
-    <ClCompile Include="GameL\DrawTexture.cpp" />
-    <ClCompile Include="GameL\GameL_Main.cpp" />
-    <ClCompile Include="GameL\HitBoxManager.cpp" />
-    <ClCompile Include="GameL\MultiThread.cpp" />
-    <ClCompile Include="GameL\SceneManager.cpp" />
-    <ClCompile Include="GameL\SceneObjManager.cpp" />
-    <ClCompile Include="GameL\SetWindow.cpp" />
-    <ClCompile Include="GameL\UserData.cpp" />
-    <ClCompile Include="GameL\WICTextureLoader.cpp" />
-    <ClCompile Include="GameL\WinInputs.cpp" />
-    <ClCompile Include="ObjAncer.cpp" />
-    <ClCompile Include="ObjFirstStar.cpp" />
-    <ClCompile Include="ObjHero.cpp" />
-    <ClCompile Include="ObjMars.cpp" />
-    <ClCompile Include="ObjSelectPlanet.cpp" />
-    <ClCompile Include="Objstage.cpp" />
-    <ClCompile Include="ObjStageselect.cpp" />
-    <ClCompile Include="ObjTitle.cpp" />
-    <ClCompile Include="SceneMar.cpp" />
-    <ClCompile Include="SceneMars.cpp" />
-    <ClCompile Include="SceneStageselect.cpp" />
-    <ClCompile Include="SceneStarPicbook.cpp" />
-    <ClCompile Include="SceneTitle.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="GameL\DirectXTex.inl" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="GameL\DirectXTex.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

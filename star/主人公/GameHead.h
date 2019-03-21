@@ -19,6 +19,7 @@ enum OBJ_NAME
 	OBJ_FIRSTSTAR,
 	OBJ_SECONDSTAR,
 	OBJ_OTHERSTAR,
+	OBJ_STAGE,
 };
 //------------------------------------------------
 
@@ -71,6 +72,7 @@ struct UserData
 #include "ObjMars.h"
 #include "ObjAncer.h"
 #include "ObjFirstStar.h"
+#include "Objstage.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
