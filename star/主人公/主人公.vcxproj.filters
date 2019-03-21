@@ -49,6 +49,17 @@
     <ClCompile Include="GameL\SceneObjManager.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="GameL\HitBoxManager.cpp">
+      <Filter>ライブラリ</Filter>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソースファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\GameL_Main.cpp">
+      <Filter>ライブラリ</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\MultiThread.cpp">
+      <Filter>ライブラリ</Filter>
+    </ClCompile>
     <ClCompile Include="GameL\SceneManager.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
@@ -78,6 +89,15 @@
     </ClCompile>
     <ClCompile Include="ObjAncer.cpp">
       <Filter>ソースファイル\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjOperation.cpp">
+      <Filter>ソースファイル\Obj\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOperation.cpp">
+      <Filter>ソースファイル\Scene\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjOperation.h">
+      <Filter>ヘッダーファイル\Obj\操作説明</Filter>
     </ClCompile>
     <ClCompile Include="ObjFirstStar.cpp">
       <Filter>ソースファイル\Obj</Filter>
@@ -156,6 +176,9 @@
     <ClInclude Include="SceneStageselect.h">
       <Filter>ヘッダーファイル\Scene\ステージ選択</Filter>
     </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+    <ClInclude Include="ObjFirstStar.h">
+      <Filter>ソースファイル</Filter>
     <ClInclude Include="SceneStarPicbook.h">
       <Filter>ヘッダーファイル\Scene\星図鑑</Filter>
     </ClInclude>
@@ -165,6 +188,9 @@
     <ClInclude Include="ObjMar.h">
       <Filter>ヘッダーファイル\Scene\火星</Filter>
     </ClInclude>
+    <ClInclude Include="CObjStarPicbook.h">
+      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
+    </ClInclude>
     <ClInclude Include="ObjMars.h">
       <Filter>ヘッダーファイル\Obj\火星</Filter>
     </ClInclude>
@@ -173,6 +199,9 @@
     </ClInclude>
     <ClInclude Include="ObjFirstStar.h">
       <Filter>ヘッダーファイル\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneOperation.h">
+      <Filter>ヘッダーファイル\Scene\操作説明</Filter>
     </ClInclude>
     <ClInclude Include="Objstage.h">
       <Filter>ヘッダーファイル\Obj\フィールド</Filter>
@@ -241,6 +270,18 @@
     </Filter>
     <Filter Include="ヘッダーファイル\Obj\フィールド">
       <UniqueIdentifier>{b7897cd7-3f9a-4ca7-8103-12d1af44bca8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\操作説明">
+      <UniqueIdentifier>{22747b80-b2cc-453f-bfaa-2a33567ab390}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\操作説明">
+      <UniqueIdentifier>{b6b8ab1c-f0c8-46bd-9288-98934f446fb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Scene\操作説明">
+      <UniqueIdentifier>{4837475d-4e18-4732-ab0a-daa796ef25ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Scene\操作説明">
+      <UniqueIdentifier>{926125c0-835f-4c96-a265-6ff25ddcf3ad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

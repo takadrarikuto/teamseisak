@@ -36,7 +36,6 @@ void CObjMars::Draw()
 	src.m_right = 1920.0f;
 	src.m_bottom = 1080.0f;
 
-
 	//ï\é¶à íuÇÃê›íË
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
