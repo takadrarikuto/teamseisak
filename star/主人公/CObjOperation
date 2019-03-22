@@ -5,16 +5,15 @@
 using namespace GameL;
 
 //オブジェクト:タイトル
-class CObjMars : public CObj
+class CObjOperation : public CObj
 {
 public:
-	CObjMars() {};
-	~CObjMars() {};
+	CObjOperation() {};
+	~CObjOperation() {};
 	void Init();      //イニシャライズ
 	void Action();    //アクション
 	void Draw();      //ドロー
 
 private:
-	bool m_key_flag;//キーフラグ
-	float m_scroll;//左右スクロール用
+	
 };
