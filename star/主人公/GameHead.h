@@ -97,4 +97,5 @@ struct UserData
 //#define SET_GAME_START  CSceneStarPicbook
 //#define SET_GAME_START CSceneTitle
 #define SET_GAME_START CSceneGameKuria
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
