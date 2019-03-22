@@ -26,6 +26,7 @@ void CObjMars::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
+	//”wŒi
 	RECT_F src;//•`‰æŒ³Ø‚èæ‚èˆÊ’u
 	RECT_F dst;//•`‰ææ•\¦ˆÊ’u
 
@@ -42,5 +43,6 @@ void CObjMars::Draw()
 	dst.m_bottom = 600.0f;
 
 	//•`‰æ
-	Draw::Draw(9, &src, &dst, c, 0.0f);
+	Draw::Draw(8, &src, &dst, c, 0.0f);
+
 }

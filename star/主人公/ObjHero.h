@@ -29,4 +29,6 @@ private:
 	int m_ani_frame;	//•`‰æƒtƒŒ[ƒ€
 
 	bool m_return_flag;
+
+	bool m_mous_l;
 };

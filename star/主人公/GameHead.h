@@ -20,6 +20,7 @@ enum OBJ_NAME
 	OBJ_SECONDSTAR,
 	OBJ_OTHERSTAR,
 	OBJ_OPERATION,
+	OBJ_STAGE,
 };
 //------------------------------------------------
 
@@ -72,6 +73,7 @@ struct UserData
 #include "ObjMars.h"
 #include "ObjAncer.h"
 #include "ObjFirstStar.h"
+#include "Objstage.h"
 #include "CObjOperation.h"
 //------------------------------------------------
 
@@ -87,7 +89,8 @@ struct UserData
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
 //#define SET_GAME_START  CSceneMain
-#define SET_GAME_START CSceneOperation
-#define SET_GAME_START  CSceneStarPicbook
+//#define SET_GAME_START CSceneOperation
+//#define SET_GAME_START  CSceneStarPicbook
 //#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneMar
 //-----------------------------------------------

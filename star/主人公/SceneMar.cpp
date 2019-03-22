@@ -30,7 +30,8 @@ void CSceneMar::InitScene()
 {
 	//グラフィック読み込み
 	//背景
-	Draw::LoadImage(L"火星.png", 9, TEX_SIZE_512);
+	Draw::LoadImage(L"火星.png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"フィールド背景火星(透過済み).png", 9, TEX_SIZE_512);
 	//主人公
 	Draw::LoadImage(L"主人公（仮）.png", 10, TEX_SIZE_512);
 	//アンカー
@@ -46,7 +47,9 @@ void CSceneMar::InitScene()
 
 	//背景オブジェクト生成
 	CObjMars* obj_m = new CObjMars();
-	Objs::InsertObj(obj_m, OBJ_MARS, 9);
+	Objs::InsertObj(obj_m, OBJ_MARS, 8);
+	CObjstage* obj_h = new CObjstage();
+	Objs::InsertObj(obj_h, OBJ_STAGE, 9);
 }
 
 //実行中メゾット
