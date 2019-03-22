@@ -35,7 +35,7 @@ void CObjAncer::Init()
 	//当たり判定用のHitBoxを作成
 
 	//アンカー
-	//Hits::SetHitBox(this, m_px, m_py, 20, 50, ELEMENT_ANCER, OBJ_ANCER, 11);
+	Hits::SetHitBox(this, m_pax, m_pay, 40, 40, ELEMENT_ANCER, OBJ_ANCER, 11);
 
 	time = 0.0f;
 	flag = false;
@@ -143,10 +143,10 @@ void CObjAncer::Action()
 	m_pry += m_vy;
 	
 	//自身のHitBoxを持ってくる
-	//CHitBox* hit_a = Hits::GetHitBox(this);
+	CHitBox* hit_a = Hits::GetHitBox(this);
 
 	//HitBoxの位置の変更
-	//hit_a->SetPos(m_px, m_py);
+	hit_a->SetPos(m_pax, m_pay - 45);
 
 	time = 0.0f;
 
