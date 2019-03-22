@@ -6,6 +6,7 @@
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawFont.h"
 #include "GameL\Audio.h"
+#include "GameL\DrawTexture.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -28,7 +29,11 @@ CSceneStarPicbook::~CSceneStarPicbook()
 
 //ゲームタイトル初期化メソッド
 void CSceneStarPicbook::InitScene()
-{
+{	
+	//グラフィック読み込み
+	Draw::LoadImage(L"テキストボックス.png", 9, TEX_SIZE_512);
+	
+	//仮主人公オブジェクト生成
 	CObjStarPicbook* p = new CObjStarPicbook();
 	Objs::InsertObj(p, OBJ_STARPICBOOK,1);
 }
