@@ -16,6 +16,11 @@
     <ClCompile Include="GameL\DrawTexture.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="GameL\HitBoxManager.cpp">
+      <Filter>ライブラリ</Filter>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソースファイル\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="GameL\GameL_Main.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
@@ -78,6 +83,15 @@
     </ClCompile>
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjOperation.cpp">
+      <Filter>ソースファイル\Obj\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOperation.cpp">
+      <Filter>ソースファイル\Scene\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjOperation.h">
+      <Filter>ヘッダーファイル\Obj\操作説明</Filter>
     </ClCompile>
     <ClCompile Include="SceneMar.cpp">
       <Filter>ソースファイル\火星</Filter>
@@ -159,6 +173,9 @@
     <ClInclude Include="SceneStageselect.h">
       <Filter>ヘッダーファイル\ステージ選択画面</Filter>
     </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+    <ClInclude Include="ObjFirstStar.h">
+      <Filter>ソースファイル</Filter>
     <ClInclude Include="SceneStarPicbook.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
@@ -166,10 +183,20 @@
       <Filter>ヘッダーファイル\タイトル</Filter>
     </ClInclude>
     <ClInclude Include="ObjMar.h">
+      <Filter>ヘッダーファイル\Scene\火星</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjStarPicbook.h">
+      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMars.h">
+      <Filter>ヘッダーファイル\Obj\火星</Filter>
       <Filter>ヘッダーファイル\火星</Filter>
     </ClInclude>
     <ClInclude Include="SceneMar.h">
       <Filter>ヘッダーファイル\火星</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneOperation.h">
+      <Filter>ヘッダーファイル\Scene\操作説明</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -211,6 +238,18 @@
     </Filter>
     <Filter Include="ヘッダーファイル\ステージ選択画面">
       <UniqueIdentifier>{9fccc201-c156-421b-8b86-af3347240654}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\操作説明">
+      <UniqueIdentifier>{22747b80-b2cc-453f-bfaa-2a33567ab390}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\操作説明">
+      <UniqueIdentifier>{b6b8ab1c-f0c8-46bd-9288-98934f446fb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Scene\操作説明">
+      <UniqueIdentifier>{4837475d-4e18-4732-ab0a-daa796ef25ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Scene\操作説明">
+      <UniqueIdentifier>{926125c0-835f-4c96-a265-6ff25ddcf3ad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

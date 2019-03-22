@@ -137,11 +137,13 @@
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneMar.h" />
     <ClInclude Include="SceneMars.h" />
+    <ClInclude Include="SceneOperation.h" />
     <ClInclude Include="SceneStageselect.h" />
     <ClInclude Include="SceneStarPicbook.h" />
     <ClInclude Include="SceneTitle.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CObjOperation.h" />
     <ClCompile Include="CObjStarPicbook.cpp" />
     <ClCompile Include="GameL\Audio.cpp" />
     <ClCompile Include="GameL\DirectXDevice.cpp" />
@@ -161,11 +163,13 @@
     <ClCompile Include="ObjFirstStar.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMars.cpp" />
+    <ClCompile Include="ObjOperation.cpp" />
     <ClCompile Include="ObjSelectPlanet.cpp" />
     <ClCompile Include="ObjStageselect.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneMar.cpp" />
     <ClCompile Include="SceneMars.cpp" />
+    <ClCompile Include="SceneOperation.cpp" />
     <ClCompile Include="SceneStageselect.cpp" />
     <ClCompile Include="SceneStarPicbook.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
