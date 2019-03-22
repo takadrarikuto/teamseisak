@@ -43,8 +43,13 @@ void CObjStarPicbook::Draw()
 	dst.m_right = 100.0f;
 	dst.m_bottom = 600.0f;
 
-	//描画
-	Draw::Draw(9, &src, &dst, c, 0.0f);
+	//星の名前を描画
+	for (int i = 0; i = 6; i++)
+	{
+		dst.m_left = dst.m_right +0.0f;
+		dst.m_right = dst.m_right +100.0f;
+		Draw::Draw(9, &src, &dst, c, 0.0f);
+	}
 
 	//マウスの位置とクリックする場所で当たり判定
 	if (m_mou_x > 230 && m_mou_x < 450 && m_mou_y>400 && m_mou_y < 430)
@@ -53,18 +58,18 @@ void CObjStarPicbook::Draw()
 	}
 
 	//切り取り位置の設定
-	src.m_top = 0.0f;
+	src.m_top = 1.9f;
 	src.m_left = 0.0f;
 	src.m_right = 300.0f;
-	src.m_bottom = 30.0f;
+	src.m_bottom = 28.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = 100.0f;
+	dst.m_right = 800.0f;
 	dst.m_bottom = 300.0f;
 
-	//描画
+	//説明文を描画
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
 	//仮マウス位置表示
