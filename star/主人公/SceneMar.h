@@ -15,4 +15,5 @@ public:
 	void Scene(); //Às’†ƒƒ]ƒbƒg
 private:
 
+	int time_star; //¯¶¬ŠÔ
 };
