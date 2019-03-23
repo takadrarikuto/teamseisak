@@ -35,8 +35,6 @@ void CObjHero::Init()
 
 	//主人公
 	Hits::SetHitBox(this, m_px, m_py, 50, 50, ELEMENT_PLAYER, OBJ_HERO, 10);
-	//アンカー本体
-	//Hits::SetHitBox(this, m_px + 50.0f, m_py, 20, 50, ELEMENT_ANCER, OBJ_ANCER, 10);
 
 	m_mous_l = false;
 }
@@ -76,6 +74,11 @@ void CObjHero::Action()
 			m_ani_frame = 1; //キー入力が無い場合は静止フレームにする
 		}
 	}
+	else
+	{
+		m_ani_time = 0; //アニメーション停止
+		m_ani_frame = 1; //キー入力が無い場合は静止フレームにする
+	}
 
 	//ステージ選択画面に戻る
 	if (Input::GetVKey('B') == true)
@@ -85,27 +88,27 @@ void CObjHero::Action()
 			Scene::SetScene(new CSceneStageselect());
 		}
 	}
+	//アイテム使用
+	else if (Input::GetVKey('A') == true)
+	{
+		
+	}
+	//現在所持している星の数確認画面に移動
+	else if (Input::GetVKey('S') == true)
+	{
+		if (m_return_flag = true)
+		{
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	//ポーズへ移動
+	else if (Input::GetVKey(VK_SPACE) == true)
+	{
+
+	}
 	else
 	{
 		m_return_flag = true;
-	}
-
-	//アイテム使用
-	if (Input::GetVKey('A') == true)
-	{
-
-	}
-
-	//現在所持している星の数確認画面に移動
-	if (Input::GetVKey('S') == true)
-	{
-
-	}
-
-	//ポーズへ移動
-	if (Input::GetVKey(VK_SPACE) == true)
-	{
-
 	}
 
 	if (m_ani_time > 4)
@@ -138,6 +141,7 @@ void CObjHero::Action()
 	//HitBoxの位置の変更
 	hit->SetPos(m_px, m_py);
 
+
 }
 
 //ドロー
@@ -155,11 +159,31 @@ void CObjHero::Draw()
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
 
-	//切り取り位置の位置
-	src.m_top = (65.0f* m_pos);
-	src.m_left = 0.0f + AniData[m_ani_frame] * 64;
-	src.m_right = 60.0f + AniData[m_ani_frame] * 64;
-	src.m_bottom = (65 + 65.0f *m_pos);
+	if (m_pos == 1)
+	{
+		//切り取り位置の位置
+		src.m_top = 65.0f;
+		src.m_left = 0.0f + AniData[m_ani_frame] * 64;
+		src.m_right = 150.0f + AniData[m_ani_frame] * 64;
+		src.m_bottom = 150.0f;
+	}
+	else if (m_pos == 2)
+	{
+		//切り取り位置の位置
+		src.m_top = 65.0f;
+		src.m_left = 0.0f + AniData[m_ani_frame] * 64;
+		src.m_right = 150.0f + AniData[m_ani_frame] * 64;
+		src.m_bottom = 150.0f;
+	}
+	else if (m_pos == 3)
+	{
+		//切り取り位置の位置
+		src.m_top = 65.0f;
+		src.m_left = 0.0f + AniData[m_ani_frame] * 64;
+		src.m_right = 150.0f + AniData[m_ani_frame] * 64;
+		src.m_bottom = 150.0f;
+	}
+	
 
 	//表示位置の設定
 	dst.m_top = 0.0f + m_py;

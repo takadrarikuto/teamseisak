@@ -129,6 +129,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjFirstStar.h" />
     <ClInclude Include="ObjAncer.h" />
+    <ClInclude Include="ObjGameKuria.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjMar.h" />
     <ClInclude Include="ObjMars.h" />
@@ -136,6 +137,7 @@
     <ClInclude Include="Objstage.h" />
     <ClInclude Include="ObjStageselect.h" />
     <ClInclude Include="ObjTitle.h" />
+    <ClInclude Include="SceneGameKuria.h" />
     <ClInclude Include="SceneMar.h" />
     <ClInclude Include="SceneMars.h" />
     <ClInclude Include="SceneOperation.h" />
@@ -162,6 +164,7 @@
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjAncer.cpp" />
     <ClCompile Include="ObjFirstStar.cpp" />
+    <ClCompile Include="ObjGameKuria.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjMars.cpp" />
     <ClCompile Include="ObjOperation.cpp" />
@@ -169,6 +172,7 @@
     <ClCompile Include="Objstage.cpp" />
     <ClCompile Include="ObjStageselect.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
+    <ClCompile Include="SceneGameKuria.cpp" />
     <ClCompile Include="SceneMar.cpp" />
     <ClCompile Include="SceneMars.cpp" />
     <ClCompile Include="SceneOperation.cpp" />

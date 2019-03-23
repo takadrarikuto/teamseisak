@@ -22,7 +22,7 @@ void CObjAncer::Init()
 	m_pay = 535.0f;
 	//ロープ
 	//m_pry = 490.0f;
-	m_prx = 446.0f;
+	m_prx = 448.0f;
 	m_pry = 500.0f;
 
 	//移動ベクトル初期化
@@ -35,11 +35,10 @@ void CObjAncer::Init()
 	//当たり判定用のHitBoxを作成
 
 	//アンカー
-	//Hits::SetHitBox(this, m_px, m_py, 20, 50, ELEMENT_ANCER, OBJ_ANCER, 11);
+	Hits::SetHitBox(this, m_pax, m_pay, 40, 40, ELEMENT_ANCER, OBJ_ANCER, 11);
 
 	time = 0.0f;
 	flag = false;
-	a_time = 0;
 }
 
 //アクション
@@ -127,13 +126,13 @@ void CObjAncer::Action()
 		m_pay = 535.0f;
 	}
 	//ロープ
-	if (m_prx < 46.0f)
+	if (m_prx < 49.0f)
 	{
-		m_prx = 46.0f;
+		m_prx = 49.0f;
 	}
-	else if (m_prx + 28.0f > 800.0f)
+	else if (m_prx + 26.0f > 800.0f)
 	{
-		m_prx = 800.0f - 28.0f;
+		m_prx = 800.0f - 26.0f;
 	}
 
 	//位置更新
@@ -144,10 +143,10 @@ void CObjAncer::Action()
 	m_pry += m_vy;
 	
 	//自身のHitBoxを持ってくる
-	//CHitBox* hit_a = Hits::GetHitBox(this);
+	CHitBox* hit_a = Hits::GetHitBox(this);
 
 	//HitBoxの位置の変更
-	//hit_a->SetPos(m_px, m_py);
+	hit_a->SetPos(m_pax, m_pay - 45);
 
 	time = 0.0f;
 
