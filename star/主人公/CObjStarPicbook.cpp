@@ -67,16 +67,37 @@ void CObjStarPicbook::Draw()
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
 	//マウスの位置とクリックする場所で当たり判定
-	// left				 right            top            bottom               
-	if (m_mou_x > 230 && m_mou_x < 450 && m_mou_y>400 && m_mou_y < 430)
+	
+	//枠を描画
+	dst.m_top = 0.0f;
+	dst.m_left = 5.0f;
+	dst.m_right = 110.0f;
+	dst.m_bottom = 50.0f;
+	Draw::Draw(9, &src, &dst, c, 0.0f);
+
+	if (m_mou_x > 110 || m_mou_y > 50)
 	{
-		
+		//Font::StrDraw(L"戻る", 10, 0, 50, c);
+	}
+	Font::StrDraw(L"戻る", 10, 0, 50, c);
+	// left				 right            top            bottom               
+	if (m_mou_x > 5 && m_mou_x < 110 && m_mou_y>0 && m_mou_y <50)
+	{
+		if (m_mou_l == true)
+		{
+			//Font::StrDraw(L"成功", 10, 0, 50, c);
+			Scene::SetScene(new CSceneStageselect());
+		}
+		else
+		{
+			//Font::StrDraw(L"当たり判定", 10, 0, 50, c);
+		}
 	}
 
 	//仮マウス位置表示
-	wchar_t str[256];
+	/*wchar_t str[256];
 	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, c);
+	Font::StrDraw(str, 20, 20, 12, c);*/
 
 
 }
