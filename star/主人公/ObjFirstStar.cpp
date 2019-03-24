@@ -56,8 +56,8 @@ void CObjFirstStar::Action()
 	//アンカーと当たっているか
 	if (hit_s->CheckObjNameHit(OBJ_ANCER) != nullptr)
 	{
-		m_px = ax - 30;
-		m_py = ay - 30;
+		m_px = ax - 10;
+		m_py = ay - 80;
 	}
 
 	//画面外に出たら削除または主人公の当たり判定と当たると星を削除

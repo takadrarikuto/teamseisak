@@ -90,11 +90,11 @@ void CObjAncer::Action()
 
 	if (Input::GetMouButtonL() == true)
 	{
-		m_vy -= 6.0f;
+		m_vy -= 10.0f;
 	}
 	else if (Input::GetMouButtonL() == false)
 	{
-		m_vy += 3.0f;
+		m_vy += 5.0f;
 	}
 
 

@@ -55,16 +55,10 @@
     <ClCompile Include="ObjMars.cpp">
       <Filter>ソースファイル\火星</Filter>
     </ClCompile>
-    <ClCompile Include="SceneMar.cpp">
-      <Filter>ソースファイル\火星</Filter>
-    </ClCompile>
     <ClCompile Include="SceneMars.cpp">
       <Filter>ソースファイル\火星</Filter>
     </ClCompile>
     <ClCompile Include="ObjAncer.cpp">
-      <Filter>ソースファイル\主人公</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjFirstStar.cpp">
       <Filter>ソースファイル\主人公</Filter>
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
@@ -99,6 +93,27 @@
     </ClCompile>
     <ClCompile Include="CObjOperation.h">
       <Filter>ヘッダーファイル\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjJupiter.cpp">
+      <Filter>ソースファイル\木星</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneJupiter.cpp">
+      <Filter>ソースファイル\木星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjVenus.cpp">
+      <Filter>ソースファイル\土星</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneVenus.cpp">
+      <Filter>ソースファイル\土星</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSaturn.cpp">
+      <Filter>ソースファイル\金星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSaturn.cpp">
+      <Filter>ソースファイル\金星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjFirstStar.cpp">
+      <Filter>ソースファイル\野生の星</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -159,9 +174,6 @@
     <ClInclude Include="ObjHero.h">
       <Filter>ヘッダーファイル\主人公</Filter>
     </ClInclude>
-    <ClInclude Include="ObjMar.h">
-      <Filter>ヘッダーファイル\火星</Filter>
-    </ClInclude>
     <ClInclude Include="ObjMars.h">
       <Filter>ヘッダーファイル\火星</Filter>
     </ClInclude>
@@ -183,9 +195,6 @@
     <ClInclude Include="GameL\SceneManager.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SceneMar.h">
-      <Filter>ヘッダーファイル\火星</Filter>
-    </ClInclude>
     <ClInclude Include="SceneMars.h">
       <Filter>ヘッダーファイル\火星</Filter>
     </ClInclude>
@@ -200,6 +209,24 @@
     </ClInclude>
     <ClInclude Include="SceneTitle.h">
       <Filter>ヘッダーファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjJupiter.h">
+      <Filter>ソースファイル\木星</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneJupiter.h">
+      <Filter>ソースファイル\木星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjVenus.h">
+      <Filter>ソースファイル\土星</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneVenus.h">
+      <Filter>ソースファイル\土星</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneSaturn.h">
+      <Filter>ソースファイル\金星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSaturn.h">
+      <Filter>ソースファイル\金星</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +280,18 @@
     </Filter>
     <Filter Include="ヘッダーファイル\星図鑑">
       <UniqueIdentifier>{8d0bc5e2-d397-43c8-9497-f6269912a9ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\木星">
+      <UniqueIdentifier>{833606c2-858c-4b18-9ee5-34c423fdae04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\金星">
+      <UniqueIdentifier>{ae831b35-582d-4079-8fc2-ba730f50d011}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\土星">
+      <UniqueIdentifier>{7e06a39a-b160-4e9d-9edf-6fd589debe4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\野生の星">
+      <UniqueIdentifier>{a49b68c1-ae17-4a02-9e56-4a95cab78d40}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

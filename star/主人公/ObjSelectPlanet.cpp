@@ -33,13 +33,43 @@ void CObjSelectPlanet::Action()
 		{
 			if (m_start_flag == true)
 			{
-				Scene::SetScene(new CSceneMar());
+				Scene::SetScene(new CSceneMars());
 			}
 		}
-		else
+	}
+	if (m_mous_x > 222 && m_mous_x < 379 && m_mous_y>135 && m_mous_y < 325)
+	{
+		if (m_mous_l == true)
 		{
-			m_start_flag = true;
+			if (m_start_flag == true)
+			{
+				Scene::SetScene(new CSceneSaturn());
+			}
 		}
+	}
+	if (m_mous_x > 422 && m_mous_x < 542 && m_mous_y>135 && m_mous_y < 325)
+	{
+		if (m_mous_l == true)
+		{
+			if (m_start_flag == true)
+			{
+				Scene::SetScene(new CSceneJupiter());
+			}
+		}
+	}
+	if (m_mous_x > 585 && m_mous_x < 722 && m_mous_y>135 && m_mous_y < 325)
+	{
+		if (m_mous_l == true)
+		{
+			if (m_start_flag == true)
+			{
+				Scene::SetScene(new CSceneVenus());
+			}
+		}
+	}
+	else
+	{
+		m_start_flag = true;
 	}
 
 }

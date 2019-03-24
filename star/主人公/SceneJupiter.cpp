@@ -10,23 +10,13 @@
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneMar.h"
+#include "SceneJupiter.h"
 #include "GameHead.h"
 
-//コンストラクタ
-CSceneMar::CSceneMar()
-{
 
-}
-
-//デストラクタ
-CSceneMar::~CSceneMar()
-{
-
-}
 
 //初期化メゾット
-void CSceneMar::InitScene()
+void CSceneJupiter::InitScene()
 {
 	//グラフィック読み込み
 	//背景
@@ -50,8 +40,8 @@ void CSceneMar::InitScene()
 	Objs::InsertObj(obj_a, OBJ_ANCER, 11);
 
 	//背景オブジェクト生成
-	CObjMars* obj_m = new CObjMars();
-	Objs::InsertObj(obj_m, OBJ_MARS, 8);
+	CObjJupiter* obj_m = new CObjJupiter();
+	Objs::InsertObj(obj_m, OBJ_JUPITER, 8);
 	CObjstage* obj_h = new CObjstage();
 	Objs::InsertObj(obj_h, OBJ_STAGE, 9);
 
@@ -60,7 +50,7 @@ void CSceneMar::InitScene()
 }
 
 //実行中メゾット
-void CSceneMar::Scene()
+void CSceneJupiter::Scene()
 {
 	/*
 	//星の位置の取得
@@ -75,13 +65,13 @@ void CSceneMar::Scene()
 	{
 		//スターオブジェクト作成
 		CObjFirstStar* star = new CObjFirstStar(0.0f, 0.0f);
-		Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+		Objs::InsertObj(star, OBJ_FIRSTSTAR, 12);    //スターオブジェクト登録
 	}
 	else if (time_star == 10)
 	{
 		//スターオブジェクト作成
 		CObjFirstStar* star = new CObjFirstStar(0.0f, 100.0f);
-		Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+		Objs::InsertObj(star, OBJ_FIRSTSTAR, 12);    //スターオブジェクト登録
 	}
 	else if (time_star = 60)
 	{
