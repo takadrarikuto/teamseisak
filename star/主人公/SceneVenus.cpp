@@ -10,13 +10,13 @@
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneMars.h"
+#include "SceneVenus.h"
 #include "GameHead.h"
 
 
 
 //初期化メゾット
-void CSceneMars::InitScene()
+void CSceneVenus::InitScene()
 {
 	//グラフィック読み込み
 	//背景
@@ -40,8 +40,8 @@ void CSceneMars::InitScene()
 	Objs::InsertObj(obj_a, OBJ_ANCER, 11);
 
 	//背景オブジェクト生成
-	CObjMars* obj_m = new CObjMars();
-	Objs::InsertObj(obj_m, OBJ_MARS, 8);
+	CObjVenus* obj_m = new CObjVenus();
+	Objs::InsertObj(obj_m, OBJ_VENUS, 8);
 	CObjstage* obj_h = new CObjstage();
 	Objs::InsertObj(obj_h, OBJ_STAGE, 9);
 
@@ -50,7 +50,7 @@ void CSceneMars::InitScene()
 }
 
 //実行中メゾット
-void CSceneMars::Scene()
+void CSceneVenus::Scene()
 {
 	/*
 	//星の位置の取得

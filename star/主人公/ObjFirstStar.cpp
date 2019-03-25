@@ -79,6 +79,7 @@ void CObjFirstStar::Action()
 		star_co += 1; //星の数カウント
 	}
 
+
 }
 //ドロー
 void CObjFirstStar::Draw()

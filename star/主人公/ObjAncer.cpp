@@ -111,6 +111,25 @@ void CObjAncer::Action()
 		m_vy += 3.0f;
 	}
 
+	if (m_pay == 535.0f)
+	{
+		flag = false;
+	}
+	else if (m_pay == 535.0f)
+	{
+		flag = true;
+	}
+	*/
+
+	if (Input::GetMouButtonL() == true)
+	{
+		m_vy -= 10.0f;
+	}
+	else if (Input::GetMouButtonL() == false)
+	{
+		m_vy += 5.0f;
+	}
+
 
 	//‰æ–ÊŠO‚Éo‚È‚¢ˆ—
 	//–{‘Ì
