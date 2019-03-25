@@ -5,11 +5,11 @@
 using namespace GameL;
 
 //オブジェクト：タイトル
-class CSceneMars : public CScene
+class CSceneVenus : public CScene
 {
 public:
-	CSceneMars() {};
-	~CSceneMars() {};
+	CSceneVenus() {};
+	~CSceneVenus() {};
 	void InitScene(); //ゲームタイトルの初期化メソッド
 	void Scene();     //ゲームタイトルの実行中メソッド
 private:

@@ -38,7 +38,8 @@ void CObjAncer::Init()
 	Hits::SetHitBox(this, m_pax, m_pay, 40, 40, ELEMENT_ANCER, OBJ_ANCER, 11);
 
 	time = 0.0f;
-	flag = false;
+	ancer_flag = false;
+	ancer_co = 0;
 }
 
 //アクション
@@ -50,8 +51,8 @@ void CObjAncer::Action()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-	//左クリックしている時移動禁止
-	if (m_mous_l == false)
+	//左クリックしている時またはアンカーのy位置が535以下の時移動禁止
+	if (m_mous_l == false && m_pay > 535.0f)
 	{
 		//移動
 		//左
@@ -88,13 +89,45 @@ void CObjAncer::Action()
 	}
 	*/
 
-	if (Input::GetMouButtonL() == true)
+	//自身のHitBoxを持ってくる
+	CHitBox* hit_a = Hits::GetHitBox(this);
+
+	
+	if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr)
+	{
+		ancer_flag = false;
+	}
+	else if(Input::GetMouButtonL() == true)
+	{
+		ancer_flag = true;
+	}
+
+	if(ancer_flag == true)
 	{
 		m_vy -= 6.0f;
 	}
-	else if (Input::GetMouButtonL() == false)
+	else
 	{
 		m_vy += 3.0f;
+	}
+
+	if (m_pay == 535.0f)
+	{
+		flag = false;
+	}
+	else if (m_pay == 535.0f)
+	{
+		flag = true;
+	}
+	*/
+
+	if (Input::GetMouButtonL() == true)
+	{
+		m_vy -= 10.0f;
+	}
+	else if (Input::GetMouButtonL() == false)
+	{
+		m_vy += 5.0f;
 	}
 
 
@@ -120,6 +153,7 @@ void CObjAncer::Action()
 	if (m_pay < 50.0f)
 	{
 		m_pay = 50.0f;
+		ancer_flag = false;
 	}
 	else if (m_pay > 535.0f)
 	{
@@ -142,15 +176,13 @@ void CObjAncer::Action()
 	m_prx += m_vx;
 	m_pry += m_vy;
 	
-	//自身のHitBoxを持ってくる
-	CHitBox* hit_a = Hits::GetHitBox(this);
 
 	//HitBoxの位置の変更
 	hit_a->SetPos(m_pax, m_pay - 45);
 
 	time = 0.0f;
 
-	//アンカー発射
+	//ロープ長さ調整
 	if (Input::GetMouButtonL() == true)
 	{
 		time++;

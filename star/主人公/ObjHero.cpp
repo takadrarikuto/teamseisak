@@ -50,8 +50,13 @@ void CObjHero::Action()
 
 	m_mous_l = Input::GetMouButtonL();
 
-	//左クリックしている時移動禁止
-	if (m_mous_l == false)
+	//アンカーの位置の取得
+	CObjAncer* Ancer = (CObjAncer*)Objs::GetObj(OBJ_ANCER);
+	float ax = Ancer->GetX();
+	float ay = Ancer->GetY();
+
+	//左クリックしている時またはアンカーのy位置が535以下の時移動禁止
+	if (m_mous_l == false && ay > 535.0f)
 	{
 		//移動処理
 		//左
@@ -162,26 +167,26 @@ void CObjHero::Draw()
 	if (m_pos == 1)
 	{
 		//切り取り位置の位置
-		src.m_top = 65.0f;
-		src.m_left = 0.0f + AniData[m_ani_frame] * 64;
-		src.m_right = 150.0f + AniData[m_ani_frame] * 64;
-		src.m_bottom = 150.0f;
+		src.m_top = 220.0f;
+		src.m_left = 35.0f + AniData[m_ani_frame] * 150;
+		src.m_right = 175.0f + AniData[m_ani_frame] * 150;
+		src.m_bottom = 425.0f;
 	}
 	else if (m_pos == 2)
 	{
 		//切り取り位置の位置
-		src.m_top = 65.0f;
-		src.m_left = 0.0f + AniData[m_ani_frame] * 64;
-		src.m_right = 150.0f + AniData[m_ani_frame] * 64;
-		src.m_bottom = 150.0f;
+		src.m_top = 0.0f;
+		src.m_left = 35.0f + AniData[m_ani_frame] * 150;
+		src.m_right = 160.0f + AniData[m_ani_frame] * 150;
+		src.m_bottom = 200.0f;
 	}
 	else if (m_pos == 3)
 	{
 		//切り取り位置の位置
-		src.m_top = 65.0f;
-		src.m_left = 0.0f + AniData[m_ani_frame] * 64;
-		src.m_right = 150.0f + AniData[m_ani_frame] * 64;
-		src.m_bottom = 150.0f;
+		src.m_top = 20.0f;
+		src.m_left =490.0f;
+		src.m_right = 610.0f;
+		src.m_bottom = 220.0f;
 	}
 	
 

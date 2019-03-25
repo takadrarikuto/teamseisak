@@ -35,6 +35,6 @@ private:
 	bool m_mous_l;
 	float time;
 
-	bool flag;
-
+	bool ancer_flag;
+	int ancer_co;
 };
