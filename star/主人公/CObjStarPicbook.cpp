@@ -16,10 +16,10 @@ void CObjStarPicbook::Action()
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
+	
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	
 	
 }
 
@@ -79,7 +79,10 @@ void CObjStarPicbook::Draw()
 	{
 		//Font::StrDraw(L"戻る", 10, 0, 50, c);
 	}
+	
 	Font::StrDraw(L"戻る", 10, 0, 50, c);
+	
+	//戻るボタン
 	// left				 right            top            bottom               
 	if (m_mou_x > 5 && m_mou_x < 110 && m_mou_y>0 && m_mou_y <50)
 	{

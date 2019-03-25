@@ -179,6 +179,9 @@
     <ClCompile Include="SceneStageselect.cpp" />
     <ClCompile Include="SceneStarPicbook.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="StarPresent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />

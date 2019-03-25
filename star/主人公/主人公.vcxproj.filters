@@ -100,6 +100,9 @@
     <ClCompile Include="CObjOperation.h">
       <Filter>ヘッダーファイル\操作説明</Filter>
     </ClCompile>
+    <ClCompile Include="StarPresent.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
