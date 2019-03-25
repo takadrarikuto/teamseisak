@@ -43,8 +43,6 @@
     <ClCompile Include="GameL\Draw2DTex_Source.cpp">
       <Filter>ライブラリ</Filter>
     </ClCompile>
-    <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソースファイル\Scene</Filter>
     <ClCompile Include="GameL\DrawFont.cpp">
       <Filter>ライブラリ</Filter>
     </ClCompile>
@@ -53,6 +51,8 @@
     </ClCompile>
     <ClCompile Include="GameL\HitBoxManager.cpp">
       <Filter>ライブラリ</Filter>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソースファイル\Scene</Filter>
     </ClCompile>
     <ClCompile Include="GameL\GameL_Main.cpp">
       <Filter>ライブラリ</Filter>
@@ -134,6 +134,8 @@
     <ClInclude Include="GameL\Audio.h">
       <Filter>ライブラリ</Filter>
     </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ヘッダーファイル\Scene</Filter>
     <ClInclude Include="GameL\DirectXDevice.h">
       <Filter>ライブラリ</Filter>
     </ClInclude>
@@ -142,8 +144,6 @@
     </ClInclude>
     <ClInclude Include="GameL\DrawFont.h">
       <Filter>ライブラリ</Filter>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>ヘッダーファイル\Scene</Filter>
     </ClInclude>
     <ClInclude Include="GameL\DrawTexture.h">
       <Filter>ライブラリ</Filter>
