@@ -100,8 +100,12 @@
     <ClCompile Include="CObjOperation.h">
       <Filter>ヘッターファイル\Obj</Filter>
     </ClCompile>
+    <ClCompile Include="SceneSaturn.cpp" />
     <ClCompile Include="StarPresent.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjJupiter.cpp">
+      <Filter>ソースファイル\Obj\木星</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -168,9 +172,6 @@
     <ClInclude Include="CObjStarPicbook.h">
       <Filter>ヘッターファイル\Obj\星図鑑</Filter>
     </ClInclude>
-    <ClInclude Include="ObjMar.h">
-      <Filter>ヘッターファイル\Obj\火星</Filter>
-    </ClInclude>
     <ClInclude Include="ObjMars.h">
       <Filter>ヘッターファイル\Obj\火星</Filter>
     </ClInclude>
@@ -204,6 +205,9 @@
     <ClInclude Include="ObjFirstStar.h">
       <Filter>ヘッターファイル\Obj\星</Filter>
     </ClInclude>
+    <ClInclude Include="ObjJupiter.h" />
+    <ClInclude Include="ObjVenus.h" />
+    <ClInclude Include="SceneSaturn.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
@@ -292,6 +296,9 @@
     </Filter>
     <Filter Include="ヘッターファイル\Scene\ステージ選択">
       <UniqueIdentifier>{9997f91f-9e68-4ddf-a21f-3bc1e2337500}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\木星">
+      <UniqueIdentifier>{2d44383a-3b5d-411e-893e-7f424bc27cd1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
