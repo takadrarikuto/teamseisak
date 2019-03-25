@@ -16,6 +16,8 @@ public:
 	void Action();
 	void Draw();
 
+	float GetX() { return m_pax; }
+	float GetY() { return m_pay; }
 private:
 
 	//ˆÊ’u
@@ -31,4 +33,8 @@ private:
 	float m_vy;
 
 	bool m_mous_l;
+	float time;
+
+	bool ancer_flag;
+	int ancer_co;
 };
