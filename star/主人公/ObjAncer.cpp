@@ -104,30 +104,11 @@ void CObjAncer::Action()
 
 	if(ancer_flag == true)
 	{
-		m_vy -= 6.0f;
+		m_vy -= 9.0f;
 	}
 	else
 	{
-		m_vy += 3.0f;
-	}
-
-	if (m_pay == 535.0f)
-	{
-		flag = false;
-	}
-	else if (m_pay == 535.0f)
-	{
-		flag = true;
-	}
-	*/
-
-	if (Input::GetMouButtonL() == true)
-	{
-		m_vy -= 10.0f;
-	}
-	else if (Input::GetMouButtonL() == false)
-	{
-		m_vy += 5.0f;
+		m_vy += 6.0f;
 	}
 
 
