@@ -28,7 +28,7 @@ void CSceneMars::InitScene()
 	Draw::LoadImage(L"アンカー（仮　透過済み）.png", 11, TEX_SIZE_512);
 
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
-	Draw::LoadImage(L"firststar.png", 12, TEX_SIZE_512);
+	Draw::LoadImage(L"星(透過済み).png", 12, TEX_SIZE_512);
 
 
 	//仮主人公オブジェクト生成
@@ -47,6 +47,10 @@ void CSceneMars::InitScene()
 
 	//星生成時間初期化
 	time_star = 0;
+
+	//星生成フラグ初期化
+	star_flag = false;
+
 }
 
 //実行中メゾット
@@ -59,23 +63,42 @@ void CSceneMars::Scene()
 	float sy = star->GetY();
 	*/
 
-	time_star++;
-
-	if (time_star == 1)
+	if (time_star == 30)
 	{
-		//スターオブジェクト作成
-		CObjFirstStar* star = new CObjFirstStar(0.0f, 0.0f);
-		Objs::InsertObj(star, OBJ_FIRSTSTAR, 12);    //スターオブジェクト登録
+		star_flag = true;
 	}
-	else if (time_star == 10)
+
+	if (star_flag == false)
+	{
+		time_star++;
+	}
+	else if (star_flag == true)
 	{
 		//スターオブジェクト作成
 		CObjFirstStar* star = new CObjFirstStar(0.0f, 100.0f);
-		Objs::InsertObj(star, OBJ_FIRSTSTAR, 12);    //スターオブジェクト登録
+		Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+
+		time_star = 0;
+		star_flag = false;
+	}
+
+	/*
+	if (time_star == 1)
+	{
+	//スターオブジェクト作成
+	CObjFirstStar* star = new CObjFirstStar(0.0f, 0.0f);
+	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+	}
+	else if (time_star == 10)
+	{
+	//スターオブジェクト作成
+	CObjFirstStar* star = new CObjFirstStar(0.0f, 100.0f);
+	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
 	}
 	else if (time_star = 60)
 	{
-		time_star = 0;
+	time_star = 0;
 	}
+	*/
 
 }

@@ -104,7 +104,7 @@ void CObjAncer::Action()
 
 	if(ancer_flag == true)
 	{
-		m_vy -= 6.0f;
+		m_vy -= 9.0f;
 	}
 	else
 	{

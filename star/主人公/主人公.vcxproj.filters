@@ -73,17 +73,11 @@
     <ClCompile Include="ObjTitle.cpp">
       <Filter>ソースファイル\Obj\タイトル・操作・クリア</Filter>
     </ClCompile>
-    <ClCompile Include="SceneGameKuria.cpp">
-      <Filter>ソースファイル\Obj\タイトル・操作・クリア</Filter>
-    </ClCompile>
     <ClCompile Include="ObjOperation.cpp">
       <Filter>ソースファイル\Obj</Filter>
     </ClCompile>
     <ClCompile Include="SceneOperation.cpp">
       <Filter>ソースファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMar.cpp">
-      <Filter>ソースファイル\Scene\火星</Filter>
     </ClCompile>
     <ClCompile Include="SceneMars.cpp">
       <Filter>ソースファイル\Scene\火星</Filter>
@@ -106,6 +100,14 @@
     </ClCompile>
     <ClCompile Include="ObjJupiter.cpp">
       <Filter>ソースファイル\Obj\木星</Filter>
+    <ClCompile Include="SceneSaturn.cpp">
+      <Filter>ソースファイル\Scene\火星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjJupiter.cpp">
+      <Filter>ソースファイル\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGameKuria.cpp">
+      <Filter>ソースファイル\Scene\タイトル・操作・クリア</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -190,12 +192,6 @@
     <ClInclude Include="SceneTitle.h">
       <Filter>ヘッターファイル\Scene\タイトル・操作・クリア</Filter>
     </ClInclude>
-    <ClInclude Include="SceneMar.h">
-      <Filter>ヘッターファイル\Scene\火星</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMars.h">
-      <Filter>ヘッターファイル\Scene\火星</Filter>
-    </ClInclude>
     <ClInclude Include="SceneStarPicbook.h">
       <Filter>ヘッターファイル\Scene\星図鑑</Filter>
     </ClInclude>
@@ -208,6 +204,18 @@
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="SceneSaturn.h" />
+    <ClInclude Include="SceneSaturn.h">
+      <Filter>ヘッターファイル\Scene\火星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjJupiter.h">
+      <Filter>ヘッターファイル\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjVenus.h">
+      <Filter>ヘッターファイル\Obj</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMars.h">
+      <Filter>ヘッターファイル\Scene\火星</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
