@@ -1,4 +1,5 @@
 //GameLで使用するヘッダー
+
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
@@ -21,6 +22,8 @@ void CObjStarPicbook::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 	
+	
+
 }
 
 void CObjStarPicbook::Draw()
@@ -45,7 +48,7 @@ void CObjStarPicbook::Draw()
 	
 	for (int i = 0; i <= 7; i++)
 	{
-		//星の名前を描画
+		//星の名前の枠を描画
 			Draw::Draw(9, &src, &dst, c, 0.0f);
 			dst.m_left = dst.m_right + 0.0f;
 			dst.m_right = dst.m_right + 100.0f;
@@ -68,18 +71,19 @@ void CObjStarPicbook::Draw()
 
 	//マウスの位置とクリックする場所で当たり判定
 	
-	//枠を描画
+	//戻るボタンの枠を描画
 	dst.m_top = 0.0f;
 	dst.m_left = 5.0f;
 	dst.m_right = 110.0f;
 	dst.m_bottom = 50.0f;
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
-	if (m_mou_x > 110 || m_mou_y > 50)
+	//ｂを押すと戻る
+	if (Input::GetVKey('B') == true)
 	{
-		//Font::StrDraw(L"戻る", 10, 0, 50, c);
+		Scene::SetScene(new CSceneStageselect());
 	}
-	
+
 	Font::StrDraw(L"戻る", 10, 0, 50, c);
 	
 	//戻るボタン
@@ -88,13 +92,12 @@ void CObjStarPicbook::Draw()
 	{
 		if (m_mou_l == true)
 		{
-			//Font::StrDraw(L"成功", 10, 0, 50, c);
+			
 			Scene::SetScene(new CSceneStageselect());
 		}
-		else
-		{
-			//Font::StrDraw(L"当たり判定", 10, 0, 50, c);
-		}
+		
 	}
+
+
 
 }

@@ -26,8 +26,7 @@ void CObjFirstStar::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-	star_co = 0;
-
+	star_co =0;
 	star_flag = false;
 
 	Hits::SetHitBox(this, m_px, m_py, 64, 64, OBJ_FIRSTSTAR, ELEMENT_RED, 12);
@@ -45,6 +44,10 @@ void CObjFirstStar::Action()
 	m_px += m_vx;
 	m_py += m_vy;
 
+	for (int i = 0; i <= 10; i++)
+	{
+		test[i] = 0;
+	}
 
 	//自身のHitBoxを持ってくる
 	CHitBox* hit_s = Hits::GetHitBox(this);
@@ -63,7 +66,7 @@ void CObjFirstStar::Action()
 		m_px = ax - 13;
 		m_py = ay - 45;
 	}
-
+	
 	//画面外に出たら星を削除
 	if (m_px > 800.0f || star_flag == true)
 	{
@@ -71,22 +74,23 @@ void CObjFirstStar::Action()
 		Hits::DeleteHitBox(this); //HitBox削除
 		star_flag = false;
 	}
-
+	
 	//主人公の当たり判定に当たると星フラグをtrueにし、星の数をカウント
 	if (hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
 	{
+		star_co++;
 		star_flag = true;
-		star_co += 1; //星の数カウント
 	}
 
-
+	
 }
 //ドロー
 void CObjFirstStar::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	swprintf_s(str, L"星の数×%3d個", star_co);
+	
+	swprintf_s(str, L"星の数×%3d個",star_co);
 	Font::StrDraw(str, 10, 570, 30, c);
 
 	RECT_F src;//描画元切り取り位置
@@ -97,7 +101,6 @@ void CObjFirstStar::Draw()
 	src.m_left = 350.0f; //青色0.0f
 	src.m_right = 510.0f; //青色190.0f
 	src.m_bottom = 200.0f; //青色200.0f
-
 
 	//表示位置の設定
 	dst.m_top = 0.0f + m_py;
