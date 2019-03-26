@@ -20,4 +20,5 @@ private:
 	bool m_start_flag;
 	float m_mous_x; //マウスの位置X
 	float m_mous_y; //マウスの位置Y
+	int time_back;
 };

@@ -29,7 +29,7 @@ void CObjGameKuria::Action()
 	{
 		if (m_start_flag == true)
 		{
-			Scene::SetScene(new CSceneTitle());
+			Scene::SetScene(new CSceneTitle()); 
 		}
 	}
 	else
@@ -43,7 +43,8 @@ void CObjGameKuria::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"ゲームクリア", 100, 100, 100, c);
+	Font::StrDraw(L"ゲームクリア", 240, 200, 50, c);
+	Font::StrDraw(L"左クリックでタイトルへ", 130, 400, 50, c);
 
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置

@@ -3,6 +3,7 @@
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL\DrawFont.h"
 
 #include "GameHead.h"
 #include "ObjAncer.h"
@@ -38,7 +39,8 @@ void CObjAncer::Init()
 	Hits::SetHitBox(this, m_pax, m_pay, 40, 40, ELEMENT_ANCER, OBJ_ANCER, 11);
 
 	time = 0.0f;
-	flag = false;
+	ancer_flag = false;
+
 }
 
 //アクション
@@ -46,12 +48,13 @@ void CObjAncer::Action()
 {
 	m_mous_l = Input::GetMouButtonL();
 
+
 	//移動ベクトル破棄
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-	//左クリックしている時移動禁止
-	if (m_mous_l == false)
+	//左クリックしている時またはアンカーのy位置が535以下の時移動禁止
+	if (m_mous_l == false && m_pay > 535.0f)
 	{
 		//移動
 		//左
@@ -66,35 +69,37 @@ void CObjAncer::Action()
 		}
 	}
 
+
+	//自身のHitBoxを持ってくる
+	CHitBox* hit_a = Hits::GetHitBox(this);
+
+
 	//アンカー発射
-
-	/*
-	if (Input::GetMouButtonL() == true && flag == true)
+	if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr)
 	{
-		m_vy -= 6.0f;
+		ancer_flag = false;
 	}
-	else if(Input::GetMouButtonL() == false  && flag == false)
+	else if (Input::GetMouButtonL() == true && m_pay > 535.0f)
 	{
-		m_vy += 3.0f;
+		ancer_flag = true;
 	}
 
-	if (m_pay == 535.0f)
+	if (ancer_flag == true)
 	{
-		flag = false;
+		m_vy -= 9.0f;
+		time += 13.0f; //ロープ長さ調整
 	}
-	else if (m_pay == 535.0f)
+	else
 	{
-		flag = true;
-	}
-	*/
-
-	if (Input::GetMouButtonL() == true)
-	{
-		m_vy -= 6.0f;
-	}
-	else if (Input::GetMouButtonL() == false)
-	{
-		m_vy += 3.0f;
+		m_vy += 6.0f;
+		if (m_pry < 500.0f)
+		{
+			time -= 9.0f;
+		}
+		else
+		{
+			time = 0.0f;
+		}
 	}
 
 
@@ -120,6 +125,16 @@ void CObjAncer::Action()
 	if (m_pay < 50.0f)
 	{
 		m_pay = 50.0f;
+		ancer_flag = false;
+	}
+	else if (m_pay > 535.0f)
+	{
+		m_pay = 535.0f;
+	}
+	if (m_pay < 50.0f)
+	{
+		m_pay = 50.0f;
+		ancer_flag = false;
 	}
 	else if (m_pay > 535.0f)
 	{
@@ -134,6 +149,10 @@ void CObjAncer::Action()
 	{
 		m_prx = 800.0f - 26.0f;
 	}
+	if (m_pry > 500.0f)
+	{
+		m_pry = 500.0f;
+	}
 
 	//位置更新
 	m_px += m_vx;
@@ -142,23 +161,10 @@ void CObjAncer::Action()
 	m_prx += m_vx;
 	m_pry += m_vy;
 	
-	//自身のHitBoxを持ってくる
-	CHitBox* hit_a = Hits::GetHitBox(this);
 
 	//HitBoxの位置の変更
 	hit_a->SetPos(m_pax, m_pay - 45);
 
-	time = 0.0f;
-
-	//アンカー発射
-	if (Input::GetMouButtonL() == true)
-	{
-		time++;
-	}
-	else if (Input::GetMouButtonL() == false)
-	{
-		time--;
-	}
 
 }
 

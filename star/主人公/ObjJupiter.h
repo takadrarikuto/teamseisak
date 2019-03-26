@@ -6,19 +6,16 @@
 using namespace GameL;
 
 //オブジェクト　タイトル
-class CObjTitle :public CObj
+class CObjJupiter :public CObj
 {
 public:
-	CObjTitle() {};
-	~CObjTitle() {};
+	CObjJupiter() {};
+	~CObjJupiter() {};
 	void Init();
 	void Action();
 	void Draw();
 
 private:
-	bool m_mous_l; //左クリックフラグ
-	bool m_start_flag;
-	float m_mous_x; //マウスの位置X
-	float m_mous_y; //マウスの位置Y
+
 
 };

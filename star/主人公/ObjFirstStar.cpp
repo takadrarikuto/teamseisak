@@ -11,28 +11,28 @@
 //使用するネームスペース
 using namespace GameL;
 
-//コンストラクタ
-CObjFirstStar::CObjFirstStar(float x, float y)
-{
-	m_px = x;
-	m_py = y;
-}
 
 //イニシャライズ
 void CObjFirstStar::Init()
 {
 	m_px = 0.0f;
-	m_py = 0.0f;
+	m_py = 100.0f;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+
 	star_co = 0;
 
+	star_flag = false;
+
 	Hits::SetHitBox(this, m_px, m_py, 64, 64, OBJ_FIRSTSTAR, ELEMENT_RED, 12);
+
+
 }
 
 //アクション
 void CObjFirstStar::Action()
 {
+	
 	m_move = rand() % 50;
 
 	if (m_move <= 90 && m_move <= 0)
@@ -56,32 +56,45 @@ void CObjFirstStar::Action()
 	//アンカーと当たっているか
 	if (hit_s->CheckObjNameHit(OBJ_ANCER) != nullptr)
 	{
-		m_px = ax - 30;
-		m_py = ay - 30;
+		m_px = ax - 13;
+		m_py = ay - 45;
 	}
 
-	//画面外に出たら削除または主人公の当たり判定と当たると星を削除
-	if (m_px > 800.0f)
+	//画面外に出たら星を削除
+	if (m_px > 800.0f || star_flag == true)
 	{
 		this->SetStatus(false); //自身に削除命令を出す
 		Hits::DeleteHitBox(this); //HitBox削除
+		star_flag = false;
 	}
-	else if (hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
+
+	if (m_py > 450.0f)
 	{
-		this->SetStatus(false); //自身に削除命令を出す
-		Hits::DeleteHitBox(this); //HitBox削除
-		star_co += 1;
+		star_co += 1; //星の数カウント	
+		star_flag = true;	
 	}
 
+	/*
+	//主人公の当たり判定に当たると星フラグをtrueにし、星の数をカウント
+	if (hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
+	{
+		star_co += 1; //星の数カウント
+		star_flag = true;
+	}
+	*/
 
+	if (star_co > 10)
+	{
+			Scene::SetScene(new CSceneGameKuria());
+	}
+	
 }
 //ドロー
 void CObjFirstStar::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	wchar_t str[256];
-	swprintf_s(str, L"星の数×%d個", star_co);
+	swprintf_s(str, L"星の数×%3d個", star_co); //オブジェクトが発生しすぎで描画がリセットされる
 	Font::StrDraw(str, 10, 570, 30, c);
 
 	RECT_F src;//描画元切り取り位置
@@ -89,9 +102,9 @@ void CObjFirstStar::Draw()
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 190.0f;
-	src.m_bottom = 200.0f;
+	src.m_left = 350.0f; //青色0.0f
+	src.m_right = 510.0f; //青色190.0f
+	src.m_bottom = 200.0f; //青色200.0f
 
 
 	//表示位置の設定
