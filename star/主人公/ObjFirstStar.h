@@ -10,10 +10,13 @@ class CObjFirstStar : public CObj
 public:
 	CObjFirstStar() {};
 	~CObjFirstStar() {};
+	CObjFirstStar(float x, float y); //コンストラクタ
 	void Init();      //イニシャライズ
 	void Action();    //アクション
 	void Draw();      //ドロー
 
+	//float GetX() { return m_px; }
+	//float GetY() { return m_py; }
 private:
 	float m_move;//左右スクロール用
 	float m_px;

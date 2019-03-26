@@ -39,6 +39,7 @@ void CObjHero::Init()
 
 	m_mous_l = false;
 
+	m_mous_l = false;
 }
 
 //アクション
@@ -112,6 +113,10 @@ void CObjHero::Action()
 	{
 		m_return_flag = true;
 	}
+	else
+	{
+		m_return_flag = true;
+	}
 
 	if (m_ani_time > 4)
 	{
@@ -142,6 +147,7 @@ void CObjHero::Action()
 
 	//HitBoxの位置の変更
 	hit->SetPos(m_px, m_py);
+
 
 }
 

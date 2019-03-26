@@ -102,6 +102,18 @@ void CObjAncer::Action()
 		}
 	}
 
+	
+	
+
+	if (Input::GetMouButtonL() == true)
+	{
+		m_vy -= 10.0f;
+	}
+	else if (Input::GetMouButtonL() == false)
+	{
+		m_vy += 5.0f;
+	}
+
 
 
 	//‰æ–ÊŠO‚Éo‚È‚¢ˆ—
@@ -122,6 +134,15 @@ void CObjAncer::Action()
 	else if (m_pax + 40.0f > 800.0f)
 	{
 		m_pax = 800.0f -40.0f; 
+	}
+	if (m_pay < 50.0f)
+	{
+		m_pay = 50.0f;
+		ancer_flag = false;
+	}
+	else if (m_pay > 535.0f)
+	{
+		m_pay = 535.0f;
 	}
 	if (m_pay < 50.0f)
 	{
