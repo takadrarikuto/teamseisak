@@ -26,6 +26,7 @@ enum OBJ_NAME
 	OBJ_STAGE,
 	OBJ_GAMEKURIA,
 	OBJ_STARPRESENT,
+	OBJ_AITEM,
 };
 //------------------------------------------------
 
@@ -85,6 +86,7 @@ struct UserData
 #include "CObjOperation.h"
 #include "ObjGamekuria.h"
 #include "ObjStarPresent.h"
+#include "ObjAitem.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

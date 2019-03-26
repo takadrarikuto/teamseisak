@@ -40,13 +40,15 @@ void CObjAncer::Init()
 
 	time = 0.0f;
 	ancer_flag = false;
-
+	time_co = 0;
 }
 
 //アクション
 void CObjAncer::Action()
 {
 	m_mous_l = Input::GetMouButtonL();
+
+	time_co++;
 
 
 	//移動ベクトル破棄
@@ -73,32 +75,35 @@ void CObjAncer::Action()
 	//自身のHitBoxを持ってくる
 	CHitBox* hit_a = Hits::GetHitBox(this);
 
-
-	//アンカー発射
-	if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr)
+	//画面移動時起動防止用
+	if (time_co > 30)
 	{
-		ancer_flag = false;
-	}
-	else if (Input::GetMouButtonL() == true && m_pay > 535.0f)
-	{
-		ancer_flag = true;
-	}
-
-	if (ancer_flag == true)
-	{
-		m_vy -= 9.0f;
-		time += 13.0f; //ロープ長さ調整
-	}
-	else
-	{
-		m_vy += 6.0f;
-		if (m_pry < 500.0f)
+		//アンカー発射
+		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr)
 		{
-			time -= 9.0f;
+			ancer_flag = false;
+		}
+		else if (Input::GetMouButtonL() == true && m_pay > 535.0f)
+		{
+			ancer_flag = true;
+		}
+
+		if (ancer_flag == true)
+		{
+			m_vy -= 9.0f;
+			time += 13.0f; //ロープ長さ調整
 		}
 		else
 		{
-			time = 0.0f;
+			m_vy += 6.0f;
+			if (m_pry < 500.0f)
+			{
+				time -= 9.0f;
+			}
+			else
+			{
+				time = 0.0f;
+			}
 		}
 	}
 

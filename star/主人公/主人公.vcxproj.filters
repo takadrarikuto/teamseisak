@@ -47,7 +47,7 @@
       <Filter>ソースファイル\Obj\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="ObjAncer.cpp">
-      <Filter>ソースファイル\Obj\主人公・アンカー</Filter>
+      <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClCompile>
     <ClCompile Include="ObjFirstStar.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
@@ -56,7 +56,7 @@
       <Filter>ソースファイル\Obj\タイトル・操作・クリア</Filter>
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
-      <Filter>ソースファイル\Obj\主人公・アンカー</Filter>
+      <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClCompile>
     <ClCompile Include="ObjMars.cpp">
       <Filter>ソースファイル\Obj\火星</Filter>
@@ -106,6 +106,9 @@
     <ClCompile Include="ObjJupiter.cpp">
       <Filter>ソースファイル\Obj\木星</Filter>
     </ClCompile>
+    <ClCompile Include="ObjAitem.cpp">
+      <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -154,10 +157,10 @@
       <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjAncer.h">
-      <Filter>ヘッターファイル\Obj\主人公・アンカー</Filter>
+      <Filter>ヘッターファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClInclude>
     <ClInclude Include="ObjHero.h">
-      <Filter>ヘッターファイル\Obj\主人公・アンカー</Filter>
+      <Filter>ヘッターファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClInclude>
     <ClInclude Include="Objstage.h">
       <Filter>ヘッターファイル\Obj\ステージ背景</Filter>
@@ -213,6 +216,9 @@
     <ClInclude Include="ObjJupiter.h">
       <Filter>ヘッターファイル\Obj\木星</Filter>
     </ClInclude>
+    <ClInclude Include="ObjAitem.h">
+      <Filter>ヘッターファイル\Obj\主人公・アンカー・アイテム</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
@@ -226,9 +232,6 @@
     </Filter>
     <Filter Include="ソースファイル\Obj">
       <UniqueIdentifier>{478466db-786c-4877-9e15-62f50d0c6df4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Obj\主人公・アンカー">
-      <UniqueIdentifier>{d6abb30b-8291-4128-a73c-13fa2398b6f4}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\Obj\星">
       <UniqueIdentifier>{b2550f17-62a3-4a0d-9a35-70f6e889f72f}</UniqueIdentifier>
@@ -284,9 +287,6 @@
     <Filter Include="ヘッターファイル\Obj\星">
       <UniqueIdentifier>{9ca0541d-9a44-4a63-9268-d87408b0b81a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッターファイル\Obj\主人公・アンカー">
-      <UniqueIdentifier>{af20f40b-bd11-4ddf-a6fb-56c83fe66b0a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ヘッターファイル\Scene">
       <UniqueIdentifier>{48fdc8d7-0797-4132-9b48-ca2aee7fed33}</UniqueIdentifier>
     </Filter>
@@ -319,6 +319,12 @@
     </Filter>
     <Filter Include="ヘッターファイル\Obj\木星">
       <UniqueIdentifier>{5d23a56f-a738-4a1d-b76d-006ec6af10c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\主人公・アンカー・アイテム">
+      <UniqueIdentifier>{d6abb30b-8291-4128-a73c-13fa2398b6f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッターファイル\Obj\主人公・アンカー・アイテム">
+      <UniqueIdentifier>{af20f40b-bd11-4ddf-a6fb-56c83fe66b0a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -33,7 +33,8 @@ private:
 	float m_vy;
 
 	bool m_mous_l;
-	float time;
+	float time; //ロープ描画用
+	int time_co; //画面移動時起動防止用
 
 	bool ancer_flag; //アンカー移動フラグ
 

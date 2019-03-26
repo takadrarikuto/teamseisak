@@ -96,11 +96,6 @@ void CObjHero::Action()
 			Scene::SetScene(new CSceneStageselect());
 		}
 	}
-	//アイテム使用
-	else if (Input::GetVKey('A') == true)
-	{
-		
-	}
 	//現在所持している星の数確認画面に移動
 	else if (Input::GetVKey('S') == true)
 	{

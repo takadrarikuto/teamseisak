@@ -29,6 +29,11 @@ void CSceneSaturn::InitScene()
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
 	Draw::LoadImage(L"星(透過済み).png", 12, TEX_SIZE_512);
 
+	//背景オブジェクト生成
+	CObjSaturn* obj_m = new CObjSaturn();
+	Objs::InsertObj(obj_m, OBJ_SATURN, 8);
+	CObjstage* obj_h = new CObjstage();
+	Objs::InsertObj(obj_h, OBJ_STAGE, 9);
 
 	//仮主人公オブジェクト生成
 	CObjHero* obj = new CObjHero();
@@ -38,11 +43,14 @@ void CSceneSaturn::InitScene()
 	CObjAncer* obj_a = new CObjAncer();
 	Objs::InsertObj(obj_a, OBJ_ANCER, 11);
 
-	//背景オブジェクト生成
-	CObjSaturn* obj_m = new CObjSaturn();
-	Objs::InsertObj(obj_m, OBJ_SATURN, 8);
-	CObjstage* obj_h = new CObjstage();
-	Objs::InsertObj(obj_h, OBJ_STAGE, 9);
+	//スターオブジェクト作成
+	CObjFirstStar* star = new CObjFirstStar();
+	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+
+	//アイテムオブジェクト生成
+	CObjAitem* obj_ai = new CObjAitem();
+	Objs::InsertObj(obj_ai, OBJ_AITEM, 13);
+
 
 	//星生成時間初期化
 	time_star = 0;
@@ -56,6 +64,7 @@ void CSceneSaturn::InitScene()
 void CSceneSaturn::Scene()
 {
 
+	
 	if (time_star == 30)
 	{
 		star_flag = true;
@@ -74,5 +83,7 @@ void CSceneSaturn::Scene()
 		time_star = 0;
 		star_flag = false;
 	}
+
+	
 
 }
