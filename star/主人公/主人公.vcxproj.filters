@@ -76,12 +76,6 @@
     <ClCompile Include="SceneGameKuria.cpp">
       <Filter>ソースファイル\Obj\タイトル・操作・クリア</Filter>
     </ClCompile>
-    <ClCompile Include="ObjOperation.cpp">
-      <Filter>ソースファイル\Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneOperation.cpp">
-      <Filter>ソースファイル\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="SceneMars.cpp">
       <Filter>ソースファイル\Scene\火星</Filter>
     </ClCompile>
@@ -94,15 +88,21 @@
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソースファイル\Scene\タイトル・操作・クリア</Filter>
     </ClCompile>
-    <ClCompile Include="CObjOperation.h">
-      <Filter>ヘッターファイル\Obj</Filter>
-    </ClCompile>
     <ClCompile Include="SceneSaturn.cpp" />
     <ClCompile Include="ObjJupiter.cpp">
       <Filter>ソースファイル\Obj\木星</Filter>
     </ClCompile>
-    <ClCompile Include="StarPresent.cpp">
+    <ClCompile Include="ObjStarPresent.cpp">
       <Filter>ソースファイル\Obj\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjOperation.cpp">
+      <Filter>ソースファイル\Obj\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOperation.cpp">
+      <Filter>ソースファイル\Scene\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjOperation.h">
+      <Filter>ヘッターファイル\Obj\操作説明</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -135,9 +135,6 @@
     </ClInclude>
     <ClInclude Include="GameL\SceneObjManager.h">
       <Filter>リソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneOperation.h">
-      <Filter>ヘッターファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\SetWindow.h">
       <Filter>リソースファイル</Filter>
@@ -190,9 +187,6 @@
     <ClInclude Include="SceneMars.h">
       <Filter>ヘッターファイル\Scene\火星</Filter>
     </ClInclude>
-    <ClInclude Include="SceneStarPicbook.h">
-      <Filter>ヘッターファイル\Scene\星図鑑</Filter>
-    </ClInclude>
     <ClInclude Include="SceneStageselect.h">
       <Filter>ヘッターファイル\Scene\ステージ選択</Filter>
     </ClInclude>
@@ -202,6 +196,15 @@
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="SceneSaturn.h" />
+    <ClInclude Include="ObjStarPresent.h">
+      <Filter>ヘッターファイル\Obj\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStarPicbook.h">
+      <Filter>ヘッターファイル\Scene\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneOperation.h">
+      <Filter>ヘッターファイル\Scene\操作説明</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
@@ -293,6 +296,18 @@
     </Filter>
     <Filter Include="ソースファイル\Obj\木星">
       <UniqueIdentifier>{2d44383a-3b5d-411e-893e-7f424bc27cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\操作説明">
+      <UniqueIdentifier>{d3b364f5-3a2c-4c96-9762-9163d9301a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Scene\操作説明">
+      <UniqueIdentifier>{35953ed8-abf7-4b24-9d67-0cf494f3936c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッターファイル\Obj\操作説明">
+      <UniqueIdentifier>{2ecb5c92-4922-4dd6-9c62-92904c3c0cb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッターファイル\Scene\操作説明">
+      <UniqueIdentifier>{6dc68655-da5b-4a68-91af-bbbd87a2fc5b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

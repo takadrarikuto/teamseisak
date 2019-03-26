@@ -133,6 +133,7 @@
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjMars.h" />
+    <ClInclude Include="ObjStarPresent.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
     <ClInclude Include="Objstage.h" />
@@ -185,7 +186,7 @@
     <ClCompile Include="SceneSaturn.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="StarPresent.cpp" />
+    <ClCompile Include="ObjStarPresent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />
