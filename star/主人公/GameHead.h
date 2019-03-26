@@ -16,9 +16,15 @@ enum OBJ_NAME
 	OBJ_OBJECT,
 	OBJ_STARPICBOOK,
 	OBJ_MARS,
+	OBJ_SATURN,
+	OBJ_VENUS,
+	OBJ_JUPITER,
 	OBJ_FIRSTSTAR,
 	OBJ_SECONDSTAR,
 	OBJ_OTHERSTAR,
+	OBJ_OPERATION,
+	OBJ_STAGE,
+	OBJ_GAMEKURIA,
 };
 //------------------------------------------------
 
@@ -69,20 +75,37 @@ struct UserData
 #include "ObjSelectPlanet.h"
 #include "CObjStarPicbook.h"
 #include "ObjMars.h"
+#include "ObjJupiter.h"
+#include "ObjVenus.h"
+#include "ObjSaturn.h"
 #include "ObjAncer.h"
 #include "ObjFirstStar.h"
+#include "Objstage.h"
+#include "CObjOperation.h"
+#include "ObjGamekuria.h"
+
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
-#include "SceneMar.h"
 #include "SceneTitle.h"
 #include "SceneStageselect.h"
-#include"SceneStarPicbook.h"
+#include "SceneStarPicbook.h"
 #include "SceneMars.h"
-//-----------------------------------------------
+#include "SceneJupiter.h"
+#include "SceneVenus.h"
+#include "SceneSaturn.h"
+#include "SceneOperation.h"
+#include "SceneGamekuria.h"
+//------------------------
+
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START  CSceneMar
-//#define SET_GAME_START CSceneTitle
+//#define SET_GAME_START  CSceneMain
+//#define SET_GAME_START CSceneOperation
+#define SET_GAME_START CSceneTitle
+//#define SET_GAME_START CSceneGameKuria
+//#define SET_GAME_START CSceneStarPicbook
+//#define SET_GAME_START　CSceneSaturn
+//#define SET_GAME_START CSceneMars
 //-----------------------------------------------

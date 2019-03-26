@@ -129,19 +129,28 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjFirstStar.h" />
     <ClInclude Include="ObjAncer.h" />
+    <ClInclude Include="ObjGameKuria.h" />
     <ClInclude Include="ObjHero.h" />
-    <ClInclude Include="ObjMar.h" />
+    <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjMars.h" />
+    <ClInclude Include="ObjSaturn.h" />
+    <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
+    <ClInclude Include="Objstage.h" />
     <ClInclude Include="ObjStageselect.h" />
     <ClInclude Include="ObjTitle.h" />
-    <ClInclude Include="SceneMar.h" />
+    <ClInclude Include="SceneGameKuria.h" />
     <ClInclude Include="SceneMars.h" />
+    <ClInclude Include="SceneOperation.h" />
     <ClInclude Include="SceneStageselect.h" />
     <ClInclude Include="SceneStarPicbook.h" />
     <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="SceneSaturn.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CObjOperation.h" />
     <ClCompile Include="CObjStarPicbook.cpp" />
     <ClCompile Include="GameL\Audio.cpp" />
     <ClCompile Include="GameL\DirectXDevice.cpp" />
@@ -159,16 +168,25 @@
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjAncer.cpp" />
     <ClCompile Include="ObjFirstStar.cpp" />
+    <ClCompile Include="ObjGameKuria.cpp" />
     <ClCompile Include="ObjHero.cpp" />
+    <ClCompile Include="ObjJupiter.cpp" />
     <ClCompile Include="ObjMars.cpp" />
+    <ClCompile Include="ObjOperation.cpp" />
+    <ClCompile Include="ObjSaturn.cpp" />
     <ClCompile Include="ObjSelectPlanet.cpp" />
+    <ClCompile Include="Objstage.cpp" />
     <ClCompile Include="ObjStageselect.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
-    <ClCompile Include="SceneMar.cpp" />
+    <ClCompile Include="SceneGameKuria.cpp" />
     <ClCompile Include="SceneMars.cpp" />
+    <ClCompile Include="SceneOperation.cpp" />
     <ClCompile Include="SceneStageselect.cpp" />
     <ClCompile Include="SceneStarPicbook.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="SceneSaturn.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />

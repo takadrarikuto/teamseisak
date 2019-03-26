@@ -10,12 +10,15 @@
 //使用するネームスペース
 using namespace GameL;
 
+
 //イニシャライズ
 void CObjSelectPlanet::Init()
 {
 	m_mous_l = false;
 	m_mous_x = 0.0f;
 	m_mous_y = 0.0f;
+	m_start_flag = false;
+	time_back = 0;
 }
 
 //アクション
@@ -27,18 +30,82 @@ void CObjSelectPlanet::Action()
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
-	if (m_mous_x > 70 && m_mous_x < 190 && m_mous_y>135 && m_mous_y < 325)
+	time_back++;
+
+	if (m_mous_x > 60 && m_mous_x < 190 && m_mous_y>130 && m_mous_y < 325)
 	{
 		if (m_mous_l == true)
 		{
 			if (m_start_flag == true)
 			{
-				Scene::SetScene(new CSceneMar());
+				Scene::SetScene(new CSceneMars()); //火星
 			}
 		}
-		else
+	}
+	if (m_mous_x > 230 && m_mous_x < 379 && m_mous_y>180 && m_mous_y < 330)
+	{
+		if (m_mous_l == true)
 		{
-			m_start_flag = true;
+			if (m_start_flag == true)
+			{
+				Scene::SetScene(new CSceneSaturn()); //金星
+			}
+		}
+	}
+	if (m_mous_x > 422 && m_mous_x < 542 && m_mous_y>135 && m_mous_y < 325)
+	{
+		if (m_mous_l == true)
+		{
+			if (m_start_flag == true)
+			{
+				//Scene::SetScene(new CSceneJupiter()); //木星
+			}
+		}
+	}
+	if (m_mous_x > 585 && m_mous_x < 722 && m_mous_y>135 && m_mous_y < 325)
+	{
+		if (m_mous_l == true)
+		{
+			if (m_start_flag == true)
+			{
+				//Scene::SetScene(new CSceneVenus()); //土星
+			}
+		}
+	}
+	else
+	{
+		m_start_flag = true;
+	}
+
+	if (m_mous_x > 600 && m_mous_y > 550)
+	{
+		if (m_mous_l == true)
+		{
+			if (m_start_flag == true)
+			{
+				Scene::SetScene(new CSceneStarPicbook()); //星図鑑
+			}
+		}
+	}
+	else
+	{
+		m_start_flag = true;
+	}
+
+
+	if (time_back > 30)
+	{
+		//bを押すとタイトル画面に移動
+		if (Input::GetVKey('B') == true)
+		{
+			if (m_start_flag == true)
+			{
+				Scene::SetScene(new CSceneTitle());
+			}
+			else
+			{
+				m_start_flag = true;
+			}
 		}
 	}
 
@@ -55,6 +122,7 @@ void CObjSelectPlanet::Draw()
 	wchar_t str[256];
 	swprintf_s(str, L"x=%d,y=%d", (int)m_mous_x,(int) m_mous_y);
 	Font::StrDraw(str, 10, 20, 30, c);
+	Font::StrDraw(L"星図鑑へ", 600, 550, 50, c);
 
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置

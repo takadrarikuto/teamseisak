@@ -1,48 +1,98 @@
-//STLデバッグ機能をOFFにする
+//STLデバック機能をOFFにする
 #define _SECURE_SCL (0)
 #define _HAS_ITERATOR_DEBUGGING (0)
 
 //GameLで使用するヘッダー
-#include"GameL\SceneObjManager.h"
+#include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
+
 //使用するネームスペース
 using namespace GameL;
 
 //使用ヘッダー
-#include"SceneMars.h"
-#include"GameHead.h"
+#include "SceneMars.h"
+#include "GameHead.h"
 
-//ゲームメイン初期化メソッド
+
+
+//初期化メゾット
 void CSceneMars::InitScene()
 {
 	//グラフィック読み込み
-	Draw::LoadImage(L"主人公（仮）.png", 10, TEX_SIZE_512);
-
-	//仮主人公オブジェクト生成
-	CObjHero* hero = new CObjHero();
-	Objs::InsertObj(hero, OBJ_HERO, 10);
-
-	//外部グラフィックを読み込み4番に登録(512×512ピクセル)
-	Draw::LoadImage(L"火星.png", 4, TEX_SIZE_512);
-
-	//火星背景オブジェクト作成
-	CObjMars* mars = new CObjMars();       //タイトルオブジェクト作成
-	Objs::InsertObj(mars, OBJ_MARS, 4);    //タイトルオブジェクト登録
+	//背景
+	Draw::LoadImage(L"火星.png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"フィールド背景火星(透過済み).png", 9, TEX_SIZE_512);
+	//主人公
+	Draw::LoadImage(L"主人公.png", 10, TEX_SIZE_512);
+	//アンカー
+	Draw::LoadImage(L"アンカー（仮　透過済み）.png", 11, TEX_SIZE_512);
 
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
-	Draw::LoadImage(L"firststar.png", 5, TEX_SIZE_512);
-
-	CObjFirstStar* star = new CObjFirstStar();       //タイトルオブジェクト作成
-	Objs::InsertObj(star, OBJ_MARS, 5);    //タイトルオブジェクト登録
-
-	//一等星オブジェクト作成
+	Draw::LoadImage(L"星(透過済み).png", 12, TEX_SIZE_512);
 
 
+	//仮主人公オブジェクト生成
+	CObjHero* obj = new CObjHero();
+	Objs::InsertObj(obj, OBJ_HERO, 10);
+
+	//アンカーオブジェクト作成
+	CObjAncer* obj_a = new CObjAncer();
+	Objs::InsertObj(obj_a, OBJ_ANCER, 11);
+
+	//背景オブジェクト生成
+	CObjMars* obj_m = new CObjMars();
+	Objs::InsertObj(obj_m, OBJ_MARS, 8);
+	CObjstage* obj_h = new CObjstage();
+	Objs::InsertObj(obj_h, OBJ_STAGE, 9);
+
+	//星生成時間初期化
+	time_star = 0;
+
+	//星生成フラグ初期化
+	star_flag = false;
 
 }
 
-//ゲームメイン実行中メソッド
+//実行中メゾット
 void CSceneMars::Scene()
 {
+
+	if (time_star == 30)
+	{
+		star_flag = true;
+	}
+
+	if (star_flag == false)
+	{
+		time_star++;
+	}
+	else if (star_flag == true)
+	{
+		//スターオブジェクト作成
+		CObjFirstStar* star = new CObjFirstStar();
+		Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+
+		time_star = 0;
+		star_flag = false;
+	}
+
+	/*
+	if (time_star == 1)
+	{
+	//スターオブジェクト作成
+	CObjFirstStar* star = new CObjFirstStar(0.0f, 0.0f);
+	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+	}
+	else if (time_star == 10)
+	{
+	//スターオブジェクト作成
+	CObjFirstStar* star = new CObjFirstStar(0.0f, 100.0f);
+	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+	}
+	else if (time_star = 60)
+	{
+	time_star = 0;
+	}
+	*/
 
 }
