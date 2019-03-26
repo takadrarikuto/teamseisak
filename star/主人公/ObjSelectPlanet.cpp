@@ -48,7 +48,7 @@ void CObjSelectPlanet::Action()
 		{
 			if (m_start_flag == true)
 			{
-				Scene::SetScene(new CSceneSaturn()); //ã‡êØ
+				//Scene::SetScene(new CSceneVenus()); //ã‡êØ
 			}
 		}
 	}
@@ -68,7 +68,7 @@ void CObjSelectPlanet::Action()
 		{
 			if (m_start_flag == true)
 			{
-				//Scene::SetScene(new CSceneVenus()); //ìyêØ
+				Scene::SetScene(new CSceneSaturn()); //ìyêØ
 			}
 		}
 	}

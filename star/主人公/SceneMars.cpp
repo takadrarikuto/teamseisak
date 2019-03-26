@@ -56,51 +56,6 @@ void CSceneMars::InitScene()
 //実行中メゾット
 void CSceneMars::Scene()
 {
-	/*
-	//星の位置の取得
-	CObjFirstStar* star = (CObjFirstStar*)Objs::GetObj(OBJ_FIRSTSTAR);
-	float sx = star->GetX();
-	float sy = star->GetY();
-	*/
-
-	if (time_star == 30)
-	{
-		star_flag = true;
-	}
-
-	if (star_flag == false)
-	{
-		time_star++;
-	}
-	else if (star_flag == true)
-	{
-		//スターオブジェクト作成
-		CObjFirstStar* star = new CObjFirstStar(0.0f, 100.0f);
-		Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
-
-		time_star = 0;
-		star_flag = false;
-	}
-
-	/*
-	if (time_star == 1)
-	{
-	//スターオブジェクト作成
-	CObjFirstStar* star = new CObjFirstStar(0.0f, 0.0f);
-	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
-	}
-	else if (time_star == 10)
-	{
-	//スターオブジェクト作成
-	CObjFirstStar* star = new CObjFirstStar(0.0f, 100.0f);
-	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
-	}
-	else if (time_star = 60)
-	{
-	time_star = 0;
-	}
-	*/
-
 	if (time_star == 30)
 	{
 		star_flag = true;
@@ -119,24 +74,5 @@ void CSceneMars::Scene()
 		time_star = 0;
 		star_flag = false;
 	}
-
-	/*
-	if (time_star == 1)
-	{
-	//スターオブジェクト作成
-	CObjFirstStar* star = new CObjFirstStar(0.0f, 0.0f);
-	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
-	}
-	else if (time_star == 10)
-	{
-	//スターオブジェクト作成
-	CObjFirstStar* star = new CObjFirstStar(0.0f, 100.0f);
-	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
-	}
-	else if (time_star = 60)
-	{
-	time_star = 0;
-	}
-	*/
 
 }

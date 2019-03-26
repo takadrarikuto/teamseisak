@@ -113,10 +113,6 @@ void CObjHero::Action()
 	{
 		m_return_flag = true;
 	}
-	else
-	{
-		m_return_flag = true;
-	}
 
 	if (m_ani_time > 4)
 	{
