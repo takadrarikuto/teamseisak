@@ -20,10 +20,10 @@ void CSceneMars::InitScene()
 {
 	//グラフィック読み込み
 	//背景
-	Draw::LoadImage(L"火星.png", 8, TEX_SIZE_512);
-	Draw::LoadImage(L"フィールド背景火星(透過済み).png", 9, TEX_SIZE_512);
-	Draw::LoadImage(L"イベント背景(火星).png", 10, TEX_SIZE_512);
-	
+	Draw::LoadImage(L"フィールド背景火星(透過済み).png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"イベント背景(火星).png", 9, TEX_SIZE_512);
+	Draw::LoadImage(L"火星.png", 10, TEX_SIZE_512);
+
 	//主人公
 	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
 	//アンカー
@@ -34,11 +34,12 @@ void CSceneMars::InitScene()
 
 	//背景オブジェクト生成
 	CObjMars* obj_m = new CObjMars();
-	Objs::InsertObj(obj_m, OBJ_MARS, 8); //背景
-	CObjstage* obj_h = new CObjstage();
-	Objs::InsertObj(obj_h, OBJ_STAGE, 9); //ステージ
+	Objs::InsertObj(obj_m, OBJ_MARS, 8);
 	CObjIbent* obj_i = new CObjIbent();
-	Objs::InsertObj(obj_i, OBJ_IBENT, 10); //イベント背景
+	Objs::InsertObj(obj_i, OBJ_IBENT, 9); //イベント背景	
+	CObjstage* obj_h = new CObjstage();
+	Objs::InsertObj(obj_h, OBJ_STAGE, 10);
+
 
 	//仮主人公オブジェクト生成
 	CObjHero* obj = new CObjHero();

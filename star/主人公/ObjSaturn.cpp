@@ -43,6 +43,6 @@ void CObjSaturn::Draw()
 	dst.m_bottom = 600.0f;
 
 	//•`‰æ
-	Draw::Draw(8, &src, &dst, c, 0.0f);
+	Draw::Draw(10, &src, &dst, c, 0.0f);
 
 }
