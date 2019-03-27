@@ -78,12 +78,12 @@ void CSceneMars::Scene()
 	}
 	arise = rand() % 200;
 
-/*	if (arise <= 1 && arise >= 0)
+	if (arise <= 1 && arise >= 0)
 	{
 		//スターオブジェクト作成
 		CObjFirstStar* star = new CObjFirstStar();
 		Objs::InsertObj(star, OBJ_FIRSTSTAR, 13);    //スターオブジェクト登録
-	}*/
+	}
 	if (arise <= 3 && arise >= 2)
 	{
 		//スターオブジェクト作成
