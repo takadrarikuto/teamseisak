@@ -3,6 +3,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 
+
 #include "CObjStarPicbook.h"
 #include "GameHead.h"
 

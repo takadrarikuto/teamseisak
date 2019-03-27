@@ -20,9 +20,9 @@ void CSceneMars::InitScene()
 {
 	//グラフィック読み込み
 	//背景
-	Draw::LoadImage(L"フィールド背景火星(透過済み).png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"火星地表.png", 10, TEX_SIZE_512);
 	Draw::LoadImage(L"イベント背景(火星).png", 9, TEX_SIZE_512);
-	Draw::LoadImage(L"火星.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
 
 	//主人公
 	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
@@ -31,14 +31,15 @@ void CSceneMars::InitScene()
 
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
 	Draw::LoadImage(L"星(透過済み).png", 13, TEX_SIZE_512);
+	Draw::LoadImage(L"brown_star.png", 14, TEX_SIZE_512);
 
 	//背景オブジェクト生成
 	CObjMars* obj_m = new CObjMars();
-	Objs::InsertObj(obj_m, OBJ_MARS, 8);
-	CObjIbent* obj_i = new CObjIbent();
-	Objs::InsertObj(obj_i, OBJ_IBENT, 9); //イベント背景	
-	CObjstage* obj_h = new CObjstage();
-	Objs::InsertObj(obj_h, OBJ_STAGE, 10);
+	Objs::InsertObj(obj_m, OBJ_MARS, 10);
+	CObjEvent* obj_i = new CObjEvent();
+	Objs::InsertObj(obj_i, OBJ_EVENT, 9); //イベント背景	
+	CObjBackground* obj_h = new CObjBackground();
+	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 8);
 
 
 	//仮主人公オブジェクト生成
@@ -49,9 +50,7 @@ void CSceneMars::InitScene()
 	CObjAncer* obj_a = new CObjAncer();
 	Objs::InsertObj(obj_a, OBJ_ANCER, 12);
 
-	//スターオブジェクト作成
-	CObjFirstStar* star = new CObjFirstStar();
-	Objs::InsertObj(star, OBJ_MARS, 13);    //スターオブジェクト登録
+
 
 	//アイテムオブジェクト生成
 	CObjAitem* obj_ai = new CObjAitem();
@@ -82,14 +81,18 @@ void CSceneMars::Scene()
 	{
 		time_star++;
 	}
-	else if (star_flag == true)
+	arise = rand() % 200;
+
+	if (arise <= 1 && arise >= 0)
 	{
 		//スターオブジェクト作成
 		CObjFirstStar* star = new CObjFirstStar();
-		Objs::InsertObj(star, OBJ_MARS, 13);    //スターオブジェクト登録
-
-		time_star = 0;
-		star_flag = false;
+		Objs::InsertObj(star, OBJ_FIRSTSTAR, 13);    //スターオブジェクト登録
 	}
-
+	if (arise <= 3 && arise >= 2)
+	{
+		//スターオブジェクト作成
+		CObjSecondStar* star2 = new CObjSecondStar();
+		Objs::InsertObj(star2, OBJ_SECONDSTAR, 14);    //スターオブジェクト登録
+	}
 }

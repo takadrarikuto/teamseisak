@@ -34,10 +34,10 @@ void CSceneSaturn::InitScene()
 	//背景オブジェクト生成
 	CObjMars* obj_m = new CObjMars();
 	Objs::InsertObj(obj_m, OBJ_MARS, 8);
-	CObjIbent* obj_i = new CObjIbent();
-	Objs::InsertObj(obj_i, OBJ_IBENT, 9); //イベント背景	
-	CObjstage* obj_h = new CObjstage();
-	Objs::InsertObj(obj_h, OBJ_STAGE, 10);
+	CObjEvent* obj_i = new CObjEvent();
+	Objs::InsertObj(obj_i, OBJ_EVENT, 9); //イベント背景	
+	CObjBackground* obj_h = new CObjBackground();
+	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 10);
 
 
 	//仮主人公オブジェクト生成
