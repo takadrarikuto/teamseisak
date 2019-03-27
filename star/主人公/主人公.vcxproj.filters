@@ -115,11 +115,11 @@
     <ClCompile Include="ObjStarPresent.cpp">
       <Filter>ソースファイル\Scene\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="ObjEvent.cpp">
-      <Filter>ソースファイル\Obj\イベント</Filter>
-    </ClCompile>
     <ClCompile Include="ObjBackground.cpp">
       <Filter>ソースファイル\Obj\通常時背景</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEvent.cpp">
+      <Filter>ソースファイル\Obj\イベント</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -231,9 +231,6 @@
     <ClInclude Include="ObjSecondStar.h">
       <Filter>ソースファイル\Obj\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjEvent.h">
-      <Filter>ヘッターファイル\Obj\イベント</Filter>
-    </ClInclude>
     <ClInclude Include="ObjBackground.h">
       <Filter>ヘッターファイル\Obj\ステージ背景</Filter>
     </ClInclude>
@@ -242,6 +239,9 @@
     </ClInclude>
     <ClInclude Include="ObjStarCount.h">
       <Filter>ヘッターファイル\Obj\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEvent.h">
+      <Filter>ヘッターファイル\Obj\イベント</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
