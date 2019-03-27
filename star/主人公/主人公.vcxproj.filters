@@ -59,13 +59,10 @@
       <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClCompile>
     <ClCompile Include="ObjMars.cpp">
-      <Filter>ソースファイル\Obj\火星</Filter>
+      <Filter>ソースファイル\Obj\火星地表</Filter>
     </ClCompile>
     <ClCompile Include="ObjSelectPlanet.cpp">
       <Filter>ソースファイル\Obj\ステージ選択</Filter>
-    </ClCompile>
-    <ClCompile Include="Objstage.cpp">
-      <Filter>ソースファイル\Obj\ステージ背景</Filter>
     </ClCompile>
     <ClCompile Include="ObjStageselect.cpp">
       <Filter>ソースファイル\Obj\ステージ選択</Filter>
@@ -108,6 +105,21 @@
     </ClCompile>
     <ClCompile Include="ObjAitem.cpp">
       <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSecondStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarCount.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent.cpp">
+      <Filter>ソースファイル\Scene\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEvent.cpp">
+      <Filter>ソースファイル\Obj\イベント</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBackground.cpp">
+      <Filter>ソースファイル\Obj\通常時背景</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -162,9 +174,6 @@
     <ClInclude Include="ObjHero.h">
       <Filter>ヘッターファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClInclude>
-    <ClInclude Include="Objstage.h">
-      <Filter>ヘッターファイル\Obj\ステージ背景</Filter>
-    </ClInclude>
     <ClInclude Include="ObjSelectPlanet.h">
       <Filter>ヘッターファイル\Obj\ステージ選択</Filter>
     </ClInclude>
@@ -175,7 +184,7 @@
       <Filter>ヘッターファイル\Obj\星図鑑</Filter>
     </ClInclude>
     <ClInclude Include="ObjMars.h">
-      <Filter>ヘッターファイル\Obj\火星</Filter>
+      <Filter>ヘッターファイル\Obj\火星地表</Filter>
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
       <Filter>ヘッターファイル\Obj\タイトル・操作・クリア</Filter>
@@ -219,6 +228,21 @@
     <ClInclude Include="ObjAitem.h">
       <Filter>ヘッターファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClInclude>
+    <ClInclude Include="ObjSecondStar.h">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEvent.h">
+      <Filter>ヘッターファイル\Obj\イベント</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBackground.h">
+      <Filter>ヘッターファイル\Obj\ステージ背景</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent.h">
+      <Filter>ヘッターファイル\Obj\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarCount.h">
+      <Filter>ヘッターファイル\Obj\星</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
@@ -241,12 +265,6 @@
     </Filter>
     <Filter Include="ソースファイル\Obj\ステージ選択">
       <UniqueIdentifier>{c601ddbc-589c-4192-bdc2-a5c3ec25526f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Obj\ステージ背景">
-      <UniqueIdentifier>{5dd70e48-8ca8-47d7-9a6b-23a38c872f88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Obj\火星">
-      <UniqueIdentifier>{20ab9b7d-50fd-45be-879d-d3323ac5f2ea}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\Obj\タイトル・操作・クリア">
       <UniqueIdentifier>{3623a0a2-c2c3-47c3-9c5b-0f0e92c3abc7}</UniqueIdentifier>
@@ -271,9 +289,6 @@
     </Filter>
     <Filter Include="ヘッターファイル\Obj\タイトル・操作・クリア">
       <UniqueIdentifier>{e3e46130-a17b-48c6-8006-dfcfd26788a0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッターファイル\Obj\火星">
-      <UniqueIdentifier>{152ba949-1b6b-4e21-bc93-7835af7852d4}</UniqueIdentifier>
     </Filter>
     <Filter Include="ヘッターファイル\Obj\星図鑑">
       <UniqueIdentifier>{37edce63-93ce-4fbb-acec-fd1166e0fdc5}</UniqueIdentifier>
@@ -325,6 +340,21 @@
     </Filter>
     <Filter Include="ヘッターファイル\Obj\主人公・アンカー・アイテム">
       <UniqueIdentifier>{af20f40b-bd11-4ddf-a6fb-56c83fe66b0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッターファイル\Obj\イベント">
+      <UniqueIdentifier>{acc83aac-587f-4ea0-bba7-26cfe92203e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\イベント">
+      <UniqueIdentifier>{4173891e-6be4-44b6-8558-124c436f1479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\通常時背景">
+      <UniqueIdentifier>{5dd70e48-8ca8-47d7-9a6b-23a38c872f88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\火星地表">
+      <UniqueIdentifier>{20ab9b7d-50fd-45be-879d-d3323ac5f2ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッターファイル\Obj\火星地表">
+      <UniqueIdentifier>{152ba949-1b6b-4e21-bc93-7835af7852d4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

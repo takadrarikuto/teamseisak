@@ -38,8 +38,13 @@ void CObjAncer::Init()
 	//アンカー
 	Hits::SetHitBox(this, m_pax, m_pay, 40, 40, ELEMENT_ANCER, OBJ_ANCER, 11);
 
+	//ロープ描画用初期化
 	time = 0.0f;
+
+	//アンカー移動フラグ初期化
 	ancer_flag = false;
+
+	//画面移動時起動防止用初期化
 	time_co = 0;
 }
 
@@ -49,7 +54,6 @@ void CObjAncer::Action()
 	m_mous_l = Input::GetMouButtonL();
 
 	time_co++;
-
 
 	//移動ベクトル破棄
 	m_vx = 0.0f;
@@ -89,7 +93,7 @@ void CObjAncer::Action()
 		}
 
 		if (ancer_flag == true)
-		{
+		{	
 			m_vy -= 9.0f;
 			time += 13.0f; //ロープ長さ調整
 		}
@@ -98,12 +102,12 @@ void CObjAncer::Action()
 			m_vy += 6.0f;
 			if (m_pry < 500.0f)
 			{
-				time -= 9.0f;
+				time -= 9.0f; //ロープ長さ調整
 			}
 			else
 			{
-				time = 0.0f;
-			}
+				time = 0.0f; //ロープ長さ調整
+			}				
 		}
 	}
 
@@ -160,10 +164,10 @@ void CObjAncer::Action()
 	}
 
 	//位置更新
-	m_px += m_vx;
-	m_pax += m_vx;
+	m_px += m_vx; //本体
+	m_pax += m_vx; //アンカー
 	m_pay += m_vy;
-	m_prx += m_vx;
+	m_prx += m_vx; //ロープ
 	m_pry += m_vy;
 	
 
@@ -203,7 +207,7 @@ void CObjAncer::Draw()
 	dstr.m_right = 20.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 
-	Draw::Draw(11, &srcr, &dstr, c, 0.0f);
+	Draw::Draw(12, &srcr, &dstr, c, 0.0f);
 
 	//本体
 	//切り取り位置の位置
@@ -218,7 +222,7 @@ void CObjAncer::Draw()
 	dst.m_right = 50.0f + m_px;
 	dst.m_bottom = 100.0f + m_py;
 
-	Draw::Draw(11, &src, &dst, c, 0.0f);
+	Draw::Draw(12, &src, &dst, c, 0.0f);
 	
 	//アンカー
 	//切り取り位置の位置
@@ -233,6 +237,6 @@ void CObjAncer::Draw()
 	dsta.m_right = 50.0f + m_pax;
 	dsta.m_bottom = -60.0f + m_pay;
 
-	Draw::Draw(11, &srca, &dsta, c, 0.0f);
+	Draw::Draw(12, &srca, &dsta, c, 0.0f);
 
 }
