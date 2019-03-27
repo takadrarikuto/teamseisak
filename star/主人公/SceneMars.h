@@ -16,5 +16,6 @@ public:
 private:
 	int time_star; //¯¶¬ŠÔ
 	bool star_flag;
+	int arise;
 
 };
