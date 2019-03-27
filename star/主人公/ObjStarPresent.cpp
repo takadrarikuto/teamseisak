@@ -1,10 +1,10 @@
-//GameLで使用するヘッダー
+//使用するヘッダーファイル
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 
-#include "ObjStarPresent.h"
 #include "GameHead.h"
+#include "ObjStarPresent.h"
 
 void CObjStarPresent::Init()
 {
@@ -27,19 +27,28 @@ void CObjStarPresent::Draw()
 {
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
-	char test[10]{'蠍','座'};
+	
+	wchar_t test[2][2]{L"蠍",L"座"};
+
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-
-	Font::StrDraw(L"アンタレス", 10, 305, 15, c);
+	//					　　	 X　 Y　 大きさ
+	Font::StrDraw(L"アンタレス", 10, 305,15, c);
 
 	// left				 right            top            bottom               
 	if (m_mou_x > 0 && m_mou_x < 100 && m_mou_y>300 && m_mou_y <325)
 	{
 		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		for (int i = 0; i <= 10; i++)
+		Font::StrDraw(L"一番明るい星", 110, 50, 30, c);
+		//ループして出す
+		for (int i = 0; i <= 1; i++)
 		{
-			//Font::StrDraw(test[i], 110, 0, 30, c);
+			int l = 50;
+			swprintf_s(str, L"%s", test[i]);
+			//Yは一回目はiは0なので0に50を掛けている
+			//2回目はiは1なので50を100に足す。
+			//				　　X　 Y　 大きさ
+			Font::StrDraw(str, 20, 100+l*i, 50, c);
 		}
 	}
 
