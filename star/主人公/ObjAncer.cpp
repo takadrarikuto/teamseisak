@@ -3,6 +3,7 @@
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
 #include "GameL\HitBoxManager.h"
+#include "GameL\DrawFont.h"
 
 #include "GameHead.h"
 #include "ObjAncer.h"
@@ -39,13 +40,16 @@ void CObjAncer::Init()
 
 	time = 0.0f;
 	ancer_flag = false;
-	ancer_co = 0;
+	time_co = 0;
 }
 
 //アクション
 void CObjAncer::Action()
 {
 	m_mous_l = Input::GetMouButtonL();
+
+	time_co++;
+
 
 	//移動ベクトル破棄
 	m_vx = 0.0f;
@@ -67,48 +71,40 @@ void CObjAncer::Action()
 		}
 	}
 
-	//アンカー発射
-
-	/*
-	if (Input::GetMouButtonL() == true && flag == true)
-	{
-		m_vy -= 6.0f;
-	}
-	else if(Input::GetMouButtonL() == false  && flag == false)
-	{
-		m_vy += 3.0f;
-	}
-
-	if (m_pay == 535.0f)
-	{
-		flag = false;
-	}
-	else if (m_pay == 535.0f)
-	{
-		flag = true;
-	}
-	*/
 
 	//自身のHitBoxを持ってくる
 	CHitBox* hit_a = Hits::GetHitBox(this);
 
-	
-	if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr)
+	//画面移動時起動防止用
+	if (time_co > 30)
 	{
-		ancer_flag = false;
-	}
-	else if(Input::GetMouButtonL() == true)
-	{
-		ancer_flag = true;
-	}
+		//アンカー発射
+		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr)
+		{
+			ancer_flag = false;
+		}
+		else if (Input::GetMouButtonL() == true && m_pay > 535.0f)
+		{
+			ancer_flag = true;
+		}
 
-	if(ancer_flag == true)
-	{
-		m_vy -= 9.0f;
-	}
-	else
-	{
-		m_vy += 6.0f;
+		if (ancer_flag == true)
+		{
+			m_vy -= 9.0f;
+			time += 13.0f; //ロープ長さ調整
+		}
+		else
+		{
+			m_vy += 6.0f;
+			if (m_pry < 500.0f)
+			{
+				time -= 9.0f;
+			}
+			else
+			{
+				time = 0.0f;
+			}
+		}
 	}
 
 
@@ -140,6 +136,15 @@ void CObjAncer::Action()
 	{
 		m_pay = 535.0f;
 	}
+	if (m_pay < 50.0f)
+	{
+		m_pay = 50.0f;
+		ancer_flag = false;
+	}
+	else if (m_pay > 535.0f)
+	{
+		m_pay = 535.0f;
+	}
 	//ロープ
 	if (m_prx < 49.0f)
 	{
@@ -148,6 +153,10 @@ void CObjAncer::Action()
 	else if (m_prx + 26.0f > 800.0f)
 	{
 		m_prx = 800.0f - 26.0f;
+	}
+	if (m_pry > 500.0f)
+	{
+		m_pry = 500.0f;
 	}
 
 	//位置更新
@@ -161,17 +170,6 @@ void CObjAncer::Action()
 	//HitBoxの位置の変更
 	hit_a->SetPos(m_pax, m_pay - 45);
 
-	time = 0.0f;
-
-	//ロープ長さ調整
-	if (Input::GetMouButtonL() == true)
-	{
-		time++;
-	}
-	else if (Input::GetMouButtonL() == false)
-	{
-		time--;
-	}
 
 }
 

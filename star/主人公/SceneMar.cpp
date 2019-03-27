@@ -10,12 +10,23 @@
 using namespace GameL;
 
 //使用ヘッダー
-#include "SceneSaturn.h"
+#include "SceneMar.h"
 #include "GameHead.h"
 
+//コンストラクタ
+CSceneMar::CSceneMar()
+{
+
+}
+
+//デストラクタ
+CSceneMar::~CSceneMar()
+{
+
+}
 
 //初期化メゾット
-void CSceneSaturn::InitScene()
+void CSceneMar::InitScene()
 {
 	//グラフィック読み込み
 	//背景
@@ -29,13 +40,8 @@ void CSceneSaturn::InitScene()
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
 	Draw::LoadImage(L"星(透過済み).png", 12, TEX_SIZE_512);
 
-	//背景オブジェクト生成
-	CObjSaturn* obj_m = new CObjSaturn();
-	Objs::InsertObj(obj_m, OBJ_SATURN, 8);
-	CObjstage* obj_h = new CObjstage();
-	Objs::InsertObj(obj_h, OBJ_STAGE, 9);
 
-	//仮主人公オブジェクト生成
+	//主人公オブジェクト生成
 	CObjHero* obj = new CObjHero();
 	Objs::InsertObj(obj, OBJ_HERO, 10);
 
@@ -43,28 +49,29 @@ void CSceneSaturn::InitScene()
 	CObjAncer* obj_a = new CObjAncer();
 	Objs::InsertObj(obj_a, OBJ_ANCER, 11);
 
-	//スターオブジェクト作成
-	CObjFirstStar* star = new CObjFirstStar();
-	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
-
-	//アイテムオブジェクト生成
-	CObjAitem* obj_ai = new CObjAitem();
-	Objs::InsertObj(obj_ai, OBJ_AITEM, 13);
-
+	//背景オブジェクト生成
+	CObjMars* obj_m = new CObjMars();
+	Objs::InsertObj(obj_m, OBJ_MARS, 8);
+	CObjstage* obj_h = new CObjstage();
+	Objs::InsertObj(obj_h, OBJ_STAGE, 9);
 
 	//星生成時間初期化
 	time_star = 0;
 
 	//星生成フラグ初期化
 	star_flag = false;
-
 }
 
 //実行中メゾット
-void CSceneSaturn::Scene()
+void CSceneMar::Scene()
 {
+	/*
+	//星の位置の取得
+	CObjFirstStar* star = (CObjFirstStar*)Objs::GetObj(OBJ_FIRSTSTAR);
+	float sx = star->GetX();
+	float sy = star->GetY();
+	*/
 
-	
 	if (time_star == 30)
 	{
 		star_flag = true;
@@ -77,13 +84,30 @@ void CSceneSaturn::Scene()
 	else if (star_flag == true)
 	{
 		//スターオブジェクト作成
-		CObjFirstStar* star = new CObjFirstStar();
+		CObjFirstStar* star = new CObjFirstStar(0.0f, 100.0f);
 		Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
 
 		time_star = 0;
 		star_flag = false;
 	}
-
 	
+	/*
+	if (time_star == 1)
+	{
+		//スターオブジェクト作成
+		CObjFirstStar* star = new CObjFirstStar(0.0f, 0.0f);
+		Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+	}
+	else if (time_star == 10)
+	{
+		//スターオブジェクト作成
+		CObjFirstStar* star = new CObjFirstStar(0.0f, 100.0f);
+		Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+	}
+	else if (time_star = 60)
+	{
+		time_star = 0;
+	}
+	*/
 
 }

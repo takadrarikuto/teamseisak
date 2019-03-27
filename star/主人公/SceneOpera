@@ -5,16 +5,12 @@
 using namespace GameL;
 
 //オブジェクト：タイトル
-class CSceneSaturn : public CScene
+class CSceneOperation : public CScene
 {
 public:
-	CSceneSaturn() {};
-	~CSceneSaturn() {};
+	CSceneOperation();
+	~CSceneOperation();
 	void InitScene(); //ゲームタイトルの初期化メソッド
 	void Scene();     //ゲームタイトルの実行中メソッド
 private:
-	int time_star; //星生成時間
-	bool star_flag;
-
-
 };

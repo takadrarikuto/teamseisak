@@ -1,6 +1,7 @@
 //使用するヘッダーファイル
 #include "GameL\SceneManager.h"
 #include "GameL\DrawTexture.h"
+#include "GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
 #include "GameL\HitBoxManager.h"
 
@@ -35,6 +36,8 @@ void CObjHero::Init()
 
 	//主人公
 	Hits::SetHitBox(this, m_px, m_py, 50, 50, ELEMENT_PLAYER, OBJ_HERO, 10);
+
+	m_mous_l = false;
 
 	m_mous_l = false;
 }
@@ -93,11 +96,6 @@ void CObjHero::Action()
 			Scene::SetScene(new CSceneStageselect());
 		}
 	}
-	//アイテム使用
-	else if (Input::GetVKey('A') == true)
-	{
-		
-	}
 	//現在所持している星の数確認画面に移動
 	else if (Input::GetVKey('S') == true)
 	{
@@ -105,11 +103,6 @@ void CObjHero::Action()
 		{
 			Scene::SetScene(new CSceneStarPicbook());
 		}
-	}
-	//ポーズへ移動
-	else if (Input::GetVKey(VK_SPACE) == true)
-	{
-
 	}
 	else
 	{

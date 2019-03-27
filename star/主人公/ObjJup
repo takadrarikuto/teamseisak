@@ -6,15 +6,16 @@
 using namespace GameL;
 
 //オブジェクト　タイトル
-class CObjMars :public CObj
+class CObjJupiter :public CObj
 {
 public:
-	CObjMars() {};
-	~CObjMars() {};
+	CObjJupiter() {};
+	~CObjJupiter() {};
 	void Init();
 	void Action();
 	void Draw();
 
 private:
+
 
 };

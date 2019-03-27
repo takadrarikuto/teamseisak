@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 //使用するヘッダーファイル
 #include "GameL\SceneObjManager.h"
 
@@ -6,11 +7,11 @@
 using namespace GameL;
 
 //オブジェクト：イベント
-class CObjStarPicbook : public CObj
+class CObjStarPresent : public CObj
 {
 public:
-	CObjStarPicbook() {};	//コンストラクタ
-	~CObjStarPicbook() {};
+	CObjStarPresent() {};	//コンストラクタ
+	~CObjStarPresent() {};
 	void Init();	//イニシャライズ
 	void Action();	//アクション
 	void Draw();	//ドロー

@@ -20,7 +20,7 @@ void CObjStarPicbook::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	
+
 }
 
 void CObjStarPicbook::Draw()
@@ -43,9 +43,10 @@ void CObjStarPicbook::Draw()
 	dst.m_right = 100.0f;
 	dst.m_bottom = 600.0f;
 	
+	//ループして描画する
 	for (int i = 0; i <= 7; i++)
 	{
-		//星の名前を描画
+		//星の名前の枠を描画
 			Draw::Draw(9, &src, &dst, c, 0.0f);
 			dst.m_left = dst.m_right + 0.0f;
 			dst.m_right = dst.m_right + 100.0f;
@@ -68,18 +69,29 @@ void CObjStarPicbook::Draw()
 
 	//マウスの位置とクリックする場所で当たり判定
 	
-	//枠を描画
+	//切り取り位置の設定
+	src.m_top = 1.5f;
+	src.m_left = 0.0f;
+	src.m_right = 300.0f;
+	src.m_bottom = 28.0f;
+
+	//戻るボタンの枠を描画
 	dst.m_top = 0.0f;
 	dst.m_left = 5.0f;
 	dst.m_right = 110.0f;
 	dst.m_bottom = 50.0f;
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
-	if (m_mou_x > 110 || m_mou_y > 50)
-	{
-		//Font::StrDraw(L"戻る", 10, 0, 50, c);
-	}
-	
+	//表示位置の設定
+	dst.m_top = 50.0f;
+	dst.m_left = 5.0f;
+	dst.m_right = 110.0f;
+	dst.m_bottom = 300.0f;
+
+	//説明文を描画
+	Draw::Draw(9, &src, &dst, c, 0.0f);
+
+	//					　　X　Y　大きさ
 	Font::StrDraw(L"戻る", 10, 0, 50, c);
 	
 	//戻るボタン
@@ -88,19 +100,12 @@ void CObjStarPicbook::Draw()
 	{
 		if (m_mou_l == true)
 		{
-			//Font::StrDraw(L"成功", 10, 0, 50, c);
 			Scene::SetScene(new CSceneStageselect());
 		}
-		else
-		{
-			//Font::StrDraw(L"当たり判定", 10, 0, 50, c);
-		}
 	}
-
-	//仮マウス位置表示
-	/*wchar_t str[256];
-	swprintf_s(str, L"x=%f,y=%f", m_mou_x, m_mou_y);
-	Font::StrDraw(str, 20, 20, 12, c);*/
-
-
+	//ｂを押すと戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		Scene::SetScene(new CSceneStageselect());
+	}
 }

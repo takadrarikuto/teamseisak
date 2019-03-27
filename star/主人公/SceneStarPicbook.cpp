@@ -33,9 +33,10 @@ void CSceneStarPicbook::InitScene()
 	//グラフィック読み込み
 	Draw::LoadImage(L"テキストボックス.png", 9, TEX_SIZE_512);
 	
-	//仮主人公オブジェクト生成
+	//星図鑑オブジェクト生成
 	CObjStarPicbook* p = new CObjStarPicbook();
-	Objs::InsertObj(p, OBJ_STARPICBOOK,1);
+	Objs::InsertObj(p, OBJ_STARPICBOOK,9);
+
 }
 
 //ゲームタイトル実行メソッド

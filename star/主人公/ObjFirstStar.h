@@ -28,4 +28,6 @@ private:
 	bool star_flag; //¯ƒtƒ‰ƒO
 
 	wchar_t str[256];
+
+
 };
