@@ -6,15 +6,20 @@
 using namespace GameL;
 
 //オブジェクト　タイトル
-class CObjMars :public CObj
+class CObjIbent :public CObj
 {
 public:
-	CObjMars() {};
-	~CObjMars() {};
+	CObjIbent() {};
+	~CObjIbent() {};
 	void Init();
 	void Action();
 	void Draw();
 
 private:
+	bool I_Start; //イベントスタートフラグ
+	int I_co; //イベントカウント
+	int I_Start_co; //イベントカウント
 
+	float m_px;
+	float m_py;
 };

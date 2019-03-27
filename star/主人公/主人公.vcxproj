@@ -127,13 +127,15 @@
     <ClInclude Include="GameL\WICTextureLoader.h" />
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="ObjAitem.h" />
     <ClInclude Include="ObjFirstStar.h" />
     <ClInclude Include="ObjAncer.h" />
     <ClInclude Include="ObjGameKuria.h" />
     <ClInclude Include="ObjHero.h" />
+    <ClInclude Include="ObjIbent.h" />
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjMars.h" />
-    <ClInclude Include="ObjStarPresent.h" />
+    <ClInclude Include="ObjSaturn.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
     <ClInclude Include="Objstage.h" />
@@ -146,7 +148,7 @@
     <ClInclude Include="SceneStarPicbook.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="SceneSaturn.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -166,13 +168,16 @@
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WICTextureLoader.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
+    <ClCompile Include="ObjAitem.cpp" />
     <ClCompile Include="ObjAncer.cpp" />
     <ClCompile Include="ObjFirstStar.cpp" />
     <ClCompile Include="ObjGameKuria.cpp" />
     <ClCompile Include="ObjHero.cpp" />
+    <ClCompile Include="ObjIbent.cpp" />
     <ClCompile Include="ObjJupiter.cpp" />
     <ClCompile Include="ObjMars.cpp" />
     <ClCompile Include="ObjOperation.cpp" />
+    <ClCompile Include="ObjSaturn.cpp" />
     <ClCompile Include="ObjSelectPlanet.cpp" />
     <ClCompile Include="Objstage.cpp" />
     <ClCompile Include="ObjStageselect.cpp" />
@@ -184,9 +189,8 @@
     <ClCompile Include="SceneStarPicbook.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="SceneSaturn.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="ObjStarPresent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />

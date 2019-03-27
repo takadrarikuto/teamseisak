@@ -35,10 +35,8 @@ void CSceneStarPicbook::InitScene()
 	
 	//星図鑑オブジェクト生成
 	CObjStarPicbook* p = new CObjStarPicbook();
-	Objs::InsertObj(p, OBJ_STARPICBOOK,1);
-	
-	CObjStarPresent* Sp = new CObjStarPresent();
-	Objs::InsertObj(Sp, OBJ_STARPRESENT, 2);
+	Objs::InsertObj(p, OBJ_STARPICBOOK,9);
+
 }
 
 //ゲームタイトル実行メソッド

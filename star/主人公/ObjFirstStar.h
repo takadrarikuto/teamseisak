@@ -24,9 +24,10 @@ private:
 	float m_vx; //移動ベクトル
 	float m_vy;
 	
-	int test[10];
 	int star_co; //星の数カウント
 	bool star_flag; //星フラグ
 
 	wchar_t str[256];
+
+
 };

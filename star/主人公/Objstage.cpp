@@ -27,12 +27,11 @@ void CObjstage::Action()
 void CObjstage::Draw()
 {
 
-	//描画カラー情報
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
-
-
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
+
+	//描画カラー情報
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	//切り取り位置の位置
 	src.m_top = 0.0;
@@ -46,5 +45,6 @@ void CObjstage::Draw()
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
 
-	Draw::Draw(9, &src, &dst, c, 0.0f);
+	Draw::Draw(8, &src, &dst, c, 0.0f);
+
 }

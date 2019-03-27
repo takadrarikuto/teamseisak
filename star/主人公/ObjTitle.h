@@ -18,5 +18,7 @@ public:
 private:
 	bool m_mous_l; //左クリックフラグ
 	bool m_start_flag;
+	float m_mous_x; //マウスの位置X
+	float m_mous_y; //マウスの位置Y
 
 };

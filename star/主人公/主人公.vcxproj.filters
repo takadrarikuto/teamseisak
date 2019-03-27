@@ -47,7 +47,7 @@
       <Filter>ソースファイル\Obj\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="ObjAncer.cpp">
-      <Filter>ソースファイル\Obj\主人公・アンカー</Filter>
+      <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClCompile>
     <ClCompile Include="ObjFirstStar.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
@@ -56,7 +56,7 @@
       <Filter>ソースファイル\Obj\タイトル・操作・クリア</Filter>
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
-      <Filter>ソースファイル\Obj\主人公・アンカー</Filter>
+      <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClCompile>
     <ClCompile Include="ObjMars.cpp">
       <Filter>ソースファイル\Obj\火星</Filter>
@@ -73,8 +73,11 @@
     <ClCompile Include="ObjTitle.cpp">
       <Filter>ソースファイル\Obj\タイトル・操作・クリア</Filter>
     </ClCompile>
-    <ClCompile Include="SceneGameKuria.cpp">
-      <Filter>ソースファイル\Obj\タイトル・操作・クリア</Filter>
+    <ClCompile Include="ObjOperation.cpp">
+      <Filter>ソースファイル\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOperation.cpp">
+      <Filter>ソースファイル\Scene</Filter>
     </ClCompile>
     <ClCompile Include="SceneMars.cpp">
       <Filter>ソースファイル\Scene\火星</Filter>
@@ -88,21 +91,26 @@
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソースファイル\Scene\タイトル・操作・クリア</Filter>
     </ClCompile>
-    <ClCompile Include="SceneSaturn.cpp" />
+    <ClCompile Include="CObjOperation.h">
+      <Filter>ヘッターファイル\Obj</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGameKuria.cpp">
+      <Filter>ソースファイル\Scene\タイトル・操作・クリア</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSaturn.cpp">
+      <Filter>ソースファイル\Scene\土星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSaturn.cpp">
+      <Filter>ソースファイル\Obj\土星</Filter>
+    </ClCompile>
     <ClCompile Include="ObjJupiter.cpp">
       <Filter>ソースファイル\Obj\木星</Filter>
     </ClCompile>
-    <ClCompile Include="ObjStarPresent.cpp">
-      <Filter>ソースファイル\Obj\星図鑑</Filter>
+    <ClCompile Include="ObjAitem.cpp">
+      <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClCompile>
-    <ClCompile Include="ObjOperation.cpp">
-      <Filter>ソースファイル\Obj\操作説明</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneOperation.cpp">
-      <Filter>ソースファイル\Scene\操作説明</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjOperation.h">
-      <Filter>ヘッターファイル\Obj\操作説明</Filter>
+    <ClCompile Include="ObjIbent.cpp">
+      <Filter>ソースファイル\Obj\ペイント</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +144,9 @@
     <ClInclude Include="GameL\SceneObjManager.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
+    <ClInclude Include="SceneOperation.h">
+      <Filter>ヘッターファイル</Filter>
+    </ClInclude>
     <ClInclude Include="GameL\SetWindow.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
@@ -149,10 +160,10 @@
       <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjAncer.h">
-      <Filter>ヘッターファイル\Obj\主人公・アンカー</Filter>
+      <Filter>ヘッターファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClInclude>
     <ClInclude Include="ObjHero.h">
-      <Filter>ヘッターファイル\Obj\主人公・アンカー</Filter>
+      <Filter>ヘッターファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClInclude>
     <ClInclude Include="Objstage.h">
       <Filter>ヘッターファイル\Obj\ステージ背景</Filter>
@@ -184,8 +195,8 @@
     <ClInclude Include="SceneTitle.h">
       <Filter>ヘッターファイル\Scene\タイトル・操作・クリア</Filter>
     </ClInclude>
-    <ClInclude Include="SceneMars.h">
-      <Filter>ヘッターファイル\Scene\火星</Filter>
+    <ClInclude Include="SceneStarPicbook.h">
+      <Filter>ヘッターファイル\Scene\星図鑑</Filter>
     </ClInclude>
     <ClInclude Include="SceneStageselect.h">
       <Filter>ヘッターファイル\Scene\ステージ選択</Filter>
@@ -193,17 +204,26 @@
     <ClInclude Include="ObjFirstStar.h">
       <Filter>ヘッターファイル\Obj\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjJupiter.h" />
-    <ClInclude Include="ObjVenus.h" />
-    <ClInclude Include="SceneSaturn.h" />
-    <ClInclude Include="ObjStarPresent.h">
-      <Filter>ヘッターファイル\Obj\星図鑑</Filter>
+    <ClInclude Include="ObjVenus.h">
+      <Filter>ヘッターファイル\Obj</Filter>
     </ClInclude>
-    <ClInclude Include="SceneStarPicbook.h">
-      <Filter>ヘッターファイル\Scene\星図鑑</Filter>
+    <ClInclude Include="SceneMars.h">
+      <Filter>ヘッターファイル\Scene\火星</Filter>
     </ClInclude>
-    <ClInclude Include="SceneOperation.h">
-      <Filter>ヘッターファイル\Scene\操作説明</Filter>
+    <ClInclude Include="ObjSaturn.h">
+      <Filter>ヘッターファイル\Obj\土星</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneSaturn.h">
+      <Filter>ヘッターファイル\Scene\土星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjJupiter.h">
+      <Filter>ヘッターファイル\Obj\木星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjAitem.h">
+      <Filter>ヘッターファイル\Obj\主人公・アンカー・アイテム</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjIbent.h">
+      <Filter>ヘッターファイル\Obj\イベント</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -218,9 +238,6 @@
     </Filter>
     <Filter Include="ソースファイル\Obj">
       <UniqueIdentifier>{478466db-786c-4877-9e15-62f50d0c6df4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Obj\主人公・アンカー">
-      <UniqueIdentifier>{d6abb30b-8291-4128-a73c-13fa2398b6f4}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\Obj\星">
       <UniqueIdentifier>{b2550f17-62a3-4a0d-9a35-70f6e889f72f}</UniqueIdentifier>
@@ -276,9 +293,6 @@
     <Filter Include="ヘッターファイル\Obj\星">
       <UniqueIdentifier>{9ca0541d-9a44-4a63-9268-d87408b0b81a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッターファイル\Obj\主人公・アンカー">
-      <UniqueIdentifier>{af20f40b-bd11-4ddf-a6fb-56c83fe66b0a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ヘッターファイル\Scene">
       <UniqueIdentifier>{48fdc8d7-0797-4132-9b48-ca2aee7fed33}</UniqueIdentifier>
     </Filter>
@@ -294,20 +308,35 @@
     <Filter Include="ヘッターファイル\Scene\ステージ選択">
       <UniqueIdentifier>{9997f91f-9e68-4ddf-a21f-3bc1e2337500}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソースファイル\Scene\土星">
+      <UniqueIdentifier>{c82cb9cf-3b33-4949-ab55-4b0aa3efc307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\土星">
+      <UniqueIdentifier>{972f2a0a-32ed-44a1-82b6-9b1ad514176d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッターファイル\Obj\土星">
+      <UniqueIdentifier>{edfb548e-4942-4b95-8953-079571aa28dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッターファイル\Scene\土星">
+      <UniqueIdentifier>{36ffdaf9-cf7c-426f-98b7-7a63de340666}</UniqueIdentifier>
+    </Filter>
     <Filter Include="ソースファイル\Obj\木星">
-      <UniqueIdentifier>{2d44383a-3b5d-411e-893e-7f424bc27cd1}</UniqueIdentifier>
+      <UniqueIdentifier>{f65fa22e-fec1-4a22-af7b-25d6b6a71f7e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\操作説明">
-      <UniqueIdentifier>{d3b364f5-3a2c-4c96-9762-9163d9301a38}</UniqueIdentifier>
+    <Filter Include="ヘッターファイル\Obj\木星">
+      <UniqueIdentifier>{5d23a56f-a738-4a1d-b76d-006ec6af10c1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Scene\操作説明">
-      <UniqueIdentifier>{35953ed8-abf7-4b24-9d67-0cf494f3936c}</UniqueIdentifier>
+    <Filter Include="ソースファイル\Obj\主人公・アンカー・アイテム">
+      <UniqueIdentifier>{d6abb30b-8291-4128-a73c-13fa2398b6f4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッターファイル\Obj\操作説明">
-      <UniqueIdentifier>{2ecb5c92-4922-4dd6-9c62-92904c3c0cb2}</UniqueIdentifier>
+    <Filter Include="ヘッターファイル\Obj\主人公・アンカー・アイテム">
+      <UniqueIdentifier>{af20f40b-bd11-4ddf-a6fb-56c83fe66b0a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッターファイル\Scene\操作説明">
-      <UniqueIdentifier>{6dc68655-da5b-4a68-91af-bbbd87a2fc5b}</UniqueIdentifier>
+    <Filter Include="ヘッターファイル\Obj\イベント">
+      <UniqueIdentifier>{acc83aac-587f-4ea0-bba7-26cfe92203e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\ペイント">
+      <UniqueIdentifier>{4173891e-6be4-44b6-8558-124c436f1479}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

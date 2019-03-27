@@ -26,6 +26,8 @@ enum OBJ_NAME
 	OBJ_STAGE,
 	OBJ_GAMEKURIA,
 	OBJ_STARPRESENT,
+	OBJ_AITEM,
+	OBJ_IBENT,
 };
 //------------------------------------------------
 
@@ -85,6 +87,8 @@ struct UserData
 #include "CObjOperation.h"
 #include "ObjGamekuria.h"
 #include "ObjStarPresent.h"
+#include "ObjAitem.h"
+#include "ObjIbent.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -102,5 +106,11 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneStarPicbook
+//#define SET_GAME_START  CSceneMain
+//#define SET_GAME_START CSceneOperation
+#define SET_GAME_START CSceneTitle
+//#define SET_GAME_START CSceneGameKuria
+//#define SET_GAME_START CSceneStarPicbook
+//#define SET_GAME_START　CSceneSaturn
+//#define SET_GAME_START CSceneMars
 //-----------------------------------------------

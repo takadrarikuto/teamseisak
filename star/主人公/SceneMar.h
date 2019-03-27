@@ -6,13 +6,15 @@
 using namespace GameL;
 
 //シーンメイン
-class CSceneGameKuria :public CScene
+class CSceneMar:public CScene
 {
 public:
-	CSceneGameKuria();
-	~CSceneGameKuria();
+	CSceneMar();
+	~CSceneMar();
 	void InitScene(); //初期化メゾット
 	void Scene(); //実行中メゾット
 private:
 
+	int time_star; //星生成時間
+	bool star_flag;
 };
