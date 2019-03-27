@@ -56,6 +56,10 @@ void CSceneSaturn::InitScene()
 	CObjAitem* obj_ai = new CObjAitem();
 	Objs::InsertObj(obj_ai, OBJ_AITEM, 14);
 
+	//スターカウントオブジェクト作成
+	CObjStarCount* obj_sc = new CObjStarCount();
+	Objs::InsertObj(obj_sc, OBJ_STARCOUNT, 15);
+
 	//星生成時間初期化
 	time_star = 0;
 

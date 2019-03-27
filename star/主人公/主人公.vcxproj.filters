@@ -112,6 +112,9 @@
     <ClCompile Include="ObjIbent.cpp">
       <Filter>ソースファイル\Obj\ペイント</Filter>
     </ClCompile>
+    <ClCompile Include="ObjStarCount.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -224,6 +227,9 @@
     </ClInclude>
     <ClInclude Include="ObjIbent.h">
       <Filter>ヘッターファイル\Obj\イベント</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarCount.h">
+      <Filter>ヘッターファイル\Obj\星</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

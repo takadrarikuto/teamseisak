@@ -32,5 +32,4 @@ private:
 
 	bool m_mous_l;
 
-
 };

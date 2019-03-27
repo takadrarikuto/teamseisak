@@ -20,6 +20,11 @@ private:
 	int I_co; //イベントカウント
 	int I_Start_co; //イベントカウント
 
-	float m_px;
+	
+	float m_px; //当たり判定用
 	float m_py;
+
+	float m_vx1; //スクロール用
+	float m_vx2; 
+
 };

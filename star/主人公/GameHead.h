@@ -28,6 +28,7 @@ enum OBJ_NAME
 	OBJ_STARPRESENT,
 	OBJ_AITEM,
 	OBJ_IBENT,
+	OBJ_STARCOUNT,
 };
 //------------------------------------------------
 
@@ -56,7 +57,7 @@ enum HIT_ELEMENTS
 struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
-	
+	int star_co; //星の数カウント
 };
 //------------------------------------------------
 
@@ -89,6 +90,7 @@ struct UserData
 #include "ObjStarPresent.h"
 #include "ObjAitem.h"
 #include "ObjIbent.h"
+#include "ObjStarCount.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

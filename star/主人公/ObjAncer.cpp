@@ -93,7 +93,7 @@ void CObjAncer::Action()
 		}
 
 		if (ancer_flag == true)
-		{
+		{	
 			m_vy -= 9.0f;
 			time += 13.0f; //ロープ長さ調整
 		}
@@ -107,7 +107,7 @@ void CObjAncer::Action()
 			else
 			{
 				time = 0.0f; //ロープ長さ調整
-			}
+			}				
 		}
 	}
 
