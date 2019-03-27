@@ -68,20 +68,13 @@ void CObjFirstStar::Action()
 		star_flag = false;
 	}
 
-	if (m_py > 450.0f)
-	{
-		star_co += 1; //星の数カウント	
-		star_flag = true;	
-	}
-
-	/*
 	//主人公の当たり判定に当たると星フラグをtrueにし、星の数をカウント
 	if (hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
 	{
 		star_co += 1; //星の数カウント
 		star_flag = true;
 	}
-	*/
+	
 
 	if (star_co > 10)
 	{

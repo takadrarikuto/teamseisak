@@ -23,11 +23,11 @@ enum OBJ_NAME
 	OBJ_SECONDSTAR,
 	OBJ_OTHERSTAR,
 	OBJ_OPERATION,
-	OBJ_STAGE,
+	OBJ_BACKGROUND,
 	OBJ_GAMEKURIA,
 	OBJ_STARPRESENT,
 	OBJ_AITEM,
-	OBJ_IBENT,
+	OBJ_EVENT,
 };
 //------------------------------------------------
 
@@ -83,12 +83,13 @@ struct UserData
 #include "ObjSaturn.h"
 #include "ObjAncer.h"
 #include "ObjFirstStar.h"
-#include "Objstage.h"
+#include "ObjSecondStar.h"
+#include "ObjBackground.h"
 #include "CObjOperation.h"
 #include "ObjGamekuria.h"
 #include "ObjStarPresent.h"
 #include "ObjAitem.h"
-#include "ObjIbent.h"
+#include "ObjEvent.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
