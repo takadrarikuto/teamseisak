@@ -109,6 +109,9 @@
     <ClCompile Include="ObjAitem.cpp">
       <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClCompile>
+    <ClCompile Include="ObjIbent.cpp">
+      <Filter>ソースファイル\Obj\ペイント</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -219,6 +222,9 @@
     <ClInclude Include="ObjAitem.h">
       <Filter>ヘッターファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClInclude>
+    <ClInclude Include="ObjIbent.h">
+      <Filter>ヘッターファイル\Obj\イベント</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
@@ -325,6 +331,12 @@
     </Filter>
     <Filter Include="ヘッターファイル\Obj\主人公・アンカー・アイテム">
       <UniqueIdentifier>{af20f40b-bd11-4ddf-a6fb-56c83fe66b0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッターファイル\Obj\イベント">
+      <UniqueIdentifier>{acc83aac-587f-4ea0-bba7-26cfe92203e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\ペイント">
+      <UniqueIdentifier>{4173891e-6be4-44b6-8558-124c436f1479}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

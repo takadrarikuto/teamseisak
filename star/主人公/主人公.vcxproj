@@ -132,6 +132,7 @@
     <ClInclude Include="ObjAncer.h" />
     <ClInclude Include="ObjGameKuria.h" />
     <ClInclude Include="ObjHero.h" />
+    <ClInclude Include="ObjIbent.h" />
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjMars.h" />
     <ClInclude Include="ObjSaturn.h" />
@@ -172,6 +173,7 @@
     <ClCompile Include="ObjFirstStar.cpp" />
     <ClCompile Include="ObjGameKuria.cpp" />
     <ClCompile Include="ObjHero.cpp" />
+    <ClCompile Include="ObjIbent.cpp" />
     <ClCompile Include="ObjJupiter.cpp" />
     <ClCompile Include="ObjMars.cpp" />
     <ClCompile Include="ObjOperation.cpp" />

@@ -21,36 +21,39 @@ void CSceneSaturn::InitScene()
 	//背景
 	Draw::LoadImage(L"火星.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"フィールド背景火星(透過済み).png", 9, TEX_SIZE_512);
+
 	//主人公
-	Draw::LoadImage(L"主人公.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
 	//アンカー
-	Draw::LoadImage(L"アンカー（仮　透過済み）.png", 11, TEX_SIZE_512);
+	Draw::LoadImage(L"アンカー（仮　透過済み）.png", 12, TEX_SIZE_512);
 
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
-	Draw::LoadImage(L"星(透過済み).png", 12, TEX_SIZE_512);
+	Draw::LoadImage(L"星(透過済み).png", 13, TEX_SIZE_512);
 
 	//背景オブジェクト生成
-	CObjSaturn* obj_m = new CObjSaturn();
-	Objs::InsertObj(obj_m, OBJ_SATURN, 8);
+	CObjMars* obj_m = new CObjMars();
+	Objs::InsertObj(obj_m, OBJ_MARS, 8);
 	CObjstage* obj_h = new CObjstage();
 	Objs::InsertObj(obj_h, OBJ_STAGE, 9);
+	CObjIbent* obj_i = new CObjIbent();
+	Objs::InsertObj(obj_i, OBJ_IBENT, 10); //イベント背景
+
 
 	//仮主人公オブジェクト生成
 	CObjHero* obj = new CObjHero();
-	Objs::InsertObj(obj, OBJ_HERO, 10);
+	Objs::InsertObj(obj, OBJ_HERO, 11);
 
 	//アンカーオブジェクト作成
 	CObjAncer* obj_a = new CObjAncer();
-	Objs::InsertObj(obj_a, OBJ_ANCER, 11);
+	Objs::InsertObj(obj_a, OBJ_ANCER, 12);
 
 	//スターオブジェクト作成
 	CObjFirstStar* star = new CObjFirstStar();
-	Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+	Objs::InsertObj(star, OBJ_MARS, 13);    //スターオブジェクト登録
 
 	//アイテムオブジェクト生成
 	CObjAitem* obj_ai = new CObjAitem();
-	Objs::InsertObj(obj_ai, OBJ_AITEM, 13);
-
+	Objs::InsertObj(obj_ai, OBJ_AITEM, 14);
 
 	//星生成時間初期化
 	time_star = 0;
@@ -64,7 +67,6 @@ void CSceneSaturn::InitScene()
 void CSceneSaturn::Scene()
 {
 
-	
 	if (time_star == 30)
 	{
 		star_flag = true;
@@ -78,7 +80,7 @@ void CSceneSaturn::Scene()
 	{
 		//スターオブジェクト作成
 		CObjFirstStar* star = new CObjFirstStar();
-		Objs::InsertObj(star, OBJ_MARS, 12);    //スターオブジェクト登録
+		Objs::InsertObj(star, OBJ_MARS, 13);    //スターオブジェクト登録
 
 		time_star = 0;
 		star_flag = false;

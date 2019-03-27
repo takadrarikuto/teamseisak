@@ -39,7 +39,6 @@ void CObjHero::Init()
 
 	m_mous_l = false;
 
-	m_mous_l = false;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -189,5 +188,5 @@ void CObjHero::Draw()
 	dst.m_right = 50.0f + m_px;
 	dst.m_bottom = 50.0f + m_py;
 
-	Draw::Draw(10, &src, &dst, c, 0.0f);
+	Draw::Draw(11, &src, &dst, c, 0.0f);
 }

@@ -6,16 +6,17 @@
 using namespace GameL;
 
 //オブジェクト　タイトル
-class CObjJupiter :public CObj
+class CObjIbent :public CObj
 {
 public:
-	CObjJupiter() {};
-	~CObjJupiter() {};
+	CObjIbent() {};
+	~CObjIbent() {};
 	void Init();
 	void Action();
 	void Draw();
 
 private:
-
-
+	bool I_Start; //イベントスタートフラグ
+	int I_co; //イベントカウント
+	int I_Start_co; //イベントカウント
 };
