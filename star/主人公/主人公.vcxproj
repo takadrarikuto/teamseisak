@@ -136,6 +136,7 @@
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjMars.h" />
     <ClInclude Include="ObjSaturn.h" />
+    <ClInclude Include="ObjStarPresent.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
     <ClInclude Include="Objstage.h" />
@@ -181,6 +182,7 @@
     <ClCompile Include="ObjSelectPlanet.cpp" />
     <ClCompile Include="Objstage.cpp" />
     <ClCompile Include="ObjStageselect.cpp" />
+    <ClCompile Include="ObjStarPresent.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneGameKuria.cpp" />
     <ClCompile Include="SceneMars.cpp" />
