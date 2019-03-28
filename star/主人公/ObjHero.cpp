@@ -11,6 +11,7 @@
 //使用するネームスペース
 using namespace GameL;
 
+
 //イニシャライズ
 void CObjHero::Init()
 {
@@ -36,8 +37,6 @@ void CObjHero::Init()
 
 	//主人公
 	Hits::SetHitBox(this, m_px, m_py, 50, 50, ELEMENT_PLAYER, OBJ_HERO, 10);
-
-	m_mous_l = false;
 
 	m_mous_l = false;
 }
@@ -189,5 +188,5 @@ void CObjHero::Draw()
 	dst.m_right = 50.0f + m_px;
 	dst.m_bottom = 50.0f + m_py;
 
-	Draw::Draw(10, &src, &dst, c, 0.0f);
+	Draw::Draw(11, &src, &dst, c, 0.0f);
 }

@@ -128,6 +128,7 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjAitem.h" />
+    <ClInclude Include="ObjEvent.h" />
     <ClInclude Include="ObjFirstStar.h" />
     <ClInclude Include="ObjAncer.h" />
     <ClInclude Include="ObjGameKuria.h" />
@@ -135,9 +136,12 @@
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjMars.h" />
     <ClInclude Include="ObjSaturn.h" />
+    <ClInclude Include="ObjStarCount.h" />
+    <ClInclude Include="ObjStarPresent.h" />
+    <ClInclude Include="ObjSecondStar.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
-    <ClInclude Include="Objstage.h" />
+    <ClInclude Include="ObjBackground.h" />
     <ClInclude Include="ObjStageselect.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneGameKuria.h" />
@@ -169,6 +173,7 @@
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjAitem.cpp" />
     <ClCompile Include="ObjAncer.cpp" />
+    <ClCompile Include="ObjEvent.cpp" />
     <ClCompile Include="ObjFirstStar.cpp" />
     <ClCompile Include="ObjGameKuria.cpp" />
     <ClCompile Include="ObjHero.cpp" />
@@ -176,9 +181,12 @@
     <ClCompile Include="ObjMars.cpp" />
     <ClCompile Include="ObjOperation.cpp" />
     <ClCompile Include="ObjSaturn.cpp" />
+    <ClCompile Include="ObjSecondStar.cpp" />
     <ClCompile Include="ObjSelectPlanet.cpp" />
-    <ClCompile Include="Objstage.cpp" />
+    <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjStageselect.cpp" />
+    <ClCompile Include="ObjStarCount.cpp" />
+    <ClCompile Include="ObjStarPresent.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneGameKuria.cpp" />
     <ClCompile Include="SceneMars.cpp" />

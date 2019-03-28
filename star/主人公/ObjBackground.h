@@ -5,16 +5,18 @@
 //使用するネームスペース
 using namespace GameL;
 
-//オブジェクト　タイトル
-class CObjMars :public CObj
+//オブジェクト　アンカー
+class CObjBackground : public CObj
 {
 public:
-	CObjMars() {};
-	~CObjMars() {};
+	CObjBackground() {};
+	~CObjBackground() {};
+
 	void Init();
 	void Action();
 	void Draw();
 
 private:
-	
+
+
 };

@@ -69,6 +69,6 @@ void CObjAitem::Draw()
 	dst.m_bottom = 0.0f;
 
 	//•`‰æ
-	Draw::Draw(13, &src, &dst, c, 0.0f);
+	Draw::Draw(14, &src, &dst, c, 0.0f);
 
 }
