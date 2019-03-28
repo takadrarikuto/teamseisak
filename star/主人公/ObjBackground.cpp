@@ -36,8 +36,8 @@ void CObjBackground::Draw()
 	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 854.0f;
-	src.m_bottom = 656.0f;
+	src.m_right = 1920.0f;
+	src.m_bottom = 1080.0f;
 
 	//•\¦ˆÊ’u‚Ìİ’è
 	dst.m_top = 0.0f;
@@ -45,6 +45,6 @@ void CObjBackground::Draw()
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
 
-	Draw::Draw(10, &src, &dst, c, 0.0f);
+	Draw::Draw(8, &src, &dst, c, 0.0f);
 
 }
