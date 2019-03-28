@@ -36,10 +36,10 @@ void CSceneMars::InitScene()
 	//背景オブジェクト生成
 	CObjMars* obj_m = new CObjMars();
 	Objs::InsertObj(obj_m, OBJ_MARS, 10);
-	CObjEvent* obj_i = new CObjEvent();
-	Objs::InsertObj(obj_i, OBJ_EVENT, 9); //イベント背景	
-	CObjBackground* obj_h = new CObjBackground();
-	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 8);
+	//CObjEvent* obj_i = new CObjEvent();
+	//Objs::InsertObj(obj_i, OBJ_EVENT, 9); //イベント背景	
+	//CObjBackground* obj_h = new CObjBackground();
+	//Objs::InsertObj(obj_h, OBJ_BACKGROUND, 8);
 
 
 	//仮主人公オブジェクト生成
@@ -92,7 +92,7 @@ void CSceneMars::Scene()
 	if (arise <= 3 && arise >= 2)
 	{
 		//スターオブジェクト作成
-		CObjSecondStar* star2 = new CObjSecondStar();
-		Objs::InsertObj(star2, OBJ_SECONDSTAR, 14);    //スターオブジェクト登録
+		//CObjSecondStar* star2 = new CObjSecondStar();
+		//Objs::InsertObj(star2, OBJ_SECONDSTAR, 14);    //スターオブジェクト登録
 	}
 }

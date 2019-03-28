@@ -73,25 +73,25 @@ struct UserData
 
 //------------------------------------------------
 
+#include "CObjStarPicbook.h"
 //ゲームシーンオブジェクトヘッダ------------------
 #include "ObjHero.h"
 #include "ObjTitle.h"
 #include "ObjStageselect.h"
 #include "ObjSelectPlanet.h"
-#include "CObjStarPicbook.h"
 #include "ObjMars.h"
 #include "ObjJupiter.h"
 #include "ObjVenus.h"
 #include "ObjSaturn.h"
 #include "ObjAncer.h"
 #include "ObjFirstStar.h"
-#include "ObjSecondStar.h"
-#include "ObjBackground.h"
+//#include "ObjSecondStar.h"
+//#include "ObjBackground.h"
 #include "CObjOperation.h"
 #include "ObjGamekuria.h"
 #include "ObjStarPresent.h"
 #include "ObjAitem.h"
-#include "ObjEvent.h"
+//#include "ObjEvent.h"
 #include "ObjIbent.h"
 #include "ObjStarCount.h"
 //------------------------------------------------
