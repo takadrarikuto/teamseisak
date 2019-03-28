@@ -19,7 +19,7 @@ void CSceneSaturn::InitScene()
 {
 	//グラフィック読み込み
 	//背景
-	Draw::LoadImage(L"フィールド背景火星(透過済み).png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"イベント背景(火星).png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"火星.png", 10, TEX_SIZE_512);
 

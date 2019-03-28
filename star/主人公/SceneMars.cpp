@@ -20,7 +20,7 @@ void CSceneMars::InitScene()
 {
 	//グラフィック読み込み
 	//背景
-	Draw::LoadImage(L"フィールド背景火星(透過済み).png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"イベント背景(火星).png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"火星.png", 10, TEX_SIZE_512);
 
@@ -67,14 +67,8 @@ void CSceneMars::InitScene()
 	Objs::InsertObj(star2, OBJ_SECONDSTAR, 16);    //スターオブジェクト登録
 
 
-	//スターカウントオブジェクト作成
-	CObjStarCount* obj_sc = new CObjStarCount();
-	Objs::InsertObj(obj_sc, OBJ_STARCOUNT, 15);
-
-
 	//星生成時間初期化
 	time_star = 0;
-
 
 }
 
