@@ -128,11 +128,11 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjAitem.h" />
+    <ClInclude Include="ObjEvent.h" />
     <ClInclude Include="ObjFirstStar.h" />
     <ClInclude Include="ObjAncer.h" />
     <ClInclude Include="ObjGameKuria.h" />
     <ClInclude Include="ObjHero.h" />
-    <ClInclude Include="ObjEvent.h" />
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjMars.h" />
     <ClInclude Include="ObjSaturn.h" />
@@ -175,12 +175,10 @@
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjAitem.cpp" />
     <ClCompile Include="ObjAncer.cpp" />
+    <ClCompile Include="ObjEvent.cpp" />
     <ClCompile Include="ObjFirstStar.cpp" />
     <ClCompile Include="ObjGameKuria.cpp" />
     <ClCompile Include="ObjHero.cpp" />
-    <ClCompile Include="ObjEvent.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="ObjJupiter.cpp" />
     <ClCompile Include="ObjMars.cpp" />
     <ClCompile Include="ObjOperation.cpp" />

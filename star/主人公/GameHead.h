@@ -91,8 +91,7 @@ struct UserData
 #include "ObjGamekuria.h"
 #include "ObjStarPresent.h"
 #include "ObjAitem.h"
-//#include "ObjEvent.h"
-#include "ObjIbent.h"
+#include "ObjEvent.h"
 #include "ObjStarCount.h"
 //------------------------------------------------
 

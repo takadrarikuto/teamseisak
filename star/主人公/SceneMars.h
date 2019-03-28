@@ -15,7 +15,6 @@ public:
 	void Scene();     //ゲームタイトルの実行中メソッド
 private:
 	int time_star; //星生成時間
-	bool star_flag;
 	int arise;
 
 };

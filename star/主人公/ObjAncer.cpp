@@ -87,6 +87,10 @@ void CObjAncer::Action()
 		{
 			ancer_flag = false;
 		}
+		else if (hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
+		{
+			ancer_flag = false;
+		}
 		else if (Input::GetMouButtonL() == true && m_pay > 535.0f)
 		{
 			ancer_flag = true;
