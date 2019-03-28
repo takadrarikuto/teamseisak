@@ -67,6 +67,11 @@ void CSceneMars::InitScene()
 	Objs::InsertObj(star2, OBJ_SECONDSTAR, 16);    //スターオブジェクト登録
 
 
+	//スターカウントオブジェクト作成
+	CObjStarCount* obj_sc = new CObjStarCount();
+	Objs::InsertObj(obj_sc, OBJ_STARCOUNT, 15);
+
+
 	//星生成時間初期化
 	time_star = 0;
 
