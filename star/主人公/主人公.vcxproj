@@ -128,6 +128,7 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjAitem.h" />
+    <ClInclude Include="ObjEvent.h" />
     <ClInclude Include="ObjFirstStar.h" />
     <ClInclude Include="ObjAncer.h" />
     <ClInclude Include="ObjGameKuria.h" />
@@ -138,6 +139,8 @@
     <ClInclude Include="ObjStarCount.h" />
     <ClInclude Include="ObjStarPresent.h" />
     <ClInclude Include="ObjSecondStar.h" />
+    <ClInclude Include="Objstaminagauge.h" />
+    <ClInclude Include="Objstaminagaugeframe.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
     <ClInclude Include="ObjBackground.h" />
@@ -172,6 +175,7 @@
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjAitem.cpp" />
     <ClCompile Include="ObjAncer.cpp" />
+    <ClCompile Include="ObjEvent.cpp" />
     <ClCompile Include="ObjFirstStar.cpp" />
     <ClCompile Include="ObjGameKuria.cpp" />
     <ClCompile Include="ObjHero.cpp" />
@@ -185,6 +189,8 @@
     <ClCompile Include="ObjStageselect.cpp" />
     <ClCompile Include="ObjStarCount.cpp" />
     <ClCompile Include="ObjStarPresent.cpp" />
+    <ClCompile Include="Objstaminagauge.cpp" />
+    <ClCompile Include="Objstaminagaugeframe.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneGameKuria.cpp" />
     <ClCompile Include="SceneMars.cpp" />

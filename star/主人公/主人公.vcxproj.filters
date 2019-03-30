@@ -121,6 +121,12 @@
     <ClCompile Include="ObjEvent.cpp">
       <Filter>ソースファイル\Obj\イベント</Filter>
     </ClCompile>
+    <ClCompile Include="Objstaminagaugeframe.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係\スタミナ</Filter>
+    </ClCompile>
+    <ClCompile Include="Objstaminagauge.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係\スタミナ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -228,9 +234,6 @@
     <ClInclude Include="ObjAitem.h">
       <Filter>ヘッターファイル\Obj\主人公・アンカー・アイテム</Filter>
     </ClInclude>
-    <ClInclude Include="ObjSecondStar.h">
-      <Filter>ソースファイル\Obj\星</Filter>
-    </ClInclude>
     <ClInclude Include="ObjBackground.h">
       <Filter>ヘッターファイル\Obj\ステージ背景</Filter>
     </ClInclude>
@@ -240,8 +243,17 @@
     <ClInclude Include="ObjStarCount.h">
       <Filter>ヘッターファイル\Obj\星</Filter>
     </ClInclude>
+    <ClInclude Include="ObjSecondStar.h">
+      <Filter>ヘッターファイル\Obj\星</Filter>
+    </ClInclude>
     <ClInclude Include="ObjEvent.h">
       <Filter>ヘッターファイル\Obj\イベント</Filter>
+    </ClInclude>
+    <ClInclude Include="Objstaminagaugeframe.h">
+      <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
+    </ClInclude>
+    <ClInclude Include="Objstaminagauge.h">
+      <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -355,6 +367,18 @@
     </Filter>
     <Filter Include="ヘッターファイル\Obj\火星地表">
       <UniqueIdentifier>{152ba949-1b6b-4e21-bc93-7835af7852d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッターファイル\Obj\ゲージ関係">
+      <UniqueIdentifier>{b4dcdc3d-2acf-4a9b-bfd8-3ec578f46848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\ゲージ関係">
+      <UniqueIdentifier>{f6c9ffdf-b9f8-49d2-b2c1-908fc13eb186}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\ゲージ関係\スタミナ">
+      <UniqueIdentifier>{745ad11a-4506-4b54-8793-dad8ac797d02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッターファイル\Obj\ゲージ関係\スタミナ">
+      <UniqueIdentifier>{a7b036b1-7ca7-4444-89bc-a2b091b38537}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

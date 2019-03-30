@@ -82,24 +82,25 @@ void CObjAncer::Action()
 	//画面移動時起動防止用
 	if (time_co > 30)
 	{
-		//アンカー発射
-		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr)
+		//星に当たると戻る
+		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
 		{
 			ancer_flag = false;
 		}
-		else if (Input::GetMouButtonL() == true && m_pay > 535.0f)
+		//定位置にアンカーがある時に左クリックでアンカー発射
+		else if (Input::GetMouButtonL() == true && m_pay > 535.0f && time == 0)
 		{
 			ancer_flag = true;
 		}
 
 		if (ancer_flag == true)
 		{	
-			m_vy -= 9.0f;
+			m_vy -= 9.0f; //アンカー移動
 			time += 13.0f; //ロープ長さ調整
 		}
 		else
 		{
-			m_vy += 6.0f;
+			m_vy += 6.0f; //アンカー移動
 			if (m_pry < 500.0f)
 			{
 				time -= 9.0f; //ロープ長さ調整
@@ -130,15 +131,6 @@ void CObjAncer::Action()
 	else if (m_pax + 40.0f > 800.0f)
 	{
 		m_pax = 800.0f -40.0f; 
-	}
-	if (m_pay < 50.0f)
-	{
-		m_pay = 50.0f;
-		ancer_flag = false;
-	}
-	else if (m_pay > 535.0f)
-	{
-		m_pay = 535.0f;
 	}
 	if (m_pay < 50.0f)
 	{

@@ -30,6 +30,9 @@ enum OBJ_NAME
 	OBJ_EVENT,
 	OBJ_IBENT,
 	OBJ_STARCOUNT,
+	OBJ_STRENGTHGAUGE,
+	OBJ_STRENGTHGAUGEFRAME1,
+	OBJ_STRENGTHGAUGEFRAME2,
 };
 //------------------------------------------------
 
@@ -92,8 +95,9 @@ struct UserData
 #include "ObjStarPresent.h"
 #include "ObjAitem.h"
 #include "ObjEvent.h"
-#include "ObjEvent.h"
 #include "ObjStarCount.h"
+#include "Objstaminagauge.h"
+#include "Objstaminagaugeframe.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
