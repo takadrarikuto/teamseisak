@@ -143,7 +143,9 @@
     <ClInclude Include="Objstaminagaugeframe.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
-    <ClInclude Include="ObjBackground.h" />
+    <ClInclude Include="ObjBackground.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ObjStageselect.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneGameKuria.h" />
@@ -183,7 +185,9 @@
     <ClCompile Include="ObjMars.cpp" />
     <ClCompile Include="ObjOperation.cpp" />
     <ClCompile Include="ObjSaturn.cpp" />
-    <ClCompile Include="ObjSecondStar.cpp" />
+    <ClCompile Include="ObjSecondStar.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="ObjSelectPlanet.cpp" />
     <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjStageselect.cpp" />
