@@ -256,6 +256,9 @@
     <ClInclude Include="Objstaminagaugeframe.h">
       <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
     </ClInclude>
+    <ClInclude Include="Objstaminagauge.h">
+      <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
