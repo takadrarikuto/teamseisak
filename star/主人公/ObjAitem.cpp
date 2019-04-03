@@ -24,7 +24,7 @@ void CObjAitem::Action()
 	//アイテム使用
 	if (Input::GetVKey('A') == true)
 	{
-		//画像候補3つ
+		//使用回数処理
 		if (Aitem_co_max > 0)
 		{
 			if (Aitem_flag == true)

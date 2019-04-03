@@ -44,6 +44,9 @@ void CObjAncer::Init()
 	//アンカー移動フラグ初期化
 	ancer_flag = false;
 
+	//飛距離調整初期化
+	ancer_time = 1;
+
 	//画面移動時起動防止用初期化
 	time_co = 0;
 }
@@ -90,7 +93,12 @@ void CObjAncer::Action()
 		//定位置にアンカーがある時に左クリックでアンカー発射
 		else if (Input::GetMouButtonL() == true && m_pay > 535.0f && time == 0)
 		{
+			ancer_time += 1;
 			ancer_flag = true;
+		}
+		else if (Input::GetMouButtonL() == false && ancer_time > 1)
+		{
+			
 		}
 
 		if (ancer_flag == true)
@@ -108,6 +116,7 @@ void CObjAncer::Action()
 			else
 			{
 				time = 0.0f; //ロープ長さ調整
+				ancer_time = 1;
 			}				
 		}
 	}

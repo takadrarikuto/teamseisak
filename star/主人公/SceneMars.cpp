@@ -35,8 +35,8 @@ void CSceneMars::InitScene()
 
 	//ゲージ関係
 	//体力
-	Draw::LoadImage(L"体力縦ゲージ枠(透過済み).png", 17, TEX_SIZE_512);
-	Draw::LoadImage(L"体力縦ゲージ(透過済み).png", 18, TEX_SIZE_512);
+	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
+	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
 
 
 	//背景オブジェクト生成

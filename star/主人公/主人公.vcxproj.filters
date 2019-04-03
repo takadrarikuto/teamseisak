@@ -246,18 +246,14 @@
     <ClInclude Include="ObjSecondStar.h">
       <Filter>ヘッターファイル\Obj\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjSecondStar.h">
-      <Filter>ヘッターファイル\Obj\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjEvent.h">
-      <Filter>ヘッターファイル\Obj\イベント</Filter>
-    </ClInclude>
     <ClInclude Include="Objstaminagaugeframe.h">
       <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
     </ClInclude>
     <ClInclude Include="Objstaminagauge.h">
       <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
     </ClInclude>
+    <ClInclude Include="ObjEvent.h" />
+    <ClInclude Include="ObjSecondStar.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
@@ -370,9 +366,6 @@
     </Filter>
     <Filter Include="ヘッダーファイル\Scene\土星">
       <UniqueIdentifier>{36ffdaf9-cf7c-426f-98b7-7a63de340666}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッターファイル\Obj\ゲージ関係">
-      <UniqueIdentifier>{b4dcdc3d-2acf-4a9b-bfd8-3ec578f46848}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\Obj\ゲージ関係">
       <UniqueIdentifier>{f6c9ffdf-b9f8-49d2-b2c1-908fc13eb186}</UniqueIdentifier>
