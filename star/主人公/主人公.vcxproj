@@ -141,6 +141,7 @@
     <ClInclude Include="ObjSecondStar.h" />
     <ClInclude Include="Objstaminagauge.h" />
     <ClInclude Include="Objstaminagaugeframe.h" />
+    <ClInclude Include="ObjStarPresent2.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
     <ClInclude Include="ObjBackground.h">
@@ -196,6 +197,7 @@
     <ClCompile Include="ObjStarPresent.cpp" />
     <ClCompile Include="Objstaminagauge.cpp" />
     <ClCompile Include="Objstaminagaugeframe.cpp" />
+    <ClCompile Include="ObjStarPresent2.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneGameKuria.cpp" />
     <ClCompile Include="SceneMars.cpp" />
@@ -206,6 +208,7 @@
     <ClCompile Include="SceneSaturn.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="StarBook.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />

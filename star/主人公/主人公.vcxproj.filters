@@ -112,9 +112,6 @@
     <ClCompile Include="ObjStarCount.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
     </ClCompile>
-    <ClCompile Include="ObjStarPresent.cpp">
-      <Filter>ソースファイル\Scene\星図鑑</Filter>
-    </ClCompile>
     <ClCompile Include="ObjBackground.cpp">
       <Filter>ソースファイル\Obj\通常時背景</Filter>
     </ClCompile>
@@ -126,6 +123,15 @@
     </ClCompile>
     <ClCompile Include="Objstaminagauge.cpp">
       <Filter>ソースファイル\Obj\ゲージ関係\スタミナ</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent2.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,9 +164,6 @@
     </ClInclude>
     <ClInclude Include="GameL\SceneObjManager.h">
       <Filter>リソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneOperation.h">
-      <Filter>ヘッダーファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\SetWindow.h">
       <Filter>リソースファイル</Filter>
@@ -243,22 +246,25 @@
     <ClInclude Include="ObjStarCount.h">
       <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjSecondStar.h">
-      <Filter>ヘッターファイル\Obj\星</Filter>
+    <ClInclude Include="ObjSecondStar.h" />
+    <ClInclude Include="ObjSecondStar.h" />
+    <ClInclude Include="Objstaminagauge.h">
+      <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
     </ClInclude>
     <ClInclude Include="Objstaminagaugeframe.h">
-      <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
+      <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
     </ClInclude>
-    <ClInclude Include="Objstaminagauge.h">
-      <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
+    <ClInclude Include="ObjEvent.h">
+      <Filter>ヘッダーファイル\Obj\イベント</Filter>
     </ClInclude>
-    <ClInclude Include="ObjEvent.h" />
-    <ClInclude Include="ObjSecondStar.h" />
+    <ClInclude Include="SceneOperation.h">
+      <Filter>ヘッダーファイル\Scene\操作説明</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent2.h">
+      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="リソースファイル">
-      <UniqueIdentifier>{be714c94-ac62-44ce-8c11-50472f71239e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースファイル">
       <UniqueIdentifier>{4fd045a7-1a70-41ef-8f0b-a62cc54c4911}</UniqueIdentifier>
     </Filter>
@@ -373,8 +379,17 @@
     <Filter Include="ソースファイル\Obj\ゲージ関係\スタミナ">
       <UniqueIdentifier>{745ad11a-4506-4b54-8793-dad8ac797d02}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッターファイル\Obj\ゲージ関係\スタミナ">
-      <UniqueIdentifier>{a7b036b1-7ca7-4444-89bc-a2b091b38537}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\Obj\ゲージ関係">
+      <UniqueIdentifier>{1510a3ad-bc02-4ec0-bea5-2d2541116d02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\ゲージ関係\スタミナ">
+      <UniqueIdentifier>{a1e536cc-cbe0-438d-afd0-a62511fae73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソースファイル">
+      <UniqueIdentifier>{be714c94-ac62-44ce-8c11-50472f71239e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Scene\操作説明">
+      <UniqueIdentifier>{3b23623d-004b-4ee7-bf94-a16d45a6e65b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

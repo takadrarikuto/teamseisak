@@ -26,6 +26,7 @@ enum OBJ_NAME
 	OBJ_BACKGROUND,
 	OBJ_GAMEKURIA,
 	OBJ_STARPRESENT,
+	OBJ_STARPRESENT2,
 	OBJ_AITEM,
 	OBJ_EVENT,
 	OBJ_IBENT,
@@ -62,6 +63,7 @@ struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
 	int star_co; //星の数カウント
+
 };
 //------------------------------------------------
 
@@ -93,6 +95,7 @@ struct UserData
 #include "CObjOperation.h"
 #include "ObjGamekuria.h"
 #include "ObjStarPresent.h"
+#include "ObjStarPresent2.h"
 #include "ObjAitem.h"
 #include "ObjEvent.h"
 #include "ObjStarCount.h"
@@ -115,5 +118,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneStarPicbook
 //-----------------------------------------------
