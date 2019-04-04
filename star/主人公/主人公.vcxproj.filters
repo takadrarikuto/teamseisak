@@ -252,9 +252,16 @@
     </ClInclude>
     <ClInclude Include="Objstaminagauge.h">
       <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
+      <Filter>ヘッダーファイル\Obj\星</Filter>
+    </ClInclude>
+    <ClInclude Include="Objstaminagauge.h">
+      <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
     </ClInclude>
     <ClInclude Include="Objstaminagaugeframe.h">
       <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
+    </ClInclude>
+    <ClInclude Include="Objstaminagauge.h">
+      <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
