@@ -120,6 +120,10 @@ void CObjAncer::Action()
 			}				
 		}
 	}
+	else
+	{
+		m_mous_l = false;
+	}
 
 
 	//‰æ–ÊŠO‚Éo‚È‚¢ˆ—

@@ -243,17 +243,19 @@
     <ClInclude Include="ObjStarCount.h">
       <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjSecondStar.h">
-      <Filter>ヘッターファイル\Obj\星</Filter>
+    <ClInclude Include="ObjSecondStar.h" />
+    <ClInclude Include="ObjEvent.h">
+      <Filter>ヘッダーファイル\Obj\イベント</Filter>
     </ClInclude>
-    <ClInclude Include="Objstaminagaugeframe.h">
-      <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
+    <ClInclude Include="ObjSecondStar.h">
+      <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
     <ClInclude Include="Objstaminagauge.h">
-      <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
+      <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
     </ClInclude>
-    <ClInclude Include="ObjEvent.h" />
-    <ClInclude Include="ObjSecondStar.h" />
+    <ClInclude Include="Objstaminagaugeframe.h">
+      <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="リソースファイル">
@@ -373,8 +375,11 @@
     <Filter Include="ソースファイル\Obj\ゲージ関係\スタミナ">
       <UniqueIdentifier>{745ad11a-4506-4b54-8793-dad8ac797d02}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッターファイル\Obj\ゲージ関係\スタミナ">
-      <UniqueIdentifier>{a7b036b1-7ca7-4444-89bc-a2b091b38537}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\Obj\ゲージ関係">
+      <UniqueIdentifier>{173bb4e7-5e70-4bdc-9978-78f75a837f41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\ゲージ関係\スタミナ">
+      <UniqueIdentifier>{9e08fd75-38b8-4b09-85b8-c06b268dd0d5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
