@@ -133,6 +133,15 @@
     <ClCompile Include="CObjOperation.h">
       <Filter>ヘッダーファイル\Obj\操作説明</Filter>
     </ClCompile>
+    <ClCompile Include="ObjVenus.cpp">
+      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneJupiter.cpp">
+      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneVenus.cpp">
+      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -263,6 +272,12 @@
     </ClInclude>
     <ClInclude Include="SceneStageselect.h">
       <Filter>ヘッダーファイル\Scene\ステージ選択</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneJupiter.h">
+      <Filter>ヘッダーファイル\Scene\星</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneVenus.h">
+      <Filter>ヘッダーファイル\Scene\星</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

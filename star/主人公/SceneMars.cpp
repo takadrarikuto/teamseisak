@@ -22,7 +22,7 @@ void CSceneMars::InitScene()
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"イベント背景(火星).png", 9, TEX_SIZE_512);
-	Draw::LoadImage(L"火星.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"火星地表.png", 10, TEX_SIZE_512);
 
 	//主人公
 	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
@@ -35,8 +35,8 @@ void CSceneMars::InitScene()
 
 	//ゲージ関係
 	//体力
-	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
-	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
+	/*Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
+	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);*/
 
 
 	//背景オブジェクト生成
@@ -56,9 +56,6 @@ void CSceneMars::InitScene()
 	CObjAncer* obj_a = new CObjAncer();
 	Objs::InsertObj(obj_a, OBJ_ANCER, 12);
 
-	//スターオブジェクト作成
-	CObjFirstStar* star = new CObjFirstStar();
-	Objs::InsertObj(star, OBJ_MARS, 13);    //スターオブジェクト登録
 
 	//アイテムオブジェクト生成
 	CObjAitem* obj_ai = new CObjAitem();
@@ -68,16 +65,13 @@ void CSceneMars::InitScene()
 	CObjStarCount* obj_sc = new CObjStarCount();
 	Objs::InsertObj(obj_sc, OBJ_STARCOUNT, 15);
 
-	//スターオブジェクト作成
-	CObjSecondStar* star2 = new CObjSecondStar();
-	Objs::InsertObj(star2, OBJ_SECONDSTAR, 16);    //スターオブジェクト登録
 
 	//ゲージ関係
 	//体力オブジェクト作成
-	CObjstaminagaugeframe* obj_stf = new CObjstaminagaugeframe();
+	/*CObjstaminagaugeframe* obj_stf = new CObjstaminagaugeframe();
 	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 17);
 	CObjstaminagauge* obj_st = new CObjstaminagauge();
-	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);
+	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);*/
 
 
 	//星生成時間初期化
