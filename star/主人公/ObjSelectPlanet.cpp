@@ -48,7 +48,7 @@ void CObjSelectPlanet::Action()
 		{
 			if (m_start_flag == true)
 			{
-				//Scene::SetScene(new CSceneVenus()); //‹à¯
+				Scene::SetScene(new CSceneVenus()); //‹à¯
 			}
 		}
 	}
@@ -58,7 +58,7 @@ void CObjSelectPlanet::Action()
 		{
 			if (m_start_flag == true)
 			{
-				//Scene::SetScene(new CSceneJupiter()); //–Ø¯
+				Scene::SetScene(new CSceneJupiter()); //–Ø¯
 			}
 		}
 	}

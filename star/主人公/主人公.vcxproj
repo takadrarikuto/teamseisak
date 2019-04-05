@@ -150,6 +150,7 @@
     <ClInclude Include="ObjStageselect.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneGameKuria.h" />
+    <ClInclude Include="SceneJupiter.h" />
     <ClInclude Include="SceneMars.h" />
     <ClInclude Include="SceneOperation.h" />
     <ClInclude Include="SceneStageselect.h" />
@@ -158,6 +159,7 @@
     <ClInclude Include="SceneSaturn.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="SceneVenus.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjOperation.h" />
@@ -199,7 +201,9 @@
     <ClCompile Include="Objstaminagaugeframe.cpp" />
     <ClCompile Include="ObjStarPresent2.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
+    <ClCompile Include="ObjVenus.cpp" />
     <ClCompile Include="SceneGameKuria.cpp" />
+    <ClCompile Include="SceneJupiter.cpp" />
     <ClCompile Include="SceneMars.cpp" />
     <ClCompile Include="SceneOperation.cpp" />
     <ClCompile Include="SceneStageselect.cpp" />
@@ -208,6 +212,7 @@
     <ClCompile Include="SceneSaturn.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="SceneVenus.cpp" />
     <ClCompile Include="StarBook.cpp" />
   </ItemGroup>
   <ItemGroup>
