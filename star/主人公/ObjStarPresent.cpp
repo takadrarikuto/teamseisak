@@ -5,6 +5,7 @@
 
 #include "GameHead.h"
 #include "ObjStarPresent.h"
+extern int lever;
 
 void CObjStarPresent::Init()
 {
@@ -51,5 +52,6 @@ void CObjStarPresent::Draw()
 			Font::StrDraw(str, 20, 100+l*i, 50, c);
 		}
 	}
+
 
 }
