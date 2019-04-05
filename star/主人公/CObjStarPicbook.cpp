@@ -92,7 +92,7 @@ void CObjStarPicbook::Draw()
     Draw::Draw(9, &src, &dst, c, 0.0f);
 	
 	//切り取り位置の設定
-	src.m_top = 5.0f;
+	src.m_top =0.0f;
 	src.m_left = 5.0f;
 	src.m_right = 202.0f;
 	src.m_bottom = 470.0f;
@@ -101,11 +101,11 @@ void CObjStarPicbook::Draw()
 	dst.m_top = 0.0f;
 	dst.m_left = 700.0f;
 	dst.m_right = 800.0f;
-	dst.m_bottom = 140.0f;
+	dst.m_bottom = 150.0f;
 	Draw::Draw(1, &src, &dst, c, 0.0f);
-	
-	
-
+	dst.m_top = 140.0f;
+	dst.m_bottom = 300.0f;
+	Draw::Draw(1, &src, &dst, c, 0.0f);
 	//					　　X　Y　大きさ
 	Font::StrDraw(L"戻る", 10, 0, 50, c);
 	
@@ -154,7 +154,7 @@ void CObjStarPicbook::Draw()
 		swprintf_s(str, L"%s", before[i]);
 
 		//				　　X　 Y　 大きさ
-		Font::StrDraw(str, 720, 200 + l*i, 50, c);
+		Font::StrDraw(str, 720, 160 + l*i, 50, c);
 	}
 	// left				 right            top            bottom       
 	if (m_mou_x > 700 && m_mou_x < 800 && m_mou_y>150 && m_mou_y <300)
