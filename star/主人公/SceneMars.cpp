@@ -102,4 +102,5 @@ void CSceneMars::Scene()
 		CObjSecondStar* star2 = new CObjSecondStar();
 		Objs::InsertObj(star2, OBJ_SECONDSTAR, 16);    //スターオブジェクト登録
 	}
+
 }
