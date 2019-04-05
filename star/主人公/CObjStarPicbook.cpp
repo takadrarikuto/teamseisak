@@ -6,6 +6,7 @@
 
 #include "CObjStarPicbook.h"
 #include "GameHead.h"
+extern int lever;
 
 void CObjStarPicbook::Init()
 {
@@ -62,7 +63,7 @@ void CObjStarPicbook::Draw()
 	//表示位置の設定
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = 800.0f;
+	dst.m_right = 700.0f;
 	dst.m_bottom = 300.0f;
 
 	//説明文を描画
@@ -83,20 +84,33 @@ void CObjStarPicbook::Draw()
 	dst.m_bottom = 50.0f;
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
-	//表示位置の設定
+	//何座に属するかの枠を描画
 	dst.m_top = 50.0f;
 	dst.m_left = 5.0f;
 	dst.m_right = 110.0f;
 	dst.m_bottom = 300.0f;
+    Draw::Draw(9, &src, &dst, c, 0.0f);
+	
+	//切り取り位置の設定
+	src.m_top =0.0f;
+	src.m_left = 5.0f;
+	src.m_right = 202.0f;
+	src.m_bottom = 470.0f;
 
-	//説明文を描画
-	Draw::Draw(9, &src, &dst, c, 0.0f);
-
+	//次のページに行くためのボタンの枠を描画
+	dst.m_top = 0.0f;
+	dst.m_left = 700.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 150.0f;
+	Draw::Draw(1, &src, &dst, c, 0.0f);
+	dst.m_top = 140.0f;
+	dst.m_bottom = 300.0f;
+	Draw::Draw(1, &src, &dst, c, 0.0f);
 	//					　　X　Y　大きさ
 	Font::StrDraw(L"戻る", 10, 0, 50, c);
 	
 	//戻るボタン
-	// left				 right            top            bottom               
+	// left				 right            top            bottom         
 	if (m_mou_x > 5 && m_mou_x < 110 && m_mou_y>0 && m_mou_y <50)
 	{
 		if (m_mou_l == true)
@@ -108,5 +122,47 @@ void CObjStarPicbook::Draw()
 	else if (Input::GetVKey('B') == true)
 	{
 		Scene::SetScene(new CSceneStageselect());
+	}
+
+	wchar_t next[2][2]{ L"次",L"へ" };
+	//ループして出す
+	for (int i = 0; i <= 1; i++)
+	{
+		int l = 50;
+		swprintf_s(str, L"%s", next[i]);
+
+		//				　　X　 Y　 大きさ
+		Font::StrDraw(str, 720, 25 + l*i, 50, c);
+	}
+
+	//次へボタン
+	// left				 right            top            bottom       
+	if (m_mou_x > 700 && m_mou_x < 800 && m_mou_y>0 && m_mou_y <140)
+	{
+		if (m_mou_l == true)
+		{
+			lever = 1;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+
+	wchar_t before[2][2]{ L"戻",L"す" };
+	//ループして出す
+	for (int i = 0; i <= 1; i++)
+	{
+		int l = 50;
+		swprintf_s(str, L"%s", before[i]);
+
+		//				　　X　 Y　 大きさ
+		Font::StrDraw(str, 720, 160 + l*i, 50, c);
+	}
+	// left				 right            top            bottom       
+	if (m_mou_x > 700 && m_mou_x < 800 && m_mou_y>150 && m_mou_y <300)
+	{
+		if (m_mou_l == true)
+		{
+			lever = 0;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
 	}
 }
