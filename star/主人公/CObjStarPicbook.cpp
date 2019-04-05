@@ -114,18 +114,21 @@ void CObjStarPicbook::Draw()
 		swprintf_s(str, L"%s", test[i]);
 		
 		//				　　X　 Y　 大きさ
-		Font::StrDraw(str, 720, 200 + l*i, 50, c);
+		Font::StrDraw(str, 720, 100 + l*i, 50, c);
 	}
 
 	//次へボタン
 	// left				 right            top            bottom       
-	if (m_mou_x > 700 && m_mou_x < 800 && m_mou_y>300 && m_mou_y <600)
+	if (m_mou_x > 700 && m_mou_x < 800 && m_mou_y>0 && m_mou_y <300)
 	{
 		if (m_mou_l == true)
 		{
-			Scene::SetScene(new CSceneStageselect());
+			lever=1;
+			Scene::SetScene(new CSceneStarPicbook());
 		}
 	}
+	swprintf_s(str, L"%d", lever);
+	Font::StrDraw(str, 720, 200, 25, c);
 
 	//戻るボタン
 	// left				 right            top            bottom         
@@ -141,4 +144,5 @@ void CObjStarPicbook::Draw()
 	{
 		Scene::SetScene(new CSceneStageselect());
 	}
+
 }
