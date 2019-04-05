@@ -142,6 +142,9 @@
     <ClCompile Include="SceneVenus.cpp">
       <Filter>ソースファイル\Scene\惑星ステージ</Filter>
     </ClCompile>
+    <ClCompile Include="ObjOtherStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -279,6 +282,9 @@
     <ClInclude Include="SceneVenus.h">
       <Filter>ヘッダーファイル\Scene\星</Filter>
     </ClInclude>
+    <ClInclude Include="ObjOtherStar.h">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ヘッダーファイル">
@@ -386,6 +392,9 @@
     <Filter Include="ヘッダーファイル\Scene\ステージ選択">
       <UniqueIdentifier>{0c89f315-bab4-4f23-bb57-87d94cc14958}</UniqueIdentifier>
     </Filter>
+    <Filter Include="画像">
+      <UniqueIdentifier>{7d970d65-57cf-47b7-a9ab-effb9629799b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl">
@@ -396,5 +405,79 @@
     <Library Include="GameL\DirectXTex.lib">
       <Filter>リソースファイル</Filter>
     </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="brown_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="firststar.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="アンカー（仮　透過済み）.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="アンカー.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="イベント背景(火星).png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="タイトル(修正版).png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="タイトル.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="ダウンロード.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="テキストボックス.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="フィールド背景火星.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="フィールド背景木星.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="ブラックタイル.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="宇宙船背景.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="火星地表.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="金星(透過済み).png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="主人公（仮）.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="主人公.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="星(透過済み).png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="星.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="操作説明.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="通常時背景.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="木星.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="惑星(透過済み).png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="惑星.png">
+      <Filter>画像</Filter>
+    </Image>
   </ItemGroup>
 </Project>

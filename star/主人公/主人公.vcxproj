@@ -135,6 +135,7 @@
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjMars.h" />
+    <ClInclude Include="ObjOtherStar.h" />
     <ClInclude Include="ObjSaturn.h" />
     <ClInclude Include="ObjStarCount.h" />
     <ClInclude Include="ObjStarPresent.h" />
@@ -187,6 +188,7 @@
     <ClCompile Include="ObjJupiter.cpp" />
     <ClCompile Include="ObjMars.cpp" />
     <ClCompile Include="ObjOperation.cpp" />
+    <ClCompile Include="ObjOtherStar.cpp" />
     <ClCompile Include="ObjSaturn.cpp" />
     <ClCompile Include="ObjSecondStar.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -220,6 +222,32 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="GameL\DirectXTex.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="brown_star.png" />
+    <Image Include="firststar.png" />
+    <Image Include="アンカー.png" />
+    <Image Include="アンカー（仮　透過済み）.png" />
+    <Image Include="イベント背景(火星).png" />
+    <Image Include="タイトル(修正版).png" />
+    <Image Include="タイトル.png" />
+    <Image Include="ダウンロード.png" />
+    <Image Include="テキストボックス.png" />
+    <Image Include="フィールド背景木星.png" />
+    <Image Include="フィールド背景火星.png" />
+    <Image Include="ブラックタイル.png" />
+    <Image Include="主人公.png" />
+    <Image Include="主人公（仮）.png" />
+    <Image Include="宇宙船背景.png" />
+    <Image Include="惑星(透過済み).png" />
+    <Image Include="惑星.png" />
+    <Image Include="操作説明.png" />
+    <Image Include="星(透過済み).png" />
+    <Image Include="星.png" />
+    <Image Include="木星.png" />
+    <Image Include="火星地表.png" />
+    <Image Include="通常時背景.png" />
+    <Image Include="金星(透過済み).png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

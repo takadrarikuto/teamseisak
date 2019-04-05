@@ -32,6 +32,7 @@ void CSceneMars::InitScene()
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
 	Draw::LoadImage(L"星(透過済み).png", 13, TEX_SIZE_512);
 	Draw::LoadImage(L"brown_star.png", 16, TEX_SIZE_512);
+	Draw::LoadImage(L"green_star.png", 19, TEX_SIZE_512);
 
 	//ゲージ関係
 	//体力
@@ -84,17 +85,23 @@ void CSceneMars::Scene()
 {
 	arise = rand() % 200;
 
-	if (arise <= 1 && arise >= 0)
+	if (arise < 2 && arise > 0)
 	{
 		//スターオブジェクト作成
 		CObjFirstStar* star = new CObjFirstStar();
 		Objs::InsertObj(star, OBJ_FIRSTSTAR, 13);    //スターオブジェクト登録
 	}
-	if (arise <= 3 && arise >= 2)
+	if (arise < 3 && arise > 1)
 	{
 		//スターオブジェクト作成
 		CObjSecondStar* star2 = new CObjSecondStar();
 		Objs::InsertObj(star2, OBJ_SECONDSTAR, 16);    //スターオブジェクト登録
+	}
+	if (arise < 4 && arise > 2)
+	{
+		//スターオブジェクト作成
+		CObjOtherStar* star3 = new CObjOtherStar();
+		Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
 	}
 
 }
