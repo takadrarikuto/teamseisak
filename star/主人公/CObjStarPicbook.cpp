@@ -137,7 +137,7 @@ void CObjStarPicbook::Draw()
 
 	//ŽŸ‚Öƒ{ƒ^ƒ“
 	// left				 right            top            bottom       
-	if (m_mou_x > 700 && m_mou_x < 800 && m_mou_y>0 && m_mou_y <150)
+	if (m_mou_x > 700 && m_mou_x < 800 && m_mou_y>0 && m_mou_y <140)
 	{
 		if (m_mou_l == true)
 		{
