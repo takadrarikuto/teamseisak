@@ -24,7 +24,6 @@ void CObjEvent::Init()
 	m_x1 = 0.0f;
 	m_x2 = 800.0f;
 
-
 }
 
 //アクション
@@ -53,8 +52,13 @@ void CObjEvent::Action()
 
 		Hits::SetHitBox(this, m_px, m_py, 800, 400, OBJ_EVENT, ELEMENT_FIELD, 9);
 	}
+	else
+	{
+		E_Start_co++;
+	}
+
 	//イベント終了処理
-	else if (E_Start_co == 540)
+	if (E_Start_co == 540)
 	{
 		E_Start = false;
 		E_Start_co = 0;
@@ -62,11 +66,6 @@ void CObjEvent::Action()
 		this->SetStatus(false); //自身に削除命令を出す
 		Hits::DeleteHitBox(this); //HitBox削除
 	}
-	else
-	{
-		E_Start_co++;
-	}
-
 
 	
 
