@@ -72,7 +72,7 @@ void CSceneMars::InitScene()
 	CObjstaminagaugeframe* obj_stf = new CObjstaminagaugeframe();
 	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 17);
 	CObjstaminagauge* obj_st = new CObjstaminagauge();
-	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);
+	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);*/
 
 
 	//星生成時間初期化
@@ -100,8 +100,8 @@ void CSceneMars::Scene()
 	if (arise < 4 && arise > 2)
 	{
 		//スターオブジェクト作成
-		//CObjOtherStar* star3 = new CObjOtherStar();
-		//Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
+		CObjOtherStar* star3 = new CObjOtherStar();
+		Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
 	}
 
 }
