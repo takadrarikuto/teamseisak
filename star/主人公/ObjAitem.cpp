@@ -10,12 +10,16 @@
 //使用するネームスペース
 using namespace GameL;
 
+
 //イニシャライズ
 void CObjAitem::Init()
 {
+	//アイテムフラグ初期化
 	Aitem_flag = true;
+	//最大個数初期化
 	Aitem_co_max = 5;
-	Aitem_co = 1;
+	//個数を減らす用初期化
+	Aitem_co = 1; 
 }
 
 //アクション
@@ -29,8 +33,8 @@ void CObjAitem::Action()
 		{
 			if (Aitem_flag == true)
 			{
-				Aitem_co_max -= Aitem_co;
-				Aitem_flag = false;
+				Aitem_co_max -= Aitem_co; //使用回数を減らす
+				Aitem_flag = false;			
 			}
 		}
 		else

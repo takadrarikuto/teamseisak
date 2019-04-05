@@ -11,6 +11,9 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool Event_on;
+bool Ancer_on = false; //アンカー使用
+
 //イニシャライズ
 void CObjAncer::Init()
 {
@@ -49,6 +52,12 @@ void CObjAncer::Init()
 
 	//画面移動時起動防止用初期化
 	time_co = 0;
+
+	//イベントタイム処理初期化
+	A_event = 0;
+
+	//イベント時アンカー処理初期化
+	Ev_ancer = 0;
 }
 
 //アクション
@@ -89,12 +98,14 @@ void CObjAncer::Action()
 		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
 		{
 			ancer_flag = false;
+			Ancer_on = false;
 		}
-		//定位置にアンカーがある時に左クリックでアンカー発射
+		//定位置にアンカーがある時に左クリックでアンカー発射・スタミナ消費
 		else if (Input::GetMouButtonL() == true && m_pay > 535.0f && time == 0)
 		{
 			ancer_time += 1;
-			ancer_flag = true;
+			ancer_flag = true; //アンカー発射
+			Ancer_on = true; //スタミナ消費
 		}
 		else if (Input::GetMouButtonL() == false && ancer_time > 1)
 		{
@@ -124,6 +135,25 @@ void CObjAncer::Action()
 	{
 		m_mous_l = false;
 	}
+
+	//イベント処理
+	Ev_ancer = rand() % 5;
+
+	//特定の条件でアンカーを戻す
+	if (m_pry < 400.0f && Event_on == true)
+	{
+		A_event++;
+	}
+	else if(Event_on == false || A_event > Event_Time)
+	{
+		A_event = 0;
+	}
+
+	if (m_pry < 400.0f && A_event > Event_Time && Ev_ancer == 4)
+	{
+		ancer_flag = false;
+	}
+
 
 
 	//画面外に出ない処理

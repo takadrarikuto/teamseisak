@@ -11,16 +11,22 @@
 //使用するネームスペース
 using namespace GameL;
 
+bool Event_on = false; //イベント開始
+
 //イニシャライズ
 void CObjEvent::Init()
 {
+	//イベントスタートフラグ
 	E_Start = false;
+	//イベントカウント
 	E_co = 0;
+	//イベントカウント
 	E_Start_co = 0;
 
 	m_px = 0.0f;
 	m_py = 0.0f;
 
+	//背景操作用
 	m_x1 = 0.0f;
 	m_x2 = 800.0f;
 
@@ -49,8 +55,7 @@ void CObjEvent::Action()
 	{
 		E_Start = true;
 		E_Start_co++;
-
-		Hits::SetHitBox(this, m_px, m_py, 800, 400, OBJ_EVENT, ELEMENT_FIELD, 9);
+		Event_on = true;
 	}
 	else
 	{
@@ -58,16 +63,13 @@ void CObjEvent::Action()
 	}
 
 	//イベント終了処理
-	if (E_Start_co == 540)
+	if (E_Start_co == 6000)
 	{
 		E_Start = false;
 		E_Start_co = 0;
-
-		this->SetStatus(false); //自身に削除命令を出す
-		Hits::DeleteHitBox(this); //HitBox削除
+		Event_on = false;
 	}
 
-	
 
 }
 //ドロー

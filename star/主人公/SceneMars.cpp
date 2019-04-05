@@ -34,7 +34,7 @@ void CSceneMars::InitScene()
 	Draw::LoadImage(L"brown_star.png", 16, TEX_SIZE_512);
 
 	//ゲージ関係
-	//体力
+	//スタミナ
 	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
 
@@ -73,7 +73,7 @@ void CSceneMars::InitScene()
 	Objs::InsertObj(star2, OBJ_SECONDSTAR, 16);    //スターオブジェクト登録
 
 	//ゲージ関係
-	//体力オブジェクト作成
+	//スタミナオブジェクト作成
 	CObjstaminagaugeframe* obj_stf = new CObjstaminagaugeframe();
 	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 17);
 	CObjstaminagauge* obj_st = new CObjstaminagauge();
