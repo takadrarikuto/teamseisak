@@ -36,7 +36,7 @@ void CObjStarPresent::Draw()
 	Font::StrDraw(L"ƒAƒ“ƒ^ƒŒƒX", 10, 305,15, c);
 
 	// left				 right            top            bottom               
-	if (m_mou_x > 0 && m_mou_x < 100 && m_mou_y>300 && m_mou_y <325)
+	if (m_mou_x > 0 && m_mou_x < 100 && m_mou_y>300 && m_mou_y <315)
 	{
 		Font::StrDraw(L"‚³‚»‚èÀ‚É‘®‚·‚é", 110, 0, 30, c);
 		Font::StrDraw(L"ˆê”Ô–¾‚é‚¢¯", 110, 50, 30, c);

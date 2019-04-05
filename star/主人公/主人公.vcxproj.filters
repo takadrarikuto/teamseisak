@@ -31,9 +31,6 @@
     <ClCompile Include="GameL\SceneObjManager.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameL\SetWindow.cpp">
-      <Filter>リソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="GameL\UserData.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
@@ -43,23 +40,26 @@
     <ClCompile Include="GameL\WinInputs.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="GameL\SetWindow.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
     <ClCompile Include="CObjStarPicbook.cpp">
       <Filter>ソースファイル\Obj\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="ObjAncer.cpp">
-      <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
+    <ClCompile Include="ObjStarPresent.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="ObjFirstStar.cpp">
-      <Filter>ソースファイル\Obj\星</Filter>
+    <ClCompile Include="ObjStarPresent2.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="ObjGameKuria.cpp">
-      <Filter>ソースファイル\Obj\タイトル・操作・クリア</Filter>
+    <ClCompile Include="StarBook.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="ObjHero.cpp">
-      <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
+    <ClCompile Include="ObjOperation.cpp">
+      <Filter>ソースファイル\Obj\操作説明</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMars.cpp">
-      <Filter>ソースファイル\Obj\火星地表</Filter>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソースファイル\Obj\タイトル</Filter>
     </ClCompile>
     <ClCompile Include="ObjSelectPlanet.cpp">
       <Filter>ソースファイル\Obj\ステージ選択</Filter>
@@ -67,44 +67,38 @@
     <ClCompile Include="ObjStageselect.cpp">
       <Filter>ソースファイル\Obj\ステージ選択</Filter>
     </ClCompile>
-    <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソースファイル\Obj\タイトル・操作・クリア</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjOperation.cpp">
-      <Filter>ソースファイル\Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneOperation.cpp">
-      <Filter>ソースファイル\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMars.cpp">
-      <Filter>ソースファイル\Scene\火星</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStageselect.cpp">
-      <Filter>ソースファイル\Scene\ステージ選択</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStarPicbook.cpp">
-      <Filter>ソースファイル\Scene\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソースファイル\Scene\タイトル・操作・クリア</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjOperation.h">
-      <Filter>ヘッダーファイル\Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneGameKuria.cpp">
-      <Filter>ソースファイル\Scene\タイトル・操作・クリア</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneSaturn.cpp">
-      <Filter>ソースファイル\Scene\土星</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSaturn.cpp">
-      <Filter>ソースファイル\Obj\土星</Filter>
+    <ClCompile Include="ObjEvent.cpp">
+      <Filter>ソースファイル\Obj\イベント</Filter>
     </ClCompile>
     <ClCompile Include="ObjJupiter.cpp">
-      <Filter>ソースファイル\Obj\木星</Filter>
+      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMars.cpp">
+      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSaturn.cpp">
+      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="Objstaminagauge.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+    </ClCompile>
+    <ClCompile Include="Objstaminagaugeframe.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHero.cpp">
+      <Filter>ソースファイル\Obj\主人公</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjAncer.cpp">
+      <Filter>ソースファイル\Obj\主人公</Filter>
     </ClCompile>
     <ClCompile Include="ObjAitem.cpp">
-      <Filter>ソースファイル\Obj\主人公・アンカー・アイテム</Filter>
+      <Filter>ソースファイル\Obj\主人公</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGameKuria.cpp">
+      <Filter>ソースファイル\Obj\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjFirstStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
     </ClCompile>
     <ClCompile Include="ObjSecondStar.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
@@ -112,20 +106,32 @@
     <ClCompile Include="ObjStarCount.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
     </ClCompile>
-    <ClCompile Include="ObjStarPresent.cpp">
+    <ClCompile Include="ObjBackground.cpp">
+      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStarPicbook.cpp">
       <Filter>ソースファイル\Scene\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="ObjBackground.cpp">
-      <Filter>ソースファイル\Obj\通常時背景</Filter>
+    <ClCompile Include="SceneGameKuria.cpp">
+      <Filter>ソースファイル\Scene\タイトル</Filter>
     </ClCompile>
-    <ClCompile Include="ObjEvent.cpp">
-      <Filter>ソースファイル\Obj\イベント</Filter>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソースファイル\Scene\タイトル</Filter>
     </ClCompile>
-    <ClCompile Include="Objstaminagaugeframe.cpp">
-      <Filter>ソースファイル\Obj\ゲージ関係\スタミナ</Filter>
+    <ClCompile Include="SceneMars.cpp">
+      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
     </ClCompile>
-    <ClCompile Include="Objstaminagauge.cpp">
-      <Filter>ソースファイル\Obj\ゲージ関係\スタミナ</Filter>
+    <ClCompile Include="SceneSaturn.cpp">
+      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStageselect.cpp">
+      <Filter>ソースファイル\Scene\ステージ選択</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOperation.cpp">
+      <Filter>ソースファイル\Scene\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjOperation.h">
+      <Filter>ヘッダーファイル\Obj\操作説明</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +156,9 @@
     <ClInclude Include="GameL\HitBoxManager.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>ヘッダーファイル</Filter>
+    </ClInclude>
     <ClInclude Include="GameL\MultiThread.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
@@ -157,12 +166,6 @@
       <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\SceneObjManager.h">
-      <Filter>リソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneOperation.h">
-      <Filter>ヘッダーファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\SetWindow.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\UserData.h">
@@ -174,11 +177,41 @@
     <ClInclude Include="GameL\WinInputs.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjAncer.h">
-      <Filter>ヘッダーファイル\Obj\主人公・アンカー・アイテム</Filter>
+    <ClInclude Include="GameL\SetWindow.h">
+      <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjHero.h">
-      <Filter>ヘッダーファイル\Obj\主人公・アンカー・アイテム</Filter>
+      <Filter>ヘッダーファイル\Obj\主人公</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjStarPicbook.h">
+      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjAitem.h">
+      <Filter>ヘッダーファイル\Obj\主人公</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjAncer.h">
+      <Filter>ヘッダーファイル\Obj\主人公</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjJupiter.h">
+      <Filter>ヘッダーファイル\Obj\惑星ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMars.h">
+      <Filter>ヘッダーファイル\Obj\惑星ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSaturn.h">
+      <Filter>ヘッダーファイル\Obj\惑星ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="Objstaminagauge.h">
+      <Filter>ヘッダーファイル\Obj\ゲージ関係</Filter>
+    </ClInclude>
+    <ClInclude Include="Objstaminagaugeframe.h">
+      <Filter>ヘッダーファイル\Obj\ゲージ関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjFirstStar.h">
+      <Filter>ヘッダーファイル\Obj\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSecondStar.h">
+      <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjSelectPlanet.h">
       <Filter>ヘッダーファイル\Obj\ステージ選択</Filter>
@@ -186,207 +219,157 @@
     <ClInclude Include="ObjStageselect.h">
       <Filter>ヘッダーファイル\Obj\ステージ選択</Filter>
     </ClInclude>
-    <ClInclude Include="CObjStarPicbook.h">
-      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMars.h">
-      <Filter>ヘッダーファイル\Obj\火星地表</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjTitle.h">
-      <Filter>ヘッダーファイル\Obj\タイトル・操作・クリア</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGameKuria.h">
-      <Filter>ヘッダーファイル\Obj\タイトル・操作・クリア</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>ヘッダーファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGameKuria.h">
-      <Filter>ヘッダーファイル\Scene\タイトル・操作・クリア</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>ヘッダーファイル\Scene\タイトル・操作・クリア</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneStarPicbook.h">
-      <Filter>ヘッダーファイル\Scene\星図鑑</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneStageselect.h">
-      <Filter>ヘッダーファイル\Scene\ステージ選択</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjFirstStar.h">
-      <Filter>ヘッダーファイル\Obj\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjVenus.h">
-      <Filter>ヘッダーファイル\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMars.h">
-      <Filter>ヘッダーファイル\Scene\火星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjSaturn.h">
-      <Filter>ヘッダーファイル\Obj\土星</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneSaturn.h">
-      <Filter>ヘッダーファイル\Scene\土星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjJupiter.h">
-      <Filter>ヘッダーファイル\Obj\木星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjAitem.h">
-      <Filter>ヘッダーファイル\Obj\主人公・アンカー・アイテム</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjBackground.h">
-      <Filter>ヘッダーファイル\Obj\ステージ背景</Filter>
-    </ClInclude>
     <ClInclude Include="ObjStarPresent.h">
       <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent2.h">
+      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTitle.h">
+      <Filter>ヘッダーファイル\Obj\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGameKuria.h">
+      <Filter>ヘッダーファイル\Obj\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBackground.h">
+      <Filter>ヘッダーファイル\Obj\惑星ステージ</Filter>
     </ClInclude>
     <ClInclude Include="ObjStarCount.h">
       <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjSecondStar.h" />
+    <ClInclude Include="ObjVenus.h">
+      <Filter>ヘッダーファイル\Obj\惑星ステージ</Filter>
+    </ClInclude>
     <ClInclude Include="ObjEvent.h">
       <Filter>ヘッダーファイル\Obj\イベント</Filter>
     </ClInclude>
-    <ClInclude Include="ObjSecondStar.h">
-      <Filter>ヘッダーファイル\Obj\星</Filter>
+    <ClInclude Include="SceneGameKuria.h">
+      <Filter>ヘッダーファイル\Scene\タイトル</Filter>
     </ClInclude>
-    <ClInclude Include="Objstaminagauge.h">
-      <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
-      <Filter>ヘッダーファイル\Obj\星</Filter>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ヘッダーファイル\Scene\タイトル</Filter>
     </ClInclude>
-    <ClInclude Include="Objstaminagauge.h">
-      <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
+    <ClInclude Include="SceneMars.h">
+      <Filter>ヘッダーファイル\Scene\星</Filter>
     </ClInclude>
-    <ClInclude Include="Objstaminagaugeframe.h">
-      <Filter>ヘッダーファイル\Obj\ゲージ関係\スタミナ</Filter>
+    <ClInclude Include="SceneSaturn.h">
+      <Filter>ヘッダーファイル\Scene\星</Filter>
     </ClInclude>
-    <ClInclude Include="Objstaminagauge.h">
-      <Filter>ヘッターファイル\Obj\ゲージ関係\スタミナ</Filter>
+    <ClInclude Include="SceneStarPicbook.h">
+      <Filter>ヘッダーファイル\Scene\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneOperation.h">
+      <Filter>ヘッダーファイル\Scene\操作説明</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStageselect.h">
+      <Filter>ヘッダーファイル\Scene\ステージ選択</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="リソースファイル">
-      <UniqueIdentifier>{be714c94-ac62-44ce-8c11-50472f71239e}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル">
+      <UniqueIdentifier>{c4dd73dd-5562-42e6-be92-2e3ecf255b25}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル">
-      <UniqueIdentifier>{4fd045a7-1a70-41ef-8f0b-a62cc54c4911}</UniqueIdentifier>
+      <UniqueIdentifier>{0307b2c8-9d9a-49a2-b939-1ad0d81a5ca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソースファイル">
+      <UniqueIdentifier>{0d0ebfea-5101-4a0e-8036-e6d1cfcaec40}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\Obj">
-      <UniqueIdentifier>{478466db-786c-4877-9e15-62f50d0c6df4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Obj\星">
-      <UniqueIdentifier>{b2550f17-62a3-4a0d-9a35-70f6e889f72f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Obj\星図鑑">
-      <UniqueIdentifier>{605c874b-78d1-4bee-b5ec-e00504a78aa1}</UniqueIdentifier>
+      <UniqueIdentifier>{fd59ed26-cc22-4677-b29e-b90401f2b9ef}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\Obj\ステージ選択">
-      <UniqueIdentifier>{c601ddbc-589c-4192-bdc2-a5c3ec25526f}</UniqueIdentifier>
+      <UniqueIdentifier>{63e230b6-47d0-4b8a-95ce-ea9769eddfda}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\タイトル・操作・クリア">
-      <UniqueIdentifier>{3623a0a2-c2c3-47c3-9c5b-0f0e92c3abc7}</UniqueIdentifier>
+    <Filter Include="ソースファイル\Obj\タイトル">
+      <UniqueIdentifier>{71891735-7a98-476f-abf1-ae45ab4180a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\操作説明">
+      <UniqueIdentifier>{c50fb5e2-219d-416c-9fc2-d2d3f6e133f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\星図鑑">
+      <UniqueIdentifier>{0d993f0f-8851-4a81-bb78-f7e84017041e}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\Scene">
-      <UniqueIdentifier>{796498e1-f370-426a-b99b-67d6afa0b9db}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Scene\火星">
-      <UniqueIdentifier>{c5c9c6b6-2901-4a50-8adf-685bf4301053}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Scene\タイトル・操作・クリア">
-      <UniqueIdentifier>{5d01e0ae-bbb8-42c2-9924-2e7b7fe902a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Scene\星図鑑">
-      <UniqueIdentifier>{bc06af37-0b79-47e0-9267-470e7305abc6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Scene\ステージ選択">
-      <UniqueIdentifier>{6f0ad119-4e78-4bc5-b75b-e51264451e6f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Scene\土星">
-      <UniqueIdentifier>{c82cb9cf-3b33-4949-ab55-4b0aa3efc307}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Obj\土星">
-      <UniqueIdentifier>{972f2a0a-32ed-44a1-82b6-9b1ad514176d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Obj\木星">
-      <UniqueIdentifier>{f65fa22e-fec1-4a22-af7b-25d6b6a71f7e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Obj\主人公・アンカー・アイテム">
-      <UniqueIdentifier>{d6abb30b-8291-4128-a73c-13fa2398b6f4}</UniqueIdentifier>
+      <UniqueIdentifier>{4d63ef5a-c624-4902-a4cc-bd6fffc1b894}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\Obj\イベント">
-      <UniqueIdentifier>{4173891e-6be4-44b6-8558-124c436f1479}</UniqueIdentifier>
+      <UniqueIdentifier>{65c32193-ab99-44f8-8e0e-8dd7d5bdc4fb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\通常時背景">
-      <UniqueIdentifier>{5dd70e48-8ca8-47d7-9a6b-23a38c872f88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\Obj\火星地表">
-      <UniqueIdentifier>{20ab9b7d-50fd-45be-879d-d3323ac5f2ea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル">
-      <UniqueIdentifier>{071e93ec-8ed4-43a4-8bc8-57a00b4ccc2b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj">
-      <UniqueIdentifier>{3cd27033-1ce1-4b5e-ae1f-4360f689a7bf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\タイトル・操作・クリア">
-      <UniqueIdentifier>{e3e46130-a17b-48c6-8006-dfcfd26788a0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\星図鑑">
-      <UniqueIdentifier>{37edce63-93ce-4fbb-acec-fd1166e0fdc5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\ステージ背景">
-      <UniqueIdentifier>{db0e52e6-1c06-4dac-83a9-05aafcda1abf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\ステージ選択">
-      <UniqueIdentifier>{a6f0a4fa-af98-4838-8c8c-1478317e085a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\星">
-      <UniqueIdentifier>{9ca0541d-9a44-4a63-9268-d87408b0b81a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\土星">
-      <UniqueIdentifier>{edfb548e-4942-4b95-8953-079571aa28dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\木星">
-      <UniqueIdentifier>{5d23a56f-a738-4a1d-b76d-006ec6af10c1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\主人公・アンカー・アイテム">
-      <UniqueIdentifier>{af20f40b-bd11-4ddf-a6fb-56c83fe66b0a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\イベント">
-      <UniqueIdentifier>{acc83aac-587f-4ea0-bba7-26cfe92203e1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\火星地表">
-      <UniqueIdentifier>{152ba949-1b6b-4e21-bc93-7835af7852d4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene">
-      <UniqueIdentifier>{48fdc8d7-0797-4132-9b48-ca2aee7fed33}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene\タイトル・操作・クリア">
-      <UniqueIdentifier>{0136c980-1449-41fc-ab44-f76a81c43f04}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene\星図鑑">
-      <UniqueIdentifier>{e282656d-f8f8-487b-a980-0c5469cc18ec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene\火星">
-      <UniqueIdentifier>{d79c78d5-3270-4c71-955b-10b42baa995d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene\ステージ選択">
-      <UniqueIdentifier>{9997f91f-9e68-4ddf-a21f-3bc1e2337500}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene\土星">
-      <UniqueIdentifier>{36ffdaf9-cf7c-426f-98b7-7a63de340666}</UniqueIdentifier>
+    <Filter Include="ソースファイル\Obj\惑星ステージ">
+      <UniqueIdentifier>{5ad3564b-e6f4-409a-bd19-98228a01c8ef}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\Obj\ゲージ関係">
-      <UniqueIdentifier>{f6c9ffdf-b9f8-49d2-b2c1-908fc13eb186}</UniqueIdentifier>
+      <UniqueIdentifier>{57ae725e-d258-4011-9e26-e7026e4b966c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\ゲージ関係\スタミナ">
-      <UniqueIdentifier>{745ad11a-4506-4b54-8793-dad8ac797d02}</UniqueIdentifier>
+    <Filter Include="ソースファイル\Obj\主人公">
+      <UniqueIdentifier>{65ea1db1-e052-4cef-b1f7-25528dcd3951}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Obj\星">
+      <UniqueIdentifier>{6c19f09f-7524-49fc-97d7-abd5f47ace0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Scene\星図鑑">
+      <UniqueIdentifier>{88a981ec-fcab-4d72-8501-69a3df16c583}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Scene\タイトル">
+      <UniqueIdentifier>{8bee134a-619e-411b-a5f0-e7578a124ed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Scene\惑星ステージ">
+      <UniqueIdentifier>{a7e34716-a45d-4e90-a42f-f3eb1c640854}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Scene\ステージ選択">
+      <UniqueIdentifier>{1cd848eb-7b73-4901-876d-565e772f8c20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Scene\操作説明">
+      <UniqueIdentifier>{473db157-eaee-4808-88ea-e2902c1aafbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj">
+      <UniqueIdentifier>{0c8566ad-3767-4fc6-bc82-b85ac0f12ce1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Scene">
+      <UniqueIdentifier>{2befae8e-2ff6-41a0-8b6c-ba110f2bed41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\主人公">
+      <UniqueIdentifier>{af4cafcc-125e-4410-9225-e2ae65ca053f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\星図鑑">
+      <UniqueIdentifier>{4a364682-3770-4b55-b6a1-b769b262f5c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\惑星ステージ">
+      <UniqueIdentifier>{743858ad-2dc0-4a94-b6e6-79d954e11c0e}</UniqueIdentifier>
     </Filter>
     <Filter Include="ヘッダーファイル\Obj\ゲージ関係">
-      <UniqueIdentifier>{173bb4e7-5e70-4bdc-9978-78f75a837f41}</UniqueIdentifier>
+      <UniqueIdentifier>{383174be-94d4-4b84-b337-92a84ab144be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダーファイル\Obj\ゲージ関係\スタミナ">
-      <UniqueIdentifier>{9e08fd75-38b8-4b09-85b8-c06b268dd0d5}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\Obj\星">
+      <UniqueIdentifier>{6f3a4ea1-a154-401a-9604-fbd6aff7dff9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\ステージ選択">
+      <UniqueIdentifier>{7c4a2aaf-57d9-4497-bf71-3e59772a067d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\タイトル">
+      <UniqueIdentifier>{204c0e03-f573-48bc-aadd-08a4fa81e50c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\イベント">
+      <UniqueIdentifier>{ceb70ce8-8bb2-487f-a318-7f079aae54fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Obj\操作説明">
+      <UniqueIdentifier>{b1e77dea-a2c4-4bd8-ae02-3fe09a3a64d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Scene\タイトル">
+      <UniqueIdentifier>{1613c3ec-2253-474f-b95d-e9712e7bdbe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Scene\星">
+      <UniqueIdentifier>{669a64dc-e69c-4797-8eed-0ef9a3c790de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Scene\星図鑑">
+      <UniqueIdentifier>{d1faf242-34b3-4e58-86a3-c395637dac5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Scene\操作説明">
+      <UniqueIdentifier>{0dba4cc7-f9c6-4c1c-be81-d3d326bf1092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\Scene\ステージ選択">
+      <UniqueIdentifier>{0c89f315-bab4-4f23-bb57-87d94cc14958}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
