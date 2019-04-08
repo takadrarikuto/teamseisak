@@ -2,6 +2,8 @@
 //使用するヘッダーファイル
 #include "GameL\SceneObjManager.h"
 
+#define Event_Time (130) //イベント時間カウント用
+
 //使用するネームスペース
 using namespace GameL;
 
@@ -35,7 +37,10 @@ private:
 	bool m_mous_l;
 	float time; //ロープ描画用
 	int time_co; //画面移動時起動防止用
+	int ancer_time; //飛距離調整
 
 	bool ancer_flag; //アンカー移動フラグ
 
+	int A_event; //イベントタイム処理
+	int Ev_ancer; //イベント時アンカー処理
 };

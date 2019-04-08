@@ -10,6 +10,7 @@
 
 //使用するネームスペース
 using namespace GameL;
+extern int lever;
 
 //使用ヘッダー
 #include "SceneStarPicbook.h"
@@ -32,10 +33,24 @@ void CSceneStarPicbook::InitScene()
 {	
 	//グラフィック読み込み
 	Draw::LoadImage(L"テキストボックス.png", 9, TEX_SIZE_512);
-	
+
+	Draw::LoadImage(L"ブラックタイル.png", 1, TEX_SIZE_512);
+
 	//星図鑑オブジェクト生成
 	CObjStarPicbook* p = new CObjStarPicbook();
 	Objs::InsertObj(p, OBJ_STARPICBOOK,9);
+	if (lever == 0)
+	{
+		//星図鑑オブジェクト生成
+		CObjStarPresent* s = new CObjStarPresent();
+		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+	}
+
+	if (lever==1)
+	{
+		CObjStarPresent2* a = new CObjStarPresent2();
+		Objs::InsertObj(a, OBJ_STARPRESENT2, 11);
+	}
 
 }
 
