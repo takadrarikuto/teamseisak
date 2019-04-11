@@ -56,7 +56,7 @@ void CObjAitem::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	swprintf_s(str, L"ƒhƒŠƒ“ƒN‚Ì”~%dŒÂ", Aitem_co_max);
-	Font::StrDraw(str, 540, 570, 30, c);
+	Font::StrDraw(str, 540, 540, 30, c);
 
 	//”wŒi
 	RECT_F src;//•`‰æŒ³Ø‚èæ‚èˆÊ’u
