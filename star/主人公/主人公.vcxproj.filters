@@ -283,7 +283,7 @@
       <Filter>ヘッダーファイル\Scene\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjOtherStar.h">
-      <Filter>ソースファイル\Obj\星</Filter>
+      <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

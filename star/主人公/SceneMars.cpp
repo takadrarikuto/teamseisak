@@ -31,11 +31,12 @@ void CSceneMars::InitScene()
 
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
 	Draw::LoadImage(L"星(透過済み).png", 13, TEX_SIZE_512);
+	Draw::LoadImage(L"ドリンク候補2.png", 14, TEX_SIZE_512);
 	Draw::LoadImage(L"brown_star.png", 16, TEX_SIZE_512);
 	Draw::LoadImage(L"green_star.png", 19, TEX_SIZE_512);
 
 	//ゲージ関係
-	//スタミナ
+	//体力
 	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
 
@@ -72,7 +73,7 @@ void CSceneMars::InitScene()
 	CObjstaminagaugeframe* obj_stf = new CObjstaminagaugeframe();
 	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 17);
 	CObjstaminagauge* obj_st = new CObjstaminagauge();
-	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);*/
+	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);
 
 
 	//星生成時間初期化
@@ -100,8 +101,8 @@ void CSceneMars::Scene()
 	if (arise < 4 && arise > 2)
 	{
 		//スターオブジェクト作成
-		CObjOtherStar* star3 = new CObjOtherStar();
-		Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
+		//CObjOtherStar* star3 = new CObjOtherStar();
+		//Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
 	}
 
 }
