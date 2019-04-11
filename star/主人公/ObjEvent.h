@@ -16,9 +16,9 @@ public:
 	void Draw();
 
 private:
-	bool I_Start; //イベントスタートフラグ
-	int I_co; //イベントカウント
-	int I_Start_co; //イベントカウント
+	bool E_Start; //イベントスタートフラグ
+	int E_co; //イベントカウント
+	int E_Start_co; //イベントカウント
 
 	float m_px;
 	float m_py;

@@ -21,7 +21,7 @@ void CSceneSaturn::InitScene()
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"イベント背景(火星).png", 9, TEX_SIZE_512);
-	Draw::LoadImage(L"火星.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"ダウンロード.png", 10, TEX_SIZE_512);
 
 	//主人公
 	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
@@ -31,6 +31,13 @@ void CSceneSaturn::InitScene()
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
 	Draw::LoadImage(L"星(透過済み).png", 13, TEX_SIZE_512);
 	Draw::LoadImage(L"brown_star.png", 16, TEX_SIZE_512);
+
+	//ゲージ関係
+	//体力
+	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
+	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
+
+
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
@@ -64,6 +71,14 @@ void CSceneSaturn::InitScene()
 	//スターオブジェクト作成
 	CObjSecondStar* star2 = new CObjSecondStar();
 	Objs::InsertObj(star2, OBJ_SECONDSTAR, 16);    //スターオブジェクト登録
+
+	//ゲージ関係
+	//スタミナオブジェクト作成
+	CObjstaminagaugeframe* obj_stf = new CObjstaminagaugeframe();
+	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 17);
+	CObjstaminagauge* obj_st = new CObjstaminagauge();
+	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);
+
 
 	//星生成時間初期化
 	time_star = 0;

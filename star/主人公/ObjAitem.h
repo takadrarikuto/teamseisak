@@ -17,8 +17,8 @@ public:
 
 private:
 	bool Aitem_flag; //アイテムフラグ
-	int Aitem_co_max; //個数
-	int Aitem_co; //個数を減らすよう
+	int Aitem_co_max; //最大個数
+	int Aitem_co; //個数を減らす用
 
 	wchar_t str[256];
 };
