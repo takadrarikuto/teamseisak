@@ -63,7 +63,7 @@ struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
 	int star_co; //星の数カウント
-
+	
 };
 //------------------------------------------------
 
@@ -119,5 +119,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneMars
 //-----------------------------------------------
