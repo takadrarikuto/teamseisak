@@ -31,6 +31,7 @@ void CSceneMars::InitScene()
 
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
 	Draw::LoadImage(L"星(透過済み).png", 13, TEX_SIZE_512);
+	Draw::LoadImage(L"ドリンク候補2.png", 14, TEX_SIZE_512);
 	Draw::LoadImage(L"brown_star.png", 16, TEX_SIZE_512);
 	Draw::LoadImage(L"green_star.png", 19, TEX_SIZE_512);
 

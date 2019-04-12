@@ -20,5 +20,9 @@ private:
 	int Aitem_co_max; //Å‘åŒÂ”
 	int Aitem_co; //ŒÂ”‚ğŒ¸‚ç‚·—p
 
+	float m_px; //‰æ‘œ—pÀ•W
+	float m_py;
+
 	wchar_t str[256];
+
 };
