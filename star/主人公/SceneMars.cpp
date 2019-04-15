@@ -40,7 +40,6 @@ void CSceneMars::InitScene()
 	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
 
-
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
 	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 8);
@@ -48,7 +47,6 @@ void CSceneMars::InitScene()
 	Objs::InsertObj(obj_i, OBJ_EVENT, 9); //イベント背景	
 	CObjMars* obj_m = new CObjMars();
 	Objs::InsertObj(obj_m, OBJ_MARS, 10);
-
 
 	//仮主人公オブジェクト生成
 	CObjHero* obj = new CObjHero();
@@ -58,7 +56,6 @@ void CSceneMars::InitScene()
 	CObjAncer* obj_a = new CObjAncer();
 	Objs::InsertObj(obj_a, OBJ_ANCER, 12);
 
-
 	//アイテムオブジェクト生成
 	CObjAitem* obj_ai = new CObjAitem();
 	Objs::InsertObj(obj_ai, OBJ_AITEM, 14);
@@ -67,14 +64,13 @@ void CSceneMars::InitScene()
 	CObjStarCount* obj_sc = new CObjStarCount();
 	Objs::InsertObj(obj_sc, OBJ_STARCOUNT, 15);
 
-
 	//ゲージ関係
 	//スタミナオブジェクト作成
 	CObjstaminagaugeframe* obj_stf = new CObjstaminagaugeframe();
 	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 17);
 	CObjstaminagauge* obj_st = new CObjstaminagauge();
 	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);
-
+	
 
 	//星生成時間初期化
 	time_star = 0;

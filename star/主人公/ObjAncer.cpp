@@ -33,6 +33,9 @@ void CObjAncer::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
+	m_vancer = 0.0f;
+	m_vrope = 0.0f;
+
 	//左クリック操作初期化
 	m_mous_l = false;
 	
@@ -42,13 +45,14 @@ void CObjAncer::Init()
 	Hits::SetHitBox(this, m_pax, m_pay, 40, 40, ELEMENT_ANCER, OBJ_ANCER, 11);
 
 	//ロープ描画用初期化
-	time = 0.0f;
+	rope = 0.0f;
 
 	//アンカー移動フラグ初期化
 	ancer_flag = false;
 
 	//飛距離調整初期化
-	ancer_time = 1;
+	ancer_time = 0.0f;
+	rope_time = 0.0f;
 
 	//画面移動時起動防止用初期化
 	time_co = 0;
@@ -94,6 +98,56 @@ void CObjAncer::Action()
 	//画面移動時起動防止用
 	if (time_co > 30)
 	{
+		if (m_mous_l == true)
+		{
+			ancer_flag = true;		
+			if (ancer_time <= 100)
+			{
+				ancer_time += 1.0f;
+				rope_time -= 1.0f;
+			}		
+		}
+		else if (m_mous_l == false)
+		{
+			ancer_flag = false;
+			if (ancer_time > 0)
+			{
+				ancer_time -= 1.0f;
+				rope_time += 1.0f;
+			}
+		}
+		
+		if (ancer_flag == true)
+		{
+			//m_vancer -= ancer_time; //アンカー移動
+			//m_vrope += ancer_time; //ロープ長さ調整
+		}
+		else if(ancer_flag == false)
+		{
+			//m_vancer += ancer_time; //アンカー移動
+			//m_vrope -= ancer_time; //ロープ長さ調整				
+			m_vy += ancer_time; //アンカー移動
+			rope += rope_time; //ロープ長さ調整
+		}
+
+		if (m_pay < 50.0f)
+		{
+			//m_pay = 50.0f;
+			//ancer_time = 0;
+		}
+		else if (m_pay > 535.0f)
+		{
+			m_pay = 535.0f;
+			//ancer_time = 0;
+		}
+		else if (m_pay > 50.0f && m_pay < 535.0f)
+		{
+			//m_vy += m_vancer; //アンカー移動
+			//rope += m_vrope; //ロープ長さ調整
+		}
+
+
+		/*
 		//星に当たると戻る
 		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
 		{
@@ -130,12 +184,14 @@ void CObjAncer::Action()
 				ancer_time = 1;
 			}				
 		}
+		*/
 	}
 	else
 	{
 		m_mous_l = false;
 	}
 
+	/*
 	//イベント処理
 	Ev_ancer = rand() % 5;
 
@@ -153,6 +209,7 @@ void CObjAncer::Action()
 	{
 		ancer_flag = false;
 	}
+	*/
 
 
 
@@ -178,7 +235,7 @@ void CObjAncer::Action()
 	if (m_pay < 50.0f)
 	{
 		m_pay = 50.0f;
-		ancer_flag = false;
+		//ancer_flag = false;
 	}
 	else if (m_pay > 535.0f)
 	{
@@ -196,6 +253,10 @@ void CObjAncer::Action()
 	if (m_pry > 500.0f)
 	{
 		m_pry = 500.0f;
+	}
+	else if (m_pry < 60.0f)
+	{
+		m_pry = 60.0f;
 	}
 
 	//位置更新
@@ -237,7 +298,7 @@ void CObjAncer::Draw()
 	srcr.m_bottom = 30.0f;
 
 	//表示位置の設定
-	dstr.m_top = 520.0f - time;
+	dstr.m_top = 520.0f - rope;
 	dstr.m_left = 0.0f + m_prx;
 	dstr.m_right = 20.0f + m_prx;
 	dstr.m_bottom = 540.0f;

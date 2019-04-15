@@ -54,4 +54,7 @@ void CObjStarPresent::Draw()
 	}
 
 
+
+
+
 }
