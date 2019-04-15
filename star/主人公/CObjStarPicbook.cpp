@@ -115,12 +115,14 @@ void CObjStarPicbook::Draw()
 	{
 		if (m_mou_l == true)
 		{
+			lever = 0;
 			Scene::SetScene(new CSceneStageselect());
 		}
 	}
 	//‚‚‚ð‰Ÿ‚·‚Æ–ß‚é
 	else if (Input::GetVKey('B') == true)
 	{
+		lever = 0;
 		Scene::SetScene(new CSceneStageselect());
 	}
 
