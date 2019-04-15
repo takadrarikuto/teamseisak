@@ -39,7 +39,7 @@ void CSceneJupiter::InitScene()
 	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
 
-
+	
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
 	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 8);
