@@ -40,6 +40,10 @@ void CSceneStageselect::InitScene()
 	CObjSelectPlanet* obj_sp = new CObjSelectPlanet();
 	Objs::InsertObj(obj_sp, OBJ_STAGESELECTPLANET, 12);
 
+	//操作説明オブジェクト作成
+	CObjOperation* obj_op = new CObjOperation();
+	Objs::InsertObj(obj_op, OBJ_OPERATION, 21);
+
 }
 
 //実行中メゾット
