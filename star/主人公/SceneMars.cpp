@@ -70,7 +70,7 @@ void CSceneMars::InitScene()
 	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 17);
 	CObjstaminagauge* obj_st = new CObjstaminagauge();
 	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);
-
+	
 
 	//¯¶¬ŠÔ‰Šú‰»
 	time_star = 0;
