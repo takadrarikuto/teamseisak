@@ -136,7 +136,7 @@
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjMars.h" />
     <ClInclude Include="ObjOtherStar.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="ObjSaturn.h" />
     <ClInclude Include="ObjStarCount.h" />
@@ -144,7 +144,9 @@
     <ClInclude Include="ObjSecondStar.h" />
     <ClInclude Include="Objstaminagauge.h" />
     <ClInclude Include="Objstaminagaugeframe.h" />
-    <ClInclude Include="ObjStarPresent2.h" />
+    <ClInclude Include="ObjStarPresent2.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
     <ClInclude Include="ObjBackground.h">
@@ -191,7 +193,7 @@
     <ClCompile Include="ObjMars.cpp" />
     <ClCompile Include="ObjOperation.cpp" />
     <ClCompile Include="ObjOtherStar.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="ObjSaturn.cpp" />
     <ClCompile Include="ObjSecondStar.cpp">
@@ -205,7 +207,9 @@
     <ClCompile Include="ObjStarPresent.cpp" />
     <ClCompile Include="Objstaminagauge.cpp" />
     <ClCompile Include="Objstaminagaugeframe.cpp" />
-    <ClCompile Include="ObjStarPresent2.cpp" />
+    <ClCompile Include="ObjStarPresent2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="ObjVenus.cpp" />
     <ClCompile Include="SceneGameKuria.cpp" />
@@ -219,7 +223,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="SceneVenus.cpp" />
-    <ClCompile Include="StarBook.cpp" />
+    <ClCompile Include="StarBook.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />

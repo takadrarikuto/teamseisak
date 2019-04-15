@@ -33,11 +33,14 @@ private:
 	//移動ベクトル
 	float m_vx;
 	float m_vy;
+	float m_vancer;
+	float m_vrope;
 
 	bool m_mous_l;
-	float time; //ロープ描画用
+	float rope; //ロープ描画用
 	int time_co; //画面移動時起動防止用
-	int ancer_time; //飛距離調整
+	float ancer_time; //アンカー飛距離調整
+	float rope_time; //ロープ飛距離調整
 
 	bool ancer_flag; //アンカー移動フラグ
 
