@@ -80,7 +80,7 @@ void CSceneMars::InitScene()
 //Às’†ƒƒ]ƒbƒg
 void CSceneMars::Scene()
 {
-	arise = rand() % 200;
+	arise = rand() % 100;
 
 	if (arise < 2 && arise > 0)
 	{

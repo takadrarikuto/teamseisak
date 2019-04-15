@@ -16,4 +16,5 @@ public:
 
 private:
 	
+	bool m_Operation_flag;
 };
