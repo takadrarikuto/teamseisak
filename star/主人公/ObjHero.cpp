@@ -57,7 +57,7 @@ void CObjHero::Action()
 	float ay = Ancer->GetY();
 
 	//左クリックしている時またはアンカーのy位置が535以下の時移動禁止
-	if (m_mous_l == false && ay > 535.0f)
+	if (m_mous_l == false && ay == 535.0f)
 	{
 		//移動処理
 		//左
