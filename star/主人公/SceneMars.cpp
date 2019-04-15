@@ -39,6 +39,8 @@ void CSceneMars::InitScene()
 	//体力
 	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
+	//QTE
+	Draw::LoadImage(L"qte.png", 20, TEX_SIZE_512);
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
@@ -72,6 +74,7 @@ void CSceneMars::InitScene()
 	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);
 	
 
+
 	//星生成時間初期化
 	time_star = 0;
 
@@ -97,8 +100,12 @@ void CSceneMars::Scene()
 	if (arise < 4 && arise > 2)
 	{
 		//スターオブジェクト作成
-		//CObjOtherStar* star3 = new CObjOtherStar();
-		//Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
+		CObjOtherStar* star3 = new CObjOtherStar();
+		Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
 	}
+	
+	//QTE
+	CObjQTE* obj_qte = new CObjQTE();
+	Objs::InsertObj(obj_qte, OBJ_QTE, 20);
 
 }
