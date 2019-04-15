@@ -33,25 +33,23 @@ void CObjStarPicbook::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
-	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 300.0f;
-	src.m_bottom = 461.0f;
-
-	//表示位置の設定
+	src.m_bottom = 400.0f;
+	//星座の枠を描画
 	dst.m_top = 300.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = 100.0f;
+	dst.m_right = 67.0f;
 	dst.m_bottom = 600.0f;
 	
 	//ループして描画する
-	for (int i = 0; i <= 7; i++)
+	for (int i = 0; i <= 11; i++)
 	{
 		//星の名前の枠を描画
-			Draw::Draw(9, &src, &dst, c, 0.0f);
+			Draw::Draw(1, &src, &dst, c, 0.0f);
 			dst.m_left = dst.m_right + 0.0f;
-			dst.m_right = dst.m_right + 100.0f;
+			dst.m_right = dst.m_right + 67.0f;
 	}
 
 	//切り取り位置の設定
@@ -63,7 +61,7 @@ void CObjStarPicbook::Draw()
 	//表示位置の設定
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = 700.0f;
+	dst.m_right = 800.0f;
 	dst.m_bottom = 300.0f;
 
 	//説明文を描画
@@ -82,14 +80,7 @@ void CObjStarPicbook::Draw()
 	dst.m_left = 5.0f;
 	dst.m_right = 110.0f;
 	dst.m_bottom = 50.0f;
-	Draw::Draw(9, &src, &dst, c, 0.0f);
-
-	//何座に属するかの枠を描画
-	dst.m_top = 50.0f;
-	dst.m_left = 5.0f;
-	dst.m_right = 110.0f;
-	dst.m_bottom = 300.0f;
-    Draw::Draw(9, &src, &dst, c, 0.0f);
+	//Draw::Draw(9, &src, &dst, c, 0.0f);
 	
 	//切り取り位置の設定
 	src.m_top =0.0f;
@@ -102,12 +93,14 @@ void CObjStarPicbook::Draw()
 	dst.m_left = 700.0f;
 	dst.m_right = 800.0f;
 	dst.m_bottom = 150.0f;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	//次への枠
+	//Draw::Draw(1, &src, &dst, c, 0.0f);
 	dst.m_top = 140.0f;
 	dst.m_bottom = 300.0f;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	//戻すの枠
+	//Draw::Draw(1, &src, &dst, c, 0.0f);
 	//					　　X　Y　大きさ
-	Font::StrDraw(L"戻る", 10, 0, 50, c);
+	//Font::StrDraw(L"戻る", 10, 0, 50, c);
 	
 	//戻るボタン
 	// left				 right            top            bottom         
@@ -133,7 +126,7 @@ void CObjStarPicbook::Draw()
 		int l = 50;
 		swprintf_s(str, L"%s", next[i]);
 		//				　　X　 Y　 大きさ
-		Font::StrDraw(str, 720, 25 + l*i, 50, c);
+		//Font::StrDraw(str, 720, 25 + l*i, 50, c);
 	}
 
 	//次へを押したらStarPresent2に切り替える
@@ -155,7 +148,7 @@ void CObjStarPicbook::Draw()
 		swprintf_s(str, L"%s", before[i]);
 
 		//				　　X　 Y　 大きさ
-		Font::StrDraw(str, 720, 160 + l*i, 50, c);
+		//Font::StrDraw(str, 720, 160 + l*i, 50, c);
 	}
 	//次へを押したらStarPresentに切り替える
 	// left				 right            top            bottom       
@@ -167,5 +160,5 @@ void CObjStarPicbook::Draw()
 			Scene::SetScene(new CSceneStarPicbook());
 		}
 	}
-
+	
 }

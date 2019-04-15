@@ -34,10 +34,10 @@ void CObjStarPresent::Draw()
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 	//					　　	 X　 Y　 大きさ
-	Font::StrDraw(L"アンタレス", 10, 305,15, c);
+	//Font::StrDraw(L"アンタレス", 10, 305,15, c);
 
 	// left				 right            top            bottom               
-	if (m_mou_x > 0 && m_mou_x < 100 && m_mou_y>300 && m_mou_y <315)
+	/*if (m_mou_x > 0 && m_mou_x < 100 && m_mou_y>300 && m_mou_y <315)
 	{
 		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
 		Font::StrDraw(L"一番明るい星", 110, 50, 30, c);
@@ -51,10 +51,6 @@ void CObjStarPresent::Draw()
 			//				　　X　 Y　 大きさ
 			Font::StrDraw(str, 20, 100+l*i, 50, c);
 		}
-	}
-
-
-
-
+	}*/
 
 }
