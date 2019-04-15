@@ -92,7 +92,7 @@ void CObjAncer::Action()
 	}
 
 
-	//自身のHitBoxを持ってくる。
+	//自身のHitBoxを持ってくる
 	CHitBox* hit_a = Hits::GetHitBox(this);
 
 	//画面移動時起動防止用
