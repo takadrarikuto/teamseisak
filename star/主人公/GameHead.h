@@ -92,7 +92,7 @@ struct UserData
 #include "ObjAncer.h"
 #include "ObjFirstStar.h"
 #include "ObjSecondStar.h"
-//#include "ObjOtherStar.h"
+#include "ObjOtherStar.h"
 #include "ObjBackground.h"
 #include "CObjOperation.h"
 #include "ObjGamekuria.h"
@@ -103,7 +103,7 @@ struct UserData
 #include "ObjStarCount.h"
 #include "Objstaminagauge.h"
 #include "Objstaminagaugeframe.h"
-#include "ObjQTE.h"
+//#include "ObjQTE.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

@@ -143,7 +143,9 @@
     <ClInclude Include="ObjStarCount.h" />
     <ClInclude Include="ObjStarPresent.h" />
     <ClInclude Include="ObjSecondStar.h" />
-    <ClInclude Include="Objstaminagauge.h" />
+    <ClInclude Include="Objstaminagauge.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Objstaminagaugeframe.h" />
     <ClInclude Include="ObjStarPresent2.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
