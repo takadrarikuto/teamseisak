@@ -124,18 +124,17 @@ void CObjStarPicbook::Draw()
 		Scene::SetScene(new CSceneStageselect());
 	}
 
+	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
-	//ループして出す
 	for (int i = 0; i <= 1; i++)
 	{
 		int l = 50;
 		swprintf_s(str, L"%s", next[i]);
-
 		//				　　X　 Y　 大きさ
 		Font::StrDraw(str, 720, 25 + l*i, 50, c);
 	}
 
-	//次へボタン
+	//次へを押したらStarPresent2に切り替える
 	// left				 right            top            bottom       
 	if (m_mou_x > 700 && m_mou_x < 800 && m_mou_y>0 && m_mou_y <140)
 	{
@@ -146,8 +145,8 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
+	//戻すの文字をループして出す
 	wchar_t before[2][2]{ L"戻",L"す" };
-	//ループして出す
 	for (int i = 0; i <= 1; i++)
 	{
 		int l = 50;
@@ -156,6 +155,7 @@ void CObjStarPicbook::Draw()
 		//				　　X　 Y　 大きさ
 		Font::StrDraw(str, 720, 160 + l*i, 50, c);
 	}
+	//次へを押したらStarPresentに切り替える
 	// left				 right            top            bottom       
 	if (m_mou_x > 700 && m_mou_x < 800 && m_mou_y>150 && m_mou_y <300)
 	{
@@ -165,4 +165,5 @@ void CObjStarPicbook::Draw()
 			Scene::SetScene(new CSceneStarPicbook());
 		}
 	}
+
 }
