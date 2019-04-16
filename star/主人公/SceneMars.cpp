@@ -5,6 +5,7 @@
 //GameLで使用するヘッダー
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
+#include "GameL\WinInputs.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -18,6 +19,10 @@ using namespace GameL;
 //初期化メゾット
 void CSceneMars::InitScene()
 {
+	occur = 0;
+	m_Pf = false;
+	m_key_f = false;//行動制御
+
 	//グラフィック読み込み
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
@@ -39,8 +44,6 @@ void CSceneMars::InitScene()
 	//体力
 	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
-	//QTE
-	Draw::LoadImage(L"qte.png", 20, TEX_SIZE_512);
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
@@ -74,7 +77,6 @@ void CSceneMars::InitScene()
 	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);
 	
 
-
 	//星生成時間初期化
 	time_star = 0;
 
@@ -83,29 +85,81 @@ void CSceneMars::InitScene()
 //実行中メゾット
 void CSceneMars::Scene()
 {
-	arise = rand() % 100;
+	CObjPose* pob = (CObjPose*)Objs::GetObj(OBJ_POSE);
 
-	if (arise < 2 && arise > 0)
+	//ポーズ
+	if (pob == nullptr)
+		m_Pf = false;
+
+	while (1)
 	{
-		//スターオブジェクト作成
-		CObjFirstStar* star = new CObjFirstStar();
-		Objs::InsertObj(star, OBJ_FIRSTSTAR, 13);    //スターオブジェクト登録
+		if (Input::GetVKey('P') == true)//Mキー入力時
+		{
+
+			if (m_Pf == true) {//m_fがtrueの場合
+							   //コマンド用SEを鳴らす
+				
+					
+				while (1)
+				{
+					if (Input::GetVKey('Z') == true)
+					{
+						Scene::SetScene(new CSceneTitle());
+						break;
+					}
+
+					if (Input::GetVKey('X') == true)//Xキー入力時
+					{
+						if (m_Pf == true) 
+						{
+							Sleep(1);
+							//ポーズオブジェクトを削除
+							if (pob != nullptr)
+								pob->SetAf(true);
+							break;
+						}
+					}
+				}
+			
+			}
+
+			if (m_Pf == false) {
+				//ポーズオブジェクト作成
+				CObjPose* po = new CObjPose();       //ポーズオブジェクト作成
+				Objs::InsertObj(po, OBJ_POSE, 11);    //ポーズオブジェクト登録
+				m_Pf = true;
+
+			}
+			else {}
+		}
+		break;
 	}
-	if (arise < 3 && arise > 1)
+	occur++;
+	arise = rand() % 10;
+
+	if (occur == 60)
 	{
-		//スターオブジェクト作成
-		CObjSecondStar* star2 = new CObjSecondStar();
-		Objs::InsertObj(star2, OBJ_SECONDSTAR, 16);    //スターオブジェクト登録
+		if (arise < 2 && arise > 0)
+		{
+			//スターオブジェクト作成
+			CObjFirstStar* star = new CObjFirstStar();
+			Objs::InsertObj(star, OBJ_FIRSTSTAR, 13);    //スターオブジェクト登録
+		}
+
+
+		if (arise < 3 && arise > 1)
+		{
+			//スターオブジェクト作成
+			CObjSecondStar* star2 = new CObjSecondStar();
+			Objs::InsertObj(star2, OBJ_SECONDSTAR, 16);    //スターオブジェクト登録
+		}
+		if (arise < 4 && arise > 2)
+		{
+			//スターオブジェクト作成
+			CObjOtherStar* star3 = new CObjOtherStar();
+			Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
+		}
+		occur = 0;
 	}
-	if (arise < 4 && arise > 2)
-	{
-		//スターオブジェクト作成
-		CObjOtherStar* star3 = new CObjOtherStar();
-		Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
-	}
-	
-	//QTE
-	//CObjQTE* obj_qte = new CObjQTE();
-	//Objs::InsertObj(obj_qte, OBJ_QTE, 20);
 
 }

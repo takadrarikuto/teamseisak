@@ -76,16 +76,16 @@ void CObjAncer::Action()
 	m_vy = 0.0f;
 
 	//左クリックしている時またはアンカーのy位置が535以下の時移動禁止
-	if (m_mous_l == false && (m_vy == 0.0f && rope == 0.0f))
+	if (m_mous_l == false && m_pay > 535.0f)
 	{
 		//移動
 		//左
-		if (Input::GetVKey('A') == true)
+		if (Input::GetVKey(VK_LEFT) == true)
 		{
 			m_vx -= 4.0f;
 		}
 		//右
-		else if (Input::GetVKey('D') == true)
+		else if (Input::GetVKey(VK_RIGHT) == true)
 		{
 			m_vx += 4.0f;
 		}
@@ -100,23 +100,50 @@ void CObjAncer::Action()
 	{
 		if (m_mous_l == true)
 		{
-			ancer_flag = false;
-			ancer_time += 1.0f;
-			rope_time -= 1.0f;
+			ancer_flag = true;		
+			if (ancer_time <= 100)
+			{
+				ancer_time += 1.0f;
+				rope_time -= 1.0f;
+			}		
 		}
 		else if (m_mous_l == false)
 		{
-			ancer_flag = true;
+			ancer_flag = false;
+			if (ancer_time > 0)
+			{
+				ancer_time -= 1.0f;
+				rope_time += 1.0f;
+			}
 		}
 		
-		if (ancer_flag == true && (m_vy != ancer_time && rope != rope_time))
+		if (ancer_flag == true)
 		{
-			m_vy -= 1.0f; //アンカー移動
-			rope += 1.4f; //ロープ長さ調整
+			//m_vancer -= ancer_time; //アンカー移動
+			//m_vrope += ancer_time; //ロープ長さ調整
 		}
 		else if(ancer_flag == false)
-		{				
+		{
+			//m_vancer += ancer_time; //アンカー移動
+			//m_vrope -= ancer_time; //ロープ長さ調整				
+			m_vy += ancer_time; //アンカー移動
+			rope += rope_time; //ロープ長さ調整
+		}
 
+		if (m_pay < 50.0f)
+		{
+			//m_pay = 50.0f;
+			//ancer_time = 0;
+		}
+		else if (m_pay > 535.0f)
+		{
+			m_pay = 535.0f;
+			//ancer_time = 0;
+		}
+		else if (m_pay > 50.0f && m_pay < 535.0f)
+		{
+			//m_vy += m_vancer; //アンカー移動
+			//rope += m_vrope; //ロープ長さ調整
 		}
 
 
@@ -208,6 +235,7 @@ void CObjAncer::Action()
 	if (m_pay < 50.0f)
 	{
 		m_pay = 50.0f;
+		//ancer_flag = false;
 	}
 	else if (m_pay > 535.0f)
 	{
