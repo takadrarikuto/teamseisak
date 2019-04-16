@@ -145,6 +145,9 @@
     <ClCompile Include="ObjOtherStar.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
     </ClCompile>
+    <ClCompile Include="ObjQTE.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -284,6 +287,9 @@
     </ClInclude>
     <ClInclude Include="ObjOtherStar.h">
       <Filter>ヘッダーファイル\Obj\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjQTE.h">
+      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
