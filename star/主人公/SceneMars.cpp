@@ -97,8 +97,8 @@ void CSceneMars::Scene()
 	if (arise < 4 && arise > 2)
 	{
 		//スターオブジェクト作成
-		//CObjOtherStar* star3 = new CObjOtherStar();
-		//Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
+		CObjOtherStar* star3 = new CObjOtherStar();
+		Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
 	}
 
 }
