@@ -12,12 +12,46 @@ using namespace GameL;
 
 void CObjOperation::Init()
 {
-
+	m_Operation_flag = false;
 }
 
 void CObjOperation::Action()
 {
-	
+	if (m_Operation_flag == true)
+	{
+		if (Input::GetVKey(VK_SPACE) == true)
+		{
+			Scene::SetScene(new CSceneOperation());
+		}
+
+	}
+	else
+	{
+		m_Operation_flag = true;
+	}
+
+
+	if (Input::GetVKey(VK_SPACE) == true)
+	{
+		if (m_Operation_flag == true)
+		{
+			Scene::SetScene(new CSceneOperation());
+		}
+	}
+	//ステージ選択画面に戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		if (m_Operation_flag == true)
+		{
+			Scene::SetScene(new CSceneStageselect());
+		}
+	}
+	else
+	{
+		m_Operation_flag = true;
+	}
+
+
 }
 
 void CObjOperation::Draw()
@@ -40,6 +74,6 @@ void CObjOperation::Draw()
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
 
-	Draw::Draw(8, &src, &dst, c, 0.0f);
+	Draw::Draw(21, &src, &dst, c, 0.0f);
 
 }
