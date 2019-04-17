@@ -76,16 +76,16 @@ void CObjAncer::Action()
 	m_vy = 0.0f;
 
 	//左クリックしている時またはアンカーのy位置が535以下の時移動禁止
-	if (m_mous_l == false && (m_vy == 0.0f && rope == 0.0f))
+	if (m_mous_l == false && m_pay > 535.0f)
 	{
 		//移動
 		//左
-		if (Input::GetVKey('A') == true)
+		if (Input::GetVKey(VK_LEFT) == true)
 		{
 			m_vx -= 4.0f;
 		}
 		//右
-		else if (Input::GetVKey('D') == true)
+		else if (Input::GetVKey(VK_RIGHT) == true)
 		{
 			m_vx += 4.0f;
 		}
@@ -221,6 +221,7 @@ void CObjAncer::Action()
 	if (m_pay < 50.0f)
 	{
 		m_pay = 50.0f;
+		//ancer_flag = false;
 	}
 	else if (m_pay > 535.0f)
 	{

@@ -37,16 +37,19 @@ void CSceneStarPicbook::InitScene()
 	Draw::LoadImage(L"ブラックタイル.png", 1, TEX_SIZE_512);
 
 	//星図鑑オブジェクト生成
-	CObjStarPicbook* p = new CObjStarPicbook();
-	Objs::InsertObj(p, OBJ_STARPICBOOK,9);
-	if (lever == 0)
+	if(lever==0)
+	{
+		CObjStarPicbook* p = new CObjStarPicbook();
+		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+	}
+	if (lever == 1)
 	{
 		//星図鑑オブジェクト生成
 		CObjStarPresent* s = new CObjStarPresent();
 		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
 	}
 
-	if (lever==1)
+	if (lever==2)
 	{
 		CObjStarPresent2* a = new CObjStarPresent2();
 		Objs::InsertObj(a, OBJ_STARPRESENT2, 11);

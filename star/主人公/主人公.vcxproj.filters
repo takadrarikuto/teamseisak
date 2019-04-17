@@ -145,8 +145,8 @@
     <ClCompile Include="ObjOtherStar.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
     </ClCompile>
-    <ClCompile Include="ObjQTE.cpp">
-      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+    <ClCompile Include="ObjPose.cpp">
+      <Filter>ソースファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -290,6 +290,8 @@
     </ClInclude>
     <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\Obj\ゲージ関係</Filter>
+    <ClInclude Include="ObjPose.h">
+      <Filter>ソースファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
