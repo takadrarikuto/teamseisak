@@ -76,16 +76,16 @@ void CObjAncer::Action()
 	m_vy = 0.0f;
 
 	//左クリックしている時またはアンカーのy位置が535以下の時移動禁止
-	if (m_mous_l == false && m_pay > 535.0f)
+	if (m_mous_l == false && m_pay > 510.0f)
 	{
 		//移動
 		//左
-		if (Input::GetVKey(VK_LEFT) == true)
+		if (Input::GetVKey('A') == true)
 		{
 			m_vx -= 4.0f;
 		}
 		//右
-		else if (Input::GetVKey(VK_RIGHT) == true)
+		else if (Input::GetVKey('D') == true)
 		{
 			m_vx += 4.0f;
 		}
@@ -303,7 +303,7 @@ void CObjAncer::Draw()
 	dstr.m_right = 20.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 
-	Draw::Draw(12, &srcr, &dstr, c, 0.0f);
+	Draw::Draw(5, &srcr, &dstr, c, 0.0f);
 
 	//本体
 	//切り取り位置の位置
@@ -318,7 +318,7 @@ void CObjAncer::Draw()
 	dst.m_right = 50.0f + m_px;
 	dst.m_bottom = 100.0f + m_py;
 
-	Draw::Draw(12, &src, &dst, c, 0.0f);
+	Draw::Draw(5, &src, &dst, c, 0.0f);
 	
 	//アンカー
 	//切り取り位置の位置
@@ -333,6 +333,6 @@ void CObjAncer::Draw()
 	dsta.m_right = 50.0f + m_pax;
 	dsta.m_bottom = -60.0f + m_pay;
 
-	Draw::Draw(12, &srca, &dsta, c, 0.0f);
+	Draw::Draw(5, &srca, &dsta, c, 0.0f);
 
 }

@@ -19,5 +19,6 @@ private:
 	int arise;	//生成確率用
 	bool m_Pf;
 	bool m_key_f;//行動制御
+	double probability;//確率
 
 };

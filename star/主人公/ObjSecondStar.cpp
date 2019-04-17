@@ -108,8 +108,8 @@ void CObjSecondStar::Draw()
 			   //Ø‚èæ‚èˆÊ’u‚Ìİ’è
 	src.m_top = 0.0f;
 	src.m_left = 0.0f; 
-	src.m_right = 200.0f; 
-	src.m_bottom = 190.0f; 
+	src.m_right = 100.0f; 
+	src.m_bottom = 100.0f; 
 
 
 	//•\¦ˆÊ’u‚Ìİ’è
@@ -119,5 +119,5 @@ void CObjSecondStar::Draw()
 	dst.m_bottom = 64.0f + m_py;
 
 	//•`‰æ
-	Draw::Draw(16, &src, &dst, c, 0.0f);
+	Draw::Draw(11, &src, &dst, c, 0.0f);
 }

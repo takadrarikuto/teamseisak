@@ -148,6 +148,12 @@
     <ClCompile Include="ObjPose.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="ObjThirdStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjFourthStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -290,6 +296,12 @@
     </ClInclude>
     <ClInclude Include="ObjPose.h">
       <Filter>ソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjThirdStar.h">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjFourthStar.h">
+      <Filter>ソースファイル\Obj\星</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
