@@ -33,14 +33,14 @@ void CSceneMars::InitScene()
 	Draw::LoadImage(L"星(透過済み).png", 13, TEX_SIZE_512);
 	Draw::LoadImage(L"ドリンク候補2.png", 14, TEX_SIZE_512);
 	Draw::LoadImage(L"brown_star.png", 16, TEX_SIZE_512);
-	Draw::LoadImage(L"green_star.png", 19, TEX_SIZE_512);
+	//Draw::LoadImage(L"green_star.png", 19, TEX_SIZE_512);
 
 	//ゲージ関係
 	//体力
 	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
 	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
 	//QTE
-	Draw::LoadImage(L"qte.png", 20, TEX_SIZE_512);
+	//Draw::LoadImage(L"qte.png", 20, TEX_SIZE_512);
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
@@ -100,8 +100,8 @@ void CSceneMars::Scene()
 	if (arise < 4 && arise > 2)
 	{
 		//スターオブジェクト作成
-		CObjOtherStar* star3 = new CObjOtherStar();
-		Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
+		//CObjOtherStar* star3 = new CObjOtherStar();
+		//Objs::InsertObj(star3, OBJ_OTHERSTAR, 19);    //スターオブジェクト登録
 	}
 	
 	//QTE

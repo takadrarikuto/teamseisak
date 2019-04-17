@@ -289,7 +289,7 @@
       <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjQTE.h">
-      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+      <Filter>ヘッダーファイル\Obj\ゲージ関係</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

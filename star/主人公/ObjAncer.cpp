@@ -91,7 +91,6 @@ void CObjAncer::Action()
 		}
 	}
 
-
 	//自身のHitBoxを持ってくる
 	CHitBox* hit_a = Hits::GetHitBox(this);
 
@@ -100,25 +99,38 @@ void CObjAncer::Action()
 	{
 		if (m_mous_l == true)
 		{
-			ancer_flag = false;
 			ancer_time += 1.0f;
 			rope_time -= 1.0f;
+			if (ancer_time == 1.0f && rope_time == -1.0f)
+			{
+				Ancer_on = true;
+			}
+			ancer_flag = true;
 		}
 		else if (m_mous_l == false)
 		{
-			ancer_flag = true;
+			if (ancer_time > 0.0f && rope_time < 0.0f)
+			{
+				m_vy -= 9.0f; //アンカー移動
+				rope += 13.0f; //ロープ長さ調整			
+				if (m_pay < 50.0f)
+				{
+					ancer_time = 0.0f;
+					rope_time = 0.0f;
+				}
+				else
+				{
+					ancer_time -= 1.0f;
+					rope_time += 1.0f;
+				}
+			}
+			else if (ancer_flag == true && ancer_time == 0.0f && rope_time == 0.0f)
+			{
+				m_vy += 9.0f; //アンカー移動
+				rope -= 13.0f; //ロープ長さ調整
+			}
 		}
 		
-		if (ancer_flag == true && (m_vy != ancer_time && rope != rope_time))
-		{
-			m_vy -= 1.0f; //アンカー移動
-			rope += 1.4f; //ロープ長さ調整
-		}
-		else if(ancer_flag == false)
-		{				
-
-		}
-
 
 		/*
 		//星に当たると戻る
@@ -180,7 +192,8 @@ void CObjAncer::Action()
 
 	if (m_pry < 400.0f && A_event > Event_Time && Ev_ancer == 4)
 	{
-		ancer_flag = false;
+		ancer_time = 0.0f;
+		rope_time = 0.0f;
 	}
 	*/
 
@@ -212,6 +225,7 @@ void CObjAncer::Action()
 	else if (m_pay > 535.0f)
 	{
 		m_pay = 535.0f;
+		ancer_flag = false;
 	}
 	//ロープ
 	if (m_prx < 49.0f)
@@ -222,13 +236,13 @@ void CObjAncer::Action()
 	{
 		m_prx = 800.0f - 26.0f;
 	}
-	if (m_pry > 500.0f)
+	if (rope > 700.0f)
 	{
-		m_pry = 500.0f;
+		rope = 700.0f;
 	}
-	else if (m_pry < 60.0f)
+	else if (rope < 0.0f)
 	{
-		m_pry = 60.0f;
+		rope = 0.0f;
 	}
 
 	//位置更新
@@ -236,7 +250,6 @@ void CObjAncer::Action()
 	m_pax += m_vx; //アンカー
 	m_pay += m_vy;
 	m_prx += m_vx; //ロープ
-	m_pry += m_vy;
 	
 
 	//HitBoxの位置の変更
