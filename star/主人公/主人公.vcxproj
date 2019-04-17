@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F6B49877-F43D-449E-8E75-95C9B702D215}</ProjectGuid>
     <RootNamespace>主人公</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
     <ProjectName>star collection</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -131,6 +131,7 @@
     <ClInclude Include="ObjEvent.h" />
     <ClInclude Include="ObjFirstStar.h" />
     <ClInclude Include="ObjAncer.h" />
+    <ClInclude Include="ObjFourthStar.h" />
     <ClInclude Include="ObjGameKuria.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjJupiter.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="ObjStarPresent2.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="ObjThirdStar.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
     <ClInclude Include="ObjBackground.h">
@@ -193,6 +195,7 @@
     <ClCompile Include="ObjAncer.cpp" />
     <ClCompile Include="ObjEvent.cpp" />
     <ClCompile Include="ObjFirstStar.cpp" />
+    <ClCompile Include="ObjFourthStar.cpp" />
     <ClCompile Include="ObjGameKuria.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjJupiter.cpp" />
@@ -222,6 +225,7 @@
     <ClCompile Include="ObjStarPresent2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="ObjThirdStar.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="ObjVenus.cpp" />
     <ClCompile Include="SceneGameKuria.cpp" />

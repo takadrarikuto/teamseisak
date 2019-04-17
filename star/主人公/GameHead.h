@@ -21,6 +21,8 @@ enum OBJ_NAME
 	OBJ_JUPITER,
 	OBJ_FIRSTSTAR,
 	OBJ_SECONDSTAR,
+	OBJ_THIRDSTAR,
+	OBJ_FOURTHSTAR,
 	OBJ_OTHERSTAR,
 	OBJ_OPERATION,
 	OBJ_BACKGROUND,
@@ -93,6 +95,8 @@ struct UserData
 #include "ObjAncer.h"
 #include "ObjFirstStar.h"
 #include "ObjSecondStar.h"
+#include "ObjThirdStar.h"
+#include "ObjFourthStar.h"
 #include "ObjOtherStar.h"
 #include "ObjBackground.h"
 #include "CObjOperation.h"

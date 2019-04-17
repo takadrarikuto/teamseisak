@@ -140,6 +140,6 @@ void CObjstaminagauge::Draw()
 	dst.m_bottom = 22.0f + m_py;
 
 	//•`‰æ
-	Draw::Draw(18, &src, &dst, c, 0.0f);
+	Draw::Draw(7, &src, &dst, c, 0.0f);
 
 }

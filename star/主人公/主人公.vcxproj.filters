@@ -148,6 +148,12 @@
     <ClCompile Include="ObjQTE.cpp">
       <Filter>ソースファイル\Obj\ゲージ関係</Filter>
     </ClCompile>
+    <ClCompile Include="ObjThirdStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjFourthStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
     <ClCompile Include="ObjPose.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +297,12 @@
     </ClInclude>
     <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\Obj\ゲージ関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjThirdStar.h">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjFourthStar.h">
+      <Filter>ソースファイル\Obj\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjPose.h" />
   </ItemGroup>

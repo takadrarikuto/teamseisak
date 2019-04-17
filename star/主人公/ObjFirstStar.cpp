@@ -32,11 +32,7 @@ void CObjFirstStar::Init()
 //アクション
 void CObjFirstStar::Action()
 {
-	
-	m_move = rand() % 50;
-
-	if (m_move <= 90 && m_move <= 0)
-		m_vx += 1.0f;
+	m_vx = 1.0f;
 
 	m_px += m_vx;
 	m_py += m_vy;
@@ -79,9 +75,9 @@ void CObjFirstStar::Draw()
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
-	src.m_left = 350.0f; //青色0.0f
-	src.m_right = 510.0f; //青色190.0f
-	src.m_bottom = 200.0f; //青色200.0f
+	src.m_left = 0.0f; //青色0.0f
+	src.m_right = 100.0f; //青色190.0f
+	src.m_bottom = 100.0f; //青色200.0f
 
 
 	//表示位置の設定
@@ -91,5 +87,5 @@ void CObjFirstStar::Draw()
 	dst.m_bottom = 64.0f + m_py;
 
 	//描画
-	Draw::Draw(13, &src, &dst, c, 0.0f);
+	Draw::Draw(10, &src, &dst, c, 0.0f);
 }
