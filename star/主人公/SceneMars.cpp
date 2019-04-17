@@ -95,7 +95,7 @@ void CSceneMars::Scene()
 
 	while (1)
 	{
-		if (Input::GetVKey('P') == true)//Mキー入力時
+		if (Input::GetVKey('P') == true)//Pキー入力時
 		{
 
 			if (m_Pf == true) {//m_fがtrueの場合

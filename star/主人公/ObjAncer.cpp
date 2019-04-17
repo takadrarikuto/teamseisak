@@ -51,11 +51,14 @@ void CObjAncer::Init()
 	ancer_flag = false;
 
 	//飛距離調整初期化
-	ancer_time = 0.0f;
-	rope_time = 0.0f;
+	ancer_time = Ancer_Rope_InitialTime;
+	rope_time = Ancer_Rope_InitialTime;
 
 	//画面移動時起動防止用初期化
 	time_co = 0;
+
+	//連続発射防止フラグ
+	ancer_Prevent_doublepress = false;
 
 	//イベントタイム処理初期化
 	A_event = 0;
@@ -75,8 +78,8 @@ void CObjAncer::Action()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-	//左クリックしている時またはアンカーのy位置が535以下の時移動禁止
-	if (m_mous_l == false && m_pay > 535.0f)
+	//左クリックしていない時かつアンカーが発射されていない時移動可能
+	if (m_mous_l == false && ancer_flag == false)
 	{
 		//移動
 		//左
@@ -97,7 +100,7 @@ void CObjAncer::Action()
 	//画面移動時起動防止用
 	if (time_co > 30)
 	{
-		if (m_mous_l == true)
+		if (m_mous_l == true && ancer_Prevent_doublepress == false)
 		{
 			ancer_time += 1.0f;
 			rope_time -= 1.0f;
@@ -105,33 +108,23 @@ void CObjAncer::Action()
 			{
 				Ancer_on = true;
 			}
-			ancer_flag = true;
 		}
 		else if (m_mous_l == false)
 		{
-			if (ancer_time > 0.0f && rope_time < 0.0f)
+			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
 			{
 				m_vy -= 9.0f; //アンカー移動
 				rope += 13.0f; //ロープ長さ調整			
-				if (m_pay < 50.0f)
-				{
-					ancer_time = 0.0f;
-					rope_time = 0.0f;
-				}
-				else
-				{
-					ancer_time -= 1.0f;
-					rope_time += 1.0f;
-				}
+				ancer_time -= 1.0f;
+				rope_time += 1.0f;
 			}
-			else if (ancer_flag == true && ancer_time == 0.0f && rope_time == 0.0f)
+			else if (ancer_flag == true && ancer_time == Ancer_Rope_InitialTime && rope_time == Ancer_Rope_InitialTime)
 			{
 				m_vy += 9.0f; //アンカー移動
 				rope -= 13.0f; //ロープ長さ調整
 			}
 		}
 		
-
 		/*
 		//星に当たると戻る
 		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
@@ -145,29 +138,6 @@ void CObjAncer::Action()
 			ancer_time += 1;
 			ancer_flag = true; //アンカー発射
 			Ancer_on = true; //スタミナ消費
-		}
-		else if (Input::GetMouButtonL() == false && ancer_time > 1)
-		{
-			
-		}
-
-		if (ancer_flag == true)
-		{	
-			m_vy -= 9.0f; //アンカー移動
-			time += 13.0f; //ロープ長さ調整
-		}
-		else
-		{
-			m_vy += 6.0f; //アンカー移動
-			if (m_pry < 500.0f)
-			{
-				time -= 9.0f; //ロープ長さ調整
-			}
-			else
-			{
-				time = 0.0f; //ロープ長さ調整
-				ancer_time = 1;
-			}				
 		}
 		*/
 	}
@@ -221,13 +191,21 @@ void CObjAncer::Action()
 	if (m_pay < 50.0f)
 	{
 		m_pay = 50.0f;
-		//ancer_flag = false;
+		ancer_time = Ancer_Rope_InitialTime;
+		rope_time = Ancer_Rope_InitialTime;
 	}
 	else if (m_pay > 535.0f)
 	{
 		m_pay = 535.0f;
 		ancer_flag = false;
+		ancer_Prevent_doublepress = false;
 	}
+	else if (m_pay < 535.0f)
+	{
+		ancer_flag = true;
+		ancer_Prevent_doublepress = true;
+	}
+
 	//ロープ
 	if (m_prx < 49.0f)
 	{

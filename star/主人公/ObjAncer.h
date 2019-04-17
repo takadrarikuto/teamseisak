@@ -3,6 +3,8 @@
 #include "GameL\SceneObjManager.h"
 
 #define Event_Time (130) //イベント時間カウント用
+#define Ancer_Rope_InitialTime (0.0f)
+
 
 //使用するネームスペース
 using namespace GameL;
@@ -20,6 +22,8 @@ public:
 
 	float GetX() { return m_pax; }
 	float GetY() { return m_pay; }
+	float GetAncerFlag() { return ancer_flag; }
+
 private:
 
 	//位置
@@ -43,6 +47,7 @@ private:
 	float rope_time; //ロープ飛距離調整
 
 	bool ancer_flag; //アンカー移動フラグ
+	bool ancer_Prevent_doublepress; //連続発射防止フラグ
 
 	int A_event; //イベントタイム処理
 	int Ev_ancer; //イベント時アンカー処理

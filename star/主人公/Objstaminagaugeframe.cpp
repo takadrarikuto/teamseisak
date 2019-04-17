@@ -23,29 +23,6 @@ void CObjstaminagaugeframe::Init()
 //アクション
 void CObjstaminagaugeframe::Action()
 {
-	/*
-	//アイテム使用
-	if (Input::GetVKey('A') == true)
-	{
-		//画像候補3つ
-		if (Aitem_co_max > 0)
-		{
-			if (Aitem_flag == true)
-			{
-				Aitem_co_max -= Aitem_co;
-				Aitem_flag = false;
-			}
-		}
-		else
-		{
-			;
-		}
-	}
-	else
-	{
-		Aitem_flag = true;
-	}
-	*/
 
 }
 //ドロー

@@ -10,6 +10,9 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool Ancer_on;
+extern bool Aitem_on;
+
 //イニシャライズ
 void CObjstaminagauge::Init()
 {
