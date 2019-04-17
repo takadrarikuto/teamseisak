@@ -267,7 +267,7 @@ void CObjAncer::Draw()
 	dstr.m_right = 20.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 
-	Draw::Draw(5, &srcr, &dstr, c, 0.0f);
+	Draw::Draw(12, &srcr, &dstr, c, 0.0f);
 
 	//本体
 	//切り取り位置の位置
@@ -282,7 +282,7 @@ void CObjAncer::Draw()
 	dst.m_right = 50.0f + m_px;
 	dst.m_bottom = 100.0f + m_py;
 
-	Draw::Draw(5, &src, &dst, c, 0.0f);
+	Draw::Draw(12, &src, &dst, c, 0.0f);
 	
 	//アンカー
 	//切り取り位置の位置
@@ -297,6 +297,6 @@ void CObjAncer::Draw()
 	dsta.m_right = 50.0f + m_pax;
 	dsta.m_bottom = -60.0f + m_pay;
 
-	Draw::Draw(5, &srca, &dsta, c, 0.0f);
+	Draw::Draw(12, &srca, &dsta, c, 0.0f);
 
 }
