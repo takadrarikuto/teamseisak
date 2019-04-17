@@ -80,12 +80,12 @@ void CObjAncer::Action()
 	{
 		//ˆÚ“®
 		//¶
-		if (Input::GetVKey(VK_LEFT) == true)
+		if (Input::GetVKey('A') == true)
 		{
 			m_vx -= 4.0f;
 		}
 		//‰E
-		else if (Input::GetVKey(VK_RIGHT) == true)
+		else if (Input::GetVKey('D') == true)
 		{
 			m_vx += 4.0f;
 		}

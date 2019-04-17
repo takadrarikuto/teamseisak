@@ -145,9 +145,10 @@
     <ClCompile Include="ObjOtherStar.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
     </ClCompile>
-    <ClCompile Include="ObjPose.cpp">
-      <Filter>ソースファイル</Filter>
+    <ClCompile Include="ObjQTE.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
     </ClCompile>
+    <ClCompile Include="ObjPose.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -290,9 +291,8 @@
     </ClInclude>
     <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\Obj\ゲージ関係</Filter>
-    <ClInclude Include="ObjPose.h">
-      <Filter>ソースファイル</Filter>
     </ClInclude>
+    <ClInclude Include="ObjPose.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ヘッダーファイル">
