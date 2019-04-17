@@ -97,9 +97,7 @@ void CSceneMars::Scene()
 		{
 
 			if (m_Pf == true) {//m_fがtrueの場合
-							   //コマンド用SEを鳴らす
-				
-					
+							   //コマンド用SEを鳴らす					
 				while (1)
 				{
 					if (Input::GetVKey('Z') == true)
