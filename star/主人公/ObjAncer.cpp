@@ -176,7 +176,7 @@ void CObjAncer::Action()
 		m_mous_l = false;
 	}
 
-	/*
+	
 	//ƒCƒxƒ“ƒgˆ—
 	Ev_ancer = rand() % 5;
 
@@ -195,7 +195,7 @@ void CObjAncer::Action()
 		ancer_time = 0.0f;
 		rope_time = 0.0f;
 	}
-	*/
+	
 
 
 
