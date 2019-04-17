@@ -145,8 +145,8 @@
     <ClCompile Include="ObjOtherStar.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
     </ClCompile>
-    <ClCompile Include="ObjPose.cpp">
-      <Filter>ソースファイル</Filter>
+    <ClCompile Include="ObjQTE.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
     </ClCompile>
     <ClCompile Include="ObjThirdStar.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
@@ -154,6 +154,7 @@
     <ClCompile Include="ObjFourthStar.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
     </ClCompile>
+    <ClCompile Include="ObjPose.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -294,8 +295,8 @@
     <ClInclude Include="ObjOtherStar.h">
       <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h">
-      <Filter>ソースファイル</Filter>
+    <ClInclude Include="ObjQTE.h">
+      <Filter>ヘッダーファイル\Obj\ゲージ関係</Filter>
     </ClInclude>
     <ClInclude Include="ObjThirdStar.h">
       <Filter>ソースファイル\Obj\星</Filter>
@@ -303,6 +304,7 @@
     <ClInclude Include="ObjFourthStar.h">
       <Filter>ソースファイル\Obj\星</Filter>
     </ClInclude>
+    <ClInclude Include="ObjPose.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ヘッダーファイル">

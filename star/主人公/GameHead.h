@@ -66,7 +66,8 @@ struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
 	int star_co; //星の数カウント
-	
+	int Aitem_co_max = 5; //アイテム個数
+
 };
 //------------------------------------------------
 
@@ -122,9 +123,7 @@ struct UserData
 #include "SceneGamekuria.h"
 //------------------------
 
-
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
-
+#define SET_GAME_START CSceneMars
 //-----------------------------------------------

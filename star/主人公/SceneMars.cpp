@@ -218,5 +218,9 @@ void CSceneMars::Scene()
 		}
 		occur = 0;
 	}
+	
+	//QTE
+	//CObjQTE* obj_qte = new CObjQTE();
+	//Objs::InsertObj(obj_qte, OBJ_QTE, 20);
 
 }
