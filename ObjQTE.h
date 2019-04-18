@@ -5,17 +5,18 @@
 //使用するネームスペース
 using namespace GameL;
 
-//オブジェクト　タイトル
-class CObjJupiter :public CObj
+//オブジェクト　主人公
+class CObjQTE :public CObj
 {
 public:
-	CObjJupiter() {};
-	~CObjJupiter() {};
+	CObjQTE() {};
+	~CObjQTE() {};
 	void Init();
 	void Action();
 	void Draw();
 
 private:
-
+	int i;
+	int time;
 
 };

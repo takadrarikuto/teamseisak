@@ -17,8 +17,6 @@ public:
 
 private:
 	bool Aitem_flag; //アイテムフラグ
-	int Aitem_co_max; //最大個数
-	int Aitem_co; //個数を減らす用
 
 	float m_px; //画像用座標
 	float m_py;

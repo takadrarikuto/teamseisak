@@ -6,18 +6,18 @@
 #include "GameL\HitBoxManager.h"
 
 #include"GameHead.h"
-#include"ObjSecondStar.h"
+#include"ObjFourthStar.h"
 
 //使用するネームスペース
 using namespace GameL;
 
 
-CObjSecondStar::CObjSecondStar(float x, float y)
+CObjFourthStar::CObjFourthStar(float x, float y)
 {
 }
 
 //イニシャライズ
-void CObjSecondStar::Init()
+void CObjFourthStar::Init()
 {
 	m_px = 0.0f;
 	m_py = rand() % 340 + 1;
@@ -27,13 +27,13 @@ void CObjSecondStar::Init()
 	hero_flag = false;
 	ancer_flag = false;
 
-	Hits::SetHitBox(this, m_px, m_py, 32, 32, OBJ_SECONDSTAR, ELEMENT_RED, 16);
+	Hits::SetHitBox(this, m_px, m_py, 32, 32, OBJ_OTHERSTAR, ELEMENT_RED, 12);
 
 
 }
 
 //アクション
-void CObjSecondStar::Action()
+void CObjFourthStar::Action()
 {
 
 	m_vx = 1.0f;
@@ -73,10 +73,10 @@ void CObjSecondStar::Action()
 	{
 		this->SetStatus(false); //自身に削除命令を出す
 		Hits::DeleteHitBox(this); //HitBox削除
-		
+
 	}
 	//アンカーに当たっていなければy軸が350の位置で星を削除
-	if ( ancer_flag == false)
+	if (ancer_flag == false)
 	{
 		if (m_py > 350.0f || m_py < 0.0f)
 		{
@@ -94,11 +94,11 @@ void CObjSecondStar::Action()
 	}
 
 
-	
+
 
 }
 //ドロー
-void CObjSecondStar::Draw()
+void CObjFourthStar::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -107,9 +107,9 @@ void CObjSecondStar::Draw()
 
 			   //切り取り位置の設定
 	src.m_top = 0.0f;
-	src.m_left = 0.0f; 
-	src.m_right = 100.0f; 
-	src.m_bottom = 100.0f; 
+	src.m_left = 0.0f;
+	src.m_right = 100.0f;
+	src.m_bottom = 100.0f;
 
 
 	//表示位置の設定
@@ -119,5 +119,5 @@ void CObjSecondStar::Draw()
 	dst.m_bottom = 32.0f + m_py;
 
 	//描画
-	Draw::Draw(17, &src, &dst, c, 0.0f);
+	Draw::Draw(19, &src, &dst, c, 0.0f);
 }

@@ -3,6 +3,8 @@
 #include "GameL\SceneObjManager.h"
 
 #define Event_Time (130) //イベント時間カウント用
+#define Ancer_Rope_InitialTime (0.0f) //アンカー・ロープ共通初期値
+
 
 //使用するネームスペース
 using namespace GameL;
@@ -20,12 +22,18 @@ public:
 
 	float GetX() { return m_pax; }
 	float GetY() { return m_pay; }
+	float GetAncerFlag() { return ancer_flag; }
+
 private:
 
 	//位置
 	float m_px; //本体
 	float m_py;
 	float m_pax; //アンカー
+	//アンカーサイズ変更用
+	float m_sizex;
+	float m_sizey;
+	float size;
 	float m_pay;
 	float m_prx; //ロープ
 	float m_pry;
@@ -43,6 +51,7 @@ private:
 	float rope_time; //ロープ飛距離調整
 
 	bool ancer_flag; //アンカー移動フラグ
+	bool ancer_Prevent_doublepress; //連続発射防止フラグ
 
 	int A_event; //イベントタイム処理
 	int Ev_ancer; //イベント時アンカー処理

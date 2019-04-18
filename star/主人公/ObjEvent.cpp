@@ -63,7 +63,7 @@ void CObjEvent::Action()
 	}
 
 	//イベント終了処理
-	if (E_Start_co == 600)
+	if (E_Start_co == 900)
 	{
 		E_Start = false;
 		E_Start_co = 0;
@@ -114,6 +114,6 @@ void CObjEvent::Draw()
 	if (E_Start == true)
 	{
 		//描画
-		Draw::Draw(2, &src, &dst, c, 0.0f);
+		Draw::Draw(9, &src, &dst, c, 0.0f);
 	}
 }
