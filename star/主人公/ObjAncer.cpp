@@ -59,8 +59,11 @@ void CObjAncer::Init()
 	//画面移動時起動防止用初期化
 	time_co = 0;
 
-	//連続発射防止フラグ
+	//連続発射防止フラグ初期化
 	ancer_Prevent_doublepress = false;
+
+	//途中停止防止フラグ初期化
+	ancer_Donot_Stop = false;
 
 	//イベントタイム処理初期化
 	A_event = 0;
@@ -102,7 +105,7 @@ void CObjAncer::Action()
 	//画面移動時起動防止用
 	if (time_co > 30)
 	{
-		if (m_mous_l == true && ancer_Prevent_doublepress == false)
+		if (m_mous_l == true && ancer_Prevent_doublepress == false && ancer_Donot_Stop == false)
 		{
 			ancer_time += 1.0f;
 			rope_time -= 1.0f;
@@ -114,6 +117,7 @@ void CObjAncer::Action()
 		}
 		else if (m_mous_l == false)
 		{
+			//アンカーを上げる処理
 			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
 			{
 				m_vy -= 9.0f; //アンカー移動
@@ -124,6 +128,7 @@ void CObjAncer::Action()
 				ancer_time -= 1.0f;
 				rope_time += 1.0f;
 			}
+			//アンカーを下げる処理
 			else if (ancer_flag == true && ancer_time == Ancer_Rope_InitialTime && rope_time == Ancer_Rope_InitialTime)
 			{
 				m_vy += 9.0f; //アンカー移動
@@ -151,7 +156,6 @@ void CObjAncer::Action()
 	else
 	{
 		m_mous_l = false;
-
 	}
 
 
@@ -207,13 +211,16 @@ void CObjAncer::Action()
 		m_pay = 535.0f;
 		ancer_flag = false;
 		ancer_Prevent_doublepress = false;
+		ancer_Donot_Stop = false;
 	}
 	else if (m_pay < 535.0f)
 	{
 		ancer_flag = true;
 		ancer_Prevent_doublepress = true;
+		ancer_Donot_Stop = true;
 	}
-	
+
+
 
 	//ロープ
 	if (m_prx < 49.0f)
@@ -241,8 +248,8 @@ void CObjAncer::Action()
 	
 	//HitBoxの位置の変更
 	hit_a->SetPos(m_pax, m_pay - 45, size,size );
-
-
+	
+	
 }
 
 //ドロー
@@ -272,8 +279,8 @@ void CObjAncer::Draw()
 
 	//表示位置の設定
 	dstr.m_top = 520.0f - rope;
-	dstr.m_left = -5.0f + m_prx;
-	dstr.m_right = 16.0f + m_prx;
+	dstr.m_left = 0.0f + m_prx;
+	dstr.m_right = 4.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 
 	Draw::Draw(12, &srcr, &dstr, c, 0.0f);
