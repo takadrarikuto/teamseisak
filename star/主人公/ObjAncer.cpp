@@ -57,8 +57,11 @@ void CObjAncer::Init()
 	//‰æ–ÊˆÚ“®Žž‹N“®–hŽ~—p‰Šú‰»
 	time_co = 0;
 
-	//˜A‘±”­ŽË–hŽ~ƒtƒ‰ƒO
+	//˜A‘±”­ŽË–hŽ~ƒtƒ‰ƒO‰Šú‰»
 	ancer_Prevent_doublepress = false;
+
+	//“r’†’âŽ~–hŽ~ƒtƒ‰ƒO‰Šú‰»
+	ancer_Donot_Stop = false;
 
 	//ƒCƒxƒ“ƒgƒ^ƒCƒ€ˆ—‰Šú‰»
 	A_event = 0;
@@ -100,7 +103,7 @@ void CObjAncer::Action()
 	//‰æ–ÊˆÚ“®Žž‹N“®–hŽ~—p
 	if (time_co > 30)
 	{
-		if (m_mous_l == true && ancer_Prevent_doublepress == false)
+		if (m_mous_l == true && ancer_Prevent_doublepress == false && ancer_Donot_Stop == false)
 		{
 			ancer_time += 1.0f;
 			rope_time -= 1.0f;
@@ -140,6 +143,15 @@ void CObjAncer::Action()
 	else
 	{
 		m_mous_l = false;
+	}
+
+	if (m_vy > 0.0f || m_vy < 0.0f)
+	{
+		ancer_Donot_Stop = true;
+	}
+	else
+	{
+		ancer_Donot_Stop = false;
 	}
 
 
