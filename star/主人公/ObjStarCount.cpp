@@ -41,8 +41,9 @@ void CObjStarCount::Action()
 	//Ž©g‚ÌHitBox‚ðŽ‚Á‚Ä‚­‚é
 	CHitBox* hit_sc = Hits::GetHitBox(this);	
 
-	if (hit_sc->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr
-		|| hit_sc->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
+	if (hit_sc->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_sc->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr
+		|| hit_sc->CheckObjNameHit(OBJ_THIRDSTAR) != nullptr || hit_sc->CheckObjNameHit(OBJ_FOURTHSTAR) != nullptr
+		|| hit_sc->CheckObjNameHit(OBJ_OTHERSTAR) != nullptr)
 	{
 		star_flag = true;
 	}

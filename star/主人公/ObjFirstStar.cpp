@@ -90,8 +90,8 @@ void CObjFirstStar::Draw()
 		//ï\é¶à íuÇÃê›íË
 		dst.m_top = 0.0f + m_py;
 		dst.m_left = 0.0f + m_px;
-		dst.m_right = 32.0f + m_px + 1;
-		dst.m_bottom = 32.0f + m_py + 1;
+		dst.m_right = 32.0f + m_px;
+		dst.m_bottom = 32.0f + m_py;
 	}
 	else
 	{

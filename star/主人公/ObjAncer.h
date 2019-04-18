@@ -3,7 +3,7 @@
 #include "GameL\SceneObjManager.h"
 
 #define Event_Time (130) //イベント時間カウント用
-#define Ancer_Rope_InitialTime (0.0f)
+#define Ancer_Rope_InitialTime (0.0f) //アンカー・ロープ共通初期値
 
 
 //使用するネームスペース

@@ -12,6 +12,7 @@
 using namespace GameL;
 
 
+
 CObjOtherStar::CObjOtherStar(float x, float y)
 {
 }
@@ -23,6 +24,7 @@ void CObjOtherStar::Init()
 	m_py = rand() % 340 + 1;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+	size = 0;
 
 	hero_flag = false;
 	ancer_flag = false;
@@ -100,6 +102,10 @@ void CObjOtherStar::Action()
 //ドロー
 void CObjOtherStar::Draw()
 {
+	//自身のHitBoxを持ってくる
+	CHitBox* hit_s = Hits::GetHitBox(this);
+	hit_s->SetPos(m_px, m_py);
+
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	RECT_F src;//描画元切り取り位置
@@ -111,12 +117,23 @@ void CObjOtherStar::Draw()
 	src.m_right = 100.0f;
 	src.m_bottom = 100.0f;
 
-
-	//表示位置の設定
-	dst.m_top = 0.0f + m_py;
-	dst.m_left = 0.0f + m_px;
-	dst.m_right = 32.0f + m_px;
-	dst.m_bottom = 32.0f + m_py;
+	size++;
+	if (hit_s->CheckObjNameHit(OBJ_ANCER) != nullptr)
+	{
+		//表示位置の設定
+		dst.m_top = 0.0f + m_py;
+		dst.m_left = 0.0f + m_px;
+		dst.m_right = 32.0f + m_px;
+		dst.m_bottom = 32.0f + m_py;
+	}
+	else
+	{
+		//表示位置の設定
+		dst.m_top = 0.0f + m_py;
+		dst.m_left = 0.0f + m_px;
+		dst.m_right = 32.0f + m_px;
+		dst.m_bottom = 32.0f + m_py;
+	}
 
 	//描画
 	Draw::Draw(20, &src, &dst, c, 0.0f);
