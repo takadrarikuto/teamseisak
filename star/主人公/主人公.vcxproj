@@ -251,7 +251,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png" />
-    <Image Include="firststar.png" />
     <Image Include="アンカー.png" />
     <Image Include="アンカー（仮　透過済み）.png" />
     <Image Include="イベント背景(火星).png" />
