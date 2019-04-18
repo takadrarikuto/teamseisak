@@ -119,5 +119,5 @@ void CObjOtherStar::Draw()
 	dst.m_bottom = 64.0f + m_py;
 
 	//•`‰æ
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(14, &src, &dst, c, 0.0f);
 }

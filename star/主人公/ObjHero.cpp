@@ -186,5 +186,5 @@ void CObjHero::Draw()
 	dst.m_right = 50.0f + m_px;
 	dst.m_bottom = 50.0f + m_py;
 
-	Draw::Draw(11, &src, &dst, c, 0.0f);
+	Draw::Draw(4, &src, &dst, c, 0.0f);
 }
