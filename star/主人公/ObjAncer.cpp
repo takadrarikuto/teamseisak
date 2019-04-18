@@ -24,10 +24,7 @@ void CObjAncer::Init()
 	//アンカー
 	m_pax = 433.5f;
 	m_pay = 535.0f;
-	//アンカーサイズ変更
-	m_sizex = 0;
-	m_sizey = 0;
-	size = 40;
+
 	//ロープ
 	//m_pry = 490.0f;
 	m_prx = 448.0f;
@@ -44,7 +41,7 @@ void CObjAncer::Init()
 	m_mous_l = false;
 	
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_pax, m_pay, size, size, ELEMENT_ANCER, OBJ_ANCER, 11);
+	Hits::SetHitBox(this, m_pax, m_pay, 40, 42, ELEMENT_ANCER, OBJ_ANCER, 11);
 
 	//ロープ描画用初期化
 	rope = 0.0f;
@@ -117,24 +114,19 @@ void CObjAncer::Action()
 		}
 		else if (m_mous_l == false)
 		{
+			//アンカーを上げる処理
 			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
 			{
 				m_vy -= 9.0f; //アンカー移動
 				rope += 13.0f; //ロープ長さ調整	
-				m_sizey -= 0.25f;
-				m_sizex -= 0.25f;
-				size -= 0.3;
 				ancer_time -= 1.0f;
 				rope_time += 1.0f;
 			}
+			//アンカーを下げる処理
 			else if (ancer_flag == true && ancer_time == Ancer_Rope_InitialTime && rope_time == Ancer_Rope_InitialTime)
 			{
 				m_vy += 9.0f; //アンカー移動
 				rope -= 13.0f; //ロープ長さ調整
-				m_sizey += 0.25f;
-				m_sizex += 0.25f;
-				size += 0.3;
-
 			}
 
 		}
@@ -154,16 +146,6 @@ void CObjAncer::Action()
 	else
 	{
 		m_mous_l = false;
-
-	}
-
-	if (m_vy > 0.0f || m_vy < 0.0f)
-	{
-		ancer_Donot_Stop = true;
-	}
-	else
-	{
-		ancer_Donot_Stop = false;
 	}
 
 
@@ -219,13 +201,16 @@ void CObjAncer::Action()
 		m_pay = 535.0f;
 		ancer_flag = false;
 		ancer_Prevent_doublepress = false;
+		ancer_Donot_Stop = false;
 	}
 	else if (m_pay < 535.0f)
 	{
 		ancer_flag = true;
 		ancer_Prevent_doublepress = true;
+		ancer_Donot_Stop = true;
 	}
-	
+
+
 
 	//ロープ
 	if (m_prx < 49.0f)
@@ -252,7 +237,7 @@ void CObjAncer::Action()
 	m_prx += m_vx; //ロープ
 	
 	//HitBoxの位置の変更
-	hit_a->SetPos(m_pax, m_pay - 45, size,size );
+	hit_a->SetPos(m_pax - 4, m_pay - 45);
 
 
 }
@@ -313,9 +298,9 @@ void CObjAncer::Draw()
 	srca.m_bottom = 200.0f;
 
 	//表示位置の設定
-	dsta.m_top = 0.0f + m_pay + m_sizey;
-	dsta.m_left = -5.0f + m_pax - m_sizex;
-	dsta.m_right = 45.0f + m_pax + m_sizex;
+	dsta.m_top = 0.0f + m_pay;
+	dsta.m_left = -5.0f + m_pax;
+	dsta.m_right = 45.0f + m_pax;
 	dsta.m_bottom = -60.0f + m_pay;
 
 	Draw::Draw(12, &srca, &dsta, c, 0.0f);
