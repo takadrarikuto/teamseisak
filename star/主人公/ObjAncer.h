@@ -31,6 +31,10 @@ private:
 	float m_py;
 	float m_pax; //アンカー
 	float m_pay;
+	//アンカーサイズ変更用
+	float m_sizex;
+	float m_sizey;
+	float size;
 	float m_prx; //ロープ
 	float m_pry;
 

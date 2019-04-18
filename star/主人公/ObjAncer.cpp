@@ -24,7 +24,10 @@ void CObjAncer::Init()
 	//アンカー
 	m_pax = 433.5f;
 	m_pay = 535.0f;
-
+	//アンカーサイズ変更
+	m_sizex = 0;
+	m_sizey = 0;
+	size = 40;
 	//ロープ
 	//m_pry = 490.0f;
 	m_prx = 448.0f;
@@ -276,7 +279,7 @@ void CObjAncer::Draw()
 
 	//表示位置の設定
 	dstr.m_top = 520.0f - rope;
-	dstr.m_left = -1.0f + m_prx;
+	dstr.m_left = 0.0f + m_prx;
 	dstr.m_right = 4.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 
