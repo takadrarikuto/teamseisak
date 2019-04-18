@@ -22,7 +22,7 @@ void CObjStarCount::Init()
 	m_px = 400.0f;
 	m_py = 520.0f;
 
-	Hits::SetHitBox(this, m_px, m_py, 50, 50, OBJ_STARCOUNT, ELEMENT_RED, 15);
+	Hits::SetHitBox(this, m_px, m_py, 50, 50, OBJ_STARCOUNT, ELEMENT_RED, 21);
 	
 	((UserData*)Save::GetData())->star_co = 0;
 }
@@ -41,8 +41,9 @@ void CObjStarCount::Action()
 	//Ž©g‚ÌHitBox‚ðŽ‚Á‚Ä‚­‚é
 	CHitBox* hit_sc = Hits::GetHitBox(this);	
 
-	if (hit_sc->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr
-		|| hit_sc->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
+	if (hit_sc->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_sc->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr
+		|| hit_sc->CheckObjNameHit(OBJ_THIRDSTAR) != nullptr || hit_sc->CheckObjNameHit(OBJ_FOURTHSTAR) != nullptr
+		|| hit_sc->CheckObjNameHit(OBJ_OTHERSTAR) != nullptr)
 	{
 		star_flag = true;
 	}

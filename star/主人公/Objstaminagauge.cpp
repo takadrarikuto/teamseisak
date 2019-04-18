@@ -10,79 +10,75 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool Event_on;
+extern bool Ancer_on;
+extern bool Aitem_on;
+
 //イニシャライズ
 void CObjstaminagauge::Init()
 {
-	Aitem_flag = true;
+	Aitem_flag = true; //アイテムオブジェクトから引用初期化
 	Aitem_co_max = 5;
 
-	m_px = 702.0f;
-	m_py = 551.0f;
+	m_px = 697.0f;
+	m_py = 571.0f;
 
+	//表示用スタミナ初期化
+	m_stamina = 100;
+
+	//スタミナ最大値初期化
+	m_stamina_max = 100;
+
+	//全ての消費用初期化
 	m_vx = 0.0f;
-	m_vax = 0.0f;
 
+	//自然消費初期化
+	m_vstamina = 0.0f;
+
+	//アンカー使用時用初期化
+	m_vancer = 0.0f;
+
+	//秒数カウント初期化
 	stamina_co = 0;
+	//画面移動時起動防止用初期化
 	time_co = 0;
+	//スタミナ消費用初期化
 	stamina_back = 0;
 
-	m_mous_l = false;
-	stamina_flag = false;
+	//イベントカウント初期化
+	Ev_time = 0;
 }
 
 //アクション
 void CObjstaminagauge::Action()
-{
-	m_mous_l = Input::GetMouButtonL();
-	
+{	
 	time_co++;
 
-	//アンカーの位置を持ってくる
-	CObjAncer* Ancer = (CObjAncer*)Objs::GetObj(OBJ_ANCER);
-	float ay = Ancer->GetY();
-
-
 	//スタミナ回復
-	if (Input::GetVKey('A') == true)
+	if (Aitem_on == true)
 	{
-		if (Aitem_co_max > 0)
-		{
-			if (Aitem_flag == true)
-			{
-				Aitem_co_max -= 1;
-				m_vx -= 30.0f;
-				Aitem_flag = false;
-			}
-		}
-		else
-		{
-			;
-		}
-	}
-	else
-	{
-		Aitem_flag = true;
+		m_vx -= 30.0f; //スタミナを30増やす
+		m_stamina += 30;
+		Aitem_on = false;
 	}
 
 	if (time_co > 30)
 	{
 		//左クリックでスタミナ5消費 
-		if (m_mous_l == true && ay > 535.0f)
-		{		
-			stamina_flag = true;
-			m_vax = 5.0f;
+		if (Ancer_on == true)
+		{
+			m_vancer += 5.0f;
+			m_stamina -= 5;
+			Ancer_on = false;
 		}
 		else
 		{
-			m_mous_l = false;
+			m_vancer = 0.0f;
 		}
 	}
-
-	if (stamina_flag == true)
+	else
 	{
-		stamina_back += 1;
-		m_vax *= stamina_back;
-		stamina_flag = false;
+		Ancer_on = false;
 	}
 
 	
@@ -92,33 +88,62 @@ void CObjstaminagauge::Action()
 	//5秒で1スタミナ減少
 	if (stamina_co == 300)
 	{
-		m_vx += 1.0f;
+		m_vstamina += 1.0f;
+		m_stamina -= 1;
 		stamina_co = 0;
 	}
+	else
+	{
+		m_vstamina = 0.0f;
+	}
+
+	//イベント時
+	Ev_time = rand() % 5;
+
+	//特定の条件でスタミナの10%を減少
+	if (Event_on == true && Ev_time == 4 && stamina_co == 150)
+	{
+		m_vstamina += m_px / m_stamina_max;
+		m_stamina -= m_px / m_stamina_max;
+	}
 	
-	//スタミナが最大値、最小値を超えないようにする処理
-	if (m_vx < 0)
+	//消費スタミナが最大値、最小値を超えないようにする処理
+	if (m_vx < 0.0f)
 	{
 		m_vx = 0.0f;
 	}
-	else if (m_vx > 96.0f || m_vax > 96.0f)
+	else if (m_vx > m_stamina_max)
 	{
-		m_vx = 96.0f;
-		m_vax = 96.0f;
+		m_vx = m_stamina_max;
+	}
+
+	//表示スタミナが最大値、最小値を超えないようにする処理
+	if (m_stamina < 0)
+	{
+		m_stamina = 0;
+	}
+	else if (m_stamina > m_stamina_max)
+	{
+		m_stamina = m_stamina_max;
 	}
 	
 	//スタミナが無くなると宇宙船へ
-	if (m_vx == 96.0f || m_vax == 96.0f)
+	if (m_vx == m_stamina_max)
 	{
-		Scene::SetScene(new CSceneStageselect());
+		Scene::SetScene(new CSceneTitle());
 	}
 
+	//スタミナ消費処理
+	m_vx += m_vstamina + m_vancer;
 
 }
 //ドロー
 void CObjstaminagauge::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+	swprintf_s(str, L"%d/%d", m_stamina, m_stamina_max);
+	Font::StrDraw(str, 580, 570, 30, c);
 
 	//背景
 	RECT_F src;//描画元切り取り位置
@@ -132,11 +157,11 @@ void CObjstaminagauge::Draw()
 
 	//表示位置の設定
 	dst.m_top = 6.0f + m_py;
-	dst.m_left = 0.0f + m_px + m_vx + m_vax;
-	dst.m_right = 96.0f + m_px;
+	dst.m_left = 0.0f + m_px + m_vx;
+	dst.m_right = 100.0f + m_px;
 	dst.m_bottom = 22.0f + m_py;
 
 	//描画
-	Draw::Draw(7, &src, &dst, c, 0.0f);
+	Draw::Draw(22, &src, &dst, c, 0.0f);
 
 }
