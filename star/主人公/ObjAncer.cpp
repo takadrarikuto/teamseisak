@@ -253,8 +253,8 @@ void CObjAncer::Action()
 	
 	//HitBoxの位置の変更
 	hit_a->SetPos(m_pax, m_pay - 45, size,size );
-
-
+	
+	
 }
 
 //ドロー
@@ -284,8 +284,8 @@ void CObjAncer::Draw()
 
 	//表示位置の設定
 	dstr.m_top = 520.0f - rope;
-	dstr.m_left = -5.0f + m_prx;
-	dstr.m_right = 16.0f + m_prx;
+	dstr.m_left = -1.0f + m_prx;
+	dstr.m_right = 4.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 
 	Draw::Draw(12, &srcr, &dstr, c, 0.0f);
