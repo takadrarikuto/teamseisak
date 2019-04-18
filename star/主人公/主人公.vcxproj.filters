@@ -1,33 +1,156 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="CObjOperation.h" />
-    <ClCompile Include="CObjStarPicbook.cpp" />
-    <ClCompile Include="GameL\Audio.cpp" />
-    <ClCompile Include="GameL\DirectXDevice.cpp" />
-    <ClCompile Include="GameL\Draw2DTex_Source.cpp" />
-    <ClCompile Include="GameL\DrawFont.cpp" />
-    <ClCompile Include="GameL\DrawTexture.cpp" />
-    <ClCompile Include="GameL\GameL_Main.cpp" />
-    <ClCompile Include="GameL\HitBoxManager.cpp" />
-    <ClCompile Include="GameL\MultiThread.cpp" />
-    <ClCompile Include="GameL\SceneManager.cpp" />
-    <ClCompile Include="GameL\SceneObjManager.cpp" />
-    <ClCompile Include="GameL\SetWindow.cpp" />
-    <ClCompile Include="GameL\UserData.cpp" />
-    <ClCompile Include="GameL\WICTextureLoader.cpp" />
-    <ClCompile Include="GameL\WinInputs.cpp" />
-    <ClCompile Include="ObjAitem.cpp" />
-    <ClCompile Include="ObjAncer.cpp" />
-    <ClCompile Include="ObjEvent.cpp" />
-    <ClCompile Include="ObjFirstStar.cpp" />
-    <ClCompile Include="ObjFourthStar.cpp" />
-    <ClCompile Include="ObjGameKuria.cpp" />
-    <ClCompile Include="ObjHero.cpp" />
-    <ClCompile Include="ObjJupiter.cpp" />
-    <ClCompile Include="ObjMars.cpp" />
-    <ClCompile Include="ObjOperation.cpp" />
-    <ClCompile Include="ObjOtherStar.cpp" />
+    <ClCompile Include="GameL\Audio.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\DirectXDevice.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\Draw2DTex_Source.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\DrawFont.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\DrawTexture.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\GameL_Main.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\HitBoxManager.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\MultiThread.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\SceneManager.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\SceneObjManager.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\UserData.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\WICTextureLoader.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\WinInputs.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\SetWindow.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjStarPicbook.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent2.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjOperation.cpp">
+      <Filter>ソースファイル\Obj\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソースファイル\Obj\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSelectPlanet.cpp">
+      <Filter>ソースファイル\Obj\ステージ選択</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStageselect.cpp">
+      <Filter>ソースファイル\Obj\ステージ選択</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjEvent.cpp">
+      <Filter>ソースファイル\Obj\イベント</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjJupiter.cpp">
+      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMars.cpp">
+      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSaturn.cpp">
+      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="Objstaminagauge.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+    </ClCompile>
+    <ClCompile Include="Objstaminagaugeframe.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHero.cpp">
+      <Filter>ソースファイル\Obj\主人公</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjAncer.cpp">
+      <Filter>ソースファイル\Obj\主人公</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjAitem.cpp">
+      <Filter>ソースファイル\Obj\主人公</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGameKuria.cpp">
+      <Filter>ソースファイル\Obj\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjFirstStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSecondStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarCount.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBackground.cpp">
+      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStarPicbook.cpp">
+      <Filter>ソースファイル\Scene\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGameKuria.cpp">
+      <Filter>ソースファイル\Scene\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソースファイル\Scene\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMars.cpp">
+      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSaturn.cpp">
+      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStageselect.cpp">
+      <Filter>ソースファイル\Scene\ステージ選択</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOperation.cpp">
+      <Filter>ソースファイル\Scene\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjOperation.h">
+      <Filter>ヘッダーファイル\Obj\操作説明</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjVenus.cpp">
+      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneJupiter.cpp">
+      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjOtherStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjQTE.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjThirdStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjFourthStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
     <ClCompile Include="ObjPose.cpp" />
     <ClCompile Include="ObjQTE.cpp" />
     <ClCompile Include="ObjSaturn.cpp" />
@@ -53,6 +176,9 @@
     <ClCompile Include="SceneSaturn.cpp" />
     <ClCompile Include="SceneVenus.cpp" />
     <ClCompile Include="StarBook.cpp" />
+    <ClCompile Include="SceneVenus.cpp">
+      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CObjStarPicbook.h" />
