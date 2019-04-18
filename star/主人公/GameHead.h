@@ -37,6 +37,7 @@ enum OBJ_NAME
 	OBJ_STRENGTHGAUGEFRAME1,
 	OBJ_STRENGTHGAUGEFRAME2,
 	OBJ_POSE,
+	OBJ_QTE,
 };
 //------------------------------------------------
 
@@ -108,6 +109,7 @@ struct UserData
 #include "Objstaminagauge.h"
 #include "Objstaminagaugeframe.h"
 #include "ObjPose.h"
+#include "ObjQTE.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

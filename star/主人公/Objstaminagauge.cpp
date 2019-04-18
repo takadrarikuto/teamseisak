@@ -62,7 +62,6 @@ void CObjstaminagauge::Action()
 		Aitem_on = false;
 	}
 
-	//画面移動時起動防止
 	if (time_co > 30)
 	{
 		//左クリックでスタミナ5消費 
@@ -104,7 +103,8 @@ void CObjstaminagauge::Action()
 	//特定の条件でスタミナの10%を減少
 	if (Event_on == true && Ev_time == 4 && stamina_co == 150)
 	{
-		m_vstamina += m_px / 100;
+		m_vstamina += m_px / m_stamina_max;
+		m_stamina -= m_px / m_stamina_max;
 	}
 	
 	//消費スタミナが最大値、最小値を超えないようにする処理
@@ -130,7 +130,7 @@ void CObjstaminagauge::Action()
 	//スタミナが無くなると宇宙船へ
 	if (m_vx == m_stamina_max)
 	{
-		Scene::SetScene(new CSceneStageselect());
+		Scene::SetScene(new CSceneTitle());
 	}
 
 	//スタミナ消費処理
