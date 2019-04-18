@@ -80,6 +80,6 @@ void CObjAitem::Draw()
 	dst.m_bottom = 40.0f + m_py;
 
 	//•`‰æ
-	Draw::Draw(8, &src, &dst, c, 0.0f);
+	Draw::Draw(14, &src, &dst, c, 0.0f);
 
 }

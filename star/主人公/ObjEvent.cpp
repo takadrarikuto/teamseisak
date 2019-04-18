@@ -114,6 +114,6 @@ void CObjEvent::Draw()
 	if (E_Start == true)
 	{
 		//•`‰æ
-		Draw::Draw(2, &src, &dst, c, 0.0f);
+		Draw::Draw(9, &src, &dst, c, 0.0f);
 	}
 }
