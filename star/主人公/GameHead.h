@@ -37,6 +37,7 @@ enum OBJ_NAME
 	OBJ_STRENGTHGAUGEFRAME1,
 	OBJ_STRENGTHGAUGEFRAME2,
 	OBJ_POSE,
+	OBJ_QTE,
 };
 //------------------------------------------------
 
@@ -79,7 +80,6 @@ struct UserData
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------
 
-
 //------------------------------------------------
 
 #include "CObjStarPicbook.h"
@@ -109,6 +109,7 @@ struct UserData
 #include "Objstaminagauge.h"
 #include "Objstaminagaugeframe.h"
 #include "ObjPose.h"
+#include "ObjQTE.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -125,5 +126,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMars
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
