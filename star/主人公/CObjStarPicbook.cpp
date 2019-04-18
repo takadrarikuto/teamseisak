@@ -94,49 +94,6 @@ void CObjStarPicbook::Draw()
 		Scene::SetScene(new CSceneStageselect());
 	}
 
-	//次への文字をループして出す
-	wchar_t next[2][2]{ L"次",L"へ" };
-	for (int i = 0; i <= 1; i++)
-	{
-		int l = 25;
-		swprintf_s(str, L"%s", next[i]);
-		//				　　X　 Y　 大きさ
-		Font::StrDraw(str, 20,130 + l*i, 25, c);
-	}
-
-	/*//次へを押したらStarPresent2に切り替える
-	// left				 right            top            bottom       
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>100 && m_mou_y <200)
-	{
-		if (m_mou_l == true)
-		{
-			lever =1;
-			Scene::SetScene(new CSceneStarPicbook());
-		}
-	}*/
-
-	//戻すの文字をループして出す
-	wchar_t before[2][2]{ L"戻",L"す" };
-	for (int i = 0; i <= 1; i++)
-	{
-		int l = 25;
-		swprintf_s(str, L"%s", before[i]);
-
-		//				　　X　 Y　 大きさ
-		Font::StrDraw(str, 20, 230 + l * i, 25, c);
-	}
-
-	//次へを押したらStarPresentに切り替える
-	// left				 right            top            bottom       
-	/*if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>190 && m_mou_y < 300)
-	{
-		if (m_mou_l == true)
-		{
-			lever = 0;
-			Scene::SetScene(new CSceneStarPicbook());
-		}
-	}*/
-
 	wchar_t test[2][2]{ L"蠍",L"座" };
 		//ループして出す
 		for (int i = 0; i <= 1; i++)

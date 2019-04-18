@@ -27,7 +27,7 @@ void CObjThirdStar::Init()
 	hero_flag = false;
 	ancer_flag = false;
 
-	Hits::SetHitBox(this, m_px, m_py, 64, 64, OBJ_OTHERSTAR, ELEMENT_RED, 12);
+	Hits::SetHitBox(this, m_px, m_py, 32, 32, OBJ_OTHERSTAR, ELEMENT_RED, 12);
 
 
 }
@@ -115,9 +115,9 @@ void CObjThirdStar::Draw()
 	//ï\é¶à íuÇÃê›íË
 	dst.m_top = 0.0f + m_py;
 	dst.m_left = 0.0f + m_px;
-	dst.m_right = 64.0f + m_px;
-	dst.m_bottom = 64.0f + m_py;
+	dst.m_right = 32.0f + m_px;
+	dst.m_bottom = 32.0f + m_py;
 
 	//ï`âÊ
-	Draw::Draw(12, &src, &dst, c, 0.0f);
+	Draw::Draw(18, &src, &dst, c, 0.0f);
 }

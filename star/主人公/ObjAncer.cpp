@@ -24,6 +24,10 @@ void CObjAncer::Init()
 	//アンカー
 	m_pax = 433.5f;
 	m_pay = 535.0f;
+	//アンカーサイズ変更
+	m_sizex = 0;
+	m_sizey = 0;
+	size = 40;
 	//ロープ
 	//m_pry = 490.0f;
 	m_prx = 448.0f;
@@ -40,9 +44,7 @@ void CObjAncer::Init()
 	m_mous_l = false;
 	
 	//当たり判定用のHitBoxを作成
-
-	//アンカー
-	Hits::SetHitBox(this, m_pax, m_pay, 40, 40, ELEMENT_ANCER, OBJ_ANCER, 11);
+	Hits::SetHitBox(this, m_pax, m_pay, size, size, ELEMENT_ANCER, OBJ_ANCER, 11);
 
 	//ロープ描画用初期化
 	rope = 0.0f;
@@ -108,13 +110,17 @@ void CObjAncer::Action()
 			{
 				Ancer_on = true;
 			}
+
 		}
 		else if (m_mous_l == false)
 		{
 			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
 			{
 				m_vy -= 9.0f; //アンカー移動
-				rope += 13.0f; //ロープ長さ調整			
+				rope += 13.0f; //ロープ長さ調整	
+				m_sizey -= 0.25f;
+				m_sizex -= 0.25f;
+				size -= 0.3;
 				ancer_time -= 1.0f;
 				rope_time += 1.0f;
 			}
@@ -122,7 +128,12 @@ void CObjAncer::Action()
 			{
 				m_vy += 9.0f; //アンカー移動
 				rope -= 13.0f; //ロープ長さ調整
+				m_sizey += 0.25f;
+				m_sizex += 0.25f;
+				size += 0.3;
+
 			}
+
 		}
 		
 		/*
@@ -144,6 +155,7 @@ void CObjAncer::Action()
 	else
 	{
 		m_mous_l = false;
+
 	}
 
 	
@@ -225,14 +237,13 @@ void CObjAncer::Action()
 	}
 
 	//位置更新
-	m_px += m_vx; //本体
+	m_px  += m_vx; //本体
 	m_pax += m_vx; //アンカー
 	m_pay += m_vy;
 	m_prx += m_vx; //ロープ
 	
-
 	//HitBoxの位置の変更
-	hit_a->SetPos(m_pax, m_pay - 45);
+	hit_a->SetPos(m_pax, m_pay - 45, size,size );
 
 
 }
@@ -240,6 +251,7 @@ void CObjAncer::Action()
 //ドロー
 void CObjAncer::Draw()
 {
+
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -263,8 +275,8 @@ void CObjAncer::Draw()
 
 	//表示位置の設定
 	dstr.m_top = 520.0f - rope;
-	dstr.m_left = 0.0f + m_prx;
-	dstr.m_right = 20.0f + m_prx;
+	dstr.m_left = -5.0f + m_prx;
+	dstr.m_right = 16.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 
 	Draw::Draw(12, &srcr, &dstr, c, 0.0f);
@@ -278,9 +290,9 @@ void CObjAncer::Draw()
 
 	//表示位置の設定
 	dst.m_top = 0.0f + m_py;
-	dst.m_left = 0.0f + m_px;
-	dst.m_right = 50.0f + m_px;
-	dst.m_bottom = 100.0f + m_py;
+	dst.m_left = -5.0f + m_px;
+	dst.m_right = 45.0f + m_px;
+	dst.m_bottom = 100.0f + m_py ;
 
 	Draw::Draw(12, &src, &dst, c, 0.0f);
 	
@@ -292,9 +304,9 @@ void CObjAncer::Draw()
 	srca.m_bottom = 200.0f;
 
 	//表示位置の設定
-	dsta.m_top = 0.0f + m_pay;
-	dsta.m_left = 0.0f + m_pax;
-	dsta.m_right = 50.0f + m_pax;
+	dsta.m_top = 0.0f + m_pay + m_sizey;
+	dsta.m_left = -5.0f + m_pax - m_sizex;
+	dsta.m_right = 45.0f + m_pax + m_sizex;
 	dsta.m_bottom = -60.0f + m_pay;
 
 	Draw::Draw(12, &srca, &dsta, c, 0.0f);

@@ -139,9 +139,6 @@
     <ClCompile Include="SceneJupiter.cpp">
       <Filter>ソースファイル\Scene\惑星ステージ</Filter>
     </ClCompile>
-    <ClCompile Include="SceneVenus.cpp">
-      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
-    </ClCompile>
     <ClCompile Include="ObjOtherStar.cpp">
       <Filter>ソースファイル\Obj\星</Filter>
     </ClCompile>
@@ -155,6 +152,9 @@
       <Filter>ソースファイル\Obj\星</Filter>
     </ClCompile>
     <ClCompile Include="ObjPose.cpp" />
+    <ClCompile Include="SceneVenus.cpp">
+      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">

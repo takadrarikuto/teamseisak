@@ -16,7 +16,7 @@ using namespace GameL;
 void CObjFirstStar::Init()
 {
 	m_px = 0.0f;
-	m_py = 100.0f;
+	m_py = rand() % 100 + 1;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
@@ -24,7 +24,7 @@ void CObjFirstStar::Init()
 
 	star_flag = false;
 
-	Hits::SetHitBox(this, m_px, m_py, 64, 64, OBJ_FIRSTSTAR, ELEMENT_RED, 13);
+	Hits::SetHitBox(this, m_px, m_py, 32, 32, OBJ_FIRSTSTAR, ELEMENT_RED, 13);
 
 
 }
@@ -32,7 +32,7 @@ void CObjFirstStar::Init()
 //アクション
 void CObjFirstStar::Action()
 {
-	m_vx = 1.0f;
+	m_vx = 5.0f;
 
 	m_px += m_vx;
 	m_py += m_vy;
@@ -68,6 +68,11 @@ void CObjFirstStar::Action()
 //ドロー
 void CObjFirstStar::Draw()
 {
+
+	//自身のHitBoxを持ってくる
+	CHitBox* hit_s = Hits::GetHitBox(this);
+	hit_s->SetPos(m_px, m_py);
+
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	RECT_F src;//描画元切り取り位置
@@ -79,13 +84,23 @@ void CObjFirstStar::Draw()
 	src.m_right = 100.0f; //青色190.0f
 	src.m_bottom = 100.0f; //青色200.0f
 
-
-	//表示位置の設定
-	dst.m_top = 0.0f + m_py;
-	dst.m_left = 0.0f + m_px;
-	dst.m_right = 64.0f + m_px;
-	dst.m_bottom = 64.0f + m_py;
-
+		//アンカーと当たっているか
+	if (hit_s->CheckObjNameHit(OBJ_ANCER) != nullptr)
+	{
+		//表示位置の設定
+		dst.m_top = 0.0f + m_py;
+		dst.m_left = 0.0f + m_px;
+		dst.m_right = 32.0f + m_px + 1;
+		dst.m_bottom = 32.0f + m_py + 1;
+	}
+	else
+	{
+		//表示位置の設定
+		dst.m_top = 0.0f + m_py;
+		dst.m_left = 0.0f + m_px;
+		dst.m_right = 32.0f + m_px;
+		dst.m_bottom = 32.0f + m_py;
+	}
 	//描画
-	Draw::Draw(13, &src, &dst, c, 0.0f);
+	Draw::Draw(16, &src, &dst, c, 0.0f);
 }
