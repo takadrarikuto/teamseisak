@@ -220,7 +220,7 @@ void CSceneMars::Scene()
 	}
 	
 	//QTE
-	//CObjQTE* obj_qte = new CObjQTE();
-	//Objs::InsertObj(obj_qte, OBJ_QTE, 20);
+	CObjQTE* obj_qte = new CObjQTE();
+	Objs::InsertObj(obj_qte, OBJ_QTE, 20);
 
 }

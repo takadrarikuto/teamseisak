@@ -298,13 +298,13 @@
     <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\Obj\ゲージ関係</Filter>
     </ClInclude>
+    <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjThirdStar.h">
-      <Filter>ソースファイル\Obj\星</Filter>
+      <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjFourthStar.h">
-      <Filter>ソースファイル\Obj\星</Filter>
+      <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ヘッダーファイル">

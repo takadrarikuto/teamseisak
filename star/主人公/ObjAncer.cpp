@@ -127,7 +127,9 @@ void CObjAncer::Action()
 		
 		
 		//星に当たると戻る
-		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
+		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr 
+			|| hit_a->CheckObjNameHit(OBJ_THIRDSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_FOURTHSTAR) != nullptr
+			|| hit_a->CheckObjNameHit(OBJ_OTHERSTAR) != nullptr)
 		{
 			ancer_time = Ancer_Rope_InitialTime;
 			rope_time = Ancer_Rope_InitialTime;
@@ -140,7 +142,7 @@ void CObjAncer::Action()
 		m_mous_l = false;
 	}
 
-	
+
 	//イベント処理
 	Ev_ancer = rand() % 5;
 
@@ -199,6 +201,7 @@ void CObjAncer::Action()
 		ancer_flag = true;
 		ancer_Prevent_doublepress = true;
 	}
+	
 
 	//ロープ
 	if (m_prx < 49.0f)
