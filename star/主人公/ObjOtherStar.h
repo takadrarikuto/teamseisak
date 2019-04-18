@@ -23,6 +23,7 @@ private:
 	float m_py;
 	float m_vx; //移動ベクトル
 	float m_vy;
+	int size;
 
 	bool hero_flag; //主人公フラグ
 	bool ancer_flag; //アンカーフラグ

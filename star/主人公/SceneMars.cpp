@@ -17,14 +17,13 @@ using namespace GameL;
 #include <stdlib.h> // rand()関数用
 #include <time.h>   // time()関数用
 
-std::random_device rd{};
-
-/**
+std::random_device mrd{};
+/*
  * 重み付けで抽選を行う
  * @param pArray 抽選する対象の配列
  * @param Length 配列のサイズ
  */
-int WeightedPick(int* pArray, int Length) {
+int CSceneMars::WeightedPick(int* pArray, int Length) {
 	int totalWeight = 0;
 	int pick = 0;
 
@@ -35,7 +34,7 @@ int WeightedPick(int* pArray, int Length) {
 
 
 	// 抽選する
-	int rnd = rd() % totalWeight;
+	int rnd = mrd() % totalWeight;
 
 	for (int i = 0; i < Length; i++) {
 		if (rnd < pArray[i]) {
@@ -132,7 +131,7 @@ void CSceneMars::Scene()
 
 	while (1)
 	{
-		if (Input::GetVKey('P') == true)//Pキー入力時
+		if (Input::GetVKey(' ') == true)//Pキー入力時
 		{
 
 			if (m_Pf == true) {//m_fがtrueの場合
@@ -174,7 +173,7 @@ void CSceneMars::Scene()
 	}
 	occur++;
 
-	if (occur == 180)
+	if (occur == 45)
 	{
 		int Items[] = { 1, 5, 20,40,60 };
 		int result = WeightedPick(Items, 5);
