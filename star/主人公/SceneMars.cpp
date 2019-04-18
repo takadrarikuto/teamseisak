@@ -17,14 +17,13 @@ using namespace GameL;
 #include <stdlib.h> // rand()関数用
 #include <time.h>   // time()関数用
 
-std::random_device rd{};
-
-/**
+std::random_device mrd{};
+/*
  * 重み付けで抽選を行う
  * @param pArray 抽選する対象の配列
  * @param Length 配列のサイズ
  */
-int WeightedPick(int* pArray, int Length) {
+int CSceneMars::WeightedPick(int* pArray, int Length) {
 	int totalWeight = 0;
 	int pick = 0;
 
@@ -35,7 +34,7 @@ int WeightedPick(int* pArray, int Length) {
 
 
 	// 抽選する
-	int rnd = rd() % totalWeight;
+	int rnd = mrd() % totalWeight;
 
 	for (int i = 0; i < Length; i++) {
 		if (rnd < pArray[i]) {
@@ -60,60 +59,60 @@ void CSceneMars::InitScene()
 
 	//グラフィック読み込み
 	//背景
-	Draw::LoadImage(L"通常時背景.png", 1, TEX_SIZE_512);
-	Draw::LoadImage(L"イベント背景(火星).png", 2, TEX_SIZE_512);
-	Draw::LoadImage(L"火星地表.png", 3, TEX_SIZE_512);
+	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"イベント背景(火星).png", 9, TEX_SIZE_512);
+	Draw::LoadImage(L"火星地表.png", 10, TEX_SIZE_512);
 
 	//主人公
-	Draw::LoadImage(L"主人公.png", 4, TEX_SIZE_512);
+	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
 	//アンカー
-	Draw::LoadImage(L"アンカー（仮　透過済み）.png", 5, TEX_SIZE_512);
+	Draw::LoadImage(L"アンカー（仮　透過済み）.png", 12, TEX_SIZE_512);
+
+	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
+	Draw::LoadImage(L"ドリンク候補2.png", 14, TEX_SIZE_512);
+	Draw::LoadImage(L"yellow_star.png", 16, TEX_SIZE_512);
+	Draw::LoadImage(L"red_star.png", 17, TEX_SIZE_512);
+	Draw::LoadImage(L"pink_star.png", 18, TEX_SIZE_512);
+	Draw::LoadImage(L"green_star.png", 19, TEX_SIZE_512);
+	Draw::LoadImage(L"brown_star.png", 20, TEX_SIZE_512);
+
 
 	//ゲージ関係
 	//体力
-	Draw::LoadImage(L"ゲージ枠.png", 6, TEX_SIZE_512);
-	Draw::LoadImage(L"ゲージ.png", 7, TEX_SIZE_512);
-	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
-	Draw::LoadImage(L"ドリンク候補2.png", 8, TEX_SIZE_512);
-	Draw::LoadImage(L"yellow_star.png", 10, TEX_SIZE_512);
-	Draw::LoadImage(L"red_star.png", 11, TEX_SIZE_512);
-	Draw::LoadImage(L"pink_star.png", 12, TEX_SIZE_512);
-	Draw::LoadImage(L"green_star.png", 13, TEX_SIZE_512);
-	Draw::LoadImage(L"brown_star.png", 14, TEX_SIZE_512);
-
-
+	Draw::LoadImage(L"ゲージ枠.png", 21, TEX_SIZE_512);
+	Draw::LoadImage(L"ゲージ.png", 22, TEX_SIZE_512);
 
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
-	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 1);
+	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 8);
 	CObjEvent* obj_i = new CObjEvent();
-	Objs::InsertObj(obj_i, OBJ_EVENT, 2); //イベント背景	
+	Objs::InsertObj(obj_i, OBJ_EVENT, 9); //イベント背景	
 	CObjMars* obj_m = new CObjMars();
-	Objs::InsertObj(obj_m, OBJ_MARS, 3);
+	Objs::InsertObj(obj_m, OBJ_MARS, 10);
 
-	//仮主人公オブジェクト生成
+	//主人公オブジェクト生成
 	CObjHero* obj = new CObjHero();
-	Objs::InsertObj(obj, OBJ_HERO, 4);
+	Objs::InsertObj(obj, OBJ_HERO, 11);
 
 	//アンカーオブジェクト作成
 	CObjAncer* obj_a = new CObjAncer();
-	Objs::InsertObj(obj_a, OBJ_ANCER, 5);
+	Objs::InsertObj(obj_a, OBJ_ANCER, 12);
 
 	//アイテムオブジェクト生成
 	CObjAitem* obj_ai = new CObjAitem();
-	Objs::InsertObj(obj_ai, OBJ_AITEM, 6);
+	Objs::InsertObj(obj_ai, OBJ_AITEM, 14);
 
 	//スターカウントオブジェクト作成
 	CObjStarCount* obj_sc = new CObjStarCount();
-	Objs::InsertObj(obj_sc, OBJ_STARCOUNT, 7);
+	Objs::InsertObj(obj_sc, OBJ_STARCOUNT, 15);
 
 	//ゲージ関係
 	//スタミナオブジェクト作成
 	CObjstaminagaugeframe* obj_stf = new CObjstaminagaugeframe();
-	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 8);
+	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 21);
 	CObjstaminagauge* obj_st = new CObjstaminagauge();
-	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 9);
+	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 22);
 	
 
 	//星生成時間初期化
@@ -132,7 +131,7 @@ void CSceneMars::Scene()
 
 	while (1)
 	{
-		if (Input::GetVKey('P') == true)//Pキー入力時
+		if (Input::GetVKey(' ') == true)//Pキー入力時
 		{
 
 			if (m_Pf == true) {//m_fがtrueの場合
@@ -174,7 +173,7 @@ void CSceneMars::Scene()
 	}
 	occur++;
 
-	if (occur == 180)
+	if (occur == 45)
 	{
 		int Items[] = { 1, 5, 20,40,60 };
 		int result = WeightedPick(Items, 5);
