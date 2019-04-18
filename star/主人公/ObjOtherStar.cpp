@@ -123,8 +123,8 @@ void CObjOtherStar::Draw()
 		//ï\é¶à íuÇÃê›íË
 		dst.m_top = 0.0f + m_py;
 		dst.m_left = 0.0f + m_px;
-		dst.m_right = 32.0f + m_px + size;
-		dst.m_bottom = 32.0f + m_py + size;
+		dst.m_right = 32.0f + m_px;
+		dst.m_bottom = 32.0f + m_py;
 	}
 	else
 	{
