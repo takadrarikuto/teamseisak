@@ -125,21 +125,15 @@ void CObjAncer::Action()
 			}
 		}
 		
-		/*
+		
 		//星に当たると戻る
 		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
 		{
-			ancer_flag = false;
-			Ancer_on = false;
+			ancer_time = Ancer_Rope_InitialTime;
+			rope_time = Ancer_Rope_InitialTime;
 		}
-		//定位置にアンカーがある時に左クリックでアンカー発射・スタミナ消費
-		else if (Input::GetMouButtonL() == true && m_pay > 535.0f && time == 0)
-		{
-			ancer_time += 1;
-			ancer_flag = true; //アンカー発射
-			Ancer_on = true; //スタミナ消費
-		}
-		*/
+		
+
 	}
 	else
 	{
