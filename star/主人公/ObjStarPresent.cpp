@@ -24,8 +24,6 @@ void CObjStarPresent::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	
-
 }
 
 void CObjStarPresent::Draw()
@@ -45,14 +43,17 @@ void CObjStarPresent::Draw()
 	dst.m_left = 0.0f;
 	dst.m_right = 200.0f;
 	dst.m_bottom = 350.0f;
+	
 	int g = 200.0f;//星枠の横幅
 	int k = 75.0f;//星枠の立幅
 	int t = 70;//星の名前の位置
 	int l = 0;//tと掛ける用の変数
 	int s = 0;//星のクリックの鍵
 	int std = 0;
-	int side_a = 0;
-	int side_b = 200;
+	int side_a = 0;//左の枠範囲
+	int side_b = 200;//右の枠範囲
+	int fy = 200;//星の名前の横幅
+	int key = 0;
 
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
@@ -154,61 +155,147 @@ void CObjStarPresent::Draw()
 			Scene::SetScene(new CSceneStarPicbook());
 		}
 	}*/
-
-	//					　　	 X　 Y　 大きさ
-	Font::StrDraw(L"アンタレス", 30, 330+t*l, 30, c);
+	
+	//					　　	 X　		    Y　 大きさ
+	Font::StrDraw(L"アンタレス", 30 + fy * std, 330+t*l, 30, c);
 	l++;
-	// left				 right            top            bottom               
+	
+	// left								right						top								　bottom                            
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
 	if (m_mou_l == true)
 	{
-		
-	crick = 1;
+	crick = 1;//ここはキーのようなもの
 	}
 	}
 
-	if (crick == 1)
+	if (crick == 1)//上を変えたらここも変える
 	{
 		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
 		Font::StrDraw(L"一番明るい星", 110, 50, 30, c);
+		
+		
 	}
 
 	//					　　	 X　 Y　 大きさ
-	Font::StrDraw(L"アクラブ", 30, 330+t*l, 30, c);
+	Font::StrDraw(L"アクラブ", 30 + fy * std, 330+t*l, 30, c);
 	l++;
-	// left				 right            top            bottom               
+	// left								right						top							　　　bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
 		if (m_mou_l == true)
 		{
-			crick = 2;
+			crick = 2;//ここはキーのようなもの
 		}
 	}
 
-	if (crick == 2)
+	if (crick == 2)//上を変えたらここも変える
 	{
 		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
 		Font::StrDraw(L"六重連星で、小型望遠鏡で3等星のβ1星と5等星のβ2星の2星に見える。", 110, 50, 30, c);
 		Font::StrDraw(L"β2星はβ星Cとβ星Eから形成され、さらにβ星Eはβ星Eaとβ星Ebから形成される", 110, 100, 30, c);
+		
 	}
-
-	Font::StrDraw(L"ジュバ", 30+220, 330 + t * l, 30, c);
+	
+	Font::StrDraw(L"ジュバ", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
-	std = 1;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a+side_b*std && m_mou_x < side_b*(std+1) && m_mou_y>300 + k * (l-1) && m_mou_y < 300 + k * l)
+	// left								right						top						bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
 		if (m_mou_l == true)
 		{
-			crick = 3;
+
+			crick = 3;//ここはキーのようなもの
+		
 		}
 	}
 
-	if (crick == 3)
+	if (crick == 3)//上を変えたらここも変える
+	{
+		Font::StrDraw(L"さそり座に属する", 110, 0*key, 30, c);
+		Font::StrDraw(L"通常のB型の恒星と考えられていたが、2000年6月頃に増光し、", 110,50, 30, c);
+		Font::StrDraw(L"そのスペクトルがBe星のものへと変貌したことが観測された。", 110, 100, 30, c);
+		
+	}
+	
+	Font::StrDraw(L"ララワグ", 30 + fy * std, 330 + t * l, 30, c);
+	l++;
+	// left								right						top						bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+
+			crick = 4;//ここはキーのようなもの
+		
+		}
+	}
+
+	if (crick == 4)//上を変えたらここも変える
+	{
+		Font::StrDraw(L"さそり座に属する", 110, 0*key, 30, c);
+		Font::StrDraw(L"明るい星でありながら長らく知られた固有名がなかったことから、パトリック・ムーアによって、θ星、λ星、υ星等さそり座近辺の", 110, 50, 30, c);
+		Font::StrDraw(L"星で構成される中国の二十八宿一つ尾宿の名前にちなんで、中国語で「尾」という意味のWeiと名づけられたことがある。 ", 110,100, 30, c);
+		
+	}
+
+	t = 0;
+	l = 0;
+	std++;//四つ星を表示したらstdを入れる
+	Font::StrDraw(L"サルガス", 30 + fy * std, 330 + t * l, 30, c);
+	l++;
+	// left								right						top						bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+
+			crick = 5;//ここはキーのようなもの
+		}
+	}
+
+	if (crick == 5)//上を変えたらここも変える
 	{
 		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"通常のB型の恒星と考えられていたが、2000年6月頃に増光し、", 110, 50, 30, c);
-		Font::StrDraw(L"そのスペクトルがBe星のものへと変貌したことが観測された。", 110, 100, 30, c);
+		Font::StrDraw(L"別名のギルタブ (Girtab) は、シュメールで使われたサソリを模した星座 GIR.TAB に由来する。これはさそり座κ星などにも使われている。", 110, 50, 30, c);
+		Font::StrDraw(L" ", 110, 100, 30, c);
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
