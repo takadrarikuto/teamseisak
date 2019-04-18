@@ -120,7 +120,7 @@ void CObjAncer::Action()
 		}
 
 
-		/*
+	/*
 		//¯‚É“–‚½‚é‚Æ–ß‚é
 		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
 		{
