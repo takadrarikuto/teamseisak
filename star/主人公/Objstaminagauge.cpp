@@ -62,7 +62,6 @@ void CObjstaminagauge::Action()
 		Aitem_on = false;
 	}
 
-	//画面移動時起動防止
 	if (time_co > 30)
 	{
 		//左クリックでスタミナ5消費 

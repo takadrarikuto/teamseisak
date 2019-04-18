@@ -22,7 +22,7 @@ void CObjStarCount::Init()
 	m_px = 400.0f;
 	m_py = 520.0f;
 
-	Hits::SetHitBox(this, m_px, m_py, 50, 50, OBJ_STARCOUNT, ELEMENT_RED, 21);
+	Hits::SetHitBox(this, m_px, m_py, 50, 50, OBJ_STARCOUNT, ELEMENT_RED, 15);
 	
 	((UserData*)Save::GetData())->star_co = 0;
 }

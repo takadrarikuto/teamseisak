@@ -35,8 +35,8 @@ void CSceneSaturn::InitScene()
 
 	//ゲージ関係
 	//体力
-	Draw::LoadImage(L"ゲージ枠.png", 21, TEX_SIZE_512);
-	Draw::LoadImage(L"ゲージ.png", 22, TEX_SIZE_512);
+	Draw::LoadImage(L"ゲージ枠.png", 17, TEX_SIZE_512);
+	Draw::LoadImage(L"ゲージ.png", 18, TEX_SIZE_512);
 
 
 
@@ -76,9 +76,9 @@ void CSceneSaturn::InitScene()
 	//ゲージ関係
 	//スタミナオブジェクト作成
 	CObjstaminagaugeframe* obj_stf = new CObjstaminagaugeframe();
-	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 21);
+	Objs::InsertObj(obj_stf, OBJ_STRENGTHGAUGEFRAME1, 17);
 	CObjstaminagauge* obj_st = new CObjstaminagauge();
-	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 22);
+	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 18);
 
 
 	//星生成時間初期化
