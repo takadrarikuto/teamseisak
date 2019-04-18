@@ -24,10 +24,7 @@ void CObjAncer::Init()
 	//アンカー
 	m_pax = 433.5f;
 	m_pay = 535.0f;
-	//アンカーサイズ変更
-	m_sizex = 0;
-	m_sizey = 0;
-	size = 40;
+
 	//ロープ
 	//m_pry = 490.0f;
 	m_prx = 448.0f;
@@ -117,6 +114,7 @@ void CObjAncer::Action()
 		}
 		else if (m_mous_l == false)
 		{
+			//アンカーを上げる処理
 			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
 			{
 				m_vy -= 9.0f; //アンカー移動
@@ -127,6 +125,7 @@ void CObjAncer::Action()
 				ancer_time -= 1.0f;
 				rope_time += 1.0f;
 			}
+			//アンカーを下げる処理
 			else if (ancer_flag == true && ancer_time == Ancer_Rope_InitialTime && rope_time == Ancer_Rope_InitialTime)
 			{
 				m_vy += 9.0f; //アンカー移動
@@ -154,16 +153,6 @@ void CObjAncer::Action()
 	else
 	{
 		m_mous_l = false;
-
-	}
-
-	if (m_vy > 0.0f || m_vy < 0.0f)
-	{
-		ancer_Donot_Stop = true;
-	}
-	else
-	{
-		ancer_Donot_Stop = false;
 	}
 
 
@@ -219,13 +208,16 @@ void CObjAncer::Action()
 		m_pay = 535.0f;
 		ancer_flag = false;
 		ancer_Prevent_doublepress = false;
+		ancer_Donot_Stop = false;
 	}
 	else if (m_pay < 535.0f)
 	{
 		ancer_flag = true;
 		ancer_Prevent_doublepress = true;
+		ancer_Donot_Stop = true;
 	}
-	
+
+
 
 	//ロープ
 	if (m_prx < 49.0f)
