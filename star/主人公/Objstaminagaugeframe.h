@@ -6,21 +6,17 @@
 using namespace GameL;
 
 //オブジェクト　タイトル
-class CObjAitem :public CObj
+class CObjstaminagaugeframe :public CObj
 {
 public:
-	CObjAitem() {};
-	~CObjAitem() {};
+	CObjstaminagaugeframe() {};
+	~CObjstaminagaugeframe() {};
 	void Init();
 	void Action();
 	void Draw();
 
 private:
-	bool Aitem_flag; //アイテムフラグ
 
-	float m_px; //画像用座標
+	float m_px;
 	float m_py;
-
-	wchar_t str[256];
-
 };

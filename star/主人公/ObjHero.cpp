@@ -53,11 +53,10 @@ void CObjHero::Action()
 
 	//アンカーの位置の取得
 	CObjAncer* Ancer = (CObjAncer*)Objs::GetObj(OBJ_ANCER);
-	float ax = Ancer->GetX();
-	float ay = Ancer->GetY();
+	float af = Ancer->GetAncerFlag();
 
-	//左クリックしている時またはアンカーのy位置が535以下の時移動禁止
-	if (m_mous_l == false && ay == 535.0f)
+	//左クリックしていない時かつアンカーが発射されていない時移動可能
+	if (m_mous_l == false && af == false)
 	{
 		//移動処理
 		//左

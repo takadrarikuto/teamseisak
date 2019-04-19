@@ -13,8 +13,16 @@ public:
 	~CSceneMars() {};
 	void InitScene(); //ゲームタイトルの初期化メソッド
 	void Scene();     //ゲームタイトルの実行中メソッド
+	int WeightedPick(int* pArray, int Length);
 private:
 	int time_star; //星生成時間
-	int arise;
+	int occur;	//星生成用
+	int arise;	//生成確率用
+	bool m_Pf;
+	bool m_key_f;//行動制御
+	double probability;//確率
+			//重み付けで出現させる星を決める
+	int Items[5];
+	int result;
 
 };

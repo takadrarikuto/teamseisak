@@ -12,28 +12,30 @@
 using namespace GameL;
 
 
-CObjSecondStar::CObjSecondStar(float x, float y)
+
+CObjOtherStar::CObjOtherStar(float x, float y)
 {
 }
 
 //イニシャライズ
-void CObjSecondStar::Init()
+void CObjOtherStar::Init()
 {
 	m_px = 0.0f;
 	m_py = rand() % 340 + 1;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+	size = 0;
 
 	hero_flag = false;
 	ancer_flag = false;
 
-	Hits::SetHitBox(this, m_px, m_py, 32, 32, OBJ_SECONDSTAR, ELEMENT_RED, 16);
+	Hits::SetHitBox(this, m_px, m_py, 32, 32, OBJ_OTHERSTAR, ELEMENT_RED, 12);
 
 
 }
 
 //アクション
-void CObjSecondStar::Action()
+void CObjOtherStar::Action()
 {
 
 	m_vx = 1.0f;
@@ -73,10 +75,10 @@ void CObjSecondStar::Action()
 	{
 		this->SetStatus(false); //自身に削除命令を出す
 		Hits::DeleteHitBox(this); //HitBox削除
-		
+
 	}
 	//アンカーに当たっていなければy軸が350の位置で星を削除
-	if ( ancer_flag == false)
+	if (ancer_flag == false)
 	{
 		if (m_py > 350.0f || m_py < 0.0f)
 		{
@@ -94,12 +96,16 @@ void CObjSecondStar::Action()
 	}
 
 
-	
+
 
 }
 //ドロー
-void CObjSecondStar::Draw()
+void CObjOtherStar::Draw()
 {
+	//自身のHitBoxを持ってくる
+	CHitBox* hit_s = Hits::GetHitBox(this);
+	hit_s->SetPos(m_px, m_py);
+
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	RECT_F src;//描画元切り取り位置
@@ -107,17 +113,28 @@ void CObjSecondStar::Draw()
 
 			   //切り取り位置の設定
 	src.m_top = 0.0f;
-	src.m_left = 0.0f; 
-	src.m_right = 100.0f; 
-	src.m_bottom = 100.0f; 
+	src.m_left = 0.0f;
+	src.m_right = 100.0f;
+	src.m_bottom = 100.0f;
 
-
-	//表示位置の設定
-	dst.m_top = 0.0f + m_py;
-	dst.m_left = 0.0f + m_px;
-	dst.m_right = 32.0f + m_px;
-	dst.m_bottom = 32.0f + m_py;
+	size++;
+	if (hit_s->CheckObjNameHit(OBJ_ANCER) != nullptr)
+	{
+		//表示位置の設定
+		dst.m_top = 0.0f + m_py;
+		dst.m_left = 0.0f + m_px;
+		dst.m_right = 32.0f + m_px;
+		dst.m_bottom = 32.0f + m_py;
+	}
+	else
+	{
+		//表示位置の設定
+		dst.m_top = 0.0f + m_py;
+		dst.m_left = 0.0f + m_px;
+		dst.m_right = 32.0f + m_px;
+		dst.m_bottom = 32.0f + m_py;
+	}
 
 	//描画
-	Draw::Draw(17, &src, &dst, c, 0.0f);
+	Draw::Draw(20, &src, &dst, c, 0.0f);
 }

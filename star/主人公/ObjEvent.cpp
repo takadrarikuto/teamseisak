@@ -63,7 +63,7 @@ void CObjEvent::Action()
 	}
 
 	//イベント終了処理
-	if (E_Start_co == 600)
+	if (E_Start_co == 900)
 	{
 		E_Start = false;
 		E_Start_co = 0;

@@ -21,6 +21,8 @@ enum OBJ_NAME
 	OBJ_JUPITER,
 	OBJ_FIRSTSTAR,
 	OBJ_SECONDSTAR,
+	OBJ_THIRDSTAR,
+	OBJ_FOURTHSTAR,
 	OBJ_OTHERSTAR,
 	OBJ_OPERATION,
 	OBJ_BACKGROUND,
@@ -34,6 +36,7 @@ enum OBJ_NAME
 	OBJ_STRENGTHGAUGE,
 	OBJ_STRENGTHGAUGEFRAME1,
 	OBJ_STRENGTHGAUGEFRAME2,
+	OBJ_POSE,
 	OBJ_QTE,
 };
 //------------------------------------------------
@@ -63,8 +66,9 @@ enum HIT_ELEMENTS
 struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
-	int star_co; //星の数カウント
-	
+	int star_co;//星の数カウント
+	int Aitem_co_max = 5; //アイテム個数
+
 };
 //------------------------------------------------
 
@@ -75,7 +79,6 @@ struct UserData
 
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------
-
 
 //------------------------------------------------
 
@@ -92,6 +95,8 @@ struct UserData
 #include "ObjAncer.h"
 #include "ObjFirstStar.h"
 #include "ObjSecondStar.h"
+#include "ObjThirdStar.h"
+#include "ObjFourthStar.h"
 #include "ObjOtherStar.h"
 #include "ObjBackground.h"
 #include "CObjOperation.h"
@@ -103,7 +108,8 @@ struct UserData
 #include "ObjStarCount.h"
 #include "Objstaminagauge.h"
 #include "Objstaminagaugeframe.h"
-//#include "ObjQTE.h"
+#include "ObjPose.h"
+#include "ObjQTE.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -118,8 +124,7 @@ struct UserData
 #include "SceneGamekuria.h"
 //------------------------
 
-
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneMars
 //-----------------------------------------------

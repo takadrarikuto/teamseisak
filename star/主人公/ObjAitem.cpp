@@ -3,6 +3,8 @@
 #include"GameL\WinInputs.h"
 #include"GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
+#include "GameL\UserData.h"
+
 
 #include"GameHead.h"
 #include"ObjAitem.h"
@@ -17,14 +19,12 @@ void CObjAitem::Init()
 {
 	//アイテムフラグ初期化
 	Aitem_flag = true;
-	//最大個数初期化
-	Aitem_co_max = 5;
-	//個数を減らす用初期化
-	Aitem_co = 1; 
 
 	//画像用座標初期化
 	m_px = 780;
 	m_py = 530;
+
+	((UserData*)Save::GetData())->Aitem_co_max;
 
 }
 
@@ -35,11 +35,11 @@ void CObjAitem::Action()
 	if (Input::GetVKey('I') == true)
 	{
 		//使用回数処理
-		if (Aitem_co_max > 0)
+		if (((UserData*)Save::GetData())->Aitem_co_max > 0)
 		{
 			if (Aitem_flag == true)
 			{
-				Aitem_co_max -= Aitem_co; //使用回数を減らす
+				((UserData*)Save::GetData())->Aitem_co_max -= 1; //使用回数を減らす
 				Aitem_on = true; //スタミナを増やす
 				Aitem_flag = false;			
 			}
@@ -60,7 +60,7 @@ void CObjAitem::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	swprintf_s(str, L"ドリンクの数×%d個", Aitem_co_max);
+	swprintf_s(str, L"ドリンクの数×%d個", ((UserData*)Save::GetData())->Aitem_co_max);
 	Font::StrDraw(str, 530, 540, 30, c);
 
 	//背景
