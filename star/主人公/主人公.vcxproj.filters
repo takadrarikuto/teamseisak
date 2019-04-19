@@ -430,9 +430,6 @@
     <Image Include="brown_star.png">
       <Filter>画像</Filter>
     </Image>
-    <Image Include="firststar.png">
-      <Filter>画像</Filter>
-    </Image>
     <Image Include="アンカー（仮　透過済み）.png">
       <Filter>画像</Filter>
     </Image>
