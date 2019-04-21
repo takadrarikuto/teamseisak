@@ -30,6 +30,9 @@ private:
 	float m_px; //本体
 	float m_py;
 	float m_pax; //アンカー
+	float m_sizey;
+	float m_sizex;
+	float size;
 	float m_pay;
 	float m_prx; //ロープ
 	float m_pry;
