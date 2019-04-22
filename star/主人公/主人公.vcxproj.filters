@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="ObjQTE.cpp" />
-    <ClCompile Include="SceneOperation.cpp" />
-    <ClCompile Include="StarBook.cpp" />
     <ClCompile Include="GameL\Audio.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
@@ -45,12 +42,6 @@
     </ClCompile>
     <ClCompile Include="GameL\SetWindow.cpp">
       <Filter>リソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\SceneObjManager.cpp">
-      <Filter>リソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjOperation.h">
-      <Filter>ヘッターファイル\操作説明</Filter>
     </ClCompile>
     <ClCompile Include="CObjStarPicbook.cpp">
       <Filter>ソースファイル\Obj\星図鑑</Filter>
@@ -121,15 +112,6 @@
     <ClCompile Include="SceneStarPicbook.cpp">
       <Filter>ソースファイル\Scene\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="ObjThirdStar.cpp">
-      <Filter>ソースファイル\星</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソースファイル\タイトル・クリア</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjVenus.cpp">
-      <Filter>ソースファイル\惑星背景</Filter>
-    </ClCompile>
     <ClCompile Include="SceneGameKuria.cpp">
       <Filter>ソースファイル\Scene\タイトル</Filter>
     </ClCompile>
@@ -154,63 +136,6 @@
     <ClCompile Include="ObjVenus.cpp">
       <Filter>ソースファイル\Obj\惑星ステージ</Filter>
     </ClCompile>
-    <ClCompile Include="StarBook.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneVenus.cpp" />
-    <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソースファイル\タイトル・クリア</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソースファイル\タイトル・クリア</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjBackground.cpp">
-      <Filter>ソースファイル\惑星背景</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarCount.cpp">
-      <Filter>ソースファイル\星</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSaturn.cpp">
-      <Filter>ソースファイル\惑星背景</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSelectPlanet.cpp">
-      <Filter>ソースファイル\惑星選択</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStageselect.cpp">
-      <Filter>ソースファイル\惑星選択</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSecondStar.cpp">
-      <Filter>ソースファイル\星</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMars.cpp">
-      <Filter>ソースファイル\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjVenus.cpp">
-      <Filter>ソースファイル\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent2.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjThirdStar.cpp">
-      <Filter>ソースファイル\星</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneGameKuria.cpp">
-      <Filter>ソースファイル\タイトル・クリア</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneJupiter.cpp">
-      <Filter>ソースファイル\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneSaturn.cpp">
-      <Filter>ソースファイル\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStageselect.cpp">
-      <Filter>ソースファイル\惑星選択</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStarPicbook.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
     <ClCompile Include="SceneJupiter.cpp">
       <Filter>ソースファイル\Scene\惑星ステージ</Filter>
     </ClCompile>
@@ -229,12 +154,6 @@
     <ClCompile Include="ObjPose.cpp" />
     <ClCompile Include="SceneVenus.cpp">
       <Filter>ソースファイル\Scene\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="Objstaminagaugeframe.cpp">
-      <Filter>ソースファイル\ゲージ関係\スタミナ</Filter>
-    </ClCompile>
-    <ClCompile Include="Objstaminagauge.cpp">
-      <Filter>ソースファイル\ゲージ関係\スタミナ</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
