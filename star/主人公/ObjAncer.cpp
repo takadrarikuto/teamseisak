@@ -283,7 +283,7 @@ void CObjAncer::Draw()
 
 	//ï\é¶à íuÇÃê›íË
 	dstr.m_top = 520.0f - rope;
-	dstr.m_left = 0.0f + m_prx;
+	dstr.m_left = -1.0f + m_prx;
 	dstr.m_right = 4.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 
