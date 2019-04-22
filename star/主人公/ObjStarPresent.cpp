@@ -12,7 +12,7 @@ int cenge = 0;
 
 void CObjStarPresent::Init()
 {
-	
+
 }
 
 void CObjStarPresent::Action()
@@ -58,23 +58,23 @@ void CObjStarPresent::Draw()
 	//ƒ‹[ƒv‚µ‚Ä•`‰æ‚·‚é
 	for (int i = 0; i <= 3; i++)
 	{
-	//¯‚Ì–¼‘O‚Ì˜g‚ğ•`‰æ
-	dst.m_top = 300.0f;
-	dst.m_left = 0.0f +g*i;
-	dst.m_right = 200.0f + g*i;
-	dst.m_bottom = 300.0f+k;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
-
-	for (int l = 0; l <=2; l++)
-	{
-		
-		dst.m_top = 375.0f+k*l;
-		dst.m_bottom =450.0f+k*l;
+		//¯‚Ì–¼‘O‚Ì˜g‚ğ•`‰æ
+		dst.m_top = 300.0f;
+		dst.m_left = 0.0f + g * i;
+		dst.m_right = 200.0f + g * i;
+		dst.m_bottom = 300.0f + k;
 		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		for (int l = 0; l <= 2; l++)
+		{
+
+			dst.m_top = 375.0f + k * l;
+			dst.m_bottom = 450.0f + k * l;
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
+
 	}
-	
-	}
-	
+
 	//–ß‚éƒ{ƒ^ƒ“‚Ì˜g‚ğ•`‰æ
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
@@ -129,11 +129,11 @@ void CObjStarPresent::Draw()
 	// left				 right            top            bottom       
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>190 && m_mou_y < 300)
 	{
-	if (m_mou_l == true)
-	{
-	lever = 0;
-	Scene::SetScene(new CSceneStarPicbook());
-	}
+		if (m_mou_l == true)
+		{
+			lever = 0;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
 	}
 	//–ß‚·‚Ì•¶š‚ğƒ‹[ƒv‚µ‚Äo‚·
 	wchar_t before[2][2]{ L"–ß",L"‚é" };
