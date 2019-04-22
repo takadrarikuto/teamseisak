@@ -27,7 +27,9 @@ void CObjAncer::Init()
 	//アンカーサイズ変更
 	m_sizex = 0;
 	m_sizey = 0;
-	size = 40;
+	size = 38;
+	//ヒットボックスサイズ調整
+	hitbox_size = 0.0f;
 	//ロープ
 	//m_pry = 490.0f;
 	m_prx = 448.0f;
@@ -44,7 +46,7 @@ void CObjAncer::Init()
 	m_mous_l = false;
 	
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_pax, m_pay, size, size, ELEMENT_ANCER, OBJ_ANCER, 11);
+	Hits::SetHitBox(this, m_pax, m_pay, size , size, ELEMENT_ANCER, OBJ_ANCER, 11);
 
 	//ロープ描画用初期化
 	rope = 0.0f;
@@ -124,7 +126,8 @@ void CObjAncer::Action()
 				rope += 13.0f; //ロープ長さ調整	
 				m_sizey -= 0.25f;
 				m_sizex -= 0.25f;
-				size -= 0.3;
+				size -= 0.35f;
+				hitbox_size += 0.2f;
 				ancer_time -= 1.0f;
 				rope_time += 1.0f;
 			}
@@ -135,7 +138,8 @@ void CObjAncer::Action()
 				rope -= 13.0f; //ロープ長さ調整
 				m_sizey += 0.25f;
 				m_sizex += 0.25f;
-				size += 0.3;
+				size += 0.35f;
+				hitbox_size -= 0.2f;
 
 			}
 
@@ -247,7 +251,7 @@ void CObjAncer::Action()
 	m_prx += m_vx; //ロープ
 	
 	//HitBoxの位置の変更
-	hit_a->SetPos(m_pax, m_pay - 45, size,size );
+	hit_a->SetPos(m_pax + hitbox_size - 3, m_pay - 40, size,size);
 	
 	
 }
@@ -309,8 +313,8 @@ void CObjAncer::Draw()
 
 	//表示位置の設定
 	dsta.m_top = 0.0f + m_pay + m_sizey;
-	dsta.m_left = -5.0f + m_pax - m_sizex;
-	dsta.m_right = 45.0f + m_pax + m_sizex;
+	dsta.m_left = -3.0f + m_pax - m_sizex;
+	dsta.m_right = 41.0f + m_pax + m_sizex;
 	dsta.m_bottom = -60.0f + m_pay;
 
 	Draw::Draw(12, &srca, &dsta, c, 0.0f);
