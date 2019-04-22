@@ -161,21 +161,14 @@ void CObjStarPresent::Draw()
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-	if (m_mou_l == true)
-	{
-		
-	crick = 1;
-	}
-	}
-
-	if (crick == 1)
-	{
-		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"一番明るい星", 110, 50, 30, c);
+		if (m_mou_l == true)
+		{
+			crick = 1;
+		}
 	}
 
 	//					　　	 X　 Y　 大きさ
-	Font::StrDraw(L"アクラブ", 30, 330+t*l, 30, c);
+	Font::StrDraw(L"アクラブ", 30, 330 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -186,12 +179,6 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	if (crick == 2)
-	{
-		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"六重連星で、小型望遠鏡で3等星のβ1星と5等星のβ2星の2星に見える。", 110, 50, 30, c);
-		Font::StrDraw(L"β2星はβ星Cとβ星Eから形成され、さらにβ星Eはβ星Eaとβ星Ebから形成される", 110, 100, 30, c);
-	}
 
 	Font::StrDraw(L"ジュバ", 30+220, 330 + t * l, 30, c);
 	l++;
@@ -205,7 +192,18 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	if (crick == 3)
+	if (crick == 1)
+	{
+		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
+		Font::StrDraw(L"一番明るい星", 110, 50, 30, c);
+	}
+	else if (crick == 2)
+	{
+		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
+		Font::StrDraw(L"六重連星で、小型望遠鏡で3等星のβ1星と5等星のβ2星の2星に見える。", 110, 50, 30, c);
+		Font::StrDraw(L"β2星はβ星Cとβ星Eから形成され、さらにβ星Eはβ星Eaとβ星Ebから形成される", 110, 100, 30, c);
+	}
+	else if (crick == 3)
 	{
 		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
 		Font::StrDraw(L"通常のB型の恒星と考えられていたが、2000年6月頃に増光し、", 110, 50, 30, c);

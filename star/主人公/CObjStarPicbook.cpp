@@ -30,6 +30,11 @@ void CObjStarPicbook::Draw()
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
 
+	//カーソル表示(完成したら消す)
+	swprintf_s(strmous, L"x=%d,y=%d", (int)m_mou_r, (int)m_mou_l);
+	Font::StrDraw(strmous, 600, 20, 30, c);
+
+
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 	//ブラックタイルの切り取り
@@ -94,16 +99,29 @@ void CObjStarPicbook::Draw()
 		Scene::SetScene(new CSceneStageselect());
 	}
 
+	int l = 50;
+	int vx = 0;
+
 	wchar_t test[2][2]{ L"蠍",L"座" };
+	wchar_t test2[3][2]{ L"天",L"秤",L"座" };
 		//ループして出す
 		for (int i = 0; i <= 1; i++)
 		{
-			int l = 50;
 			swprintf_s(str, L"%s", test[i]);
+
 			//Yは一回目はiは0なので0に50を掛けている
 			//2回目はiは1なので50を100に足す。
 			//				　　X　 Y　 大きさ
-			Font::StrDraw(str, 10, 350 + l * i, 50, c);
+			Font::StrDraw(str, 10 + vx, 350 + l * i, 50, c);
+
+		}
+		for (int i = 0; i <= 2; i++)
+		{
+			swprintf_s(str, L"%s", test2[i]);
+			l = 100;
+			vx = 265;
+			//				　　X　 Y　 大きさ
+			Font::StrDraw(str, 10 + vx, 320 + l * i, 50, c);
 		}
 
 		// left				 right            top            bottom       
@@ -115,4 +133,5 @@ void CObjStarPicbook::Draw()
 				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
+
 }

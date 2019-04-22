@@ -21,4 +21,5 @@ private:
 	bool m_mou_l;//マウスの左ボタン
 	
 	wchar_t str[256];
+	wchar_t strmous[256]; //マウスカーソル用
 };

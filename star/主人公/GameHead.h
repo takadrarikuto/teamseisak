@@ -103,6 +103,7 @@ struct UserData
 #include "ObjGamekuria.h"
 #include "ObjStarPresent.h"
 #include "ObjStarPresent2.h"
+#include "ObjStarPresent3.h"
 #include "ObjAitem.h"
 #include "ObjEvent.h"
 #include "ObjStarCount.h"
@@ -126,5 +127,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneMars
+#define SET_GAME_START CSceneStarPicbook
 //-----------------------------------------------
