@@ -99,7 +99,7 @@ void CObjStarPresent::Draw()
 	Font::StrDraw(L"宇宙", 10, 25, 25, c);
 	Font::StrDraw(L"船へ", 10, 50, 25, c);
 
-	//戻るボタン
+	//宇宙船へボタン
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
@@ -212,7 +212,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 3)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"さそり座に属する", 110, 0*key, 30, c);
+		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
 		Font::StrDraw(L"通常のB型の恒星と考えられていたが、2000年6月頃に増光し、", 110,50, 30, c);
 		Font::StrDraw(L"そのスペクトルがBe星のものへと変貌したことが観測された。", 110, 100, 30, c);
 		
@@ -233,14 +233,14 @@ void CObjStarPresent::Draw()
 
 	if (crick == 4)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"さそり座に属する", 110, 0*key, 30, c);
+		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
 		Font::StrDraw(L"明るい星でありながら長らく知られた固有名がなかったことから、パトリック・ムーアによって、θ星、λ星、υ星等さそり座近辺の", 110, 50, 30, c);
 		Font::StrDraw(L"星で構成される中国の二十八宿一つ尾宿の名前にちなんで、中国語で「尾」という意味のWeiと名づけられたことがある。 ", 110,100, 30, c);
 		
 	}
 
-	t = 0;
-	l = 0;
+	t -= 4;
+	l -= 4;
 	std++;//四つ星を表示したらstdを入れる
 	Font::StrDraw(L"サルガス", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
@@ -261,11 +261,218 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L" ", 110, 100, 30, c);
 	}
 
+	//					　　	 X　		    Y　 大きさ
+	Font::StrDraw(L"ギルタブ", 30 + fy * std, 330 + t * l, 30, c);
+	l++;
 
+	// left								right						top								　bottom                            
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 6;//ここはキーのようなもの
+		}
+	}
 
+	if (crick == 6)//上を変えたらここも変える
+	{
+		Font::StrDraw(L"この恒星は分光連星で、主星はケフェウス座β型変光星である。", 110, 0, 30, c);
+		Font::StrDraw(L"分光観測により、公転周期は195日と測定された。", 110, 50, 30, c);
+		Font::StrDraw(L"明るさの変化は、4.80時間、4.93時間である。", 110, 100, 30, c);
 
+	}
+	
+	//					　　	 X　 Y　 大きさ
+	Font::StrDraw(L"シャウラ", 30 + fy * std, 330 + t * l, 30, c);
+	l++;
+	// left								right						top							　　　bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 7;//ここはキーのようなもの
+		}
+	}
 
+	if (crick == 7)//上を変えたらここも変える
+	{
+		int test=0;
+		Font::StrDraw(L"青白色の準巨星。 ", 110, 0*test, 30, c);
+		test++;
+		Font::StrDraw(L"ケフェウス座β型変光星であり、わずかに変光するが、変光範囲が小さいので眼視観測ではこの変光はわからない。", 110, 50*test, 30, c);
 
+	}
+
+	Font::StrDraw(L"ゼミディムラ", 10 + fy * std, 340 + t * l, 30, c);
+	l++;
+	// left								right						top						bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+
+			crick = 8;//ここはキーのようなもの
+
+		}
+	}
+
+	if (crick == 8)//上を変えたらここも変える
+	{
+	
+		Font::StrDraw(L"Xamidimura は、アフリカ大陸南部に住むコイコイ人の言葉で", 110, 0, 30, c);
+		Font::StrDraw(L"「ライオンの眼」を意味する xami di muraに由来する", 110, 50, 30, c);
+
+	}
+
+	t -= 4;
+	l -= 4;
+	std++;//四つ星を表示したらstdを入れる
+	Font::StrDraw(L"ピピリマ", 30 + fy * std, 330 + t * l, 30, c);
+	l++;
+	
+	// left								right						top						bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+
+			crick = 9;//ここはキーのようなもの
+
+		}
+	}
+
+	if (crick == 9)//上を変えたらここも変える
+	{
+		Font::StrDraw(L"Pipirima は、タヒチの伝承に登場する双子の男女に由来する", 110, 0, 30, c);
+	}
+
+	Font::StrDraw(L"ジャバハー", 30 + fy * std, 340 + t * l, 30, c);
+	l++;
+	// left								right						top						bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+
+			crick = 10;//ここはキーのようなもの
+		}
+	}
+
+	if (crick == 10)//上を変えたらここも変える
+	{
+		Font::StrDraw(L"ジャバハー", 110, 0, 30, c);
+	}
+
+	//					　　	 X　		    Y　 大きさ
+	Font::StrDraw(L"ファング", 30 + fy * std, 350 + t * l, 30, c);
+	l++;
+
+	// left								right						top								　bottom                            
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 11;//ここはキーのようなもの
+		}
+	}
+
+	if (crick == 11)//上を変えたらここも変える
+	{
+		Font::StrDraw(L"ファング", 110, 0, 30, c);
+	}
+
+	//					　　	 X　 Y　 大きさ
+	Font::StrDraw(L"イクリール", 30 + fy * std, 360 + t * l, 30, c);
+	l++;
+	// left								right						top							　　　bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 12;//ここはキーのようなもの
+		}
+	}
+
+	if (crick == 12)//上を変えたらここも変える
+	{
+		Font::StrDraw(L"イクリール", 110, 0, 30, c);
+
+	}
+
+	t -= 4;
+	l -= 4;
+	std++;//四つ星を表示したらstdを入れる
+	Font::StrDraw(L"アル・ニヤト", 10 + fy * std, 330 + t * l, 30, c);
+	l++;
+	// left								right						top						bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 13;//ここはキーのようなもの
+		}
+	}
+
+	if (crick == 13)//上を変えたらここも変える
+	{
+		Font::StrDraw(L"アル・ニヤト", 110, 0, 30, c);
+	}
+
+	//					　　	 X　		    Y　 大きさ
+	Font::StrDraw(L"レサト", 30 + fy * std, 340 + t * l, 30, c);
+	l++;
+
+	// left								right						top								　bottom                            
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 14;//ここはキーのようなもの
+		}
+	}
+
+	if (crick == 14)//上を変えたらここも変える
+	{
+		
+		Font::StrDraw(L"レサト", 110, 0, 30, c);
+
+	}
+
+	//					　　	 X　 Y　 大きさ
+	Font::StrDraw(L"フユエ", 30 + fy * std, 360 + t * l, 30, c);
+	l++;
+	// left								right						top							　　　bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 15;//ここはキーのようなもの
+		}
+	}
+
+	if (crick == 15)//上を変えたらここも変える
+	{
+		Font::StrDraw(L"フユエ", 110, 0, 30, c);
+	}
+
+	Font::StrDraw(L"", 30 + fy * std, 370 + t * l, 30, c);
+	l++;
+	// left								right						top						bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+
+			crick = 16;//ここはキーのようなもの
+
+		}
+	}
+
+	if (crick == 16)//上を変えたらここも変える
+	{
+		
+		Font::StrDraw(L"", 110, 0, 30, c);
+	}
 
 
 

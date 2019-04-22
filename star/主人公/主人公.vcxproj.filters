@@ -155,6 +155,9 @@
     <ClCompile Include="SceneVenus.cpp">
       <Filter>ソースファイル\Scene\惑星ステージ</Filter>
     </ClCompile>
+    <ClCompile Include="ObjStarmodel.cpp">
+      <Filter>ソースファイル\Obj\星図鑑</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -305,6 +308,9 @@
     <ClInclude Include="ObjThirdStar.h">
       <Filter>ヘッダーファイル\Obj\星</Filter>
     </ClInclude>
+    <ClInclude Include="ObjStarmodel.h">
+      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ヘッダーファイル">
@@ -428,9 +434,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="firststar.png">
       <Filter>画像</Filter>
     </Image>
     <Image Include="アンカー（仮　透過済み）.png">

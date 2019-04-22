@@ -71,13 +71,24 @@ void CObjStarPicbook::Draw()
 
 	//戻すの枠
 	Draw::Draw(1, &src, &dst, c, 0.0f);
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 215.0f;
+	src.m_bottom = 240.0f;
 
+	dst.m_top = 500.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 67.0f;
+	dst.m_bottom = 600.0f;
+	
+	Draw::Draw(2, &src, &dst, c, 0.0f);
+	
 	//宇宙船への文字を描画する
 	//					　　X　Y　大きさ
 	Font::StrDraw(L"宇宙", 10, 25, 25, c);
 	Font::StrDraw(L"船へ", 10, 50, 25, c);
 
-	//戻るボタン
+	//宇宙船へボタン
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y <100)
 	{
@@ -107,7 +118,7 @@ void CObjStarPicbook::Draw()
 		}
 
 		// left				 right            top            bottom       
-		if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>300 && m_mou_y < 600)
+		if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>300 && m_mou_y < 490)
 		{
 			if (m_mou_l == true)
 			{			
@@ -115,4 +126,14 @@ void CObjStarPicbook::Draw()
 				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
+		//蠍座の範囲
+		if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>500 && m_mou_y < 600)
+		{
+			if (m_mou_l == true)
+			{
+				lever = 11;
+				Scene::SetScene(new CSceneStarPicbook());
+			}
+		}
+
 }
