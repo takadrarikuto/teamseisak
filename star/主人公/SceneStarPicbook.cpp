@@ -36,6 +36,7 @@ void CSceneStarPicbook::InitScene()
 
 	Draw::LoadImage(L"ブラックタイル.png", 1, TEX_SIZE_512);
 
+	Draw::LoadImage(L"蠍座.png", 2, TEX_SIZE_512);
 	//星図鑑オブジェクト生成
 	if(lever==0)
 	{
@@ -54,6 +55,11 @@ void CSceneStarPicbook::InitScene()
 		Objs::InsertObj(a, OBJ_STARPRESENT2, 11);
 	}
 
+	if (lever ==11)
+	{
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
+	}
 }
 
 //ゲームタイトル実行メソッド
