@@ -155,7 +155,10 @@
       <Filter>ソースファイル\ステージ関係</Filter>
     </ClCompile>
     <ClCompile Include="ObjStarmodel.cpp">
-      <Filter>ソースファイル\Obj\星図鑑</Filter>
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -310,14 +313,11 @@
       <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
     </ClInclude>
     <ClInclude Include="ObjStarmodel.h">
-      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
+      <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="アンカー（仮　透過済み）.png">
       <Filter>画像</Filter>
     </Image>
     <Image Include="画像\タイトル.png">
@@ -381,6 +381,33 @@
       <Filter>画像</Filter>
     </Image>
     <Image Include="green_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\orange_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\pink_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\red_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\アンカー（仮　透過済み）.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\yellow_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\アンカー.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\イベント背景%28火星%29.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\ゲージ.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\ゲージ枠.png">
       <Filter>画像</Filter>
     </Image>
   </ItemGroup>

@@ -474,35 +474,4 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"", 110, 0, 30, c);
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
