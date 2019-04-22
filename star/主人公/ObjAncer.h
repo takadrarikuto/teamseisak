@@ -52,7 +52,6 @@ private:
 
 	bool ancer_flag; //アンカー移動フラグ
 	bool ancer_Prevent_doublepress; //連続発射防止フラグ
-	bool ancer_Donot_Stop; //途中停止防止フラグ
 
 	int A_event; //イベントタイム処理
 	int Ev_ancer; //イベント時アンカー処理
