@@ -12,7 +12,7 @@ int cenge = 0;
 
 void CObjStarPresent::Init()
 {
-	
+
 }
 
 void CObjStarPresent::Action()
@@ -24,7 +24,7 @@ void CObjStarPresent::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
-	
+
 
 }
 
@@ -57,23 +57,23 @@ void CObjStarPresent::Draw()
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
 	{
-	//星の名前の枠を描画
-	dst.m_top = 300.0f;
-	dst.m_left = 0.0f +g*i;
-	dst.m_right = 200.0f + g*i;
-	dst.m_bottom = 300.0f+k;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
-
-	for (int l = 0; l <=2; l++)
-	{
-		
-		dst.m_top = 375.0f+k*l;
-		dst.m_bottom =450.0f+k*l;
+		//星の名前の枠を描画
+		dst.m_top = 300.0f;
+		dst.m_left = 0.0f + g * i;
+		dst.m_right = 200.0f + g * i;
+		dst.m_bottom = 300.0f + k;
 		Draw::Draw(1, &src, &dst, c, 0.0f);
+
+		for (int l = 0; l <= 2; l++)
+		{
+
+			dst.m_top = 375.0f + k * l;
+			dst.m_bottom = 450.0f + k * l;
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
+
 	}
-	
-	}
-	
+
 	//戻るボタンの枠を描画
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
@@ -128,11 +128,11 @@ void CObjStarPresent::Draw()
 	// left				 right            top            bottom       
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>190 && m_mou_y < 300)
 	{
-	if (m_mou_l == true)
-	{
-	lever = 0;
-	Scene::SetScene(new CSceneStarPicbook());
-	}
+		if (m_mou_l == true)
+		{
+			lever = 0;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
 	}
 	//戻すの文字をループして出す
 	wchar_t before[2][2]{ L"戻",L"る" };
@@ -156,16 +156,16 @@ void CObjStarPresent::Draw()
 	}*/
 
 	//					　　	 X　 Y　 大きさ
-	Font::StrDraw(L"アンタレス", 30, 330+t*l, 30, c);
+	Font::StrDraw(L"アンタレス", 30, 330 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-	if (m_mou_l == true)
-	{
-		
-	crick = 1;
-	}
+		if (m_mou_l == true)
+		{
+
+			crick = 1;
+		}
 	}
 
 	if (crick == 1)
@@ -175,7 +175,7 @@ void CObjStarPresent::Draw()
 	}
 
 	//					　　	 X　 Y　 大きさ
-	Font::StrDraw(L"アクラブ", 30, 330+t*l, 30, c);
+	Font::StrDraw(L"アクラブ", 30, 330 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -193,11 +193,11 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"β2星はβ星Cとβ星Eから形成され、さらにβ星Eはβ星Eaとβ星Ebから形成される", 110, 100, 30, c);
 	}
 
-	Font::StrDraw(L"ジュバ", 30+220, 330 + t * l, 30, c);
+	Font::StrDraw(L"ジュバ", 30 + 220, 330 + t * l, 30, c);
 	l++;
 	std = 1;
 	// left				 right            top            bottom               
-	if (m_mou_x > side_a+side_b*std && m_mou_x < side_b*(std+1) && m_mou_y>300 + k * (l-1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
 		if (m_mou_l == true)
 		{
