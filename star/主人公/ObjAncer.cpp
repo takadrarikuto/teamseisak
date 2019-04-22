@@ -28,6 +28,8 @@ void CObjAncer::Init()
 	m_sizex = 0;
 	m_sizey = 0;
 	size = 40;
+	//ヒットボックス位置調整
+	hitbox_size = 0.0f;
 	//ロープ
 	//m_pry = 490.0f;
 	m_prx = 448.0f;
@@ -61,9 +63,6 @@ void CObjAncer::Init()
 
 	//連続発射防止フラグ初期化
 	ancer_Prevent_doublepress = false;
-
-	//途中停止防止フラグ初期化
-	ancer_Donot_Stop = false;
 
 	//イベントタイム処理初期化
 	A_event = 0;
@@ -105,38 +104,40 @@ void CObjAncer::Action()
 	//画面移動時起動防止用
 	if (time_co > 30)
 	{
-		if (m_mous_l == true && ancer_Prevent_doublepress == false && ancer_Donot_Stop == false)
+		if (m_mous_l == true && ancer_Prevent_doublepress == false)
 		{
-			ancer_time += 1.0f;
-			rope_time -= 1.0f;
+			ancer_time += 1.0f; //アンカー発射時間増加
+			rope_time -= 1.0f; //ロープ発射時間増加
 			if (ancer_time == 1.0f && rope_time == -1.0f)
 			{
-				Ancer_on = true;
+				Ancer_on = true; //スタミナ消費用
 			}
-
 		}
-		else if (m_mous_l == false)
+		else if (m_mous_l == false || (m_mous_l == true && m_pay < 535.0f))
 		{
 			//アンカーを上げる処理
+			//アンカー発射時間とロープ発射時間が0じゃない時
 			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
 			{
 				m_vy -= 9.0f; //アンカー移動
 				rope += 13.0f; //ロープ長さ調整	
 				m_sizey -= 0.25f;
 				m_sizex -= 0.25f;
-				size -= 0.3;
+				size -= 0.35f;
+				hitbox_size += 0.2f;
 				ancer_time -= 1.0f;
 				rope_time += 1.0f;
 			}
 			//アンカーを下げる処理
+			//アンカー発射時間とロープ発射時間が0の時にかつアンカーフラグがtrueの時
 			else if (ancer_flag == true && ancer_time == Ancer_Rope_InitialTime && rope_time == Ancer_Rope_InitialTime)
 			{
 				m_vy += 9.0f; //アンカー移動
 				rope -= 13.0f; //ロープ長さ調整
 				m_sizey += 0.25f;
 				m_sizex += 0.25f;
-				size += 0.3;
-
+				size += 0.35f;
+				hitbox_size -= 0.2f;
 			}
 
 		}
@@ -149,6 +150,7 @@ void CObjAncer::Action()
 		{
 			ancer_time = Ancer_Rope_InitialTime;
 			rope_time = Ancer_Rope_InitialTime;
+			ancer_flag = true;
 		}
 		
 
@@ -211,13 +213,11 @@ void CObjAncer::Action()
 		m_pay = 535.0f;
 		ancer_flag = false;
 		ancer_Prevent_doublepress = false;
-		ancer_Donot_Stop = false;
 	}
 	else if (m_pay < 535.0f)
 	{
 		ancer_flag = true;
 		ancer_Prevent_doublepress = true;
-		ancer_Donot_Stop = true;
 	}
 
 
@@ -247,7 +247,7 @@ void CObjAncer::Action()
 	m_prx += m_vx; //ロープ
 	
 	//HitBoxの位置の変更
-	hit_a->SetPos(m_pax, m_pay - 45, size,size );
+	hit_a->SetPos(m_pax + hitbox_size - 4, m_pay - 40, size, size);
 	
 	
 }
@@ -279,7 +279,7 @@ void CObjAncer::Draw()
 
 	//表示位置の設定
 	dstr.m_top = 520.0f - rope;
-	dstr.m_left = 0.0f + m_prx;
+	dstr.m_left = -1.0f + m_prx;
 	dstr.m_right = 4.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 

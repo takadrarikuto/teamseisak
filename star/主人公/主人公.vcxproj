@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F6B49877-F43D-449E-8E75-95C9B702D215}</ProjectGuid>
     <RootNamespace>主人公</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <ProjectName>star collection</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -147,13 +147,16 @@
     </ClInclude>
     <ClInclude Include="ObjSaturn.h" />
     <ClInclude Include="ObjStarCount.h" />
-    <ClInclude Include="ObjStarPresent.h" />
+    <ClInclude Include="ObjStarPresent.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ObjSecondStar.h" />
     <ClInclude Include="Objstaminagauge.h" />
     <ClInclude Include="Objstaminagaugeframe.h" />
     <ClInclude Include="ObjStarPresent2.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="ObjStarPresent3.h" />
     <ClInclude Include="ObjThirdStar.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
@@ -173,6 +176,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="SceneVenus.h" />
+    <ClInclude Include="ObjStarmodel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CObjOperation.h" />
@@ -219,12 +223,15 @@
     <ClCompile Include="ObjBackground.cpp" />
     <ClCompile Include="ObjStageselect.cpp" />
     <ClCompile Include="ObjStarCount.cpp" />
-    <ClCompile Include="ObjStarPresent.cpp" />
+    <ClCompile Include="ObjStarPresent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Objstaminagauge.cpp" />
     <ClCompile Include="Objstaminagaugeframe.cpp" />
     <ClCompile Include="ObjStarPresent2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="ObjStarPresent3.cpp" />
     <ClCompile Include="ObjThirdStar.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="ObjVenus.cpp" />
@@ -242,6 +249,7 @@
     <ClCompile Include="StarBook.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="ObjStarmodel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />
@@ -251,28 +259,36 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png" />
-    <Image Include="アンカー.png" />
-    <Image Include="アンカー（仮　透過済み）.png" />
-    <Image Include="イベント背景(火星).png" />
-    <Image Include="タイトル(修正版).png" />
-    <Image Include="タイトル.png" />
-    <Image Include="ダウンロード.png" />
-    <Image Include="テキストボックス.png" />
-    <Image Include="フィールド背景木星.png" />
-    <Image Include="フィールド背景火星.png" />
-    <Image Include="ブラックタイル.png" />
-    <Image Include="主人公.png" />
-    <Image Include="主人公（仮）.png" />
-    <Image Include="宇宙船背景.png" />
-    <Image Include="惑星(透過済み).png" />
-    <Image Include="惑星.png" />
-    <Image Include="操作説明.png" />
-    <Image Include="星(透過済み).png" />
-    <Image Include="星.png" />
-    <Image Include="木星.png" />
-    <Image Include="火星地表.png" />
-    <Image Include="通常時背景.png" />
-    <Image Include="金星(透過済み).png" />
+    <Image Include="green_star.png" />
+    <Image Include="画像\orange_star.png" />
+    <Image Include="画像\pink_star.png" />
+    <Image Include="画像\red_star.png" />
+    <Image Include="画像\yellow_star.png" />
+    <Image Include="画像\アンカー.png" />
+    <Image Include="画像\アンカー（仮　透過済み）.png" />
+    <Image Include="画像\イベント背景%28火星%29.png" />
+    <Image Include="画像\ゲージ.png" />
+    <Image Include="画像\ゲージ枠.png" />
+    <Image Include="画像\タイトル%28修正版%29.png" />
+    <Image Include="画像\タイトル.png" />
+    <Image Include="画像\ダウンロード.png" />
+    <Image Include="画像\テキストボックス.png" />
+    <Image Include="画像\ドリンク候補2.png" />
+    <Image Include="画像\フィールド背景木星.png" />
+    <Image Include="画像\フィールド背景火星.png" />
+    <Image Include="画像\ブラックタイル.png" />
+    <Image Include="画像\主人公.png" />
+    <Image Include="画像\主人公（仮）.png" />
+    <Image Include="画像\宇宙船背景.png" />
+    <Image Include="画像\惑星%28透過済み%29.png" />
+    <Image Include="画像\惑星.png" />
+    <Image Include="画像\操作説明.png" />
+    <Image Include="画像\星%28透過済み%29.png" />
+    <Image Include="画像\星.png" />
+    <Image Include="画像\木星.png" />
+    <Image Include="画像\火星地表.png" />
+    <Image Include="画像\通常時背景.png" />
+    <Image Include="画像\金星%28透過済み%29.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
