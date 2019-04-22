@@ -30,9 +30,6 @@ private:
 	float m_px; //本体
 	float m_py;
 	float m_pax; //アンカー
-	float m_sizey;
-	float m_sizex;
-	float size;
 	float m_pay;
 	//アンカーサイズ変更用
 	float m_sizex;

@@ -44,7 +44,7 @@ void CObjAncer::Init()
 	m_mous_l = false;
 	
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_pax, m_pay, 40/*size*/, 42/*size*/, ELEMENT_ANCER, OBJ_ANCER, 11);
+	Hits::SetHitBox(this, m_pax, m_pay, 40, 42, ELEMENT_ANCER, OBJ_ANCER, 11);
 
 	//ロープ描画用初期化
 	rope = 0.0f;
@@ -113,7 +113,6 @@ void CObjAncer::Action()
 			{
 				Ancer_on = true;
 			}
-
 		}
 		else if (m_mous_l == false)
 		{
@@ -136,7 +135,6 @@ void CObjAncer::Action()
 				m_sizey += 0.25f;
 				m_sizex += 0.25f;
 				size += 0.3;
-
 			}
 
 		}
@@ -247,7 +245,7 @@ void CObjAncer::Action()
 	m_prx += m_vx; //ロープ
 	
 	//HitBoxの位置の変更
-	hit_a->SetPos(m_pax - 4, m_pay - 45 /*, size,size*/ );
+	hit_a->SetPos(m_pax - 4, m_pay - 45 , size,size );
 	
 	
 }
