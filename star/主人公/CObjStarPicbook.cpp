@@ -28,7 +28,7 @@ void CObjStarPicbook::Action()
 void CObjStarPicbook::Draw()
 {
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
-	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
+	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	//カーソル表示(完成したら消す)
 	swprintf_s(strmous, L"x=%d,y=%d", (int)m_mou_x, (int)m_mou_y);
