@@ -23,9 +23,6 @@ void CObjEvent::Init()
 	//イベントカウント
 	E_Start_co = 0;
 
-	m_px = 0.0f;
-	m_py = 0.0f;
-
 	//背景操作用
 	m_x1 = 0.0f;
 	m_x2 = 800.0f;
