@@ -154,9 +154,9 @@ void CObjStarPresent3::Draw()
 			Scene::SetScene(new CSceneStarPicbook());
 		}
 	}*/
-
-	//					　　	 X　 Y　 大きさ
-	Font::StrDraw(L"ズベン・エル・ゲヌビ", 30, 330 + t * l, 30, c);
+	 
+	//					　　	            X　 Y　 大きさ
+	Font::StrDraw(L"ズベン・エル・ゲヌビ", 30, 330 + t * l, 20, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -167,8 +167,8 @@ void CObjStarPresent3::Draw()
 		}
 	}
 
-	//					　　	 X　 Y　 大きさ
-	Font::StrDraw(L"ズベン・エス・カマリ", 30, 330 + t * l, 30, c);
+	//					　　			    X　 Y　 大きさ
+	Font::StrDraw(L"ズベン・エス・カマリ", 30, 330 + t * l, 20, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -179,10 +179,9 @@ void CObjStarPresent3::Draw()
 		}
 	}
 
-
-	Font::StrDraw(L"ズベンエルハクラビ", 30 + 220, 330 + t * l, 30, c);
+	//					　　		       X　 Y　 大きさ
+	Font::StrDraw(L"ズベンエルハクラビ", 30, 330 + t * l, 20, c);
 	l++;
-	std = 1;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
@@ -191,8 +190,8 @@ void CObjStarPresent3::Draw()
 			crick = 3;
 		}
 	}
-
-	Font::StrDraw(L"ブラキウム", 30 + 220, 330 + t * l, 30, c);
+	//					　　        X　        Y　    大きさ
+	Font::StrDraw(L"ブラキウム", 30, 330 + t * l, 20, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -207,24 +206,25 @@ void CObjStarPresent3::Draw()
 	if (crick == 1)
 	{
 		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"アラビア語で「南の爪」を意味する", 110, 50, 30, c);
-		Font::StrDraw(L"この星は光学二重星で、空気が澄んでいれば肉眼で見わけられる", 110, 100, 30, c);
+		Font::StrDraw(L"この星は光学二重星で、空気が澄んでいれば肉眼で見わけられる", 110, 50, 30, c);
+		Font::StrDraw(L"二重星…地球上から見る恒星が同じ方向に近接して見える物", 110, 100, 30, c);
 	}
 	else if (crick == 2)
 	{
 		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"てんびん座で最も明るい恒星。アラビア語で「北の爪」を意味する", 110, 50, 30, c);
-		Font::StrDraw(L"実際は青白色だが、緑色に輝いて見える星として知られている", 110, 100, 30, c);
+		Font::StrDraw(L"てんびん座で最も明るい恒星。地球からの距離は185光年と推測される", 110, 50, 30, c);
+		Font::StrDraw(L"高速で回転しており、太陽の100倍以上の自転速度である", 110, 100, 30, c);
 	}
 	else if (crick == 3)
 	{
 		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"「さそり座の爪」を意味する", 110, 50, 30, c);
+		Font::StrDraw(L"軌道を55,000年以上かけて回っている", 110, 50, 30, c);
 	}
 	else if (crick == 4)
 	{
 		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"半規則型変光星（変光範囲が小さいので眼視観測では変光はわかりにくい）である", 110, 50, 30, c);
+		Font::StrDraw(L"さそり座の他の恒星と離れた位置にあることから「さそり座γ星」をてんびん座の一部", 110, 50, 30, c);
+		Font::StrDraw(L"その後新たに「てんびん座σ星」という符号を振り直した", 110, 100, 30, c);
 	}
 
 }

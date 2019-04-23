@@ -52,25 +52,42 @@ void CSceneStarPicbook::InitScene()
 	//星図鑑オブジェクト生成
 	if(lever==0)
 	{
+		//星図鑑オブジェクト生成
 		CObjStarPicbook* p = new CObjStarPicbook();
 		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
 	}
 	else if (lever == 1)
 	{
+		//みずがめ
+		CObjStarPresent4* a = new CObjStarPresent4();
+		Objs::InsertObj(a, OBJ_STARPRESENT4, 11);
+	}
+	else if (lever == 10)
+	{
 		//星図鑑オブジェクト生成
 		CObjStarPresent* s = new CObjStarPresent();
 		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
 	}
-	else if (lever==2)
+	else if (lever== 4)
 	{
+		//おうし座
 		CObjStarPresent2* a = new CObjStarPresent2();
 		Objs::InsertObj(a, OBJ_STARPRESENT2, 11);
 	}
-
-	if (lever ==11)
+	else if (lever == 9)
 	{
-		//CObjStarmodel* a = new CObjStarmodel();
-		//Objs::InsertObj(a, OBJ_STARMODEL, 12);
+		//天秤座
+		CObjStarPresent3* a = new CObjStarPresent3();
+		Objs::InsertObj(a, OBJ_STARPRESENT3, 11);
+	}
+	else if (lever == 13)
+	{
+		//みずがめ座
+	}
+	if (lever == 22)
+	{
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
 }
 

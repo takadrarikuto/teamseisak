@@ -163,6 +163,9 @@
     <ClCompile Include="CObjStarPicbook.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
+    <ClCompile Include="ObjStarPresent4.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -319,6 +322,9 @@
       <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
     </ClInclude>
     <ClInclude Include="ObjStarmodel.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent4.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
   </ItemGroup>
