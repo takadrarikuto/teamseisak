@@ -21,4 +21,14 @@ private:
 	bool m_mou_l;//マウスの左ボタン
 	
 	wchar_t str[256];
+	wchar_t str2[256];
+	wchar_t str3[256];
+	wchar_t str4[256];
+	wchar_t str5[256];
+	wchar_t str6[256];
+	wchar_t str7[256];
+	wchar_t str8[256];
+	wchar_t str9[256];
+
+	wchar_t strmous[256]; //マウスカーソル用
 };

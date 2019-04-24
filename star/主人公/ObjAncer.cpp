@@ -106,16 +106,17 @@ void CObjAncer::Action()
 	{
 		if (m_mous_l == true && ancer_Prevent_doublepress == false)
 		{
-			ancer_time += 1.0f;
-			rope_time -= 1.0f;
+			ancer_time += 1.0f; //アンカー発射時間増加
+			rope_time -= 1.0f; //ロープ発射時間増加
 			if (ancer_time == 1.0f && rope_time == -1.0f)
 			{
-				Ancer_on = true;
+				Ancer_on = true; //スタミナ消費用
 			}
 		}
 		else if (m_mous_l == false || (m_mous_l == true && m_pay < 535.0f))
 		{
 			//アンカーを上げる処理
+			//アンカー発射時間とロープ発射時間が0じゃない時
 			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
 			{
 				m_vy -= 9.0f; //アンカー移動
@@ -128,6 +129,7 @@ void CObjAncer::Action()
 				rope_time += 1.0f;
 			}
 			//アンカーを下げる処理
+			//アンカー発射時間とロープ発射時間が0の時にかつアンカーフラグがtrueの時
 			else if (ancer_flag == true && ancer_time == Ancer_Rope_InitialTime && rope_time == Ancer_Rope_InitialTime)
 			{
 				m_vy += 9.0f; //アンカー移動
@@ -148,6 +150,7 @@ void CObjAncer::Action()
 		{
 			ancer_time = Ancer_Rope_InitialTime;
 			rope_time = Ancer_Rope_InitialTime;
+			ancer_flag = true;
 		}
 		
 
