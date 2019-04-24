@@ -71,14 +71,15 @@ void CObjStarPicbook::Draw()
 
 	//戻すの枠
 	Draw::Draw(1, &src, &dst, c, 0.0f);
+	//蠍座の画像位置
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 215.0f;
 	src.m_bottom = 240.0f;
 
 	dst.m_top = 500.0f;
-	dst.m_left = 0.0f;
-	dst.m_right = 67.0f;
+	dst.m_left = 670.0f;
+	dst.m_right = 737.0f;
 	dst.m_bottom = 600.0f;
 	
 	Draw::Draw(2, &src, &dst, c, 0.0f);
@@ -114,11 +115,11 @@ void CObjStarPicbook::Draw()
 		//Yは一回目はiは0なので0に50を掛けている
 		//2回目はiは1なので50を100に足す。
 		//				　　X　 Y　 大きさ
-		Font::StrDraw(str, 10, 350 + l * i, 50, c);
+		Font::StrDraw(str, 680, 350 + l * i, 50, c);
 	}
 
 		// left				 right            top            bottom       
-		if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>300 && m_mou_y < 490)
+		if (m_mou_x > 660 && m_mou_x < 730 && m_mou_y>300 && m_mou_y < 490)
 		{
 			if (m_mou_l == true)
 			{			
@@ -127,7 +128,7 @@ void CObjStarPicbook::Draw()
 			}
 		}
 		//蠍座の範囲
-		if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>500 && m_mou_y < 600)
+		if (m_mou_x > 660 && m_mou_x < 730 && m_mou_y>500 && m_mou_y < 600)
 		{
 			if (m_mou_l == true)
 			{
@@ -135,5 +136,6 @@ void CObjStarPicbook::Draw()
 				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
+
 
 }

@@ -171,10 +171,12 @@ void CObjStarPresent::Draw()
 
 	if (crick == 1)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"一番明るい星", 110, 50, 30, c);
-		
-		
+		int ver = 0;
+		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。", 110, 0*ver, 30, c);
+		ver++;
+		Font::StrDraw(L"夏の南の空に赤く輝くよく知られる恒星の1つであ", 110, 50*ver, 30, c);
+		ver++;
+		Font::StrDraw(L"る。", 110, 50*ver, 30, c);
 	}
 
 	//					　　	 X　 Y　 大きさ
@@ -191,9 +193,12 @@ void CObjStarPresent::Draw()
 
 	if (crick == 2)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"六重連星で、小型望遠鏡で3等星のβ1星と5等星のβ2星の2星に見える。", 110, 50, 30, c);
-		Font::StrDraw(L"β2星はβ星Cとβ星Eから形成され、さらにβ星Eはβ星Eaとβ星Ebから形成される", 110, 100, 30, c);
+		int ver = 0;
+		Font::StrDraw(L"さそり座の恒星で3等星かつ六重連星。", 110, 0 * ver, 30, c);
+		ver++;
+		Font::StrDraw(L"[連星とは?]お互いの重力に引かれあったり離れたりを繰り返し", 110, 50 * ver, 30, c);
+		ver++;
+		Font::StrDraw(L"地球上から見て隣り合っているように見える星です", 110, 50 * ver, 30, c);
 		
 	}
 	
