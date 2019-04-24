@@ -49,12 +49,15 @@ void CObjStarPresent::Draw()
 	int t = 70;//星の名前の位置
 	int l = 0;//tと掛ける用の変数
 	int s = 0;//星のクリックの鍵
-	int std = 0;
+	int std = 0;//文字を横に移す変数
 	int side_a = 0;//左の枠範囲
 	int side_b = 200;//右の枠範囲
 	int fy = 200;//星の名前の横幅
-	int key = 0;
+	int size = 25;
+	int  size_y= 30;
+	int font = 80;
 
+	
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
 	{
@@ -171,10 +174,18 @@ void CObjStarPresent::Draw()
 
 	if (crick == 1)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"一番明るい星", 110, 50, 30, c);
-		
-		
+		int ver = 0;
+		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"夏の南の空に赤く輝くよく知られる恒星の1つであ", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"る。", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"夏の南の空に赤く輝くよく知られる恒星の1つであ", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"る。", font, size_y*ver, size, c);
 	}
 
 	//					　　	 X　 Y　 大きさ
@@ -191,10 +202,14 @@ void CObjStarPresent::Draw()
 
 	if (crick == 2)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"六重連星で、小型望遠鏡で3等星のβ1星と5等星のβ2星の2星に見える。", 110, 50, 30, c);
-		Font::StrDraw(L"β2星はβ星Cとβ星Eから形成され、さらにβ星Eはβ星Eaとβ星Ebから形成される", 110, 100, 30, c);
-		
+		int ver = 0;
+		Font::StrDraw(L"さそり座の恒星で3等星かつ六重連星。", font, size_y*ver, size,c);
+		ver++;
+		Font::StrDraw(L"[連星とは?]お互いの重力に引かれあったり離れた", font, size_y*ver, size,  c);
+		ver++;
+		Font::StrDraw(L"りを繰り返しをしている。地球上から見て隣り合", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"っているように見える星です。", font, size_y*ver, size, c);
 	}
 	
 	Font::StrDraw(L"ジュバ", 30 + fy * std, 330 + t * l, 30, c);
@@ -212,9 +227,18 @@ void CObjStarPresent::Draw()
 
 	if (crick == 3)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"通常のB型の恒星と考えられていたが、2000年6月頃に増光し、", 110,50, 30, c);
-		Font::StrDraw(L"そのスペクトルがBe星のものへと変貌したことが観測された。", 110, 100, 30, c);
+		int ver = 0;
+		Font::StrDraw(L"さそり座の恒星で2等星。", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"Be星の中でも爆発型変光星のカシオペヤ座γ型変", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"光星であると考えられている。", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"[爆発型変光星とは？]", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"爆発型変光星は変光星の一種。恒星の外層や大気", font, size_y*ver, size, c);
+		ver++;
+		Font::StrDraw(L"の爆発によって変光する星。", font, size_y*ver, size, c);
 		
 	}
 	
@@ -233,10 +257,14 @@ void CObjStarPresent::Draw()
 
 	if (crick == 4)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"明るい星でありながら長らく知られた固有名がなかったことから、パトリック・ムーアによって、θ星、λ星、υ星等さそり座近辺の", 110, 50, 30, c);
-		Font::StrDraw(L"星で構成される中国の二十八宿一つ尾宿の名前にちなんで、中国語で「尾」という意味のWeiと名づけられたことがある。 ", 110,100, 30, c);
-		
+	int ver = 0;
+		Font::StrDraw(L"さそり座の恒星で2等星。 ", 110, 0, size, c);
+		ver++;
+		Font::StrDraw(L"2017年11月17日、国際天文学連合の恒星の命名に関", 110, size * ver, size, c);
+		ver++;
+		Font::StrDraw(L"するワーキンググループ は、さそり座ε星の固有", 110, size * ver, size, c);
+		ver++;
+		Font::StrDraw(L"名として、ララワグ を正式に定めた。", 110, size * ver, size, c);
 	}
 
 	t -= 4;
@@ -473,36 +501,5 @@ void CObjStarPresent::Draw()
 		
 		Font::StrDraw(L"", 110, 0, 30, c);
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

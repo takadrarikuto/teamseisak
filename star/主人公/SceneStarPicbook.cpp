@@ -110,7 +110,8 @@ void CSceneStarPicbook::InitScene()
 	{
 		//Ç®Ç–Ç¬Ç∂ç¿
 	}
-	if (lever == 22)
+
+	if (lever ==11)
 	{
 		CObjStarmodel* a = new CObjStarmodel();
 		Objs::InsertObj(a, OBJ_STARMODEL, 12);
