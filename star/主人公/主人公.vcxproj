@@ -159,9 +159,6 @@
     <ClInclude Include="ObjStarPresent3.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="ObjStarPresent4.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="ObjStarPresent4.h" />
     <ClInclude Include="ObjStarPresent5.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
@@ -251,9 +248,6 @@
     <ClCompile Include="ObjStarPresent5.cpp" />
     <ClCompile Include="ObjStarPresent6.cpp" />
     <ClCompile Include="ObjStarPresent7.cpp" />
-    <ClCompile Include="ObjStarPresent4.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="ObjThirdStar.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="ObjVenus.cpp" />

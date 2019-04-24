@@ -88,7 +88,6 @@ struct UserData
 
 //------------------------------------------------
 
-#include "CObjStarPicbook.h"
 //ゲームシーンオブジェクトヘッダ------------------
 #include "ObjHero.h"
 #include "ObjTitle.h"
@@ -107,6 +106,7 @@ struct UserData
 #include "ObjBackground.h"
 #include "CObjOperation.h"
 #include "ObjGamekuria.h"
+#include "CObjStarPicbook.h"
 #include "ObjStarPresent.h"
 #include "ObjStarPresent2.h"
 #include "ObjStarPresent3.h"
@@ -134,7 +134,7 @@ struct UserData
 #include "SceneSaturn.h"
 #include "SceneOperation.h"
 #include "SceneGamekuria.h"
-#include "ScenePose.h"
+//#include "ScenePose.h"
 //------------------------
 
 //シーンスタートクラス---------------------------

@@ -160,11 +160,7 @@
     <ClCompile Include="ObjHero.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
     </ClCompile>
-    <ClCompile Include="CObjStarPicbook.cpp">
     <ClCompile Include="ObjStarPresent3.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent4.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="ObjStarPresent5.cpp">
@@ -178,6 +174,12 @@
     </ClCompile>
     <ClCompile Include="StarBook.cpp" />
     <ClCompile Include="ObjStarmodel.cpp" />
+    <ClCompile Include="ObjStarPresent4.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjStarPicbook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
     <ClCompile Include="ObjStarPresent4.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
@@ -339,9 +341,6 @@
     <ClInclude Include="ObjStarmodel.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
-    <ClInclude Include="ObjStarPresent4.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
-    </ClInclude>
     <ClInclude Include="ObjStarPresent5.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
@@ -351,11 +350,13 @@
     <ClInclude Include="ObjStarPresent7.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
-    <ClInclude Include="ObjStarPresent4.h">
     <ClInclude Include="ObjStarPresent3.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
     <ClInclude Include="ObjStarmodel.h" />
+    <ClInclude Include="ObjStarPresent4.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
@@ -412,7 +413,6 @@
     <Image Include="画像\ブラックタイル.png">
       <Filter>画像</Filter>
     </Image>
-    <Image Include="画像\フィールド背景木星.png">
     <Image Include="画像\タイトル.png">
       <Filter>画像</Filter>
     </Image>
@@ -488,6 +488,9 @@
     <Image Include="画像\イベント背景%28火星%29.png" />
     <Image Include="画像\ゲージ.png" />
     <Image Include="画像\ゲージ枠.png" />
+    <Image Include="画像\フィールド背景木星.png">
+      <Filter>画像</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="画像">
