@@ -20,9 +20,6 @@ private:
 	int E_co; //イベントカウント
 	int E_Start_co; //イベントカウント
 
-	float m_px;
-	float m_py;
-
 	float m_x1; //背景操作用
 	float m_x2;
 };

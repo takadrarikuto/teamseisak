@@ -4,18 +4,18 @@
 #include "GameL\DrawFont.h"
 
 #include "GameHead.h"
-#include "ObjStarPresent3.h"
+#include "ObjStarPresent6.h"
 extern int lever;
 extern int crick;
-extern int cenge ;
+extern int cenge;
 
 
-void CObjStarPresent3::Init()
+void CObjStarPresent6::Init()
 {
 
 }
 
-void CObjStarPresent3::Action()
+void CObjStarPresent6::Action()
 {
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -28,7 +28,7 @@ void CObjStarPresent3::Action()
 
 }
 
-void CObjStarPresent3::Draw()
+void CObjStarPresent6::Draw()
 {
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
@@ -154,9 +154,9 @@ void CObjStarPresent3::Draw()
 			Scene::SetScene(new CSceneStarPicbook());
 		}
 	}*/
-	 
-	//					　　	            X　 Y　 大きさ
-	Font::StrDraw(L"ズベン・エル・ゲヌビ", 30, 330 + t * l, 20, c);
+
+	//					　　	    X　 Y　 大きさ
+	Font::StrDraw(L"ハマル", 20, 320 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -167,8 +167,8 @@ void CObjStarPresent3::Draw()
 		}
 	}
 
-	//					　　			    X　 Y　 大きさ
-	Font::StrDraw(L"ズベン・エス・カマリ", 30, 330 + t * l, 20, c);
+	//					　　	    X　 Y　 大きさ
+	Font::StrDraw(L"シェラタン", 20, 320 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -179,8 +179,8 @@ void CObjStarPresent3::Draw()
 		}
 	}
 
-	//					　　		       X　 Y　 大きさ
-	Font::StrDraw(L"ズベンエルハクラビ", 30, 330 + t * l, 20, c);
+	//					　　	    X　        Y　    大きさ
+	Font::StrDraw(L"メサルティム", 20, 320 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -190,8 +190,8 @@ void CObjStarPresent3::Draw()
 			crick = 3;
 		}
 	}
-	//					　　        X　        Y　    大きさ
-	Font::StrDraw(L"ブラキウム", 30, 330 + t * l, 20, c);
+	//					　　	  X　        Y　    大きさ
+	Font::StrDraw(L"ボテイン", 20, 320 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -202,29 +202,73 @@ void CObjStarPresent3::Draw()
 		}
 	}
 
+	t -= 4;
+	l -= 4;
+	std = 1;
+
+	//					　　	  X　        Y　    大きさ
+	Font::StrDraw(L"リリィブロア", 20 + 220, 320 + t * l, 30, c);
+	l++;
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 5;
+		}
+	}
+	//					　　	  X　        Y　    大きさ
+	Font::StrDraw(L"バラニー", 20 + 220, 330 + t * l, 30, c);
+	l++;
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 6;
+		}
+	}
+
 
 	if (crick == 1)
 	{
-		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"この星は光学二重星で、空気が澄んでいれば肉眼で見わけられる", 110, 50, 30, c);
-		Font::StrDraw(L"二重星…地球上から見る恒星が同じ方向に近接して見える物", 110, 100, 30, c);
+		Font::StrDraw(L"おひつじ座に属する", 110, 0, 30, c);
+		Font::StrDraw(L"おひつじ座で最も明るい恒星で、唯一の2等星", 110, 50, 30, c);
 	}
 	else if (crick == 2)
 	{
-		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"てんびん座で最も明るい恒星。地球からの距離は185光年と推測される", 110, 50, 30, c);
-		Font::StrDraw(L"高速で回転しており、太陽の100倍以上の自転速度である", 110, 100, 30, c);
+		Font::StrDraw(L"おひつじ座に属する", 110, 0, 30, c);
+		Font::StrDraw(L"おひつじ座で2番目に明るい恒星で、3等星", 110, 50, 30, c);
 	}
 	else if (crick == 3)
 	{
-		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"軌道を55,000年以上かけて回っている", 110, 50, 30, c);
+		Font::StrDraw(L"おひつじ座に属する", 110, 0, 30, c);
+		Font::StrDraw(L"ほぼ同じ明るさの2つの恒星からなる", 110, 50, 30, c);
+		Font::StrDraw(L"美しい二重星として知られ", 110, 100, 30, c);
+		Font::StrDraw(L"互いに5,000年以上掛けて周回している", 110, 150, 30, c);
 	}
 	else if (crick == 4)
 	{
-		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"さそり座の他の恒星と離れた位置にあることから「さそり座γ星」をてんびん座の一部", 110, 50, 30, c);
-		Font::StrDraw(L"その後新たに「てんびん座σ星」という符号を振り直した", 110, 100, 30, c);
+		Font::StrDraw(L"おひつじ座に属する", 110, 0, 30, c);
+		Font::StrDraw(L"K型の巨星で、わずかな変光が観測されているが", 110, 50, 30, c);
+		Font::StrDraw(L"真に変光星であるかは定かではない", 110, 100, 30, c);
+		Font::StrDraw(L"巨星…同じ表面温度を持つ主系列星よりも", 110, 150, 30, c);
+		Font::StrDraw(L"半径および明るさが非常に大きい恒星のことである", 110, 200, 30, c);
+		Font::StrDraw(L"変光星…天体の一種で、明るさ（等級）が変化するもののことである", 110, 250, 30, c);
+	}
+	else if (crick == 5)
+	{
+		Font::StrDraw(L"おひつじ座に属する", 110, 0, 30, c);
+		Font::StrDraw(L"約170光年離れた位置にある5等級の恒星である", 110, 50, 30, c);
+		Font::StrDraw(L"寿命を迎えつつある橙色巨星の段階にある", 110, 100, 30, c);
+	}
+	else if (crick == 6)
+	{
+		Font::StrDraw(L"おひつじ座に属する", 110, 0, 30, c);
+		Font::StrDraw(L"太陽の3.2倍の質量を持つB型主系列星を", 110, 50, 30, c);
+		Font::StrDraw(L"主星とする分光連星で、伴星は主星から", 110, 100, 30, c);
+		Font::StrDraw(L"軌道を約30年掛けて周回していると", 110, 150, 30, c);
+		Font::StrDraw(L"考えられている", 110, 200, 30, c);
 	}
 
 }
