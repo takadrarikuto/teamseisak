@@ -36,7 +36,7 @@ void CSceneOperation::InitScene()
 	Objs::InsertObj(obj, OBJ_HERO, 10);
 
 	//外部グラフィック読み込み
-	Draw::LoadImage(L"操作説明.png", 8, TEX_SIZE_512);
+	Draw::LoadImage(L"ゲーム説明.png", 8, TEX_SIZE_512);
 	
 	CObjOperation* obj_o = new CObjOperation();
 	Objs::InsertObj(obj_o, OBJ_OPERATION, 8);

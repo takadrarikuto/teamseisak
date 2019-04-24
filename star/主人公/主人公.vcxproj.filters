@@ -154,12 +154,11 @@
     <ClCompile Include="SceneVenus.cpp">
       <Filter>ソースファイル\ステージ関係</Filter>
     </ClCompile>
-    <ClCompile Include="ObjStarmodel.cpp">
-      <Filter>ソースファイル\Obj\星図鑑</Filter>
-    </ClCompile>
     <ClCompile Include="ObjStarPresent3.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
+    <ClCompile Include="StarBook.cpp" />
+    <ClCompile Include="ObjStarmodel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -312,18 +311,13 @@
     <ClInclude Include="ObjHero.h">
       <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
     </ClInclude>
-    <ClInclude Include="ObjStarmodel.h">
-      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
-    </ClInclude>
     <ClInclude Include="ObjStarPresent3.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
+    <ClInclude Include="ObjStarmodel.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="アンカー（仮　透過済み）.png">
       <Filter>画像</Filter>
     </Image>
     <Image Include="画像\タイトル.png">
@@ -389,6 +383,15 @@
     <Image Include="green_star.png">
       <Filter>画像</Filter>
     </Image>
+    <Image Include="画像\orange_star.png" />
+    <Image Include="画像\pink_star.png" />
+    <Image Include="画像\red_star.png" />
+    <Image Include="画像\yellow_star.png" />
+    <Image Include="画像\アンカー.png" />
+    <Image Include="画像\アンカー（仮　透過済み）.png" />
+    <Image Include="画像\イベント背景%28火星%29.png" />
+    <Image Include="画像\ゲージ.png" />
+    <Image Include="画像\ゲージ枠.png" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="画像">
