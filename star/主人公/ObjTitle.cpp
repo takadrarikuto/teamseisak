@@ -35,7 +35,7 @@ void CObjTitle::Action()
 		{
 			if (m_start_flag == true)
 			{
-				Scene::SetScene(new CSceneStageselect()); //ステージ選択画面に移動
+				Scene::SetScene(new CSceneOperation()); //操作説明選択画面に移動
 			}
 		}
 		else
