@@ -12,12 +12,34 @@ using namespace GameL;
 
 void CObjOperation::Init()
 {
-
+	m_mous_l = false;
+	m_start_flag = false;
+	m_mous_x = 0.0f;
+	m_mous_y = 0.0f;
 }
 
 void CObjOperation::Action()
 {
-	
+	m_mous_l = Input::GetMouButtonL();
+
+	//マウスの位置の取得
+	m_mous_x = (float)Input::GetPosX();
+	m_mous_y = (float)Input::GetPosY();
+
+	if (m_mous_x > 200 && m_mous_x < 600 && m_mous_y>440 && m_mous_y < 490)
+	{
+		if (m_mous_l == true)
+		{
+			if (m_start_flag == true)
+			{
+				Scene::SetScene(new CSceneStageselect()); //操作説明選択画面に移動
+			}
+		}
+		else
+		{
+			m_start_flag = true;
+		}
+	}
 }
 
 void CObjOperation::Draw()

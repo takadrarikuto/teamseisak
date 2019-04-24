@@ -29,6 +29,8 @@ enum OBJ_NAME
 	OBJ_GAMEKURIA,
 	OBJ_STARPRESENT,
 	OBJ_STARPRESENT2,
+	OBJ_STARPRESENT3,
+	OBJ_STARPRESENT4,
 	OBJ_AITEM,
 	OBJ_EVENT,
 	OBJ_IBENT,
@@ -104,6 +106,8 @@ struct UserData
 #include "ObjGamekuria.h"
 #include "ObjStarPresent.h"
 #include "ObjStarPresent2.h"
+#include "ObjStarPresent3.h"
+#include "ObjStarPresent4.h"
 #include "ObjAitem.h"
 #include "ObjEvent.h"
 #include "ObjStarCount.h"
@@ -124,6 +128,7 @@ struct UserData
 #include "SceneSaturn.h"
 #include "SceneOperation.h"
 #include "SceneGamekuria.h"
+#include "ScenePose.h"
 //------------------------
 
 //シーンスタートクラス---------------------------
