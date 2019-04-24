@@ -53,9 +53,9 @@ void CObjStarPresent::Draw()
 	int side_a = 0;//左の枠範囲
 	int side_b = 200;//右の枠範囲
 	int fy = 200;//星の名前の横幅
-	int size = 25;
-	int  size_y= 30;
-	int font = 80;
+	int font_size = 25;
+	int  Interval_y= 30;
+	int  left_end= 80;
 
 	
 	//ループして描画する
@@ -175,17 +175,10 @@ void CObjStarPresent::Draw()
 	if (crick == 1)//上を変えたらここも変える
 	{
 		int ver = 0;
-		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。", font, size_y*ver, size, c);
+		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。夏の南の空", left_end, size_y*ver, size, c);
 		ver++;
-		Font::StrDraw(L"夏の南の空に赤く輝くよく知られる恒星の1つであ", font, size_y*ver, size, c);
-		ver++;
-		Font::StrDraw(L"る。", font, size_y*ver, size, c);
-		ver++;
-		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。", font, size_y*ver, size, c);
-		ver++;
-		Font::StrDraw(L"夏の南の空に赤く輝くよく知られる恒星の1つであ", font, size_y*ver, size, c);
-		ver++;
-		Font::StrDraw(L"る。", font, size_y*ver, size, c);
+		Font::StrDraw(L"に赤く輝くよく知られる恒星の1つである。", font, size_y*ver, size, c);
+		
 	}
 
 	//					　　	 X　 Y　 大きさ

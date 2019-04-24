@@ -128,7 +128,6 @@ struct UserData
 #include "SceneSaturn.h"
 #include "SceneOperation.h"
 #include "SceneGamekuria.h"
-#include "ScenePose.h"
 //------------------------
 
 //シーンスタートクラス---------------------------
