@@ -14,6 +14,7 @@ void CObjStarPresent::Init()
 {
 	 page = 0;//次のページへ行くための変数
 	 page_flag = false;
+	 ver = 0;
 }
 
 void CObjStarPresent::Action()
@@ -196,7 +197,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 1)//上を変えたらここも変える
 	{
-		int ver = 0;
+		ver = 0;
 		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。夏の南の空", left_end, Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"に赤く輝くよく知られる恒星の1つである。", left_end, Interval_y*ver, font_size, c);
@@ -227,7 +228,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 2)//上を変えたらここも変える
 	{
-		int ver = 0;
+		ver = 0;
 		Font::StrDraw(L"さそり座の恒星で3等星かつ六重連星。", left_end, Interval_y*ver, font_size,c);
 		ver++;
 		Font::StrDraw(L"[連星とは?]お互いの重力に引かれあったり離れたりを繰り返し", left_end, Interval_y*ver, font_size,  c);
@@ -252,7 +253,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 3 &&page==0)//上を変えたらここも変える
 	{
-		int ver = 0;
+		ver = 0;
 		Font::StrDraw(L"さそり座の恒星で2等星。", left_end, Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"Be星の中でも爆発型変光星のカシオペヤ座γ型変光星であると", left_end, Interval_y*ver, font_size, c);
@@ -272,7 +273,7 @@ void CObjStarPresent::Draw()
 	}
 	if (crick == 3 && page == 1)
 	{
-		int ver = 0;
+		ver = 0;
 		Font::StrDraw(L"変化する。", left_end, Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"ガス殻星は高速で自転し、その機構に一定の説明を与えている", left_end, Interval_y*ver, font_size, c);
@@ -290,22 +291,27 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
-
 			crick = 4;//ここはキーのようなもの
-		
 		}
 	}
 
 	if (crick == 4)//上を変えたらここも変える
 	{
-	int ver = 0;
+		ver = 0;
 		Font::StrDraw(L"さそり座の恒星で2等星。 ", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"2017年11月17日、国際天文学連合の恒星の命名に関", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"2017年11月17日、国際天文学連合の恒星の命名に関するワーキ", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"するワーキンググループ は、さそり座ε星の固有", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"ンググループ は、さそり座ε星の固有名として、ララワグを", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"名として、ララワグ を正式に定めた。",left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"正式に定めた。",left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"これは、オーストラリアのノーザン・テリトリーに住むオース", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"トラリア先住民のワルダマン族が使っていた呼称を採用したもの ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"である。", left_end, Interval_y*ver, font_size, c);
+
 	}
 
 	t -= 4;
@@ -325,9 +331,18 @@ void CObjStarPresent::Draw()
 
 	if (crick == 5)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"さそり座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"別名のギルタブ (Girtab) は、シュメールで使われたサソリを模した星座 GIR.TAB に由来する。これはさそり座κ星などにも使われている。", 110, 50, 30, c);
-		Font::StrDraw(L" ", 110, 100, 30, c);
+		ver = 0;
+		Font::StrDraw(L"薄黄色の輝巨星。2等星のA星と6等星のB星の二重星である。 ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"[輝巨星とは？]", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"輝巨星は、二等星ほどの明るさを持つ恒星である。これらは ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"巨星から超巨星にまたがる大きさであるが、通常は超巨星ほ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"ど明るく重いわけではなく、極めて明るい巨星に分類される。", left_end, Interval_y*ver, font_size, c);
+		
+
 	}
 
 	//					　　	 X　		    Y　 大きさ

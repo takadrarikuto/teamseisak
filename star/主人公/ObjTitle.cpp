@@ -33,15 +33,16 @@ void CObjTitle::Action()
 	{
 		if (m_mous_l == true)
 		{
-			if (m_start_flag == true)
-			{
-				Scene::SetScene(new CSceneOperation()); //‘€ìà–¾‘I‘ğ‰æ–Ê‚ÉˆÚ“®
-			}
+			//if (m_start_flag == true)
+			//{
+				Scene::SetScene(new CSceneStageselect()); //‘€ìà–¾‘I‘ğ‰æ–Ê‚ÉˆÚ“®
+				//m_start_flag == false;
+			//}
 		}
-		else
-		{
-			m_start_flag = true;
-		}
+		//else
+		//{
+			//m_start_flag = true;
+		//}
 	}
 
 }

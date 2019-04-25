@@ -30,12 +30,12 @@ CSceneTitle::~CSceneTitle()
 void CSceneTitle::InitScene()
 {
 	//音楽情報読み込み
-	Audio::LoadAudio(0, L"ゲームプレイBGMTitle.wav", SOUND_TYPE::BACK_MUSIC);
+	/*Audio::LoadAudio(0, L"ゲームプレイBGMTitle.wav", SOUND_TYPE::BACK_MUSIC);
 	Audio::LoadAudio(1, L"SETrigger.wav", EFFECT);
 
 	//バックミュージックスタート
 	float Volume = Audio::VolumeMaster(-0.8f);
-	Audio::Start(0);
+	Audio::Start(0);*/
 
 	//グラフィック読み込み
 	Draw::LoadImage(L"タイトル(修正版).png", 11, TEX_SIZE_512);
