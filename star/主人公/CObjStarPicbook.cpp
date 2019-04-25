@@ -83,8 +83,8 @@ void CObjStarPicbook::Draw()
 	//å¶À‚Ì‰æ‘œˆÊ’u
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 764.0f;
-	src.m_bottom = 578.0f;
+	src.m_right = 215.0f;
+	src.m_bottom = 240.0f;
 
 	dst.m_top = 500.0f;
 	dst.m_left = 604.0f;
@@ -363,12 +363,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 2;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 14;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -380,12 +380,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 3;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 15;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -397,12 +397,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 4;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 16;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -414,12 +414,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 5;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 17;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
