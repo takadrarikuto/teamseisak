@@ -53,6 +53,9 @@ void CObjStarPresent7::Draw()
 	int std = 0;
 	int side_a = 0;
 	int side_b = 200;
+	int size = 25;
+	int  size_y = 30;
+	int font = 80;
 
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
@@ -207,7 +210,7 @@ void CObjStarPresent7::Draw()
 	std = 1;
 
 	//					　　	  X　        Y　    大きさ
-	Font::StrDraw(L"アルバリ", 20 + 220, 320 + t * l, 30, c);
+	Font::StrDraw(L"メブスタ", 20 + 220, 320 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -218,7 +221,7 @@ void CObjStarPresent7::Draw()
 		}
 	}
 	//					　　	  X　        Y　    大きさ
-	Font::StrDraw(L"アンカ", 20 + 220, 330 + t * l, 30, c);
+	Font::StrDraw(L"メクブダ", 20 + 220, 330 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -229,7 +232,7 @@ void CObjStarPresent7::Draw()
 		}
 	}
 	//					  　　	    X　        Y　    大きさ
-	Font::StrDraw(L"シュチュラ", 20 + 220, 340 + t * l, 30, c);
+	Font::StrDraw(L"プロプス", 20 + 220, 340 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -239,57 +242,147 @@ void CObjStarPresent7::Draw()
 			crick = 7;
 		}
 	}
+	//					　　	  X　        Y　    大きさ
+	Font::StrDraw(L"テジェット", 20 + 220, 350 + t * l, 30, c);
+	l++;
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 8;
+		}
+	}
 
+	t -= 4;
+	l -= 4;
+	std = 2;
+	//					　　	  X　        Y　    大きさ
+	Font::StrDraw(L"アルズラ", 20 + 420, 320 + t * l, 30, c);
+	l++;
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 9;
+		}
+	}
+	//					  　　	    X　        Y　    大きさ
+	Font::StrDraw(L"チシュエイ", 20 + 420, 330 + t * l, 30, c);
+	l++;
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	{
+		if (m_mou_l == true)
+		{
+			crick = 10;
+		}
+	}
+
+	int ver;
 
 	if (crick == 1)
 	{
-		Font::StrDraw(L"みずがめ座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"みずがめ座で2番目に明るい恒星", 110, 50, 30, c);
-		Font::StrDraw(L"ほぼ天の赤道上にある", 110, 100, 30, c);
+		ver = 0;
+		Font::StrDraw(L"ふたご座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"ふたご座で2番目に明るい恒星カストルAとカストルB", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"カストルCの三重連星でこれら3つの星すべてが", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"2つの星から成る連星である、通常は3つ（6つ）", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"合わせて2等星として扱われる", font, size_y* ver, size, c);
 	}
 	else if (crick == 2)
 	{
-		Font::StrDraw(L"みずがめ座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"みずがめ座で最も明るい恒星", 110, 50, 30, c);
+		ver = 0;
+		Font::StrDraw(L"ふたご座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"ふたご座で最も明るい恒星で、全天21の1等星の", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"1つ冬のダイヤモンドを形成する恒星の1つでもある", font, size_y* ver, size, c);
 	}
 	else if (crick == 3)
 	{
-		Font::StrDraw(L"みずがめ座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"恒星で4等星、A型主系列星の主星の周りを", 110, 50, 30, c);
-		Font::StrDraw(L"58日の周期で周っている", 110, 100, 30, c);
-		Font::StrDraw(L"A型主系列星…", 110, 150, 30, c);
-		Font::StrDraw(L"水素を燃やして燃える主系列星である", 110, 200, 30, c);
+		ver = 0;
+		Font::StrDraw(L"ふたご座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"ふたご座で3番目に明るい恒星軌道を12.6年の周期で", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"周回している", font, size_y* ver, size, c);
 	}
 	else if (crick == 4)
 	{
-		Font::StrDraw(L"みずがめ座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"みずがめ座で3番目に明るい恒星", 110, 50, 30, c);
-		Font::StrDraw(L"おおぐま座運動星団の星の一つと考えられている", 110, 100, 30, c);
-		Font::StrDraw(L"おおぐま座運動星団…地球の最も近くにある", 110, 150, 30, c);
-		Font::StrDraw(L"運動星団である", 110, 200, 30, c);
-		Font::StrDraw(L"星団…お互いの重力によって生まれた恒星の集団", 110, 250, 30, c);
+		ver = 0;
+		Font::StrDraw(L"ふたご座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"およそ1,200年かけて周回している", font, size_y* ver, size, c);
 	}
 	else if (crick == 5)
 	{
-		Font::StrDraw(L"みずがめ座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"恒星で4等星", 110, 50, 30, c);
-		Font::StrDraw(L"変光、化学組成、惑星は発見されていないなど", 110, 100, 30, c);
-		Font::StrDraw(L"不確かな点が多い", 110, 150, 30, c);
+		ver = 0;
+		Font::StrDraw(L"ふたご座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"超巨星で、月に掩蔽される際に詳細な観測が成されている", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"超巨星…太陽よりはるかに大きく明るい恒星のこと", font, size_y* ver, size, c);
 	}
 	else if (crick == 6)
 	{
-		Font::StrDraw(L"みずがめ座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"恒星で4等星、将来は白色矮星になると", 110, 50, 30, c);
-		Font::StrDraw(L"予測されている", 110, 100, 30, c);
-		Font::StrDraw(L"白色矮星…", 110, 150, 30, c);
-		Font::StrDraw(L"恒星が進化の終末期にとりうる形態の一つ", 110, 200, 30, c);
+		ver = 0;
+		Font::StrDraw(L"ふたご座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"10.15日の周期で3.62等から4.18等まで変光する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"ケフェイド変光星の超巨星である", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"ケフェイド変光星…等級が変わることこの星の変光範囲は1～2等", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"周期は2～50日ほどである", font, size_y* ver, size, c);
 	}
 	else if (crick == 7)
 	{
-		Font::StrDraw(L"みずがめ座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"恒星で5等星、スペクトル分類K型の巨星", 110, 50, 30, c);
-		Font::StrDraw(L"スペクトル分類…恒星の分類法の一つ", 110, 100, 30, c);
-		Font::StrDraw(L"巨星…半径および明るさが非常に大きい恒星", 110, 150, 30, c);
+		ver = 0;
+		Font::StrDraw(L"ふたご座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"およそ232.9日の周期で3.15等から3.9等まで変光する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"半規則型変光星の巨星", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"半規則型変光星…変光範囲は数百分の数等級から数等級である", font, size_y* ver, size, c);
+	}
+	else if (crick == 8)
+	{
+		ver = 0;
+		Font::StrDraw(L"ふたご座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"恒星で3等星", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"太陽に比べ1,540倍以上のエネルギーを放出している", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"地球から見た場合、他の恒星よりも5倍以上の速度で", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"移動しているように見える", font, size_y* ver, size, c);
+	}
+	else if (crick == 9)
+	{
+		ver = 0;
+		Font::StrDraw(L"ふたご座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"3等星の恒星で、地球から約60光年離れた、F型主系列星", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"あるいは準巨星で、太陽の1.7倍の質量と2.7倍の半径を持つ", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"年齢は15億年と若く、金属量は太陽とほぼ同程度とされている", font, size_y* ver, size, c);
+	}
+	else if (crick == 10)
+	{
+		ver = 0;
+		Font::StrDraw(L"ふたご座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"恒星で5等星", font, size_y* ver, size, c);
 	}
 
 }
