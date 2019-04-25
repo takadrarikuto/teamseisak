@@ -5,6 +5,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\HitBoxManager.h"
 
+
 #include "GameHead.h"
 #include "ObjHero.h"
 
@@ -136,7 +137,7 @@ void CObjHero::Action()
 	//HitBoxの位置の変更
 	hit->SetPos(m_px, m_py);
 
-
+	
 }
 
 //ドロー

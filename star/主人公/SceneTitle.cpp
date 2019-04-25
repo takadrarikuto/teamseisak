@@ -30,8 +30,9 @@ CSceneTitle::~CSceneTitle()
 void CSceneTitle::InitScene()
 {
 	//音楽情報読み込み
-	Audio::LoadAudio(0, L"ゲームプレイBGMTitle.wav", SOUND_TYPE::BACK_MUSIC);
-	Audio::LoadAudio(1, L"SETrigger.wav", EFFECT);
+	Audio::LoadAudio(0, L"ゲームプレイBGMTitle.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"決定音.wav", EFFECT);
+
 
 	//バックミュージックスタート
 	float Volume = Audio::VolumeMaster(-0.8f);

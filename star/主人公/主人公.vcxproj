@@ -139,9 +139,7 @@
     <ClInclude Include="ObjOtherStar.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="ObjQTE.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
+    <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjSaturn.h" />
     <ClInclude Include="ObjStarCount.h" />
     <ClInclude Include="ObjStarPresent.h">
@@ -215,6 +213,7 @@
     <ClCompile Include="ObjOtherStar.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="ObjPose.cpp" />
     <ClCompile Include="ObjQTE.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
