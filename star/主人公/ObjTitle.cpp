@@ -3,6 +3,8 @@
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
+#include "GameL\Audio.h"
+
 
 #include "GameHead.h"
 #include "ObjTitle.h"
@@ -18,6 +20,8 @@ void CObjTitle::Init()
 	m_start_flag = false;
 	m_mous_x = 0.0f;
 	m_mous_y = 0.0f;
+	a_time = 0;
+	time_flag = false;
 }
 
 //アクション
@@ -33,15 +37,35 @@ void CObjTitle::Action()
 	{
 		if (m_mous_l == true)
 		{
-			if (m_start_flag == true)
-			{
-				Scene::SetScene(new CSceneOperation()); //操作説明選択画面に移動
-			}
+			time_flag = true;
+				//Audio::Start(1);
+				//a_time++;
+				//300秒後に画面移動
+				
+				//if(a_time<=300){
+					
+					
+				//}
+			
 		}
-		else
-		{
-			m_start_flag = true;
-		}
+	}
+
+	if (time_flag == true)
+	{
+		a_time++;
+	}
+
+	if (a_time == 300)
+	{
+		Scene::SetScene(new CSceneStageselect()); //操作説明選択画面に移動
+	}
+	else if (a_time == 1)
+	{
+		Audio::Start(1);
+	}
+	else
+	{
+		Audio::Stop(1);
 	}
 
 }

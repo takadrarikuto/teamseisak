@@ -56,7 +56,7 @@
       <Filter>ソースファイル\星関係</Filter>
     </ClCompile>
     <ClCompile Include="ObjGameKuria.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="ObjFourthStar.cpp">
       <Filter>ソースファイル\星関係</Filter>
@@ -74,13 +74,10 @@
       <Filter>ソースファイル\星関係</Filter>
     </ClCompile>
     <ClCompile Include="ObjOperation.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjPose.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="ObjSelectPlanet.cpp">
-      <Filter>ソースファイル\ステージ選択</Filter>
+      <Filter>ソースファイル\ステージ\ステージ選択</Filter>
     </ClCompile>
     <ClCompile Include="ObjSaturn.cpp">
       <Filter>ソースファイル\背景</Filter>
@@ -110,13 +107,13 @@
       <Filter>ソースファイル\星関係</Filter>
     </ClCompile>
     <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="ObjVenus.cpp">
       <Filter>ソースファイル\背景</Filter>
     </ClCompile>
     <ClCompile Include="SceneGameKuria.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="SceneJupiter.cpp">
       <Filter>ソースファイル\ステージ</Filter>
@@ -131,22 +128,21 @@
       <Filter>ソースファイル\ステージ</Filter>
     </ClCompile>
     <ClCompile Include="ObjQTE.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="SceneOperation.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="SceneStageselect.cpp">
-      <Filter>ソースファイル\ステージ選択</Filter>
+      <Filter>ソースファイル\ステージ\ステージ選択</Filter>
     </ClCompile>
     <ClCompile Include="SceneStarPicbook.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
-    <ClCompile Include="StarBook.cpp">
-      <Filter>ソースファイル</Filter>
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="ObjStarmodel.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
@@ -155,10 +151,13 @@
       <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
     </ClCompile>
     <ClCompile Include="ObjStageselect.cpp">
-      <Filter>ソースファイル\ステージ選択</Filter>
+      <Filter>ソースファイル\ステージ\ステージ選択</Filter>
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjStarPicbook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="ObjStarPresent3.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
@@ -172,7 +171,6 @@
     <ClCompile Include="ObjStarPresent7.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="StarBook.cpp" />
     <ClCompile Include="ObjStarmodel.cpp" />
     <ClCompile Include="ObjStarPresent4.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
@@ -311,9 +309,6 @@
     <ClInclude Include="ObjGameKuria.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClInclude>
     <ClInclude Include="SceneGameKuria.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
@@ -324,9 +319,6 @@
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjEvent.h">
@@ -357,6 +349,9 @@
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
     <ClInclude Include="ObjStarPresent7.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent4.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
     <ClInclude Include="ObjStarPresent3.h">
@@ -429,6 +424,9 @@
       <Filter>画像</Filter>
     </Image>
     <Image Include="画像\ブラックタイル.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\フィールド背景木星.png">
       <Filter>画像</Filter>
     </Image>
     <Image Include="画像\タイトル.png">
@@ -511,9 +509,6 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="画像">
-      <UniqueIdentifier>{b69f1660-0529-4c9c-a9d6-fed9172eb902}</UniqueIdentifier>
-    </Filter>
     <Filter Include="リソースファイル">
       <UniqueIdentifier>{7c6613c8-597b-4df0-9a1c-1c763437b7f2}</UniqueIdentifier>
     </Filter>
@@ -547,13 +542,16 @@
     <Filter Include="ヘッダーファイル\主人公・アンカー・アイテム">
       <UniqueIdentifier>{a63e7682-2a25-48d5-911d-97f386efafca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="画像">
+      <UniqueIdentifier>{b69f1660-0529-4c9c-a9d6-fed9172eb902}</UniqueIdentifier>
+    </Filter>
     <Filter Include="ソースファイル">
       <UniqueIdentifier>{916c1235-1500-44c1-96a8-45fe9b2a35c1}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\ステージ">
       <UniqueIdentifier>{a89ab8c3-7b56-492c-9a11-c17e0d2a5a81}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\ステージ選択">
+    <Filter Include="ソースファイル\ステージ\ステージ選択">
       <UniqueIdentifier>{351b3fae-0606-4f83-a8e4-907ccbc834e6}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\星図鑑">
@@ -562,14 +560,14 @@
     <Filter Include="ソースファイル\星関係">
       <UniqueIdentifier>{cfb9b48c-44dd-41d1-8983-c5adaa7055aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE">
-      <UniqueIdentifier>{d8792977-bb80-4ec8-8ba9-401f2e9bbb56}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースファイル\ゲージ">
       <UniqueIdentifier>{99a48c06-b939-4501-8d9a-48879e102325}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\主人公・アンカー・アイテム">
       <UniqueIdentifier>{6cdc4f66-4ea4-4324-b954-8100c88583a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\主人公・アンカー・アイテム\タイトル・クリア・ポーズ・操作説明・QTE">
+      <UniqueIdentifier>{d8792977-bb80-4ec8-8ba9-401f2e9bbb56}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースファイル\背景">
       <UniqueIdentifier>{3a53dd80-fd7e-4a15-8cb2-212207e9a822}</UniqueIdentifier>
