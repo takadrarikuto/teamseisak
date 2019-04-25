@@ -92,6 +92,24 @@ void CSceneStarPicbook::InitScene()
 		CObjStarPresent7* a = new CObjStarPresent7();
 		Objs::InsertObj(a, OBJ_STARPRESENT7, 11);
 	}
+	else if (lever == 6)
+	{
+		//かに座
+		CObjStarPresent8* a = new CObjStarPresent8();
+		Objs::InsertObj(a, OBJ_STARPRESENT8, 11);
+	}
+	else if (lever == 7)
+	{
+		//かに座
+		CObjStarPresent9* a = new CObjStarPresent9();
+		Objs::InsertObj(a, OBJ_STARPRESENT9, 11);
+	}
+	else if (lever == 8)
+	{
+		//おとめ座
+		CObjStarPresent10* a = new CObjStarPresent10();
+		Objs::InsertObj(a, OBJ_STARPRESENT10, 11);
+	}
 	else if (lever == 9)
 	{
 		//天秤座
@@ -100,9 +118,14 @@ void CSceneStarPicbook::InitScene()
 	}
 	else if (lever == 10)
 	{
-		//星図鑑オブジェクト生成
+		//蠍座
 		CObjStarPresent* s = new CObjStarPresent();
 		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+	}
+	else if (lever == 11)
+	{
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
 	else if (lever == 13)
 	{
@@ -128,11 +151,13 @@ void CSceneStarPicbook::InitScene()
 	{
 		//かに
 	}
-
-	if (lever ==11)
+	else if (lever == 19)
 	{
-		CObjStarmodel* a = new CObjStarmodel();
-		Objs::InsertObj(a, OBJ_STARMODEL, 12);
+		//しし
+	}
+	else if (lever == 20)
+	{
+		//おとめ
 	}
 }
 

@@ -35,6 +35,8 @@ enum OBJ_NAME
 	OBJ_STARPRESENT6,
 	OBJ_STARPRESENT7,
 	OBJ_STARPRESENT8,
+	OBJ_STARPRESENT9,
+	OBJ_STARPRESENT10,
 	OBJ_AITEM,
 	OBJ_EVENT,
 	OBJ_IBENT,
@@ -116,13 +118,14 @@ struct UserData
 #include "ObjStarPresent6.h"
 #include "ObjStarPresent7.h"
 #include "ObjStarPresent8.h"
+#include "ObjStarPresent9.h"
+#include "ObjStarPresent10.h"
 #include "ObjAitem.h"
 #include "ObjEvent.h"
 #include "ObjStarCount.h"
 #include "Objstaminagauge.h"
 #include "Objstaminagaugeframe.h"
 #include "ObjPose.h"
-#include "ObjQTE.h"
 #include "ObjStarmodel.h"
 //------------------------------------------------
 
@@ -136,10 +139,10 @@ struct UserData
 #include "SceneSaturn.h"
 #include "SceneOperation.h"
 #include "SceneGamekuria.h"
-//#include "ScenePose.h"
 //------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneStarPicbook
+#define SET_GAME_START CSceneTitle
+
 //-----------------------------------------------
