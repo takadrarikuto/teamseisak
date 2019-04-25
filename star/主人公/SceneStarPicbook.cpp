@@ -112,7 +112,7 @@ void CSceneStarPicbook::InitScene()
 	}
 	else if (lever == 10)
 	{
-		//星図鑑オブジェクト生成
+		//蠍座
 		CObjStarPresent* s = new CObjStarPresent();
 		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
 	}

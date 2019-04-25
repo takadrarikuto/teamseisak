@@ -8,6 +8,7 @@
 #include "GameHead.h"
 extern int lever;
 
+
 void CObjStarPicbook::Init()
 {
 	m_mou_x = 0.0f;
@@ -82,17 +83,18 @@ void CObjStarPicbook::Draw()
 	//蠍座の画像位置
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 764.0f;
+	src.m_bottom = 578.0f;
 
 	dst.m_top = 500.0f;
-	dst.m_left = 0.0f;
-	dst.m_right = 67.0f;
+	dst.m_left = 604.0f;
+	dst.m_right = 669.0f;
 	dst.m_bottom = 595.0f;
 	
 	//さそり座画像
 	Draw::Draw(2, &src, &dst, c, 0.0f);
-	Dc += 1;
+
+	/*Dc += 1;
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -246,7 +248,7 @@ void CObjStarPicbook::Draw()
 
 	//おうし座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
-
+	*/
 
 	//宇宙船への文字を描画する
 	//					　　X　Y　大きさ

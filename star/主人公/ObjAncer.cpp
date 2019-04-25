@@ -4,6 +4,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\HitBoxManager.h"
 #include "GameL\DrawFont.h"
+#include "GameL\Audio.h"
 
 #include "GameHead.h"
 #include "ObjAncer.h"
@@ -158,6 +159,8 @@ void CObjAncer::Action()
 	else
 	{
 		m_mous_l = false;
+		
+	
 	}
 
 
