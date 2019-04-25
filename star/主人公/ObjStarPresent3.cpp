@@ -53,6 +53,9 @@ void CObjStarPresent3::Draw()
 	int std = 0;
 	int side_a = 0;
 	int side_b = 200;
+	int size = 25;
+	int size_y = 30;
+	int font = 80;
 
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
@@ -202,29 +205,45 @@ void CObjStarPresent3::Draw()
 		}
 	}
 
+	int ver;
 
 	if (crick == 1)
 	{
-		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"この星は光学二重星で、空気が澄んでいれば肉眼で見わけられる", 110, 50, 30, c);
-		Font::StrDraw(L"二重星…地球上から見る恒星が同じ方向に近接して見える物", 110, 100, 30, c);
+		ver = 0;
+		Font::StrDraw(L"てんびん座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"この星は光学二重星で、空気が澄んでいれば肉眼で見わけられる", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"重星…地球上から見る恒星が同じ方向に近接して見える物。", font, size_y* ver, size, c);
 	}
 	else if (crick == 2)
 	{
-		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"てんびん座で最も明るい恒星。地球からの距離は185光年と推測される", 110, 50, 30, c);
-		Font::StrDraw(L"高速で回転しており、太陽の100倍以上の自転速度である", 110, 100, 30, c);
+		ver = 0;
+		Font::StrDraw(L"てんびん座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"てんびん座で最も明るい恒星", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"地球からの距離は185光年と推測される", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"高速で回転しており、太陽の100倍以上の自転速度である", font, size_y* ver, size, c);
 	}
 	else if (crick == 3)
 	{
-		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"軌道を55,000年以上かけて回っている", 110, 50, 30, c);
+		ver = 0;
+		Font::StrDraw(L"てんびん座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"軌道を55,000年以上かけて回っている", font, size_y* ver, size, c);
 	}
 	else if (crick == 4)
 	{
-		Font::StrDraw(L"てんびん座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"さそり座の他の恒星と離れた位置にあることから「さそり座γ星」をてんびん座の一部", 110, 50, 30, c);
-		Font::StrDraw(L"その後新たに「てんびん座σ星」という符号を振り直した", 110, 100, 30, c);
+		ver = 0;
+		Font::StrDraw(L"てんびん座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"さそり座の他の恒星と離れた位置にあることから", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"「さそり座γ星」をてんびん座の一部", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"その後新たに「てんびん座σ星」という符号を振り直した", font, size_y* ver, size, c);
 	}
 
 }

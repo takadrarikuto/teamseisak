@@ -12,7 +12,8 @@ int cenge = 0;
 
 void CObjStarPresent::Init()
 {
-
+	 page = 0;//次のページへ行くための変数
+	 page_flag = false;
 }
 
 void CObjStarPresent::Action()
@@ -53,10 +54,12 @@ void CObjStarPresent::Draw()
 	int side_a = 0;//左の枠範囲
 	int side_b = 200;//右の枠範囲
 	int fy = 200;//星の名前の横幅
-	int size = 25;
-	int  size_y= 30;
-	int font = 80;
-
+	int font_size = 25;//文字の大きさ
+	int  Interval_y= 35;//文字の立幅間隔
+	int  left_end= 80;//説明文の左の限界を決める
+	
+	/*swprintf_s(see, L"%d", page);
+	Font::StrDraw(see, 600, 20, 30, c);*/
 	
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
@@ -128,16 +131,7 @@ void CObjStarPresent::Draw()
 		//				　　X　 Y　 大きさ
 		Font::StrDraw(str, 20, 130 + l * i, 25, c);
 	}
-	//戻るを押したらStarPresentに切り替える
-	// left				 right            top            bottom       
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>190 && m_mou_y < 300)
-	{
-		if (m_mou_l == true)
-		{
-			lever = 0;
-			Scene::SetScene(new CSceneStarPicbook());
-		}
-	}
+	
 	//戻すの文字をループして出す
 	wchar_t before[2][2]{ L"戻",L"る" };
 	for (int i = 0; i <= 1; i++)
@@ -148,17 +142,45 @@ void CObjStarPresent::Draw()
 		//				　　X　 Y　 大きさ
 		Font::StrDraw(str, 20, 230 + l * i, 25, c);
 	}
-	//次へを押したらStarPresent2に切り替える
+
+	//戻るを押したらStarPresentに切り替える
 	// left				 right            top            bottom       
-	/*if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>100 && m_mou_y <200)
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>190 && m_mou_y < 300)
 	{
 		if (m_mou_l == true)
 		{
-			lever =1;
-			Scene::SetScene(new CSceneStarPicbook());
+			if (page_flag == true)
+			{
+				page--;
+				page_flag = false;
+			}
 		}
-	}*/
+		else
+		{
+			page_flag = true;
+		}
+	}
+
+	//次へを押したらStarPresent2に切り替える
+	// left				 right            top            bottom       
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>100 && m_mou_y < 200)
+	{
+		if (m_mou_l == true)
+		{
+			if (page_flag == true)
+			{
+				page++;
+				page_flag = false;
+			}
+		}
+		else
+		{
+			page_flag = true;
+		}
+	}
+
 	
+
 	//					　　	 X　		    Y　 大きさ
 	Font::StrDraw(L"アンタレス", 30 + fy * std, 330+t*l, 30, c);
 	l++;
@@ -175,19 +197,22 @@ void CObjStarPresent::Draw()
 	if (crick == 1)//上を変えたらここも変える
 	{
 		int ver = 0;
-		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。", font, size_y*ver, size, c);
+		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。夏の南の空", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"夏の南の空に赤く輝くよく知られる恒星の1つであ", font, size_y*ver, size, c);
+		Font::StrDraw(L"に赤く輝くよく知られる恒星の1つである。", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"る。", font, size_y*ver, size, c);
+		Font::StrDraw(L"アンタレスはかつて直径が太陽の230倍とされ、「理科年表」も", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。", font, size_y*ver, size, c);
+		Font::StrDraw(L"長らくこの値を採用していたが、実際はもっと大きな星で、直", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"夏の南の空に赤く輝くよく知られる恒星の1つであ", font, size_y*ver, size, c);
+		Font::StrDraw(L"径は太陽の600倍ないし800倍である。", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"る。", font, size_y*ver, size, c);
+		Font::StrDraw(L"明るさは太陽の8000倍ないし1万倍と考えられている。なお、赤", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"外線を含めて計算すると明るさは太陽の6.5万倍である。", left_end, Interval_y*ver, font_size, c);
+		ver++;	
 	}
-
+	
 	//					　　	 X　 Y　 大きさ
 	Font::StrDraw(L"アクラブ", 30 + fy * std, 330+t*l, 30, c);
 	l++;
@@ -203,13 +228,13 @@ void CObjStarPresent::Draw()
 	if (crick == 2)//上を変えたらここも変える
 	{
 		int ver = 0;
-		Font::StrDraw(L"さそり座の恒星で3等星かつ六重連星。", font, size_y*ver, size,c);
+		Font::StrDraw(L"さそり座の恒星で3等星かつ六重連星。", left_end, Interval_y*ver, font_size,c);
 		ver++;
-		Font::StrDraw(L"[連星とは?]お互いの重力に引かれあったり離れた", font, size_y*ver, size,  c);
+		Font::StrDraw(L"[連星とは?]お互いの重力に引かれあったり離れたりを繰り返し", left_end, Interval_y*ver, font_size,  c);
 		ver++;
-		Font::StrDraw(L"りを繰り返しをしている。地球上から見て隣り合", font, size_y*ver, size, c);
+		Font::StrDraw(L"をしている。地球上から見て隣り合っているように見える星で", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"っているように見える星です。", font, size_y*ver, size, c);
+		Font::StrDraw(L"す。", left_end, Interval_y*ver, font_size, c);
 	}
 	
 	Font::StrDraw(L"ジュバ", 30 + fy * std, 330 + t * l, 30, c);
@@ -225,23 +250,39 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	if (crick == 3)//上を変えたらここも変える
+	if (crick == 3 &&page==0)//上を変えたらここも変える
 	{
 		int ver = 0;
-		Font::StrDraw(L"さそり座の恒星で2等星。", font, size_y*ver, size, c);
+		Font::StrDraw(L"さそり座の恒星で2等星。", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"Be星の中でも爆発型変光星のカシオペヤ座γ型変", font, size_y*ver, size, c);
+		Font::StrDraw(L"Be星の中でも爆発型変光星のカシオペヤ座γ型変光星であると", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"光星であると考えられている。", font, size_y*ver, size, c);
+		Font::StrDraw(L"考えられている。", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"[爆発型変光星とは？]", font, size_y*ver, size, c);
+		Font::StrDraw(L"[爆発型変光星とは？]", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"爆発型変光星は変光星の一種。恒星の外層や大気", font, size_y*ver, size, c);
+		Font::StrDraw(L"爆発型変光星は変光星の一種。恒星の外層や大気の爆発によっ", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"の爆発によって変光する星。", font, size_y*ver, size, c);
+		Font::StrDraw(L"て変光する星。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"[カシオペヤ座γ型変光星とは？]", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"ガス殻星のことであり、物質の流出のため、光度は不規則に", left_end, Interval_y*ver, font_size, c);
 		
 	}
-	
+	if (crick == 3 && page == 1)
+	{
+		int ver = 0;
+		Font::StrDraw(L"変化する。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"ガス殻星は高速で自転し、その機構に一定の説明を与えている", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"が、未だ謎が残っている。変光星の場合、カシオペヤ座γ型変 ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"光星に分類される。", left_end, Interval_y*ver, font_size, c);
+
+	}
+
 	Font::StrDraw(L"ララワグ", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
 	// left								right						top						bottom               
@@ -258,13 +299,13 @@ void CObjStarPresent::Draw()
 	if (crick == 4)//上を変えたらここも変える
 	{
 	int ver = 0;
-		Font::StrDraw(L"さそり座の恒星で2等星。 ", 110, 0, size, c);
+		Font::StrDraw(L"さそり座の恒星で2等星。 ", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"2017年11月17日、国際天文学連合の恒星の命名に関", 110, size * ver, size, c);
+		Font::StrDraw(L"2017年11月17日、国際天文学連合の恒星の命名に関", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"するワーキンググループ は、さそり座ε星の固有", 110, size * ver, size, c);
+		Font::StrDraw(L"するワーキンググループ は、さそり座ε星の固有", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"名として、ララワグ を正式に定めた。", 110, size * ver, size, c);
+		Font::StrDraw(L"名として、ララワグ を正式に定めた。",left_end, Interval_y*ver, font_size, c);
 	}
 
 	t -= 4;
@@ -501,5 +542,5 @@ void CObjStarPresent::Draw()
 		
 		Font::StrDraw(L"", 110, 0, 30, c);
 	}
-
+	
 }
