@@ -16,137 +16,172 @@
     <ClCompile Include="GameL\DrawTexture.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameL\GameL_Main.cpp">
+    <ClCompile Include="GameL\HitBoxManager.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameL\HitBoxManager.cpp">
+    <ClCompile Include="GameL\GameL_Main.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\MultiThread.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameL\SceneManager.cpp">
-      <Filter>リソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\SceneObjManager.cpp">
-      <Filter>リソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\UserData.cpp">
+    <ClCompile Include="GameL\WinInputs.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\WICTextureLoader.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameL\WinInputs.cpp">
+    <ClCompile Include="GameL\UserData.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\SetWindow.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="CObjStarPicbook.cpp">
-      <Filter>ソースファイル\Obj\星図鑑</Filter>
+    <ClCompile Include="GameL\SceneObjManager.cpp">
+      <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ObjStarPresent.cpp">
-      <Filter>ソースファイル\Obj\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent2.cpp">
-      <Filter>ソースファイル\Obj\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="StarBook.cpp">
-      <Filter>ソースファイル\Obj\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjOperation.cpp">
-      <Filter>ソースファイル\Obj\操作説明</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソースファイル\Obj\タイトル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSelectPlanet.cpp">
-      <Filter>ソースファイル\Obj\ステージ選択</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStageselect.cpp">
-      <Filter>ソースファイル\Obj\ステージ選択</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjEvent.cpp">
-      <Filter>ソースファイル\Obj\イベント</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjJupiter.cpp">
-      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjMars.cpp">
-      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSaturn.cpp">
-      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="Objstaminagauge.cpp">
-      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
-    </ClCompile>
-    <ClCompile Include="Objstaminagaugeframe.cpp">
-      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjHero.cpp">
-      <Filter>ソースファイル\Obj\主人公</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjAncer.cpp">
-      <Filter>ソースファイル\Obj\主人公</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjAitem.cpp">
-      <Filter>ソースファイル\Obj\主人公</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjGameKuria.cpp">
-      <Filter>ソースファイル\Obj\タイトル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjFirstStar.cpp">
-      <Filter>ソースファイル\Obj\星</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjSecondStar.cpp">
-      <Filter>ソースファイル\Obj\星</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarCount.cpp">
-      <Filter>ソースファイル\Obj\星</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjBackground.cpp">
-      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStarPicbook.cpp">
-      <Filter>ソースファイル\Scene\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneGameKuria.cpp">
-      <Filter>ソースファイル\Scene\タイトル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneTitle.cpp">
-      <Filter>ソースファイル\Scene\タイトル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneMars.cpp">
-      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneSaturn.cpp">
-      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStageselect.cpp">
-      <Filter>ソースファイル\Scene\ステージ選択</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneOperation.cpp">
-      <Filter>ソースファイル\Scene\操作説明</Filter>
+    <ClCompile Include="GameL\SceneManager.cpp">
+      <Filter>リソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="CObjOperation.h">
-      <Filter>ヘッダーファイル\Obj\操作説明</Filter>
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
-    <ClCompile Include="ObjVenus.cpp">
-      <Filter>ソースファイル\Obj\惑星ステージ</Filter>
+    <ClCompile Include="ObjEvent.cpp">
+      <Filter>ソースファイル\イベント</Filter>
     </ClCompile>
-    <ClCompile Include="SceneJupiter.cpp">
-      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    <ClCompile Include="ObjAncer.cpp">
+      <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
     </ClCompile>
-    <ClCompile Include="SceneVenus.cpp">
-      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    <ClCompile Include="ObjFirstStar.cpp">
+      <Filter>ソースファイル\星関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjGameKuria.cpp">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjFourthStar.cpp">
+      <Filter>ソースファイル\星関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBackground.cpp">
+      <Filter>ソースファイル\背景</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjJupiter.cpp">
+      <Filter>ソースファイル\背景</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMars.cpp">
+      <Filter>ソースファイル\背景</Filter>
     </ClCompile>
     <ClCompile Include="ObjOtherStar.cpp">
-      <Filter>ソースファイル\Obj\星</Filter>
+      <Filter>ソースファイル\星関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjOperation.cpp">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjPose.cpp">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSelectPlanet.cpp">
+      <Filter>ソースファイル\ステージ選択</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSaturn.cpp">
+      <Filter>ソースファイル\背景</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjSecondStar.cpp">
+      <Filter>ソースファイル\星関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarCount.cpp">
+      <Filter>ソースファイル\星関係</Filter>
+    </ClCompile>
+    <ClCompile Include="Objstaminagauge.cpp">
+      <Filter>ソースファイル\ゲージ</Filter>
+    </ClCompile>
+    <ClCompile Include="Objstaminagaugeframe.cpp">
+      <Filter>ソースファイル\ゲージ</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent2.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent3.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjThirdStar.cpp">
+      <Filter>ソースファイル\星関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjVenus.cpp">
+      <Filter>ソースファイル\背景</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneGameKuria.cpp">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneJupiter.cpp">
+      <Filter>ソースファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMars.cpp">
+      <Filter>ソースファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneSaturn.cpp">
+      <Filter>ソースファイル\ステージ</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneVenus.cpp">
+      <Filter>ソースファイル\ステージ</Filter>
     </ClCompile>
     <ClCompile Include="ObjQTE.cpp">
-      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneOperation.cpp">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStageselect.cpp">
+      <Filter>ソースファイル\ステージ選択</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStarPicbook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarmodel.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjAitem.cpp">
+      <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStageselect.cpp">
+      <Filter>ソースファイル\ステージ選択</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHero.cpp">
+      <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent3.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent5.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent6.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent7.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp" />
+    <ClCompile Include="ObjStarmodel.cpp" />
+    <ClCompile Include="ObjStarPresent4.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjStarPicbook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent4.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -165,241 +200,364 @@
     <ClInclude Include="GameL\DrawTexture.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameHead.h">
-      <Filter>ヘッダーファイル</Filter>
-    </ClInclude>
     <ClInclude Include="GameL\HitBoxManager.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>ヘッダーファイル</Filter>
-    </ClInclude>
     <ClInclude Include="GameL\MultiThread.h">
-      <Filter>リソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\SceneManager.h">
-      <Filter>リソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\SceneObjManager.h">
-      <Filter>リソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\UserData.h">
-      <Filter>リソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\WICTextureLoader.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\WinInputs.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
+    <ClInclude Include="GameL\WICTextureLoader.h">
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\UserData.h">
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
     <ClInclude Include="GameL\SetWindow.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjHero.h">
-      <Filter>ヘッダーファイル\Obj\主人公</Filter>
+    <ClInclude Include="GameL\SceneObjManager.h">
+      <Filter>リソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="CObjStarPicbook.h">
-      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
+    <ClInclude Include="GameL\SceneManager.h">
+      <Filter>リソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjAitem.h">
-      <Filter>ヘッダーファイル\Obj\主人公</Filter>
+    <ClInclude Include="GameHead.h">
+      <Filter>ヘッダーファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjAncer.h">
-      <Filter>ヘッダーファイル\Obj\主人公</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjJupiter.h">
-      <Filter>ヘッダーファイル\Obj\惑星ステージ</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMars.h">
-      <Filter>ヘッダーファイル\Obj\惑星ステージ</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjSaturn.h">
-      <Filter>ヘッダーファイル\Obj\惑星ステージ</Filter>
-    </ClInclude>
-    <ClInclude Include="Objstaminagauge.h">
-      <Filter>ヘッダーファイル\Obj\ゲージ関係</Filter>
-    </ClInclude>
-    <ClInclude Include="Objstaminagaugeframe.h">
-      <Filter>ヘッダーファイル\Obj\ゲージ関係</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjFirstStar.h">
-      <Filter>ヘッダーファイル\Obj\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjSecondStar.h">
-      <Filter>ヘッダーファイル\Obj\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjSelectPlanet.h">
-      <Filter>ヘッダーファイル\Obj\ステージ選択</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStageselect.h">
-      <Filter>ヘッダーファイル\Obj\ステージ選択</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent.h">
-      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent2.h">
-      <Filter>ヘッダーファイル\Obj\星図鑑</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjTitle.h">
-      <Filter>ヘッダーファイル\Obj\タイトル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjGameKuria.h">
-      <Filter>ヘッダーファイル\Obj\タイトル</Filter>
+    <ClInclude Include="main.h">
+      <Filter>ヘッダーファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjBackground.h">
-      <Filter>ヘッダーファイル\Obj\惑星ステージ</Filter>
+      <Filter>ヘッダーファイル\背景</Filter>
     </ClInclude>
-    <ClInclude Include="ObjStarCount.h">
-      <Filter>ヘッダーファイル\Obj\星</Filter>
+    <ClInclude Include="ObjMars.h">
+      <Filter>ヘッダーファイル\背景</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjJupiter.h">
+      <Filter>ヘッダーファイル\背景</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSaturn.h">
+      <Filter>ヘッダーファイル\背景</Filter>
     </ClInclude>
     <ClInclude Include="ObjVenus.h">
-      <Filter>ヘッダーファイル\Obj\惑星ステージ</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjEvent.h">
-      <Filter>ヘッダーファイル\Obj\イベント</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneGameKuria.h">
-      <Filter>ヘッダーファイル\Scene\タイトル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneTitle.h">
-      <Filter>ヘッダーファイル\Scene\タイトル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneMars.h">
-      <Filter>ヘッダーファイル\Scene\星</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneSaturn.h">
-      <Filter>ヘッダーファイル\Scene\星</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneStarPicbook.h">
-      <Filter>ヘッダーファイル\Scene\星図鑑</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneOperation.h">
-      <Filter>ヘッダーファイル\Scene\操作説明</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneStageselect.h">
-      <Filter>ヘッダーファイル\Scene\ステージ選択</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneJupiter.h">
-      <Filter>ヘッダーファイル\Scene\星</Filter>
+      <Filter>ヘッダーファイル\背景</Filter>
     </ClInclude>
     <ClInclude Include="SceneVenus.h">
-      <Filter>ヘッダーファイル\Scene\星</Filter>
+      <Filter>ヘッダーファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneSaturn.h">
+      <Filter>ヘッダーファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMars.h">
+      <Filter>ヘッダーファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneJupiter.h">
+      <Filter>ヘッダーファイル\ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStageselect.h">
+      <Filter>ヘッダーファイル\ステージ選択</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStageselect.h">
+      <Filter>ヘッダーファイル\ステージ選択</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSelectPlanet.h">
+      <Filter>ヘッダーファイル\ステージ選択</Filter>
+    </ClInclude>
+    <ClInclude Include="CObjStarPicbook.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent2.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent3.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStarPicbook.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjFirstStar.h">
+      <Filter>ヘッダーファイル\星関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjFourthStar.h">
+      <Filter>ヘッダーファイル\星関係</Filter>
     </ClInclude>
     <ClInclude Include="ObjOtherStar.h">
-      <Filter>ヘッダーファイル\Obj\星</Filter>
+      <Filter>ヘッダーファイル\星関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSecondStar.h">
+      <Filter>ヘッダーファイル\星関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarCount.h">
+      <Filter>ヘッダーファイル\星関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjThirdStar.h">
+      <Filter>ヘッダーファイル\星関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGameKuria.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjPose.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneGameKuria.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneOperation.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTitle.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjQTE.h">
-      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjEvent.h">
+      <Filter>ヘッダーファイル\イベント</Filter>
+    </ClInclude>
+    <ClInclude Include="Objstaminagauge.h">
+      <Filter>ヘッダーファイル\ゲージ</Filter>
+    </ClInclude>
+    <ClInclude Include="Objstaminagaugeframe.h">
+      <Filter>ヘッダーファイル\ゲージ</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjAitem.h">
+      <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjAncer.h">
+      <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHero.h">
+      <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarmodel.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent5.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent6.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent7.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent3.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarmodel.h" />
+    <ClInclude Include="ObjStarPresent4.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="ヘッダーファイル">
-      <UniqueIdentifier>{c4dd73dd-5562-42e6-be92-2e3ecf255b25}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル">
-      <UniqueIdentifier>{0307b2c8-9d9a-49a2-b939-1ad0d81a5ca3}</UniqueIdentifier>
+    <Image Include="brown_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="green_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\orange_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\pink_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\red_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\惑星.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\惑星%28透過済み%29.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\木星.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\通常時背景.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\操作説明.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\星.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\星%28透過済み%29.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\主人公.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\主人公（仮）.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\金星%28透過済み%29.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\火星地表.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\宇宙船背景.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\ブラックタイル.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\タイトル.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\フィールド背景火星.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\ドリンク候補2.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\テキストボックス.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\ダウンロード.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\タイトル.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\タイトル%28修正版%29.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\ゲージ枠.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\ゲージ.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\yellow_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\アンカー（仮　透過済み）.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\アンカー.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\イベント背景%28火星%29.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\orange_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\pink_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\red_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\アンカー（仮　透過済み）.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\yellow_star.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\アンカー.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\イベント背景%28火星%29.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\ゲージ.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\ゲージ枠.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\orange_star.png" />
+    <Image Include="画像\pink_star.png" />
+    <Image Include="画像\red_star.png" />
+    <Image Include="画像\yellow_star.png" />
+    <Image Include="画像\アンカー.png" />
+    <Image Include="画像\アンカー（仮　透過済み）.png" />
+    <Image Include="画像\イベント背景%28火星%29.png" />
+    <Image Include="画像\ゲージ.png" />
+    <Image Include="画像\ゲージ枠.png" />
+    <Image Include="画像\フィールド背景木星.png">
+      <Filter>画像</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="画像">
+      <UniqueIdentifier>{b69f1660-0529-4c9c-a9d6-fed9172eb902}</UniqueIdentifier>
     </Filter>
     <Filter Include="リソースファイル">
-      <UniqueIdentifier>{0d0ebfea-5101-4a0e-8036-e6d1cfcaec40}</UniqueIdentifier>
+      <UniqueIdentifier>{7c6613c8-597b-4df0-9a1c-1c763437b7f2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj">
-      <UniqueIdentifier>{fd59ed26-cc22-4677-b29e-b90401f2b9ef}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル">
+      <UniqueIdentifier>{911ec8c3-7b9e-4ec1-a0f2-97009e057626}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\ステージ選択">
-      <UniqueIdentifier>{63e230b6-47d0-4b8a-95ce-ea9769eddfda}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\背景">
+      <UniqueIdentifier>{923e70c8-6707-4bd6-8b39-094afe363171}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\タイトル">
-      <UniqueIdentifier>{71891735-7a98-476f-abf1-ae45ab4180a7}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\ステージ">
+      <UniqueIdentifier>{d9ce35b3-90a0-4e44-bb21-e12c7153e136}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\操作説明">
-      <UniqueIdentifier>{c50fb5e2-219d-416c-9fc2-d2d3f6e133f3}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\ステージ選択">
+      <UniqueIdentifier>{57ce16ec-15c6-4a33-983e-79e3e5fa0343}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\星図鑑">
-      <UniqueIdentifier>{0d993f0f-8851-4a81-bb78-f7e84017041e}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\星図鑑">
+      <UniqueIdentifier>{f0ec3bdd-0689-47c6-b4da-fb92213f261b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Scene">
-      <UniqueIdentifier>{4d63ef5a-c624-4902-a4cc-bd6fffc1b894}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\星関係">
+      <UniqueIdentifier>{59d76049-80d3-4bc2-a908-ea7b2cf29cf2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\イベント">
-      <UniqueIdentifier>{65c32193-ab99-44f8-8e0e-8dd7d5bdc4fb}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE">
+      <UniqueIdentifier>{966149f8-4120-465d-9bd7-532c88d9edef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\惑星ステージ">
-      <UniqueIdentifier>{5ad3564b-e6f4-409a-bd19-98228a01c8ef}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\イベント">
+      <UniqueIdentifier>{3f37d4ec-a32a-4ab9-a9ee-7c2e5d33b6c2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\ゲージ関係">
-      <UniqueIdentifier>{57ae725e-d258-4011-9e26-e7026e4b966c}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\ゲージ">
+      <UniqueIdentifier>{9096474f-8341-4e46-93d7-59df486d9336}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\主人公">
-      <UniqueIdentifier>{65ea1db1-e052-4cef-b1f7-25528dcd3951}</UniqueIdentifier>
+    <Filter Include="ヘッダーファイル\主人公・アンカー・アイテム">
+      <UniqueIdentifier>{a63e7682-2a25-48d5-911d-97f386efafca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Obj\星">
-      <UniqueIdentifier>{6c19f09f-7524-49fc-97d7-abd5f47ace0e}</UniqueIdentifier>
+    <Filter Include="ソースファイル">
+      <UniqueIdentifier>{916c1235-1500-44c1-96a8-45fe9b2a35c1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Scene\星図鑑">
-      <UniqueIdentifier>{88a981ec-fcab-4d72-8501-69a3df16c583}</UniqueIdentifier>
+    <Filter Include="ソースファイル\ステージ">
+      <UniqueIdentifier>{a89ab8c3-7b56-492c-9a11-c17e0d2a5a81}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Scene\タイトル">
-      <UniqueIdentifier>{8bee134a-619e-411b-a5f0-e7578a124ed3}</UniqueIdentifier>
+    <Filter Include="ソースファイル\ステージ選択">
+      <UniqueIdentifier>{351b3fae-0606-4f83-a8e4-907ccbc834e6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Scene\惑星ステージ">
-      <UniqueIdentifier>{a7e34716-a45d-4e90-a42f-f3eb1c640854}</UniqueIdentifier>
+    <Filter Include="ソースファイル\星図鑑">
+      <UniqueIdentifier>{b0d23489-12a3-4c66-92ad-807caced08ba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Scene\ステージ選択">
-      <UniqueIdentifier>{1cd848eb-7b73-4901-876d-565e772f8c20}</UniqueIdentifier>
+    <Filter Include="ソースファイル\星関係">
+      <UniqueIdentifier>{cfb9b48c-44dd-41d1-8983-c5adaa7055aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\Scene\操作説明">
-      <UniqueIdentifier>{473db157-eaee-4808-88ea-e2902c1aafbb}</UniqueIdentifier>
+    <Filter Include="ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE">
+      <UniqueIdentifier>{d8792977-bb80-4ec8-8ba9-401f2e9bbb56}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダーファイル\Obj">
-      <UniqueIdentifier>{0c8566ad-3767-4fc6-bc82-b85ac0f12ce1}</UniqueIdentifier>
+    <Filter Include="ソースファイル\ゲージ">
+      <UniqueIdentifier>{99a48c06-b939-4501-8d9a-48879e102325}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダーファイル\Scene">
-      <UniqueIdentifier>{2befae8e-2ff6-41a0-8b6c-ba110f2bed41}</UniqueIdentifier>
+    <Filter Include="ソースファイル\主人公・アンカー・アイテム">
+      <UniqueIdentifier>{6cdc4f66-4ea4-4324-b954-8100c88583a3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダーファイル\Obj\主人公">
-      <UniqueIdentifier>{af4cafcc-125e-4410-9225-e2ae65ca053f}</UniqueIdentifier>
+    <Filter Include="ソースファイル\背景">
+      <UniqueIdentifier>{3a53dd80-fd7e-4a15-8cb2-212207e9a822}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダーファイル\Obj\星図鑑">
-      <UniqueIdentifier>{4a364682-3770-4b55-b6a1-b769b262f5c0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\惑星ステージ">
-      <UniqueIdentifier>{743858ad-2dc0-4a94-b6e6-79d954e11c0e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\ゲージ関係">
-      <UniqueIdentifier>{383174be-94d4-4b84-b337-92a84ab144be}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\星">
-      <UniqueIdentifier>{6f3a4ea1-a154-401a-9604-fbd6aff7dff9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\ステージ選択">
-      <UniqueIdentifier>{7c4a2aaf-57d9-4497-bf71-3e59772a067d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\タイトル">
-      <UniqueIdentifier>{204c0e03-f573-48bc-aadd-08a4fa81e50c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\イベント">
-      <UniqueIdentifier>{ceb70ce8-8bb2-487f-a318-7f079aae54fe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Obj\操作説明">
-      <UniqueIdentifier>{b1e77dea-a2c4-4bd8-ae02-3fe09a3a64d9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene\タイトル">
-      <UniqueIdentifier>{1613c3ec-2253-474f-b95d-e9712e7bdbe6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene\星">
-      <UniqueIdentifier>{669a64dc-e69c-4797-8eed-0ef9a3c790de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene\星図鑑">
-      <UniqueIdentifier>{d1faf242-34b3-4e58-86a3-c395637dac5c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene\操作説明">
-      <UniqueIdentifier>{0dba4cc7-f9c6-4c1c-be81-d3d326bf1092}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダーファイル\Scene\ステージ選択">
-      <UniqueIdentifier>{0c89f315-bab4-4f23-bb57-87d94cc14958}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="画像">
-      <UniqueIdentifier>{7d970d65-57cf-47b7-a9ab-effb9629799b}</UniqueIdentifier>
+    <Filter Include="ソースファイル\イベント">
+      <UniqueIdentifier>{459130da-5a55-4fb8-9f77-b1b2c44f9af9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -411,79 +569,5 @@
     <Library Include="GameL\DirectXTex.lib">
       <Filter>リソースファイル</Filter>
     </Library>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="brown_star.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="firststar.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="アンカー（仮　透過済み）.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="アンカー.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="イベント背景(火星).png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="タイトル(修正版).png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="タイトル.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="ダウンロード.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="テキストボックス.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="フィールド背景火星.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="フィールド背景木星.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="ブラックタイル.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="宇宙船背景.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="火星地表.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="金星(透過済み).png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="主人公（仮）.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="主人公.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="星(透過済み).png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="星.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="操作説明.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="通常時背景.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="木星.png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="惑星(透過済み).png">
-      <Filter>画像</Filter>
-    </Image>
-    <Image Include="惑星.png">
-      <Filter>画像</Filter>
-    </Image>
   </ItemGroup>
 </Project>

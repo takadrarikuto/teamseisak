@@ -27,7 +27,7 @@ void CObjSecondStar::Init()
 	hero_flag = false;
 	ancer_flag = false;
 
-	Hits::SetHitBox(this, m_px, m_py, 64, 64, OBJ_SECONDSTAR, ELEMENT_RED, 12);
+	Hits::SetHitBox(this, m_px, m_py, 32, 32, OBJ_SECONDSTAR, ELEMENT_RED, 16);
 
 
 }
@@ -108,16 +108,16 @@ void CObjSecondStar::Draw()
 			   //êÿÇËéÊÇËà íuÇÃê›íË
 	src.m_top = 0.0f;
 	src.m_left = 0.0f; 
-	src.m_right = 200.0f; 
-	src.m_bottom = 190.0f; 
+	src.m_right = 100.0f; 
+	src.m_bottom = 100.0f; 
 
 
 	//ï\é¶à íuÇÃê›íË
 	dst.m_top = 0.0f + m_py;
 	dst.m_left = 0.0f + m_px;
-	dst.m_right = 64.0f + m_px;
-	dst.m_bottom = 64.0f + m_py;
+	dst.m_right = 32.0f + m_px;
+	dst.m_bottom = 32.0f + m_py;
 
 	//ï`âÊ
-	Draw::Draw(16, &src, &dst, c, 0.0f);
+	Draw::Draw(17, &src, &dst, c, 0.0f);
 }

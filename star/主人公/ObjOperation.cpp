@@ -12,46 +12,34 @@ using namespace GameL;
 
 void CObjOperation::Init()
 {
-	m_Operation_flag = false;
+	m_mous_l = false;
+	m_start_flag = false;
+	m_mous_x = 0.0f;
+	m_mous_y = 0.0f;
 }
 
 void CObjOperation::Action()
 {
-	if (m_Operation_flag == true)
+	m_mous_l = Input::GetMouButtonL();
+
+	//マウスの位置の取得
+	m_mous_x = (float)Input::GetPosX();
+	m_mous_y = (float)Input::GetPosY();
+
+	if (m_mous_x > 200 && m_mous_x < 600 && m_mous_y>440 && m_mous_y < 490)
 	{
-		if (Input::GetVKey(VK_SPACE) == true)
+		if (m_mous_l == true)
 		{
-			Scene::SetScene(new CSceneOperation());
+			if (m_start_flag == true)
+			{
+				Scene::SetScene(new CSceneStageselect()); //操作説明選択画面に移動
+			}
 		}
-
-	}
-	else
-	{
-		m_Operation_flag = true;
-	}
-
-
-	if (Input::GetVKey(VK_SPACE) == true)
-	{
-		if (m_Operation_flag == true)
+		else
 		{
-			Scene::SetScene(new CSceneOperation());
-		}
-	}
-	//ステージ選択画面に戻る
-	else if (Input::GetVKey('B') == true)
-	{
-		if (m_Operation_flag == true)
-		{
-			Scene::SetScene(new CSceneStageselect());
+			m_start_flag = true;
 		}
 	}
-	else
-	{
-		m_Operation_flag = true;
-	}
-
-
 }
 
 void CObjOperation::Draw()
@@ -74,6 +62,6 @@ void CObjOperation::Draw()
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
 
-	Draw::Draw(21, &src, &dst, c, 0.0f);
+	Draw::Draw(8, &src, &dst, c, 0.0f);
 
 }

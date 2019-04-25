@@ -28,11 +28,13 @@ CSceneOperation::~CSceneOperation()
 //ゲームメイン初期化メソッド
 void CSceneOperation::InitScene()
 {
+	
+
 	//外部グラフィック読み込み
-	Draw::LoadImage(L"操作説明.png", 21, TEX_SIZE_512);
+	Draw::LoadImage(L"ゲーム説明.png", 8, TEX_SIZE_512);
 	
 	CObjOperation* obj_o = new CObjOperation();
-	Objs::InsertObj(obj_o, OBJ_OPERATION, 21);
+	Objs::InsertObj(obj_o, OBJ_OPERATION, 8);
 
 }
 

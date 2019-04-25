@@ -5,17 +5,18 @@
 //使用するネームスペース
 using namespace GameL;
 
-//シーンメイン
-class CObjMar :public CObj
+//オブジェクト　タイトル
+class CObjstaminagaugeframe :public CObj
 {
 public:
-	CObjMar() {};
-	~CObjMar() {};
+	CObjstaminagaugeframe() {};
+	~CObjstaminagaugeframe() {};
 	void Init();
 	void Action();
 	void Draw();
 
 private:
-	bool m_return_flag;
 
+	float m_px;
+	float m_py;
 };

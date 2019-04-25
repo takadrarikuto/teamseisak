@@ -21,12 +21,19 @@ enum OBJ_NAME
 	OBJ_JUPITER,
 	OBJ_FIRSTSTAR,
 	OBJ_SECONDSTAR,
+	OBJ_THIRDSTAR,
+	OBJ_FOURTHSTAR,
 	OBJ_OTHERSTAR,
 	OBJ_OPERATION,
 	OBJ_BACKGROUND,
 	OBJ_GAMEKURIA,
 	OBJ_STARPRESENT,
 	OBJ_STARPRESENT2,
+	OBJ_STARPRESENT3,
+	OBJ_STARPRESENT4,
+	OBJ_STARPRESENT5,
+	OBJ_STARPRESENT6,
+	OBJ_STARPRESENT7,
 	OBJ_AITEM,
 	OBJ_EVENT,
 	OBJ_IBENT,
@@ -34,7 +41,9 @@ enum OBJ_NAME
 	OBJ_STRENGTHGAUGE,
 	OBJ_STRENGTHGAUGEFRAME1,
 	OBJ_STRENGTHGAUGEFRAME2,
+	OBJ_POSE,
 	OBJ_QTE,
+	OBJ_STARMODEL,
 };
 //------------------------------------------------
 
@@ -63,8 +72,9 @@ enum HIT_ELEMENTS
 struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
-	int star_co; //星の数カウント
-	
+	int star_co;//星の数カウント
+	int Aitem_co_max = 5; //アイテム個数
+
 };
 //------------------------------------------------
 
@@ -76,10 +86,8 @@ struct UserData
 //------------------------------------------------
 //ゲーム内で使用するクラスヘッダ------------------
 
-
 //------------------------------------------------
 
-#include "CObjStarPicbook.h"
 //ゲームシーンオブジェクトヘッダ------------------
 #include "ObjHero.h"
 #include "ObjTitle.h"
@@ -92,18 +100,28 @@ struct UserData
 #include "ObjAncer.h"
 #include "ObjFirstStar.h"
 #include "ObjSecondStar.h"
+#include "ObjThirdStar.h"
+#include "ObjFourthStar.h"
 #include "ObjOtherStar.h"
 #include "ObjBackground.h"
 #include "CObjOperation.h"
 #include "ObjGamekuria.h"
+#include "CObjStarPicbook.h"
 #include "ObjStarPresent.h"
 #include "ObjStarPresent2.h"
+#include "ObjStarPresent3.h"
+#include "ObjStarPresent4.h"
+#include "ObjStarPresent5.h"
+#include "ObjStarPresent6.h"
+#include "ObjStarPresent7.h"
 #include "ObjAitem.h"
 #include "ObjEvent.h"
 #include "ObjStarCount.h"
 #include "Objstaminagauge.h"
 #include "Objstaminagaugeframe.h"
-//#include "ObjQTE.h"
+#include "ObjPose.h"
+#include "ObjQTE.h"
+#include "ObjStarmodel.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -116,10 +134,10 @@ struct UserData
 #include "SceneSaturn.h"
 #include "SceneOperation.h"
 #include "SceneGamekuria.h"
+//#include "ScenePose.h"
 //------------------------
-
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneStarPicbook
 //-----------------------------------------------

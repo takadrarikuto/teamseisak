@@ -25,6 +25,12 @@ void CObjAncer::Init()
 	//アンカー
 	m_pax = 433.5f;
 	m_pay = 535.0f;
+	//アンカーサイズ変更
+	m_sizex = 0;
+	m_sizey = 0;
+	size = 40;
+	//ヒットボックス位置調整
+	hitbox_size = 0.0f;
 	//ロープ
 	//m_pry = 490.0f;
 	m_prx = 448.0f;
@@ -41,9 +47,7 @@ void CObjAncer::Init()
 	m_mous_l = false;
 	
 	//当たり判定用のHitBoxを作成
-
-	//アンカー
-	Hits::SetHitBox(this, m_pax, m_pay, 40, 40, ELEMENT_ANCER, OBJ_ANCER, 11);
+	Hits::SetHitBox(this, m_pax, m_pay, size, size, ELEMENT_ANCER, OBJ_ANCER, 11);
 
 	//ロープ描画用初期化
 	rope = 0.0f;
@@ -52,11 +56,14 @@ void CObjAncer::Init()
 	ancer_flag = false;
 
 	//飛距離調整初期化
-	ancer_time = 0.0f;
-	rope_time = 0.0f;
+	ancer_time = Ancer_Rope_InitialTime;
+	rope_time = Ancer_Rope_InitialTime;
 
 	//画面移動時起動防止用初期化
 	time_co = 0;
+
+	//連続発射防止フラグ初期化
+	ancer_Prevent_doublepress = false;
 
 	//イベントタイム処理初期化
 	A_event = 0;
@@ -76,8 +83,8 @@ void CObjAncer::Action()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-	//左クリックしている時またはアンカーのy位置が535以下の時移動禁止
-	if (m_mous_l == false && (m_vy == 0.0f && rope == 0.0f))
+	//左クリックしていない時かつアンカーが発射されていない時移動可能
+	if (m_mous_l == false && ancer_flag == false)
 	{
 		//移動
 		//左
@@ -92,73 +99,62 @@ void CObjAncer::Action()
 		}
 	}
 
-
 	//自身のHitBoxを持ってくる
 	CHitBox* hit_a = Hits::GetHitBox(this);
 
 	//画面移動時起動防止用
 	if (time_co > 30)
 	{
-		if (m_mous_l == true)
+		if (m_mous_l == true && ancer_Prevent_doublepress == false)
 		{
-			ancer_flag = false;
-			ancer_time += 1.0f;
-			rope_time -= 1.0f;
+			ancer_time += 1.0f; //アンカー発射時間増加
+			rope_time -= 1.0f; //ロープ発射時間増加
+			if (ancer_time == 1.0f && rope_time == -1.0f)
+			{
+				Ancer_on = true; //スタミナ消費用
+			}
 		}
-		else if (m_mous_l == false)
+		else if (m_mous_l == false || (m_mous_l == true && m_pay < 535.0f))
 		{
+			//アンカーを上げる処理
+			//アンカー発射時間とロープ発射時間が0じゃない時
+			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
+			{
+				m_vy -= 9.0f; //アンカー移動
+				rope += 13.0f; //ロープ長さ調整	
+				m_sizey -= 0.25f;
+				m_sizex -= 0.25f;
+				size -= 0.35f;
+				hitbox_size += 0.2f;
+				ancer_time -= 1.0f;
+				rope_time += 1.0f;
+			}
+			//アンカーを下げる処理
+			//アンカー発射時間とロープ発射時間が0の時にかつアンカーフラグがtrueの時
+			else if (ancer_flag == true && ancer_time == Ancer_Rope_InitialTime && rope_time == Ancer_Rope_InitialTime)
+			{
+				m_vy += 9.0f; //アンカー移動
+				rope -= 13.0f; //ロープ長さ調整
+				m_sizey += 0.25f;
+				m_sizex += 0.25f;
+				size += 0.35f;
+				hitbox_size -= 0.2f;
+			}
+
+		}
+		
+		
+		//星に当たると戻る
+		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr 
+			|| hit_a->CheckObjNameHit(OBJ_THIRDSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_FOURTHSTAR) != nullptr
+			|| hit_a->CheckObjNameHit(OBJ_OTHERSTAR) != nullptr)
+		{
+			ancer_time = Ancer_Rope_InitialTime;
+			rope_time = Ancer_Rope_InitialTime;
 			ancer_flag = true;
 		}
 		
-		if (ancer_flag == true && (m_vy != ancer_time && rope != rope_time))
-		{
-			m_vy -= 1.0f; //アンカー移動
-			rope += 1.4f; //ロープ長さ調整
-		}
-		else if(ancer_flag == false)
-		{				
 
-		}
-
-
-		/*
-		//星に当たると戻る
-		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
-		{
-			ancer_flag = false;
-			Ancer_on = false;
-		}
-		//定位置にアンカーがある時に左クリックでアンカー発射・スタミナ消費
-		else if (Input::GetMouButtonL() == true && m_pay > 535.0f && time == 0)
-		{
-			ancer_time += 1;
-			ancer_flag = true; //アンカー発射
-			Ancer_on = true; //スタミナ消費
-		}
-		else if (Input::GetMouButtonL() == false && ancer_time > 1)
-		{
-			
-		}
-
-		if (ancer_flag == true)
-		{	
-			m_vy -= 9.0f; //アンカー移動
-			time += 13.0f; //ロープ長さ調整
-		}
-		else
-		{
-			m_vy += 6.0f; //アンカー移動
-			if (m_pry < 500.0f)
-			{
-				time -= 9.0f; //ロープ長さ調整
-			}
-			else
-			{
-				time = 0.0f; //ロープ長さ調整
-				ancer_time = 1;
-			}				
-		}
-		*/
 	}
 	else
 	{
@@ -167,7 +163,7 @@ void CObjAncer::Action()
 	
 	}
 
-	/*
+
 	//イベント処理
 	Ev_ancer = rand() % 5;
 
@@ -183,9 +179,10 @@ void CObjAncer::Action()
 
 	if (m_pry < 400.0f && A_event > Event_Time && Ev_ancer == 4)
 	{
-		ancer_flag = false;
+		ancer_time = 0.0f;
+		rope_time = 0.0f;
 	}
-	*/
+	
 
 
 
@@ -211,11 +208,23 @@ void CObjAncer::Action()
 	if (m_pay < 50.0f)
 	{
 		m_pay = 50.0f;
+		ancer_time = Ancer_Rope_InitialTime;
+		rope_time = Ancer_Rope_InitialTime;
 	}
 	else if (m_pay > 535.0f)
 	{
 		m_pay = 535.0f;
+		ancer_flag = false;
+		ancer_Prevent_doublepress = false;
 	}
+	else if (m_pay < 535.0f)
+	{
+		ancer_flag = true;
+		ancer_Prevent_doublepress = true;
+	}
+
+
+
 	//ロープ
 	if (m_prx < 49.0f)
 	{
@@ -225,32 +234,31 @@ void CObjAncer::Action()
 	{
 		m_prx = 800.0f - 26.0f;
 	}
-	if (m_pry > 500.0f)
+	if (rope > 700.0f)
 	{
-		m_pry = 500.0f;
+		rope = 700.0f;
 	}
-	else if (m_pry < 60.0f)
+	else if (rope < 0.0f)
 	{
-		m_pry = 60.0f;
+		rope = 0.0f;
 	}
 
 	//位置更新
-	m_px += m_vx; //本体
+	m_px  += m_vx; //本体
 	m_pax += m_vx; //アンカー
 	m_pay += m_vy;
 	m_prx += m_vx; //ロープ
-	m_pry += m_vy;
 	
-
 	//HitBoxの位置の変更
-	hit_a->SetPos(m_pax, m_pay - 45);
-
-
+	hit_a->SetPos(m_pax + hitbox_size - 4, m_pay - 40, size, size);
+	
+	
 }
 
 //ドロー
 void CObjAncer::Draw()
 {
+
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -274,8 +282,8 @@ void CObjAncer::Draw()
 
 	//表示位置の設定
 	dstr.m_top = 520.0f - rope;
-	dstr.m_left = 0.0f + m_prx;
-	dstr.m_right = 20.0f + m_prx;
+	dstr.m_left = -1.0f + m_prx;
+	dstr.m_right = 4.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 
 	Draw::Draw(12, &srcr, &dstr, c, 0.0f);
@@ -289,9 +297,9 @@ void CObjAncer::Draw()
 
 	//表示位置の設定
 	dst.m_top = 0.0f + m_py;
-	dst.m_left = 0.0f + m_px;
-	dst.m_right = 50.0f + m_px;
-	dst.m_bottom = 100.0f + m_py;
+	dst.m_left = -5.0f + m_px;
+	dst.m_right = 45.0f + m_px;
+	dst.m_bottom = 100.0f + m_py ;
 
 	Draw::Draw(12, &src, &dst, c, 0.0f);
 	
@@ -303,9 +311,9 @@ void CObjAncer::Draw()
 	srca.m_bottom = 200.0f;
 
 	//表示位置の設定
-	dsta.m_top = 0.0f + m_pay;
-	dsta.m_left = 0.0f + m_pax;
-	dsta.m_right = 50.0f + m_pax;
+	dsta.m_top = 0.0f + m_pay + m_sizey;
+	dsta.m_left = -5.0f + m_pax - m_sizex;
+	dsta.m_right = 45.0f + m_pax + m_sizex;
 	dsta.m_bottom = -60.0f + m_pay;
 
 	Draw::Draw(12, &srca, &dsta, c, 0.0f);
