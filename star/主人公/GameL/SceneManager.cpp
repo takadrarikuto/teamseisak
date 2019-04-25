@@ -145,3 +145,4 @@ void CSceneManager::Swap()
 	m_Scene=m_NewScene;
 	m_Scene->InitScene();		//ƒV[ƒ“‚Ì‰Šú‰»
 }
+
