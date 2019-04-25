@@ -83,8 +83,8 @@ void CObjStarPicbook::Draw()
 	//Â∂ç¿ÇÃâÊëúà íu
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 764.0f;
+	src.m_bottom = 578.0f;
 
 	dst.m_top = 500.0f;
 	dst.m_left = 604.0f;

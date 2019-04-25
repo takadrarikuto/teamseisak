@@ -76,9 +76,6 @@
     <ClCompile Include="ObjOperation.cpp">
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
-    <ClCompile Include="ObjPose.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClCompile>
     <ClCompile Include="ObjSelectPlanet.cpp">
       <Filter>ソースファイル\ステージ選択</Filter>
     </ClCompile>
@@ -145,9 +142,6 @@
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
-    <ClCompile Include="StarBook.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ObjStarmodel.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
@@ -175,7 +169,6 @@
     <ClCompile Include="ObjStarPresent7.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="StarBook.cpp" />
     <ClCompile Include="ObjStarmodel.cpp" />
     <ClCompile Include="ObjStarPresent4.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
@@ -185,6 +178,15 @@
     </ClCompile>
     <ClCompile Include="ObjStarPresent4.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjPose.cpp">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -305,9 +307,6 @@
     <ClInclude Include="ObjGameKuria.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClInclude>
     <ClInclude Include="SceneGameKuria.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
@@ -362,6 +361,9 @@
     <ClInclude Include="ObjStarmodel.h" />
     <ClInclude Include="ObjStarPresent4.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjPose.h">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
