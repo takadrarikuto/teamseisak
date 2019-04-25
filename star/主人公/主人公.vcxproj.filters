@@ -143,7 +143,6 @@
       <Filter>ソースファイル\主人公・アンカー・アイテム\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClCompile>
     <ClCompile Include="ObjStarmodel.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
