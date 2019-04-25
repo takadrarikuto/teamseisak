@@ -142,6 +142,8 @@
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClCompile>
     <ClCompile Include="ObjStarmodel.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
@@ -153,6 +155,9 @@
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjStarPicbook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="ObjStarPresent3.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
@@ -166,7 +171,6 @@
     <ClCompile Include="ObjStarPresent7.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="StarBook.cpp" />
     <ClCompile Include="ObjStarmodel.cpp" />
     <ClCompile Include="ObjStarPresent4.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
@@ -176,6 +180,15 @@
     </ClCompile>
     <ClCompile Include="ObjStarPresent4.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjPose.cpp">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="ObjPose.cpp">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
@@ -344,6 +357,9 @@
     <ClInclude Include="ObjStarPresent7.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
+    <ClInclude Include="ObjStarPresent4.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
     <ClInclude Include="ObjStarPresent3.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
@@ -353,6 +369,9 @@
     </ClInclude>
     <ClInclude Include="ObjPose.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjPose.h">
+      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -408,6 +427,9 @@
       <Filter>画像</Filter>
     </Image>
     <Image Include="画像\ブラックタイル.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\フィールド背景木星.png">
       <Filter>画像</Filter>
     </Image>
     <Image Include="画像\タイトル.png">
