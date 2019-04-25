@@ -70,19 +70,25 @@ void CSceneStarPicbook::InitScene()
 	}
 	else if (lever == 3)
 	{
-		//Ç®Ç–Ç¬Ç∂
+		//Ç–Ç¬Ç∂
 		CObjStarPresent6* a = new CObjStarPresent6();
 		Objs::InsertObj(a, OBJ_STARPRESENT6, 11);
 	}
 	else if (lever== 4)
 	{
-		//Ç®Ç§Çµç¿
+		//Ç§Çµç¿
 		CObjStarPresent2* a = new CObjStarPresent2();
 		Objs::InsertObj(a, OBJ_STARPRESENT2, 11);
 	}
 	else if (lever == 5)
 	{
-		//Ç®Ç§Çµç¿
+		//Ç”ÇΩÇ≤ç¿
+		CObjStarPresent7* a = new CObjStarPresent7();
+		Objs::InsertObj(a, OBJ_STARPRESENT7, 11);
+	}
+	else if (lever == 6)
+	{
+		//Ç©Ç…ç¿
 		CObjStarPresent7* a = new CObjStarPresent7();
 		Objs::InsertObj(a, OBJ_STARPRESENT7, 11);
 	}
@@ -108,7 +114,19 @@ void CSceneStarPicbook::InitScene()
 	}
 	else if (lever == 15)
 	{
-		//Ç®Ç–Ç¬Ç∂ç¿
+		//Ç–Ç¬Ç∂ç¿
+	}
+	else if (lever == 16)
+	{
+		//Ç§Çµç¿
+	}
+	else if (lever == 17)
+	{
+		//Ç”ÇΩÇ≤
+	}
+	else if (lever == 18)
+	{
+		//Ç©Ç…
 	}
 
 	if (lever ==11)
