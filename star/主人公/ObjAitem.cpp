@@ -17,6 +17,10 @@ bool Aitem_on = false;
 //イニシャライズ
 void CObjAitem::Init()
 {
+	//外部データ読み込み(星情報)
+	unique_ptr<wchar_t> p; //星情報ポインター
+	int size;			//星情報の大きさ
+	p = Save::ExternalDataOpen(L"Stars.csv", &size);//外部情報読み込み
 	//アイテムフラグ初期化
 	Aitem_flag = true;
 

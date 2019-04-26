@@ -35,7 +35,7 @@ private:
 	float m_sizex;
 	float m_sizey;
 	float size;
-	float hitbox_size; //ヒットボックス位置調整用
+	float hitbox_size; //ヒットボックスサイズ調整用
 	float m_prx; //ロープ
 	float m_pry;
 

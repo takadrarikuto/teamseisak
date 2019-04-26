@@ -53,6 +53,9 @@ void CObjStarPresent5::Draw()
 	int std = 0;
 	int side_a = 0;
 	int side_b = 200;
+	int size = 25;
+	int  size_y = 30;
+	int font = 80;
 
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
@@ -203,39 +206,56 @@ void CObjStarPresent5::Draw()
 	}
 
 
-
+	int ver;
 	if (crick == 1)
 	{
-		Font::StrDraw(L"うお座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"4.1等の主星Aと5.1等の伴星Bからなる連星系", 110, 50, 30, c);
-		Font::StrDraw(L"およそ720年の周期で互いに周回している", 110, 100, 30, c);
-		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを", 110, 150, 30, c);
-		Font::StrDraw(L"軌道運動している天体", 110, 200, 30, c);
+		ver = 0;
+		Font::StrDraw(L"うお座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"4.1等の主星Aと5.1等の伴星Bからなる連星系", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"およそ720年の周期で互いに周回している", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体", font, size_y* ver, size, c);
 	}
 	else if (crick == 2)
 	{
-		Font::StrDraw(L"うお座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"うお座β星のスペクトル型はB6 Ve", 110, 50, 30, c);
-		Font::StrDraw(L"質量は太陽の5倍、半径は太陽の3.6倍と推定される", 110, 100, 30, c);
-		Font::StrDraw(L"スペクトル型…恒星の分類法の一つである", 110, 150, 30, c);
-		Font::StrDraw(L"恒星から放射された電磁波を捉え", 110, 200, 30, c);
-		Font::StrDraw(L"スペクトルを観察して分類する", 110, 250, 30, c);
+		ver = 0;
+		Font::StrDraw(L"うお座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"うお座β星のスペクトル型はB6 Ve質量は太陽の5倍", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"半径は太陽の3.6倍と推定される", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"スペクトル型…恒星の分類法の一つである", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"恒星から放射された電磁波を捉えスペクトルを観察して分類する", font, size_y* ver, size, c);
 	}
 	else if (crick == 3)
 	{
-		Font::StrDraw(L"うお座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"5つの恒星が多重星を構成している", 110, 50, 30, c);
-		Font::StrDraw(L"多重星…地球から見ると近接した位置に見える", 110, 100, 30, c);
-		Font::StrDraw(L"3つ以上の恒星である", 110, 150, 30, c);
+		ver = 0;
+		Font::StrDraw(L"うお座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"5つの恒星が多重星を構成している", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"多重星…地球から見ると近接した位置に見える3つ以上の恒星で", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"ある", font, size_y* ver, size, c);
 	}
 	else if (crick == 4)
 	{
-		Font::StrDraw(L"うお座に属する", 110, 0, 30, c);
-		Font::StrDraw(L"4等星。4.26等のA星と8.30等のB星の二重星である", 110, 50, 30, c);
-		Font::StrDraw(L"二重星…地球上から見る恒星が同じ方向に", 110, 100, 30, c);
-		Font::StrDraw(L"近接して見える物を指す", 110, 150, 30, c);
-		Font::StrDraw(L"肉眼では1つの星に見えるが、", 110, 200, 30, c);
-		Font::StrDraw(L"望遠鏡などで観測する事によって2つに分解する", 110, 250, 30, c);
+		ver = 0;
+		Font::StrDraw(L"うお座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"4等星。4.26等のA星と8.30等のB星の二重星である", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"二重星…地球上から見る恒星が同じ方向に近接して見える物を", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"指す", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"肉眼では1つの星に見えるが、望遠鏡などで観測する事によって", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"2つに分解する", font, size_y* ver, size, c);
 	}
 
 }
