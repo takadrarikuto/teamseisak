@@ -56,6 +56,9 @@ void CObjStarPresent::Draw()
 	int font_size = 25;
 	int  Interval_y= 30;
 	int  left_end= 80;
+	int size = 25;
+	int size_y = 30;
+	int font = 80;
 
 	
 	//ƒ‹[ƒv‚µ‚Ä•`‰æ‚·‚é

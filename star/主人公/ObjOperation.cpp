@@ -4,7 +4,7 @@
 #include "GameL\DrawFont.h"
 #include"GameL\SceneObjManager.h"
 
-#include "CObjOperation.h"
+#include "ObjOperation.h"
 #include "GameHead.h"
 
 //使用するネームスペース
@@ -16,6 +16,7 @@ void CObjOperation::Init()
 	m_start_flag = false;
 	m_mous_x = 0.0f;
 	m_mous_y = 0.0f;
+
 }
 
 void CObjOperation::Action()
@@ -26,13 +27,13 @@ void CObjOperation::Action()
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
-	if (m_mous_x > 200 && m_mous_x < 600 && m_mous_y>440 && m_mous_y < 490)
+	if (m_mous_x > 630 && m_mous_x < 730 && m_mous_y>480 && m_mous_y < 520)
 	{
 		if (m_mous_l == true)
 		{
 			if (m_start_flag == true)
 			{
-				Scene::SetScene(new CSceneStageselect()); //操作説明選択画面に移動
+				Scene::SetScene(new CSceneStageselect()); //宇宙船選択画面に移動
 			}
 		}
 		else
@@ -40,6 +41,7 @@ void CObjOperation::Action()
 			m_start_flag = true;
 		}
 	}
+	
 }
 
 void CObjOperation::Draw()
@@ -53,8 +55,8 @@ void CObjOperation::Draw()
 	//切り取り位置の位置
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1052.0f;
-	src.m_bottom = 432.0f;
+	src.m_right = 800.0f;
+	src.m_bottom = 600.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f;
