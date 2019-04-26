@@ -184,7 +184,7 @@ void CObjStarPresent10::Draw()
 	}
 
 	//					@@	    X@        Y@    ‘å‚«‚³
-	Font::StrDraw(L"ƒ|ƒŠƒ}", 20, 340 + t * l, 30, c);
+	Font::StrDraw(L"ƒ|ƒŠƒ}", 20, 330 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -195,7 +195,7 @@ void CObjStarPresent10::Draw()
 		}
 	}
 	//					@@	  X@        Y@    ‘å‚«‚³
-	Font::StrDraw(L"ƒ~ƒlƒ‰ƒEƒo", 20, 350 + t * l, 30, c);
+	Font::StrDraw(L"ƒ~ƒlƒ‰ƒEƒo", 20, 330 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -345,9 +345,9 @@ void CObjStarPresent10::Draw()
 		ver++;
 		Font::StrDraw(L"‚¨‚Æ‚ßÀ‚ÌP¯‚Å3“™¯B‚±‚Ì¯‚ÍÔF‹¯•ªŠò (RGB) ‚Ì", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"’iŠK‚É‚ ‚éB’n‹…‚©‚çŠÏ‘ª‚µ‚Ä80•b—£‚ê‚½ˆÊ’u‚É", font, size_y * ver, size, c);
+		Font::StrDraw(L"’iŠK‚É‚ ‚éB’n‹…‚©‚çŠÏ‘ª‚µ‚Ä80•b—£‚ê‚½ˆÊ’u‚ÉŒ©‚¦‚é11“™¯‚Í", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"Œ©‚¦‚é11“™¯‚ÍA”º¯‚Ì‰Â”\«‚ª‚ ‚é‚Æ‚³‚ê‚é", font, size_y * ver, size, c);
+		Font::StrDraw(L"”º¯‚Ì‰Â”\«‚ª‚ ‚é‚Æ‚³‚ê‚é", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"ÔF‹¯cP¯‚ªåŒn—ñ¯‚ğI‚¦‚½‚ ‚Æ‚Ìi‰»’iŠK‚Å‚ ‚é", font, size_y * ver, size, c);
 		ver++;
@@ -369,9 +369,9 @@ void CObjStarPresent10::Draw()
 		ver++;
 		Font::StrDraw(L"‹¯c“¯‚¶•\–Ê‰·“x‚ğ‚ÂåŒn—ñ¯‚æ‚è‚à”¼Œa‚¨‚æ‚Ñ–¾‚é‚³‚ª", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"”ñí‚É‘å‚«‚¢P¯‚Ì‚±‚Æ‚Å‚ ‚é‹¯‚Ì”¼Œa‚Í‘¾—z‚Ì", font, size_y * ver, size, c);
+		Font::StrDraw(L"”ñí‚É‘å‚«‚¢P¯‚Ì‚±‚Æ‚Å‚ ‚é‹¯‚Ì”¼Œa‚Í‘¾—z‚Ì10”{‚©‚ç", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"10”{‚©‚ç100”{A–¾‚é‚³‚Í10”{‚©‚ç1000”{‚Å‚ ‚é", font, size_y * ver, size, c);
+		Font::StrDraw(L"100”{A–¾‚é‚³‚Í10”{‚©‚ç1000”{‚Å‚ ‚é", font, size_y * ver, size, c);
 		ver++;
 	}
 	else if (crick == 6)
@@ -409,17 +409,13 @@ void CObjStarPresent10::Draw()
 		ver++;
 		Font::StrDraw(L"l‚¦‚ç‚ê‚Ä‚¢‚é", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"åŒn—ñ¯cP¯‚Ì—LŒø‰·“x‚Æ–¾‚é‚³‚ğ¦‚µ‚½}‚Å‚ ‚é", font, size_y * ver, size, c);
+		Font::StrDraw(L"åŒn—ñ¯cP¯‚Ì—LŒø‰·“x‚Æ–¾‚é‚³‚ğ¦‚µ‚½}‚Å‚ ‚éƒwƒ‹ƒcƒVƒ…", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L" ƒwƒ‹ƒcƒVƒ…ƒvƒ‹ƒ“ƒOEƒ‰ƒbƒZƒ‹}(HR}) ã‚Å", font, size_y * ver, size, c);
+		Font::StrDraw(L" ƒvƒ‹ƒ“ƒOEƒ‰ƒbƒZƒ‹}(HR}) ã‚Å–¾‚é‚­‚‰·‚©‚çˆÃ‚­’á‰·‚É", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"–¾‚é‚­‚‰·‚©‚çˆÃ‚­’á‰·‚É‰„‚Ñ‚éü‚Å‚ ‚éåŒn—ñ‚É", font, size_y * ver, size, c);
-		ver++;
-		Font::StrDraw(L"ˆÊ’u‚·‚éP¯‚ğ‚¢‚¤Báâ¯‚Æ‚à‚¢‚¤", font, size_y * ver, size, c);
+		Font::StrDraw(L"‰„‚Ñ‚éü‚Å‚ ‚éåŒn—ñ‚ÉˆÊ’u‚·‚éP¯‚ğ‚¢‚¤Báâ¯‚Æ‚à‚¢‚¤", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"”’Fáâ¯cP¯‚ªi‰»‚ÌI––Šú‚É‚Æ‚è‚¤‚éŒ`‘Ô‚Ìˆê‚Â", font, size_y * ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, size_y * ver, size, c);
 		ver++;
 	}
 	else if (crick == 8)
