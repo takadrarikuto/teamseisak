@@ -216,7 +216,9 @@ void CObjStarPresent5::Draw()
 		ver++;
 		Font::StrDraw(L"およそ720年の周期で互いに周回している", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体", font, size_y* ver, size, c);
+		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", font, size_y* ver, size, c);
 	}
 	else if (crick == 2)
 	{

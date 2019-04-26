@@ -375,6 +375,7 @@
     <ClInclude Include="ObjStarPresent10.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
+    <ClInclude Include="ObjPose.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
