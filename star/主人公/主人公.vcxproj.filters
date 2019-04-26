@@ -190,6 +190,19 @@
     <ClCompile Include="ObjStarPresent10.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
+    <ClCompile Include="ObjQTE.cpp">
+      <Filter>ソースファイル\Obj\ゲージ関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjThirdStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjFourthStar.cpp">
+      <Filter>ソースファイル\Obj\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjPose.cpp" />
+    <ClCompile Include="SceneVenus.cpp">
+      <Filter>ソースファイル\Scene\惑星ステージ</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
