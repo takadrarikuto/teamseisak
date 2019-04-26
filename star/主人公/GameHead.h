@@ -117,16 +117,16 @@ struct UserData
 #include "ObjStarPresent5.h"
 #include "ObjStarPresent6.h"
 #include "ObjStarPresent7.h"
-#include "ObjStarPresent8.h"
+/*#include "ObjStarPresent8.h"
 #include "ObjStarPresent9.h"
-#include "ObjStarPresent10.h"
+#include "ObjStarPresent10.h"*/
 #include "ObjAitem.h"
 #include "ObjEvent.h"
 #include "ObjStarCount.h"
 #include "Objstaminagauge.h"
 #include "Objstaminagaugeframe.h"
 #include "ObjPose.h"
-#include "ObjStarmodel.h"
+/*#include "ObjStarmodel.h"*/
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -144,5 +144,4 @@ struct UserData
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
 #define SET_GAME_START CSceneTitle
-
 //-----------------------------------------------
