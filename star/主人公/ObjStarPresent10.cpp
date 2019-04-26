@@ -383,7 +383,7 @@ void CObjStarPresent10::Draw()
 		ver++;
 		Font::StrDraw(L"çlÇ¶ÇÁÇÍÇƒÇ¢ÇÈ", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"", font, size_y * ver, size, c);
+		Font::StrDraw(L" ", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"", font, size_y * ver, size, c);
 		ver++;
