@@ -7,6 +7,7 @@
 #include "ObjStarPresent2.h"
 extern int lever;
 
+
 void CObjStarPresent2::Init()
 {
 

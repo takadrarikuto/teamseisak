@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F6B49877-F43D-449E-8E75-95C9B702D215}</ProjectGuid>
     <RootNamespace>主人公</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <ProjectName>star collection</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,10 +139,9 @@
     <ClInclude Include="ObjOtherStar.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjQTE.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="ObjPose.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="ObjSaturn.h" />
@@ -153,6 +152,7 @@
     <ClInclude Include="ObjSecondStar.h" />
     <ClInclude Include="Objstaminagauge.h" />
     <ClInclude Include="Objstaminagaugeframe.h" />
+    <ClInclude Include="ObjStarPresent10.h" />
     <ClInclude Include="ObjStarPresent2.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
@@ -165,6 +165,10 @@
     </ClInclude>
     <ClInclude Include="ObjStarPresent6.h" />
     <ClInclude Include="ObjStarPresent7.h" />
+    <ClInclude Include="ObjStarPresent8.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent9.h" />
     <ClInclude Include="ObjThirdStar.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
@@ -220,9 +224,7 @@
     <ClCompile Include="ObjOtherStar.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="ObjPose.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="ObjPose.cpp" />
     <ClCompile Include="ObjQTE.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -240,6 +242,7 @@
     </ClCompile>
     <ClCompile Include="Objstaminagauge.cpp" />
     <ClCompile Include="Objstaminagaugeframe.cpp" />
+    <ClCompile Include="ObjStarPresent10.cpp" />
     <ClCompile Include="ObjStarPresent2.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -250,6 +253,10 @@
     <ClCompile Include="ObjStarPresent5.cpp" />
     <ClCompile Include="ObjStarPresent6.cpp" />
     <ClCompile Include="ObjStarPresent7.cpp" />
+    <ClCompile Include="ObjStarPresent8.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent9.cpp" />
     <ClCompile Include="ObjThirdStar.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="ObjVenus.cpp" />

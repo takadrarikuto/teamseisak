@@ -183,8 +183,14 @@
     <ClCompile Include="ObjStarPresent4.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
-    <ClCompile Include="ObjOperation.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    <ClCompile Include="ObjStarPresent8.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent9.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent10.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -361,6 +367,15 @@
     </ClInclude>
     <ClInclude Include="ObjStarmodel.h" />
     <ClInclude Include="ObjStarPresent4.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent8.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent9.h">
+      <Filter>ヘッダーファイル\星図鑑</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent10.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
   </ItemGroup>
