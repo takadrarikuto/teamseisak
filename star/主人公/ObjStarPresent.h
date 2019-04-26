@@ -26,4 +26,5 @@ private:
 	int time;
 	wchar_t str[256];
 	wchar_t see[256];
+	int ver;
 };

@@ -145,9 +145,6 @@
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
-    <ClCompile Include="StarBook.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="ObjStarmodel.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
@@ -190,6 +187,9 @@
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="ObjStarPresent10.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
   </ItemGroup>

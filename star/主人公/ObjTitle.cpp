@@ -43,7 +43,7 @@ void CObjTitle::Action()
 				//300•bŒã‚É‰æ–ÊˆÚ“®
 				
 				//if(a_time<=300){
-					
+			Scene::SetScene(new CSceneStageselect()); //‘€ìà–¾‘I‘ð‰æ–Ê‚ÉˆÚ“®
 					
 				//}
 			
@@ -61,11 +61,11 @@ void CObjTitle::Action()
 	}
 	else if (a_time == 1)
 	{
-		Audio::Start(1);
+		//Audio::Start(1);
 	}
 	else
 	{
-		Audio::Stop(1);
+		//Audio::Stop(1);
 	}
 
 }
