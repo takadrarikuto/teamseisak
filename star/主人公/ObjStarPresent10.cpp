@@ -345,9 +345,9 @@ void CObjStarPresent10::Draw()
 		ver++;
 		Font::StrDraw(L"おとめ座の恒星で3等星。この星は赤色巨星分岐 (RGB) の", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"段階にある。地球から観測して80秒離れた位置に見える11等星は", font, size_y * ver, size, c);
+		Font::StrDraw(L"段階にある。地球から観測して80秒離れた位置に見える11等星", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"伴星の可能性があるとされる", font, size_y * ver, size, c);
+		Font::StrDraw(L"は伴星の可能性があるとされる", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"赤色巨星…恒星が主系列星を終えたあとの進化段階である", font, size_y * ver, size, c);
 		ver++;
@@ -383,9 +383,9 @@ void CObjStarPresent10::Draw()
 		ver++;
 		Font::StrDraw(L"考えられている。伴星の1つは、平均約10au離れた軌道を", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"13.12年を掛けて周回している。さらに主星には約0.5auの軌道を", font, size_y * ver, size, c);
+		Font::StrDraw(L"13.12年を掛けて周回している。さらに主星には約0.5auの", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"72日の周期で回る伴星があると見られる", font, size_y * ver, size, c);
+		Font::StrDraw(L"軌道を72日の周期で回る伴星があると見られる", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"au…天文単位と言い、長さの単位で、正確に 149597870700 m ", font, size_y * ver, size, c);
 		ver++;
