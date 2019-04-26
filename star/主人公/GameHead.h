@@ -126,7 +126,7 @@ struct UserData
 #include "Objstaminagauge.h"
 #include "Objstaminagaugeframe.h"
 #include "ObjPose.h"
-/*#include "ObjStarmodel.h"*/
+#include "ObjStarmodel.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
