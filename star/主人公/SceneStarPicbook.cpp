@@ -119,6 +119,8 @@ void CSceneStarPicbook::InitScene()
 	else if (lever == 11)
 	{
 		//éÀéËç¿
+		CObjStarPresent11* a = new CObjStarPresent11();
+		Objs::InsertObj(a, OBJ_STARPRESENT11, 11);
 	}
 	else if (lever == 12)
 	{
