@@ -10,6 +10,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+//スタミナ→酸素変更
+
 //イニシャライズ
 void CObjstaminagaugeframe::Init()
 {
@@ -27,7 +29,7 @@ void CObjstaminagaugeframe::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"スタミナ", 460, 570, 30, c);
+	Font::StrDraw(L"酸素残量", 460, 570, 30, c);
 
 	//背景
 	RECT_F src;//描画元切り取り位置

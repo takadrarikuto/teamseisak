@@ -13,7 +13,6 @@
 using namespace GameL;
 
 extern bool Event_on;
-bool Ancer_on = false; //アンカー使用
 
 //イニシャライズ
 void CObjAncer::Init()
@@ -83,21 +82,18 @@ void CObjAncer::Action()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-	//左クリックしていない時かつアンカーが発射されていない時移動可能
-	if (m_mous_l == false && ancer_flag == false)
+	//移動
+	//左
+	if (Input::GetVKey('A') == true)
 	{
-		//移動
-		//左
-		if (Input::GetVKey('A') == true)
-		{
-			m_vx -= 4.0f;
-		}
-		//右
-		else if (Input::GetVKey('D') == true)
-		{
-			m_vx += 4.0f;
-		}
+		m_vx -= 4.0f;
 	}
+	//右
+	else if (Input::GetVKey('D') == true)
+	{
+		m_vx += 4.0f;
+	}
+	
 
 	//自身のHitBoxを持ってくる
 	CHitBox* hit_a = Hits::GetHitBox(this);
@@ -109,10 +105,6 @@ void CObjAncer::Action()
 		{
 			ancer_time += 1.0f; //アンカー発射時間増加
 			rope_time -= 1.0f; //ロープ発射時間増加
-			if (ancer_time == 1.0f && rope_time == -1.0f)
-			{
-				Ancer_on = true; //スタミナ消費用
-			}
 		}
 		else if (m_mous_l == false || (m_mous_l == true && m_pay < 535.0f))
 		{

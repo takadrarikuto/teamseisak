@@ -56,35 +56,27 @@ void CObjHero::Action()
 	CObjAncer* Ancer = (CObjAncer*)Objs::GetObj(OBJ_ANCER);
 	float af = Ancer->GetAncerFlag();
 
-	//左クリックしていない時かつアンカーが発射されていない時移動可能
-	if (m_mous_l == false && af == false)
+	//移動処理
+	//左
+	if (Input::GetVKey('A') == true)
 	{
-		//移動処理
-		//左
-		if (Input::GetVKey('A') == true)
-		{
-			m_vx -= 4.0f;
-			m_pos = 1.0f;
-			m_ani_time += 1;
-		}
-		//右
-		else if (Input::GetVKey('D') == true)
-		{
-			m_vx += 4.0f;
-			m_pos = 2.0f;
-			m_ani_time += 1;
-		}
-		else
-		{
-			m_ani_time = 0; //アニメーション停止
-			m_ani_frame = 1; //キー入力が無い場合は静止フレームにする
-		}
+		m_vx -= 4.0f;
+		m_pos = 1.0f;
+		m_ani_time += 1;
+	}
+	//右
+	else if (Input::GetVKey('D') == true)
+	{
+		m_vx += 4.0f;
+		m_pos = 2.0f;
+		m_ani_time += 1;
 	}
 	else
 	{
 		m_ani_time = 0; //アニメーション停止
 		m_ani_frame = 1; //キー入力が無い場合は静止フレームにする
 	}
+
 
 	//ステージ選択画面に戻る
 	if (Input::GetVKey('B') == true)
