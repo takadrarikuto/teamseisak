@@ -30,7 +30,7 @@ CSceneStarPicbook::~CSceneStarPicbook()
 
 //ゲームタイトル初期化メソッド
 void CSceneStarPicbook::InitScene()
-{	
+{
 	//グラフィック読み込み
 	Draw::LoadImage(L"テキストボックス.png", 9, TEX_SIZE_512);
 
@@ -50,7 +50,7 @@ void CSceneStarPicbook::InitScene()
 	Draw::LoadImage(L"牡牛座.png", 14, TEX_SIZE_512);
 
 	//星図鑑オブジェクト生成
-	if(lever==0)
+	if (lever == 0)
 	{
 		//星図鑑オブジェクト生成
 		CObjStarPicbook* p = new CObjStarPicbook();
@@ -74,7 +74,7 @@ void CSceneStarPicbook::InitScene()
 		CObjStarPresent6* a = new CObjStarPresent6();
 		Objs::InsertObj(a, OBJ_STARPRESENT6, 11);
 	}
-	else if (lever== 4)
+	else if (lever == 4)
 	{
 		//うし座
 		CObjStarPresent2* a = new CObjStarPresent2();
@@ -125,45 +125,82 @@ void CSceneStarPicbook::InitScene()
 	else if (lever == 12)
 	{
 		//山羊座
+		CObjStarPresent12* a = new CObjStarPresent12();
+		Objs::InsertObj(a, OBJ_STARPRESENT12, 11);
 	}
 	else if (lever == 13)
 	{
 		//みずがめ座
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
 	else if (lever == 14)
 	{
 		//うお座
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
 	else if (lever == 15)
 	{
 		//ひつじ座
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
 	else if (lever == 16)
 	{
 		//うし座
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
 	else if (lever == 17)
 	{
 		//ふたご
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
 	else if (lever == 18)
 	{
 		//かに
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
 	else if (lever == 19)
 	{
 		//しし
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
 	else if (lever == 20)
 	{
 		//おとめ
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
+	}
+	else if (lever == 21)
+	{
+		//てんびん
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
 	else if (lever == 22)
 	{
-	//さそり
+		//さそり
 		CObjStarmodel* a = new CObjStarmodel();
-		Objs::InsertObj(a, OBJ_STARMODEL, 12); 
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
 	}
+	else if (lever == 23)
+	{
+		//いて
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
+	}
+	else if (lever == 24)
+	{
+		//やぎ
+		CObjStarmodel* a = new CObjStarmodel();
+		Objs::InsertObj(a, OBJ_STARMODEL, 12);
+	}
+
 }
 
 //ゲームタイトル実行メソッド

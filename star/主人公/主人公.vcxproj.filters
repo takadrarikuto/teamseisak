@@ -97,15 +97,6 @@
     <ClCompile Include="Objstaminagaugeframe.cpp">
       <Filter>ソースファイル\ゲージ</Filter>
     </ClCompile>
-    <ClCompile Include="ObjStarPresent.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent2.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent3.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
     <ClCompile Include="ObjThirdStar.cpp">
       <Filter>ソースファイル\星関係</Filter>
     </ClCompile>
@@ -145,9 +136,6 @@
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
-    <ClCompile Include="ObjStarmodel.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
     <ClCompile Include="ObjAitem.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
     </ClCompile>
@@ -157,42 +145,61 @@
     <ClCompile Include="ObjHero.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
     </ClCompile>
-    <ClCompile Include="ObjStarPresent3.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent5.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent6.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent7.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="StarBook.cpp" />
-    <ClCompile Include="ObjStarmodel.cpp" />
-    <ClCompile Include="ObjStarPresent4.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
     <ClCompile Include="CObjStarPicbook.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent4.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent8.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent9.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStarPresent10.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="StarBook.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
+    <ClCompile Include="ObjStarPresent.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent2.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent3.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent4.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent5.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent6.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent7.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent8.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent9.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent10.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
     <ClCompile Include="ObjStarPresent11.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent12.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarmodel.cpp">
+      <Filter>ソースファイル\星図鑑\星座</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent3.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarPresent4.cpp">
+      <Filter>ソースファイル\星図鑑\星</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStarmodel.cpp">
+      <Filter>ソースファイル\星図鑑\星座</Filter>
+    </ClCompile>
+    <ClCompile Include="StarBook.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
   </ItemGroup>
@@ -281,15 +288,6 @@
     <ClInclude Include="CObjStarPicbook.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
-    <ClInclude Include="ObjStarPresent.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent2.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent3.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
-    </ClInclude>
     <ClInclude Include="SceneStarPicbook.h">
       <Filter>ヘッダーファイル\星図鑑</Filter>
     </ClInclude>
@@ -350,40 +348,56 @@
     <ClInclude Include="ObjHero.h">
       <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
     </ClInclude>
-    <ClInclude Include="ObjStarmodel.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
+    <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjStarPresent.h">
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjStarPresent5.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent6.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent7.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
+    <ClInclude Include="ObjStarPresent2.h">
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjStarPresent3.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjStarmodel.h" />
     <ClInclude Include="ObjStarPresent4.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent5.h">
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent6.h">
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent7.h">
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjStarPresent8.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjStarPresent9.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjStarPresent10.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h" />
-    <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjStarPresent11.h">
-      <Filter>ヘッダーファイル\星図鑑</Filter>
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjStarPresent12.h">
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarmodel.h">
+      <Filter>ヘッダーファイル\星図鑑\星座</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent3.h">
+      <Filter>ヘッダーファイル\星図鑑\星</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStarmodel.h">
+      <Filter>ヘッダーファイル\星図鑑\星座</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
@@ -585,6 +599,18 @@
     </Filter>
     <Filter Include="ソースファイル\イベント">
       <UniqueIdentifier>{459130da-5a55-4fb8-9f77-b1b2c44f9af9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\星図鑑\星">
+      <UniqueIdentifier>{54530677-3e8f-41d8-86ff-b257c2f8c2af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\星図鑑\星座">
+      <UniqueIdentifier>{1785b5f9-70b3-4251-aff2-15b6e4aa4917}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\星図鑑\星">
+      <UniqueIdentifier>{524bfbe6-f2e6-4673-9856-1660216cb764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\星図鑑\星座">
+      <UniqueIdentifier>{46b4588e-1354-42a6-85cf-0de088f1cc25}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

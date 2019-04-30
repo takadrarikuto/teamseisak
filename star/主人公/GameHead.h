@@ -38,6 +38,7 @@ enum OBJ_NAME
 	OBJ_STARPRESENT9,
 	OBJ_STARPRESENT10,
 	OBJ_STARPRESENT11,
+	OBJ_STARPRESENT12,
 	OBJ_AITEM,
 	OBJ_EVENT,
 	OBJ_IBENT,
@@ -122,6 +123,7 @@ struct UserData
 #include "ObjStarPresent9.h"
 #include "ObjStarPresent10.h"
 #include "ObjStarPresent11.h"
+#include "ObjStarPresent12.h"
 #include "ObjAitem.h"
 #include "ObjEvent.h"
 #include "ObjStarCount.h"

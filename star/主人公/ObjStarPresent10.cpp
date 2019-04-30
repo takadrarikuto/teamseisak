@@ -300,7 +300,6 @@ void CObjStarPresent10::Draw()
 		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"変光…明るさ（等級）が変化するもののことである", font, size_y * ver, size, c);
-		ver++;
 	}
 	else if (crick == 2)
 	{
@@ -318,7 +317,6 @@ void CObjStarPresent10::Draw()
 		Font::StrDraw(L"掩蔽…ある天体が観測者と他の天体の間を通過するために", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"その天体が隠される現象である", font, size_y * ver, size, c);
-		ver++;
 	}
 	else if (crick == 3)
 	{
@@ -336,7 +334,6 @@ void CObjStarPresent10::Draw()
 		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", font, size_y * ver, size, c);
-		ver++;
 	}
 	else if (crick == 4)
 	{
@@ -354,7 +351,6 @@ void CObjStarPresent10::Draw()
 		Font::StrDraw(L"大気が膨張し、その大きさは地球の公転軌道半径から", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"火星のそれに相当する", font, size_y * ver, size, c);
-		ver++;
 	}
 	else if (crick == 5)
 	{
@@ -372,7 +368,6 @@ void CObjStarPresent10::Draw()
 		Font::StrDraw(L"非常に大きい恒星のことである巨星の半径は太陽の10倍から", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"100倍、明るさは10倍から1000倍である", font, size_y * ver, size, c);
-		ver++;
 	}
 	else if (crick == 6)
 	{
@@ -392,7 +387,6 @@ void CObjStarPresent10::Draw()
 		Font::StrDraw(L"である。主として天文学で用いられ、例として地球と太陽の", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"距離の近似値は約1 auであると述べることができる", font, size_y * ver, size, c);
-		ver++;
 	}
 	else if (crick == 7)
 	{
@@ -416,7 +410,6 @@ void CObjStarPresent10::Draw()
 		Font::StrDraw(L"延びる線である主系列に位置する恒星をいう。矮星ともいう", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"白色矮星…恒星が進化の終末期にとりうる形態の一つ", font, size_y * ver, size, c);
-		ver++;
 	}
 	else if (crick == 8)
 	{
@@ -438,7 +431,6 @@ void CObjStarPresent10::Draw()
 		Font::StrDraw(L"いずれも「月の宿り」を意味するが日本や中国では", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"一般に星宿と呼んでいる。月宿は世界各地に見られる", font, size_y * ver, size, c);
-		ver++;
 	}
 	else if (crick == 9)
 	{
@@ -460,7 +452,6 @@ void CObjStarPresent10::Draw()
 		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", font, size_y * ver, size, c);
-		ver++;
 	}
 	else if (crick == 10)
 	{
@@ -484,6 +475,5 @@ void CObjStarPresent10::Draw()
 		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", font, size_y * ver, size, c);
-		ver++;
 	}
 }
