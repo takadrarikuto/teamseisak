@@ -137,6 +137,7 @@
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="ObjJupiter.h" />
     <ClInclude Include="ObjMars.h" />
+    <ClInclude Include="ObjMeasurementAncer.h" />
     <ClInclude Include="ObjOtherStar.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
@@ -225,6 +226,7 @@
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="ObjJupiter.cpp" />
     <ClCompile Include="ObjMars.cpp" />
+    <ClCompile Include="ObjMeasurementAncer.cpp" />
     <ClCompile Include="ObjOperation.cpp" />
     <ClCompile Include="ObjOtherStar.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>

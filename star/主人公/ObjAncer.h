@@ -40,10 +40,10 @@ private:
 	float m_pry;
 
 	//移動ベクトル
-	float m_vx;
+	float m_vx; //本体・アンカー
 	float m_vy;
-	float m_vancer;
-	float m_vrope;
+	float m_vfx; //飛距離測定用アンカー
+	float m_vfy;
 
 	bool m_mous_l;
 	float rope; //ロープ描画用
@@ -56,4 +56,5 @@ private:
 
 	int A_event; //イベントタイム処理
 	int Ev_ancer; //イベント時アンカー処理
+
 };

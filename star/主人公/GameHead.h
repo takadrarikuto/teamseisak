@@ -8,6 +8,7 @@ enum OBJ_NAME
 	//OBJ_○○と表記
 	OBJ_HERO,
 	OBJ_ANCER,
+	OBJ_MANCER,
 	OBJ_TIME,
 	OBJ_TITLE,
 	OBJ_STAGESELECT,
@@ -103,6 +104,7 @@ struct UserData
 #include "ObjVenus.h"
 #include "ObjSaturn.h"
 #include "ObjAncer.h"
+#include "ObjMeasurementAncer.h"
 #include "ObjFirstStar.h"
 #include "ObjSecondStar.h"
 #include "ObjThirdStar.h"
@@ -147,6 +149,6 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneStarPicbook
+#define SET_GAME_START CSceneStageselect
 
 //-----------------------------------------------

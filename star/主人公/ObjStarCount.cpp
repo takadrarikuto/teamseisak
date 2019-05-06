@@ -12,6 +12,7 @@
 //使用するネームスペース
 using namespace GameL;
 
+bool Star_Recovery = false;  //特定の星確保時酸素回復
 
 //イニシャライズ
 void CObjStarCount::Init()
@@ -46,6 +47,7 @@ void CObjStarCount::Action()
 		|| hit_sc->CheckObjNameHit(OBJ_OTHERSTAR) != nullptr)
 	{
 		star_flag = true;
+		Star_Recovery = true;
 	}
 
 	if (star_flag == true)

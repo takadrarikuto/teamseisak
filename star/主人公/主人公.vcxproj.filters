@@ -202,6 +202,9 @@
     <ClCompile Include="StarBook.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
+    <ClCompile Include="ObjMeasurementAncer.cpp">
+      <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -397,6 +400,10 @@
     </ClInclude>
     <ClInclude Include="ObjStarmodel.h">
       <Filter>ヘッダーファイル\星図鑑\星座</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjMeasurementAncer.h">
+      <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

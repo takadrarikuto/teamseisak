@@ -12,6 +12,7 @@ using namespace GameL;
 
 extern bool Event_on;
 extern bool Aitem_on;
+extern bool Star_Recovery;
 
 //スタミナ→酸素変更
 
@@ -76,6 +77,14 @@ void CObjstaminagauge::Action()
 	else
 	{
 		m_vstamina = 0.0f;
+	}
+
+	//特定の星を確保した時酸素回復
+	if (Star_Recovery == true)
+	{
+		m_vx -= 10.0f;
+		m_stamina += 10.0f;
+		Star_Recovery = false;
 	}
 
 	//イベント時
