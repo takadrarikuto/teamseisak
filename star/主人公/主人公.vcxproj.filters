@@ -50,7 +50,7 @@
       <Filter>ソースファイル\イベント</Filter>
     </ClCompile>
     <ClCompile Include="ObjAncer.cpp">
-      <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClCompile>
     <ClCompile Include="ObjFirstStar.cpp">
       <Filter>ソースファイル\星関係</Filter>
@@ -137,13 +137,13 @@
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="ObjAitem.cpp">
-      <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClCompile>
     <ClCompile Include="ObjStageselect.cpp">
       <Filter>ソースファイル\ステージ選択</Filter>
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
-      <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClCompile>
     <ClCompile Include="CObjStarPicbook.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
@@ -203,7 +203,10 @@
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="ObjMeasurementAncer.cpp">
-      <Filter>ソースファイル\主人公・アンカー・アイテム</Filter>
+      <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjExclamationMark.cpp">
+      <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -343,13 +346,13 @@
       <Filter>ヘッダーファイル\ゲージ</Filter>
     </ClInclude>
     <ClInclude Include="ObjAitem.h">
-      <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
+      <Filter>ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClInclude>
     <ClInclude Include="ObjAncer.h">
-      <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
+      <Filter>ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClInclude>
     <ClInclude Include="ObjHero.h">
-      <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
+      <Filter>ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClInclude>
     <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjPose.h" />
@@ -403,7 +406,11 @@
     </ClInclude>
     <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjMeasurementAncer.h">
-      <Filter>ヘッダーファイル\主人公・アンカー・アイテム</Filter>
+      <Filter>ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjExclamationMark.h">
+      <Filter>ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -574,9 +581,6 @@
     <Filter Include="ヘッダーファイル\ゲージ">
       <UniqueIdentifier>{9096474f-8341-4e46-93d7-59df486d9336}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダーファイル\主人公・アンカー・アイテム">
-      <UniqueIdentifier>{a63e7682-2a25-48d5-911d-97f386efafca}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースファイル">
       <UniqueIdentifier>{916c1235-1500-44c1-96a8-45fe9b2a35c1}</UniqueIdentifier>
     </Filter>
@@ -598,9 +602,6 @@
     <Filter Include="ソースファイル\ゲージ">
       <UniqueIdentifier>{99a48c06-b939-4501-8d9a-48879e102325}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\主人公・アンカー・アイテム">
-      <UniqueIdentifier>{6cdc4f66-4ea4-4324-b954-8100c88583a3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースファイル\背景">
       <UniqueIdentifier>{3a53dd80-fd7e-4a15-8cb2-212207e9a822}</UniqueIdentifier>
     </Filter>
@@ -618,6 +619,12 @@
     </Filter>
     <Filter Include="ヘッダーファイル\星図鑑\星座">
       <UniqueIdentifier>{46b4588e-1354-42a6-85cf-0de088f1cc25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\主人公・アンカー・アイテム・ビックリマーク">
+      <UniqueIdentifier>{6cdc4f66-4ea4-4324-b954-8100c88583a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク">
+      <UniqueIdentifier>{a63e7682-2a25-48d5-911d-97f386efafca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

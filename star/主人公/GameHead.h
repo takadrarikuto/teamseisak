@@ -50,6 +50,7 @@ enum OBJ_NAME
 	OBJ_POSE,
 	OBJ_QTE,
 	OBJ_STARMODEL,
+	OBJ_EM,
 };
 //------------------------------------------------
 
@@ -133,6 +134,7 @@ struct UserData
 #include "Objstaminagaugeframe.h"
 #include "ObjPose.h"
 #include "ObjStarmodel.h"
+#include"ObjExclamationMark.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

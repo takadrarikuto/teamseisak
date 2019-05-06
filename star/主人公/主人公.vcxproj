@@ -130,6 +130,7 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjAitem.h" />
     <ClInclude Include="ObjEvent.h" />
+    <ClInclude Include="ObjExclamationMark.h" />
     <ClInclude Include="ObjFirstStar.h" />
     <ClInclude Include="ObjAncer.h" />
     <ClInclude Include="ObjFourthStar.h" />
@@ -220,6 +221,7 @@
     <ClCompile Include="ObjAitem.cpp" />
     <ClCompile Include="ObjAncer.cpp" />
     <ClCompile Include="ObjEvent.cpp" />
+    <ClCompile Include="ObjExclamationMark.cpp" />
     <ClCompile Include="ObjFirstStar.cpp" />
     <ClCompile Include="ObjFourthStar.cpp" />
     <ClCompile Include="ObjGameKuria.cpp" />

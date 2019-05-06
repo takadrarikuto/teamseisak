@@ -10,6 +10,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool EM_flag;
+
 //使用ヘッダー
 #include "SceneSaturn.h"
 #include "GameHead.h"
@@ -83,6 +85,8 @@ void CSceneSaturn::InitScene()
 	Draw::LoadImage(L"ゲージ枠.png", 21, TEX_SIZE_512);
 	Draw::LoadImage(L"ゲージ.png", 22, TEX_SIZE_512);
 
+	//ビックリマーク
+	Draw::LoadImage(L"ビックリマーク.png", 23, TEX_SIZE_512);
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
@@ -117,10 +121,17 @@ void CSceneSaturn::InitScene()
 	CObjstaminagauge* obj_st = new CObjstaminagauge();
 	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 22);
 
+	//ビックリマークオブジェクト作成
+	CObjExclamationMark* obj_em = new CObjExclamationMark();
+	Objs::InsertObj(obj_em, OBJ_EM, 23);
 
 	//星生成時間初期化
 	time_star = 0;
 
+	//1等星作成警告用カウント初期化
+	Star_time = 0.0f;
+	//1等星作成警告用フラグ初期化
+	Star_flag = false;
 }
 
 //実行中メゾット
@@ -186,9 +197,7 @@ void CSceneSaturn::Scene()
 		//1等星作成0.7%
 		if (result == 0)
 		{
-
-			CObjFirstStar* star = new CObjFirstStar();
-			Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
+			Star_flag = true; //1等星作成警告用フラグ オン
 		}
 
 		//2等星作成 3.9%
@@ -220,6 +229,28 @@ void CSceneSaturn::Scene()
 			Objs::InsertObj(star5, OBJ_OTHERSTAR, 14);    //スターオブジェクト登録
 		}
 		occur = 0;
+	}
+
+	//1等星作成時警告処理
+	if (Star_flag == true)
+	{
+		Star_time++;
+	}
+
+	//10秒後1等星作成
+	if (Star_time == 600.0f)
+	{
+		CObjFirstStar* star = new CObjFirstStar();
+		Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
+
+		Star_time = 0.0f; //1等星作成警告用カウント初期化	
+		Star_flag = false; //1等星作成警告用フラグ初期化
+		EM_flag = false; //ビックリマーク出現フラグ初期化
+	}
+	else if (Star_time == 1.0f)
+	{
+		EM_flag = true; //ビックリマーク出現フラグ オン
+		Star_time++;
 	}
 
 	//QTE
