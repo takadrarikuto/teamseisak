@@ -107,7 +107,7 @@ struct UserData
 #include "ObjStarPresent.h"
 #include "ObjStarPresent2.h"
 #include "ObjStarPresent3.h"
-#include "ObjStarPresent4.h"
+//#include "ObjStarPresent4.h"
 #include "ObjAitem.h"
 #include "ObjEvent.h"
 #include "ObjStarCount.h"
