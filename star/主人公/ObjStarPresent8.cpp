@@ -183,7 +183,7 @@ void CObjStarPresent8::Draw()
 	}
 
 	//					　　		       X　 Y　 大きさ
-	Font::StrDraw(L"アセルス・ボレアリス ", 10, 330 + t * l, 15, c);
+	Font::StrDraw(L"アセルス・ボレアリス ", 10, 335 + t * l, 18, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -194,7 +194,7 @@ void CObjStarPresent8::Draw()
 		}
 	}
 	//					　　        X　        Y　    大きさ
-	Font::StrDraw(L"アセルス・アウストラリス", 10, 330 + t * l, 15, c);
+	Font::StrDraw(L"アセルス・アウストラリス", 10, 340 + t * l, 18, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -209,7 +209,7 @@ void CObjStarPresent8::Draw()
 	l -= 4;
 	std = 1;
 
-	Font::StrDraw(L"ストール ", 20 + 220, 330 + t * l, 30, c);
+	Font::StrDraw(L"ストール ", 20 + 220, 320 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -233,7 +233,7 @@ void CObjStarPresent8::Draw()
 	}
 
 	//					　　		       X　 Y　 大きさ
-	Font::StrDraw(L"ピアトス ", 20 + 220, 330 + t * l, 30, c);
+	Font::StrDraw(L"ピアトス ", 20 + 220, 340 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -244,7 +244,7 @@ void CObjStarPresent8::Draw()
 		}
 	}
 	//					　　        X　        Y　    大きさ
-	Font::StrDraw(L"ナハ", 20 + 220, 330 + t * l, 30, c);
+	Font::StrDraw(L"ナハ", 20 + 220, 350 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -260,7 +260,7 @@ void CObjStarPresent8::Draw()
 	l -= 4;
 	std = 2;
 
-	Font::StrDraw(L"コペルニクス ", 20 + 400, 330 + t * l, 30, c);
+	Font::StrDraw(L"コペルニクス ", 20 + 400, 320 + t * l, 30, c);
 	l++;
 	// left				 right            top            bottom               
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -279,13 +279,13 @@ void CObjStarPresent8::Draw()
 		ver = 0;
 		Font::StrDraw(L"かに座に属する", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"かに座の中では4番目に明るく、4.20等級で", font, size_y* ver, size, c);
+		Font::StrDraw(L"かに座の中では4番目に明るく、4.20等級で良い条件の下では", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"良い条件の下では肉眼での観測が可能である", font, size_y* ver, size, c);
+		Font::StrDraw(L"肉眼での観測が可能である光度は太陽の23倍以上である", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"光度は太陽の23倍以上である。黄道面の近くにあるため", font, size_y* ver, size, c);
+		Font::StrDraw(L"黄道面の近くにあるため月や、稀に惑星による掩蔽が", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"月や、稀に惑星による掩蔽が起こることがある", font, size_y* ver, size, c);
+		Font::StrDraw(L"起こることがある", font, size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"黄道…天球上における太陽の見かけ上の通り道（大円）をいう", font, size_y* ver, size, c);
 	}
@@ -298,9 +298,11 @@ void CObjStarPresent8::Draw()
 		ver++;
 		Font::StrDraw(L"主星のかに座β星Aは橙色のK型巨星でバリウム星としても", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"知られている。視等級は3.50等、絶対等級は-1.25等。伴星かに座β星Bは", font, size_y * ver, size, c);
+		Font::StrDraw(L"知られている。視等級は3.50等、絶対等級は-1.25等", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"赤色矮星、主星から29秒離れた軌道を76,000年で公転している", font, size_y * ver, size, c);
+		Font::StrDraw(L"伴星かに座β星Bは赤色矮星、主星から29秒離れた軌道を", font, size_y * ver, size, c);
+		ver++;
+		Font::StrDraw(L"76,000年で公転している", font, size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"バリウム星…スペクトル型がG型またはK型の巨星である", font, size_y* ver, size, c);
 		ver++;
@@ -342,7 +344,7 @@ void CObjStarPresent8::Draw()
 		ver++;
 		Font::StrDraw(L"主系列星…恒星の有効温度と明るさを示した図である", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"ヘルツシュプルング・ラッセル図 (HR図) 上で、", font, size_y * ver, size, c);
+		Font::StrDraw(L"ヘルツシュプルング・ラッセル図 (HR図) 上で", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"明るく高温から暗く低温に延びる線である主系列に", font, size_y * ver, size, c);
 		ver++;
@@ -357,17 +359,19 @@ void CObjStarPresent8::Draw()
 		ver++;
 		Font::StrDraw(L"明るい星の1つである", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"A型主系列星…スペクトル型がA、光度階級がVの水素を燃やして燃える", font, size_y* ver, size, c);
+		Font::StrDraw(L"A型主系列星…スペクトル型がA、光度階級がVの水素を燃やして", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"主系列星であるスペクトル中の強い水素の吸収線によって区別される", font, size_y* ver, size, c);
+		Font::StrDraw(L"燃える主系列星であるスペクトル中の強い水素の吸収線によって", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"区別される", font, size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"プレセペ星団…かに座にある散開星団である", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"散開星団…恒星の集団（星団）の一種である。", font, size_y* ver, size, c);
+		Font::StrDraw(L"散開星団…恒星の集団（星団）の一種である。分子雲から同時に", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"分子雲から同時に生まれた星同士がいまだに互いに近い位置にある状態の天体を指す", font, size_y* ver, size, c);
+		Font::StrDraw(L"生まれた星同士がいまだに互いに近い位置にある状態の天体を", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"銀河のディスク部分に存在するため、銀河星団とも呼ばれる", font, size_y* ver, size, c);
+		Font::StrDraw(L"指す銀河のディスク部分に存在するため銀河星団とも呼ばれる", font, size_y* ver, size, c);
 	}
 	else if (crick == 6)
 	{

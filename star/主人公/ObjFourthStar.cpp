@@ -63,7 +63,6 @@ void CObjFourthStar::Action()
 		if (hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
 		{
 			hero_flag = true;
-
 		}
 
 	}

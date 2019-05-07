@@ -55,7 +55,7 @@ void CObjTitle::Action()
 		a_time++;
 	}
 
-	if (a_time == 300)
+	if (a_time == 100)
 	{
 		Scene::SetScene(new CSceneStageselect()); //‘€ìà–¾‘I‘ğ‰æ–Ê‚ÉˆÚ“®
 	}

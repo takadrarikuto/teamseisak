@@ -14,6 +14,8 @@ using namespace GameL;
 
 bool Aitem_on = false;
 
+//スタミナ→酸素変更
+
 //イニシャライズ
 void CObjAitem::Init()
 {
@@ -36,7 +38,7 @@ void CObjAitem::Init()
 void CObjAitem::Action()
 {
 	//アイテム使用
-	if (Input::GetVKey('I') == true)
+	if (Input::GetVKey('E') == true)
 	{
 		//使用回数処理
 		if (((UserData*)Save::GetData())->Aitem_co_max > 0)
@@ -44,7 +46,7 @@ void CObjAitem::Action()
 			if (Aitem_flag == true)
 			{
 				((UserData*)Save::GetData())->Aitem_co_max -= 1; //使用回数を減らす
-				Aitem_on = true; //スタミナを増やす
+				Aitem_on = true; //酸素を増やす
 				Aitem_flag = false;			
 			}
 		}
@@ -64,7 +66,7 @@ void CObjAitem::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	swprintf_s(str, L"ドリンクの数×%d個", ((UserData*)Save::GetData())->Aitem_co_max);
+	swprintf_s(str, L"予備酸素ボンベの数×%d個", ((UserData*)Save::GetData())->Aitem_co_max);
 	Font::StrDraw(str, 530, 540, 30, c);
 
 	//背景

@@ -11,8 +11,10 @@
 using namespace GameL;
 
 extern bool Event_on;
-extern bool Ancer_on;
 extern bool Aitem_on;
+extern bool Star_Recovery;
+
+//スタミナ→酸素変更
 
 //イニシャライズ
 void CObjstaminagauge::Init()
@@ -23,10 +25,10 @@ void CObjstaminagauge::Init()
 	m_px = 697.0f;
 	m_py = 571.0f;
 
-	//表示用スタミナ初期化
+	//表示用酸素初期化
 	m_stamina = 100;
 
-	//スタミナ最大値初期化
+	//酸素最大値初期化
 	m_stamina_max = 100;
 
 	//全ての消費用初期化
@@ -42,7 +44,7 @@ void CObjstaminagauge::Init()
 	stamina_co = 0;
 	//画面移動時起動防止用初期化
 	time_co = 0;
-	//スタミナ消費用初期化
+	//酸素消費用初期化
 	stamina_back = 0;
 
 	//イベントカウント初期化
@@ -54,38 +56,18 @@ void CObjstaminagauge::Action()
 {	
 	time_co++;
 
-	//スタミナ回復
+	//酸素回復
 	if (Aitem_on == true)
 	{
-		m_vx -= 30.0f; //スタミナを30増やす
+		m_vx -= 30.0f; //酸素を30増やす
 		m_stamina += 30;
 		Aitem_on = false;
 	}
-
-	if (time_co > 30)
-	{
-		//左クリックでスタミナ5消費 
-		if (Ancer_on == true)
-		{
-			m_vancer += 5.0f;
-			m_stamina -= 5;
-			Ancer_on = false;
-		}
-		else
-		{
-			m_vancer = 0.0f;
-		}
-	}
-	else
-	{
-		Ancer_on = false;
-	}
-
 	
 	//体力減少処理
 	stamina_co += 1;
 
-	//5秒で1スタミナ減少
+	//5秒で1酸素減少
 	if (stamina_co == 300)
 	{
 		m_vstamina += 1.0f;
@@ -97,17 +79,25 @@ void CObjstaminagauge::Action()
 		m_vstamina = 0.0f;
 	}
 
+	//特定の星を確保した時酸素回復
+	if (Star_Recovery == true)
+	{
+		m_vx -= 10.0f;
+		m_stamina += 10.0f;
+		Star_Recovery = false;
+	}
+
 	//イベント時
 	Ev_time = rand() % 5;
 
-	//特定の条件でスタミナの10%を減少
+	//特定の条件で酸素の10%を減少
 	if (Event_on == true && Ev_time == 4 && stamina_co == 150)
 	{
 		m_vstamina += m_px / m_stamina_max;
 		m_stamina -= m_px / m_stamina_max;
 	}
 	
-	//消費スタミナが最大値、最小値を超えないようにする処理
+	//消費酸素が最大値、最小値を超えないようにする処理
 	if (m_vx < 0.0f)
 	{
 		m_vx = 0.0f;
@@ -117,7 +107,7 @@ void CObjstaminagauge::Action()
 		m_vx = m_stamina_max;
 	}
 
-	//表示スタミナが最大値、最小値を超えないようにする処理
+	//表示酸素が最大値、最小値を超えないようにする処理
 	if (m_stamina < 0)
 	{
 		m_stamina = 0;
@@ -127,13 +117,13 @@ void CObjstaminagauge::Action()
 		m_stamina = m_stamina_max;
 	}
 	
-	//スタミナが無くなると宇宙船へ
+	//酸素が無くなると宇宙船へ
 	if (m_vx == m_stamina_max)
 	{
 		Scene::SetScene(new CSceneTitle());
 	}
 
-	//スタミナ消費処理
+	//酸素消費処理
 	m_vx += m_vstamina + m_vancer;
 
 }
