@@ -360,9 +360,12 @@ void CObjStarPresent::Draw()
 
 	if (crick == 6)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"この恒星は分光連星で、主星はケフェウス座β型変光星である。", 110, 0, 30, c);
-		Font::StrDraw(L"分光観測により、公転周期は195日と測定された。", 110, 50, 30, c);
-		Font::StrDraw(L"明るさの変化は、4.80時間、4.93時間である。", 110, 100, 30, c);
+		ver++;
+		Font::StrDraw(L"この恒星は分光連星で、主星はケフェウス座β型変光星である。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"分光観測により、公転周期は195日と測定された。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"明るさの変化は、4.80時間、4.93時間である。", left_end, Interval_y*ver, font_size, c);
 
 	}
 	
