@@ -21,4 +21,7 @@ private:
 	bool m_key_f;//行動制御
 	double probability;//確率
 
+	float Star_time; //1等星作成警告用カウント
+	bool Star_flag; //1等星作成警告用フラグ
+
 };

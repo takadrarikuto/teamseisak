@@ -10,6 +10,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool EM_flag;
+
 //使用ヘッダー
 #include "SceneMars.h"
 #include "GameHead.h"
@@ -66,7 +68,8 @@ void CSceneMars::InitScene()
 	//主人公
 	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
 	//アンカー
-	Draw::LoadImage(L"アンカー（仮　透過済み）.png", 12, TEX_SIZE_512);
+	Draw::LoadImage(L"飛距離測定用アンカー.png", 12, TEX_SIZE_512);
+	Draw::LoadImage(L"アンカー（仮　透過済み）.png", 13, TEX_SIZE_512);
 
 	//外部グラフィックを読み込み5番に登録(512×512ピクセル)
 	Draw::LoadImage(L"ドリンク候補2.png", 14, TEX_SIZE_512);
@@ -82,6 +85,8 @@ void CSceneMars::InitScene()
 	Draw::LoadImage(L"ゲージ枠.png", 21, TEX_SIZE_512);
 	Draw::LoadImage(L"ゲージ.png", 22, TEX_SIZE_512);
 
+	//ビックリマーク
+	Draw::LoadImage(L"ビックリマーク.png", 23, TEX_SIZE_512);
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
@@ -96,8 +101,10 @@ void CSceneMars::InitScene()
 	Objs::InsertObj(obj, OBJ_HERO, 11);
 
 	//アンカーオブジェクト作成
+	CObjMeasurementAncer* obj_ma = new CObjMeasurementAncer();
+	Objs::InsertObj(obj_ma, OBJ_MANCER, 12);
 	CObjAncer* obj_a = new CObjAncer();
-	Objs::InsertObj(obj_a, OBJ_ANCER, 12);
+	Objs::InsertObj(obj_a, OBJ_ANCER, 13);
 
 	//アイテムオブジェクト生成
 	CObjAitem* obj_ai = new CObjAitem();
@@ -114,10 +121,17 @@ void CSceneMars::InitScene()
 	CObjstaminagauge* obj_st = new CObjstaminagauge();
 	Objs::InsertObj(obj_st, OBJ_STRENGTHGAUGE, 22);
 	
+	//ビックリマークオブジェクト作成
+	CObjExclamationMark* obj_em = new CObjExclamationMark();
+	Objs::InsertObj(obj_em, OBJ_EM, 23);
 
 	//星生成時間初期化
 	time_star = 0;
 
+	//1等星作成警告用カウント初期化
+	Star_time = 0.0f;
+	//1等星作成警告用フラグ初期化
+	Star_flag = false;
 }
 
 //実行中メゾット
@@ -182,9 +196,7 @@ void CSceneMars::Scene()
 		//1等星作成0.7%
 		if (result == 0)
 		{
-			
-			CObjFirstStar* star = new CObjFirstStar();
-			Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
+			Star_flag = true; //1等星作成警告用フラグ オン
 		}
 		
 		//2等星作成 3.9%
@@ -218,8 +230,26 @@ void CSceneMars::Scene()
 		occur = 0;
 	}
 	
-	//QTE
-	CObjQTE* obj_qte = new CObjQTE();
-	Objs::InsertObj(obj_qte, OBJ_QTE, 20);
+	//1等星作成時警告処理
+	if (Star_flag == true)
+	{
+		Star_time++;
+	}
+
+	//10秒後1等星作成
+	if (Star_time == 600.0f)
+	{
+		CObjFirstStar* star = new CObjFirstStar();
+		Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
+
+		Star_time = 0.0f; //1等星作成警告用カウント初期化	
+		Star_flag = false; //1等星作成警告用フラグ初期化
+		EM_flag = false; //ビックリマーク出現フラグ初期化
+	}
+	else if (Star_time == 1.0f)
+	{
+		EM_flag = true; //ビックリマーク出現フラグ オン
+		Star_time++;
+	}
 
 }

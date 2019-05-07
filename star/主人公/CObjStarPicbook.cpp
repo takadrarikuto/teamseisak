@@ -8,6 +8,7 @@
 #include "GameHead.h"
 extern int lever;
 
+
 void CObjStarPicbook::Init()
 {
 	m_mou_x = 0.0f;
@@ -79,19 +80,21 @@ void CObjStarPicbook::Draw()
 
 	int Dc = 0; //•`‰æ—Dæ“x‘‰Á—p
 
+	//å¶À‚Ì‰æ‘œˆÊ’u
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 764.0f;
+	src.m_bottom = 578.0f;
 
 	dst.m_top = 500.0f;
-	dst.m_left = 670.0f;
-	dst.m_right = 737.0f;
-	dst.m_bottom = 600.0f;
+	dst.m_left = 604.0f;
+	dst.m_right = 669.0f;
+	dst.m_bottom = 595.0f;
 	
 	//‚³‚»‚èÀ‰æ‘œ
 	Draw::Draw(2, &src, &dst, c, 0.0f);
-	Dc += 1;
+
+	/*Dc += 1;
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -245,7 +248,7 @@ void CObjStarPicbook::Draw()
 
 	//‚¨‚¤‚µÀ‰æ‘œ
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
-
+	*/
 
 	//‰F’ˆ‘D‚Ö‚Ì•¶Žš‚ð•`‰æ‚·‚é
 	//					@@X@Y@‘å‚«‚³
@@ -360,12 +363,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 2;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 14;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -377,12 +380,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 3;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 15;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -394,12 +397,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 4;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 16;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -411,12 +414,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 5;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 17;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -428,12 +431,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 6;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 18;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -445,12 +448,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 7;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 19;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -462,12 +465,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 8;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 20;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -513,12 +516,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 11;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 23;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -530,12 +533,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 12;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 24;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}

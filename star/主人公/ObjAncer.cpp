@@ -4,6 +4,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\HitBoxManager.h"
 #include "GameL\DrawFont.h"
+#include "GameL\Audio.h"
 
 #include "GameHead.h"
 #include "ObjAncer.h"
@@ -12,7 +13,7 @@
 using namespace GameL;
 
 extern bool Event_on;
-bool Ancer_on = false; //アンカー使用
+extern bool MAncer;
 
 //イニシャライズ
 void CObjAncer::Init()
@@ -21,32 +22,33 @@ void CObjAncer::Init()
 	//本体
 	m_px = 420.0f;
 	m_py = 520.0f;
-	//アンカー
+	//アンカー初期化
 	m_pax = 433.5f;
 	m_pay = 535.0f;
 	//アンカーサイズ変更
 	m_sizex = 0;
 	m_sizey = 0;
-	size = 40;
-	//ヒットボックス位置調整
+	size = 38;
+	//ヒットボックスサイズ調整
 	hitbox_size = 0.0f;
 	//ロープ
 	//m_pry = 490.0f;
 	m_prx = 448.0f;
 	m_pry = 500.0f;
 
-	//移動ベクトル初期化
+	//本体・アンカー移動ベクトル初期化
 	m_vx = 0.0f;
 	m_vy = 0.0f;
+	//飛距離測定用アンカー移動ベクトル初期化
+	m_vfx = 0.0f;
+	m_vfy = 0.0f;
 
-	m_vancer = 0.0f;
-	m_vrope = 0.0f;
 
 	//左クリック操作初期化
 	m_mous_l = false;
 	
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_pax, m_pay, size, size, ELEMENT_ANCER, OBJ_ANCER, 11);
+	Hits::SetHitBox(this, m_pax, m_pay, size , size, ELEMENT_ANCER, OBJ_ANCER, 13);
 
 	//ロープ描画用初期化
 	rope = 0.0f;
@@ -69,6 +71,7 @@ void CObjAncer::Init()
 
 	//イベント時アンカー処理初期化
 	Ev_ancer = 0;
+
 }
 
 //アクション
@@ -82,21 +85,20 @@ void CObjAncer::Action()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-	//左クリックしていない時かつアンカーが発射されていない時移動可能
-	if (m_mous_l == false && ancer_flag == false)
+	//移動
+	//左
+	if (Input::GetVKey('A') == true)
 	{
-		//移動
-		//左
-		if (Input::GetVKey('A') == true)
-		{
-			m_vx -= 4.0f;
-		}
-		//右
-		else if (Input::GetVKey('D') == true)
-		{
-			m_vx += 4.0f;
-		}
+		m_vx -= 4.0f;
+		m_vfx -= 4.0f;
 	}
+	//右
+	else if (Input::GetVKey('D') == true)
+	{
+		m_vx += 4.0f;
+		m_vfx += 4.0f;
+	}
+	
 
 	//自身のHitBoxを持ってくる
 	CHitBox* hit_a = Hits::GetHitBox(this);
@@ -108,10 +110,6 @@ void CObjAncer::Action()
 		{
 			ancer_time += 1.0f; //アンカー発射時間増加
 			rope_time -= 1.0f; //ロープ発射時間増加
-			if (ancer_time == 1.0f && rope_time == -1.0f)
-			{
-				Ancer_on = true; //スタミナ消費用
-			}
 		}
 		else if (m_mous_l == false || (m_mous_l == true && m_pay < 535.0f))
 		{
@@ -157,7 +155,7 @@ void CObjAncer::Action()
 	}
 	else
 	{
-		m_mous_l = false;
+		m_mous_l = false;	
 	}
 
 
@@ -213,14 +211,14 @@ void CObjAncer::Action()
 		m_pay = 535.0f;
 		ancer_flag = false;
 		ancer_Prevent_doublepress = false;
+		MAncer = false;
 	}
 	else if (m_pay < 535.0f)
 	{
 		ancer_flag = true;
 		ancer_Prevent_doublepress = true;
+		MAncer = true;
 	}
-
-
 
 	//ロープ
 	if (m_prx < 49.0f)
@@ -245,9 +243,10 @@ void CObjAncer::Action()
 	m_pax += m_vx; //アンカー
 	m_pay += m_vy;
 	m_prx += m_vx; //ロープ
+
 	
 	//HitBoxの位置の変更
-	hit_a->SetPos(m_pax + hitbox_size - 4, m_pay - 40, size, size);
+	hit_a->SetPos(m_pax + hitbox_size - 3, m_pay - 40, size,size);
 	
 	
 }
@@ -283,7 +282,7 @@ void CObjAncer::Draw()
 	dstr.m_right = 4.0f + m_prx;
 	dstr.m_bottom = 540.0f;
 
-	Draw::Draw(12, &srcr, &dstr, c, 0.0f);
+	Draw::Draw(13, &srcr, &dstr, c, 0.0f);
 
 	//本体
 	//切り取り位置の位置
@@ -298,7 +297,7 @@ void CObjAncer::Draw()
 	dst.m_right = 45.0f + m_px;
 	dst.m_bottom = 100.0f + m_py ;
 
-	Draw::Draw(12, &src, &dst, c, 0.0f);
+	Draw::Draw(13, &src, &dst, c, 0.0f);
 	
 	//アンカー
 	//切り取り位置の位置
@@ -309,10 +308,11 @@ void CObjAncer::Draw()
 
 	//表示位置の設定
 	dsta.m_top = 0.0f + m_pay + m_sizey;
-	dsta.m_left = -5.0f + m_pax - m_sizex;
-	dsta.m_right = 45.0f + m_pax + m_sizex;
+	dsta.m_left = -3.0f + m_pax - m_sizex;
+	dsta.m_right = 41.0f + m_pax + m_sizex;
 	dsta.m_bottom = -60.0f + m_pay;
 
-	Draw::Draw(12, &srca, &dsta, c, 0.0f);
+	Draw::Draw(13, &srca, &dsta, c, 0.0f);
+
 
 }
