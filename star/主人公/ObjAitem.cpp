@@ -69,23 +69,4 @@ void CObjAitem::Draw()
 	swprintf_s(str, L"—\”õ_‘fƒ{ƒ“ƒx‚Ì”~%dŒÂ", ((UserData*)Save::GetData())->Aitem_co_max);
 	Font::StrDraw(str, 530, 540, 30, c);
 
-	//”wŒi
-	RECT_F src;//•`‰æŒ³Ø‚èæ‚èˆÊ’u
-	RECT_F dst;//•`‰ææ•\¦ˆÊ’u
-
-	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
-	src.m_top = 0.0f;
-	src.m_left = 90.0f;
-	src.m_right = 160.0f;
-	src.m_bottom = 194.0f;
-
-	//•\¦ˆÊ’u‚Ìİ’è
-	dst.m_top = 0.0f + m_py;
-	dst.m_left = 0.0f + m_px;
-	dst.m_right = 20.0f + m_px;
-	dst.m_bottom = 40.0f + m_py;
-
-	//•`‰æ
-	Draw::Draw(14, &src, &dst, c, 0.0f);
-
 }
