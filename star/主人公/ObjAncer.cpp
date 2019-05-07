@@ -14,6 +14,8 @@ using namespace GameL;
 
 extern bool Event_on;
 extern bool MAncer;
+extern bool AncerReset;
+
 
 //イニシャライズ
 void CObjAncer::Init()
@@ -103,15 +105,23 @@ void CObjAncer::Action()
 	//自身のHitBoxを持ってくる
 	CHitBox* hit_a = Hits::GetHitBox(this);
 
+	//測定用アンカーが上画面外に出るたびにアンカーを伸ばす距離を戻す処理
+	if (AncerReset == true)
+	{
+		ancer_time = 0.0f;
+		rope_time = 0.0f;
+		AncerReset = false;
+	}
+
 	//画面移動時起動防止用
 	if (time_co > 30)
 	{
-		if (m_mous_l == true && ancer_Prevent_doublepress == false)
+		if (m_mous_l == true && ancer_Prevent_doublepress == false && MAncer == false)
 		{
 			ancer_time += 1.0f; //アンカー発射時間増加
 			rope_time -= 1.0f; //ロープ発射時間増加
 		}
-		else if (m_mous_l == false || (m_mous_l == true && m_pay < 535.0f))
+		else if (m_mous_l == false || MAncer == true)
 		{
 			//アンカーを上げる処理
 			//アンカー発射時間とロープ発射時間が0じゃない時
@@ -151,7 +161,6 @@ void CObjAncer::Action()
 			ancer_flag = true;
 		}
 		
-
 	}
 	else
 	{
@@ -178,7 +187,6 @@ void CObjAncer::Action()
 		rope_time = 0.0f;
 	}
 	
-
 
 
 	//画面外に出ない処理
@@ -211,13 +219,11 @@ void CObjAncer::Action()
 		m_pay = 535.0f;
 		ancer_flag = false;
 		ancer_Prevent_doublepress = false;
-		MAncer = false;
 	}
 	else if (m_pay < 535.0f)
 	{
 		ancer_flag = true;
 		ancer_Prevent_doublepress = true;
-		MAncer = true;
 	}
 
 	//ロープ
