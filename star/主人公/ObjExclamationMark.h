@@ -19,5 +19,6 @@ private:
 
 	float m_pemx; //ビックリマーク位置x
 	float m_pemy; //ビックリマーク位置y
+	float m_vx; //横移動ベクトル
 
 };

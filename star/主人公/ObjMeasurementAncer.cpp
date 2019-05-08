@@ -14,6 +14,7 @@ using namespace GameL;
 
 extern bool Event_on;
 bool MAncer = false;
+bool AncerReset = false; //測定リセットフラグ
 
 //イニシャライズ
 void CObjMeasurementAncer::Init()
@@ -87,7 +88,7 @@ void CObjMeasurementAncer::Action()
 		{
 			Ancer_flag = true;
 		}
-		else if (m_mous_l == false)
+		else if (m_mous_l == false || m_pafy < 0.0f)
 		{
 			Ancer_flag = false;
 		}
@@ -104,6 +105,7 @@ void CObjMeasurementAncer::Action()
 	else if (Ancer_flag == false)
 	{
 		m_pafy = 535.0f;
+		MAncer = false;
 	}
 
 	//画面外に出ない処理
@@ -111,11 +113,20 @@ void CObjMeasurementAncer::Action()
 	if (m_pafy < 0.0f)
 	{
 		m_pafy = 0.0f;
-		Ancer_flag = false;
+		MAncer = true;
+		AncerReset = true; //距離を測りなおす
 	}
 	else if (m_pafy > 535.0f)
 	{
 		m_pafy = 535.0f;
+	}
+	if (m_pafx < 29.0f)
+	{
+		m_pafx = 29.0f;
+	}
+	else if (m_pafx + 40.0f > 792.0f)
+	{
+		m_pafx = 792.0f - 40.0f;
 	}
 
 

@@ -59,8 +59,8 @@ void CSceneStarPicbook::InitScene()
 	else if (lever == 1)
 	{
 		//‚Ý‚¸‚ª‚ß
-		CObjStarPresent4* a = new CObjStarPresent4();
-		Objs::InsertObj(a, OBJ_STARPRESENT4, 11);
+		//CObjStarPresent4* a = new CObjStarPresent4();
+		//Objs::InsertObj(a, OBJ_STARPRESENT4, 11);
 	}
 	else if (lever == 2)
 	{
