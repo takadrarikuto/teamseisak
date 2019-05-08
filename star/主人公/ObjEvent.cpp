@@ -12,6 +12,7 @@
 using namespace GameL;
 
 bool Event_on = false; //イベント開始
+bool Event_Star = false; //イベント時星の移動方向変更
 
 //イニシャライズ
 void CObjEvent::Init()
@@ -47,21 +48,23 @@ void CObjEvent::Action()
 	E_Start_co++;
 
 	//イベント開始処理
-	if (E_Start_co > 360)
+	if (E_Start_co == 360)
 	{
 		E_Start = true;
 		Event_on = true;
+		Event_Star = true;
+		E_Start_co++;
 	}
 	//イベント終了処理
-	else if (E_Start_co > 900)
+	else if (E_Start_co == 900)
 	{
 		E_Start = false;
 		Event_on = false;
+		Event_Star = false;
 		E_Start_co = 0;
 	}
 
-
-
+	
 }
 //ドロー
 void CObjEvent::Draw()

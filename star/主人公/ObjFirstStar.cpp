@@ -11,11 +11,16 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool Event_Star;//イベント時星の移動方向変更
+
+CObjFirstStar::CObjFirstStar(float x)
+{
+	m_px = x;
+}
 
 //イニシャライズ
 void CObjFirstStar::Init()
 {
-	m_px = 0.0f;
 	m_py = rand() % 100 + 1;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
@@ -32,7 +37,17 @@ void CObjFirstStar::Init()
 //アクション
 void CObjFirstStar::Action()
 {
-	m_vx = 5.0f;
+
+	//移動方向変更
+	if (Event_Star == false)
+	{
+		m_vx = 5.0f;
+	}
+	else if (Event_Star == true)
+	{
+		m_vx = -5.0f;
+	}
+
 
 	m_px += m_vx;
 	m_py += m_vy;
@@ -57,7 +72,7 @@ void CObjFirstStar::Action()
 	}
 
 	//画面外に出たら星を削除
-	if (m_px > 800.0f || hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
+	if (m_px > 800.0f || m_px < 0.0f || hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
 	{
 		this->SetStatus(false); //自身に削除命令を出す
 		Hits::DeleteHitBox(this); //HitBox削除

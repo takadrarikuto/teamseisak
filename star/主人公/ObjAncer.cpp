@@ -148,19 +148,7 @@ void CObjAncer::Action()
 				hitbox_size -= 0.2f;
 			}
 
-		}
-		
-		
-		//¯‚É“–‚½‚é‚Æ–ß‚é
-		if (hit_a->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr 
-			|| hit_a->CheckObjNameHit(OBJ_THIRDSTAR) != nullptr || hit_a->CheckObjNameHit(OBJ_FOURTHSTAR) != nullptr
-			|| hit_a->CheckObjNameHit(OBJ_OTHERSTAR) != nullptr)
-		{
-			ancer_time = Ancer_Rope_InitialTime;
-			rope_time = Ancer_Rope_InitialTime;
-			ancer_flag = true;
-		}
-		
+		}		
 	}
 	else
 	{

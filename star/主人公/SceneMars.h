@@ -28,4 +28,5 @@ private:
 	float Star_time; //1等星作成警告用カウント
 	bool Star_flag; //1等星作成警告用フラグ
 
+
 };

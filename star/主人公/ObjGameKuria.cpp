@@ -3,6 +3,7 @@
 #include"GameL\WinInputs.h"
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawTexture.h"
+#include "GameL\UserData.h"
 
 #include"GameHead.h"
 #include"ObjGamekuria.h"
@@ -17,13 +18,15 @@ void CObjGameKuria::Init()
 	m_mous_l = false;
 	m_start_flag = false;
 
-
+	((UserData*)Save::GetData())->star_co;
 }
 
 //ƒAƒNƒVƒ‡ƒ“
 void CObjGameKuria::Action()
 {
 	m_mous_l = Input::GetMouButtonL();
+
+	((UserData*)Save::GetData())->star_co = 0;
 
 	if (m_mous_l == true)
 	{

@@ -11,6 +11,7 @@
 using namespace GameL;
 
 extern bool EM_flag;
+extern bool Event_Star;//イベント時星の移動方向変更
 
 //使用ヘッダー
 #include "SceneMars.h"
@@ -131,6 +132,8 @@ void CSceneMars::InitScene()
 	Star_time = 0.0f;
 	//1等星作成警告用フラグ初期化
 	Star_flag = false;
+
+	Event_Star = false;
 }
 
 //実行中メゾット
@@ -201,30 +204,66 @@ void CSceneMars::Scene()
 		//2等星作成 3.9%
 		if (result == 1)
 		{
-			//スターオブジェクト作成
-			CObjSecondStar* star2 = new CObjSecondStar();
-			Objs::InsertObj(star2, OBJ_SECONDSTAR, 11);    //スターオブジェクト登録
+			if (Event_Star == false)
+			{
+				//スターオブジェクト作成
+				CObjSecondStar* star2 = new CObjSecondStar(0.0f);
+				Objs::InsertObj(star2, OBJ_SECONDSTAR, 11);    //スターオブジェクト登録
+			}
+			else if (Event_Star == true)
+			{
+				//スターオブジェクト作成
+				CObjSecondStar* star2 = new CObjSecondStar(800.0f);
+				Objs::InsertObj(star2, OBJ_SECONDSTAR, 11);    //スターオブジェクト登録
+			}
 		}
 		//3等星作成 15.8%
 		if (result == 2)
 		{
-			//スターオブジェクト作成
-			CObjThirdStar* star3 = new CObjThirdStar();
-			Objs::InsertObj(star3, OBJ_THIRDSTAR, 12);    //スターオブジェクト登録
+			if (Event_Star == false)
+			{
+				//スターオブジェクト作成
+				CObjThirdStar* star3 = new CObjThirdStar(0.0f);
+				Objs::InsertObj(star3, OBJ_THIRDSTAR, 12);    //スターオブジェクト登録
+			}
+			else if (Event_Star == true)
+			{
+				//スターオブジェクト作成
+				CObjThirdStar* star3 = new CObjThirdStar(800.0f);
+				Objs::InsertObj(star3, OBJ_THIRDSTAR, 12);    //スターオブジェクト登録
+			}
 		}
 		 //4等星作成 31.7%
 		if (result == 3)
 		{
-			//スターオブジェクト作成
-			CObjFourthStar* star4 = new CObjFourthStar();
-			Objs::InsertObj(star4, OBJ_FOURTHSTAR, 13);    //スターオブジェクト登録
+			if (Event_Star == false)
+			{
+				//スターオブジェクト作成
+				CObjFourthStar* star4 = new CObjFourthStar(0.0f);
+				Objs::InsertObj(star4, OBJ_FOURTHSTAR, 13);    //スターオブジェクト登録
+			}
+			else if (Event_Star == true)
+			{
+				//スターオブジェクト作成
+				CObjFourthStar* star4 = new CObjFourthStar(800.0f);
+				Objs::InsertObj(star4, OBJ_FOURTHSTAR, 13);    //スターオブジェクト登録
+			}
 		}
 		//5等星以下作成 47.6%
 		if (result == 4)
 		{
-			//スターオブジェクト作成
-			CObjOtherStar* star5 = new CObjOtherStar();
-			Objs::InsertObj(star5, OBJ_OTHERSTAR, 14);    //スターオブジェクト登録
+			if (Event_Star == false)
+			{
+				//スターオブジェクト作成
+				CObjOtherStar* star5 = new CObjOtherStar(0.0f);
+				Objs::InsertObj(star5, OBJ_OTHERSTAR, 14);    //スターオブジェクト登録
+			}
+			else if (Event_Star == true)
+			{
+				//スターオブジェクト作成
+				CObjOtherStar* star5 = new CObjOtherStar(800.0f);
+				Objs::InsertObj(star5, OBJ_OTHERSTAR, 14);    //スターオブジェクト登録
+			}
 		}
 		occur = 0;
 	}
@@ -239,8 +278,18 @@ void CSceneMars::Scene()
 	//10秒後1等星作成
 	if (Star_time == 600.0f)
 	{
-		CObjFirstStar* star = new CObjFirstStar();
-		Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
+		if (Event_Star == false)
+		{
+			//スターオブジェクト作成
+			CObjFirstStar* star = new CObjFirstStar(0.0f);
+			Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
+		}
+		else if (Event_Star == true)
+		{
+			//スターオブジェクト作成
+			CObjFirstStar* star = new CObjFirstStar(800.0f);
+			Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
+		}
 
 		Star_time = 0.0f; //1等星作成警告用カウント初期化	
 		Star_flag = false; //1等星作成警告用フラグ初期化
