@@ -15,8 +15,6 @@ public:
 	void Draw();      //ドロー
 
 private:
-	
-	bool star_flag; //星フラグ
 
 	wchar_t str[256];
 

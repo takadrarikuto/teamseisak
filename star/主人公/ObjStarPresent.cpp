@@ -34,11 +34,11 @@ void CObjStarPresent::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-	//ブラックタイルの切り取り
+	//パステルブルータイルの切り取り
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1039.0f;
-	src.m_bottom = 469.0f;
+	src.m_right = 130.0f;
+	src.m_bottom = 67.0f;
 
 	//星座の枠を描画
 	dst.m_top = 300.0f;
@@ -82,6 +82,13 @@ void CObjStarPresent::Draw()
 
 	}
 
+	//説明文の背景部分を描画
+	dst.m_top = 0.0f;
+	dst.m_left = 67.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 300.0f;
+	Draw::Draw(1, &src, &dst, c, 0.0f);
+
 	//戻るボタンの枠を描画
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
@@ -103,8 +110,9 @@ void CObjStarPresent::Draw()
 
 	//宇宙船への文字を描画する
 	//					　　X　Y　大きさ
-	Font::StrDraw(L"宇宙", 10, 25, 25, c);
-	Font::StrDraw(L"船へ", 10, 50, 25, c);
+	Font::StrDraw(L"星座", 10, 25, 25, c);
+	Font::StrDraw(L"選択", 10, 50, 25, c);
+	Font::StrDraw(L"へ", 10, 75, 25, c);
 
 	//宇宙船へボタン
 	// left				 right            top            bottom         
@@ -113,14 +121,15 @@ void CObjStarPresent::Draw()
 		if (m_mou_l == true)
 		{
 			lever = 0;
-			Scene::SetScene(new CSceneStageselect());
+			Scene::SetScene(new CSceneStarPicbook());
+			
 		}
 	}
 	//ｂを押すと戻る
 	else if (Input::GetVKey('B') == true)
 	{
 		lever = 0;
-		Scene::SetScene(new CSceneStageselect());
+		Scene::SetScene(new CSceneStarPicbook());
 	}
 
 	//次への文字をループして出す
@@ -245,7 +254,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
-
+			page = 0;
 			crick = 3;//ここはキーのようなもの
 		
 		}
@@ -360,9 +369,12 @@ void CObjStarPresent::Draw()
 
 	if (crick == 6)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"この恒星は分光連星で、主星はケフェウス座β型変光星である。", 110, 0, 30, c);
-		Font::StrDraw(L"分光観測により、公転周期は195日と測定された。", 110, 50, 30, c);
-		Font::StrDraw(L"明るさの変化は、4.80時間、4.93時間である。", 110, 100, 30, c);
+		ver = 0;
+		Font::StrDraw(L"この恒星は分光連星で、主星はケフェウス座β型変光星である。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"分光観測により、公転周期は195日と測定された。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"明るさの変化は、4.80時間、4.93時間である。", left_end, Interval_y*ver, font_size, c);
 
 	}
 	

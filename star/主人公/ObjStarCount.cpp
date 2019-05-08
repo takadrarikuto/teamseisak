@@ -12,43 +12,42 @@
 //使用するネームスペース
 using namespace GameL;
 
-bool Star_Recovery = false;  //特定の星確保時酸素回復
+bool star_flag = false; //星フラグ
+extern bool Star_Recovery;
+extern bool FiStar_Recovery;
+extern bool SeStar_Recovery;
+extern bool ThStar_Recovery;
+int FiStar_Reco = 0; //1等星を一定の数数える
+int SeStar_Reco = 0; //2等星を一定の数数える
+int ThStar_Reco = 0; //3等星を一定の数数える
 
 //イニシャライズ
 void CObjStarCount::Init()
-{
-	star_flag = false;
-
-	//主人公と合わせる
-	m_px = 400.0f;
-	m_py = 520.0f;
-
-	Hits::SetHitBox(this, m_px, m_py, 50, 50, OBJ_STARCOUNT, ELEMENT_RED, 21);
-	
-	((UserData*)Save::GetData())->star_co = 0;
+{	
+	((UserData*)Save::GetData())->star_co;
 }
 
 //アクション
 void CObjStarCount::Action()
 {
-	CObjHero* Hero = (CObjHero*)Objs::GetObj(OBJ_HERO);
-	float scx = Hero->GetX();
-	float scy = Hero->GetY();
 
-	m_px += scx;
-	m_py += scy;
-
-
-	//自身のHitBoxを持ってくる
-	CHitBox* hit_sc = Hits::GetHitBox(this);	
-
-	if (hit_sc->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit_sc->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr
-		|| hit_sc->CheckObjNameHit(OBJ_THIRDSTAR) != nullptr || hit_sc->CheckObjNameHit(OBJ_FOURTHSTAR) != nullptr
-		|| hit_sc->CheckObjNameHit(OBJ_OTHERSTAR) != nullptr)
+	//酸素回復処理
+	if (FiStar_Reco == 5)
 	{
-		star_flag = true;
-		Star_Recovery = true;
+		FiStar_Recovery = true;
+		FiStar_Reco = 0;
 	}
+	else if (SeStar_Reco == 10)
+	{
+		SeStar_Recovery = true;
+		SeStar_Reco = 0;
+	}
+	else if (ThStar_Reco == 20)
+	{
+		ThStar_Recovery = true;
+		ThStar_Reco = 0;
+	}
+
 
 	if (star_flag == true)
 	{
@@ -56,13 +55,10 @@ void CObjStarCount::Action()
 		star_flag = false;
 	}
 
-	if (((UserData*)Save::GetData())->star_co > 10)
+	if (((UserData*)Save::GetData())->star_co > 300)
 	{
 		//Scene::SetScene(new CSceneGameKuria());
 	}
-
-	//HitBoxの位置の変更
-	hit_sc->SetPos(m_px, m_py);
 
 }
 

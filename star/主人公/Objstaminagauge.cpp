@@ -12,7 +12,10 @@ using namespace GameL;
 
 extern bool Event_on;
 extern bool Aitem_on;
-extern bool Star_Recovery;
+bool FiStar_Recovery = false;  //1“™¯Šm•Û_‘f‰ñ•œ
+bool SeStar_Recovery = false;  //2“™¯Šm•Û_‘f‰ñ•œ
+bool ThStar_Recovery = false;  //3“™¯Šm•Û_‘f‰ñ•œ
+
 
 //ƒXƒ^ƒ~ƒi¨_‘f•ÏX
 
@@ -79,14 +82,25 @@ void CObjstaminagauge::Action()
 		m_vstamina = 0.0f;
 	}
 
-	//“Á’è‚Ì¯‚ğŠm•Û‚µ‚½_‘f‰ñ•œ
-	if (Star_Recovery == true)
+	//1“™¯`3“™¯‚ğŠm•Û‚µ‚½_‘f‰ñ•œ
+	if (FiStar_Recovery == true)
+	{
+		m_vx -= 50.0f;
+		m_stamina += 50.0f;
+		FiStar_Recovery = false;
+	}
+	else if (SeStar_Recovery == true)
+	{
+		m_vx -= 25.0f;
+		m_stamina += 25.0f;
+		SeStar_Recovery = false;
+	}
+	else if (ThStar_Recovery == true)
 	{
 		m_vx -= 10.0f;
 		m_stamina += 10.0f;
-		Star_Recovery = false;
+		ThStar_Recovery = false;
 	}
-
 	//ƒCƒxƒ“ƒg
 	Ev_time = rand() % 5;
 

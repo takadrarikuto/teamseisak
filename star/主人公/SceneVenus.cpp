@@ -235,6 +235,7 @@ void CSceneVenus::Scene()
 	if (Star_flag == true)
 	{
 		Star_time++;
+		EM_flag = true; //ビックリマーク出現フラグ オン
 	}
 
 	//10秒後1等星作成
@@ -246,11 +247,6 @@ void CSceneVenus::Scene()
 		Star_time = 0.0f; //1等星作成警告用カウント初期化	
 		Star_flag = false; //1等星作成警告用フラグ初期化
 		EM_flag = false; //ビックリマーク出現フラグ初期化
-	}
-	else if (Star_time == 1.0f)
-	{
-		EM_flag = true; //ビックリマーク出現フラグ オン
-		Star_time++;
 	}
 
 	//QTE

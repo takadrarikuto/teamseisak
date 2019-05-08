@@ -67,6 +67,6 @@ void CObjAitem::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
 	swprintf_s(str, L"—\”õŽ_‘fƒ{ƒ“ƒx‚Ì”~%dŒÂ", ((UserData*)Save::GetData())->Aitem_co_max);
-	Font::StrDraw(str, 530, 540, 30, c);
+	Font::StrDraw(str, 455, 540, 30, c);
 
 }

@@ -16,11 +16,12 @@ bool EM_flag = false; //ビックリマーク出現フラグ
 void CObjExclamationMark::Init()
 {
 	//ビックリマーク位置x初期化
-	m_pemx = 0.0f;
+	m_pemx = 400.0f;
 	//ビックリマーク位置y初期化
-	m_pemy = 0.0f;
+	m_pemy = 480.0f;
 
-
+	//横移動ベクトル初期化
+	m_vx = 0.0f;
 }
 
 //アクション
@@ -32,10 +33,35 @@ void CObjExclamationMark::Action()
 	float hy = Hero->GetY();
 
 	//主人公の上に起き続ける
+
 	m_pemx = hx;
-	m_pemy = hy - 40.0f;
+	m_pemy = hy;
 
+	m_vx = 0.0f;
 
+	//左
+	if (Input::GetVKey('A') == true)
+	{
+		m_vx -= 4.0f;
+	}
+	//右
+	else if (Input::GetVKey('D') == true)
+	{
+		m_vx += 4.0f;
+	}
+
+	//画面外に出ないようにする処理
+	if (m_pemx < 4.0f)
+	{
+		m_pemx = 4.0f;
+	}
+	else if (m_pemx + 40.0f > 766.0f)
+	{
+		m_pemx = 766.0f - 40.0f;
+	}
+
+	//位置更新
+	m_pemx += m_vx;
 }
 //ドロー
 void CObjExclamationMark::Draw()
@@ -55,8 +81,8 @@ void CObjExclamationMark::Draw()
 	//表示位置の設定
 	dst.m_top = 0.0f + m_pemy;
 	dst.m_left = 0.0f + m_pemx;
-	dst.m_right = 30.0f + m_pemx;
-	dst.m_bottom = 30.0f + m_pemy;
+	dst.m_right = 40.0f + m_pemx;
+	dst.m_bottom = 40.0f + m_pemy;
 
 	if (EM_flag == true)
 	{
