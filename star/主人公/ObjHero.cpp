@@ -4,7 +4,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\WinInputs.h"
 #include "GameL\HitBoxManager.h"
-
+#include "GameL\Audio.h"
 
 #include "GameHead.h"
 #include "ObjHero.h"
@@ -39,6 +39,17 @@ void CObjHero::Init()
 	Hits::SetHitBox(this, m_px, m_py, 50, 50, ELEMENT_PLAYER, OBJ_HERO, 10);
 
 	m_mous_l = false;
+
+	//音楽情報読み込み
+	Audio::LoadAudio(0, L"メインBGM.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
+	//ボリュームを1.0に戻す
+	float v = Audio::VolumeMaster(0);
+	v = Audio::VolumeMaster((1.0 - v));
+	//バックミュージックスタート
+	float Volume = Audio::VolumeMaster(-0.8f);//マスターボリュームを0.8下げる
+	Audio::Start(0);//音楽スタート
+
 }
 
 //アクション

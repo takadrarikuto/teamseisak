@@ -6,6 +6,7 @@
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -131,6 +132,8 @@ void CSceneSaturn::InitScene()
 	Star_time = 0.0f;
 	//1等星作成警告用フラグ初期化
 	Star_flag = false;
+
+
 }
 
 //実行中メゾット
