@@ -16,14 +16,12 @@ bool Event_on = false; //イベント開始
 //イニシャライズ
 void CObjEvent::Init()
 {
-	//イベントスタートフラグ
+	//イベントスタートフラグ初期化
 	E_Start = false;
-	//イベントカウント
-	E_co = 0;
-	//イベントカウント
+	//イベントスタートカウント初期化
 	E_Start_co = 0;
 
-	//背景操作用
+	//背景操作用初期化
 	m_x1 = 0.0f;
 	m_x2 = 800.0f;
 
@@ -46,26 +44,22 @@ void CObjEvent::Action()
 		m_x2 = 790.0f;
 	}
 	
+	E_Start_co++;
 
 	//イベント開始処理
-	if (E_Start_co == 360)
+	if (E_Start_co > 360)
 	{
 		E_Start = true;
-		E_Start_co++;
 		Event_on = true;
 	}
-	else
-	{
-		E_Start_co++;
-	}
-
 	//イベント終了処理
-	if (E_Start_co == 900)
+	else if (E_Start_co > 900)
 	{
 		E_Start = false;
-		E_Start_co = 0;
 		Event_on = false;
+		E_Start_co = 0;
 	}
+
 
 
 }

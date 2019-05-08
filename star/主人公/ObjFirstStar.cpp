@@ -63,7 +63,6 @@ void CObjFirstStar::Action()
 		Hits::DeleteHitBox(this); //HitBoxíœ
 	}
 	
-	
 }
 //ƒhƒ[
 void CObjFirstStar::Draw()

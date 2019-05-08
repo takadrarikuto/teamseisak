@@ -237,8 +237,8 @@ void CSceneJupiter::Scene()
 		EM_flag = true; //ビックリマーク出現フラグ オン
 	}
 
-	//10秒後1等星作成
-	if (Star_time == 600.0f)
+	//5秒後1等星作成
+	if (Star_time == 300.0f)
 	{
 		CObjFirstStar* star = new CObjFirstStar();
 		Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
