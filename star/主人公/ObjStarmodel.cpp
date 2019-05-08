@@ -29,11 +29,11 @@ void CObjStarmodel::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-			   //ブラックタイルの切り取り
+			   //パステルブルータイルの切り取り
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1039.0f;
-	src.m_bottom = 469.0f;
+	src.m_right = 130.0f;
+	src.m_bottom = 67.0f;
 
 	//星座の枠を描画
 	dst.m_top = 300.0f;

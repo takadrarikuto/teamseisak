@@ -14,6 +14,7 @@ void CObjStarPresent::Init()
 {
 	 page = 0;//次のページへ行くための変数
 	 page_flag = false;
+	 starpresent_flag = false;
 	 ver = 0;
 }
 
@@ -108,13 +109,13 @@ void CObjStarPresent::Draw()
 	//戻すの枠
 	Draw::Draw(1, &src, &dst, c, 0.0f);
 
-	//宇宙船への文字を描画する
+	//星座選択への文字を描画する
 	//					　　X　Y　大きさ
 	Font::StrDraw(L"星座", 10, 25, 25, c);
 	Font::StrDraw(L"選択", 10, 50, 25, c);
 	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//宇宙船へボタン
+	//星座選択へボタン
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
@@ -220,7 +221,6 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"明るさは太陽の8000倍ないし1万倍と考えられている。なお、赤", left_end, Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"外線を含めて計算すると明るさは太陽の6.5万倍である。", left_end, Interval_y*ver, font_size, c);
-		ver++;	
 	}
 	
 	//					　　	 X　 Y　 大きさ
@@ -242,9 +242,9 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"[連星とは?]お互いの重力に引かれあったり離れたりを繰り返し", left_end, Interval_y*ver, font_size,  c);
 		ver++;
-		Font::StrDraw(L"をしている。地球上から見て隣り合っているように見える星で", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"をしている。肉眼で見た場合は一つに見えるが、望遠鏡", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"す。", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"など遠距離で見た場合二つに分裂する。", left_end, Interval_y*ver, font_size, c);
 	}
 	
 	Font::StrDraw(L"ジュバ", 30 + fy * std, 330 + t * l, 30, c);
@@ -278,6 +278,7 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"[カシオペヤ座γ型変光星とは？]", left_end, Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"ガス殻星のことであり、物質の流出のため、光度は不規則に", left_end, Interval_y*ver, font_size, c);
+		//8行目まで、改行
 		
 	}
 	if (crick == 3 && page == 1)
@@ -390,15 +391,34 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	if (crick == 7)//上を変えたらここも変える
+	if (crick == 7 && page == 0)//上を変えたらここも変える
 	{
-		int test=0;
-		Font::StrDraw(L"青白色の準巨星。 ", 110, 0*test, 30, c);
-		test++;
-		Font::StrDraw(L"ケフェウス座β型変光星であり、わずかに変光するが、変光範囲が小さいので眼視観測ではこの変光はわからない。", 110, 50*test, 30, c);
-
+		ver = 0;
+		Font::StrDraw(L"青白色の準巨星。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"ケフェウス座β型変光星であり、わずかに変光するが、変光範 ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"囲が小さいので眼視観測ではこの変光はわからない。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"この星は3つの星からなる重星である。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"λ星Bは15等星で、λ星Aとλ星Bは42秒離れている。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"ただし、これらが物理的な影響を及ぼしあう連星であるのか", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"どうかは知られていない。もし連星だとするなら、AとBの間", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"は7,500天文単位、AとCの間は17,000天文単位（0.27光年） ", left_end, Interval_y*ver, font_size, c);
 	}
-
+	if (crick == 7 && page == 1)//上を変えたらここも変える
+	{
+		ver = 0;
+		Font::StrDraw(L"離れていることになる。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"[重星とは]", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"地球上から見て一つの星に見える星のこと、ただし連星とは違い見かけ上は一つの星に見えるというだけで実際には重なっている星々は距離が離れている", left_end, Interval_y*ver, font_size, c);
+	}
 	Font::StrDraw(L"ゼミディムラ", 10 + fy * std, 340 + t * l, 30, c);
 	l++;
 	// left								right						top						bottom               

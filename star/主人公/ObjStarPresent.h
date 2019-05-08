@@ -19,8 +19,8 @@ private:
 	float m_mou_y;//マウスの位置X
 	bool m_mou_r;//マウスの右ボタン
 	bool m_mou_l;//マウスの左ボタン
+	bool starpresent_flag;
 	bool page_flag;
-	bool page_flag_b;
 	int page ;//次のページへ行くための変数
 	int page_b;
 	int time;
