@@ -19,7 +19,8 @@ private:
 	float m_mou_y;//マウスの位置X
 	bool m_mou_r;//マウスの右ボタン
 	bool m_mou_l;//マウスの左ボタン
-	
+	bool starmodel_flag;
+
 	wchar_t str[256];
 	wchar_t str2[256];
 	wchar_t str3[256];
