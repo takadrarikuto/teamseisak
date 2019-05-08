@@ -43,7 +43,7 @@ void CObjTitle::Action()
 				//300•bŒã‚É‰æ–ÊˆÚ“®
 				
 				//if(a_time<=300){
-					
+			Scene::SetScene(new CSceneOperation()); //‘€ìà–¾‘I‘ð‰æ–Ê‚ÉˆÚ“®
 					
 				//}
 			
@@ -57,15 +57,15 @@ void CObjTitle::Action()
 
 	if (a_time == 300)
 	{
-		Scene::SetScene(new CSceneStageselect()); //‘€ìà–¾‘I‘ð‰æ–Ê‚ÉˆÚ“®
+		Scene::SetScene(new CSceneOperation()); //‘€ìà–¾‘I‘ð‰æ–Ê‚ÉˆÚ“®
 	}
 	else if (a_time == 1)
 	{
-		Audio::Start(1);
+		//Audio::Start(1);
 	}
 	else
 	{
-		Audio::Stop(1);
+		//Audio::Stop(1);
 	}
 
 }

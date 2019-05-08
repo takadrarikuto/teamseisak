@@ -36,7 +36,7 @@ void CObjAitem::Init()
 void CObjAitem::Action()
 {
 	//アイテム使用
-	if (Input::GetVKey('I') == true)
+	if (Input::GetVKey('E') == true)
 	{
 		//使用回数処理
 		if (((UserData*)Save::GetData())->Aitem_co_max > 0)
