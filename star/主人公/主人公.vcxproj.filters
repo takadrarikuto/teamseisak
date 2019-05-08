@@ -362,39 +362,6 @@
     <ClInclude Include="ObjStarPresent.h">
       <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjStarPresent2.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent3.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent4.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent5.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent6.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent7.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent8.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent9.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent10.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent11.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStarPresent12.h">
-      <Filter>ヘッダーファイル\星図鑑\星</Filter>
-    </ClInclude>
     <ClInclude Include="ObjStarmodel.h">
       <Filter>ヘッダーファイル\星図鑑\星座</Filter>
     </ClInclude>
@@ -412,6 +379,7 @@
     <ClInclude Include="ObjExclamationMark.h">
       <Filter>ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClInclude>
+    <ClInclude Include="ObjPose.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
