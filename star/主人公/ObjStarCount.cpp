@@ -57,7 +57,7 @@ void CObjStarCount::Action()
 
 	if (((UserData*)Save::GetData())->star_co > 300)
 	{
-		//Scene::SetScene(new CSceneGameKuria());
+		Scene::SetScene(new CSceneGameKuria());
 	}
 
 }
