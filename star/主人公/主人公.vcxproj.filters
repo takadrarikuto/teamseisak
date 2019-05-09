@@ -383,6 +383,7 @@
     <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjPose.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
