@@ -29,14 +29,14 @@ private:
 	bool m_mous_l;
 	bool stamina_flag;
 
-	int stamina_back; //スタミナ消費用
+	int stamina_back; //酸素消費用
 	int stamina_co; //秒数カウント
 	int time_co; //画面移動時起動防止用
 
 	int Ev_time; //イベントカウント
 	
-	int m_stamina_max; //スタミナ最大値
-	int m_stamina; //表示用スタミナ
+	int m_stamina_max; //酸素最大値
+	int m_stamina; //表示用酸素
 
 	wchar_t str[256];
 

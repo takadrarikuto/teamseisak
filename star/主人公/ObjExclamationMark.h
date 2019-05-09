@@ -6,20 +6,19 @@
 using namespace GameL;
 
 //オブジェクト　タイトル
-class CObjEvent :public CObj
+class CObjExclamationMark :public CObj
 {
 public:
-	CObjEvent() {};
-	~CObjEvent() {};
+	CObjExclamationMark() {};
+	~CObjExclamationMark() {};
 	void Init();
 	void Action();
 	void Draw();
 
 private:
-	bool E_Start; //イベントスタートフラグ
-	int E_Start_co; //イベントカウント
 
+	float m_pemx; //ビックリマーク位置x
+	float m_pemy; //ビックリマーク位置y
+	float m_vx; //横移動ベクトル
 
-	float m_x1; //背景操作用
-	float m_x2;
 };

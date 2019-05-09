@@ -8,6 +8,7 @@ enum OBJ_NAME
 	//OBJ_○○と表記
 	OBJ_HERO,
 	OBJ_ANCER,
+	OBJ_MANCER,
 	OBJ_TIME,
 	OBJ_TITLE,
 	OBJ_STAGESELECT,
@@ -37,6 +38,8 @@ enum OBJ_NAME
 	OBJ_STARPRESENT8,
 	OBJ_STARPRESENT9,
 	OBJ_STARPRESENT10,
+	OBJ_STARPRESENT11,
+	OBJ_STARPRESENT12,
 	OBJ_AITEM,
 	OBJ_EVENT,
 	OBJ_IBENT,
@@ -47,6 +50,7 @@ enum OBJ_NAME
 	OBJ_POSE,
 	OBJ_QTE,
 	OBJ_STARMODEL,
+	OBJ_EM,
 };
 //------------------------------------------------
 
@@ -75,7 +79,7 @@ enum HIT_ELEMENTS
 struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
-	int star_co;//星の数カウント
+	int star_co = 0;//星の数カウント
 	int Aitem_co_max = 5; //アイテム個数
 
 };
@@ -101,6 +105,7 @@ struct UserData
 #include "ObjVenus.h"
 #include "ObjSaturn.h"
 #include "ObjAncer.h"
+#include "ObjMeasurementAncer.h"
 #include "ObjFirstStar.h"
 #include "ObjSecondStar.h"
 #include "ObjThirdStar.h"
@@ -120,6 +125,8 @@ struct UserData
 #include "ObjStarPresent8.h"
 #include "ObjStarPresent9.h"
 #include "ObjStarPresent10.h"
+#include "ObjStarPresent11.h"
+#include "ObjStarPresent12.h"
 #include "ObjAitem.h"
 #include "ObjEvent.h"
 #include "ObjStarCount.h"
@@ -127,7 +134,7 @@ struct UserData
 #include "Objstaminagaugeframe.h"
 #include "ObjPose.h"
 #include "ObjStarmodel.h"
-
+#include"ObjExclamationMark.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -144,6 +151,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
-
+#define SET_GAME_START CSceneStageselect
 //-----------------------------------------------

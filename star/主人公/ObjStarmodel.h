@@ -6,11 +6,11 @@
 using namespace GameL;
 
 //オブジェクト：イベント
-class CObjStarPresent2 : public CObj
+class CObjStarmodel : public CObj
 {
 public:
-	CObjStarPresent2() {};	//コンストラクタ
-	~CObjStarPresent2() {};
+	CObjStarmodel() {};	//コンストラクタ
+	~CObjStarmodel() {};
 	void Init();	//イニシャライズ
 	void Action();	//アクション
 	void Draw();	//ドロー

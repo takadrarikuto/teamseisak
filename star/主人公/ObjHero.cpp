@@ -12,6 +12,11 @@
 //使用するネームスペース
 using namespace GameL;
 
+extern bool star_flag;
+extern int FiStar_Reco;
+extern int SeStar_Reco;
+extern int ThStar_Reco;
+
 //イニシャライズ
 void CObjHero::Init()
 {
@@ -56,35 +61,27 @@ void CObjHero::Action()
 	CObjAncer* Ancer = (CObjAncer*)Objs::GetObj(OBJ_ANCER);
 	float af = Ancer->GetAncerFlag();
 
-	//左クリックしていない時かつアンカーが発射されていない時移動可能
-	if (m_mous_l == false && af == false)
+	//移動処理
+	//左
+	if (Input::GetVKey('A') == true)
 	{
-		//移動処理
-		//左
-		if (Input::GetVKey('A') == true)
-		{
-			m_vx -= 4.0f;
-			m_pos = 1.0f;
-			m_ani_time += 1;
-		}
-		//右
-		else if (Input::GetVKey('D') == true)
-		{
-			m_vx += 4.0f;
-			m_pos = 2.0f;
-			m_ani_time += 1;
-		}
-		else
-		{
-			m_ani_time = 0; //アニメーション停止
-			m_ani_frame = 1; //キー入力が無い場合は静止フレームにする
-		}
+		m_vx -= 4.0f;
+		m_pos = 1.0f;
+		m_ani_time += 1;
+	}
+	//右
+	else if (Input::GetVKey('D') == true)
+	{
+		m_vx += 4.0f;
+		m_pos = 2.0f;
+		m_ani_time += 1;
 	}
 	else
 	{
 		m_ani_time = 0; //アニメーション停止
 		m_ani_frame = 1; //キー入力が無い場合は静止フレームにする
 	}
+
 
 	//ステージ選択画面に戻る
 	if (Input::GetVKey('B') == true)
@@ -133,6 +130,26 @@ void CObjHero::Action()
 
 	//自身のHitBoxを持ってくる
 	CHitBox* hit = Hits::GetHitBox(this);
+
+	if (hit->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr
+		|| hit->CheckObjNameHit(OBJ_THIRDSTAR) != nullptr || hit->CheckObjNameHit(OBJ_FOURTHSTAR) != nullptr
+		|| hit->CheckObjNameHit(OBJ_OTHERSTAR) != nullptr)
+	{
+		star_flag = true;
+		if (hit->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr)
+		{
+			FiStar_Reco += 1;
+		}
+		else if (hit->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
+		{
+			SeStar_Reco += 1;
+		}
+		else if (hit->CheckObjNameHit(OBJ_THIRDSTAR) != nullptr)
+		{
+			ThStar_Reco += 1;
+		}
+	}
+
 
 	//HitBoxの位置の変更
 	hit->SetPos(m_px, m_py);

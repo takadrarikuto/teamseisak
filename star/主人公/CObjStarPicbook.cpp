@@ -11,6 +11,7 @@ extern int lever;
 
 void CObjStarPicbook::Init()
 {
+	starmodel_flag = false;
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
 }
@@ -28,6 +29,20 @@ void CObjStarPicbook::Action()
 
 void CObjStarPicbook::Draw()
 {
+	int g = 200.0f;//星枠の横幅 200.0f
+	int k = 75.0f;//星枠の立幅 75.0f
+	int t = 70;//星の名前の位置 70
+	int l = 0;//tと掛ける用の変数 0
+	int s = 0;//星のクリックの鍵 0
+	int std = 0;//文字を横に移す変数 0
+	int side_a = 0;//左の枠範囲 0
+	int side_b = 200;//右の枠範囲 200
+	int side_c = 129;
+	int fy = 200;//星の名前の横幅 200
+	int font_size = 25;//文字の大きさ 25
+	int  Interval_y = 35;//文字の立幅間隔 35
+	int  left_end = 80;//説明文の左の限界を決める 80
+
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
@@ -38,11 +53,11 @@ void CObjStarPicbook::Draw()
 
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-	//ブラックタイルの切り取り
+	//パステルブルータイルの切り取り
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1039.0f;
-	src.m_bottom = 469.0f;
+	src.m_right = 130.0f;
+	src.m_bottom = 67.0f;
 
 	//星座の枠を描画
 	dst.m_top = 300.0f;
@@ -51,13 +66,30 @@ void CObjStarPicbook::Draw()
 	dst.m_bottom = 600.0f;
 
 	//ループして描画する
-	for (int i = 0; i <= 11; i++)
+	for (int i = 0; i <= 3; i++)
 	{
 		//星の名前の枠を描画
+		dst.m_top = 300.0f;
+		dst.m_left = 0.0f + g * i;
+		dst.m_right = 200.0f + g * i;
+		dst.m_bottom = 300.0f + k;
 		Draw::Draw(1, &src, &dst, c, 0.0f);
-		dst.m_left = dst.m_right + 0.0f;
-		dst.m_right = dst.m_right + 67.0f;
+
+		for (int l = 0; l <= 2; l++)
+		{
+
+			dst.m_top = 375.0f + k * l;
+			dst.m_bottom = 450.0f + k * l;
+			Draw::Draw(1, &src, &dst, c, 0.0f);
+		}
+
 	}
+	//説明文の背景部分を描画
+	dst.m_top = 0.0f;
+	dst.m_left = 67.0f;
+	dst.m_right =800.0f;
+	dst.m_bottom = 300.0f;
+	Draw::Draw(1, &src, &dst, c, 0.0f);
 
 	//戻るボタンの枠を描画
 	dst.m_top = 0.0f;
@@ -86,10 +118,10 @@ void CObjStarPicbook::Draw()
 	src.m_right = 764.0f;
 	src.m_bottom = 578.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 604.0f;
-	dst.m_right = 669.0f;
-	dst.m_bottom = 595.0f;
+	dst.m_top = 302.0f;
+	dst.m_left = 130.0f;
+	dst.m_right = 197.0f;
+	dst.m_bottom = 373.0f;
 	
 	//さそり座画像
 	Draw::Draw(2, &src, &dst, c, 0.0f);
@@ -261,9 +293,19 @@ void CObjStarPicbook::Draw()
 	{
 		if (m_mou_l == true)
 		{
-			lever = 0;
-			Scene::SetScene(new CSceneStageselect());
+			if (starmodel_flag == true)
+			{
+				lever = 0;
+				Scene::SetScene(new CSceneStageselect());
+				starmodel_flag = false;
+			}
 		}
+		else
+		{
+			starmodel_flag = true;
+		}
+		
+		
 	}
 	//ｂを押すと戻る
 	else if (Input::GetVKey('B') == true)
@@ -272,7 +314,7 @@ void CObjStarPicbook::Draw()
 		Scene::SetScene(new CSceneStageselect());
 	}
 
-	int l = 50;
+	/*int l = 50;
 	
 
 	wchar_t test[2][2]{ L"蠍",L"座" }; //さそり
@@ -331,32 +373,52 @@ void CObjStarPicbook::Draw()
 			//二文字の星座が2つ入るので2つぶん空ける
 			Font::StrDraw(str8, 680, 320 + l * i, 50, c); 
 			Font::StrDraw(str9, 745, 320 + l * i, 50, c); 
-		}
+		}*/
 
+	Font::StrDraw(L"水瓶座", 30 + fy * std, 330 + t*l, 30, c);
+	l++;
 	// left				 right             
 	//水瓶座の範囲
-	if (m_mou_x > 0 && m_mou_x < 67)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
 		if (m_mou_l == true)
 		{	
 			//    top            bottom  
 			//文字
-			if (m_mou_y > 300 && m_mou_y < 490)
+			if (starmodel_flag == true)
 			{
 				lever = 1;
+				starmodel_flag = false;
 				Scene::SetScene(new CSceneStarPicbook());
-
 			}
 			//画像
-			else if (m_mou_y > 500 && m_mou_y < 600)
+			else 
 			{
-				lever = 13;
-				Scene::SetScene(new CSceneStarPicbook());
+				starmodel_flag = true;
 			}
 		}
 	}
+	if (m_mou_x > 130 + 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
+	{
+		if (m_mou_l == true)
+		{
+			if (starmodel_flag == true)
+			{
+				lever = 15;
+				starmodel_flag = false;
+				Scene::SetScene(new CSceneStarPicbook());
+			}
+		}
+		else
+		{
+			starmodel_flag = true;
+		}
+	}
+
+	Font::StrDraw(L"魚座", 30 + fy * std, 330 + t*l, 30, c);
+	l++;
 	//魚座の範囲
-	else if (m_mou_x > 67 && m_mou_x < 130)
+    if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -365,15 +427,31 @@ void CObjStarPicbook::Draw()
 				lever = 2;
 				Scene::SetScene(new CSceneStarPicbook());
 			}
-			else if (m_mou_y > 500 && m_mou_y < 600)
+			else
 			{
-				lever = 14;
-				Scene::SetScene(new CSceneStarPicbook());
+				starmodel_flag = true;
 			}
 		}
 	}
+
+	if (m_mou_x > 130 + 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
+	  {
+		  if (m_mou_l == true)
+		  {
+			  if (starmodel_flag == true)
+			  {
+				  lever = 14;
+				  starmodel_flag = false;
+				  Scene::SetScene(new CSceneStarPicbook());
+			  }
+		  }
+		  else
+		  {
+			  starmodel_flag = true;
+		  }
+	  }
 	//牡羊座
-	else if (m_mou_x > 130 && m_mou_x < 200)
+	/*else if (m_mou_x > 130 && m_mou_x < 200)
 	{
 		if (m_mou_l == true)
 		{
@@ -490,25 +568,48 @@ void CObjStarPicbook::Draw()
 				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
-	}
-	//蠍座
-	else if (m_mou_x > 594 && m_mou_x < 662)
+	}*/
+	//					　　	 X　		    Y　 大きさ
+Font::StrDraw(L"蠍座", 30 + fy * std, 330 + t*l, 30, c);
+l++;
+
+	//蠍座				left		     right							 top						 bottom       
+if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+{
+	if (m_mou_l == true)
 	{
-		if (m_mou_l == true)
+		if (starmodel_flag == true)
 		{
-			if (m_mou_y > 300 && m_mou_y < 490)
-			{
-				lever = 10;
-				Scene::SetScene(new CSceneStarPicbook());
-			}
-			else if (m_mou_y > 500 && m_mou_y < 600)
-			{
-				lever = 22;
-				Scene::SetScene(new CSceneStarPicbook());
-			}
+			lever = 10;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
 		}
 	}
-	//射手座
+	else
+	{
+		starmodel_flag = true;
+	}
+}
+
+//   left				  right			  top			 bottom                
+if (m_mou_x > 130+1*std&& m_mou_x < 197*(std+1) && m_mou_y>302+k*(l-1) && m_mou_y < 300+73*l)
+{
+	if (m_mou_l == true)
+	{
+		if (starmodel_flag == true)
+		{
+			lever = 22;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else
+	{
+		starmodel_flag = true;
+	}
+}
+
+	/*//射手座
 	else if (m_mou_x > 662 && m_mou_x < 727)
 	{
 		if (m_mou_l == true)
@@ -516,12 +617,12 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 11;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 23;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
 	}
@@ -533,13 +634,13 @@ void CObjStarPicbook::Draw()
 			if (m_mou_y > 300 && m_mou_y < 490)
 			{
 				lever = 12;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 			else if (m_mou_y > 500 && m_mou_y < 600)
 			{
 				lever = 24;
-				//Scene::SetScene(new CSceneStarPicbook());
+				Scene::SetScene(new CSceneStarPicbook());
 			}
 		}
-	}
+	}*/
 }

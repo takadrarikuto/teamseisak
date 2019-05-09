@@ -13,6 +13,9 @@
 using namespace GameL;
 
 bool Aitem_on = false;
+bool Aitem_co = false; //ƒAƒCƒeƒ€¶ŽY
+
+//ƒXƒ^ƒ~ƒi¨Ž_‘f•ÏX
 
 //ƒCƒjƒVƒƒƒ‰ƒCƒY
 void CObjAitem::Init()
@@ -44,7 +47,7 @@ void CObjAitem::Action()
 			if (Aitem_flag == true)
 			{
 				((UserData*)Save::GetData())->Aitem_co_max -= 1; //Žg—p‰ñ”‚ðŒ¸‚ç‚·
-				Aitem_on = true; //ƒXƒ^ƒ~ƒi‚ð‘‚â‚·
+				Aitem_on = true; //Ž_‘f‚ð‘‚â‚·
 				Aitem_flag = false;			
 			}
 		}
@@ -58,32 +61,24 @@ void CObjAitem::Action()
 		Aitem_flag = true;
 	}
 
+	//Ž_‘fƒ{ƒ“ƒx‚ð‘‚â‚·ˆ—
+	if (Aitem_co == true)
+	{
+		if (((UserData*)Save::GetData())->Aitem_co_max <= 5)
+		{
+			((UserData*)Save::GetData())->Aitem_co_max += 1; //Žg—p‰ñ”‚ð‘‚â‚·
+		}
+		Aitem_co = false;
+	}
+
+
 }
 //ƒhƒ[
 void CObjAitem::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	swprintf_s(str, L"ƒhƒŠƒ“ƒN‚Ì”~%dŒÂ", ((UserData*)Save::GetData())->Aitem_co_max);
-	Font::StrDraw(str, 530, 540, 30, c);
-
-	//”wŒi
-	RECT_F src;//•`‰æŒ³Ø‚èŽæ‚èˆÊ’u
-	RECT_F dst;//•`‰ææ•\Ž¦ˆÊ’u
-
-	//Ø‚èŽæ‚èˆÊ’u‚ÌÝ’è
-	src.m_top = 0.0f;
-	src.m_left = 90.0f;
-	src.m_right = 160.0f;
-	src.m_bottom = 194.0f;
-
-	//•\Ž¦ˆÊ’u‚ÌÝ’è
-	dst.m_top = 0.0f + m_py;
-	dst.m_left = 0.0f + m_px;
-	dst.m_right = 20.0f + m_px;
-	dst.m_bottom = 40.0f + m_py;
-
-	//•`‰æ
-	Draw::Draw(14, &src, &dst, c, 0.0f);
+	swprintf_s(str, L"—\”õŽ_‘fƒ{ƒ“ƒx‚Ì”~%dŒÂ", ((UserData*)Save::GetData())->Aitem_co_max);
+	Font::StrDraw(str, 455, 540, 30, c);
 
 }
