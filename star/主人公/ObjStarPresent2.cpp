@@ -4,11 +4,11 @@
 #include "GameL\DrawFont.h"
 
 #include "GameHead.h"
-#include "ObjStarPresent.h"
+#include "ObjStarPresent2.h"
 extern int lever;
 
 
-void CObjStarPresent::Init()
+void CObjStarPresent2::Init()
 {
 	page = 0;//次のページへ行くための変数
 	page_flag = false;
@@ -31,7 +31,7 @@ void CObjStarPresent::Init()
 
 }
 
-void CObjStarPresent::Action()
+void CObjStarPresent2::Action()
 {
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
@@ -42,7 +42,7 @@ void CObjStarPresent::Action()
 	m_mou_l = Input::GetMouButtonL();
 }
 
-void CObjStarPresent::Draw()
+void CObjStarPresent2::Draw()
 {
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };

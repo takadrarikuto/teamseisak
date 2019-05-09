@@ -63,74 +63,74 @@ void CSceneStarPicbook::InitScene()
 	else if (lever == 1)
 	{
 		//Ç›Ç∏Ç™Çﬂ
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent4* p = new CObjStarPresent4();
+		Objs::InsertObj(p, OBJ_STARPRESENT4, 9);
 	}
 	else if (lever == 2)
 	{
 		//Ç§Ç®
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent5* p = new CObjStarPresent5();
+		Objs::InsertObj(p, OBJ_STARPRESENT5, 9);
 	}
 	else if (lever == 3)
 	{
 		//Ç–Ç¬Ç∂
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent6* p = new CObjStarPresent6();
+		Objs::InsertObj(p, OBJ_STARPRESENT6, 9);
 	}
 	else if (lever == 4)
 	{
 		//Ç§Çµç¿
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent2* p = new CObjStarPresent2();
+		Objs::InsertObj(p, OBJ_STARPRESENT2, 9);
 	}
 	else if (lever == 5)
 	{
 		//Ç”ÇΩÇ≤ç¿
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent7* p = new CObjStarPresent7();
+		Objs::InsertObj(p, OBJ_STARPRESENT7, 9);
 	}
 	else if (lever == 6)
 	{
 		//Ç©Ç…ç¿
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent8* p = new CObjStarPresent8();
+		Objs::InsertObj(p, OBJ_STARPRESENT8, 9);
 	}
 	else if (lever == 7)
 	{
 		//éÇéqç¿
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent9* p = new CObjStarPresent9();
+		Objs::InsertObj(p, OBJ_STARPRESENT9, 9);
 	}
 	else if (lever == 8)
 	{
 		//Ç®Ç∆Çﬂç¿
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent10* p = new CObjStarPresent10();
+		Objs::InsertObj(p, OBJ_STARPRESENT10, 9);
 	}
 	else if (lever == 9)
 	{
 		//ìVîâç¿
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent3* p = new CObjStarPresent3();
+		Objs::InsertObj(p, OBJ_STARPRESENT3, 9);
 	}
 	else if (lever == 10)
 	{
 		//Â∂ç¿
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent* p = new CObjStarPresent();
+		Objs::InsertObj(p, OBJ_STARPRESENT, 9);
 	}
 	else if (lever == 11)
 	{
 		//éÀéËç¿
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent11* p = new CObjStarPresent11();
+		Objs::InsertObj(p, OBJ_STARPRESENT11, 9);
 	}
 	else if (lever == 12)
 	{
 		//éRórç¿
-		CObjStarPicbook* p = new CObjStarPicbook();
-		Objs::InsertObj(p, OBJ_STARPICBOOK, 9);
+		CObjStarPresent12* p = new CObjStarPresent12();
+		Objs::InsertObj(p, OBJ_STARPRESENT12, 9);
 	}
 	else if (lever == 13)
 	{

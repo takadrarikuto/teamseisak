@@ -14,14 +14,14 @@ public:
 	void Init();	//イニシャライズ
 	void Action();	//アクション
 	void Draw();	//ドロー
-private:
+
 	float m_mou_x;//マウスの位置X
 	float m_mou_y;//マウスの位置X
 	bool m_mou_r;//マウスの右ボタン
 	bool m_mou_l;//マウスの左ボタン
 	bool page_flag;
 	bool page_flag_b;
-	int page ;//次のページへ行くための変数
+	int page;//次のページへ行くための変数
 	int page_b;
 	int time;
 	wchar_t str[256];
@@ -43,4 +43,9 @@ private:
 	int  Interval_y;//文字の立幅間隔
 	int  left_end;//説明文の左の限界を決める
 
+
+private:
+
 };
+
+

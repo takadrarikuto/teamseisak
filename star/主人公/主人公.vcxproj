@@ -155,6 +155,19 @@
     <ClInclude Include="ObjSecondStar.h" />
     <ClInclude Include="Objstaminagauge.h" />
     <ClInclude Include="Objstaminagaugeframe.h" />
+    <ClInclude Include="ObjStarPresent10.h" />
+    <ClInclude Include="ObjStarPresent11.h" />
+    <ClInclude Include="ObjStarPresent12.h" />
+    <ClInclude Include="ObjStarPresent2.h" />
+    <ClInclude Include="ObjStarPresent3.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="ObjStarPresent4.h" />
+    <ClInclude Include="ObjStarPresent5.h" />
+    <ClInclude Include="ObjStarPresent6.h" />
+    <ClInclude Include="ObjStarPresent7.h" />
+    <ClInclude Include="ObjStarPresent8.h" />
+    <ClInclude Include="ObjStarPresent9.h" />
     <ClInclude Include="ObjThirdStar.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
