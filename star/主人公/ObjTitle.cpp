@@ -5,7 +5,6 @@
 #include "GameL\DrawFont.h"
 #include "GameL\Audio.h"
 
-
 #include "GameHead.h"
 #include "ObjTitle.h"
 #include "SceneStageselect.h"
@@ -33,7 +32,7 @@ void CObjTitle::Action()
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
-	if (m_mous_x > 200 && m_mous_x < 600 && m_mous_y>440 && m_mous_y < 490)
+	if (m_mous_x > 300 && m_mous_x < 480 && m_mous_y>450 && m_mous_y < 475)
 	{
 		if (m_mous_l == true)
 		{
@@ -77,14 +76,16 @@ void CObjTitle::Draw()
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
+	
+
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
 
 	//切り取り位置の位置
 	src.m_top = 0.0;
 	src.m_left = 0.0f;
-	src.m_right = 900.0f;
-	src.m_bottom = 700.0f;
+	src.m_right = 800.0f;
+	src.m_bottom = 600.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f;

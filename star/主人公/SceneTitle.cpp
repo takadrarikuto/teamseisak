@@ -39,7 +39,7 @@ void CSceneTitle::InitScene()
 	Audio::Start(0);*/
 
 	//グラフィック読み込み
-	Draw::LoadImage(L"タイトル(修正版).png", 11, TEX_SIZE_512);
+	Draw::LoadImage(L"星釣りタイトル修正.png", 11, TEX_SIZE_512);
 
 	//タイトルオブジェクト生成
 	CObjTitle* obj_t = new CObjTitle();
