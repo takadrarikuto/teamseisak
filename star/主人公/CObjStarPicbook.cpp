@@ -101,6 +101,7 @@ void CObjStarPicbook::Draw()
 		}
 
 	}
+
 	//à–¾•¶‚Ì”wŒi•”•ª‚ğ•`‰æ
 	dst.m_top = 0.0f;
 	dst.m_left = 67.0f;
@@ -137,13 +138,13 @@ void CObjStarPicbook::Draw()
 	//å¶À‚Ì‰æ‘œˆÊ’u
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 0.0f;
+	src.m_right = 764.0f;
 	src.m_bottom = 578.0f;
 
-	dst.m_top = 302.0f;
-	dst.m_left = 533.0f;
-	dst.m_right =600.0f;
-	dst.m_bottom = 373.0f;
+	dst.m_top = 380.0f;
+	dst.m_left = 330.0f;
+	dst.m_right =400.0f;
+	dst.m_bottom = 450.0f;
 	
 	//‚³‚»‚èÀ‰æ‘œ
 	Draw::Draw(2, &src, &dst, c, 0.0f);

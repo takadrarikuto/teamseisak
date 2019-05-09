@@ -270,7 +270,7 @@ void CObjStarPresent7::Draw()
 
 	t -= 4;
 	l -= 4;
-	std = 2;
+	std=2;
 	//					　　	  X　        Y　    大きさ
 	Font::StrDraw(L"アルズラ", 20 + 420, 320 + t * l, 30, c);
 	l++;

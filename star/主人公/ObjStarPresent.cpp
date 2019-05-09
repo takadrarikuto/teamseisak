@@ -457,6 +457,7 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"重なっている星々は距離が離れている。", left_end, Interval_y*ver, font_size, c);
 		
 	}
+
 	Font::StrDraw(L"ゼミディムラ", 10 + fy * std, 340 + t * l, 30, c);
 	l++;
 	// left								right						top						bottom               
@@ -472,10 +473,10 @@ void CObjStarPresent::Draw()
 
 	if (crick == 8)//上を変えたらここも変える
 	{
-
-		Font::StrDraw(L"Xamidimura は、アフリカ大陸南部に住むコイコイ人の言葉で", 110, 0, 30, c);
-		Font::StrDraw(L"「ライオンの眼」を意味する xami di muraに由来する", 110, 50, 30, c);
-
+		ver++;
+		Font::StrDraw(L"Xamidimura は、アフリカ大陸南部に住むコイコイ人の言葉で", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"「ライオンの眼」を意味する xami di muraに由来する", left_end, Interval_y*ver, font_size, c);
 	}
 
 	t -= 4;
