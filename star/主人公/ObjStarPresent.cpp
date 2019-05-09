@@ -473,7 +473,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 8)//上を変えたらここも変える
 	{
-		ver++;
+		ver=0;
 		Font::StrDraw(L"Xamidimura は、アフリカ大陸南部に住むコイコイ人の言葉で", left_end, Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"「ライオンの眼」を意味する xami di muraに由来する", left_end, Interval_y*ver, font_size, c);
