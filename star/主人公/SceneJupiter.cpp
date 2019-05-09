@@ -216,7 +216,7 @@ void CSceneJupiter::Scene()
 			else if (Event_Star == true)
 			{
 				//スターオブジェクト作成
-				CObjSecondStar* star2 = new CObjSecondStar(800.0f);
+				CObjSecondStar* star2 = new CObjSecondStar(790.0f);
 				Objs::InsertObj(star2, OBJ_SECONDSTAR, 11);    //スターオブジェクト登録
 			}
 		}
@@ -232,7 +232,7 @@ void CSceneJupiter::Scene()
 			else if (Event_Star == true)
 			{
 				//スターオブジェクト作成
-				CObjThirdStar* star3 = new CObjThirdStar(800.0f);
+				CObjThirdStar* star3 = new CObjThirdStar(790.0f);
 				Objs::InsertObj(star3, OBJ_THIRDSTAR, 12);    //スターオブジェクト登録
 			}
 		}
@@ -248,7 +248,7 @@ void CSceneJupiter::Scene()
 			else if (Event_Star == true)
 			{
 				//スターオブジェクト作成
-				CObjFourthStar* star4 = new CObjFourthStar(800.0f);
+				CObjFourthStar* star4 = new CObjFourthStar(790.0f);
 				Objs::InsertObj(star4, OBJ_FOURTHSTAR, 13);    //スターオブジェクト登録
 			}
 		}
@@ -264,7 +264,7 @@ void CSceneJupiter::Scene()
 			else if (Event_Star == true)
 			{
 				//スターオブジェクト作成
-				CObjOtherStar* star5 = new CObjOtherStar(800.0f);
+				CObjOtherStar* star5 = new CObjOtherStar(790.0f);
 				Objs::InsertObj(star5, OBJ_OTHERSTAR, 14);    //スターオブジェクト登録
 			}
 		}
@@ -290,7 +290,7 @@ void CSceneJupiter::Scene()
 		else if (Event_Star == true)
 		{
 			//スターオブジェクト作成
-			CObjFirstStar* star = new CObjFirstStar(800.0f);
+			CObjFirstStar* star = new CObjFirstStar(790.0f);
 			Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
 		}
 

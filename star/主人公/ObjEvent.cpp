@@ -80,16 +80,16 @@ void CObjEvent::Action()
 	}
 	else if (Event_Conversion == 3)
 	{
-		m_x1 -= 10.0f;
-		if (m_x1 < -800.0f)
+		m_x1 += 10.0f;
+		if (m_x1 > 800.0f)
 		{
-			m_x1 = 790.0f;
+			m_x1 = -800.0f;
 		}
 
-		m_x2 -= 10.0f;
-		if (m_x2 < -800.0f)
+		m_x2 += 10.0f;
+		if (m_x2 > 800.0f)
 		{
-			m_x2 = 790.0f;
+			m_x2 = -800.0f;
 		}
 	}
 	
@@ -208,8 +208,8 @@ void CObjEvent::Draw()
 		//切り取り位置の設定
 		src.m_top = 0.0f;
 		src.m_left = 0.0f;
-		src.m_right = 640.0f;
-		src.m_bottom = 480.0f;
+		src.m_right = 1000.0f;
+		src.m_bottom = 1000.0f;
 
 		//表示位置の設定
 		dst.m_top = 0.0f;
@@ -226,8 +226,8 @@ void CObjEvent::Draw()
 		//切り取り位置の設定
 		src.m_top = 0.0f;
 		src.m_left = 0.0f;
-		src.m_right = 640.0f;
-		src.m_bottom = 480.0f;
+		src.m_right = 1000.0f;
+		src.m_bottom = 1000.0f;
 
 		//表示位置の設定
 		dst.m_top = 0.0f;
@@ -246,10 +246,10 @@ void CObjEvent::Draw()
 	else if (Event_Conversion == 3)
 	{
 		//切り取り位置の設定
-		src.m_top = 0.0f;
+		src.m_top = 90.0f;
 		src.m_left = 0.0f;
-		src.m_right = 640.0f;
-		src.m_bottom = 480.0f;
+		src.m_right = 400.0f;
+		src.m_bottom = 310.0f;
 
 		//表示位置の設定
 		dst.m_top = 0.0f;
@@ -264,10 +264,10 @@ void CObjEvent::Draw()
 		}
 
 		//切り取り位置の設定
-		src.m_top = 0.0f;
+		src.m_top = 90.0f;
 		src.m_left = 0.0f;
-		src.m_right = 640.0f;
-		src.m_bottom = 480.0f;
+		src.m_right = 400.0f;
+		src.m_bottom = 310.0f;
 
 		//表示位置の設定
 		dst.m_top = 0.0f;

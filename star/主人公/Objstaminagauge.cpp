@@ -16,6 +16,7 @@ bool FiStar_Recovery = false;  //1“™¯Šm•Û_‘f‰ñ•œ
 bool SeStar_Recovery = false;  //2“™¯Šm•Û_‘f‰ñ•œ
 bool ThStar_Recovery = false;  //3“™¯Šm•Û_‘f‰ñ•œ
 extern bool Aitem_co; //ƒAƒCƒeƒ€¶Y
+extern int Event_Conversion; //ƒCƒxƒ“ƒgƒGƒŠƒAØ‚è‘Ö‚¦
 
 //ƒXƒ^ƒ~ƒi¨_‘f•ÏX
 
@@ -85,13 +86,13 @@ void CObjstaminagauge::Action()
 	//1“™¯`3“™¯‚ğŠm•Û‚µ‚½_‘f‰ñ•œ
 	if (FiStar_Recovery == true)
 	{
-		Aitem_co = true;
+		Aitem_co = true; //—\”õ_‘fƒ{ƒ“ƒx‰ñ•œ
 		FiStar_Recovery = false;
 	}
 	else if (SeStar_Recovery == true)
 	{
 		m_vx -= 20.0f;
-		m_stamina += 200.0f;
+		m_stamina += 20.0f;
 		SeStar_Recovery = false;
 	}
 	else if (ThStar_Recovery == true)
@@ -103,11 +104,38 @@ void CObjstaminagauge::Action()
 	//ƒCƒxƒ“ƒg
 	Ev_time = rand() % 5;
 
-	//“Á’è‚ÌğŒ‚Å_‘f‚Ì10%‚ğŒ¸­
-	if (Event_on == true && Ev_time == 4 && stamina_co == 150)
+	//“Á’è‚ÌğŒ‚Å_‘f‚Ì10%~40%‚ğŒ¸­
+	if (Event_Conversion == 0)
 	{
-		m_vstamina += m_px / m_stamina_max;
-		m_stamina -= m_px / m_stamina_max;
+		if (Event_on == true && Ev_time == 4 && stamina_co == 150)
+		{
+			m_vstamina += m_px / m_stamina_max;
+			m_stamina -= m_px / m_stamina_max;
+		}
+	}
+	else if (Event_Conversion == 1)
+	{
+		if (Event_on == true && Ev_time == 4 && stamina_co == 150)
+		{
+			m_vstamina += m_px / 90;
+			m_stamina -= m_px / 90;
+		}
+	}
+	else if (Event_Conversion == 2)
+	{
+		if (Event_on == true && Ev_time == 4 && stamina_co == 150)
+		{
+			m_vstamina += m_px / 80;
+			m_stamina -= m_px / 80;
+		}
+	}
+	else if (Event_Conversion == 3)
+	{
+		if (Event_on == true && Ev_time == 4 && stamina_co == 150)
+		{
+			m_vstamina += m_px / 70;
+			m_stamina -= m_px / 70;
+		}
 	}
 	
 	//Á”ï_‘f‚ªÅ‘å’lAÅ¬’l‚ğ’´‚¦‚È‚¢‚æ‚¤‚É‚·‚éˆ—
