@@ -10,7 +10,7 @@ class CObjFirstStar : public CObj
 public:
 	CObjFirstStar() {};
 	~CObjFirstStar() {};
-	CObjFirstStar(float x, float y); //コンストラクタ
+	CObjFirstStar(float x); //コンストラクタ
 	void Init();      //イニシャライズ
 	void Action();    //アクション
 	void Draw();      //ドロー

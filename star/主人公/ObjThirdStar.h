@@ -10,7 +10,7 @@ class CObjThirdStar : public CObj
 public:
 	CObjThirdStar() {};
 	~CObjThirdStar() {};
-	CObjThirdStar(float x, float y); //コンストラクタ
+	CObjThirdStar(float x); //コンストラクタ
 	void Init();      //イニシャライズ
 	void Action();    //アクション
 	void Draw();      //ドロー

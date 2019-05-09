@@ -52,6 +52,7 @@ void CSceneStarPicbook::InitScene()
 
 	//星座図鑑オブジェクト生成
 
+
 	//星図鑑オブジェクト生成
 	if (lever == 0)
 	{
@@ -62,74 +63,74 @@ void CSceneStarPicbook::InitScene()
 	else if (lever == 1)
 	{
 		//みずがめ
-		CObjStarPresent4* a = new CObjStarPresent4();
-		Objs::InsertObj(a, OBJ_STARPRESENT4, 11);
+		CObjStarPresent4* p = new CObjStarPresent4();
+		Objs::InsertObj(p, OBJ_STARPRESENT4, 9);
 	}
 	else if (lever == 2)
 	{
 		//うお
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		CObjStarPresent5* p = new CObjStarPresent5();
+		Objs::InsertObj(p, OBJ_STARPRESENT5, 9);
 	}
 	else if (lever == 3)
 	{
 		//ひつじ
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		CObjStarPresent6* p = new CObjStarPresent6();
+		Objs::InsertObj(p, OBJ_STARPRESENT6, 9);
 	}
 	else if (lever == 4)
 	{
 		//うし座
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		CObjStarPresent2* p = new CObjStarPresent2();
+		Objs::InsertObj(p, OBJ_STARPRESENT2, 9);
 	}
 	else if (lever == 5)
 	{
 		//ふたご座
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		CObjStarPresent7* p = new CObjStarPresent7();
+		Objs::InsertObj(p, OBJ_STARPRESENT7, 9);
 	}
 	else if (lever == 6)
 	{
 		//かに座
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		CObjStarPresent8* p = new CObjStarPresent8();
+		Objs::InsertObj(p, OBJ_STARPRESENT8, 9);
 	}
 	else if (lever == 7)
 	{
-		//かに座
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		//獅子座
+		CObjStarPresent9* p = new CObjStarPresent9();
+		Objs::InsertObj(p, OBJ_STARPRESENT9, 9);
 	}
 	else if (lever == 8)
 	{
 		//おとめ座
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		CObjStarPresent10* p = new CObjStarPresent10();
+		Objs::InsertObj(p, OBJ_STARPRESENT10, 9);
 	}
 	else if (lever == 9)
 	{
 		//天秤座
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		CObjStarPresent3* p = new CObjStarPresent3();
+		Objs::InsertObj(p, OBJ_STARPRESENT3, 9);
 	}
 	else if (lever == 10)
 	{
 		//蠍座
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		CObjStarPresent* p = new CObjStarPresent();
+		Objs::InsertObj(p, OBJ_STARPRESENT, 9);
 	}
 	else if (lever == 11)
 	{
 		//射手座
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		CObjStarPresent11* p = new CObjStarPresent11();
+		Objs::InsertObj(p, OBJ_STARPRESENT11, 9);
 	}
 	else if (lever == 12)
 	{
 		//山羊座
-		CObjStarPresent* s = new CObjStarPresent();
-		Objs::InsertObj(s, OBJ_STARPRESENT, 10);
+		CObjStarPresent12* p = new CObjStarPresent12();
+		Objs::InsertObj(p, OBJ_STARPRESENT12, 9);
 	}
 	else if (lever == 13)
 	{

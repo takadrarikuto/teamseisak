@@ -15,7 +15,7 @@ extern bool Aitem_on;
 bool FiStar_Recovery = false;  //1“™¯Šm•Û_‘f‰ñ•œ
 bool SeStar_Recovery = false;  //2“™¯Šm•Û_‘f‰ñ•œ
 bool ThStar_Recovery = false;  //3“™¯Šm•Û_‘f‰ñ•œ
-
+extern bool Aitem_co; //ƒAƒCƒeƒ€¶Y
 
 //ƒXƒ^ƒ~ƒi¨_‘f•ÏX
 
@@ -85,14 +85,13 @@ void CObjstaminagauge::Action()
 	//1“™¯`3“™¯‚ğŠm•Û‚µ‚½_‘f‰ñ•œ
 	if (FiStar_Recovery == true)
 	{
-		m_vx -= 50.0f;
-		m_stamina += 50.0f;
+		Aitem_co = true;
 		FiStar_Recovery = false;
 	}
 	else if (SeStar_Recovery == true)
 	{
-		m_vx -= 25.0f;
-		m_stamina += 25.0f;
+		m_vx -= 20.0f;
+		m_stamina += 200.0f;
 		SeStar_Recovery = false;
 	}
 	else if (ThStar_Recovery == true)
