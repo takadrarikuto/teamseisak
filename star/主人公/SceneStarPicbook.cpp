@@ -32,8 +32,8 @@ CSceneStarPicbook::~CSceneStarPicbook()
 void CSceneStarPicbook::InitScene()
 {
 	//グラフィック読み込み
-	Draw::LoadImage(L"テキストボックス.png", 9, TEX_SIZE_512);
-
+	Draw::LoadImage(L"パステルブルータイルフレーム.png", 9, TEX_SIZE_512);
+	Draw::LoadImage(L"サイバー背景.png", 15, TEX_SIZE_512);
 	Draw::LoadImage(L"パステルブルータイル.png", 1, TEX_SIZE_512);
 
 	Draw::LoadImage(L"蠍座.png", 2, TEX_SIZE_512);

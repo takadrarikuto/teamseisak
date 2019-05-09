@@ -33,19 +33,9 @@ void CObjStarPresent::Draw()
 {
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
+	float p[4] = { 1.0f,1.0f,1.0f,0.6f, };
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-	//パステルブルータイルの切り取り
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 130.0f;
-	src.m_bottom = 67.0f;
-
-	//星座の枠を描画
-	dst.m_top = 300.0f;
-	dst.m_left = 0.0f;
-	dst.m_right = 200.0f;
-	dst.m_bottom = 350.0f;
 	
 	int g = 200.0f;//星枠の横幅
 	int k = 75.0f;//星枠の立幅
@@ -59,10 +49,32 @@ void CObjStarPresent::Draw()
 	int font_size = 25;//文字の大きさ
 	int  Interval_y= 35;//文字の立幅間隔
 	int  left_end= 80;//説明文の左の限界を決める
-	
-	/*swprintf_s(see, L"%d", page);
-	Font::StrDraw(see, 600, 20, 30, c);*/
-	
+	//サイバー背景の切り取り
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 513.0f;
+	src.m_bottom = 289.0f;
+
+	//背景を描画
+	dst.m_top = 0.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 600.0f;
+
+	Draw::Draw(15, &src, &dst, c, 0.0f);
+
+	//パステルブルータイルの切り取り
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 130.0f;
+	src.m_bottom = 67.0f;
+
+	//星座の枠を描画
+	dst.m_top = 300.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 200.0f;
+	dst.m_bottom = 350.0f;
+
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
 	{
@@ -71,14 +83,15 @@ void CObjStarPresent::Draw()
 		dst.m_left = 0.0f + g * i;
 		dst.m_right = 200.0f + g * i;
 		dst.m_bottom = 300.0f + k;
-		Draw::Draw(1, &src, &dst, c, 0.0f);
+		Draw::Draw(1, &src, &dst, p, 0.0f);
+		Draw::Draw(9, &src, &dst, c, 0.0f);
 
 		for (int l = 0; l <= 2; l++)
 		{
-
 			dst.m_top = 375.0f + k * l;
 			dst.m_bottom = 450.0f + k * l;
-			Draw::Draw(1, &src, &dst, c, 0.0f);
+			Draw::Draw(1, &src, &dst, p, 0.0f);
+			Draw::Draw(9, &src, &dst, c, 0.0f);
 		}
 
 	}
@@ -88,26 +101,31 @@ void CObjStarPresent::Draw()
 	dst.m_left = 67.0f;
 	dst.m_right = 800.0f;
 	dst.m_bottom = 300.0f;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.f);
 
 	//戻るボタンの枠を描画
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 67.0f;
 	dst.m_bottom = 100.0f;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.0f);
 
 	//次のページに行くためのボタンの枠を描画
 	dst.m_top = 200.0f;
 	dst.m_bottom = 300.0f;
 
 	//次への枠
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.0f);
+
 	dst.m_top = 100.0f;
 	dst.m_bottom = 200.0f;
 
 	//戻すの枠
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.0f);
 
 	//星座選択への文字を描画する
 	//					　　X　Y　大きさ
@@ -1980,9 +1998,9 @@ void CObjStarPresent::Draw()
 			ver++;
 			Font::StrDraw(L"これは、オーストラリアのノーザン・テリトリーに住むオース", left_end, Interval_y*ver, font_size, c);
 			ver++;
-			Font::StrDraw(L"トラリア先住民のワルダマン族が使っていた呼称を採用したもの ", left_end, Interval_y*ver, font_size, c);
+			Font::StrDraw(L"トラリア先住民のワルダマン族が使っていた呼称を採用したも ", left_end, Interval_y*ver, font_size, c);
 			ver++;
-			Font::StrDraw(L"である。", left_end, Interval_y*ver, font_size, c);
+			Font::StrDraw(L"のである。", left_end, Interval_y*ver, font_size, c);
 
 		}
 
@@ -2079,7 +2097,12 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"[重星とは]", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"地球上から見て一つの星に見える星のこと、ただし連星とは違い見かけ上は一つの星に見えるというだけで実際には重なっている星々は距離が離れている", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"地球上から見て一つの星に見える星のこと、ただし連星と", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"は違い見かけ上は一つの星に見えるというだけで実際には", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"重なっている星々は距離が離れている。", left_end, Interval_y*ver, font_size, c);
+		
 	}
 	Font::StrDraw(L"ゼミディムラ", 10 + fy * std, 340 + t * l, 30, c);
 	l++;
