@@ -12,7 +12,7 @@ using namespace GameL;
 
 extern bool EM_flag;
 extern bool Event_Star;//イベント時星の移動方向変更
-
+extern int Event_Conversion; //イベントエリア切り替え
 
 //使用ヘッダー
 #include "SceneJupiter.h"
@@ -63,8 +63,8 @@ void CSceneJupiter::InitScene()
 	//グラフィック読み込み
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
-	Draw::LoadImage(L"イベント背景(火星).png", 9, TEX_SIZE_512);
-	Draw::LoadImage(L"火星地表.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"嵐　雷.png", 9, TEX_SIZE_512);
+	Draw::LoadImage(L"木星.png", 10, TEX_SIZE_512);
 
 	//主人公
 	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
@@ -135,6 +135,7 @@ void CSceneJupiter::InitScene()
 	Star_flag = false;
 
 	Event_Star = false;
+	Event_Conversion = 2;
 }
 
 //実行中メゾット
