@@ -70,10 +70,12 @@ void CObjFirstStar::Action()
 		if (Event_Star == false)
 		{
 			m_vx = 5.0f;
+			m_vy = 0.0f;
 		}
 		else if (Event_Star == true)
 		{
 			m_vx = -6.0f;
+			m_vy = -0.5f;
 		}
 	}
 	else if (Event_Conversion == 3)
@@ -84,7 +86,7 @@ void CObjFirstStar::Action()
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = -7.0f;
+			m_vx = 7.0f;
 		}
 	}
 
@@ -112,7 +114,7 @@ void CObjFirstStar::Action()
 	}
 
 	//画面外に出たら星を削除
-	if (m_px > 800.0f || m_px < 0.0f || m_py > 500.0f || hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
+	if (m_px > 800.0f || m_px < 0.0f || m_py > 500.0f || m_px < 0.0f || hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
 	{
 		this->SetStatus(false); //自身に削除命令を出す
 		Hits::DeleteHitBox(this); //HitBox削除
