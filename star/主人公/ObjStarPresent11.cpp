@@ -34,11 +34,11 @@ void CObjStarPresent11::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-	//ブラックタイルの切り取り
+	//パステルブルータイルの切り取り
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1039.0f;
-	src.m_bottom = 469.0f;
+	src.m_right = 130.0f;
+	src.m_bottom = 67.0f;
 
 	//星座の枠を描画
 	dst.m_top = 300.0f;
@@ -66,6 +66,13 @@ void CObjStarPresent11::Draw()
 		}
 
 	}
+
+	//説明文の背景部分を描画
+	dst.m_top = 0.0f;
+	dst.m_left = 67.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 300.0f;
+	Draw::Draw(1, &src, &dst, c, 0.0f);
 
 	//戻るボタンの枠を描画
 	dst.m_top = 0.0f;

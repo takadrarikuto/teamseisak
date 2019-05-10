@@ -34,11 +34,12 @@ void CObjStarPresent5::Draw()
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-	//ブラックタイルの切り取り
+
+	//パステルブルータイルの切り取り
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1039.0f;
-	src.m_bottom = 469.0f;
+	src.m_right = 130.0f;
+	src.m_bottom = 67.0f;
 
 	//星座の枠を描画
 	dst.m_top = 300.0f;
@@ -66,6 +67,13 @@ void CObjStarPresent5::Draw()
 
 	}
 
+	//説明文の背景部分を描画
+	dst.m_top = 0.0f;
+	dst.m_left = 67.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 300.0f;
+	Draw::Draw(1, &src, &dst, c, 0.0f);
+
 	//戻るボタンの枠を描画
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
@@ -85,28 +93,27 @@ void CObjStarPresent5::Draw()
 	//戻すの枠
 	Draw::Draw(1, &src, &dst, c, 0.0f);
 
-	//宇宙船への文字を描画する
-	//					　　X　Y　大きさ
-	Font::StrDraw(L"宇宙", 10, 25, 25, c);
-	Font::StrDraw(L"船へ", 10, 50, 25, c);
+	Font::StrDraw(L"星座", 10, 25, 25, c);
+	Font::StrDraw(L"選択", 10, 50, 25, c);
+	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//戻るボタン
+	//星座選択へボタン
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
 		if (m_mou_l == true)
 		{
 			lever = 0;
-			Scene::SetScene(new CSceneStageselect());
+			Scene::SetScene(new CSceneStarPicbook());
+
 		}
 	}
 	//ｂを押すと戻る
 	else if (Input::GetVKey('B') == true)
 	{
 		lever = 0;
-		Scene::SetScene(new CSceneStageselect());
+		Scene::SetScene(new CSceneStarPicbook());
 	}
-
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
 	for (int i = 0; i <= 1; i++)
