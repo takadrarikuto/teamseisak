@@ -12,24 +12,7 @@ int cenge = 0;
 
 void CObjStarPresent::Init()
 {
-	 page = 0;//次のページへ行くための変数
-	 page_flag = false;
-	 ver = 0;
-	 g = 200.0f;//星枠の横幅
-	 k = 75.0f;//星枠の立幅
-	 t = 70;//星の名前の位置
-	 l = 0;//tと掛ける用の変数
-	 s = 0;//星のクリックの鍵
-	 std = 0;
-	 side_a = 0;
-	 side_b = 200;
-	 size = 25;
-	 size_y = 30;
-	 font = 80;
-	 fy = 200;//星の名前の横幅
-	 font_size = 25;//文字の大きさ
-	 Interval_y = 35;//文字の立幅間隔
-	 left_end = 80;//説明文の左の限界を決める
+
 
 }
 
@@ -193,6 +176,24 @@ void CObjStarPresent::Draw()
 		}
 	}
 
+	page = 0;//次のページへ行くための変数
+	page_flag = false;
+	ver = 0;
+	g = 200;//星枠の横幅
+	k = 75;//星枠の立幅
+	t = 70;//星の名前の位置
+	l = 0;//tと掛ける用の変数
+	s = 0;//星のクリックの鍵
+	std = 0;
+	side_a = 0;
+	side_b = 200;
+	size = 25;
+	size_y = 30;
+	font = 80;
+	fy = 200.0f;//星の名前の横幅
+	font_size = 25;//文字の大きさ
+	Interval_y = 35;//文字の立幅間隔
+	left_end = 80;//説明文の左の限界を決める
 
 	//					　　	 X　		    Y　 大きさ
 	Font::StrDraw(L"アンタレス", 30 + fy * std, 330 + t * l, 30, c);

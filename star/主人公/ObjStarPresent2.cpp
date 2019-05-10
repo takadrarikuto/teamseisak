@@ -11,24 +11,6 @@ extern int cenge;
 
 void CObjStarPresent2::Init()
 {
-	page = 0;//次のページへ行くための変数
-	page_flag = false;
-	ver = 0;
-	g = 200.0f;//星枠の横幅
-	k = 75.0f;//星枠の立幅
-	t = 70;//星の名前の位置
-	l = 0;//tと掛ける用の変数
-	s = 0;//星のクリックの鍵
-	std = 0;
-	side_a = 0;
-	side_b = 200;
-	size = 25;
-	size_y = 30;
-	font = 80;
-	fy = 200;//星の名前の横幅
-	font_size = 25;//文字の大きさ
-	Interval_y = 35;//文字の立幅間隔
-	left_end = 80;//説明文の左の限界を決める
 
 }
 
@@ -162,6 +144,26 @@ void CObjStarPresent2::Draw()
 			Scene::SetScene(new CSceneStarPicbook());
 		}
 	}*/
+
+	page = 0;//次のページへ行くための変数
+	page_flag = false;
+	ver = 0;
+	g = 200.0f;//星枠の横幅
+	k = 75.0f;//星枠の立幅
+	t = 70;//星の名前の位置
+	l = 0;//tと掛ける用の変数
+	s = 0;//星のクリックの鍵
+	std = 0;
+	side_a = 0;
+	side_b = 200;
+	size = 25;
+	size_y = 30;
+	font = 80;
+	fy = 200;//星の名前の横幅
+	font_size = 25;//文字の大きさ
+	Interval_y = 35;//文字の立幅間隔
+	left_end = 80;//説明文の左の限界を決める
+
 
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"アルデバラン", 20, 320 + t * l, 30, c);
@@ -513,201 +515,202 @@ void CObjStarPresent2::Draw()
 	}
 	else if (crick == 8)
 	{
-	ver = 0;
-	Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"おうし座の二重星であり、ヒアデス星団のメンバーである。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"5.62′離れた2つの星から構成される。視差の測定から", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"おうし座θ1星は地球から約152光年、おうし座θ2星は", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"約157光年の距離に位置すると推定されている", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"二重星…地球上から見る恒星が同じ方向に近接して見える物を", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"指す", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
+		ver = 0;
+		Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"おうし座の二重星であり、ヒアデス星団のメンバーである。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"5.62′離れた2つの星から構成される。視差の測定から", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"おうし座θ1星は地球から約152光年、おうし座θ2星は", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"約157光年の距離に位置すると推定されている", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"二重星…地球上から見る恒星が同じ方向に近接して見える物を", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"指す", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
 	}
 	else if (crick == 9)
 	{
-	ver = 0;
-	Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"おうし座の恒星でプレアデス星団に属する5等星。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"プレアデス星団の中では輝星の一つだが、5等星と暗く", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"肉眼で見つけるのは難しい", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"星間物質による減光が0.3等級ほどあると考えられている", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"星間物質…恒星間の宇宙空間に分布する希薄物質の総称である。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"大量の星間物質が凝縮して、星を構成する材料にもなる。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"減光…観測者に到達する電磁波のエネルギー総量が減る現象", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"及びその減衰量を表す指標のことである", font, size_y* ver, size, c);
-	ver++;
+		ver = 0;
+		Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"おうし座の恒星でプレアデス星団に属する5等星。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"プレアデス星団の中では輝星の一つだが、5等星と暗く", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"肉眼で見つけるのは難しい", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"星間物質による減光が0.3等級ほどあると考えられている", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"星間物質…恒星間の宇宙空間に分布する希薄物質の総称である。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"大量の星間物質が凝縮して、星を構成する材料にもなる。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"減光…観測者に到達する電磁波のエネルギー総量が減る現象", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"及びその減衰量を表す指標のことである", font, size_y* ver, size, c);
+		ver++;
 	}
 	else if (crick == 10)
 	{
-	ver = 0;
-	Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"おうし座の恒星でプレアデス星団に属する、青色巨星である。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"プレアデス星団の輝星の中でも明るいものの一つ。この星は月に", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"より周期的に掩蔽され、また太陽系の他の惑星によっても掩蔽", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"されることがある。自転速度は181km/sと高速で自転している", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"高速の自転のため、極付近は平たくなり、赤道は膨張している。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"青色巨星…高温のために青く見える恒星", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
+		ver = 0;
+		Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"おうし座の恒星でプレアデス星団に属する、青色巨星である。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"プレアデス星団の輝星の中でも明るいものの一つ。この星は月に", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"より周期的に掩蔽され、また太陽系の他の惑星によっても掩蔽", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"されることがある。自転速度は181km/sと高速で自転している", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"高速の自転のため、極付近は平たくなり、赤道は膨張している。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"青色巨星…高温のために青く見える恒星", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
 	}
 	else if (crick == 11)
 	{
-	ver = 0;
-	Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"おうし座の恒星でプレアデス星団に属する4等星。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"月に掩蔽されることがあり、そのときの観測結果から主星と伴星の", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"詳細がわかっている。プレアデス星団の中では明るいものの一つ", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"主星と伴星は地球からは0.012秒離れて見え、1313日で", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"公転している。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"掩蔽…ある天体が観測者と他の天体の間を通過するために", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"その天体が隠される現象である", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
+		ver = 0;
+		Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"おうし座の恒星でプレアデス星団に属する4等星。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"月に掩蔽されることがあり、そのときの観測結果から主星と伴星の", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"詳細がわかっている。プレアデス星団の中では明るいものの一つ", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"主星と伴星は地球からは0.012秒離れて見え、1313日で", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"公転している。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"掩蔽…ある天体が観測者と他の天体の間を通過するために", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"その天体が隠される現象である", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
 	}
 	else if (crick == 12)
 	{
-	ver = 0;
-	Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"おうし座の恒星でプレアデス星団に属する4等星。プレアデス", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"星団の中でも明るいものの一つ。自転速度が遅いことにより", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"大気中に水銀やマンガンの輝線が強く見られる水銀・マンガン星に", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"分類される", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"プレアデス星団…おうし座に位置する散開星団である", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"散開星団…恒星の集団（星団）の一種である", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
+		ver = 0;
+		Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"おうし座の恒星でプレアデス星団に属する4等星。プレアデス", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"星団の中でも明るいものの一つ。自転速度が遅いことにより", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"大気中に水銀やマンガンの輝線が強く見られる水銀・マンガン星に", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"分類される", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"プレアデス星団…おうし座に位置する散開星団である", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"散開星団…恒星の集団（星団）の一種である", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
 	}
 	else if (crick == 13)
 	{
-	ver = 0;
-	Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"おうし座の恒星でプレアデス星団に属している。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"固有名アステローペは、ギリシャ神話に登場するプレイアデスの", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"一人の名前に因んでいる", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"プレアデス星団…おうし座に位置する散開星団である", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"散開星団…恒星の集団（星団）の一種である", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
+		ver = 0;
+		Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"おうし座の恒星でプレアデス星団に属している。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"固有名アステローペは、ギリシャ神話に登場するプレイアデスの", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"一人の名前に因んでいる", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"プレアデス星団…おうし座に位置する散開星団である", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"散開星団…恒星の集団（星団）の一種である", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
 	}
 	else if (crick == 14)
 	{
-	ver = 0;
-	Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"おうし座に位置する恒星でプレアデス星団に属している。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"プレアデス星団の輝星の中でも明るいものの一つ。", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"23番星の放射の影響で光を放っている", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"固有名メローペ は、ギリシャ神話に登場するプレイアデスの", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"一人の名前に因んでいる", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
+		ver = 0;
+		Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"おうし座に位置する恒星でプレアデス星団に属している。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"プレアデス星団の輝星の中でも明るいものの一つ。", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"23番星の放射の影響で光を放っている", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"固有名メローペ は、ギリシャ神話に登場するプレイアデスの", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"一人の名前に因んでいる", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
 	}
 	else if (crick == 15)
 	{
-	ver = 0;
-	Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"おうし座の恒星でプレアデス星団に属している。プレアデス星団の", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"輝星の中でも明るいものの一つで三重星。少なくとも52au", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"離れた軌道を150年以上かけて周回している", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"au(天文単位)…長さの単位で", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"正確に 149597870700 mである", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"三重星(多重星)…地球から見ると近接した位置に見える", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"3つ以上の恒星である", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
+		ver = 0;
+		Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"おうし座の恒星でプレアデス星団に属している。プレアデス星団の", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"輝星の中でも明るいものの一つで三重星。少なくとも52au", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"離れた軌道を150年以上かけて周回している", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"au(天文単位)…長さの単位で", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"正確に 149597870700 mである", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"三重星(多重星)…地球から見ると近接した位置に見える", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"3つ以上の恒星である", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
 	}
 	else if (crick == 16)
 	{
-	ver = 0;
-	Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"おうし座の恒星でプレアデス星団に属す。プレアデス星団の", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"中では輝星の一つだが、視等級は5.09と暗く、また近くに", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"約4倍明るいおうし座27番星が見えるために裸眼で見つけるのは", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"難しい", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"プレアデス星団…おうし座に位置する散開星団である", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"散開星団…恒星の集団（星団）の一種である", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
-	Font::StrDraw(L"", font, size_y* ver, size, c);
-	ver++;
+		ver = 0;
+		Font::StrDraw(L"おうし座に属する", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"おうし座の恒星でプレアデス星団に属す。プレアデス星団の", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"中では輝星の一つだが、視等級は5.09と暗く、また近くに", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"約4倍明るいおうし座27番星が見えるために裸眼で見つけるのは", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"難しい", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"プレアデス星団…おうし座に位置する散開星団である", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"散開星団…恒星の集団（星団）の一種である", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"", font, size_y* ver, size, c);
+		ver++;
 	}
+
 
 }

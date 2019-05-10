@@ -16,4 +16,5 @@ public:
 	void Draw();	//ƒhƒ[
 private:
 
+
 };
