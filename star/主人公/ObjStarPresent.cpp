@@ -9,7 +9,6 @@ extern int lever;
 int crick = 0;
 int cenge = 0;
 
-
 void CObjStarPresent::Init()
 {
 	page = 0;//次のページへ行くための変数
@@ -32,7 +31,19 @@ void CObjStarPresent::Init()
 	pagey = 10; //ページ座標y
 	pagesize = 20; //ページサイズ
 
-
+	 g = 200.0f;//星枠の横幅
+	 k = 75.0f;//星枠の立幅
+	 t = 70;//星の名前の位置
+	 l = 0;//tと掛ける用の変数
+	 s = 0;//星のクリックの鍵
+	 std = 0;//文字を横に移す変数
+	 side_a = 0;//左の枠範囲
+	 side_b = 200;//右の枠範囲
+	 fy = 200;//星の名前の横幅
+	 font_size = 25;//文字の大きさ
+	  Interval_y = 35;//文字の立幅間隔
+	  left_end = 80;//説明文の左の限界を決める
+	 page = 0;
 }
 
 void CObjStarPresent::Action()
@@ -183,7 +194,7 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(str, 20, 230 + l * i, 25, c);
 	}
 
-	//戻るを押したらStarPresentに切り替える
+	//戻るを押したら
 	// left				 right            top            bottom       
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>190 && m_mou_y < 300)
 	{
@@ -555,6 +566,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
+
 			crick = 8;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
