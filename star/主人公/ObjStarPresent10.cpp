@@ -12,6 +12,25 @@ extern int cenge;
 
 void CObjStarPresent10::Init()
 {
+	page = 0;//次のページへ行くための変数
+	page_flag = false;
+	ver = 0;
+	g = 200;//星枠の横幅
+	k = 75;//星枠の立幅	
+	s = 0;//星のクリックの鍵	
+	side_a = 0;
+	side_b = 200;
+	size = 25;
+	size_y = 30;
+	font = 80;
+	fy = 200.0f;//星の名前の横幅
+	font_size = 25;//文字の大きさ
+	IO_y = 25; //y座標開始地点
+	Interval_y = 35;//文字の立幅間隔
+	left_end = 80;//説明文の左の限界を決める
+	pagex = 680; //ページ座標x
+	pagey = 10; //ページ座標y
+	pagesize = 20; //ページサイズ
 
 }
 
@@ -30,10 +49,32 @@ void CObjStarPresent10::Action()
 
 void CObjStarPresent10::Draw()
 {
+	//これはここに残す
+	t = 70;//星の名前の位置 
+	l = 0;//tと掛ける用の変数 
+	std = 0;
+
+
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
+	float p[4] = { 1.0f,1.0f,1.0f,0.6f, };
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
+
+	//サイバー背景の切り取り
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 513.0f;
+	src.m_bottom = 289.0f;
+
+	//背景を描画
+	dst.m_top = 0.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 600.0f;
+
+	Draw::Draw(15, &src, &dst, c, 0.0f);
+
 	//パステルブルータイルの切り取り
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -46,7 +87,6 @@ void CObjStarPresent10::Draw()
 	dst.m_right = 200.0f;
 	dst.m_bottom = 350.0f;
 
-
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
 	{
@@ -55,14 +95,15 @@ void CObjStarPresent10::Draw()
 		dst.m_left = 0.0f + g * i;
 		dst.m_right = 200.0f + g * i;
 		dst.m_bottom = 300.0f + k;
-		Draw::Draw(1, &src, &dst, c, 0.0f);
+		Draw::Draw(1, &src, &dst, p, 0.0f);
+		Draw::Draw(9, &src, &dst, c, 0.0f);
 
 		for (int l = 0; l <= 2; l++)
 		{
-
 			dst.m_top = 375.0f + k * l;
 			dst.m_bottom = 450.0f + k * l;
-			Draw::Draw(1, &src, &dst, c, 0.0f);
+			Draw::Draw(1, &src, &dst, p, 0.0f);
+			Draw::Draw(9, &src, &dst, c, 0.0f);
 		}
 
 	}
@@ -72,47 +113,54 @@ void CObjStarPresent10::Draw()
 	dst.m_left = 67.0f;
 	dst.m_right = 800.0f;
 	dst.m_bottom = 300.0f;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.f);
 
 	//戻るボタンの枠を描画
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 67.0f;
 	dst.m_bottom = 100.0f;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.0f);
 
 	//次のページに行くためのボタンの枠を描画
 	dst.m_top = 200.0f;
 	dst.m_bottom = 300.0f;
 
 	//次への枠
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.0f);
+
 	dst.m_top = 100.0f;
 	dst.m_bottom = 200.0f;
 
 	//戻すの枠
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.0f);
 
-	//宇宙船への文字を描画する
+	//星座選択への文字を描画する
 	//					　　X　Y　大きさ
-	Font::StrDraw(L"宇宙", 10, 25, 25, c);
-	Font::StrDraw(L"船へ", 10, 50, 25, c);
+	Font::StrDraw(L"星座", 10, 25, 25, c);
+	Font::StrDraw(L"選択", 10, 50, 25, c);
+	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//戻るボタン
+	//星座選択へボタン
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
 		if (m_mou_l == true)
 		{
 			lever = 0;
-			Scene::SetScene(new CSceneStageselect());
+			Scene::SetScene(new CSceneStarPicbook());
+
 		}
 	}
 	//ｂを押すと戻る
 	else if (Input::GetVKey('B') == true)
 	{
 		lever = 0;
-		Scene::SetScene(new CSceneStageselect());
+		Scene::SetScene(new CSceneStarPicbook());
 	}
 
 	//次への文字をループして出す
@@ -124,16 +172,7 @@ void CObjStarPresent10::Draw()
 		//				　　X　 Y　 大きさ
 		Font::StrDraw(str, 20, 130 + l * i, 25, c);
 	}
-	//戻るを押したらStarPresentに切り替える
-	// left				 right            top            bottom       
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>190 && m_mou_y < 300)
-	{
-		if (m_mou_l == true)
-		{
-			lever = 0;
-			Scene::SetScene(new CSceneStarPicbook());
-		}
-	}
+
 	//戻すの文字をループして出す
 	wchar_t before[2][2]{ L"戻",L"る" };
 	for (int i = 0; i <= 1; i++)
@@ -144,35 +183,43 @@ void CObjStarPresent10::Draw()
 		//				　　X　 Y　 大きさ
 		Font::StrDraw(str, 20, 230 + l * i, 25, c);
 	}
-	//次へを押したらStarPresent2に切り替える
+
+	//戻るを押したらStarPresentに切り替える
 	// left				 right            top            bottom       
-	/*if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>100 && m_mou_y <200)
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>190 && m_mou_y < 300)
 	{
 		if (m_mou_l == true)
 		{
-			lever =1;
-			Scene::SetScene(new CSceneStarPicbook());
+			if (page_flag == true)
+			{
+				page--;
+				page_flag = false;
+			}
 		}
-	}*/
+		else
+		{
+			page_flag = true;
+		}
+	}
 
-	page = 0;//次のページへ行くための変数
-	page_flag = false;
-	ver = 0;
-	g = 200.0f;//星枠の横幅
-	k = 75.0f;//星枠の立幅
-	t = 70;//星の名前の位置
-	l = 0;//tと掛ける用の変数
-	s = 0;//星のクリックの鍵
-	std = 0;
-	side_a = 0;
-	side_b = 200;
-	size = 25;
-	size_y = 30;
-	font = 80;
-	fy = 200;//星の名前の横幅
-	font_size = 25;//文字の大きさ
-	Interval_y = 35;//文字の立幅間隔
-	left_end = 80;//説明文の左の限界を決める
+	//次へを押したらStarPresent2に切り替える
+	// left				 right            top            bottom       
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>100 && m_mou_y < 200)
+	{
+		if (m_mou_l == true)
+		{
+			if (page_flag == true)
+			{
+				page++;
+				page_flag = false;
+			}
+		}
+		else
+		{
+			page_flag = true;
+		}
+	}
+
 
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"スピカ", 20, 320 + t * l, 30, c);
@@ -299,196 +346,196 @@ void CObjStarPresent10::Draw()
 	if (crick == 1)
 	{
 		ver = 0;
-		Font::StrDraw(L"おとめ座に属する", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"おとめ座で最も明るい恒星で全天21の1等星の1つ。春の夜に", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座で最も明るい恒星で全天21の1等星の1つ。春の夜に", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"青白く輝く。共にB型のスペクトルを持つ0.98等と10.5等の", font, size_y * ver, size, c);
+		Font::StrDraw(L"青白く輝く。共にB型のスペクトルを持つ0.98等と10.5等の", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"恒星からなる連星系である。0.17日の周期で0.015等変光", font, size_y * ver, size, c);
+		Font::StrDraw(L"恒星からなる連星系である。0.17日の周期で0.015等変光", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"している", font, size_y * ver, size, c);
+		Font::StrDraw(L"している", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", font, size_y * ver, size, c);
+		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", font, size_y * ver, size, c);
+		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"変光…明るさ（等級）が変化するもののことである", font, size_y * ver, size, c);
+		Font::StrDraw(L"変光…明るさ（等級）が変化するもののことである", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 2)
 	{
 		ver = 0;
-		Font::StrDraw(L"おとめ座に属する", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"おとめ座の方角にある恒星で4等星。太陽よりも大きく", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座の方角にある恒星で4等星。太陽よりも大きく", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"重く、比較的金属量に富んでいる黄道にかなり近い位置に", font, size_y * ver, size, c);
+		Font::StrDraw(L"重く、比較的金属量に富んでいる黄道にかなり近い位置に", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"あるため、月や時には惑星による掩蔽が観測される", font, size_y * ver, size, c);
+		Font::StrDraw(L"あるため、月や時には惑星による掩蔽が観測される", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"黄道…天球上における太陽の見かけ上の通り道（大円）をいう", font, size_y * ver, size, c);
+		Font::StrDraw(L"黄道…天球上における太陽の見かけ上の通り道（大円）をいう", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"掩蔽…ある天体が観測者と他の天体の間を通過するために", font, size_y * ver, size, c);
+		Font::StrDraw(L"掩蔽…ある天体が観測者と他の天体の間を通過するために", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"その天体が隠される現象である", font, size_y * ver, size, c);
+		Font::StrDraw(L"その天体が隠される現象である", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 3)
 	{
 		ver = 0;
-		Font::StrDraw(L"おとめ座に属する", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"おとめ座にある3等級の連星である。F型主系列星同士からなる", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座にある3等級の連星である。F型主系列星同士からなる", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"連星である。伴星は主星の周りを168.93年で公転している", font, size_y * ver, size, c);
+		Font::StrDraw(L"連星である。伴星は主星の周りを168.93年で公転している", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"F型主系列星…スペクトル型がF、光度階級がVの水素を", font, size_y * ver, size, c);
+		Font::StrDraw(L"F型主系列星…スペクトル型がF、光度階級がVの水素を", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"燃やして燃える主系列星である", font, size_y * ver, size, c);
+		Font::StrDraw(L"燃やして燃える主系列星である", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", font, size_y * ver, size, c);
+		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", font, size_y * ver, size, c);
+		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 4)
 	{
 		ver = 0;
-		Font::StrDraw(L"おとめ座に属する", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"おとめ座の恒星で3等星。この星は赤色巨星分岐 (RGB) の", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座の恒星で3等星。この星は赤色巨星分岐 (RGB) の", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"段階にある。地球から観測して80秒離れた位置に見える11等星", font, size_y * ver, size, c);
+		Font::StrDraw(L"段階にある。地球から観測して80秒離れた位置に見える11等星", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"は伴星の可能性があるとされる", font, size_y * ver, size, c);
+		Font::StrDraw(L"は伴星の可能性があるとされる", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"赤色巨星…恒星が主系列星を終えたあとの進化段階である", font, size_y * ver, size, c);
+		Font::StrDraw(L"赤色巨星…恒星が主系列星を終えたあとの進化段階である", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"大気が膨張し、その大きさは地球の公転軌道半径から", font, size_y * ver, size, c);
+		Font::StrDraw(L"大気が膨張し、その大きさは地球の公転軌道半径から", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"火星のそれに相当する", font, size_y * ver, size, c);
+		Font::StrDraw(L"火星のそれに相当する", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 5)
 	{
 		ver = 0;
-		Font::StrDraw(L"おとめ座に属する", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"おとめ座の恒星である。3等星の黄色巨星で、おとめ座では", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座の恒星である。3等星の黄色巨星で、おとめ座では", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"α星のスピカ、γ星のポリマに次いで明るい年に0.2秒という", font, size_y * ver, size, c);
+		Font::StrDraw(L"α星のスピカ、γ星のポリマに次いで明るい年に0.2秒という", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"高速で移動して見える", font, size_y * ver, size, c);
+		Font::StrDraw(L"高速で移動して見える", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"巨星…同じ表面温度を持つ主系列星よりも半径および明るさが", font, size_y * ver, size, c);
+		Font::StrDraw(L"巨星…同じ表面温度を持つ主系列星よりも半径および明るさが", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"非常に大きい恒星のことである巨星の半径は太陽の10倍から", font, size_y * ver, size, c);
+		Font::StrDraw(L"非常に大きい恒星のことである巨星の半径は太陽の10倍から", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"100倍、明るさは10倍から1000倍である", font, size_y * ver, size, c);
+		Font::StrDraw(L"100倍、明るさは10倍から1000倍である", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 6)
 	{
 		ver = 0;
-		Font::StrDraw(L"おとめ座に属する", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"恒星で4等星。分光連星で、3つの星から成る連星系であると", font, size_y * ver, size, c);
+		Font::StrDraw(L"恒星で4等星。分光連星で、3つの星から成る連星系であると", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"考えられている。伴星の1つは、平均約10au離れた軌道を", font, size_y * ver, size, c);
+		Font::StrDraw(L"考えられている。伴星の1つは、平均約10au離れた軌道を", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"13.12年を掛けて周回している。さらに主星には約0.5auの", font, size_y * ver, size, c);
+		Font::StrDraw(L"13.12年を掛けて周回している。さらに主星には約0.5auの", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"軌道を72日の周期で回る伴星があると見られる", font, size_y * ver, size, c);
+		Font::StrDraw(L"軌道を72日の周期で回る伴星があると見られる", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"au…天文単位と言い、長さの単位で、正確に 149597870700 m ", font, size_y * ver, size, c);
+		Font::StrDraw(L"au…天文単位と言い、長さの単位で、正確に 149597870700 m ", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"である。主として天文学で用いられ、例として地球と太陽の", font, size_y * ver, size, c);
+		Font::StrDraw(L"である。主として天文学で用いられ、例として地球と太陽の", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"距離の近似値は約1 auであると述べることができる", font, size_y * ver, size, c);
+		Font::StrDraw(L"距離の近似値は約1 auであると述べることができる", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 7)
 	{
 		ver = 0;
-		Font::StrDraw(L"おとめ座に属する", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"おとめ座の方角にある恒星で4等星。", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座の方角にある恒星で4等星。", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"2010年に周囲を55年で公転する伴星を発見したとする", font, size_y * ver, size, c);
+		Font::StrDraw(L"2010年に周囲を55年で公転する伴星を発見したとする", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"研究結果が発表された。伴星の直接検出には成功していないが", font, size_y * ver, size, c);
+		Font::StrDraw(L"研究結果が発表された。伴星の直接検出には成功していないが", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"太陽の0.6倍の質量を持つ主系列星か白色矮星であると", font, size_y * ver, size, c);
+		Font::StrDraw(L"太陽の0.6倍の質量を持つ主系列星か白色矮星であると", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"考えられている", font, size_y * ver, size, c);
+		Font::StrDraw(L"考えられている", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"主系列星…恒星の有効温度と明るさを示した図であるヘルツシュ", font, size_y * ver, size, c);
+		Font::StrDraw(L"主系列星…恒星の有効温度と明るさを示した図であるヘルツシュ", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L" プルング・ラッセル図(HR図) 上で明るく高温から暗く低温に", font, size_y * ver, size, c);
+		Font::StrDraw(L" プルング・ラッセル図(HR図) 上で明るく高温から暗く低温に", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"延びる線である主系列に位置する恒星をいう。矮星ともいう", font, size_y * ver, size, c);
+		Font::StrDraw(L"延びる線である主系列に位置する恒星をいう。矮星ともいう", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"白色矮星…恒星が進化の終末期にとりうる形態の一つ", font, size_y * ver, size, c);
+		Font::StrDraw(L"白色矮星…恒星が進化の終末期にとりうる形態の一つ", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 8)
 	{
 		ver = 0;
-		Font::StrDraw(L"おとめ座に属する", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"おとめ座の恒星で4等星。中国の二十八宿の１つ", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座の恒星で4等星。中国の二十八宿の１つ", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"「亢 (Kang)」の距星とされる", font, size_y * ver, size, c);
+		Font::StrDraw(L"「亢 (Kang)」の距星とされる", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"二十八宿（にじゅうはっしゅく）…天球を、28のエリア（星宿）", font, size_y * ver, size, c);
+		Font::StrDraw(L"二十八宿（にじゅうはっしゅく）…天球を、28のエリア（星宿）", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"に不均等分割したもの。二十八舎（にじゅうはっしゃ）ともいう", font, size_y * ver, size, c);
+		Font::StrDraw(L"に不均等分割したもの。二十八舎（にじゅうはっしゃ）ともいう", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"月宿（げっしゅく）…天球上の天の赤道付近（本来は月の", font, size_y * ver, size, c);
+		Font::StrDraw(L"月宿（げっしゅく）…天球上の天の赤道付近（本来は月の", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"通り道である白道）を27ないし28のエリアに分割したもの", font, size_y * ver, size, c);
+		Font::StrDraw(L"通り道である白道）を27ないし28のエリアに分割したもの", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"いずれも「月の宿り」を意味するが日本や中国では", font, size_y * ver, size, c);
+		Font::StrDraw(L"いずれも「月の宿り」を意味するが日本や中国では", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"一般に星宿と呼んでいる。月宿は世界各地に見られる", font, size_y * ver, size, c);
+		Font::StrDraw(L"一般に星宿と呼んでいる。月宿は世界各地に見られる", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 9)
 	{
 		ver = 0;
-		Font::StrDraw(L"おとめ座に属する", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"おとめ座の恒星で5等星。5.00等の主星と5.63等の伴星による", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座の恒星で5等星。5.00等の主星と5.63等の伴星による", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"分光連星である", font, size_y * ver, size, c);
+		Font::StrDraw(L"分光連星である", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"分光連星（ぶんこうれんせい）…望遠鏡を使用しても", font, size_y * ver, size, c);
+		Font::StrDraw(L"分光連星（ぶんこうれんせい）…望遠鏡を使用しても", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"分離できなくとも周期的なスペクトル線の移動や", font, size_y * ver, size, c);
+		Font::StrDraw(L"分離できなくとも周期的なスペクトル線の移動や", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"パルス周期の変動などスペクトルの特徴の周期的な変化に", font, size_y * ver, size, c);
+		Font::StrDraw(L"パルス周期の変動などスペクトルの特徴の周期的な変化に", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"よって2つ以上の天体からなることを検出できる連星のこと", font, size_y * ver, size, c);
+		Font::StrDraw(L"よって2つ以上の天体からなることを検出できる連星のこと", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", font, size_y * ver, size, c);
+		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", font, size_y * ver, size, c);
+		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 10)
 	{
 		ver = 0;
-		Font::StrDraw(L"おとめ座に属する", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"おとめ座の恒星で5等星。4.92等の黄色巨星または準巨星のA星と", font, size_y * ver, size, c);
+		Font::StrDraw(L"おとめ座の恒星で5等星。4.92等の黄色巨星または準巨星のA星と", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"10.02等の橙色矮星のB星からなる連星系でA星自身も", font, size_y * ver, size, c);
+		Font::StrDraw(L"10.02等の橙色矮星のB星からなる連星系でA星自身も", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"分光連星である可能性を示唆されている", font, size_y * ver, size, c);
+		Font::StrDraw(L"分光連星である可能性を示唆されている", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"巨星…同じ表面温度を持つ主系列星よりも半径および明るさが", font, size_y * ver, size, c);
+		Font::StrDraw(L"巨星…同じ表面温度を持つ主系列星よりも半径および明るさが", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"非常に大きい恒星のことである", font, size_y * ver, size, c);
 		ver++;
 		Font::StrDraw(L"準巨星…同じスペクトル型の通常の主系列星よりやや明るく", font, size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"巨星ほどは明るくない恒星の分類の1つである", font, size_y * ver, size, c);
+		Font::StrDraw(L"巨星ほどは明るくない恒星の分類の1つである", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", font, size_y * ver, size, c);
+		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", font, size_y * ver, size, c);
+		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 
 }
