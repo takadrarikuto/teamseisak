@@ -43,7 +43,7 @@ public:
 	int font_size;//•¶š‚Ì‘å‚«‚³
 	int  Interval_y;//•¶š‚Ì—§•ŠÔŠu
 	int  left_end;//à–¾•¶‚Ì¶‚ÌŒÀŠE‚ğŒˆ‚ß‚é
-
+	int pagemax;//ƒy[ƒW”‚ÌŒÀŠE
 
 private:
 
