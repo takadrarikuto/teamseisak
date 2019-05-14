@@ -9,11 +9,22 @@ extern int lever;
 int crick = 0;
 int cenge = 0;
 
-
 void CObjStarPresent::Init()
 {
 
-
+	 g = 200.0f;//星枠の横幅
+	 k = 75.0f;//星枠の立幅
+	 t = 70;//星の名前の位置
+	 l = 0;//tと掛ける用の変数
+	 s = 0;//星のクリックの鍵
+	 std = 0;//文字を横に移す変数
+	 side_a = 0;//左の枠範囲
+	 side_b = 200;//右の枠範囲
+	 fy = 200;//星の名前の横幅
+	 font_size = 25;//文字の大きさ
+	  Interval_y = 35;//文字の立幅間隔
+	  left_end = 80;//説明文の左の限界を決める
+	 page = 0;
 }
 
 void CObjStarPresent::Action()
@@ -29,24 +40,20 @@ void CObjStarPresent::Action()
 
 void CObjStarPresent::Draw()
 {
+
+	t = 70;//星の名前の位置
+	l = 0;//tと掛ける用の変数
+	std = 0;
+	
+
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
 	float p[4] = { 1.0f,1.0f,1.0f,0.6f, };
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 	
-	int g = 200.0f;//星枠の横幅
-	int k = 75.0f;//星枠の立幅
-	int t = 70;//星の名前の位置
-	int l = 0;//tと掛ける用の変数
-	int s = 0;//星のクリックの鍵
-	int std = 0;//文字を横に移す変数
-	int side_a = 0;//左の枠範囲
-	int side_b = 200;//右の枠範囲
-	int fy = 200;//星の名前の横幅
-	int font_size = 25;//文字の大きさ
-	int  Interval_y= 35;//文字の立幅間隔
-	int  left_end= 80;//説明文の左の限界を決める
+	
+	
 	//サイバー背景の切り取り
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
@@ -170,7 +177,7 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(str, 20, 230 + l * i, 25, c);
 	}
 
-	//戻るを押したらStarPresentに切り替える
+	//戻るを押したら
 	// left				 right            top            bottom       
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>190 && m_mou_y < 300)
 	{
@@ -206,25 +213,7 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	page = 0;//次のページへ行くための変数
-	page_flag = false;
-	ver = 0;
-	g = 200;//星枠の横幅
-	k = 75;//星枠の立幅
-	t = 70;//星の名前の位置
-	l = 0;//tと掛ける用の変数
-	s = 0;//星のクリックの鍵
-	std = 0;
-	side_a = 0;
-	side_b = 200;
-	size = 25;
-	size_y = 30;
-	font = 80;
-	fy = 200.0f;//星の名前の横幅
-	font_size = 25;//文字の大きさ
-	Interval_y = 35;//文字の立幅間隔
-	left_end = 80;//説明文の左の限界を決める
-
+	
 	//					　　	 X　		    Y　 大きさ
 	Font::StrDraw(L"アンタレス", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
@@ -420,6 +409,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
+			page = 0;
 			crick = 7;//ここはキーのようなもの
 		}
 	}
@@ -465,18 +455,19 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
-
 			crick = 8;//ここはキーのようなもの
-
 		}
 	}
 
 	if (crick == 8)//上を変えたらここも変える
 	{
 		ver=0;
-		Font::StrDraw(L"Xamidimura は、アフリカ大陸南部に住むコイコイ人の言葉で", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"ゼミディムラ は、アフリカ大陸南部に住むコイコイ人の言葉で", left_end, Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"「ライオンの眼」を意味する xami di muraに由来する", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"「ライオンの眼」を意味する ゼム デ ムラに由来する", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"ピピリマとは二重星の関係らしい", left_end, Interval_y*ver, font_size, c);
+
 	}
 
 	t -= 4;
@@ -490,15 +481,16 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
-
 			crick = 9;//ここはキーのようなもの
-
 		}
 	}
 
 	if (crick == 9)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"Pipirima は、タヒチの伝承に登場する双子の男女に由来する", 110, 0, 30, c);
+		ver = 0;
+		Font::StrDraw(L"ピピリマ は、タヒチの伝承に登場する双子の男女に由来する", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"ゼミディムラとは二重星の関係らしい", left_end, Interval_y*ver, font_size, c);
 	}
 
 	Font::StrDraw(L"ジャバハー", 30 + fy * std, 340 + t * l, 30, c);
@@ -515,7 +507,17 @@ void CObjStarPresent::Draw()
 
 	if (crick == 10)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"ジャバハー", 110, 0, 30, c);
+		ver = 0;
+		Font::StrDraw(L"ジャバハーは、地球から見てさそり座の方向に約500光年離", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"れた位置にある、4等級の恒星である。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"7つの恒星から成る七重連星系である。現時点で発見されて", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"いる七重連星系は、他にはカシオペヤ座AR星しかない。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"", left_end, Interval_y*ver, font_size, c);
+
 	}
 
 	//					　　	 X　		    Y　 大きさ
@@ -533,7 +535,20 @@ void CObjStarPresent::Draw()
 
 	if (crick == 11)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"ファング", 110, 0, 30, c);
+		ver = 0;
+		Font::StrDraw(L"この星は三重星である。さそり座π星Aはこと座β型変光星", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"の接触連星である。どちらも熱い青白色のB型主系列星であ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"る。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"[接触連星とは？]", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"接触連星は、恒星間の距離が近すぎて表面が接触しているか、", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"あるいは融合してガスの外層を共有しているような連星であ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"る。外層を共有する連星のことは、特に過剰接触連星という。", left_end, Interval_y*ver, font_size, c);
 	}
 
 	//					　　	 X　 Y　 大きさ
@@ -548,11 +563,39 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	if (crick == 12)//上を変えたらここも変える
+	if (crick == 12&&page==0)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"イクリール", 110, 0, 30, c);
+		ver = 0;
+		Font::StrDraw(L"Aと約40秒離れた位置に見える伴星Bの二重星である。 ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"B型のスペクトルを持つ準巨星である主星Aは、これ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"自体が分光連星であるが、あまりに2つの星が近く", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"にあるため詳細はわかっていない。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"[光秒とは？]", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"1光秒は光（電磁波）が1秒間に進む距離と定義される。メート ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"ルが[光が299.792.458分の1秒間に進む距離]と定義されてい", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"るので、1光秒は正確に 299.792.458 m となる。", left_end, Interval_y*ver, font_size, c);
+		
+
 
 	}
+	else if (crick == 12 && page == 1)
+	{
+		ver=0;
+		Font::StrDraw(L"[分光連星とは]", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"望遠鏡を使用して分離できなくとも、様々な変化の観測によっ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"て2つ以上の天体からなることを検出できる連星のこと。", left_end, Interval_y*ver, font_size, c);
+	}
+
+
 
 	t -= 4;
 	l -= 4;
@@ -570,7 +613,21 @@ void CObjStarPresent::Draw()
 
 	if (crick == 13)//上を変えたらここも変える
 	{
-		Font::StrDraw(L"アル・ニヤト", 110, 0, 30, c);
+		ver = 0;
+		Font::StrDraw(L"ヒッパルコスによる視差の測定より、地球からの距離は696光", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"年と推定されている。恒星系の主星は、二重線の分光連星で", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"あり、望遠鏡では解像できない。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"[ヒッパルコスとは？]", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"この衛星は、恒星の位置を大気の影響の無い宇宙空間で精密", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"に測定することが主なミッションであった。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"", left_end, Interval_y*ver, font_size, c);
+
 	}
 
 	//					　　	 X　		    Y　 大きさ
@@ -588,8 +645,26 @@ void CObjStarPresent::Draw()
 
 	if (crick == 14)//上を変えたらここも変える
 	{
-
-		Font::StrDraw(L"レサト", 110, 0, 30, c);
+		ver = 0;
+		Font::StrDraw(L"シャウラと肉眼でも見える二重星となっている。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"ただし2つの星は180光年離れており、連星ではない。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"太陽の質量の10倍の質量という超新星爆発を起こすか白色矮星 ", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"となるかの境であるが、酸素、ネオン、マグネシウムだけで構", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"成された非常に質量の大きな白色矮星になるものと考えられて", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"いる。", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"[]", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"", left_end, Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"", left_end, Interval_y*ver, font_size, c);
 
 	}
 
@@ -629,4 +704,6 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"", 110, 0, 30, c);
 	}
 
+	swprintf_s(see, L"%d", page);
+	Font::StrDraw(see, 600, 20, 30, c);
 }
