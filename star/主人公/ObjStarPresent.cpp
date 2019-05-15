@@ -412,7 +412,7 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	}
+	
 
 	if (crick == 5)//ã‚ğ•Ï‚¦‚½‚ç‚±‚±‚à•Ï‚¦‚é
 	{
@@ -576,7 +576,7 @@ void CObjStarPresent::Draw()
 
 			}
 		}
-	}
+	
 
 
 	if (crick == 9)//ã‚ğ•Ï‚¦‚½‚ç‚±‚±‚à•Ï‚¦‚é
