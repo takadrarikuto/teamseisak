@@ -47,6 +47,26 @@ void CObjStarPresent11::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	//星座選択へボタン
+	// left				 right            top            bottom         
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
+	{
+		if (m_mou_l == true)
+		{
+			lever = 0;
+			start_time = 0; //マウス操作開始時間
+			Scene::SetScene(new CSceneStarPicbook());
+
+		}
+	}
+	//ｂを押すと戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		lever = 0;
+		start_time = 0; //マウス操作開始時間
+		Scene::SetScene(new CSceneStarPicbook());
+	}
+
 	//30f後に表示
 	start_time++;
 
@@ -159,25 +179,7 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"選択", 10, 50, 25, c);
 	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//星座選択へボタン
-	// left				 right            top            bottom         
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
-	{
-		if (m_mou_l == true)
-		{
-			lever = 0;
-			start_time = 0; //マウス操作開始時間
-			Scene::SetScene(new CSceneStarPicbook());
-
-		}
-	}
-	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
-	{
-		lever = 0;
-		start_time = 0; //マウス操作開始時間
-		Scene::SetScene(new CSceneStarPicbook());
-	}
+	
 
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
@@ -464,7 +466,7 @@ void CObjStarPresent11::Draw()
 
 	if (crick == 1)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座の4等星。いて座の星の中では", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -475,7 +477,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 2)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座の恒星で4等星。アルカブ・ポステリオルとは見かけの", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -498,7 +500,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 3)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座の恒星で4等星。アルカブ・プリオルとは見かけの", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -521,7 +523,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 4)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座の恒星で3等星。K型の巨星で既に中心核では", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -538,7 +540,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 5)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座の恒星で3等星。星間物質がどの程度あるか", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -553,7 +555,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 6)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座で最も明るい恒星で2等星。B型のスペクトルを持つ巨星に", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -576,7 +578,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 7)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座で3番目に明るい恒星で3等星。+3.26等級のA2型巨星と", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -599,7 +601,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 8)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座の恒星で3等星。いわゆるレッドクランプに分類される", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -618,7 +620,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 9)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座の4等星。南斗六星の柄の端に位置する。五重星で", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -637,7 +639,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 10)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座の5等星。「ティースプーン」と呼ばれるアステリズムの", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -654,7 +656,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 11)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座の恒星系である。3つの恒星からなる連星系で", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -673,7 +675,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 12)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座で2番目に明るい恒星で2等星。南斗六星を作る星の1つ", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -692,7 +694,7 @@ void CObjStarPresent11::Draw()
 	}
 	else if (crick == 13)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"いて座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"いて座の恒星で5等星。同じいて座にあるオメガ星雲とは", left_end, IO_y + Interval_y * ver, font_size, c);

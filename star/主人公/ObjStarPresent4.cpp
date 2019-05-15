@@ -47,6 +47,27 @@ void CObjStarPresent4::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	//星座選択へボタン
+	// left				 right            top            bottom         
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
+	{
+		if (m_mou_l == true)
+		{
+			lever = 0;
+			start_time = 0; //マウス操作開始時間
+			Scene::SetScene(new CSceneStarPicbook());
+
+		}
+	}
+	//ｂを押すと戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		lever = 0;
+		start_time = 0; //マウス操作開始時間
+		Scene::SetScene(new CSceneStarPicbook());
+	}
+
+
 	//30f後に表示
 	start_time++;
 
@@ -159,24 +180,6 @@ void CObjStarPresent4::Draw()
 	Font::StrDraw(L"選択", 10, 50, 25, c);
 	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//星座選択へボタン
-	// left				 right            top            bottom         
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
-	{
-		if (m_mou_l == true)
-		{
-			lever = 0;
-			start_time = 0; //マウス操作開始時間
-			Scene::SetScene(new CSceneStarPicbook());
-
-		}
-	}
-	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
-	{
-		lever = 0;
-		Scene::SetScene(new CSceneStarPicbook());
-	}
 
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
@@ -364,6 +367,7 @@ void CObjStarPresent4::Draw()
 
 	if (crick == 1)
 	{
+		ver = VER_start; //文字間隔初期化
 		if (page == 0)
 		{
 			page_max = 2;
@@ -371,7 +375,6 @@ void CObjStarPresent4::Draw()
 			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-			ver = 0;
 			Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"みずがめ座の恒星で3等星。みずがめ座で2番目に明るい恒星。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -397,7 +400,6 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			//7行まで
-			ver = 0;
 			Font::StrDraw(L"赤色超巨星の場合は太陽の数千倍（同3万倍）以上ある。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"[見かけの二重星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -418,6 +420,7 @@ void CObjStarPresent4::Draw()
 	}
 	else if (crick == 2)
 	{
+		ver = VER_start; //文字間隔初期化
 		if (page == 0)
 		{
 			page_max = 2;
@@ -425,7 +428,6 @@ void CObjStarPresent4::Draw()
 			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-			ver = 0;
 			Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"みずがめ座で最も明るい恒星で3等星。3連星で、主星は", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -451,7 +453,6 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			//7行まで
-			ver = 0;
 			Font::StrDraw(L"[超巨星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"太陽よりはるかに大きく明るい恒星のこと。明るさは青色超巨星の", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -473,6 +474,7 @@ void CObjStarPresent4::Draw()
 	}
 	else if (crick == 3)
 	{
+		ver = VER_start; //文字間隔初期化
 		if (page == 0)
 		{
 			page_max = 2;
@@ -480,7 +482,6 @@ void CObjStarPresent4::Draw()
 			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-			ver = 0;
 			Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"恒星で4等星。分光連星で、A型主系列星の主星の周りを", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -504,7 +505,6 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			//7行まで
-			ver = 0;
 			Font::StrDraw(L"[分光連星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"スペクトルの特徴の周期的な変化によって2つ以上の天体から", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -534,7 +534,7 @@ void CObjStarPresent4::Draw()
 		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"みずがめ座で3番目に明るい恒星", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -565,7 +565,7 @@ void CObjStarPresent4::Draw()
 		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"恒星で4等星変光、化学組成、惑星は発見されていないなど", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -590,6 +590,7 @@ void CObjStarPresent4::Draw()
 	}
 	else if (crick == 6)
 	{
+		ver = VER_start; //文字間隔初期化
 		if (page == 0)
 		{
 			page_max = 2;
@@ -597,7 +598,6 @@ void CObjStarPresent4::Draw()
 			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-			ver = 0;
 			Font::StrDraw(L"みずがめ座に属する恒星で4等星。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"近くに見えるρ星と二重星を成しているが連星ではない。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -623,7 +623,6 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			//7行まで
-			ver = 0;
 			Font::StrDraw(L"である。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"白色矮星(はくしょくわいせい)", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -642,6 +641,7 @@ void CObjStarPresent4::Draw()
 	}
 	else if (crick == 7)
 	{
+		ver = VER_start; //文字間隔初期化
 		if (page == 0)
 		{
 			page_max = 2;
@@ -649,7 +649,6 @@ void CObjStarPresent4::Draw()
 			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-			ver = 0;
 			Font::StrDraw(L"みずがめ座に属する恒星で5等星。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"スペクトル分類K型の巨星。固有名のシュチュラは、ラテン語で", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -675,7 +674,6 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			//7行まで
-			ver = 0;
 			Font::StrDraw(L"恒星の分類法の一つ。スペクトル分類によって細分された星の", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"タイプをスペクトル型と呼ぶ。", left_end, IO_y + Interval_y * ver, font_size, c);

@@ -47,6 +47,26 @@ void CObjStarPresent7::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	//星座選択へボタン
+	// left				 right            top            bottom         
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
+	{
+		if (m_mou_l == true)
+		{
+			lever = 0;
+			start_time = 0; //マウス操作開始時間
+			Scene::SetScene(new CSceneStarPicbook());
+
+		}
+	}
+	//ｂを押すと戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		lever = 0;
+		start_time = 0; //マウス操作開始時間
+		Scene::SetScene(new CSceneStarPicbook());
+	}
+
 	//30f後に表示
 	start_time++;
 
@@ -159,24 +179,7 @@ void CObjStarPresent7::Draw()
 	Font::StrDraw(L"選択", 10, 50, 25, c);
 	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//星座選択へボタン
-	// left				 right            top            bottom         
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
-	{
-		if (m_mou_l == true)
-		{
-			lever = 0;
-			Scene::SetScene(new CSceneStarPicbook());
-
-		}
-	}
-	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
-	{
-		lever = 0;
-		start_time = 0; //マウス操作開始時間
-		Scene::SetScene(new CSceneStarPicbook());
-	}
+	
 
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
@@ -411,7 +414,7 @@ void CObjStarPresent7::Draw()
 
 	if (crick == 1)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"ふたご座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"ふたご座で2番目に明るい恒星カストルAとカストルB", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -424,7 +427,7 @@ void CObjStarPresent7::Draw()
 	}
 	else if (crick == 2)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"ふたご座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"ふたご座で最も明るい恒星で、全天21の1等星の", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -433,7 +436,7 @@ void CObjStarPresent7::Draw()
 	}
 	else if (crick == 3)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"ふたご座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"ふたご座で3番目に明るい恒星軌道を12.6年の周期で", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -442,14 +445,14 @@ void CObjStarPresent7::Draw()
 	}
 	else if (crick == 4)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"ふたご座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"およそ1,200年かけて周回している", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 5)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"ふたご座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"超巨星で、月に掩蔽される際に詳細な観測が成されている", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -458,7 +461,7 @@ void CObjStarPresent7::Draw()
 	}
 	else if (crick == 6)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"ふたご座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"10.15日の周期で3.62等から4.18等まで変光する", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -471,7 +474,7 @@ void CObjStarPresent7::Draw()
 	}
 	else if (crick == 7)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"ふたご座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"およそ232.9日の周期で3.15等から3.9等まで変光する", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -482,7 +485,7 @@ void CObjStarPresent7::Draw()
 	}
 	else if (crick == 8)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"ふたご座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"恒星で3等星", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -495,7 +498,7 @@ void CObjStarPresent7::Draw()
 	}
 	else if (crick == 9)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"ふたご座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"3等星の恒星で、地球から約60光年離れた、F型主系列星", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -506,7 +509,7 @@ void CObjStarPresent7::Draw()
 	}
 	else if (crick == 10)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"ふたご座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"恒星で5等星", left_end, IO_y + Interval_y * ver, font_size, c);

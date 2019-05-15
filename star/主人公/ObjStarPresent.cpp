@@ -62,6 +62,27 @@ void CObjStarPresent::Action()
 	m_mou_l = Input::GetMouButtonL();
 
 
+	//星座選択へボタン
+	// left				 right            top            bottom         
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
+	{
+		if (m_mou_l == true)
+		{
+			lever = 0;
+			start_time = 0; //マウス操作開始時間
+			Scene::SetScene(new CSceneStarPicbook());
+			return;
+		}
+	}
+	//ｂを押すと戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		lever = 0;
+		start_time = 0; //マウス操作開始時間
+		Scene::SetScene(new CSceneStarPicbook());
+	}
+
+
 	//30f後に表示
 	start_time++;
 
@@ -173,23 +194,7 @@ void CObjStarPresent::Draw()
 	Font::StrDraw(L"選択", 10, 50, 25, c);
 	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//星座選択へボタン
-	// left				 right            top            bottom         
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
-	{
-		if (m_mou_l == true)
-		{
-			lever = 0;
-			start_time = 0; //マウス操作開始時間
-			Scene::SetScene(new CSceneStarPicbook());			
-		}
-	}
-	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
-	{
-		lever = 0;
-		Scene::SetScene(new CSceneStarPicbook());
-	}
+	
 
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };

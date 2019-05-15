@@ -47,6 +47,27 @@ void CObjStarPresent3::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 	
+	//星座選択へボタン
+	// left				 right            top            bottom         
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
+	{
+		if (m_mou_l == true)
+		{
+			lever = 0;
+			start_time = 0; //マウス操作開始時間
+			Scene::SetScene(new CSceneStarPicbook());
+
+		}
+	}
+	//ｂを押すと戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		lever = 0;
+		start_time = 0; //マウス操作開始時間
+		Scene::SetScene(new CSceneStarPicbook());
+	}
+
+
 	//30f後に表示
 	start_time++;
 
@@ -159,24 +180,6 @@ void CObjStarPresent3::Draw()
 	Font::StrDraw(L"選択", 10, 50, 25, c);
 	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//星座選択へボタン
-	// left				 right            top            bottom         
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
-	{
-		if (m_mou_l == true)
-		{
-			lever = 0;
-			start_time = 0; //マウス操作開始時間
-			Scene::SetScene(new CSceneStarPicbook());
-
-		}
-	}
-	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
-	{
-		lever = 0;
-		Scene::SetScene(new CSceneStarPicbook());
-	}
 
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
@@ -306,7 +309,7 @@ void CObjStarPresent3::Draw()
 
 	if (crick == 1)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"てんびん座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"この星は光学二重星で、空気が澄んでいれば肉眼で見わけられる", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -315,7 +318,7 @@ void CObjStarPresent3::Draw()
 	}
 	else if (crick == 2)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"てんびん座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"てんびん座で最も明るい恒星", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -326,14 +329,14 @@ void CObjStarPresent3::Draw()
 	}
 	else if (crick == 3)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"てんびん座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"軌道を55,000年以上かけて回っている", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 4)
 	{
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"てんびん座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"さそり座の他の恒星と離れた位置にあることから", left_end, IO_y + Interval_y * ver, font_size, c);

@@ -25,6 +25,36 @@ void CObjStarPicbook::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
+
+	//宇宙船へボタン
+	// left				 right            top            bottom         
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
+	{
+		if (m_mou_l == true)
+		{
+			if (starmodel_flag == true)
+			{
+				lever = 0;
+				Scene::SetScene(new CSceneStageselect());
+				starmodel_flag = false;
+			}
+		}
+		else
+		{
+			starmodel_flag = true;
+		}
+
+
+	}
+	//ｂを押すと戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		lever = 0;
+		Scene::SetScene(new CSceneStageselect());
+	}
+
+
+	
 }
 
 void CObjStarPicbook::Draw()
@@ -310,93 +340,6 @@ void CObjStarPicbook::Draw()
 	Font::StrDraw(L"宇宙", 10, 25, 25, c);
 	Font::StrDraw(L"船へ", 10, 50, 25, c);
 
-	//宇宙船へボタン
-	// left				 right            top            bottom         
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
-	{
-		if (m_mou_l == true)
-		{
-			if (starmodel_flag == true)
-			{
-				lever = 0;
-				Scene::SetScene(new CSceneStageselect());
-				starmodel_flag = false;
-			}
-		}
-		else
-		{
-			starmodel_flag = true;
-		}
-		
-		
-	}
-	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
-	{
-		lever = 0;
-		Scene::SetScene(new CSceneStageselect());
-	}
-
-	/*int l = 50;
-	
-
-	wchar_t test[2][2]{ L"蠍",L"座" }; //さそり
-	wchar_t test2[3][2]{ L"天",L"秤",L"座" }; //てんびん
-	wchar_t test3[3][2]{ L"双",L"子",L"座" }; //ふたご
-	wchar_t test4[3][2]{ L"水",L"瓶",L"座" }; //みずがめ
-	wchar_t test5[3][2]{ L"射",L"手",L"座" }; //いて
-	wchar_t test6[3][2]{ L"獅",L"子",L"座" }; //しし
-	wchar_t test7[3][2]{ L"山",L"羊",L"座" }; //やぎ
-	wchar_t test8[2][2]{ L"魚",L"座" }; //うお
-	wchar_t test9[2][2]{ L"蟹",L"座" }; //かに
-	wchar_t test10[3][2]{ L"乙",L"女",L"座" }; //おとめ
-	wchar_t test11[3][2]{ L"牡",L"羊",L"座" }; //ひつじ
-	wchar_t test12[3][2]{ L"牡",L"牛",L"座" }; //うし
-
-
-		//ループして出す
-		for (int i = 0; i <= 1; i++)
-		{
-			swprintf_s(str, L"%s", test8[i]);
-			swprintf_s(str2, L"%s", test9[i]);
-			swprintf_s(str3, L"%s", test[i]);
-
-
-			//Yは一回目はiは0なので0に50を掛けている
-			//2回目はiは1なので50を100に足す。
-			//				　　X　 Y　 大きさ
-			Font::StrDraw(str, 75, 320 + l * i, 50, c); //test8
-			Font::StrDraw(str2, 342, 320 + l * i, 50, c); //test9
-			Font::StrDraw(str3, 610, 320 + l * i, 50, c); //test
-			
-
-
-		}
-		
-		for (int i = 0; i <= 2; i++)
-		{
-			swprintf_s(str, L"%s", test4[i]);
-			swprintf_s(str2, L"%s", test11[i]);
-			swprintf_s(str3, L"%s", test12[i]);
-			swprintf_s(str4, L"%s", test3[i]);
-			swprintf_s(str5, L"%s", test6[i]);
-			swprintf_s(str6, L"%s", test10[i]);
-			swprintf_s(str7, L"%s", test2[i]);
-			swprintf_s(str8, L"%s", test5[i]);
-			swprintf_s(str9, L"%s", test7[i]);
-
-			//				　　X　 Y　 大きさ
-			Font::StrDraw(str, 10, 320 + l * i, 50, c); 
-			Font::StrDraw(str2, 140, 320 + l * i, 50, c); 
-			Font::StrDraw(str3, 208, 320 + l * i, 50, c); 
-			Font::StrDraw(str4, 275, 320 + l * i, 50, c); 
-			Font::StrDraw(str5, 410, 320 + l * i, 50, c); 
-			Font::StrDraw(str6, 480, 320 + l * i, 50, c); 
-			Font::StrDraw(str7, 545, 320 + l * i, 50, c); 
-			//二文字の星座が2つ入るので2つぶん空ける
-			Font::StrDraw(str8, 680, 320 + l * i, 50, c); 
-			Font::StrDraw(str9, 745, 320 + l * i, 50, c); 
-		}*/
 
 	Font::StrDraw(L"水瓶座", 30 + fy * std, 330 + t*l, 30, c);
 	l++;
