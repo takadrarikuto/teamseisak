@@ -15,6 +15,7 @@ void CObjStarPresent5::Init()
 	page = 0;//次のページへ行くための変数
 	page_flag = false;
 	ver = 0;
+	VER_start = 0; //バー初期化
 	g = 200;//星枠の横幅
 	k = 75;//星枠の立幅	
 	s = 0;//星のクリックの鍵	
@@ -32,6 +33,8 @@ void CObjStarPresent5::Init()
 	pagey = 10; //ページ座標y
 	pagesize = 20; //ページサイズ
 
+	start_time = 0.0f; //マウス操作開始時間
+	start_flag = false; //マウス操作開始フラグ
 }
 
 void CObjStarPresent5::Action()
@@ -44,6 +47,18 @@ void CObjStarPresent5::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	//30f後に表示
+	start_time++;
+
+	if (start_time > 30.0f)
+	{
+		start_flag = true;
+	}
+	else
+	{
+		m_mou_l = false;
+		start_flag = false;
+	}
 
 }
 
@@ -152,6 +167,7 @@ void CObjStarPresent5::Draw()
 		if (m_mou_l == true)
 		{
 			lever = 0;
+			start_time = 0; //マウス操作開始時間
 			Scene::SetScene(new CSceneStarPicbook());
 
 		}
@@ -220,57 +236,125 @@ void CObjStarPresent5::Draw()
 		}
 	}
 
-
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"アルレシャ", 15, 320 + t * l, 30, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 1;
+			if (m_mou_l == true)
+			{
+				crick = 1;
+				page = 0; //ページ初期化
+			}
 		}
 	}
 
 	//					　　			    X　    Y　   大きさ
 	Font::StrDraw(L"フム・アル・サマカー", 10, 335 + t * l, 18, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 2;
+			if (m_mou_l == true)
+			{
+				crick = 2;
+				page = 0; //ページ初期化
+			}
 		}
 	}
 
 	//					　　	    X　        Y　    大きさ
 	Font::StrDraw(L"レーヴァティ ", 15, 330 + t * l, 30, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 3;
+			if (m_mou_l == true)
+			{
+				crick = 3;
+				page = 0; //ページ初期化
+			}
 		}
 	}
+
 	//					　　	  X　        Y　    大きさ
 	Font::StrDraw(L"トルクレア", 15, 330 + t * l, 30, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 4;
+			if (m_mou_l == true)
+			{
+				crick = 4;
+				page = 0; //ページ初期化
+			}
 		}
 	}
+
+	
 
 
 	if (crick == 1)
 	{
+		if (page == 0)
+		{
+			page_max = 2;
+			//ページ数表示
+			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+			Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
+			ver = 0;
+			Font::StrDraw(L"うお座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"4.1等の主星Aと5.1等の伴星Bからなる連星系で、", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"軌道長半径約130au、近点距離約50au、遠点距離", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"約190auの軌道を、およそ720年の周期で互いに", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"周回している", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			//8行目まで、改行
+		}
+		else if (page == 1)
+		{
+			page_max = 2;
+			//ページ数表示
+			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+			Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
+			//7行まで
+			ver = 0;
+			Font::StrDraw(L"[連星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"2つの恒星が両者の重心の周りを軌道運動している天体で", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+		}
 		ver = 0;
 		Font::StrDraw(L"うお座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
@@ -281,6 +365,13 @@ void CObjStarPresent5::Draw()
 		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体で", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる", left_end, IO_y + Interval_y * ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
+		ver++;
 	}
 	else if (crick == 2)
 	{
