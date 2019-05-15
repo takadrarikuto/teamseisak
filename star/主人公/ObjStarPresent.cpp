@@ -24,8 +24,8 @@ void CObjStarPresent::Init()
 	font = 80;
 	fy = 200.0f;//星の名前の横幅
 	font_size = 25;//文字の大きさ
-	IO_y = 25; //y座標開始地点
-	Interval_y = 35;//文字の立幅間隔
+	IO_y = 25; //y座標開始地点25
+	Interval_y = 35;//文字の立幅間隔35
 	left_end = 80;//説明文の左の限界を決める
 	pagex = 680; //ページ座標x
 	pagey = 10; //ページ座標y
@@ -241,6 +241,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
+			pagemax = 0;
 			crick = 1;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -248,13 +249,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 1)//上を変えたらここも変える
 	{
-		ver =1;
-		page_max = 1;
-		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-		Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
-		ver = 0;
+		ver =0;
 		Font::StrDraw(L"さそり座で最も明るい恒星で全天21の1等星の1つ。夏の南の空", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"に赤く輝くよく知られる恒星の1つである。", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -269,11 +264,7 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"外線を含めて計算すると明るさは太陽の6.5万倍である。", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
-	//ページ制限
-	else if (page < 0 || page > 0)
-	{
-		page = 0;
-	}
+	
 
 
 	
@@ -285,6 +276,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
+			pagemax = 0;
 			crick = 2;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -292,20 +284,16 @@ void CObjStarPresent::Draw()
 
 	if (crick == 2)//上を変えたらここも変える
 	{
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"さそり座の恒星で3等星かつ六重連星。", left_end, IO_y + Interval_y*ver, font_size,c);
 		ver++;
 		Font::StrDraw(L"[連星とは?]お互いの重力に引かれあったり離れたりを繰り返し", left_end, IO_y + Interval_y*ver, font_size,  c);
 		ver++;
 		Font::StrDraw(L"をしている。肉眼で見た場合は一つに見えるが、望遠鏡", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"など遠距離で見た場合二つに分裂する。", left_end, IO_y + Interval_y*ver, font_size, c);
+		Font::StrDraw(L"など、遠距離で見た場合二つに分裂する。", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
-	//ページ制限
-	else if (page < 0 || page > 0)
-	{
-		page = 0;
-	}
+	
 
 	Font::StrDraw(L"ジュバ", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
@@ -314,15 +302,15 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
-			page = 1;
-			pagemax = 2;
+			
 			crick = 3;//ここはキーのようなもの
+			pagemax = 2;
 		}
 	}
 
 	if (crick == 3 &&page==0)//上を変えたらここも変える
 	{
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"さそり座の恒星で2等星。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"Be星の中でも爆発型変光星のカシオペヤ座γ型変光星であると", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -334,14 +322,14 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"爆発型変光星は変光星の一種。恒星の外層や大気の爆発によっ", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"て変光する星。", left_end, IO_y + Interval_y*ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"[カシオペヤ座γ型変光星とは？]", left_end, Interval_y*ver, font_size, c);
 		//7行目で、改行
 		
 	}
-	else if (crick == 3 && page == 1)
+  if (crick == 3 && page == 1)
 	{
-		ver = 1;
+		ver = 0;
+		Font::StrDraw(L"[カシオペヤ座γ型変光星とは？]", left_end, Interval_y*ver, font_size, c);
+		ver++;
 		Font::StrDraw(L"ガス殻星のことであり、物質の流出のため、光度は不規則に", left_end, Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"変化する。", left_end, Interval_y*ver, font_size, c);
@@ -352,15 +340,7 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"光星に分類される。", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
-	//ページ制限
-	else if (page < 1)
-	{
-		page = 0;
-	}
-	else if (page > 1)
-	{
-		page = 1;
-	}
+	
 
 
 	Font::StrDraw(L"ララワグ", 30 + fy * std, 330 + t * l, 30, c);
@@ -370,6 +350,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
+			pagemax = 0;
 			crick = 4;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -377,7 +358,7 @@ void CObjStarPresent::Draw()
 
 		if (crick == 4)//上を変えたらここも変える
 		{
-			ver = 1;
+			ver = 0;
 			Font::StrDraw(L"さそり座の恒星で2等星。 ", left_end, Interval_y*ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"2017年11月17日、国際天文学連合の恒星の命名に関するワーキ", left_end, Interval_y*ver, font_size, c);
@@ -391,13 +372,8 @@ void CObjStarPresent::Draw()
 			Font::StrDraw(L"トラリア先住民のワルダマン族が使っていた呼称を採用したも ", left_end, Interval_y*ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"のである。", left_end, Interval_y*ver, font_size, c);
-
 	}
-	//ページ制限
-	else if (page < 0 || page > 0)
-	{
-		page = 0;
-	}
+	
 
 	t -= 4;
 	l -= 4;
@@ -409,6 +385,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
+			pagemax = 0;
 			crick = 5;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -416,7 +393,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 5)//上を変えたらここも変える
 	{
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"薄黄色の輝巨星。2等星のA星と6等星のB星の二重星である。 ", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"[輝巨星とは？]", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -427,11 +404,7 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"ど明るく重いわけではなく、極めて明るい巨星に分類される。", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
-	//ページ制限
-	else if (page < 0 || page > 0)
-	{
-		page = 0;
-	}
+	
 
 	//					　　	 X　		    Y　 大きさ
 	Font::StrDraw(L"ギルタブ", 30 + fy * std, 330 + t * l, 30, c);
@@ -442,6 +415,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
+			pagemax = 0;
 			crick = 6;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -449,7 +423,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 6)//上を変えたらここも変える
 	{
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"この恒星は分光連星で、主星はケフェウス座β型変光星である。", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"分光観測により、公転周期は195日と測定された。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -457,11 +431,7 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"明るさの変化は、4.80時間、4.93時間である。", left_end, IO_y + Interval_y * ver, font_size, c);
 
 	}
-	//ページ制限
-	else if (page < 0 || page > 0)
-	{
-		page = 0;
-	}
+	
 
 	//					　　	 X　 Y　 大きさ
 	Font::StrDraw(L"シャウラ", 30 + fy * std, 330 + t * l, 30, c);
@@ -471,8 +441,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
-			page = 1;
-			pagemax = 2;
+			pagemax = 1;
 			crick = 7;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -480,7 +449,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 7 && page == 0)//上を変えたらここも変える
 	{
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"さそり座の恒星で2等星。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"さそり座ではアンタレスに次いで明るい恒星である。青白色の", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -493,15 +462,14 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"λ星Aとλ星Bは42秒離れている。ただしこれらが物理的な", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"どうかは知られていない。もし連星だとするなら、AとBの間", left_end, Interval_y*ver, font_size, c);
-		
+		Font::StrDraw(L"どうかは知られていない。もし連星だとするなら、AとBの間", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
 	else if (crick == 7 && page == 1)//上を変えたらここも変える
 	{
-		ver = 1;
-		Font::StrDraw(L"は7,500天文単位、AとCの間は17,000天文単位（0.27光年） ", left_end, Interval_y*ver, font_size, c);
+		ver = 0;
+		Font::StrDraw(L"は7,500天文単位、AとCの間は17,000天文単位（0.27光年） ", left_end, IO_y+Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"離れていることになる。", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"離れていることになる。", left_end, IO_y+Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"ことになる。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
@@ -513,15 +481,7 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"重なっている星々は距離が離れている。", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
-	//ページ制限
-	else if (page < 1)
-	{
-		page = 0;
-	}
-	else if (page > 1)
-	{
-		page = 1;
-	}
+	
 
 
 	Font::StrDraw(L"ゼミディムラ", 10 + fy * std, 340 + t * l, 30, c);
@@ -531,7 +491,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
-
+			pagemax = 1;
 			crick = 8;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -539,7 +499,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 8 && page == 0)//上を変えたらここも変える
 	{
-		ver=1;
+		ver=0;
 		Font::StrDraw(L"さそり座に位置する重星。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"μ1星とμ2星で構成される。この2つの恒星は、連星で", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -558,13 +518,11 @@ void CObjStarPresent::Draw()
 	}
 	else if (crick == 8 && page == 1)//上を変えたらここも変える
 	{
-		page_max = 2;
-		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+		
+		
 
 		//7行まで
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"「ライオンの眼」を意味する xami di muraに由来する", left_end, IO_y + Interval_y* ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"[二重星・重星とは]", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -576,18 +534,8 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"2つの恒星が両者の重心の周りを軌道運動している天体である。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"双子星（ふたごぼし）とも呼ばれる。", left_end, IO_y + Interval_y*ver, font_size, c);
-		}
-	//ページ制限
-	else if (page < 1)
-	{
-		page = 0;
 	}
-	else if (page > 1)
-	{
-		page = 1;
-	}
-
-
+	
 	t -= 4;
 	l -= 4;
 	std++;//四つ星を表示したらstdを入れる
@@ -599,7 +547,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
-
+			pagemax = 0;
 			crick = 9;//ここはキーのようなもの
 			page = 0; //ページ初期化
 
@@ -611,11 +559,7 @@ void CObjStarPresent::Draw()
 		ver = 1;
 		Font::StrDraw(L"Pipirima は、タヒチの伝承に登場する双子の男女に由来する", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
-	//ページ制限
-	else if (page < 0 || page > 0)
-	{
-		page = 0;
-	}
+	
 
 	Font::StrDraw(L"ジャバハー", 30 + fy * std, 340 + t * l, 30, c);
 	l++;
@@ -624,6 +568,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
+			pagemax = 1;
 			crick = 10;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -631,7 +576,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 10 && page == 0)//上を変えたらここも変える
 	{
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"地球から見てさそり座の方向に約500光年離れた位置にある", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"4等級の恒星である。さそり座ν星は、7つの恒星から成る", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -650,13 +595,8 @@ void CObjStarPresent::Draw()
 	}
 	else if (crick == 10 && page == 1)//上を変えたらここも変える
 	{
-		page_max = 2;
-		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-		Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
 		//7行まで
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"スペクトル型がB、光度階級がVの、水素の核融合で燃える", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"主系列星である。太陽の2倍から16倍の質量を持ち", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -667,15 +607,7 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"0.1%程度に過ぎないと考えられている", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
-	//ページ制限
-	else if (page < 1)
-	{
-		page = 0;
-	}
-	else if (page > 1)
-	{
-		page = 1;
-	}
+	
 
 
 	//					　　	 X　		    Y　 大きさ
@@ -687,6 +619,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
+			pagemax = 1;
 			crick = 11;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -694,7 +627,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 11 && page == 0)//上を変えたらここも変える
 	{
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"さそり座の恒星で3等星。この星は三重星である。", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"さそり座π星Aはこと座β型変光星の接触連星である。", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -713,13 +646,8 @@ void CObjStarPresent::Draw()
 	}
 	else if (crick == 11 && page == 1)//上を変えたらここも変える
 	{
-		page_max = 2;
-		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-		Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
 		//7行まで
-		ver = 1;
+		ver =0;
 		Font::StrDraw(L"恒星間の距離が近すぎて表面が接触しているか、あるいは", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"融合してガスの外層を共有しているような連星である。", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -730,15 +658,7 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"双子星（ふたごぼし）とも呼ばれる。", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
-	//ページ制限
-	else if (page < 1)
-	{
-		page = 0;
-	}
-	else if (page > 1)
-	{
-		page = 1;
-	}
+	
 
 	//					　　	 X　 Y　 大きさ
 	Font::StrDraw(L"イクリール", 30 + fy * std, 360 + t * l, 30, c);
@@ -748,8 +668,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
-			page = 1;
-			pagemax = 2;
+			pagemax = 1;
 			crick = 12;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -757,7 +676,7 @@ void CObjStarPresent::Draw()
 
 	if (crick == 12 && page == 0)//上を変えたらここも変える
 	{
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"さそり座の恒星で4等星。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"B型のスペクトルを持つ準巨星である主星Aと約40秒離れた", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -770,28 +689,19 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"[二重星とは]", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"ルが[光が299.792.458分の1秒間に進む距離]と定義されてい", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"ルが[光が299.792.458分の1秒間に進む距離]と定義されてい", left_end, IO_y+Interval_y*ver, font_size, c);
 
 	}
 	else if (crick == 12 && page == 1)//上を変えたらここも変える
 	{
-		ver = 1;
-		Font::StrDraw(L"るので、1光秒は正確に 299.792.458 m となる。", left_end, Interval_y*ver, font_size, c);
+		ver = 0;
+		Font::StrDraw(L"るので、1光秒は正確に 299.792.458 m となる。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"[分光連星とは]", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"[分光連星とは]", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"変化によって2つ以上の天体からなることを検出できる", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"連星のこと。", left_end, IO_y + Interval_y*ver, font_size, c);
-	}
-	//ページ制限
-	else if (page < 1)
-	{
-		page = 0;
-	}
-	else if (page > 1)
-	{
-		page = 1;
 	}
 
 	t -= 4;
@@ -806,12 +716,13 @@ void CObjStarPresent::Draw()
 		{
 			crick = 13;//ここはキーのようなもの
 			page = 0; //ページ初期化
+			pagemax = 2;
 		}
 	}
 
 	if (crick == 13 && page == 0)//上を変えたらここも変える
 	{
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"さそり座にある恒星で3等星。地球からの距離は696光年", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"（214パーセク）と推定されている。恒星系の主星は", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -830,13 +741,9 @@ void CObjStarPresent::Draw()
 	}
 	else if (crick == 13 && page == 1)//上を変えたらここも変える
 	{
-		page_max = 3;
-		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-		Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
+		
 		//7行まで
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"[パーセクとは]", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"距離を表す計量単位であり、約3.26光年である。", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -853,33 +760,18 @@ void CObjStarPresent::Draw()
 	}
 	else if (crick == 13 && page == 2)//上を変えたらここも変える
 	{
-		page_max = 3;
-		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-		Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
 		//7行まで
-		ver = 1;
+		ver = 0;
 		Font::StrDraw(L"連星のこと。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"[軌道離心率(きどうりしんりつ)とは]", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"天体の軌道の絶対的な形を決める重要なパラメータである。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"軌道離心率は、この形がどれだけ円から離れているかを表す値で", left_end, IO_y + Interval_y*ver, font_size, c);
+		Font::StrDraw(L"軌道離心率は、この形がどれだけ円から離れているかを表す値", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"あると言う事ができる。", left_end, IO_y + Interval_y*ver, font_size, c);
+		Font::StrDraw(L"であると言う事ができる。", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
-	//ページ制限
-	else if (page < 1)
-	{
-		page = 0;
-	}
-	else if (page > 2)
-	{
-		page = 2;
-	}
-
 
 	//					　　	 X　		    Y　 大きさ
 	Font::StrDraw(L"レサト", 30 + fy * std, 340 + t * l, 30, c);
@@ -890,57 +782,51 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
-			page = 1;
 			pagemax = 2;
 			crick = 14;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
 	}
 
-	if (crick == 14&&page==0)//上を変えたらここも変える
+	if (crick == 14 && page == 0)//上を変えたらここも変える
 	{
-		ver = 1;
-		Font::StrDraw(L"さそり座の恒星で3等星。", left_end, IO_y + Interval_y*ver, font_size, c);
+		ver = 0;
+		Font::StrDraw(L"さそり座の恒星で3等星。", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"シャウラと肉眼でも見える二重星となっている。", left_end, IO_y + Interval_y*ver, font_size, c);
+		Font::StrDraw(L"シャウラと肉眼でも見える二重星となっている。", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"ただし2つの星は180光年離れており、連星ではない。", left_end, IO_y + Interval_y*ver, font_size, c);
+		Font::StrDraw(L"ただし2つの星は180光年離れており、連星ではない。", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"太陽質量の10倍の質量という超新星爆発を起こすか白色矮星と", left_end, IO_y + Interval_y*ver, font_size, c);
+		Font::StrDraw(L"太陽質量の10倍の質量という超新星爆発を起こすか白色矮星と", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"なるかの境であるが、酸素、ネオン、マグネシウムだけで", left_end, IO_y + Interval_y*ver, font_size, c);
+		Font::StrDraw(L"なるかの境であるが、酸素、ネオン、マグネシウムだけで", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"構成された非常に質量の大きな白色矮星になるものと", left_end, IO_y + Interval_y*ver, font_size, c);
+		Font::StrDraw(L"構成された非常に質量の大きな白色矮星になるものと", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"考えられている。", left_end, IO_y + Interval_y*ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"[二重星とは]", left_end, IO_y + Interval_y*ver, font_size, c);
+		Font::StrDraw(L"考えられている。", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 	else if (crick == 14 && page == 1)//上を変えたらここも変える
 	{
-		page_max = 3;
-		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-		Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
+		
 		//7行まで
-		ver = 1;
+		ver = 0;
+		Font::StrDraw(L"[二重星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+		ver++;
 		Font::StrDraw(L"地球上から見る恒星が同じ方向に近接して見える物を指す。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"[連星とは]", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"2つの恒星が両者の重心の周りを軌道運動している天体である。", left_end, IO_y + Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"[超新星爆発とは？]", left_end, Interval_y*ver, font_size, c);
-		
+		Font::StrDraw(L"[超新星爆発とは？]", left_end, IO_y + Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"大質量の恒星が、その一生を終えるときに起こす大規模な爆発", left_end, IO_y + Interval_y*ver, font_size, c);
+		ver++;
+		Font::StrDraw(L"現象である。", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
-	else if (crick == 14 && page == 1)
+	else if (crick == 14 && page == 2)//上を変えたらここも変える
 	{
-		ver = 1;
-		Font::StrDraw(L"大質量の恒星が、その一生を終えるときに起こす大規模な爆発", left_end, Interval_y*ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"現象である。", left_end, Interval_y*ver, font_size, c);
-		ver++;
+		ver = 0;
 		Font::StrDraw(L"[白色矮星とは？]", left_end, Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"恒星が進化の終末期にとりうる形態の一つ。質量は太陽と同程 ", left_end, Interval_y*ver, font_size, c);
@@ -948,7 +834,6 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"度から数分の1程度と大きいが、直径は地球と同程度かやや大", left_end, Interval_y*ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"きいくらいに縮小しており、非常に高密度の天体である。", left_end, Interval_y*ver, font_size, c);
-	
 	}
 
 	//					　　	 X　 Y　 大きさ
@@ -959,6 +844,7 @@ void CObjStarPresent::Draw()
 	{
 		if (m_mou_l == true)
 		{
+			pagemax = 0;
 			crick = 15;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
@@ -966,22 +852,17 @@ void CObjStarPresent::Draw()
 
 	if (crick == 15 && page == 0)//上を変えたらここも変える
 	{
-		ver=1;
-		Font::StrDraw(L"さそり座の恒星で3等星。この星は橙色の巨星である。 ", left_end, Interval_y*ver, font_size, c);
+		ver=0;
+		Font::StrDraw(L"さそり座の恒星で3等星。この星は橙色の巨星である。 ", left_end, 50+Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"[巨星とは？]", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"[巨星とは？]", left_end, 50+Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"巨星とは、同じ表面温度を持つ主系列星よりも半径および明る", left_end, Interval_y*ver, font_size, c);
+		Font::StrDraw(L"巨星とは、同じ表面温度を持つ主系列星よりも半径および明る", left_end, 50+Interval_y*ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"さが非常に大きい恒星のことである。", left_end, Interval_y*ver, font_size, c);
-	}
-
-	if (crick == 16)//上を変えたらここも変える
-	{
-
-		Font::StrDraw(L"", 110, 0, 30, c);
+		Font::StrDraw(L"さが非常に大きい恒星のことである。", left_end, 50+Interval_y*ver, font_size, c);
 	}
 
 	swprintf_s(see, L"現在ページ数%d/終わりページ数%d", page,pagemax);
-	Font::StrDraw(see, 270, 10, 20, c);
+	Font::StrDraw(see, 530, 5, 18, c);
+
 }
