@@ -14,6 +14,7 @@ void CObjStarPresent::Init()
 	page = 0;//次のページへ行くための変数
 	page_flag = false;
 	ver = 0;
+	VER_start = 0; //バー初期化
 	g = 200;//星枠の横幅
 	k = 75;//星枠の立幅	
 	s = 0;//星のクリックの鍵	
@@ -57,6 +58,40 @@ void CObjStarPresent::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+
+	//星座選択へボタン
+	// left				 right            top            bottom         
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
+	{
+		if (m_mou_l == true)
+		{
+			lever = 0;
+			start_time = 0; //マウス操作開始時間
+			Scene::SetScene(new CSceneStarPicbook());
+			return;
+		}
+	}
+	//ｂを押すと戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		lever = 0;
+		start_time = 0; //マウス操作開始時間
+		Scene::SetScene(new CSceneStarPicbook());
+	}
+
+
+	//30f後に表示
+	start_time++;
+
+	if (start_time > 30.0f)
+	{
+		start_flag = true;
+	}
+	else
+	{
+		m_mou_l = false;
+		start_flag = false;
+	}
 }
 
 void CObjStarPresent::Draw()
@@ -156,23 +191,7 @@ void CObjStarPresent::Draw()
 	Font::StrDraw(L"選択", 10, 50, 25, c);
 	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//星座選択へボタン
-	// left				 right            top            bottom         
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
-	{
-		if (m_mou_l == true)
-		{
-			lever = 0;
-			Scene::SetScene(new CSceneStarPicbook());
-			
-		}
-	}
-	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
-	{
-		lever = 0;
-		Scene::SetScene(new CSceneStarPicbook());
-	}
+	
 
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
@@ -282,6 +301,7 @@ void CObjStarPresent::Draw()
 		}
 	}
 
+
 	if (crick == 2)//上を変えたらここも変える
 	{
 		ver = 0;
@@ -308,7 +328,8 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	if (crick == 3 &&page==0)//上を変えたらここも変える
+
+	if (crick == 3)//上を変えたらここも変える
 	{
 		ver = 0;
 		Font::StrDraw(L"さそり座の恒星で2等星。", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -389,6 +410,8 @@ void CObjStarPresent::Draw()
 			crick = 5;//ここはキーのようなもの
 			page = 0; //ページ初期化
 		}
+	}
+
 	}
 
 	if (crick == 5)//上を変えたらここも変える
@@ -551,8 +574,10 @@ void CObjStarPresent::Draw()
 			crick = 9;//ここはキーのようなもの
 			page = 0; //ページ初期化
 
+			}
 		}
 	}
+
 
 	if (crick == 9)//上を変えたらここも変える
 	{
@@ -607,6 +632,8 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"0.1%程度に過ぎないと考えられている", left_end, IO_y + Interval_y*ver, font_size, c);
 	}
+	
+
 	
 
 
@@ -836,6 +863,8 @@ void CObjStarPresent::Draw()
 		Font::StrDraw(L"きいくらいに縮小しており、非常に高密度の天体である。", left_end, Interval_y*ver, font_size, c);
 	}
 
+	
+
 	//					　　	 X　 Y　 大きさ
 	Font::StrDraw(L"フユエ", 30 + fy * std, 360 + t * l, 30, c);
 	l++;
@@ -864,5 +893,7 @@ void CObjStarPresent::Draw()
 
 	swprintf_s(see, L"現在ページ数%d/終わりページ数%d", page,pagemax);
 	Font::StrDraw(see, 530, 5, 18, c);
+
+
 
 }

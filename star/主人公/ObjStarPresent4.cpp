@@ -15,6 +15,7 @@ void CObjStarPresent4::Init()
 	page = 0;//次のページへ行くための変数
 	page_flag = false;
 	ver = 0;
+	VER_start = 0; //バー初期化
 	g = 200;//星枠の横幅
 	k = 75;//星枠の立幅	
 	s = 0;//星のクリックの鍵	
@@ -32,6 +33,8 @@ void CObjStarPresent4::Init()
 	pagey = 10; //ページ座標y
 	pagesize = 20; //ページサイズ
 
+	start_time = 0.0f; //マウス操作開始時間
+	start_flag = false; //マウス操作開始フラグ
 }
 
 void CObjStarPresent4::Action()
@@ -44,7 +47,39 @@ void CObjStarPresent4::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	//星座選択へボタン
+	// left				 right            top            bottom         
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
+	{
+		if (m_mou_l == true)
+		{
+			lever = 0;
+			start_time = 0; //マウス操作開始時間
+			Scene::SetScene(new CSceneStarPicbook());
 
+		}
+	}
+	//ｂを押すと戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		lever = 0;
+		start_time = 0; //マウス操作開始時間
+		Scene::SetScene(new CSceneStarPicbook());
+	}
+
+
+	//30f後に表示
+	start_time++;
+
+	if (start_time > 30.0f)
+	{
+		start_flag = true;
+	}
+	else
+	{
+		m_mou_l = false;
+		start_flag = false;
+	}
 }
 
 void CObjStarPresent4::Draw()
@@ -145,23 +180,6 @@ void CObjStarPresent4::Draw()
 	Font::StrDraw(L"選択", 10, 50, 25, c);
 	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//星座選択へボタン
-	// left				 right            top            bottom         
-	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
-	{
-		if (m_mou_l == true)
-		{
-			lever = 0;
-			Scene::SetScene(new CSceneStarPicbook());
-
-		}
-	}
-	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
-	{
-		lever = 0;
-		Scene::SetScene(new CSceneStarPicbook());
-	}
 
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
@@ -224,53 +242,73 @@ void CObjStarPresent4::Draw()
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"サダルメリク", 20, 320 + t * l, 30, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 1;
-			page = 0; //ページ初期化
+			if (m_mou_l == true)
+			{
+				crick = 1;
+				page = 0; //ページ初期化
+			}
 		}
 	}
+
 
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"サダルスウド", 20, 320 + t * l, 30, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 2;
-			page = 0; //ページ初期化
+			if (m_mou_l == true)
+			{
+				crick = 2;
+				page = 0; //ページ初期化
+			}
 		}
 	}
+
 
 	//					　　	    X　        Y　    大きさ
 	Font::StrDraw(L"サダクビア", 20, 320 + t * l, 30, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 3;
-			page = 0; //ページ初期化
+			if (m_mou_l == true)
+			{
+				crick = 3;
+				page = 0; //ページ初期化
+			}
 		}
 	}
+
 	//					　　	  X　        Y　    大きさ
 	Font::StrDraw(L"スカトム", 20, 320 + t * l, 30, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 4;
-			page = 0; //ページ初期化
+			if (m_mou_l == true)
+			{
+				crick = 4;
+				page = 0; //ページ初期化
+			}
 		}
 	}
+
 
 	t -= 4;
 	l -= 4;
@@ -279,42 +317,57 @@ void CObjStarPresent4::Draw()
 	//					　　	  X　        Y　    大きさ
 	Font::StrDraw(L"アルバリ", 20 + 220, 320 + t * l, 30, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 5;
-			page = 0; //ページ初期化
+			if (m_mou_l == true)
+			{
+				crick = 5;
+				page = 0; //ページ初期化
+			}
 		}
 	}
+
 	//					　　	  X　        Y　    大きさ
 	Font::StrDraw(L"アンカ", 20 + 220, 330 + t * l, 30, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 6;
-			page = 0; //ページ初期化
+			if (m_mou_l == true)
+			{
+				crick = 6;
+				page = 0; //ページ初期化
+			}
 		}
 	}
+
 	//					  　　	    X　        Y　    大きさ
 	Font::StrDraw(L"シュチュラ", 20 + 220, 340 + t * l, 30, c);
 	l++;
-	// left				 right            top            bottom               
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+
+	if (start_flag == true)
 	{
-		if (m_mou_l == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			crick = 7;
-			page = 0; //ページ初期化
+			if (m_mou_l == true)
+			{
+				crick = 7;
+				page = 0; //ページ初期化
+			}
 		}
 	}
 
 	if (crick == 1)
 	{
+		ver = VER_start; //文字間隔初期化
 		if (page == 0)
 		{
 			page_max = 2;
@@ -322,7 +375,6 @@ void CObjStarPresent4::Draw()
 			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-			ver = 0;
 			Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"みずがめ座の恒星で3等星。みずがめ座で2番目に明るい恒星。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -348,7 +400,6 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			//7行まで
-			ver = 0;
 			Font::StrDraw(L"赤色超巨星の場合は太陽の数千倍（同3万倍）以上ある。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"[見かけの二重星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -369,6 +420,7 @@ void CObjStarPresent4::Draw()
 	}
 	else if (crick == 2)
 	{
+		ver = VER_start; //文字間隔初期化
 		if (page == 0)
 		{
 			page_max = 2;
@@ -376,7 +428,6 @@ void CObjStarPresent4::Draw()
 			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-			ver = 0;
 			Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"みずがめ座で最も明るい恒星で3等星。3連星で、主星は", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -402,7 +453,6 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			//7行まで
-			ver = 0;
 			Font::StrDraw(L"[超巨星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"太陽よりはるかに大きく明るい恒星のこと。明るさは青色超巨星の", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -424,6 +474,7 @@ void CObjStarPresent4::Draw()
 	}
 	else if (crick == 3)
 	{
+		ver = VER_start; //文字間隔初期化
 		if (page == 0)
 		{
 			page_max = 2;
@@ -431,7 +482,6 @@ void CObjStarPresent4::Draw()
 			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-			ver = 0;
 			Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"恒星で4等星。分光連星で、A型主系列星の主星の周りを", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -455,7 +505,6 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			//7行まで
-			ver = 0;
 			Font::StrDraw(L"[分光連星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"スペクトルの特徴の周期的な変化によって2つ以上の天体から", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -485,7 +534,7 @@ void CObjStarPresent4::Draw()
 		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"みずがめ座で3番目に明るい恒星", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -516,7 +565,7 @@ void CObjStarPresent4::Draw()
 		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-		ver = 0;
+		ver = VER_start; //文字間隔初期化
 		Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
 		Font::StrDraw(L"恒星で4等星変光、化学組成、惑星は発見されていないなど", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -541,6 +590,7 @@ void CObjStarPresent4::Draw()
 	}
 	else if (crick == 6)
 	{
+		ver = VER_start; //文字間隔初期化
 		if (page == 0)
 		{
 			page_max = 2;
@@ -548,7 +598,6 @@ void CObjStarPresent4::Draw()
 			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-			ver = 0;
 			Font::StrDraw(L"みずがめ座に属する恒星で4等星。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"近くに見えるρ星と二重星を成しているが連星ではない。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -574,7 +623,6 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			//7行まで
-			ver = 0;
 			Font::StrDraw(L"である。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"白色矮星(はくしょくわいせい)", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -593,6 +641,7 @@ void CObjStarPresent4::Draw()
 	}
 	else if (crick == 7)
 	{
+		ver = VER_start; //文字間隔初期化
 		if (page == 0)
 		{
 			page_max = 2;
@@ -600,7 +649,6 @@ void CObjStarPresent4::Draw()
 			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-			ver = 0;
 			Font::StrDraw(L"みずがめ座に属する恒星で5等星。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"スペクトル分類K型の巨星。固有名のシュチュラは、ラテン語で", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -626,7 +674,6 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			//7行まで
-			ver = 0;
 			Font::StrDraw(L"恒星の分類法の一つ。スペクトル分類によって細分された星の", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"タイプをスペクトル型と呼ぶ。", left_end, IO_y + Interval_y * ver, font_size, c);

@@ -5,6 +5,7 @@
 //使用するネームスペース
 using namespace GameL;
 
+
 //オブジェクト：イベント
 class CObjStarPresent : public CObj
 {
@@ -41,6 +42,7 @@ public:
 	int size_y;
 	int font;
 	int ver;
+	int VER_start; //バー初期化
 	int fy;//星の名前の横幅
 	int font_size;//文字の大きさ
 	int Interval_y;//文字の立幅間隔35
@@ -51,6 +53,8 @@ public:
 	int  left_end;//説明文の左の限界を決める
 	int pagemax;//ページ数の限界
 
+	float start_time; //マウス操作開始時間
+	bool start_flag; //マウス操作開始フラグ
 private:
 
 };

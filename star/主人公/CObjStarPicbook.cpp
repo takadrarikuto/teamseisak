@@ -25,6 +25,36 @@ void CObjStarPicbook::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
+
+	//宇宙船へボタン
+	// left				 right            top            bottom         
+	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
+	{
+		if (m_mou_l == true)
+		{
+			if (starmodel_flag == true)
+			{
+				lever = 0;
+				Scene::SetScene(new CSceneStageselect());
+				starmodel_flag = false;
+			}
+		}
+		else
+		{
+			starmodel_flag = true;
+		}
+
+
+	}
+	//ｂを押すと戻る
+	else if (Input::GetVKey('B') == true)
+	{
+		lever = 0;
+		Scene::SetScene(new CSceneStageselect());
+	}
+
+
+	
 }
 
 void CObjStarPicbook::Draw()
