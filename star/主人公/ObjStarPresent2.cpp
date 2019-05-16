@@ -515,6 +515,12 @@ void CObjStarPresent2::Draw()
 	if (crick == 1)
 	{
 		ver = VER_start; //文字間隔初期化
+		page_max = 2; //最大ページ数
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
 		if (page == 0)
 		{
 			Font::StrDraw(L"おうし座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -535,7 +541,7 @@ void CObjStarPresent2::Draw()
 		}
 		else if (page == 1)
 		{
-			//7行まで
+			//8行まで
 			Font::StrDraw(L"[冬のダイヤモンドとは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"6つの1等星を順に結ぶと大きなダイヤモンドの形となる", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -559,6 +565,12 @@ void CObjStarPresent2::Draw()
 	else if (crick == 2)
 	{
 		ver = VER_start; //文字間隔初期化
+		page_max = 2; //最大ページ数
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
 		if (page == 0)
 		{
 			Font::StrDraw(L"おうし座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -581,7 +593,7 @@ void CObjStarPresent2::Draw()
 		}
 		else if (page == 1)
 		{
-			//7行まで
+			//8行まで
 			Font::StrDraw(L"[ぎょしゃ座とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"北天の星座でトレミーの48星座の1つ", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -606,6 +618,12 @@ void CObjStarPresent2::Draw()
 	else if (crick == 3)
 	{
 		ver = VER_start; //文字間隔初期化
+		page_max = 2; //最大ページ数
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
 		if (page == 0)
 		{
 			Font::StrDraw(L"おうし座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -619,7 +637,7 @@ void CObjStarPresent2::Draw()
 		}
 		else if (page == 1)
 		{
-			//7行まで
+			//8行まで
 			Font::StrDraw(L"[二重星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"地球上から見る恒星が同じ方向に近接して見える物を", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -646,6 +664,12 @@ void CObjStarPresent2::Draw()
 	else if (crick == 4)
 	{
 		ver = VER_start; //文字間隔初期化
+		page_max = 2; //最大ページ数
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
 		if (page == 0)
 		{
 			Font::StrDraw(L"おうし座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -665,7 +689,7 @@ void CObjStarPresent2::Draw()
 		}
 		else if (page == 1)
 		{
-			//7行まで
+			//8行まで
 			Font::StrDraw(L"ヒアデス星団…おうし座に位置する散開星団である", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"散開星団…恒星の集団（星団）の一種である", left_end, IO_y + Interval_y * ver, font_size, c);
