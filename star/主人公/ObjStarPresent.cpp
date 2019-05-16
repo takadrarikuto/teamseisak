@@ -25,8 +25,8 @@ void CObjStarPresent::Init()
 	font = 80;
 	fy = 200.0f;//星の名前の横幅
 	font_size = 25;//文字の大きさ
-	IO_y = 25; //y座標開始地点
-	Interval_y = 35;//文字の立幅間隔
+	IO_y = 25; //y座標開始地点25
+	Interval_y = 35;//文字の立幅間隔35
 	left_end = 80;//説明文の左の限界を決める
 	pagex = 680; //ページ座標x
 	pagey = 10; //ページ座標y
@@ -44,11 +44,8 @@ void CObjStarPresent::Init()
 	 font_size = 25;//文字の大きさ
 	  Interval_y = 35;//文字の立幅間隔
 	  left_end = 80;//説明文の左の限界を決める
-	 page = 0;
-
-	 start_time = 0.0f; //マウス操作開始時間
-	 start_flag = false; //マウス操作開始フラグ
-
+	 page = 1;//現在のページ数
+	 pagemax=1;//最大ページ数
 }
 
 void CObjStarPresent::Action()
@@ -476,7 +473,7 @@ void CObjStarPresent::Draw()
 			}
 		}
 
-	}
+	
 
 	if (crick == 5)//上を変えたらここも変える
 	{
@@ -535,11 +532,6 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"明るさの変化は、4.80時間、4.93時間である。", left_end, IO_y + Interval_y * ver, font_size, c);
 
-		//ページ制限
-		if (page < 0 || page > 0)
-		{
-			page = 0;
-		}
 	}
 	
 
@@ -560,8 +552,7 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-
-	if (crick == 7)//上を変えたらここも変える
+	if (crick == 7 && page == 0)//上を変えたらここも変える
 	{
 		ver = VER_start; //文字間隔初期化
 		page_max = 2; //最大ページ数
@@ -799,6 +790,7 @@ void CObjStarPresent::Draw()
 	}
 
 	
+
 
 
 	//					　　	 X　		    Y　 大きさ
