@@ -368,13 +368,14 @@ void CObjStarPresent4::Draw()
 	if (crick == 1)
 	{
 		ver = VER_start; //文字間隔初期化
+		page_max = 2; //最大ページ数
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
 		if (page == 0)
 		{
-			page_max = 2;
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
 			Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"みずがめ座の恒星で3等星。みずがめ座で2番目に明るい恒星。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -385,21 +386,17 @@ void CObjStarPresent4::Draw()
 			ver++;
 			Font::StrDraw(L"ものと考えられている", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
+			//8行目まで、改行
+		}
+		else if (page == 1)
+		{
+			//8行まで
 			Font::StrDraw(L"[超巨星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"太陽よりはるかに大きく明るい恒星のこと。明るさは青色超巨星の", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"場合は太陽の1万倍（全エネルギー放射で太陽の10万倍）以上", left_end, IO_y + Interval_y * ver, font_size, c);
-			//8行目まで、改行
-		}
-		else if (page == 1)
-		{
-			page_max = 2;
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
-			//7行まで
+			ver++;
 			Font::StrDraw(L"赤色超巨星の場合は太陽の数千倍（同3万倍）以上ある。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"[見かけの二重星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -421,13 +418,14 @@ void CObjStarPresent4::Draw()
 	else if (crick == 2)
 	{
 		ver = VER_start; //文字間隔初期化
+		page_max = 2; //最大ページ数
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
 		if (page == 0)
 		{
-			page_max = 2;
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
 			Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"みずがめ座で最も明るい恒星で3等星。3連星で、主星は", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -438,21 +436,17 @@ void CObjStarPresent4::Draw()
 			ver++;
 			Font::StrDraw(L"ものと考えられている", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
+			//8行目まで、改行
+		}
+		else if (page == 1)
+		{
+			//8行まで
 			Font::StrDraw(L"[連星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"2つ以上の恒星が両者の重心の周りを軌道運動している天体で", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"ある。双子星（ふたごぼし）とも呼ばれる。", left_end, IO_y + Interval_y * ver, font_size, c);
-			//8行目まで、改行
-		}
-		else if (page == 1)
-		{
-			page_max = 2;
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
-			//7行まで
+			ver++;
 			Font::StrDraw(L"[超巨星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"太陽よりはるかに大きく明るい恒星のこと。明るさは青色超巨星の", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -475,13 +469,14 @@ void CObjStarPresent4::Draw()
 	else if (crick == 3)
 	{
 		ver = VER_start; //文字間隔初期化
+		page_max = 2; //最大ページ数
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
 		if (page == 0)
 		{
-			page_max = 2;
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
 			Font::StrDraw(L"みずがめ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"恒星で4等星。分光連星で、A型主系列星の主星の周りを", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -499,12 +494,7 @@ void CObjStarPresent4::Draw()
 		}
 		else if (page == 1)
 		{
-			page_max = 2;
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
-			//7行まで
+			//8行まで
 			Font::StrDraw(L"[分光連星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"スペクトルの特徴の周期的な変化によって2つ以上の天体から", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -529,7 +519,7 @@ void CObjStarPresent4::Draw()
 	}
 	else if (crick == 4)
 	{
-		page_max = 1;
+		page_max = 1; //最大ページ数
 		//ページ数表示
 		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
@@ -560,7 +550,7 @@ void CObjStarPresent4::Draw()
 	}
 	else if (crick == 5)
 	{
-		page_max = 1;
+		page_max = 1; //最大ページ数
 		//ページ数表示
 		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
@@ -591,19 +581,25 @@ void CObjStarPresent4::Draw()
 	else if (crick == 6)
 	{
 		ver = VER_start; //文字間隔初期化
+		page_max = 2; //最大ページ数
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
 		if (page == 0)
 		{
-			page_max = 2;
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
 			Font::StrDraw(L"みずがめ座に属する恒星で4等星。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"近くに見えるρ星と二重星を成しているが連星ではない。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"将来は白色矮星になると予測されている。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
+			//8行目まで、改行
+		}
+		else if (page == 1)
+		{
+			//8行まで
 			Font::StrDraw(L"[二重星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"地球上から見る恒星が同じ方向に近接して見える物を", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -613,16 +609,7 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(L"[連星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"2つ以上の恒星が両者の重心の周りを軌道運動している天体", left_end, IO_y + Interval_y * ver, font_size, c);
-			//8行目まで、改行
-		}
-		else if (page == 1)
-		{
-			page_max = 2;
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
-			//7行まで
+			ver++;
 			Font::StrDraw(L"である。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"白色矮星(はくしょくわいせい)", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -642,13 +629,14 @@ void CObjStarPresent4::Draw()
 	else if (crick == 7)
 	{
 		ver = VER_start; //文字間隔初期化
+		page_max = 2; //最大ページ数
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
 		if (page == 0)
 		{
-			page_max = 2;
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
 			Font::StrDraw(L"みずがめ座に属する恒星で5等星。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"スペクトル分類K型の巨星。固有名のシュチュラは、ラテン語で", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -662,25 +650,18 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(L"として充てられたものが、κ星の名称として使われるように", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"なったものである。", left_end, IO_y + Interval_y * ver, font_size, c);
-			ver++;
-			Font::StrDraw(L"[スペクトル分類とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			//8行目まで、改行
 		}
 		else if (page == 1)
 		{
-			page_max = 2;
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
-
-			//7行まで
+			//8行まで
+			Font::StrDraw(L"[スペクトル分類とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
 			Font::StrDraw(L"恒星の分類法の一つ。スペクトル分類によって細分された星の", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
-			Font::StrDraw(L"タイプをスペクトル型と呼ぶ。", left_end, IO_y + Interval_y * ver, font_size, c);
+			Font::StrDraw(L"タイプをスペクトル型と呼ぶ。恒星から放射された電磁波を", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
-			Font::StrDraw(L"恒星から放射された電磁波を捉え、スペクトルを観察することに", left_end, IO_y + Interval_y * ver, font_size, c);
-			ver++;
-			Font::StrDraw(L"よって分類する。", left_end, IO_y + Interval_y * ver, font_size, c);
+			Font::StrDraw(L"捉え、スペクトルを観察することによって分類する。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"[巨星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
@@ -689,6 +670,15 @@ void CObjStarPresent4::Draw()
 			Font::StrDraw(L"太陽の10倍から100倍、明るさは10倍から1000倍で", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"ある。巨星より明るい恒星は、超巨星や極超巨星と呼ばれる。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		//ページ制限
+		else if (page < 1)
+		{
+			page = 0;
+		}
+		else if (page > 1)
+		{
+			page = 1;
 		}
 	}
 

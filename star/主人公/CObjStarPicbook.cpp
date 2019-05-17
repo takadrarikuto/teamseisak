@@ -171,63 +171,62 @@ void CObjStarPicbook::Draw()
 	src.m_right = 764.0f;
 	src.m_bottom = 578.0f;
 
-	dst.m_top = 380.0f;
-	dst.m_left = 500.0f;
-	dst.m_right =570.0f;
+	dst.m_top = 376.0f;
+	dst.m_left = 530.0f;
+	dst.m_right =600.0f;
 	dst.m_bottom = 450.0f;
 	
 	//さそり座画像
 	Draw::Draw(2, &src, &dst, c, 0.0f);
-
+	
 	Dc += 1;
-	/*
+	
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 1104.0f;
+	src.m_bottom = 844.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 132.0f;
-	dst.m_bottom = 600.0f;
+	dst.m_top = 300.0f;
+	dst.m_bottom = 374.0f;
 
 	//てんびん座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
-	*/
+	
 	Dc += 1;
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 400.0f;
+	src.m_bottom = 400.0f;
 
 	dst.m_top = 300.0f;
-	dst.m_left = 300.0f;
-	dst.m_right = 367.0f;
-	dst.m_bottom = 400.0f;
+	dst.m_bottom = 374.0f;
+	dst.m_left = 330.0f;
+	dst.m_right = 400.0f;
+
 
 	//ふたご座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
-	/*Dc += 1;
+	Dc += 1;
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 654.0f;
+	src.m_bottom = 578.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 202.0f;
-	dst.m_right = 269.0f;
-	dst.m_bottom = 600.0f;
+	
+	dst.m_left = 130.0f;
+	dst.m_right = 200.0f;
+	
 
 	//みずがめ座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
 	Dc += 1;
-
+	
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 764.0f;
+	src.m_bottom = 578.0f;
 
 	dst.m_top = 500.0f;
 	dst.m_left = 269.0f;
@@ -240,22 +239,22 @@ void CObjStarPicbook::Draw()
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 1192.0f;
+	src.m_bottom = 872.0f;
 
 	dst.m_top = 500.0f;
 	dst.m_left = 338.0f;
 	dst.m_right = 405.0f;
 	dst.m_bottom = 600.0f;
 
-	//おうし座画像
+	//しし座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
 	Dc += 1;
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 764.0f;
+	src.m_bottom = 578.0f;
 
 	dst.m_top = 500.0f;
 	dst.m_left = 405.0f;
@@ -268,8 +267,8 @@ void CObjStarPicbook::Draw()
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 1360.0f;
+	src.m_bottom = 880.0f;
 
 	dst.m_top = 500.0f;
 	dst.m_left = 468.0f;
@@ -282,8 +281,8 @@ void CObjStarPicbook::Draw()
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 884.0f;
+	src.m_bottom = 624.0f;
 
 	dst.m_top = 500.0f;
 	dst.m_left = 536.0f;
@@ -296,8 +295,8 @@ void CObjStarPicbook::Draw()
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 1308.0f;
+	src.m_bottom = 776.0f;
 
 	dst.m_top = 500.0f;
 	dst.m_left = 603.0f;
@@ -310,8 +309,8 @@ void CObjStarPicbook::Draw()
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 145.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 424.0f;
+	src.m_bottom = 320.0f;
 
 	dst.m_top = 500.0f;
 	dst.m_left = 670.0f;
@@ -324,8 +323,8 @@ void CObjStarPicbook::Draw()
 
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
+	src.m_right = 424.0f;
+	src.m_bottom = 320.0f;
 
 	dst.m_top = 500.0f;
 	dst.m_left = 738.0f;
@@ -334,7 +333,7 @@ void CObjStarPicbook::Draw()
 
 	//おうし座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
-	*/
+	
 
 	//宇宙船への文字を描画する
 	//					　　X　Y　大きさ
