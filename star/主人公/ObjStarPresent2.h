@@ -6,7 +6,7 @@
 using namespace GameL;
 
 //オブジェクト：イベント
-class CObjStarPresent2 : public CObj
+class CObjStarPresent2 : public CObjStarPresent
 {
 public:
 	CObjStarPresent2() {};	//コンストラクタ
@@ -15,10 +15,6 @@ public:
 	void Action();	//アクション
 	void Draw();	//ドロー
 private:
-	float m_mou_x;//マウスの位置X
-	float m_mou_y;//マウスの位置X
-	bool m_mou_r;//マウスの右ボタン
-	bool m_mou_l;//マウスの左ボタン
 
-	wchar_t str[256];
+
 };

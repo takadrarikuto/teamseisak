@@ -21,6 +21,7 @@ int FiStar_Reco = 0; //1等星を一定の数数える
 int SeStar_Reco = 0; //2等星を一定の数数える
 int ThStar_Reco = 0; //3等星を一定の数数える
 
+
 //イニシャライズ
 void CObjStarCount::Init()
 {	
@@ -37,12 +38,12 @@ void CObjStarCount::Action()
 		FiStar_Recovery = true;
 		FiStar_Reco = 0;
 	}
-	else if (SeStar_Reco == 10)
+	else if (SeStar_Reco == 25)
 	{
 		SeStar_Recovery = true;
 		SeStar_Reco = 0;
 	}
-	else if (ThStar_Reco == 20)
+	else if (ThStar_Reco == 50)
 	{
 		ThStar_Recovery = true;
 		ThStar_Reco = 0;
@@ -55,9 +56,9 @@ void CObjStarCount::Action()
 		star_flag = false;
 	}
 
-	if (((UserData*)Save::GetData())->star_co > 300)
+	if (((UserData*)Save::GetData())->star_co == 500)
 	{
-		//Scene::SetScene(new CSceneGameKuria());
+		Scene::SetScene(new CSceneGameKuria());
 	}
 
 }

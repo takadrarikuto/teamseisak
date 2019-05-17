@@ -13,6 +13,7 @@
 using namespace GameL;
 
 bool Aitem_on = false;
+bool Aitem_co = false; //アイテム生産
 
 //スタミナ→酸素変更
 
@@ -59,6 +60,17 @@ void CObjAitem::Action()
 	{
 		Aitem_flag = true;
 	}
+
+	//酸素ボンベを増やす処理
+	if (Aitem_co == true)
+	{
+		if (((UserData*)Save::GetData())->Aitem_co_max <= 5)
+		{
+			((UserData*)Save::GetData())->Aitem_co_max += 1; //使用回数を増やす
+		}
+		Aitem_co = false;
+	}
+
 
 }
 //ドロー
