@@ -29,7 +29,6 @@ void CObjJupiter::Draw()
 
 	Font::StrDraw(L"P=ポーズ画面へ", 650, 15, 20, c);
 
-
 	//背景
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置

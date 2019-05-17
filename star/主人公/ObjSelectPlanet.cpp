@@ -123,6 +123,11 @@ void CObjSelectPlanet::Draw()
 	swprintf_s(str, L"x=%d,y=%d", (int)m_mous_x,(int) m_mous_y);
 	Font::StrDraw(str, 10, 20, 30, c);
 	Font::StrDraw(L"星図鑑へ", 600, 550, 50, c);
+	Font::StrDraw(L"どの星へ行きますか？", 150, 120, 50, c);
+	Font::StrDraw(L"火星", 100, 370, 30, c);
+	Font::StrDraw(L"木星", 280, 370, 30, c);
+	Font::StrDraw(L"金星", 460, 370, 30, c);
+	Font::StrDraw(L"土星", 640, 370, 30, c);
 
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
