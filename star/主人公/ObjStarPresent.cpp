@@ -83,13 +83,12 @@ void CObjStarPresent::Action()
 	//30f後に表示
 	start_time++;
 
-	if (start_time > 30.0f)
+	if (start_time >30.0f)
 	{
 		start_flag = true;
 	}
 	else
 	{
-		m_mou_l = false;
 		start_flag = false;
 	}
 }
@@ -191,8 +190,6 @@ void CObjStarPresent::Draw()
 	Font::StrDraw(L"選択", 10, 50, 25, c);
 	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	
-
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
 	for (int i = 0; i <= 1; i++)
@@ -250,7 +247,7 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-
+	
 	//					　　	 X　		    Y　 大きさ
 	Font::StrDraw(L"アンタレス", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
@@ -324,12 +321,12 @@ void CObjStarPresent::Draw()
 		{
 			
 			crick = 3;//ここはキーのようなもの
-			pagemax = 2;
+			pagemax = 1;
 		}
 	}
 
 
-	if (crick == 3)//上を変えたらここも変える
+	if (crick == 3&&page == 0)//上を変えたらここも変える
 	{
 		ver = 0;
 		Font::StrDraw(L"さそり座の恒星で2等星。", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -890,10 +887,10 @@ void CObjStarPresent::Draw()
 		ver++;
 		Font::StrDraw(L"さが非常に大きい恒星のことである。", left_end, 50+Interval_y*ver, font_size, c);
 	}
-
+	
 	swprintf_s(see, L"現在ページ数%d/終わりページ数%d", page,pagemax);
 	Font::StrDraw(see, 530, 5, 18, c);
 
 
-
+	
 }
