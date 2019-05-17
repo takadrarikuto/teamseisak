@@ -12,6 +12,7 @@ using namespace GameL;
 
 extern bool EM_flag;
 extern bool Event_Star;//イベント時星の移動方向変更
+extern int Event_Conversion; //イベントエリア切り替え
 
 //使用ヘッダー
 #include "SceneMars.h"
@@ -134,6 +135,7 @@ void CSceneMars::InitScene()
 	Star_flag = false;
 
 	Event_Star = false;
+	Event_Conversion = 0;
 }
 
 //実行中メゾット

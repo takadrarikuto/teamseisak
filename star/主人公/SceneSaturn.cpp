@@ -12,7 +12,7 @@ using namespace GameL;
 
 extern bool EM_flag;
 extern bool Event_Star;//イベント時星の移動方向変更
-
+extern int Event_Conversion; //イベントエリア切り替え
 
 //使用ヘッダー
 #include "SceneSaturn.h"
@@ -64,7 +64,7 @@ void CSceneSaturn::InitScene()
 	//グラフィック読み込み
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
-	Draw::LoadImage(L"イベント背景(火星).png", 9, TEX_SIZE_512);
+	Draw::LoadImage(L"粒子.png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"火星地表.png", 10, TEX_SIZE_512);
 
 	//主人公
@@ -135,6 +135,7 @@ void CSceneSaturn::InitScene()
 	Star_flag = false;
 
 	Event_Star = false;
+	Event_Conversion = 3;
 }
 
 //実行中メゾット
@@ -292,6 +293,7 @@ void CSceneSaturn::Scene()
 			CObjFirstStar* star = new CObjFirstStar(800.0f);
 			Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
 		}
+
 
 		Star_time = 0.0f; //1等星作成警告用カウント初期化	
 		Star_flag = false; //1等星作成警告用フラグ初期化

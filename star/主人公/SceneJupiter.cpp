@@ -12,7 +12,7 @@ using namespace GameL;
 
 extern bool EM_flag;
 extern bool Event_Star;//イベント時星の移動方向変更
-
+extern int Event_Conversion; //イベントエリア切り替え
 
 //使用ヘッダー
 #include "SceneJupiter.h"
@@ -63,8 +63,8 @@ void CSceneJupiter::InitScene()
 	//グラフィック読み込み
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
-	Draw::LoadImage(L"イベント背景(火星).png", 9, TEX_SIZE_512);
-	Draw::LoadImage(L"火星地表.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"嵐　雷.png", 9, TEX_SIZE_512);
+	Draw::LoadImage(L"木星.png", 10, TEX_SIZE_512);
 
 	//主人公
 	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
@@ -135,6 +135,7 @@ void CSceneJupiter::InitScene()
 	Star_flag = false;
 
 	Event_Star = false;
+	Event_Conversion = 2;
 }
 
 //実行中メゾット
@@ -215,7 +216,7 @@ void CSceneJupiter::Scene()
 			else if (Event_Star == true)
 			{
 				//スターオブジェクト作成
-				CObjSecondStar* star2 = new CObjSecondStar(800.0f);
+				CObjSecondStar* star2 = new CObjSecondStar(790.0f);
 				Objs::InsertObj(star2, OBJ_SECONDSTAR, 11);    //スターオブジェクト登録
 			}
 		}
@@ -231,7 +232,7 @@ void CSceneJupiter::Scene()
 			else if (Event_Star == true)
 			{
 				//スターオブジェクト作成
-				CObjThirdStar* star3 = new CObjThirdStar(800.0f);
+				CObjThirdStar* star3 = new CObjThirdStar(790.0f);
 				Objs::InsertObj(star3, OBJ_THIRDSTAR, 12);    //スターオブジェクト登録
 			}
 		}
@@ -247,7 +248,7 @@ void CSceneJupiter::Scene()
 			else if (Event_Star == true)
 			{
 				//スターオブジェクト作成
-				CObjFourthStar* star4 = new CObjFourthStar(800.0f);
+				CObjFourthStar* star4 = new CObjFourthStar(790.0f);
 				Objs::InsertObj(star4, OBJ_FOURTHSTAR, 13);    //スターオブジェクト登録
 			}
 		}
@@ -263,7 +264,7 @@ void CSceneJupiter::Scene()
 			else if (Event_Star == true)
 			{
 				//スターオブジェクト作成
-				CObjOtherStar* star5 = new CObjOtherStar(800.0f);
+				CObjOtherStar* star5 = new CObjOtherStar(790.0f);
 				Objs::InsertObj(star5, OBJ_OTHERSTAR, 14);    //スターオブジェクト登録
 			}
 		}
@@ -289,7 +290,7 @@ void CSceneJupiter::Scene()
 		else if (Event_Star == true)
 		{
 			//スターオブジェクト作成
-			CObjFirstStar* star = new CObjFirstStar(800.0f);
+			CObjFirstStar* star = new CObjFirstStar(790.0f);
 			Objs::InsertObj(star, OBJ_FIRSTSTAR, 10);    //スターオブジェクト登録
 		}
 

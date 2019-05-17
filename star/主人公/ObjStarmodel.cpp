@@ -27,13 +27,27 @@ void CObjStarmodel::Draw()
 {
 	//描画カラー情報　R=Red　G=Green　B=Blue　A=alpha(透過情報)
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f, };
+	float p[4] = { 1.0f,1.0f,1.0f,0.6f, };
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
-	//ブラックタイルの切り取り
+	//サイバー背景の切り取り
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1039.0f;
-	src.m_bottom = 469.0f;
+	src.m_right = 513.0f;
+	src.m_bottom = 289.0f;
+
+	//背景を描画
+	dst.m_top = 0.0f;
+	dst.m_left = 0.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 600.0f;
+
+	Draw::Draw(15, &src, &dst, c, 0.0f);
+			   //パステルブルータイルの切り取り
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 130.0f;
+	src.m_bottom = 67.0f;
 
 	//星座の枠を描画
 	dst.m_top = 300.0f;
@@ -47,54 +61,61 @@ void CObjStarmodel::Draw()
 	dst.m_top = 0.0f;
 	dst.m_left = 67.0f;
 	dst.m_right = 800.0f;
-	dst.m_bottom = 600.0f;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
-
+	dst.m_bottom = 300.0f;
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.f);
 	dst.m_top = 300.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.f);
 
 	//戻るボタンの枠を描画
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 67.0f;
 	dst.m_bottom = 100.0f;
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.f);
 
 	//次のページに行くためのボタンの枠を描画
 	dst.m_top = 200.0f;
 	dst.m_bottom = 300.0f;
 
 	//次への枠
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.f);
+
 	dst.m_top = 100.0f;
 	dst.m_bottom = 200.0f;
 
 	//戻すの枠
-	Draw::Draw(1, &src, &dst, c, 0.0f);
+	Draw::Draw(1, &src, &dst, p, 0.0f);
+	Draw::Draw(9, &src, &dst, c, 0.f);
 
-	//宇宙船への文字を描画する
+	//星座選択への文字を描画する
 	//					　　X　Y　大きさ
-	Font::StrDraw(L"宇宙", 10, 25, 25, c);
-	Font::StrDraw(L"船へ", 10, 50, 25, c);
+	Font::StrDraw(L"星座", 10, 25, 25, c);
+	Font::StrDraw(L"選択", 10, 50, 25, c);
+	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	//宇宙船へボタン
+	//星座選択へボタン
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
 		if (m_mou_l == true)
 		{
 			lever = 0;
-			Scene::SetScene(new CSceneStageselect());
+			Scene::SetScene(new CSceneStarPicbook());
+
 		}
 	}
 	//ｂを押すと戻る
 	else if (Input::GetVKey('B') == true)
 	{
 		lever = 0;
-		Scene::SetScene(new CSceneStageselect());
+		Scene::SetScene(new CSceneStarPicbook());
 	}
 
 	//次への文字をループして出す
@@ -127,166 +148,7 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(str, 20, 230 + l * i, 25, c);
 	}
 
-	/*
-
-	//蠍座の画像位置
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 764.0f;
-	src.m_bottom = 578.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//さそり座画像
-	Draw::Draw(2, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//てんびん座画像
-	Draw::Draw(3, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//ふたご座画像
-	Draw::Draw(4, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//みずがめ座画像
-	Draw::Draw(5, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//いて座画像
-	Draw::Draw(6, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//しし座画像
-	Draw::Draw(7, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//やぎ座画像
-	Draw::Draw(8, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//うお座画像
-	Draw::Draw(10, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//かに座画像
-	Draw::Draw(11, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//おとめ座画像
-	Draw::Draw(12, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 145.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//おひつじ座画像
-	Draw::Draw(13, &src, &dst, c, 0.0f);
-
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 215.0f;
-	src.m_bottom = 240.0f;
-
-	dst.m_top = 0.0f;
-	dst.m_left = 67.0f;
-	dst.m_right = 800.0f;
-	dst.m_bottom = 300.0f;
-
-	//おうし座画像
-	Draw::Draw(14, &src, &dst, c, 0.0f);
-	*/
-
+	
 	
 	int size = 20;
 	int size_y = 30;
