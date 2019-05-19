@@ -251,6 +251,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 1;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -268,6 +269,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 2;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -285,6 +287,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 3;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -301,6 +304,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 4;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -322,6 +326,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 5;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -338,6 +343,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 6;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -354,6 +360,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 7;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -369,6 +376,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 8;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -390,6 +398,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 9;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -406,6 +415,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 10;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -422,6 +432,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 11;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -437,6 +448,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 12;
+				page = 0; //ページ初期化
 			}
 		}
 	}
@@ -458,6 +470,7 @@ void CObjStarPresent11::Draw()
 			if (m_mou_l == true)
 			{
 				crick = 13;
+				page = 0; //ページ初期化
 			}
 		}
 	}
