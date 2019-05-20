@@ -841,7 +841,6 @@ void CObjStarPresent2::Draw()
 			Font::StrDraw(L"[白色矮星(はくしょくわいせい)とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"恒星が進化の終末期にとりうる形態の一つ。", left_end, IO_y + Interval_y * ver, font_size, c);
-			ver++;
 		}
 		//ページ制限
 		else if (page < 1)

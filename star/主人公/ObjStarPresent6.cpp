@@ -616,32 +616,46 @@ void CObjStarPresent6::Draw()
 	}
 	else if (crick == 6)
 	{
-		page_max = 1; //最大ページ数
+		page_max = 2; //最大ページ数
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
 		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
-		Font::StrDraw(L"おひつじ座に属する。太陽の3.2倍の質量を持つ", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"B型主系列星を主星とする分光連星で、伴星は主星から", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"15auの軌道を約30年掛けて周回していると", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"考えられている", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"[B型主系列星（Bがたしゅけいれっせい）とは]", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"水素の核融合で燃える主系列星である。", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"[天文単位(au)とは]", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"長さの単位で、正確に 149597870700 m である。", left_end, IO_y + Interval_y * ver, font_size, c);
+
+		if (page == 0)
+		{
+			Font::StrDraw(L"おひつじ座に属する。太陽の3.2倍の質量を持つ", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"B型主系列星を主星とする分光連星で、伴星は主星から", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"15auの軌道を約30年掛けて周回していると", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"考えられている", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		else if (page == 1)
+		{
+			Font::StrDraw(L"[B型主系列星（Bがたしゅけいれっせい）とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"水素の核融合で燃える主系列星である。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"太陽の2倍から16倍の質量を持ち、表面温度は", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"10,000Kから30,000Kの間である。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"[天文単位(au)とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"長さの単位で、正確に 149597870700 m である。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
 		//ページ制限
-		if (page < 0 || page > 0)
+		if (page < 0)
 		{
 			page = 0;
+		}
+		else if (page > 1)
+		{
+			page = 1;
 		}
 	}
 
