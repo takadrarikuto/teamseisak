@@ -334,107 +334,248 @@ void CObjStarPresent12::Draw()
 
 	if (crick == 1)
 	{
-		ver = VER_start;
-		Font::StrDraw(L"やぎ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"肉眼でもアルゲディ1星とアルゲディ2星に分離できる二重星", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"6.6分離れたアルゲディ1星とアルゲディ2星は連星ではなく", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"見かけの二重星の関係にある", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"分…角度の単位としての分。1度の60分の1の角度である", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"連星…2つの恒星が両者の重心の周りを軌道運動している天体", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"である。双子星（ふたごぼし）とも呼ばれる。", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"二重星…地球上から見る恒星が同じ方向に近接して", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"見える物を指す", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
+		page_max = 2; //最大ページ数
+		ver = VER_start; //文字間隔初期化
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
+		if (page == 0)
+		{
+			Font::StrDraw(L"やぎ座に属する3番目に明るい恒星で4等星。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"肉眼でもアルゲディ1星とアルゲディ2星に分離できる二重星。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"6.6分離れたアルゲディ1星とアルゲディ2星は連星ではなく", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"見かけの二重星の関係にある。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"[角度の単位としての分とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"1度の60分の1の角度である。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		else if (page == 1)
+		{
+			Font::StrDraw(L"[連星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"2つ以上の恒星が両者の重心の周りを軌道運動している天体", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"である。双子星（ふたごぼし）とも呼ばれる。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"[二重星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"地球上から見る恒星が同じ方向に近接して見える物を指す。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		//ページ制限
+		else if (page < 1)
+		{
+			page = 0;
+		}
+		else if (page > 1)
+		{
+			page = 1;
+		}
 	}
 	else if (crick == 2)
 	{
+		page_max = 2; //最大ページ数
 		ver = VER_start; //文字間隔初期化
-		Font::StrDraw(L"やぎ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"やぎ座にある3等星のダビー1星と6等星のダビー2星からなる", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"連星系である。ダビー1星と6等星のダビー2星は地球からは", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"少し離れており、双眼鏡を使えば容易に分離して見ることが", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"できる。また、ダビー1星、ダビー2星のそれぞれが", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"また連星系を成しており全体として少なくとも", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"5つ以上の恒星から構成されている", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
+		if (page == 0)
+		{
+			Font::StrDraw(L"やぎ座に属する3等星のダビー1星と6等星のダビー2星", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"からなる連星系である。ダビー1星と6等星のダビー2星は", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"地球からは少し離れており、双眼鏡を使えば容易に分離して", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"見ることができる。また、ダビー1星、ダビー2星のそれぞれが", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"また連星系を成しており全体として少なくとも5つ以上の恒星", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"から構成されている。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		else if (page == 1)
+		{
+			Font::StrDraw(L"[連星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"2つ以上の恒星が両者の重心の周りを軌道運動している天体", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"である。双子星（ふたごぼし）とも呼ばれる。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		//ページ制限
+		else if (page < 1)
+		{
+			page = 0;
+		}
+		else if (page > 1)
+		{
+			page = 1;
+		}
 	}
 	else if (crick == 3)
 	{
+		page_max = 3; //最大ページ数
 		ver = VER_start; //文字間隔初期化
-		Font::StrDraw(L"やぎ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"やぎ座の恒星で4等星。近年の観測結果からは", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"スペクトル型A7の初期の巨星ではないかと考えられている", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"自転速度が遅いため、対流と重力の影響によって様々な", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"金属元素が大気中に見られるAm星であるとも考えられている", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"巨星…同じ表面温度を持つ主系列星よりも半径および明るさが", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"非常に大きい恒星のことである", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"Am星…化学特異星である", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"特異星…少なくともその表面において、金属量の組成が", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"他の恒星とかなり異なっている星である", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
+		if (page == 0)
+		{
+			Font::StrDraw(L"やぎ座に属する恒星で4等星。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"F0のスペクトルを持つ主系列星と考えられてきたが、近年の", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"観測結果からはスペクトル型A7の初期の巨星ではないかと", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"考えられている。自転速度が遅いため、対流と重力の", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"影響によって様々な金属元素が大気中に見られるAm星で", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"あるとも考えられている。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"[Am星(えーえむせい)とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"スペクトル型Aの化学特異星である。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		else if (page == 1)
+		{
+			Font::StrDraw(L"[巨星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"半径および明るさが非常に大きい恒星。巨星の半径は", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"太陽の10倍から100倍、明るさは10倍から1000倍で", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"ある。巨星より明るい恒星は、超巨星や極超巨星と呼ばれる。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"[スペクトル分類とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"恒星の分類法の一つ。スペクトル分類によって細分された星の", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"タイプをスペクトル型と呼ぶ。恒星から放射された電磁波を", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"捉え、スペクトルを観察することによって分類する。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		else if (page == 2)
+		{
+			Font::StrDraw(L"[主系列星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"恒星の有効温度と明るさを示した図である", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"ヘルツシュプルング・ラッセル図 (HR図) 上で", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"明るく高温から暗く低温に延びる線である主系列に", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"位置する恒星をいう。矮星ともいう。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		//ページ制限
+		else if (page < 1)
+		{
+			page = 0;
+		}
+		else if (page > 2)
+		{
+			page = 2;
+		}
 	}
 	else if (crick == 4)
 	{
+		page_max = 2; //最大ページ数
 		ver = VER_start; //文字間隔初期化
-		Font::StrDraw(L"やぎ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"やぎ座で最も明るい恒星で3等星。黄道付近にあるため", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"月や惑星による掩蔽が起きる", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"黄道…天球上における太陽の見かけ上の通り道（大円）をいう", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"掩蔽…ある天体が観測者と他の天体の間を通過するために", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"その天体が隠される現象である", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
+		if (page == 0)
+		{
+			Font::StrDraw(L"やぎ座に属する最も明るい恒星で3等星。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"黄道付近にあるため月や惑星による掩蔽が起きる。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"やぎ座δ星は、4つの恒星からなる恒星系である。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"2017年2月1日に国際天文学連合の恒星の命名に関する", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"ワーキンググループ(WGSN)は、デネブ・アルゲディを", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"やぎ座δ星Aaの固有名として正式に承認した。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		else if (page == 1)
+		{
+			Font::StrDraw(L"[黄道(こうどう)とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"天球上における太陽の見かけ上の通り道（大円）をいう。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"[掩蔽(えんぺい)とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"ある天体が観測者と他の天体の間を通過するためにその天体が", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"隠される現象である。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"[恒星系(こうせいけい)]とは", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"数の恒星が重力で結びついてお互いの周りを公転している", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"星系である。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		//ページ制限
+		else if (page < 1)
+		{
+			page = 0;
+		}
+		else if (page > 1)
+		{
+			page = 1;
+		}
 	}
 	else if (crick == 5)
 	{
+		page_max = 2; //最大ページ数
 		ver = VER_start; //文字間隔初期化
-		Font::StrDraw(L"やぎ座に属する", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"やぎ座の恒星で5等星。地球からは4.74等のA星と", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"11.80等のB星の二重星に見える", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"重力的に関係のない見かけの二重星と思われるが、もし連星系を", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"成していた場合は4,000天文単位以上離れた軌道を14万年掛けて", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"周回していると考えられる", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"二重星…地球上から見る恒星が同じ方向に近接して見える物を", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"指す", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"天文単位…長さの単位で、正確に 149597870700 m", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
-		Font::StrDraw(L"である", left_end, IO_y + Interval_y * ver, font_size, c);
-		ver++;
+
+		//ページ数表示
+		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		Font::StrDraw(strp, pagex, pagey, pagesize, c);
+
+		if (page == 0)
+		{
+			Font::StrDraw(L"やぎ座に属する恒星で5等星。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"地球からは4.74等のA星と11.80等のB星の二重星に", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"見える。重力的に関係のない見かけの二重星と思われるが", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"もし連星系を成していた場合は4,000天文単位以上離れた", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"軌道を14万年掛けて周回していると考えられる。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		else if (page == 1)
+		{
+			Font::StrDraw(L"[二重星とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"地球上から見る恒星が同じ方向に近接して見える物を指す。", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"[天文単位(てんもんたんい)とは]", left_end, IO_y + Interval_y * ver, font_size, c);
+			ver++;
+			Font::StrDraw(L"長さの単位で、正確に 149597870700 mである。", left_end, IO_y + Interval_y * ver, font_size, c);
+		}
+		//ページ制限
+		else if (page < 1)
+		{
+			page = 0;
+		}
+		else if (page > 1)
+		{
+			page = 1;
+		}
 	}
 
 
