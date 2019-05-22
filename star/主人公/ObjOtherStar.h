@@ -27,6 +27,8 @@ private:
 
 	bool hero_flag; //主人公フラグ
 	bool ancer_flag; //アンカーフラグ
+	int star_num;//星番号
+
 
 
 };

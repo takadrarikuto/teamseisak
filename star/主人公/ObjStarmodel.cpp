@@ -9,6 +9,11 @@ extern int lever;
 
 void CObjStarmodel::Init()
 {
+	size = 20;
+	size_y = 30;
+	m_y = 310;
+	font = 30;
+	ver;
 
 }
 
@@ -150,11 +155,6 @@ void CObjStarmodel::Draw()
 
 	
 	
-	int size = 20;
-	int size_y = 30;
-	int m_y = 300;
-	int font = 30;
-	int ver;
 
 	//みずがめ座
 	if (lever == 13)
@@ -168,14 +168,11 @@ void CObjStarmodel::Draw()
 		ver++;
 		Font::StrDraw(L"Water Jarと呼ばれるアステリズムがある。", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"アステリズムまたは星群(せいぐん)…複数の恒星が天球上に形作るパターンである。", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"[アステリズムまたは星群(せいぐん)とは]", font, m_y + size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"複数の恒星が天球上に形作るパターンである。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"星座の星の並び同様、地球からの距離は同じとは限らず、空間的にはまとまっていない。", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
 	}
 	//うお座
 	else if (lever == 14)
@@ -191,11 +188,13 @@ void CObjStarmodel::Draw()
 		ver++;
 		Font::StrDraw(L"英米ではCircletと呼んでいる。", font, size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"アステリズムまたは星群(せいぐん)…複数の恒星が天球上に形作るパターンである。", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"[アステリズムまたは星群(せいぐん)とは]", font, m_y + size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"複数の恒星が天球上に形作るパターンである。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"星座の星の並び同様、地球からの距離は同じとは限らず、空間的にはまとまっていない。", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"", font, m_y + size_y * ver, size, c);
 		ver++;
 	}
 	//ひつじ座
@@ -214,11 +213,11 @@ void CObjStarmodel::Draw()
 		ver++;
 		Font::StrDraw(L"中国では二十八宿の婁宿であり、日本ではこれを「たたらぼし」と訓じていた。", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"二十八宿（にじゅうはっしゅく）…天球を、28のエリア（星宿）に不均等分割したもの。", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"[二十八宿（にじゅうはっしゅく）とは]", font, m_y + size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"天球を、28のエリア（星宿）に不均等分割したもの。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"二十八舎（にじゅうはっしゃ）ともいう。", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
 	//うし座
@@ -235,11 +234,11 @@ void CObjStarmodel::Draw()
 		ver++;
 		Font::StrDraw(L"名づけられたものが見つかっており、特にプレアデス星団は多い。", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"日本では、うし座と呼んだことがある。またおうし座に関係する方言は", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"プレアデス星団、ヒアデス星団、主星アルデバランに名づけられたものが", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"見つかっており、特にプレアデス星団は多い。", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
 	//ふたご座
@@ -256,12 +255,13 @@ void CObjStarmodel::Draw()
 		ver++;
 		Font::StrDraw(L"ふたご座と向かい合う極はいて座である。冥王星は、ワサトのそばで1930年に発見された。", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"日本では、カストルとポルックスをアステリズムと捉える方言が伝わっている。", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"[アステリズムまたは星群(せいぐん)とは]", font, m_y + size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"複数の恒星が天球上に形作るパターンである。", font, m_y + size_y * ver, size, c);
 		ver++;
+		Font::StrDraw(L"星座の星の並び同様、地球からの距離は同じとは限らず、空間的にはまとまっていない。", font, m_y + size_y * ver, size, c);
 	}
 	//かに座
 	else if (lever == 18)
@@ -273,15 +273,21 @@ void CObjStarmodel::Draw()
 		ver++;
 		Font::StrDraw(L"かに座は最も明るいタルフで3.520等、他は4等星以下と全体に暗い星からなる星座である。", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"プレセペ星団…かに座にある散開星団である。散開星団…恒星の集団（星団）の一種である。", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"[プレセペ星団とは]", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"かに座HM星…白色矮星の連星で、5分21.5秒周期で公転する極めて近い連星。", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"かに座にある散開星団である。", font, m_y + size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"かに座HM星…かに座の方向に地球から1600光年離れた位置にある白色矮星の連星である。", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"[散開星団とは]", font, m_y + size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"白色矮星(はくしょくわいせい)…恒星が進化の終末期にとりうる形態の一つ。", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"恒星の集団（星団）の一種である。", font, m_y + size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"[かに座HM星とは]", font, m_y + size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"かに座の方向に地球から1600光年離れた位置にある白色矮星の連星である。", font, m_y + size_y * ver, size, c);
+		ver++;
+		Font::StrDraw(L"[白色矮星(はくしょくわいせい)とは]", font, m_y + size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"恒星が進化の終末期にとりうる形態の一つ。", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
 	//しし座
@@ -319,11 +325,11 @@ void CObjStarmodel::Draw()
 		ver++;
 		Font::StrDraw(L"春の大三角を形成する。", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"アークトゥルス…うしかい座で最も明るい恒星で全天21の1等星の1つである赤色巨星。", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"[アークトゥルスとは]", font, m_y + size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"うしかい座で最も明るい恒星で全天21の1等星の1つである赤色巨星。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"太陽を除き実視等級がマイナスとなる4つの恒星の1つ。", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
 	//てんびん座
@@ -401,13 +407,13 @@ void CObjStarmodel::Draw()
 		ver++;
 		Font::StrDraw(L"天文学者ルヴェリエの予測計算とドイツの天文学者ガレの観測によって発見された。", font, m_y + size_y * ver, size, c);
 		ver++;
-		Font::StrDraw(L"球状星団…恒星が互いの重力で球形に集まった天体。銀河の周りを軌道運動している。", font, m_y + size_y* ver, size, c);
+		Font::StrDraw(L"[球状星団(きゅうじょうせいだん)とは]", font, m_y + size_y* ver, size, c);
+		ver++;
+		Font::StrDraw(L"恒星が互いの重力で球形に集まった天体。銀河の周りを軌道運動している。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"球状星団は重力的に非常に強く束縛されており、そのために形状は球対称となり", font, m_y + size_y* ver, size, c);
 		ver++;
-		Font::StrDraw(L"中心核に向かって非常に密度が高くなっている。", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y * ver, size, c);
+		Font::StrDraw(L"中心核に向かって非常に密度が高くなっている。", font, m_y + size_y * ver, size, c);
 		ver++;
 	}
 
