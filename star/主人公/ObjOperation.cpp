@@ -27,7 +27,7 @@ void CObjOperation::Action()
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
-	if (m_mous_x > 630 && m_mous_x < 730 && m_mous_y>480 && m_mous_y < 520)
+	if (m_mous_x > 0 && m_mous_x < 800 && m_mous_y> 0 && m_mous_y < 600)
 	{
 		if (m_mous_l == true)
 		{
@@ -64,6 +64,6 @@ void CObjOperation::Draw()
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
 
-	Draw::Draw(15, &src, &dst, c, 0.0f);
+	Draw::Draw(16, &src, &dst, c, 0.0f);
 
 }

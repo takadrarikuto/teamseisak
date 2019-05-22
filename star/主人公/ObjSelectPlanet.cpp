@@ -125,8 +125,8 @@ void CObjSelectPlanet::Draw()
 	Font::StrDraw(L"¯}ŠÓ‚Ö", 600, 550, 50, c);
 	Font::StrDraw(L"‚Ç‚Ì¯‚Ös‚«‚Ü‚·‚©H", 150, 120, 50, c);
 	Font::StrDraw(L"‰Î¯", 100, 370, 30, c);
-	Font::StrDraw(L"–Ø¯", 280, 370, 30, c);
-	Font::StrDraw(L"‹à¯", 460, 370, 30, c);
+	Font::StrDraw(L"‹à¯", 280, 370, 30, c);
+	Font::StrDraw(L"–Ø¯", 460, 370, 30, c);
 	Font::StrDraw(L"“y¯", 640, 370, 30, c);
 
 	RECT_F src; //•`‰æŒ³Ø‚èæ‚èˆÊ’u
