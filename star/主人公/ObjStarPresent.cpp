@@ -1018,12 +1018,6 @@ void CObjStarPresent::Draw()
 
 		if (crick == 15)//上を変えたらここも変える
 		{
-			ver = VER_start; //文字間隔初期化
-			page_max = 2; //最大ページ数
-
-			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
-			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			if (page == 0)
 			{
