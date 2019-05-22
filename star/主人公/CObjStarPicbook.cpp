@@ -384,7 +384,7 @@ void CObjStarPicbook::Draw()
 			//‰æ‘œ
 			else 
 			{
-			starmodel_flag = true;
+				starmodel_flag = true;
 			}
 		}
 	}
