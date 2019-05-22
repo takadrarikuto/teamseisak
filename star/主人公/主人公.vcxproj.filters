@@ -62,13 +62,13 @@
       <Filter>ソースファイル\星関係</Filter>
     </ClCompile>
     <ClCompile Include="ObjBackground.cpp">
-      <Filter>ソースファイル\背景</Filter>
+      <Filter>ソースファイル\ステージオブジェクト</Filter>
     </ClCompile>
     <ClCompile Include="ObjJupiter.cpp">
-      <Filter>ソースファイル\背景</Filter>
+      <Filter>ソースファイル\ステージオブジェクト</Filter>
     </ClCompile>
     <ClCompile Include="ObjMars.cpp">
-      <Filter>ソースファイル\背景</Filter>
+      <Filter>ソースファイル\ステージオブジェクト</Filter>
     </ClCompile>
     <ClCompile Include="ObjOtherStar.cpp">
       <Filter>ソースファイル\星関係</Filter>
@@ -83,7 +83,7 @@
       <Filter>ソースファイル\ステージ選択</Filter>
     </ClCompile>
     <ClCompile Include="ObjSaturn.cpp">
-      <Filter>ソースファイル\背景</Filter>
+      <Filter>ソースファイル\ステージオブジェクト</Filter>
     </ClCompile>
     <ClCompile Include="ObjSecondStar.cpp">
       <Filter>ソースファイル\星関係</Filter>
@@ -104,7 +104,7 @@
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="ObjVenus.cpp">
-      <Filter>ソースファイル\背景</Filter>
+      <Filter>ソースファイル\ステージオブジェクト</Filter>
     </ClCompile>
     <ClCompile Include="SceneGameKuria.cpp">
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
@@ -207,6 +207,9 @@
     </ClCompile>
     <ClCompile Include="ObjExclamationMark.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
+    </ClCompile>
+    <ClCompile Include="StarData.cpp">
+      <Filter>ソースファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -601,9 +604,6 @@
     <Filter Include="ソースファイル\ゲージ">
       <UniqueIdentifier>{99a48c06-b939-4501-8d9a-48879e102325}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\背景">
-      <UniqueIdentifier>{3a53dd80-fd7e-4a15-8cb2-212207e9a822}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースファイル\イベント">
       <UniqueIdentifier>{459130da-5a55-4fb8-9f77-b1b2c44f9af9}</UniqueIdentifier>
     </Filter>
@@ -624,6 +624,9 @@
     </Filter>
     <Filter Include="ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク">
       <UniqueIdentifier>{a63e7682-2a25-48d5-911d-97f386efafca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\ステージオブジェクト">
+      <UniqueIdentifier>{3a53dd80-fd7e-4a15-8cb2-212207e9a822}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
