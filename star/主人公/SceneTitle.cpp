@@ -40,7 +40,7 @@ void CSceneTitle::InitScene()
 
 	//グラフィック読み込み
 	Draw::LoadImage(L"タイトル(修正版).png", 11, TEX_SIZE_512);
-	Draw::LoadImage(L"パステルブルータイルフレーム.png", 9, TEX_SIZE_512);
+	//Draw::LoadImage(L"パステルブルータイルフレーム.png", 9, TEX_SIZE_512);
 
 	//タイトルオブジェクト生成
 	CObjTitle* obj_t = new CObjTitle();
