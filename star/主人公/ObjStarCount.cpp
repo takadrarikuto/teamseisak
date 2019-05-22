@@ -17,6 +17,8 @@ extern bool Star_Recovery;
 extern bool FiStar_Recovery;
 extern bool SeStar_Recovery;
 extern bool ThStar_Recovery;
+extern int g_mars_star[33];
+extern int star_count;
 int FiStar_Reco = 0; //1“™¯‚ğˆê’è‚Ì””‚¦‚é
 int SeStar_Reco = 0; //2“™¯‚ğˆê’è‚Ì””‚¦‚é
 int ThStar_Reco = 0; //3“™¯‚ğˆê’è‚Ì””‚¦‚é
@@ -26,12 +28,14 @@ int ThStar_Reco = 0; //3“™¯‚ğˆê’è‚Ì””‚¦‚é
 void CObjStarCount::Init()
 {	
 	((UserData*)Save::GetData())->star_co;
+	
+
 }
 
 //ƒAƒNƒVƒ‡ƒ“
 void CObjStarCount::Action()
 {
-
+	
 	//_‘f‰ñ•œˆ—
 	if (FiStar_Reco == 5)
 	{
@@ -68,7 +72,7 @@ void CObjStarCount::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	swprintf_s(str, L"¯‚Ì”~%3dŒÂ", ((UserData*)Save::GetData())->star_co);
+	swprintf_s(str, L"¯‚Ì”~%3dŒÂ", star_count);
 	Font::StrDraw(str, 10, 570, 30, c);
 
 }
