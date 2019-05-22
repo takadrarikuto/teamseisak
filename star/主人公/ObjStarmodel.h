@@ -27,5 +27,7 @@ private:
 	int m_y;
 	int font;
 	int ver;
+	int VER_start; //ƒo[‰Šú‰»
+	bool starmodel_flag;
 
 };
