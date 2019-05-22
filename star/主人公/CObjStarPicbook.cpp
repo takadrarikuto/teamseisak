@@ -801,5 +801,10 @@ if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m
 			starmodel_flag = true;
 		}
 	}
+	
+	Font::StrDraw(L"星の名前にカーソル合わせて左クリックするとその星座にある", 80, 25, 25, c);
+	Font::StrDraw(L"主な星の説明がされます。", 80, 50, 25, c);
+	Font::StrDraw(L"星座の絵にカーソルを合わせてクリックすると星座そのものの", 80, 100, 25, c);
+	Font::StrDraw(L"説明に入ります。", 80, 125, 25, c);
 
 }

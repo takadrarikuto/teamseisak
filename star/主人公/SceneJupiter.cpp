@@ -63,7 +63,7 @@ void CSceneJupiter::InitScene()
 	//グラフィック読み込み
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
-	Draw::LoadImage(L"嵐　雷.png", 9, TEX_SIZE_512);
+	Draw::LoadImage(L"嵐_雷.png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"木星.png", 10, TEX_SIZE_512);
 
 	//主人公
