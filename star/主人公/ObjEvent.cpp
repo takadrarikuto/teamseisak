@@ -104,7 +104,7 @@ void CObjEvent::Action()
 		E_Start_co++;
 	}
 	//イベント終了処理
-	else if (E_Start_co == 9000)
+	else if (E_Start_co == 7200)
 	{
 		E_Start = false;
 		Event_on = false;

@@ -29,6 +29,9 @@ void CObjStarCount::Init()
 {	
 	((UserData*)Save::GetData())->star_co;
 	
+	FiStar_Reco_max = 5; //1等星獲得数確認用最大数設定
+	FoStar_Reco_max = 25; //2等星獲得数確認用最大数設定
+	OtStar_Reco_max = 50; //3等星獲得数確認用最大数設定
 
 }
 
@@ -37,17 +40,17 @@ void CObjStarCount::Action()
 {
 	
 	//酸素回復処理
-	if (FiStar_Reco == 5)
+	if (FiStar_Reco == FiStar_Reco_max)
 	{
 		FiStar_Recovery = true;
 		FiStar_Reco = 0;
 	}
-	else if (FoStar_Reco == 25)
+	else if (FoStar_Reco == FoStar_Reco_max)
 	{
 		FoStar_Recovery = true;
 		FoStar_Reco = 0;
 	}
-	else if (OtStar_Reco == 50)
+	else if (OtStar_Reco == OtStar_Reco_max)
 	{
 		OtStar_Recovery = true;
 		OtStar_Reco = 0;
@@ -74,5 +77,18 @@ void CObjStarCount::Draw()
 
 	swprintf_s(str, L"星の数×%3d個", star_count);
 	Font::StrDraw(str, 10, 570, 30, c);
+
+
+	//酸素確認用カウント表示
+	swprintf_s(strFis, L"1等星の数×%2d/%d個", FiStar_Reco, FiStar_Reco_max);
+	Font::StrDraw(strFis, 10, 10, 20, c);
+
+	swprintf_s(strFos, L"2等星の数×%2d/%d個", FoStar_Reco, FoStar_Reco_max);
+	Font::StrDraw(strFos, 200, 10, 20, c);
+
+	swprintf_s(strOts, L"3等星の数×%2d/%d個", OtStar_Reco, OtStar_Reco_max);
+	Font::StrDraw(strOts, 400, 10, 20, c);
+
+
 
 }

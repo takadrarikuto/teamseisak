@@ -148,7 +148,7 @@ void CObjAncer::Action()
 				hitbox_size -= 0.2f;
 			}
 
-		}		
+		}	
 	}
 	else
 	{
