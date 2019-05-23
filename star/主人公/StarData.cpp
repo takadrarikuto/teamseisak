@@ -22,26 +22,8 @@ int g_debris;//はずれ枠
 
 int star_count;//星総数カウント用
 
-unique_ptr<wchar_t>p;//ステージ情報ポインター
-int size;			//ステージ情報の大きさ
-p = Save::ExternalDataOpen(L"Book1.csv", &size);//外部データ読み込み
-
-int map[56][56];
-int count = 1;
-for (int i = 0; i < 56; i++)
-{
-	for (int j = 0; j < 56; j++)
-	{
-		int w = 0;
-		swscanf_s(&p.get()[count], L"%d", &w);
-
-		map[i][j] = w;
-
-		if (w >= 10)
-		{
-			count += 1;
-		}
-
-		count += 2;
-	}
-}
+int g_first_star[5];
+int g_fouth_star[16];
+int g_other_star[15];
+int g_second_star[40];
+int g_third_star[17];

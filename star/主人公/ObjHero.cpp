@@ -13,9 +13,6 @@
 using namespace GameL;
 
 extern bool star_flag;
-extern int FiStar_Reco;
-extern int SeStar_Reco;
-extern int ThStar_Reco;
 
 //イニシャライズ
 void CObjHero::Init()
@@ -131,24 +128,7 @@ void CObjHero::Action()
 	//自身のHitBoxを持ってくる
 	CHitBox* hit = Hits::GetHitBox(this);
 
-	if (hit->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr || hit->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr
-		|| hit->CheckObjNameHit(OBJ_THIRDSTAR) != nullptr || hit->CheckObjNameHit(OBJ_FOURTHSTAR) != nullptr
-		|| hit->CheckObjNameHit(OBJ_OTHERSTAR) != nullptr)
-	{
-		star_flag = true;
-		if (hit->CheckObjNameHit(OBJ_FIRSTSTAR) != nullptr)
-		{
-			FiStar_Reco += 1;
-		}
-		else if (hit->CheckObjNameHit(OBJ_SECONDSTAR) != nullptr)
-		{
-			SeStar_Reco += 1;
-		}
-		else if (hit->CheckObjNameHit(OBJ_THIRDSTAR) != nullptr)
-		{
-			ThStar_Reco += 1;
-		}
-	}
+	
 
 
 	//HitBoxの位置の変更

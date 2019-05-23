@@ -208,6 +208,9 @@
     <ClCompile Include="ObjExclamationMark.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClCompile>
+    <ClCompile Include="StarData.cpp">
+      <Filter>ソースファイル\星関係</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -411,6 +414,7 @@
     <ClInclude Include="ObjStarPresent12.h">
       <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
+    <ClInclude Include="ObjPose.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">

@@ -15,13 +15,13 @@ using namespace GameL;
 bool star_flag = false; //星フラグ
 extern bool Star_Recovery;
 extern bool FiStar_Recovery;
-extern bool SeStar_Recovery;
-extern bool ThStar_Recovery;
+extern bool FoStar_Recovery;
+extern bool OtStar_Recovery;
 extern int g_mars_star[33];
 extern int star_count;
 int FiStar_Reco = 0; //1等星を一定の数数える
-int SeStar_Reco = 0; //2等星を一定の数数える
-int ThStar_Reco = 0; //3等星を一定の数数える
+int FoStar_Reco = 0; //2等星を一定の数数える
+int OtStar_Reco = 0; //3等星を一定の数数える
 
 
 //イニシャライズ
@@ -42,15 +42,15 @@ void CObjStarCount::Action()
 		FiStar_Recovery = true;
 		FiStar_Reco = 0;
 	}
-	else if (SeStar_Reco == 25)
+	else if (FoStar_Reco == 25)
 	{
-		SeStar_Recovery = true;
-		SeStar_Reco = 0;
+		FoStar_Recovery = true;
+		FoStar_Reco = 0;
 	}
-	else if (ThStar_Reco == 50)
+	else if (OtStar_Reco == 50)
 	{
-		ThStar_Recovery = true;
-		ThStar_Reco = 0;
+		OtStar_Recovery = true;
+		OtStar_Reco = 0;
 	}
 
 
