@@ -185,9 +185,6 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(str, 20, 230 + l * i, 25, c);
 	}
 
-	
-	
-
 	//Ç›Ç∏Ç™Çﬂç¿
 	if (lever == 13)
 	{	

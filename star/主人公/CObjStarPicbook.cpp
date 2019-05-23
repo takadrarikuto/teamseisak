@@ -110,7 +110,7 @@ void CObjStarPicbook::Draw()
 	dst.m_left = 0.0f;
 	dst.m_right = 67.0f;
 	dst.m_bottom = 600.0f;
-
+	
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
 	{
@@ -131,6 +131,8 @@ void CObjStarPicbook::Draw()
 		}
 
 	}
+	
+	
 
 	//説明文の背景部分を描画
 	dst.m_top = 0.0f;
@@ -388,7 +390,7 @@ void CObjStarPicbook::Draw()
 			}
 		}
 	}
-	if (m_mou_x > 130 + 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -426,7 +428,7 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 130 + 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
 	  {
 		  if (m_mou_l == true)
 		  {
@@ -463,7 +465,7 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 130 + 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 60+130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -500,7 +502,7 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 130 + 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -540,7 +542,7 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 300&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 325&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -575,7 +577,7 @@ void CObjStarPicbook::Draw()
 			}
 		}
 	}
-	if (m_mou_x > 300 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -609,7 +611,7 @@ void CObjStarPicbook::Draw()
 			}
 		}
 	}
-	if (m_mou_x > 300 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -643,7 +645,7 @@ void CObjStarPicbook::Draw()
 			}
 		}
 	}
-	if (m_mou_x > 300 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -806,5 +808,27 @@ if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m
 	Font::StrDraw(L"主な星の説明がされます。", 80, 50, 25, c);
 	Font::StrDraw(L"星座の絵にカーソルを合わせてクリックすると星座そのものの", 80, 100, 25, c);
 	Font::StrDraw(L"説明に入ります。", 80, 125, 25, c);
+	Font::StrDraw(L"ページをめくるには左にある次へをクリックします。", 80, 170,25, c);
+	Font::StrDraw(L"一つ前のページにしたい場合は戻るをクリックします。", 80, 195, 25, c);
 
+	//次への文字をループして出す
+	wchar_t next[2][2]{ L"次",L"へ" };
+	for (int i = 0; i <= 1; i++)
+	{
+		int l = 25;
+		swprintf_s(str, L"%s", next[i]);
+		//				　　X　 Y　 大きさ
+		Font::StrDraw(str, 20, 130 + l * i, 25, c);
+	}
+
+	//戻すの文字をループして出す
+	wchar_t before[2][2]{ L"戻",L"る" };
+	for (int i = 0; i <= 1; i++)
+	{
+		int l = 25;
+		swprintf_s(str, L"%s", before[i]);
+
+		//				　　X　 Y　 大きさ
+		Font::StrDraw(str, 20, 230 + l * i, 25, c);
+	}
 }
