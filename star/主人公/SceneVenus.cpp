@@ -243,8 +243,8 @@ void CSceneVenus::Scene()
 		EM_flag = true; //ビックリマーク出現フラグ オン
 	}
 
-	//10秒後1等星作成
-	if (Star_time == 600.0f)
+	//5秒後1等星作成
+	if (Star_time == 300.0f)
 	{
 		//スターオブジェクト作成
 		CObjFirstStar* star = new CObjFirstStar(0.0f);

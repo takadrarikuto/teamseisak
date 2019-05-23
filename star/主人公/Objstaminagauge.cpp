@@ -13,8 +13,8 @@ using namespace GameL;
 extern bool Event_on;
 extern bool Aitem_on;
 bool FiStar_Recovery = false;  //1“™¯Šm•Û_‘f‰ñ•œ
-bool SeStar_Recovery = false;  //2“™¯Šm•Û_‘f‰ñ•œ
-bool ThStar_Recovery = false;  //3“™¯Šm•Û_‘f‰ñ•œ
+bool FoStar_Recovery = false;  //2“™¯Šm•Û_‘f‰ñ•œ
+bool OtStar_Recovery = false;  //3“™¯Šm•Û_‘f‰ñ•œ
 extern bool Aitem_co; //ƒAƒCƒeƒ€¶Y
 extern int Event_Conversion; //ƒCƒxƒ“ƒgƒGƒŠƒAØ‚è‘Ö‚¦
 
@@ -89,17 +89,17 @@ void CObjstaminagauge::Action()
 		Aitem_co = true; //—\”õ_‘fƒ{ƒ“ƒx‰ñ•œ
 		FiStar_Recovery = false;
 	}
-	else if (SeStar_Recovery == true)
+	else if (FoStar_Recovery == true)
 	{
 		m_vx -= 20.0f;
 		m_stamina += 20.0f;
-		SeStar_Recovery = false;
+		FoStar_Recovery = false;
 	}
-	else if (ThStar_Recovery == true)
+	else if (OtStar_Recovery == true)
 	{
 		m_vx -= 10.0f;
 		m_stamina += 10.0f;
-		ThStar_Recovery = false;
+		OtStar_Recovery = false;
 	}
 	//ƒCƒxƒ“ƒg
 	Ev_time = rand() % 5;

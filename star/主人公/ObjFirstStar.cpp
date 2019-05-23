@@ -13,6 +13,9 @@ using namespace GameL;
 
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
+extern int g_first_star[5];
+extern int star_count;
+extern int FiStar_Reco;
 
 
 CObjFirstStar::CObjFirstStar(float x)
@@ -27,9 +30,11 @@ void CObjFirstStar::Init()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
-	star_co = 0;
 
-	star_flag = false;
+	hero_flag = false;
+	ancer_flag = false;
+
+	star_num = rand() % 5;
 
 	Hits::SetHitBox(this, m_px, m_py, 32, 32, OBJ_FIRSTSTAR, ELEMENT_RED, 13);
 
@@ -114,12 +119,46 @@ void CObjFirstStar::Action()
 	}
 
 	//画面外に出たら星を削除
-	if (m_px > 800.0f || m_px < 0.0f || m_py > 500.0f || m_px < 0.0f || hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
+	if (m_px > 800.0f || m_px < 0.0f || m_py > 500.0f || m_px < 0.0f)
 	{
 		this->SetStatus(false); //自身に削除命令を出す
 		Hits::DeleteHitBox(this); //HitBox削除
+
 	}
 	
+	//アンカーに当たっていなければy軸が350の位置で星を削除
+	if (ancer_flag == false)
+	{
+		if (m_py > 350.0f || m_py < 0.0f)
+		{
+			this->SetStatus(false); //自身に削除命令を出す
+			Hits::DeleteHitBox(this); //HitBox削除
+		}
+	}
+	//アンカーに当たっている状態で主人公に当たると削除
+	else if (ancer_flag == true && hero_flag == true)
+	{
+		this->SetStatus(false); //自身に削除命令を出す
+		Hits::DeleteHitBox(this); //HitBox削除
+		ancer_flag = false;
+		hero_flag = false;
+
+		FiStar_Reco += 1; //1等星酸素回復用カウント
+
+		if (g_first_star[star_num] != 0)
+		{
+			g_first_star[32]++;
+			star_count++;
+		}
+		else if (g_first_star[star_num] == 0)
+		{
+			star_count++;
+			g_first_star[star_num]++;
+
+		}
+	}
+
+
 }
 //ドロー
 void CObjFirstStar::Draw()
