@@ -59,13 +59,13 @@
       <Filter>ソースファイル\星関係</Filter>
     </ClCompile>
     <ClCompile Include="ObjBackground.cpp">
-      <Filter>ソースファイル\ステージオブジェクト</Filter>
+      <Filter>ソースファイル\背景</Filter>
     </ClCompile>
     <ClCompile Include="ObjJupiter.cpp">
-      <Filter>ソースファイル\ステージオブジェクト</Filter>
+      <Filter>ソースファイル\背景</Filter>
     </ClCompile>
     <ClCompile Include="ObjMars.cpp">
-      <Filter>ソースファイル\ステージオブジェクト</Filter>
+      <Filter>ソースファイル\背景</Filter>
     </ClCompile>
     <ClCompile Include="ObjOtherStar.cpp">
       <Filter>ソースファイル\星関係</Filter>
@@ -80,7 +80,7 @@
       <Filter>ソースファイル\ステージ選択</Filter>
     </ClCompile>
     <ClCompile Include="ObjSaturn.cpp">
-      <Filter>ソースファイル\ステージオブジェクト</Filter>
+      <Filter>ソースファイル\背景</Filter>
     </ClCompile>
     <ClCompile Include="ObjSecondStar.cpp">
       <Filter>ソースファイル\星関係</Filter>
@@ -101,7 +101,7 @@
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="ObjVenus.cpp">
-      <Filter>ソースファイル\ステージオブジェクト</Filter>
+      <Filter>ソースファイル\背景</Filter>
     </ClCompile>
     <ClCompile Include="SceneGameKuria.cpp">
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
@@ -127,9 +127,6 @@
     <ClCompile Include="SceneStageselect.cpp">
       <Filter>ソースファイル\ステージ選択</Filter>
     </ClCompile>
-    <ClCompile Include="SceneStarPicbook.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
     <ClCompile Include="SceneTitle.cpp">
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
@@ -141,15 +138,6 @@
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjStarPicbook.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="CObjStarPicbook.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
-    <ClCompile Include="StarBook.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="ObjStarPresent.cpp">
       <Filter>ソースファイル\星図鑑\星</Filter>
@@ -208,11 +196,18 @@
     <ClCompile Include="ObjExclamationMark.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClCompile>
-    <ClCompile Include="ObjStarPresent3.cpp">
+    <ClCompile Include="StarBook.cpp">
       <Filter>ソースファイル\星図鑑\星</Filter>
     </ClCompile>
-    <ClCompile Include="ObjOperation.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    <ClCompile Include="StarData.cpp">
+      <Filter>ソースファイル\星関係</Filter>
+      <Filter>ソースファイル\星関係</Filter>
+    </ClCompile>
+    <ClCompile Include="CObjStarPicbook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStarPicbook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="StarData.cpp" />
   </ItemGroup>
@@ -325,6 +320,9 @@
     <ClInclude Include="ObjGameKuria.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
+    <ClInclude Include="ObjPose.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
     <ClInclude Include="SceneGameKuria.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
@@ -339,6 +337,9 @@
     </ClInclude>
     <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+      <ClInclude Include="ObjPose.h">
+   <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjEvent.h">
       <Filter>ヘッダーファイル\イベント</Filter>
@@ -358,8 +359,6 @@
     <ClInclude Include="ObjHero.h">
       <Filter>ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h" />
-    <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjStarPresent.h">
       <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
@@ -369,16 +368,12 @@
     <ClInclude Include="ObjStarmodel.h">
       <Filter>ヘッダーファイル\星図鑑\星座</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjMeasurementAncer.h">
       <Filter>ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjExclamationMark.h">
       <Filter>ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h" />
-    <ClInclude Include="ObjPose.h" />
     <ClInclude Include="ObjStarPresent2.h">
       <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
@@ -412,9 +407,7 @@
     <ClInclude Include="ObjStarPresent12.h">
       <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
-    <ClInclude Include="ObjPose.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClInclude>
+    <ClInclude Include="ObjPose.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
@@ -608,6 +601,9 @@
     <Filter Include="ソースファイル\ゲージ">
       <UniqueIdentifier>{99a48c06-b939-4501-8d9a-48879e102325}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソースファイル\背景">
+      <UniqueIdentifier>{3a53dd80-fd7e-4a15-8cb2-212207e9a822}</UniqueIdentifier>
+    </Filter>
     <Filter Include="ソースファイル\イベント">
       <UniqueIdentifier>{459130da-5a55-4fb8-9f77-b1b2c44f9af9}</UniqueIdentifier>
     </Filter>
@@ -628,9 +624,6 @@
     </Filter>
     <Filter Include="ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク">
       <UniqueIdentifier>{a63e7682-2a25-48d5-911d-97f386efafca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースファイル\ステージオブジェクト">
-      <UniqueIdentifier>{3a53dd80-fd7e-4a15-8cb2-212207e9a822}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

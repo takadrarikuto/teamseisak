@@ -21,7 +21,7 @@ void CObjOperation::Init()
 
 void CObjOperation::Action()
 {
-	m_mous_l = Input::GetMouButtonL();
+m_mous_l = Input::GetMouButtonL();
 
 	//マウスの位置の取得
 	m_mous_x = (float)Input::GetPosX();
