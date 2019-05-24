@@ -214,6 +214,7 @@
     <ClCompile Include="ObjOperation.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
+    <ClCompile Include="StarData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
