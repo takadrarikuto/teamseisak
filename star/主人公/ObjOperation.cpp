@@ -26,7 +26,7 @@ void CObjOperation::Action()
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
-	if (m_mous_x > 200 && m_mous_x < 600 && m_mous_y>440 && m_mous_y < 490)
+	if (m_mous_x > 620 && m_mous_x < 730 && m_mous_y>480 && m_mous_y < 520)
 	{
 		if (m_mous_l == true)
 		{
@@ -53,8 +53,8 @@ void CObjOperation::Draw()
 	//切り取り位置の位置
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 1052.0f;
-	src.m_bottom = 432.0f;
+	src.m_right = 800.0f;
+	src.m_bottom = 600.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f;

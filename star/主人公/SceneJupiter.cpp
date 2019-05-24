@@ -6,6 +6,7 @@
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -56,14 +57,19 @@ int CSceneJupiter::WeightedPick(int* pArray, int Length) {
 //初期化メゾット
 void CSceneJupiter::InitScene()
 {
+	//音楽情報読み込み
+	Audio::LoadAudio(0, L"ゲームプレイBGMTitle.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"決定音.wav", EFFECT);
+
 	occur = 0;
 	m_Pf = false;
 	m_key_f = false;//行動制御
 
+					
 	//グラフィック読み込み
 	//背景
-	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
-	Draw::LoadImage(L"嵐　雷.png", 9, TEX_SIZE_512);
+	Draw::LoadImage(L"通常時背景.png",8,TEX_SIZE_512);
+	Draw::LoadImage(L"嵐_雷.png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"木星.png", 10, TEX_SIZE_512);
 
 	//主人公

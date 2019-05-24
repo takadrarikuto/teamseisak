@@ -110,7 +110,7 @@ void CObjStarPicbook::Draw()
 	dst.m_left = 0.0f;
 	dst.m_right = 67.0f;
 	dst.m_bottom = 600.0f;
-
+	
 	//ループして描画する
 	for (int i = 0; i <= 3; i++)
 	{
@@ -131,6 +131,8 @@ void CObjStarPicbook::Draw()
 		}
 
 	}
+	
+	
 
 	//説明文の背景部分を描画
 	dst.m_top = 0.0f;
@@ -214,11 +216,9 @@ void CObjStarPicbook::Draw()
 	src.m_right = 654.0f;
 	src.m_bottom = 578.0f;
 
-	
 	dst.m_left = 130.0f;
 	dst.m_right = 200.0f;
 	
-
 	//みずがめ座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
 	Dc += 1;
@@ -228,10 +228,10 @@ void CObjStarPicbook::Draw()
 	src.m_right = 764.0f;
 	src.m_bottom = 578.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 269.0f;
-	dst.m_right = 338.0f;
-	dst.m_bottom = 600.0f;
+	dst.m_top = 450.0f;
+	dst.m_left = 530.0f;
+	dst.m_right =600.0f;
+	dst.m_bottom = 524.0f;
 
 	//いて座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
@@ -242,10 +242,10 @@ void CObjStarPicbook::Draw()
 	src.m_right = 1192.0f;
 	src.m_bottom = 872.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 338.0f;
-	dst.m_right = 405.0f;
-	dst.m_bottom = 600.0f;
+	dst.m_top = 450.0f;
+	dst.m_bottom = 524.0f;
+	dst.m_left = 330.0f;
+	dst.m_right = 400.0f;
 
 	//しし座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
@@ -256,9 +256,9 @@ void CObjStarPicbook::Draw()
 	src.m_right = 764.0f;
 	src.m_bottom = 578.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 405.0f;
-	dst.m_right = 468.0f;
+	dst.m_top = 523.0f;
+	dst.m_left = 530.0f;
+	dst.m_right = 600.0f;
 	dst.m_bottom = 600.0f;
 
 	//やぎ座画像
@@ -270,10 +270,10 @@ void CObjStarPicbook::Draw()
 	src.m_right = 1360.0f;
 	src.m_bottom = 880.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 468.0f;
-	dst.m_right = 536.0f;
-	dst.m_bottom = 600.0f;
+	dst.m_top = 376.0f;
+	dst.m_bottom = 450.0f;
+	dst.m_left = 130.0f;
+	dst.m_right = 200.0f;
 
 	//うお座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
@@ -284,10 +284,10 @@ void CObjStarPicbook::Draw()
 	src.m_right = 884.0f;
 	src.m_bottom = 624.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 536.0f;
-	dst.m_right = 603.0f;
-	dst.m_bottom = 600.0f;
+	dst.m_top = 376.0f;
+	dst.m_bottom = 450.0f;
+	dst.m_left = 330.0f;
+	dst.m_right = 400.0f;
 
 	//かに座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
@@ -298,10 +298,10 @@ void CObjStarPicbook::Draw()
 	src.m_right = 1308.0f;
 	src.m_bottom = 776.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 603.0f;
-	dst.m_right = 670.0f;
+	dst.m_top = 523.0f;
 	dst.m_bottom = 600.0f;
+	dst.m_left = 330.0f;
+	dst.m_right = 400.0f;
 
 	//おとめ座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
@@ -312,10 +312,10 @@ void CObjStarPicbook::Draw()
 	src.m_right = 424.0f;
 	src.m_bottom = 320.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 670.0f;
-	dst.m_right = 738.0f;
-	dst.m_bottom = 600.0f;
+	dst.m_top = 450.0f;
+	dst.m_bottom = 524.0f;
+	dst.m_left = 130.0f;
+	dst.m_right = 200.0f;
 
 	//おひつじ座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
@@ -326,14 +326,13 @@ void CObjStarPicbook::Draw()
 	src.m_right = 424.0f;
 	src.m_bottom = 320.0f;
 
-	dst.m_top = 500.0f;
-	dst.m_left = 738.0f;
-	dst.m_right = 800.0f ;
+	dst.m_left = 130.0f;
+	dst.m_right = 200.0f;
+	dst.m_top = 526.0f;
 	dst.m_bottom = 600.0f;
 
 	//おうし座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
-	
 
 	//宇宙船への文字を描画する
 	//					　　X　Y　大きさ
@@ -387,11 +386,11 @@ void CObjStarPicbook::Draw()
 			//画像
 			else 
 			{
-			starmodel_flag = true;
+				starmodel_flag = true;
 			}
 		}
 	}
-	if (m_mou_x > 130 + 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -429,7 +428,7 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 130 + 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
 	  {
 		  if (m_mou_l == true)
 		  {
@@ -466,7 +465,7 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 130 + 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 60+130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -503,7 +502,7 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 130 + 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -543,7 +542,7 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 300&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 325&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -578,7 +577,7 @@ void CObjStarPicbook::Draw()
 			}
 		}
 	}
-	if (m_mou_x > 300 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -612,7 +611,7 @@ void CObjStarPicbook::Draw()
 			}
 		}
 	}
-	if (m_mou_x > 300 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -646,7 +645,7 @@ void CObjStarPicbook::Draw()
 			}
 		}
 	}
-	if (m_mou_x > 300 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (m_mou_l == true)
 		{
@@ -804,5 +803,32 @@ if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m
 			starmodel_flag = true;
 		}
 	}
+	
+	Font::StrDraw(L"星の名前にカーソル合わせて左クリックするとその星座にある", 80, 25, 25, c);
+	Font::StrDraw(L"主な星の説明がされます。", 80, 50, 25, c);
+	Font::StrDraw(L"星座の絵にカーソルを合わせてクリックすると星座そのものの", 80, 100, 25, c);
+	Font::StrDraw(L"説明に入ります。", 80, 125, 25, c);
+	Font::StrDraw(L"ページをめくるには左にある次へをクリックします。", 80, 170,25, c);
+	Font::StrDraw(L"一つ前のページにしたい場合は戻るをクリックします。", 80, 195, 25, c);
 
+	//次への文字をループして出す
+	wchar_t next[2][2]{ L"次",L"へ" };
+	for (int i = 0; i <= 1; i++)
+	{
+		int l = 25;
+		swprintf_s(str, L"%s", next[i]);
+		//				　　X　 Y　 大きさ
+		Font::StrDraw(str, 20, 130 + l * i, 25, c);
+	}
+
+	//戻すの文字をループして出す
+	wchar_t before[2][2]{ L"戻",L"る" };
+	for (int i = 0; i <= 1; i++)
+	{
+		int l = 25;
+		swprintf_s(str, L"%s", before[i]);
+
+		//				　　X　 Y　 大きさ
+		Font::StrDraw(str, 20, 230 + l * i, 25, c);
+	}
 }

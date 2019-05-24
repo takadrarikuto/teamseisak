@@ -43,7 +43,7 @@ void CObjTitle::Action()
 				//300秒後に画面移動
 				
 				//if(a_time<=300){
-			Scene::SetScene(new CSceneStageselect()); //操作説明選択画面に移動
+			Scene::SetScene(new CSceneOperation()); //操作説明選択画面に移動
 					
 				//}
 			
@@ -57,7 +57,7 @@ void CObjTitle::Action()
 
 	if (a_time == 100)
 	{
-		Scene::SetScene(new CSceneStageselect()); //操作説明選択画面に移動
+		Scene::SetScene(new CSceneOperation()); //操作説明選択画面に移動
 	}
 	else if (a_time == 1)
 	{
@@ -83,14 +83,14 @@ void CObjTitle::Draw()
 	//切り取り位置の位置
 	src.m_top = 0.0;
 	src.m_left = 0.0f;
-	src.m_right = 900.0f;
-	src.m_bottom = 700.0f;
+	src.m_right = 800.0f;
+	src.m_bottom = 600.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
-	dst.m_bottom = 800.0f;
+	dst.m_bottom = 600.0f;
 
 	Draw::Draw(11, &src, &dst, c, 0.0f);
 

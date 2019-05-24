@@ -80,7 +80,7 @@
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="ObjSelectPlanet.cpp">
-      <Filter>ソースファイル\ステージ選択</Filter>
+      <Filter>ソースファイル\ステージ\ステージ選択</Filter>
     </ClCompile>
     <ClCompile Include="ObjSaturn.cpp">
       <Filter>ソースファイル\背景</Filter>
@@ -128,7 +128,7 @@
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
     <ClCompile Include="SceneStageselect.cpp">
-      <Filter>ソースファイル\ステージ選択</Filter>
+      <Filter>ソースファイル\ステージ\ステージ選択</Filter>
     </ClCompile>
     <ClCompile Include="SceneStarPicbook.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
@@ -140,7 +140,7 @@
       <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClCompile>
     <ClCompile Include="ObjStageselect.cpp">
-      <Filter>ソースファイル\ステージ選択</Filter>
+      <Filter>ソースファイル\ステージ\ステージ選択</Filter>
     </ClCompile>
     <ClCompile Include="ObjHero.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
@@ -411,6 +411,7 @@
     <ClInclude Include="ObjStarPresent12.h">
       <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
+    <ClInclude Include="ObjPose.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
@@ -586,9 +587,6 @@
     <Filter Include="ソースファイル\ステージ">
       <UniqueIdentifier>{a89ab8c3-7b56-492c-9a11-c17e0d2a5a81}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\ステージ選択">
-      <UniqueIdentifier>{351b3fae-0606-4f83-a8e4-907ccbc834e6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースファイル\星図鑑">
       <UniqueIdentifier>{b0d23489-12a3-4c66-92ad-807caced08ba}</UniqueIdentifier>
     </Filter>
@@ -624,6 +622,9 @@
     </Filter>
     <Filter Include="ヘッダーファイル\主人公・アンカー・アイテム・ビックリマーク">
       <UniqueIdentifier>{a63e7682-2a25-48d5-911d-97f386efafca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\ステージ\ステージ選択">
+      <UniqueIdentifier>{351b3fae-0606-4f83-a8e4-907ccbc834e6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
