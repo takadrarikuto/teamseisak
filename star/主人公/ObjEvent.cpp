@@ -96,7 +96,7 @@ void CObjEvent::Action()
 	E_Start_co++;
 
 	//イベント開始処理
-	if (E_Start_co == 360)
+	if (E_Start_co == 3600)
 	{
 		E_Start = true;
 		Event_on = true;
@@ -104,7 +104,7 @@ void CObjEvent::Action()
 		E_Start_co++;
 	}
 	//イベント終了処理
-	else if (E_Start_co == 900)
+	else if (E_Start_co == 7200)
 	{
 		E_Start = false;
 		Event_on = false;

@@ -505,7 +505,7 @@ void CObjStarPresent4::Draw()
 			ver++;
 			Font::StrDraw(L"2つ以上の恒星が両者の重心の周りを軌道運動している", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
-			Font::StrDraw(L"天体である", left_end, IO_y + Interval_y * ver, font_size, c);
+			Font::StrDraw(L"天体である。双子星（ふたごぼし）とも呼ばれる。", left_end, IO_y + Interval_y * ver, font_size, c);
 		}
 		//ページ制限
 		else if (page < 1)
@@ -610,9 +610,9 @@ void CObjStarPresent4::Draw()
 			ver++;
 			Font::StrDraw(L"2つ以上の恒星が両者の重心の周りを軌道運動している天体", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
-			Font::StrDraw(L"である。", left_end, IO_y + Interval_y * ver, font_size, c);
+			Font::StrDraw(L"である。双子星（ふたごぼし）とも呼ばれる。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
-			Font::StrDraw(L"白色矮星(はくしょくわいせい)", left_end, IO_y + Interval_y * ver, font_size, c);
+			Font::StrDraw(L"[白色矮星(はくしょくわいせい)とは]", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"恒星が進化の終末期にとりうる形態の一つ。", left_end, IO_y + Interval_y * ver, font_size, c);
 		}

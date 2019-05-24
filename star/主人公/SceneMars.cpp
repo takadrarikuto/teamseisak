@@ -65,6 +65,8 @@ void CSceneMars::InitScene()
 	occur = 0;
 	m_Pf = false;
 	m_key_f = false;//行動制御
+	star_count = 0;
+
 
 	//グラフィック読み込み
 	//背景
@@ -270,6 +272,12 @@ void CSceneMars::Scene()
 				//スターオブジェクト作成
 				CObjOtherStar* star5 = new CObjOtherStar(800.0f);
 				Objs::InsertObj(star5, OBJ_OTHERSTAR, 14);    //スターオブジェクト登録
+				star_count++;
+				if (star_count == 10)
+				{
+					star_count = 0;
+				}
+
 			}
 		}
 		occur = 0;
@@ -282,8 +290,8 @@ void CSceneMars::Scene()
 		EM_flag = true; //ビックリマーク出現フラグ オン
 	}
 
-	//10秒後1等星作成
-	if (Star_time == 600.0f)
+	//5秒後1等星作成
+	if (Star_time == 300.0f)
 	{
 		if (Event_Star == false)
 		{

@@ -50,7 +50,7 @@ void CObjAncer::Init()
 	m_mous_l = false;
 	
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_pax, m_pay, size , size, ELEMENT_ANCER, OBJ_ANCER, 13);
+	Hits::SetHitBox(this, m_pax, m_pay, size -3, size-3, ELEMENT_ANCER, OBJ_ANCER, 13);
 
 	//ロープ描画用初期化
 	rope = 0.0f;
@@ -148,7 +148,7 @@ void CObjAncer::Action()
 				hitbox_size -= 0.2f;
 			}
 
-		}		
+		}	
 	}
 	else
 	{
@@ -303,7 +303,7 @@ void CObjAncer::Draw()
 	//表示位置の設定
 	dsta.m_top = 0.0f + m_pay + m_sizey;
 	dsta.m_left = -3.0f + m_pax - m_sizex;
-	dsta.m_right = 41.0f + m_pax + m_sizex;
+	dsta.m_right = 38.0f + m_pax + m_sizex;
 	dsta.m_bottom = -60.0f + m_pay;
 
 	Draw::Draw(13, &srca, &dsta, c, 0.0f);

@@ -68,7 +68,7 @@ void CSceneJupiter::InitScene()
 					
 	//ƒOƒ‰ƒtƒBƒbƒN“Ç‚İ‚İ
 	//”wŒi
-	Draw::LoadImage(L"’Êí”wŒi.png",8,TEX_SIZE_512);
+	Draw::LoadImage(L"’Êí”wŒi.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"—’_—‹.png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"–Ø¯.png", 10, TEX_SIZE_512);
 

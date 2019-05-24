@@ -21,4 +21,13 @@ private:
 	bool m_mou_l;//マウスの左ボタン
 
 	wchar_t str[256];
+
+	int size;
+	int size_y;
+	int m_y;
+	int font;
+	int ver;
+	int VER_start; //バー初期化
+	bool starmodel_flag;
+
 };

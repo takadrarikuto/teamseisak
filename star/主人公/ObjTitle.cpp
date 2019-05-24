@@ -33,7 +33,7 @@ void CObjTitle::Action()
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
-	if (m_mous_x > 200 && m_mous_x < 600 && m_mous_y>440 && m_mous_y < 490)
+	if (m_mous_x > 270 && m_mous_x < 430 && m_mous_y>500 && m_mous_y < 550)
 	{
 		if (m_mous_l == true)
 		{
@@ -94,16 +94,16 @@ void CObjTitle::Draw()
 
 	Draw::Draw(11, &src, &dst, c, 0.0f);
 
-	/*src.m_top = 0.0f;
+	src.m_top = 0.0f;
 	src.m_left = 0.0f;
 	src.m_right = 130.0f;
 	src.m_bottom = 67.0f;
 
 	//¯}ŠÓ‚Ì˜g‚ð•`‰æ
 	dst.m_top = 500.0f;
-	dst.m_left = 300.0f;
-	dst.m_right = 367.0f;
-	dst.m_bottom = 600.0f;
-	Draw::Draw(9, &src, &dst, c, 0.0f);*/
+	dst.m_left = 270.0f;
+	dst.m_right = 430.0f;
+	dst.m_bottom =550.0f;
+	Draw::Draw(9, &src, &dst, c, 0.0f);
 
 }

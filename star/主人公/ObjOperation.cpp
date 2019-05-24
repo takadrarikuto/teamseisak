@@ -20,7 +20,7 @@ void CObjOperation::Init()
 
 void CObjOperation::Action()
 {
-	m_mous_l = Input::GetMouButtonL();
+m_mous_l = Input::GetMouButtonL();
 
 	//マウスの位置の取得
 	m_mous_x = (float)Input::GetPosX();
@@ -40,6 +40,7 @@ void CObjOperation::Action()
 			m_start_flag = true;
 		}
 	}
+
 }
 
 void CObjOperation::Draw()
@@ -62,6 +63,6 @@ void CObjOperation::Draw()
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
 
-	Draw::Draw(8, &src, &dst, c, 0.0f);
+	Draw::Draw(16, &src, &dst, c, 0.0f);
 
 }

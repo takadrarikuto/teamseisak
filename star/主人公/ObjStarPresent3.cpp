@@ -476,8 +476,6 @@ void CObjStarPresent3::Draw()
 			Font::StrDraw(L"脈動変光星に分類されており、20日前後の周期で", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"0.26等級の範囲で変光している。", left_end, IO_y + Interval_y * ver, font_size, c);
-			ver++;
-			Font::StrDraw(L"", left_end, IO_y + Interval_y * ver, font_size, c);
 			//8行目まで、改行
 			ver++;
 		}

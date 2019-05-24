@@ -13,6 +13,9 @@ using namespace GameL;
 
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
+extern int g_fouth_star[16];
+extern int star_count;
+extern int FoStar_Reco;
 
 
 CObjFourthStar::CObjFourthStar(float x)
@@ -29,6 +32,8 @@ void CObjFourthStar::Init()
 
 	hero_flag = false;
 	ancer_flag = false;
+
+	star_num = rand() % 5;
 
 	Hits::SetHitBox(this, m_px, m_py, 32, 32, OBJ_OTHERSTAR, ELEMENT_RED, 12);
 
@@ -142,6 +147,20 @@ void CObjFourthStar::Action()
 		Hits::DeleteHitBox(this); //HitBox削除
 		ancer_flag = false;
 		hero_flag = false;
+
+		FoStar_Reco += 1; //2等星酸素回復用カウント
+
+		if (g_fouth_star[star_num] != 0)
+		{
+			g_fouth_star[32]++;
+			star_count++;
+		}
+		else if (g_fouth_star[star_num] == 0)
+		{
+			star_count++;
+			g_fouth_star[star_num]++;
+
+		}
 	}
 
 

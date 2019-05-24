@@ -13,6 +13,9 @@ using namespace GameL;
 
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
+extern int g_other_star[15];
+extern int star_count;
+extern int OtStar_Reco;
 
 
 CObjOtherStar::CObjOtherStar(float x)
@@ -26,10 +29,13 @@ void CObjOtherStar::Init()
 	m_py = rand() % 340 + 1;
 	m_vx = 0.0f;
 	m_vy = 0.0f;
-	size = 0;
 
 	hero_flag = false;
 	ancer_flag = false;
+	
+	star_num = rand() % 5;
+
+
 
 	Hits::SetHitBox(this, m_px, m_py, 32, 32, OBJ_OTHERSTAR, ELEMENT_RED, 12);
 
@@ -144,10 +150,22 @@ void CObjOtherStar::Action()
 		Hits::DeleteHitBox(this); //HitBox削除
 		ancer_flag = false;
 		hero_flag = false;
+
+		OtStar_Reco += 1; //3等星酸素回復用カウント
+
+		if (g_other_star[star_num] != 0)
+		{
+			g_other_star[32]++;
+			star_count++;
+		}
+		else if (g_other_star[star_num] == 0)
+		{
+			star_count++;
+			g_other_star[star_num]++;
+
+		}
 	}
-
-
-
+	
 
 }
 //ドロー
@@ -168,7 +186,6 @@ void CObjOtherStar::Draw()
 	src.m_right = 100.0f;
 	src.m_bottom = 100.0f;
 
-	size++;
 	if (hit_s->CheckObjNameHit(OBJ_ANCER) != nullptr)
 	{
 		//表示位置の設定
