@@ -151,18 +151,9 @@ void CObjThirdStar::Action()
 		hero_flag = false;
 
 		ThStar_Reco += 1; //3等星酸素回復用カウント
+		g_third_star++;
+		star_count++;
 
-		if (g_third_star[star_num] != 0)
-		{
-			g_third_star[32]++;
-			star_count++;
-		}
-		else if (g_third_star[star_num] == 0)
-		{
-			star_count++;
-			g_third_star[star_num]++;
-
-		}
 	}
 
 
