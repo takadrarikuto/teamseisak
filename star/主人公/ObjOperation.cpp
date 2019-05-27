@@ -64,6 +64,6 @@ void CObjOperation::Draw()
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
 
-	Draw::Draw(16, &src, &dst, c, 0.0f);
+	Draw::Draw(17, &src, &dst, c, 0.0f);
 
 }
