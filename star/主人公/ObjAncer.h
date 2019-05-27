@@ -52,9 +52,10 @@ private:
 	float rope_time; //ロープ飛距離調整
 
 	bool ancer_flag; //アンカー移動フラグ
-	bool ancer_Prevent_doublepress; //連続発射防止フラグ
 
 	int A_event; //イベントタイム処理
 	int Ev_ancer; //イベント時アンカー処理
+
+	bool Ancer_dabletapp; //二度押し対策用フラグ
 
 };

@@ -15,6 +15,7 @@ using namespace GameL;
 extern bool Event_on;
 bool MAncer = false;
 bool AncerReset = false; //測定リセットフラグ
+bool MAncer_dabletapp = false; //二度押し対策フラグ
 
 //イニシャライズ
 void CObjMeasurementAncer::Init()
@@ -84,7 +85,7 @@ void CObjMeasurementAncer::Action()
 	//画面移動時起動防止用
 	if (time_co > 30)
 	{
-		if (m_mous_l == true && MAncer == false)
+		if (m_mous_l == true && MAncer == false && MAncer_dabletapp == false)
 		{
 			Ancer_flag = true;
 		}
@@ -96,13 +97,14 @@ void CObjMeasurementAncer::Action()
 	else
 	{
 		m_mous_l = false;
+		MAncer_dabletapp = false;
 	}
 
 	if (Ancer_flag == true)
 	{
 		m_vfy -= 10.0f;
 	}
-	else if (Ancer_flag == false)
+	else if (Ancer_flag == false || MAncer_dabletapp == true)
 	{
 		m_pafy = 535.0f;
 		MAncer = false;
