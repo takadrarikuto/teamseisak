@@ -6,6 +6,7 @@
 #include "GameHead.h"
 #include "ObjStarPresent.h"
 extern int lever;
+extern int;
 int crick = 0;
 int cenge = 0;
 
@@ -1018,8 +1019,8 @@ void CObjStarPresent::Draw()
 				}
 
 			}
-			swprintf_s(see, L"現在ページ数%d/最大ページ数%d", page, pagemax);
-			Font::StrDraw(see, 530, 5, 18, c);
-
+			/*swprintf_s(see, L"現在ページ数%d/最大ページ数%d", page, pagemax);
+			Font::StrDraw(see, 530, 5, 18, c);*/
+			
 			
 }
