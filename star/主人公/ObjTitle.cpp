@@ -83,8 +83,8 @@ void CObjTitle::Draw()
 	//切り取り位置の位置
 	src.m_top = 0.0;
 	src.m_left = 0.0f;
-	src.m_right = 900.0f;
-	src.m_bottom = 700.0f;
+	src.m_right = 1280.0f;
+	src.m_bottom = 907.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f;

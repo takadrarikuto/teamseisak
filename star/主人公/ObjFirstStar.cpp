@@ -100,6 +100,8 @@ void CObjFirstStar::Action()
 	m_py += m_vy;
 
 
+
+
 	//自身のHitBoxを持ってくる
 	CHitBox* hit_s = Hits::GetHitBox(this);
 
@@ -115,7 +117,14 @@ void CObjFirstStar::Action()
 	if (hit_s->CheckObjNameHit(OBJ_ANCER) != nullptr)
 	{
 		m_px = ax - 13;
-		m_py = ay - 45;
+		m_py = ay - 50;
+		ancer_flag = true;
+		//主人公の当たり判定に当たると主人公フラグをtrueにし、星の数をカウント
+		if (hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
+		{
+			hero_flag = true;
+		}
+
 	}
 
 	//画面外に出たら星を削除
@@ -125,7 +134,6 @@ void CObjFirstStar::Action()
 		Hits::DeleteHitBox(this); //HitBox削除
 
 	}
-	
 	//アンカーに当たっていなければy軸が350の位置で星を削除
 	if (ancer_flag == false)
 	{
@@ -157,7 +165,6 @@ void CObjFirstStar::Action()
 
 		}
 	}
-
 
 }
 //ドロー
