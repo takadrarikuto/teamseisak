@@ -75,13 +75,13 @@ void CObjStarCount::Draw()
 
 	//酸素確認用カウント表示
 	swprintf_s(strFis, L"1等星の数×%2d/%d個", FiStar_Reco, FiStar_Reco_max);
-	Font::StrDraw(strFis, 10, 10, 20, c);
+	Font::StrDraw(strFis, 10, 510, 20, c);
 
 	swprintf_s(strFos, L"2等星の数×%2d/%d個", SeStar_Reco, SeStar_Reco_max);
-	Font::StrDraw(strFos, 200, 10, 20, c);
+	Font::StrDraw(strFos, 10, 530, 20, c);
 
 	swprintf_s(strOts, L"3等星の数×%2d/%d個", ThStar_Reco, ThStar_Reco_max);
-	Font::StrDraw(strOts, 400, 10, 20, c);
+	Font::StrDraw(strOts, 10, 550, 20, c);
 
 
 }

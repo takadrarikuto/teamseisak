@@ -4,6 +4,7 @@
 #include"GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
 
+
 #include"GameHead.h"
 #include"ObjJupiter.h"
 
@@ -25,6 +26,8 @@ void CObjJupiter::Action()
 void CObjJupiter::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
+
+	Font::StrDraw(L"P=ポーズ画面へ", 650, 15, 20, c);
 
 	//背景
 	RECT_F src;//描画元切り取り位置
