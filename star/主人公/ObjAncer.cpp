@@ -126,8 +126,8 @@ void CObjAncer::Action()
 			size = 38;
 			//HitBoxの位置の変更
 			hit_a->SetPos(m_pax, m_pay, size, size - 3);
-
-		}
+			MAncer_dabletapp = false;
+		}	
 		else if (m_mous_l == false)
 		{
 			//アンカーを上げる処理
@@ -157,13 +157,12 @@ void CObjAncer::Action()
 				hitbox_size -= 0.2f;		
 				Ancer_dabletapp = true;
 			}
-		}	
+		}			
 	}
 	else
 	{
 		m_mous_l = false;	
 	}
-
 
 
 	//イベント処理
@@ -215,7 +214,7 @@ void CObjAncer::Action()
 	else if (m_pay > 535.0f)
 	{
 		m_pay = 535.0f;
-		ancer_flag = false;		
+		ancer_flag = false;	
 		Ancer_dabletapp = false;
 	}
 	else if (m_pay < 535.0f)
