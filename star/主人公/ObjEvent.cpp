@@ -83,34 +83,96 @@ void CObjEvent::Action()
 		m_x1 += 10.0f;
 		if (m_x1 > 800.0f)
 		{
-			m_x1 = -800.0f;
+			m_x1 = -790.0f;
 		}
 
 		m_x2 += 10.0f;
 		if (m_x2 > 800.0f)
 		{
-			m_x2 = -800.0f;
+			m_x2 = -790.0f;
 		}
 	}
 	
 	E_Start_co++;
 
-	//イベント開始処理
-	if (E_Start_co == 3600)
+	//ステージ別で開始時間と終了時間を変更
+	if (Event_Conversion == 0)
 	{
-		E_Start = true;
-		Event_on = true;
-		Event_Star = true;
-		E_Start_co++;
+		//イベント開始処理
+		if (E_Start_co == 3600)
+		{
+			E_Start = true;
+			Event_on = true;
+			Event_Star = true;
+			E_Start_co++;
+		}
+		//イベント終了処理
+		else if (E_Start_co == 4200)
+		{
+			E_Start = false;
+			Event_on = false;
+			Event_Star = false;
+			E_Start_co = 0;
+		}
 	}
-	//イベント終了処理
-	else if (E_Start_co == 7200)
+	else if (Event_Conversion == 1)
 	{
-		E_Start = false;
-		Event_on = false;
-		Event_Star = false;
-		E_Start_co = 0;
+		//イベント開始処理
+		if (E_Start_co == 3000)
+		{
+			E_Start = true;
+			Event_on = true;
+			Event_Star = true;
+			E_Start_co++;
+		}
+		//イベント終了処理
+		else if (E_Start_co == 3600)
+		{
+			E_Start = false;
+			Event_on = false;
+			Event_Star = false;
+			E_Start_co = 0;
+		}
 	}
+	else if (Event_Conversion == 2)
+	{
+		//イベント開始処理
+		if (E_Start_co == 2400)
+		{
+			E_Start = true;
+			Event_on = true;
+			Event_Star = true;
+			E_Start_co++;
+		}
+		//イベント終了処理
+		else if (E_Start_co == 3600)
+		{
+			E_Start = false;
+			Event_on = false;
+			Event_Star = false;
+			E_Start_co = 0;
+		}
+	}
+	else if (Event_Conversion == 3)
+	{
+		//イベント開始処理
+		if (E_Start_co == 900)
+		{
+			E_Start = true;
+			Event_on = true;
+			Event_Star = true;
+			E_Start_co++;
+		}
+		//イベント終了処理
+		else if (E_Start_co == 1800)
+		{
+			E_Start = false;
+			Event_on = false;
+			Event_Star = false;
+			E_Start_co = 0;
+		}
+	}
+
 
 	
 }

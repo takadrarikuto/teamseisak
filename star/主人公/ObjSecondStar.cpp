@@ -15,6 +15,8 @@ extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
 extern int g_second_star;
 extern int star_count;
+extern int SeStar_Reco;
+
 
 CObjSecondStar::CObjSecondStar(float x)
 {
@@ -47,23 +49,23 @@ void CObjSecondStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 1.5f;
+			m_vx = 2.5f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = -1.5f;
+			m_vx = -2.5f;
 		}
 	}
 	else if (Event_Conversion == 1)
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 1.5f;
+			m_vx = 2.5f;
 			m_vy = 0.0f;
 		}
 		else if (Event_Star == true)
 		{		
-			m_vx = 1.5f;
+			m_vx = 2.5f;
 			m_vy = 0.5f;
 		}
 	}
@@ -71,12 +73,12 @@ void CObjSecondStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 1.5f;
+			m_vx = 2.5f;
 			m_vy = 0.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = -2.5f;
+			m_vx = -3.5f;
 			m_vy = -0.5f;
 		}
 	}
@@ -84,11 +86,11 @@ void CObjSecondStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 1.5f;
+			m_vx = 2.5f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = 3.5f;
+			m_vx = 4.5f;
 		}
 	}
 
@@ -147,8 +149,17 @@ void CObjSecondStar::Action()
 		ancer_flag = false;
 		hero_flag = false;
 
-		g_second_star++;
-		star_count++;
+		SeStar_Reco += 1; //2等星酸素回復用カウント
+
+		if (g_second_star[star_num] != 0)
+		{
+			g_second_star[32]++;
+			star_count++;
+		}
+		else if (g_second_star[star_num] == 0)
+		{
+			star_count++;
+			g_second_star[star_num]++;
 
 	}
 

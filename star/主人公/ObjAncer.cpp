@@ -132,6 +132,7 @@ void CObjAncer::Action()
 		{
 			//アンカーを上げる処理
 			//アンカー発射時間とロープ発射時間が0じゃない時
+			MAncer_dabletapp = true;
 			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
 			{
 				m_vy -= 9.0f; //アンカー移動
@@ -142,6 +143,7 @@ void CObjAncer::Action()
 				hitbox_size += 0.2f;
 				ancer_time -= 1.0f;
 				rope_time += 1.0f;
+				Ancer_dabletapp = true;
 			}
 			//アンカーを下げる処理
 			//アンカー発射時間とロープ発射時間が0の時にかつアンカーフラグがtrueの時
@@ -152,14 +154,14 @@ void CObjAncer::Action()
 				m_sizey += 0.25f;
 				m_sizex += 0.25f;
 				size += 0.35f;
-				hitbox_size -= 0.2f;
+				hitbox_size -= 0.2f;		
+				Ancer_dabletapp = true;
 			}
 		}	
 	}
 	else
 	{
 		m_mous_l = false;	
-		
 	}
 
 
@@ -215,13 +217,10 @@ void CObjAncer::Action()
 		m_pay = 535.0f;
 		ancer_flag = false;		
 		Ancer_dabletapp = false;
-		MAncer_dabletapp = false;
 	}
 	else if (m_pay < 535.0f)
 	{
 		ancer_flag = true;
-		Ancer_dabletapp = true;
-		MAncer_dabletapp = true;
 	}
 
 	//ロープ
