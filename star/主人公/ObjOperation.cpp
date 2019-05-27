@@ -4,7 +4,7 @@
 #include "GameL\DrawFont.h"
 #include"GameL\SceneObjManager.h"
 
-#include "ObjOperation.h"
+#include "CObjOperation.h"
 #include "GameHead.h"
 
 //使用するネームスペース
@@ -16,7 +16,6 @@ void CObjOperation::Init()
 	m_start_flag = false;
 	m_mous_x = 0.0f;
 	m_mous_y = 0.0f;
-
 }
 
 void CObjOperation::Action()
@@ -27,13 +26,13 @@ m_mous_l = Input::GetMouButtonL();
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
-	if (m_mous_x > 0 && m_mous_x < 800 && m_mous_y> 0 && m_mous_y < 600)
+	if (m_mous_x > 620 && m_mous_x < 730 && m_mous_y>480 && m_mous_y < 520)
 	{
 		if (m_mous_l == true)
 		{
 			if (m_start_flag == true)
 			{
-				Scene::SetScene(new CSceneStageselect()); //宇宙船選択画面に移動
+				Scene::SetScene(new CSceneStageselect()); //操作説明選択画面に移動
 			}
 		}
 		else
@@ -41,7 +40,7 @@ m_mous_l = Input::GetMouButtonL();
 			m_start_flag = true;
 		}
 	}
-	
+
 }
 
 void CObjOperation::Draw()
