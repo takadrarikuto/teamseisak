@@ -43,9 +43,6 @@
     <ClCompile Include="GameL\SceneManager.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="CObjOperation.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClCompile>
     <ClCompile Include="ObjEvent.cpp">
       <Filter>ソースファイル\イベント</Filter>
     </ClCompile>
@@ -212,6 +209,8 @@
     <ClCompile Include="SceneStarPicbook.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
+    <ClCompile Include="StarData.cpp" />
+    <ClCompile Include="ObjOperation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -340,8 +339,8 @@
     <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
-      <ClInclude Include="ObjPose.h">
-   <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    <ClInclude Include="ObjPose.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjEvent.h">
       <Filter>ヘッダーファイル\イベント</Filter>
@@ -464,6 +463,9 @@
       <Filter>画像</Filter>
     </Image>
     <Image Include="画像\ブラックタイル.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\フィールド背景木星.png">
       <Filter>画像</Filter>
     </Image>
     <Image Include="画像\タイトル.png">

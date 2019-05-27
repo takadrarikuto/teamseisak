@@ -114,7 +114,7 @@ struct UserData
 #include "ObjFourthStar.h"
 #include "ObjOtherStar.h"
 #include "ObjBackground.h"
-#include "CObjOperation.h"
+#include "ObjOperation.h"
 #include "ObjGamekuria.h"
 #include "CObjStarPicbook.h"
 #include "ObjStarPresent.h"
@@ -153,5 +153,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneStageselect
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------
