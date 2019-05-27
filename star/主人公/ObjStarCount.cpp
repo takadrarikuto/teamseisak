@@ -17,7 +17,6 @@ extern bool Star_Recovery;
 extern bool FiStar_Recovery;
 extern bool FoStar_Recovery;
 extern bool OtStar_Recovery;
-extern int g_mars_star[33];
 extern int star_count;
 int FiStar_Reco = 0; //1“™¯‚ğˆê’è‚Ì””‚¦‚é
 int FoStar_Reco = 0; //2“™¯‚ğˆê’è‚Ì””‚¦‚é

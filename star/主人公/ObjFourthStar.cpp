@@ -13,7 +13,7 @@ using namespace GameL;
 
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
-extern int g_fouth_star[16];
+extern int g_fouth_star;
 extern int star_count;
 extern int FoStar_Reco;
 
@@ -150,17 +150,9 @@ void CObjFourthStar::Action()
 
 		FoStar_Reco += 1; //2等星酸素回復用カウント
 
-		if (g_fouth_star[star_num] != 0)
-		{
-			g_fouth_star[32]++;
-			star_count++;
-		}
-		else if (g_fouth_star[star_num] == 0)
-		{
-			star_count++;
-			g_fouth_star[star_num]++;
+		g_fouth_star++;
+		star_count++;
 
-		}
 	}
 
 

@@ -13,7 +13,7 @@ using namespace GameL;
 
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
-extern int g_first_star[5];
+extern int g_first_star;
 extern int star_count;
 extern int FiStar_Reco;
 
@@ -153,17 +153,8 @@ void CObjFirstStar::Action()
 
 		FiStar_Reco += 1; //1等星酸素回復用カウント
 
-		if (g_first_star[star_num] != 0)
-		{
-			g_first_star[32]++;
-			star_count++;
-		}
-		else if (g_first_star[star_num] == 0)
-		{
-			star_count++;
-			g_first_star[star_num]++;
-
-		}
+		g_first_star++;
+		star_count++;
 	}
 
 }
