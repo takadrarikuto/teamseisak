@@ -15,7 +15,7 @@ using namespace GameL;
 extern bool Event_on;
 extern bool MAncer;
 extern bool AncerReset;
-
+extern bool MAncer_dabletapp;
 
 //イニシャライズ
 void CObjAncer::Init()
@@ -65,8 +65,6 @@ void CObjAncer::Init()
 	//画面移動時起動防止用初期化
 	time_co = 0;
 
-	//連続発射防止フラグ初期化
-	ancer_Prevent_doublepress = false;
 
 	//イベントタイム処理初期化
 	A_event = 0;
@@ -74,6 +72,8 @@ void CObjAncer::Init()
 	//イベント時アンカー処理初期化
 	Ev_ancer = 0;
 
+	//二度押し対策用フラグ
+	Ancer_dabletapp = false;
 }
 
 //アクション
@@ -113,15 +113,22 @@ void CObjAncer::Action()
 		AncerReset = false;
 	}
 
+
 	//画面移動時起動防止用
 	if (time_co > 30)
 	{
-		if (m_mous_l == true && ancer_Prevent_doublepress == false && MAncer == false)
+		if (m_mous_l == true && MAncer == false && Ancer_dabletapp == false)
 		{
 			ancer_time += 1.0f; //アンカー発射時間増加
 			rope_time -= 1.0f; //ロープ発射時間増加
+			m_sizey = 0.0f;
+			m_sizex = 0.0f;
+			size = 38;
+			//HitBoxの位置の変更
+			hit_a->SetPos(m_pax, m_pay, size, size - 3);
+
 		}
-		else if (m_mous_l == false || MAncer == true)
+		else if (m_mous_l == false)
 		{
 			//アンカーを上げる処理
 			//アンカー発射時間とロープ発射時間が0じゃない時
@@ -147,13 +154,14 @@ void CObjAncer::Action()
 				size += 0.35f;
 				hitbox_size -= 0.2f;
 			}
-
 		}	
 	}
 	else
 	{
 		m_mous_l = false;	
+		
 	}
+
 
 
 	//イベント処理
@@ -171,8 +179,8 @@ void CObjAncer::Action()
 
 	if (m_pry < 400.0f && A_event > Event_Time && Ev_ancer == 4)
 	{
-		ancer_time = 0.0f;
-		rope_time = 0.0f;
+		ancer_time = Ancer_Rope_InitialTime;
+		rope_time = Ancer_Rope_InitialTime;
 	}
 	
 
@@ -205,13 +213,15 @@ void CObjAncer::Action()
 	else if (m_pay > 535.0f)
 	{
 		m_pay = 535.0f;
-		ancer_flag = false;
-		ancer_Prevent_doublepress = false;
+		ancer_flag = false;		
+		Ancer_dabletapp = false;
+		MAncer_dabletapp = false;
 	}
 	else if (m_pay < 535.0f)
 	{
 		ancer_flag = true;
-		ancer_Prevent_doublepress = true;
+		Ancer_dabletapp = true;
+		MAncer_dabletapp = true;
 	}
 
 	//ロープ
@@ -240,7 +250,7 @@ void CObjAncer::Action()
 
 	
 	//HitBoxの位置の変更
-	hit_a->SetPos(m_pax + hitbox_size - 3, m_pay - 40, size,size);
+	hit_a->SetPos(m_pax + hitbox_size, m_pay - 40, size + hitbox_size,size);
 	
 	
 }

@@ -11,6 +11,11 @@
 
 //使用するネームスペース
 using namespace GameL;
+extern int star_count;
+extern int FiStar_Reco; //1等星を一定の数数える
+extern int FoStar_Reco; //2等星を一定の数数える
+extern int OtStar_Reco; //3等星を一定の数数える
+
 
 //イニシャライズ
 void CObjGameKuria::Init()
@@ -18,7 +23,6 @@ void CObjGameKuria::Init()
 	m_mous_l = false;
 	m_start_flag = false;
 
-	((UserData*)Save::GetData())->star_co;
 }
 
 //アクション
@@ -26,7 +30,11 @@ void CObjGameKuria::Action()
 {
 	m_mous_l = Input::GetMouButtonL();
 
-	((UserData*)Save::GetData())->star_co = 0;
+	//星カウント系初期化
+	star_count = 0;
+	FiStar_Reco = 0;
+	FoStar_Reco = 0;
+	OtStar_Reco = 0;
 
 	if (m_mous_l == true)
 	{
