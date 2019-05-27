@@ -13,7 +13,11 @@ using namespace GameL;
 
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
-extern int g_other_star[15];
+
+
+
+extern int g_other_star;
+
 extern int star_count;
 
 
@@ -151,17 +155,9 @@ void CObjOtherStar::Action()
 		hero_flag = false;
 
 
-		if (g_other_star[star_num] != 0)
-		{
-			g_other_star[32]++;
-			star_count++;
-		}
-		else if (g_other_star[star_num] == 0)
-		{
-			star_count++;
-			g_other_star[star_num]++;
+		star_count++;
+		g_other_star++;
 
-		}
 	}
 	
 

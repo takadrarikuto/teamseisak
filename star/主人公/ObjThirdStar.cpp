@@ -13,7 +13,7 @@ using namespace GameL;
 
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
-extern int g_third_star[17];
+extern int g_third_star;
 extern int star_count;
 extern int ThStar_Reco;
 

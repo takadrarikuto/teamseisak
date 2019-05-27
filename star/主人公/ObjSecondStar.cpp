@@ -13,7 +13,7 @@ using namespace GameL;
 
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
-extern int g_second_star[40];
+extern int g_second_star;
 extern int star_count;
 extern int SeStar_Reco;
 
@@ -161,7 +161,6 @@ void CObjSecondStar::Action()
 			star_count++;
 			g_second_star[star_num]++;
 
-		}
 	}
 
 
