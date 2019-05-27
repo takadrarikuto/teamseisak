@@ -118,9 +118,6 @@
     <ClCompile Include="SceneVenus.cpp">
       <Filter>ソースファイル\ステージ</Filter>
     </ClCompile>
-    <ClCompile Include="ObjQTE.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClCompile>
     <ClCompile Include="SceneOperation.cpp">
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
@@ -209,6 +206,7 @@
     <ClCompile Include="SceneStarPicbook.cpp">
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
+    <ClCompile Include="StarData.cpp" />
     <ClCompile Include="ObjOperation.h">
       <Filter>ヘッダーファイル</Filter>
     </ClCompile>
@@ -410,6 +408,7 @@
       <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjPose.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
@@ -464,6 +463,9 @@
       <Filter>画像</Filter>
     </Image>
     <Image Include="画像\ブラックタイル.png">
+      <Filter>画像</Filter>
+    </Image>
+    <Image Include="画像\フィールド背景木星.png">
       <Filter>画像</Filter>
     </Image>
     <Image Include="画像\タイトル.png">
