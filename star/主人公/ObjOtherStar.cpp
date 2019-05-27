@@ -19,7 +19,6 @@ extern int Event_Conversion; //イベントエリア切り替え
 extern int g_other_star;
 
 extern int star_count;
-extern int OtStar_Reco;
 
 
 CObjOtherStar::CObjOtherStar(float x)
@@ -55,23 +54,23 @@ void CObjOtherStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 2.0f;
+			m_vx = 1.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = -2.0f;
+			m_vx = -1.0f;
 		}
 	}
 	else if (Event_Conversion == 1)
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 2.0f;
+			m_vx = 1.0f;
 			m_vy = 0.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = 2.0f;
+			m_vx = 1.0f;
 			m_vy = 0.5f;
 		}
 	}
@@ -79,12 +78,12 @@ void CObjOtherStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 2.0f;
+			m_vx = 1.0f;
 			m_vy = 0.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = -3.0f;
+			m_vx = -2.0f;
 			m_vy = -0.5f;
 		}
 	}
@@ -92,11 +91,11 @@ void CObjOtherStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 2.0f;
+			m_vx = 1.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = 4.0f;
+			m_vx = 3.0f;
 		}
 	}
 
@@ -155,7 +154,6 @@ void CObjOtherStar::Action()
 		ancer_flag = false;
 		hero_flag = false;
 
-		OtStar_Reco += 1; //3等星酸素回復用カウント
 
 		star_count++;
 		g_other_star++;

@@ -15,12 +15,13 @@ using namespace GameL;
 bool star_flag = false; //星フラグ
 extern bool Star_Recovery;
 extern bool FiStar_Recovery;
-extern bool FoStar_Recovery;
-extern bool OtStar_Recovery;
+extern bool SeStar_Recovery;
+extern bool ThStar_Recovery;
+extern int g_mars_star[33];
 extern int star_count;
 int FiStar_Reco = 0; //1等星を一定の数数える
-int FoStar_Reco = 0; //2等星を一定の数数える
-int OtStar_Reco = 0; //3等星を一定の数数える
+int SeStar_Reco = 0; //2等星を一定の数数える
+int ThStar_Reco = 0; //3等星を一定の数数える
 
 
 //イニシャライズ
@@ -28,8 +29,8 @@ void CObjStarCount::Init()
 {	
 	
 	FiStar_Reco_max = 5; //1等星獲得数確認用最大数設定
-	FoStar_Reco_max = 25; //2等星獲得数確認用最大数設定
-	OtStar_Reco_max = 50; //3等星獲得数確認用最大数設定
+	SeStar_Reco_max = 25; //2等星獲得数確認用最大数設定
+	ThStar_Reco_max = 50; //3等星獲得数確認用最大数設定
 
 }
 
@@ -43,20 +44,20 @@ void CObjStarCount::Action()
 		FiStar_Recovery = true;
 		FiStar_Reco = 0;
 	}
-	else if (FoStar_Reco >= FoStar_Reco_max)
+	else if (SeStar_Reco >= SeStar_Reco_max)
 	{
-		FoStar_Recovery = true;
-		FoStar_Reco = 0;
+		SeStar_Recovery = true;
+		SeStar_Reco = 0;
 	}
-	else if (OtStar_Reco >= OtStar_Reco_max)
+	else if (ThStar_Reco >= ThStar_Reco_max)
 	{
-		OtStar_Recovery = true;
-		OtStar_Reco = 0;
+		ThStar_Recovery = true;
+		ThStar_Reco = 0;
 	}
 
 
 	//クリア画面移動
-	if (star_count >= 100)
+	if (star_count >= 300)
 	{
 		Scene::SetScene(new CSceneGameKuria());
 	}
@@ -76,12 +77,11 @@ void CObjStarCount::Draw()
 	swprintf_s(strFis, L"1等星の数×%2d/%d個", FiStar_Reco, FiStar_Reco_max);
 	Font::StrDraw(strFis, 10, 10, 20, c);
 
-	swprintf_s(strFos, L"2等星の数×%2d/%d個", FoStar_Reco, FoStar_Reco_max);
+	swprintf_s(strFos, L"2等星の数×%2d/%d個", SeStar_Reco, SeStar_Reco_max);
 	Font::StrDraw(strFos, 200, 10, 20, c);
 
-	swprintf_s(strOts, L"3等星の数×%2d/%d個", OtStar_Reco, OtStar_Reco_max);
+	swprintf_s(strOts, L"3等星の数×%2d/%d個", ThStar_Reco, ThStar_Reco_max);
 	Font::StrDraw(strOts, 400, 10, 20, c);
-
 
 
 }
