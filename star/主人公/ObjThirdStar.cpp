@@ -142,6 +142,7 @@ void CObjThirdStar::Action()
 			Hits::DeleteHitBox(this); //HitBox削除
 		}
 	}
+
 	//アンカーに当たっている状態で主人公に当たると削除
 	else if (ancer_flag == true && hero_flag == true)
 	{
@@ -164,8 +165,7 @@ void CObjThirdStar::Action()
 
 		}
 	}
-
-
+	
 
 
 }
