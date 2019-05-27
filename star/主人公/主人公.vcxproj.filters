@@ -340,8 +340,8 @@
     <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
-      <ClInclude Include="ObjPose.h">
-   <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    <ClInclude Include="ObjPose.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjEvent.h">
       <Filter>ヘッダーファイル\イベント</Filter>
@@ -410,6 +410,9 @@
       <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="ObjPose.h">
+      <Filter>ヘッダーファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">
