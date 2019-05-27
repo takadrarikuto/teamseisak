@@ -83,5 +83,4 @@ void CObjStarCount::Draw()
 	Font::StrDraw(strOts, 400, 10, 20, c);
 
 
-
 }
