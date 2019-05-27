@@ -123,6 +123,10 @@ void CObjAncer::Action()
 			rope_time -= 1.0f; //ロープ発射時間増加
 			m_sizey = 0.0f;
 			m_sizex = 0.0f;
+			size = 38;
+			//HitBoxの位置の変更
+			hit_a->SetPos(m_pax, m_pay, size, size - 3);
+
 		}
 		else if (m_mous_l == false)
 		{
@@ -155,6 +159,7 @@ void CObjAncer::Action()
 	else
 	{
 		m_mous_l = false;	
+		
 	}
 
 
@@ -245,7 +250,7 @@ void CObjAncer::Action()
 
 	
 	//HitBoxの位置の変更
-	hit_a->SetPos(m_pax + hitbox_size - 3, m_pay - 40, size,size);
+	hit_a->SetPos(m_pax + hitbox_size, m_pay - 40, size + hitbox_size,size);
 	
 	
 }
