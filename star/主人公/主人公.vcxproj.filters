@@ -210,6 +210,7 @@
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="StarData.cpp" />
+    <ClCompile Include="ObjOperation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -338,8 +339,8 @@
     <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
-      <ClInclude Include="ObjPose.h">
-   <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    <ClInclude Include="ObjPose.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjEvent.h">
       <Filter>ヘッダーファイル\イベント</Filter>

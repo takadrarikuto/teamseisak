@@ -5,6 +5,7 @@
 #include "GameL\DrawFont.h"
 #include "GameL\Audio.h"
 
+
 #include "GameHead.h"
 #include "ObjTitle.h"
 #include "SceneStageselect.h"
@@ -32,7 +33,7 @@ void CObjTitle::Action()
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
-	if (m_mous_x > 300 && m_mous_x < 480 && m_mous_y>450 && m_mous_y < 475)
+	if (m_mous_x > 307 && m_mous_x < 480 && m_mous_y>440 && m_mous_y < 480)
 	{
 		if (m_mous_l == true)
 		{
@@ -76,8 +77,6 @@ void CObjTitle::Draw()
 	//•`‰æƒJƒ‰[î•ñ
 	float c[4] = { 1.0f,1.0f,1.0f,100.0f };
 
-	
-
 	RECT_F src; //•`‰æŒ³Ø‚èŽæ‚èˆÊ’u
 	RECT_F dst; //•`‰ææ•\Ž¦ˆÊ’u
 
@@ -101,10 +100,10 @@ void CObjTitle::Draw()
 	src.m_bottom = 67.0f;
 
 	//¯}ŠÓ‚Ì˜g‚ð•`‰æ
-	dst.m_top = 500.0f;
-	dst.m_left = 270.0f;
-	dst.m_right = 430.0f;
-	dst.m_bottom =550.0f;
+	dst.m_top = 440.0f;
+	dst.m_left = 307.0f;
+	dst.m_right = 480.0f;
+	dst.m_bottom =480.0f;
 	Draw::Draw(9, &src, &dst, c, 0.0f);
 
 }
