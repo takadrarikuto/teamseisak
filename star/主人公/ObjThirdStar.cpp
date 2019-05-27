@@ -15,6 +15,7 @@ extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
 extern int g_third_star;
 extern int star_count;
+extern int ThStar_Reco;
 
 
 CObjThirdStar::CObjThirdStar(float x)
@@ -48,23 +49,23 @@ void CObjThirdStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 1.0f;
+			m_vx = 2.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = -1.0f;
+			m_vx = -2.0f;
 		}
 	}
 	else if (Event_Conversion == 1)
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 1.0f;
+			m_vx = 2.0f;
 			m_vy = 0.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = 1.0f;
+			m_vx = 2.0f;
 			m_vy = 0.5f;
 		}
 
@@ -73,12 +74,12 @@ void CObjThirdStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 1.0f;
+			m_vx = 2.0f;
 			m_vy = 0.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = -2.0f;
+			m_vx = -3.0f;
 			m_vy = -0.5f;
 		}
 	}
@@ -86,11 +87,11 @@ void CObjThirdStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 1.0f;
+			m_vx = 2.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = 3.0f;
+			m_vx = 4.0f;
 		}
 	}
 
@@ -149,8 +150,19 @@ void CObjThirdStar::Action()
 		ancer_flag = false;
 		hero_flag = false;
 
-		g_third_star++;
-		star_count++;
+		ThStar_Reco += 1; //3等星酸素回復用カウント
+
+		if (g_third_star[star_num] != 0)
+		{
+			g_third_star[32]++;
+			star_count++;
+		}
+		else if (g_third_star[star_num] == 0)
+		{
+			star_count++;
+			g_third_star[star_num]++;
+
+		}
 	}
 
 

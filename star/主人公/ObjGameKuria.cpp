@@ -13,8 +13,8 @@
 using namespace GameL;
 extern int star_count;
 extern int FiStar_Reco; //1等星を一定の数数える
-extern int FoStar_Reco; //2等星を一定の数数える
-extern int OtStar_Reco; //3等星を一定の数数える
+extern int SeStar_Reco; //2等星を一定の数数える
+extern int ThStar_Reco; //3等星を一定の数数える
 
 
 //イニシャライズ
@@ -33,8 +33,8 @@ void CObjGameKuria::Action()
 	//星カウント系初期化
 	star_count = 0;
 	FiStar_Reco = 0;
-	FoStar_Reco = 0;
-	OtStar_Reco = 0;
+	SeStar_Reco = 0;
+	ThStar_Reco = 0;
 
 	if (m_mous_l == true)
 	{

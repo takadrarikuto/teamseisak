@@ -15,7 +15,6 @@ extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
 extern int g_fouth_star;
 extern int star_count;
-extern int FoStar_Reco;
 
 
 CObjFourthStar::CObjFourthStar(float x)
@@ -48,23 +47,23 @@ void CObjFourthStar::Action()
 	{
 		if (Event_Star == false)
 		{		
-			m_vx = 2.5f;
+			m_vx = 1.5f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = -2.5f;			
+			m_vx = -1.5f;
 		}
 	}
 	else if (Event_Conversion == 1)
 	{
 		if (Event_Star == false)
 		{			
-			m_vx = 2.5f;
+			m_vx = 1.5f;
 			m_vy = 0.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = 2.5f;
+			m_vx = 1.5f;
 			m_vy = 0.5f;
 		}
 
@@ -73,12 +72,12 @@ void CObjFourthStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 2.5f;
+			m_vx = 1.5f;
 			m_vy = 0.0f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = -3.5f;
+			m_vx = -2.5f;
 			m_vy = -0.5f;
 		}
 	}
@@ -86,11 +85,11 @@ void CObjFourthStar::Action()
 	{
 		if (Event_Star == false)
 		{
-			m_vx = 2.5f;
+			m_vx = 1.5f;
 		}
 		else if (Event_Star == true)
 		{
-			m_vx = 4.5f;
+			m_vx = 3.5f;
 		}
 	}
 
@@ -148,7 +147,6 @@ void CObjFourthStar::Action()
 		ancer_flag = false;
 		hero_flag = false;
 
-		FoStar_Reco += 1; //2等星酸素回復用カウント
 
 		g_fouth_star++;
 		star_count++;
