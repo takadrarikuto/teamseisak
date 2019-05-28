@@ -27,12 +27,6 @@ void CObjAncer::Init()
 	//アンカー初期化
 	m_pax = 433.5f;
 	m_pay = 535.0f;
-	//アンカーサイズ変更
-	m_sizex = 0;
-	m_sizey = 0;
-	size = 38;
-	//ヒットボックスサイズ調整
-	hitbox_size = 0.0f;
 	//ロープ
 	//m_pry = 490.0f;
 	m_prx = 448.0f;
@@ -50,7 +44,7 @@ void CObjAncer::Init()
 	m_mous_l = false;
 	
 	//当たり判定用のHitBoxを作成
-	Hits::SetHitBox(this, m_pax, m_pay, size -3, size-3, ELEMENT_ANCER, OBJ_ANCER, 13);
+	Hits::SetHitBox(this, m_pax, m_pay, 30, 40, ELEMENT_ANCER, OBJ_ANCER, 13);
 
 	//ロープ描画用初期化
 	rope = 0.0f;
@@ -121,11 +115,6 @@ void CObjAncer::Action()
 		{
 			ancer_time += 1.0f; //アンカー発射時間増加
 			rope_time -= 1.0f; //ロープ発射時間増加
-			m_sizey = 0.0f;
-			m_sizex = 0.0f;
-			size = 38;
-			//HitBoxの位置の変更
-			hit_a->SetPos(m_pax, m_pay, size, size - 3);
 			MAncer_dabletapp = false;
 		}	
 		else if (m_mous_l == false)
@@ -137,10 +126,6 @@ void CObjAncer::Action()
 			{
 				m_vy -= 9.0f; //アンカー移動
 				rope += 13.0f; //ロープ長さ調整	
-				m_sizey -= 0.25f;
-				m_sizex -= 0.25f;
-				size -= 0.35f;
-				hitbox_size += 0.2f;
 				ancer_time -= 1.0f;
 				rope_time += 1.0f;	
 				Ancer_dabletapp = true;
@@ -151,10 +136,6 @@ void CObjAncer::Action()
 			{
 				m_vy += 9.0f; //アンカー移動
 				rope -= 13.0f; //ロープ長さ調整
-				m_sizey += 0.25f;
-				m_sizex += 0.25f;
-				size += 0.35f;
-				hitbox_size -= 0.2f;	
 				Ancer_dabletapp = true;
 			}
 		}			
@@ -248,7 +229,7 @@ void CObjAncer::Action()
 
 	
 	//HitBoxの位置の変更
-	hit_a->SetPos(m_pax + hitbox_size, m_pay - 40, size + hitbox_size,size);
+	hit_a->SetPos(m_pax, m_pay - 40);
 	
 	
 }
@@ -309,9 +290,9 @@ void CObjAncer::Draw()
 	srca.m_bottom = 200.0f;
 
 	//表示位置の設定
-	dsta.m_top = 0.0f + m_pay + m_sizey;
-	dsta.m_left = -3.0f + m_pax - m_sizex;
-	dsta.m_right = 38.0f + m_pax + m_sizex;
+	dsta.m_top = 0.0f + m_pay;
+	dsta.m_left = -3.0f + m_pax;
+	dsta.m_right = 38.0f + m_pax;
 	dsta.m_bottom = -60.0f + m_pay;
 
 	Draw::Draw(13, &srca, &dsta, c, 0.0f);
