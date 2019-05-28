@@ -142,7 +142,7 @@ void CObjAncer::Action()
 				size -= 0.35f;
 				hitbox_size += 0.2f;
 				ancer_time -= 1.0f;
-				rope_time += 1.0f;
+				rope_time += 1.0f;	
 				Ancer_dabletapp = true;
 			}
 			//ÉAÉìÉJÅ[Çâ∫Ç∞ÇÈèàóù
@@ -154,7 +154,7 @@ void CObjAncer::Action()
 				m_sizey += 0.25f;
 				m_sizex += 0.25f;
 				size += 0.35f;
-				hitbox_size -= 0.2f;		
+				hitbox_size -= 0.2f;	
 				Ancer_dabletapp = true;
 			}
 		}			
