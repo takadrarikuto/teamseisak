@@ -133,7 +133,7 @@ void CObjAncer::Action()
 			//アンカーを上げる処理
 			//アンカー発射時間とロープ発射時間が0じゃない時
 			MAncer_dabletapp = true;
-			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
+			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime )
 			{
 				m_vy -= 9.0f; //アンカー移動
 				rope += 13.0f; //ロープ長さ調整	
@@ -146,7 +146,7 @@ void CObjAncer::Action()
 			}
 			//アンカーを下げる処理
 			//アンカー発射時間とロープ発射時間が0の時にかつアンカーフラグがtrueの時
-			else if (ancer_flag == true && ancer_time == Ancer_Rope_InitialTime && rope_time == Ancer_Rope_InitialTime)
+			else if (ancer_flag == true && ancer_time == Ancer_Rope_InitialTime && rope_time == Ancer_Rope_InitialTime )
 			{
 				m_vy += 9.0f; //アンカー移動
 				rope -= 13.0f; //ロープ長さ調整

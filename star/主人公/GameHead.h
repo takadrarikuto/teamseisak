@@ -79,7 +79,6 @@ enum HIT_ELEMENTS
 struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
-	int star_co = 0;//星の数カウント
 	int Aitem_co_max = 5; //アイテム個数
 
 };

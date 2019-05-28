@@ -58,10 +58,6 @@ void CObjTitle::Action()
 	{
 		Audio::Start(1);
 	}
-	else
-	{
-		Audio::Stop(1);
-	}
 
 }
 
