@@ -38,6 +38,8 @@ void CObjStarPresent2::Init()
 	time_flag = false;
 	m_mou_time = 0.0f;
 
+	Back_time = 0.0f;
+
 	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
 
@@ -84,6 +86,8 @@ void CObjStarPresent2::Action()
 		Audio::Start(1);
 	}
 
+	Back_time++;
+
 	//¯À‘I‘ð‚Öƒ{ƒ^ƒ“
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
@@ -95,16 +99,20 @@ void CObjStarPresent2::Action()
 			{
 				lever = 0;
 				a_time = 0;
+				Back_time = 0.0f;
+				time_flag = false;
 				Scene::SetScene(new CSceneStarPicbook());
 				return;
 			}
 		}
 	}
 	//‚‚‚ð‰Ÿ‚·‚Æ–ß‚é
-	else if (Input::GetVKey('B') == true)
+	else if (Input::GetVKey('B') == true && Back_time > 60.0f)
 	{
 		lever = 0;
 		a_time = 0;
+		Back_time = 0.0f;
+		time_flag = false;
 		Scene::SetScene(new CSceneStarPicbook());
 	}
 

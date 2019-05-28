@@ -29,7 +29,7 @@ void CObjOperation::Init()
 void CObjOperation::Action()
 {
 	
-m_mous_l = Input::GetMouButtonL();
+	m_mous_l = Input::GetMouButtonL();
 
 	//マウスの位置の取得
 	m_mous_x = (float)Input::GetPosX();
@@ -59,6 +59,8 @@ m_mous_l = Input::GetMouButtonL();
 	if (a_time == 10)
 	{
 		a_time = 0;
+		Back_time = 0.0f;
+		time_flag = false;
 		Scene::SetScene(new CSceneStageselect()); //操作説明選択画面に移動
 
 	}
@@ -73,6 +75,8 @@ m_mous_l = Input::GetMouButtonL();
 	if (Input::GetVKey('B') == true && Back_time > 60.0f)
 	{
 		a_time = 0;
+		Back_time = 0.0f;
+		time_flag = false;
 		Scene::SetScene(new CSceneTitle()); //操作説明選択画面に移動
 	}
 }

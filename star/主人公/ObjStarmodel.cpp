@@ -22,6 +22,8 @@ void CObjStarmodel::Init()
 	time_flag = false;
 	m_mou_time = 0.0f;
 
+	Back_time = 0.0f;
+
 	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
 
@@ -68,6 +70,7 @@ void CObjStarmodel::Action()
 		Audio::Start(1);
 	}
 
+	Back_time++;
 
 	//¯À‘I‘ğ‚Öƒ{ƒ^ƒ“
 	// left				 right            top            bottom         
@@ -80,16 +83,20 @@ void CObjStarmodel::Action()
 			{
 				lever = 0;
 				a_time = 0;
+				Back_time = 0.0f;
+				time_flag = false;
 				Scene::SetScene(new CSceneStarPicbook());
 				return;
 			}
 		}
 	}
 	//‚‚‚ğ‰Ÿ‚·‚Æ–ß‚é
-	else if (Input::GetVKey('B') == true)
+	else if (Input::GetVKey('B') == true && Back_time > 60.0f)
 	{
 		lever = 0;
 		a_time = 0;
+		Back_time = 0.0f;
+		time_flag = false;
 		Scene::SetScene(new CSceneStarPicbook());
 
 	}
@@ -103,6 +110,9 @@ void CObjStarmodel::Action()
 			if (starmodel_flag == true && lever < 24)
 			{
 				lever += 1;
+				a_time = 0;
+				Back_time = 0.0f;
+				time_flag = false;
 				ver = VER_start; //•¶šŠÔŠu‰Šú‰»
 				starmodel_flag = false;
 			}
@@ -121,6 +131,9 @@ void CObjStarmodel::Action()
 			if (starmodel_flag == true && lever > 13)
 			{
 				lever -= 1;
+				a_time = 0;
+				Back_time = 0.0f;
+				time_flag = false;
 				ver = VER_start; //•¶šŠÔŠu‰Šú‰»
 				starmodel_flag = false;
 			}

@@ -33,5 +33,6 @@ private:
 	int a_time;
 	bool time_flag;
 	float m_mou_time; //連続選択防止タイム
+	float Back_time; //連続移動防止タイム
 
 };

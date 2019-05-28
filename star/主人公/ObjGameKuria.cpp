@@ -55,6 +55,7 @@ void CObjGameKuria::Action()
 	if (a_time == 10)
 	{
 		a_time = 0;
+		time_flag = false;
 		Scene::SetScene(new CSceneTitle());
 	}
 	else if (a_time == 1)
@@ -68,24 +69,21 @@ void CObjGameKuria::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"ゲームクリア", 240, 200, 50, c);
-	Font::StrDraw(L"左クリックでタイトルへ", 130, 400, 50, c);
-
 	RECT_F src;//描画元切り取り位置
 	RECT_F dst;//描画先表示位置
 
 	//切り取り位置の設定
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 190.0f;
-	src.m_bottom = 200.0f;
+	src.m_right = 700.0f;
+	src.m_bottom = 600.0f;
 
 
 	//表示位置の設定
 	dst.m_top = 0.0f;
 	dst.m_left = 0.0f;
-	dst.m_right = 64.0f;
-	dst.m_bottom = 64.0f;
+	dst.m_right = 800.0f;
+	dst.m_bottom = 600.0f;
 
 	//描画
 	Draw::Draw(11, &src, &dst, c, 0.0f);
