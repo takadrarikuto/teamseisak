@@ -95,12 +95,8 @@ void CObjFirstStar::Action()
 		}
 	}
 
-
 	m_px += m_vx;
 	m_py += m_vy;
-
-
-
 
 	//©g‚ÌHitBox‚ğ‚Á‚Ä‚­‚é
 	CHitBox* hit_s = Hits::GetHitBox(this);

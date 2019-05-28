@@ -8,7 +8,7 @@
 extern int lever;
 extern int crick;
 extern int cenge;
-
+extern int star_count;
 
 void CObjStarPresent8::Init()
 {
@@ -237,7 +237,8 @@ void CObjStarPresent8::Draw()
 		}
 	}
 
-
+	if (star_count >=400)
+	{
 	//					　　	            X　 Y　 大きさ
 	Font::StrDraw(L"アクベンス ", 20, 330 + t * l, 30, c);
 	l++;
@@ -893,6 +894,11 @@ void CObjStarPresent8::Draw()
 		}
 
 	}
-
+	}
+else
+	{
+	ver = 0;
+	Font::StrDraw(L"この星々を閲覧するには合計で星を400個集めてください", left_end, IO_y + Interval_y * ver, font_size, c);
+	}
 
 }
