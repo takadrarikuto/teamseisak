@@ -24,4 +24,5 @@ private:
 	int a_time;
 	bool time_flag;
 
+	float Back_time; //˜A‘±ˆÚ“®–h~ƒ^ƒCƒ€
 };

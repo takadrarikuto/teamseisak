@@ -16,6 +16,7 @@ void CObjStarPicbook::Init()
 	m_mou_y = 0.0f;
 
 	Audio_co = 0;
+	m_mou_time = 0.0f;
 
 	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
@@ -30,6 +31,18 @@ void CObjStarPicbook::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	//˜A‘±ˆÚ“®–hŽ~
+	if (m_mou_time == 60.0f)
+	{
+		;
+	}
+	else if(m_mou_time < 60.0f)
+	{
+		m_mou_time++;
+		m_mou_l = false;
+	}
+
+	//SE”­¶ˆ—
 	if (m_mou_l == true)
 	{
 		Audio_co++;
@@ -39,6 +52,7 @@ void CObjStarPicbook::Action()
 		Audio_co = 0;
 	}
 
+	//SE”­¶ˆ—
 	if (Audio_co == 1)
 	{
 		Audio::Start(1);
@@ -58,6 +72,7 @@ void CObjStarPicbook::Action()
 			if (a_time == 10)
 			{
 				lever = 0;
+				a_time = 0;
 				Scene::SetScene(new CSceneStageselect());
 			}
 			
@@ -94,6 +109,7 @@ void CObjStarPicbook::Action()
 	if (Input::GetVKey('B') == true)
 	{
 		lever = 0;
+		a_time = 0;
 		Scene::SetScene(new CSceneStageselect());
 	}
 
@@ -396,6 +412,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 1;
+					a_time = 0;
 					starmodel_flag = false;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
@@ -421,6 +438,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 13;
+					a_time = 0;
 					starmodel_flag = false;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
@@ -449,6 +467,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 2;
+					a_time = 0;
 					starmodel_flag = false;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
@@ -471,6 +490,7 @@ void CObjStarPicbook::Draw()
 				  if (a_time == 10)
 				  {
 					  lever = 14;
+					  a_time = 0;
 					  starmodel_flag = false;
 					  Scene::SetScene(new CSceneStarPicbook());
 				  }
@@ -495,6 +515,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 3;
+					a_time = 0;
 					starmodel_flag = false;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
@@ -517,6 +538,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 15;
+					a_time = 0;
 					starmodel_flag = false;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
@@ -541,6 +563,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 4;
+					a_time = 0;
 					starmodel_flag = false;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
@@ -562,6 +585,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 16;
+					a_time = 0;
 					starmodel_flag = false;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
@@ -590,6 +614,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 5;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				
@@ -610,6 +635,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 17;
+					a_time = 0;
 					starmodel_flag = false;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
@@ -634,6 +660,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 6;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				
@@ -653,6 +680,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 18;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				
@@ -676,6 +704,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 7;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				
@@ -695,6 +724,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 19;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				
@@ -718,6 +748,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 8;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				
@@ -737,6 +768,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 20;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				
@@ -763,6 +795,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 9;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				
@@ -782,6 +815,7 @@ void CObjStarPicbook::Draw()
 				if (a_time == 10)
 				{
 					lever = 21;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				
@@ -806,6 +840,7 @@ if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_
 			if (a_time == 10)
 			{
 				lever = 10;
+				a_time = 0;
 				starmodel_flag = false;
 				Scene::SetScene(new CSceneStarPicbook());
 			}
@@ -828,6 +863,7 @@ if (m_mou_x > 130+200*std&& m_mou_x < 197*(std+1) && m_mou_y>302+k*(l-1) && m_mo
 			if (a_time == 10)
 			{
 				lever = 22;
+				a_time = 0;
 				starmodel_flag = false;
 				Scene::SetScene(new CSceneStarPicbook());
 			}
@@ -852,6 +888,7 @@ if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m
 			if (a_time == 10)
 			{
 				lever = 11;
+				a_time = 0;
 				Scene::SetScene(new CSceneStarPicbook());
 			}
 			
@@ -871,6 +908,7 @@ if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m
 			if (a_time == 10)
 			{
 				lever = 23;
+				a_time = 0;
 				Scene::SetScene(new CSceneStarPicbook());
 			}
 			
@@ -893,6 +931,7 @@ if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m
 				if (a_time == 10)
 				{
 					lever = 12;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				
@@ -912,6 +951,7 @@ if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m
 				if (a_time == 10)
 				{
 					lever = 24;
+					a_time = 0;
 					Scene::SetScene(new CSceneStarPicbook());
 				}
 				

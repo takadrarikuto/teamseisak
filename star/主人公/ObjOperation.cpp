@@ -16,8 +16,12 @@ void CObjOperation::Init()
 	m_start_flag = false;
 	m_mous_x = 0.0f;
 	m_mous_y = 0.0f;
+
 	a_time = 0;
 	time_flag = false;
+
+	Back_time = 0.0f;
+
 	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 }
 
@@ -40,7 +44,6 @@ m_mous_l = Input::GetMouButtonL();
 			{
 
 				time_flag = true;
-
 			}
 
 		}
@@ -51,6 +54,7 @@ m_mous_l = Input::GetMouButtonL();
 		a_time++;
 	}
 
+
 	//10秒後に画面移動
 	if (a_time == 10)
 	{
@@ -60,11 +64,17 @@ m_mous_l = Input::GetMouButtonL();
 	}
 	else if (a_time == 1)
 	{
-
-
 		Audio::Start(1);
 	}
 
+	Back_time++;
+
+	//タイトルへ戻る
+	if (Input::GetVKey('B') == true && Back_time > 60.0f)
+	{
+		a_time = 0;
+		Scene::SetScene(new CSceneTitle()); //操作説明選択画面に移動
+	}
 }
 
 void CObjOperation::Draw()

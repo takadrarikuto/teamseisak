@@ -2,6 +2,7 @@
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
+#include "GameL\Audio.h"
 
 #include "GameHead.h"
 #include "ObjStarmodel.h"
@@ -17,7 +18,11 @@ void CObjStarmodel::Init()
 	ver = 0;
 	VER_start = 0;
 
-	starmodel_flag = false;
+	a_time = 0;
+	time_flag = false;
+	m_mou_time = 0.0f;
+
+	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
 
 void CObjStarmodel::Action()
@@ -30,21 +35,61 @@ void CObjStarmodel::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	//˜A‘±ˆÚ“®–hŽ~
+	if (m_mou_time == 60.0f)
+	{
+		;
+	}
+	else if (m_mou_time < 60.0f)
+	{
+		m_mou_time++;
+		m_mou_l = false;
+	}
+
+	//SE”­¶ˆ—
+	if (m_mou_l == true)
+	{
+		time_flag = true;
+	}
+	else if (m_mou_l == false)
+	{
+		a_time = 0;
+		time_flag = false;
+	}
+
+	//SE”­¶ˆ—
+	if (time_flag == true)
+	{
+		a_time++;
+	}
+
+	if (a_time == 1)
+	{
+		Audio::Start(1);
+	}
+
+
 	//¯À‘I‘ð‚Öƒ{ƒ^ƒ“
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
 		if (m_mou_l == true)
 		{
-			lever = 0;
-			Scene::SetScene(new CSceneStarPicbook());
-
+			time_flag = true;
+			if (a_time == 10)
+			{
+				lever = 0;
+				a_time = 0;
+				Scene::SetScene(new CSceneStarPicbook());
+				return;
+			}
 		}
 	}
 	//‚‚‚ð‰Ÿ‚·‚Æ–ß‚é
 	else if (Input::GetVKey('B') == true)
 	{
 		lever = 0;
+		a_time = 0;
 		Scene::SetScene(new CSceneStarPicbook());
 
 	}

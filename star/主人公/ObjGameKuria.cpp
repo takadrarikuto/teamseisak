@@ -4,6 +4,7 @@
 #include"GameL\SceneObjManager.h"
 #include"GameL\DrawTexture.h"
 #include "GameL\UserData.h"
+#include "GameL\Audio.h"
 
 #include"GameHead.h"
 #include"ObjGamekuria.h"
@@ -23,6 +24,10 @@ void CObjGameKuria::Init()
 	m_mous_l = false;
 	m_start_flag = false;
 
+	a_time = 0;
+	time_flag = false;
+
+	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
 
 //ƒAƒNƒVƒ‡ƒ“
@@ -38,14 +43,23 @@ void CObjGameKuria::Action()
 
 	if (m_mous_l == true)
 	{
-		if (m_start_flag == true)
-		{
-			Scene::SetScene(new CSceneTitle()); 
-		}
+		time_flag = true;
 	}
-	else
+
+	if (time_flag == true)
 	{
-		m_start_flag = true;
+		a_time++;
+	}
+
+	//10•bŒã‚É‰æ–ÊˆÚ“®
+	if (a_time == 10)
+	{
+		a_time = 0;
+		Scene::SetScene(new CSceneTitle());
+	}
+	else if (a_time == 1)
+	{
+		Audio::Start(1);
 	}
 
 }

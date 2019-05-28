@@ -24,6 +24,8 @@ void CObjSelectPlanet::Init()
 	time_flag = false;
 	a_time = 0;
 
+	Back_time = 0.0f;
+
 	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
 
@@ -121,6 +123,7 @@ void CObjSelectPlanet::Action()
 		a_time++;
 	}
 
+
 	//10•bŒã‚É‰æ–ÊˆÚ“®
 	if (a_time == 10)
 	{
@@ -130,11 +133,17 @@ void CObjSelectPlanet::Action()
 	}
 	else if (a_time == 1)
 	{
-
-
 		Audio::Start(1);
 	}
 
+	Back_time++;
+
+	//‘€ìà–¾‘I‘ğ‰æ–Ê‚ÉˆÚ“®
+	if (Input::GetVKey('B') == true && Back_time > 60.0f)
+	{
+		a_time = 0;
+		Scene::SetScene(new CSceneOperation()); 
+	}
 }
 
 //ƒhƒ[

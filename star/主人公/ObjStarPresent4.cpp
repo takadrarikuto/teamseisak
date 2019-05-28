@@ -34,17 +34,36 @@ void CObjStarPresent4::Init()
 	pagey = 10; //ページ座標y
 	pagesize = 20; //ページサイズ
 
-	start_time = 0.0f; //マウス操作開始時間
-	start_flag = false; //マウス操作開始フラグ
+	a_time = 0;
+	time_flag = false;
+	m_mou_time = 0.0f;
+
 	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 }
 
 void CObjStarPresent4::Action()
 {
 
+	//マウスの位置を取得
+	m_mou_x = (float)Input::GetPosX();
+	m_mou_y = (float)Input::GetPosY();
 
+	//マウスのボタンの状態
+	m_mou_r = Input::GetMouButtonR();
+	m_mou_l = Input::GetMouButtonL();
 
+	//連続移動防止
+	if (m_mou_time == 60.0f)
+	{
+		;
+	}
+	else if (m_mou_time < 60.0f)
+	{
+		m_mou_time++;
+		m_mou_l = false;
+	}
 
+	//SE発生処理
 	if (m_mou_l == true)
 	{
 		time_flag = true;
@@ -55,23 +74,16 @@ void CObjStarPresent4::Action()
 		time_flag = false;
 	}
 
-
+	//SE発生処理
 	if (time_flag == true)
 	{
 		a_time++;
 	}
-
 	if (a_time == 1)
 	{
 		Audio::Start(1);
 	}
-	//マウスの位置を取得
-	m_mou_x = (float)Input::GetPosX();
-	m_mou_y = (float)Input::GetPosY();
-
-	//マウスのボタンの状態
-	m_mou_r = Input::GetMouButtonR();
-	m_mou_l = Input::GetMouButtonL();
+	
 
 	//星座選択へボタン
 	// left				 right            top            bottom         
@@ -79,33 +91,25 @@ void CObjStarPresent4::Action()
 	{
 		if (m_mou_l == true)
 		{
-			lever = 0;
-			start_time = 0; //マウス操作開始時間
-			Scene::SetScene(new CSceneStarPicbook());
-
+			time_flag = true;
+			if (a_time == 10)
+			{
+				lever = 0;
+				a_time = 0;
+				Scene::SetScene(new CSceneStarPicbook());
+				return;
+			}
 		}
 	}
 	//ｂを押すと戻る
 	else if (Input::GetVKey('B') == true)
 	{
 		lever = 0;
-		start_time = 0; //マウス操作開始時間
+		a_time = 0;
 		Scene::SetScene(new CSceneStarPicbook());
 	}
 
 
-	//30f後に表示
-	start_time++;
-
-	if (start_time > 30.0f)
-	{
-		start_flag = true;
-	}
-	else
-	{
-		m_mou_l = false;
-		start_flag = false;
-	}
 }
 
 void CObjStarPresent4::Draw()
