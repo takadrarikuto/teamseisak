@@ -3,6 +3,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 
+#include "GameL\Audio.h"
 #include "GameHead.h"
 #include "ObjStarPresent2.h"
 extern int lever;
@@ -34,11 +35,34 @@ void CObjStarPresent2::Init()
 	pagesize = 20; //ページサイズ
 
 	start_time = 0.0f; //マウス操作開始時間
-	start_flag = false; //マウス操作開始フラグ
+	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 }
 
 void CObjStarPresent2::Action()
 {
+
+
+
+	if (m_mou_l == true)
+	{
+		time_flag = true;
+	}
+	else if (m_mou_l == false)
+	{
+		a_time = 0;
+		time_flag = false;
+	}
+
+
+	if (time_flag == true)
+	{
+		a_time++;
+	}
+
+	if (a_time == 1)
+	{
+		Audio::Start(1);
+	}
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();

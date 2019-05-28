@@ -60,8 +60,8 @@ int CSceneVenus::WeightedPick(int* pArray, int Length) {
 void CSceneVenus::InitScene()
 {
 	//音楽情報読み込み
-	Audio::LoadAudio(0, L"ゲームプレイBGMTitle.wav", BACK_MUSIC);
-	Audio::LoadAudio(1, L"決定音.wav", EFFECT);
+	Audio::LoadAudio(0, L"メインBGMTitle.wav", BACK_MUSIC);
+	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 
 	occur = 0;
 	m_Pf = false;

@@ -3,6 +3,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 
+#include "GameL\Audio.h"
 #include "GameHead.h"
 #include "ObjStarPresent.h"
 extern int lever;
@@ -29,10 +30,36 @@ void CObjStarPresent::Init()
 	Interval_y = 35;//文字の立幅間隔35
 	left_end = 80;//説明文の左の限界を決める
 	 std = 0;//文字を横に移す変数
+	 time_flag = false;
+Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 }
 
 void CObjStarPresent::Action()
 {
+
+
+
+	if (m_mou_l == true)
+	{
+		time_flag = true;
+	}
+	else if (m_mou_l == false)
+	{
+		a_time = 0;
+		time_flag = false;
+	}
+
+
+	if (time_flag == true)
+	{
+		a_time++;
+	}
+
+	if (a_time == 1)
+	{
+		Audio::Start(1);
+	}
+
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
@@ -215,6 +242,7 @@ void CObjStarPresent::Draw()
 			page_flag = true;
 		}
 	}
+
 
 	
 	//					　　	 X　		    Y　 大きさ

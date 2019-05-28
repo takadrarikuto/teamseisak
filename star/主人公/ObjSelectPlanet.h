@@ -21,4 +21,7 @@ private:
 	float m_mous_x; //マウスの位置X
 	float m_mous_y; //マウスの位置Y
 	int time_back;
+	int a_time;
+	bool time_flag;
+
 };

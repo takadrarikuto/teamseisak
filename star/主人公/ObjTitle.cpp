@@ -22,6 +22,9 @@ void CObjTitle::Init()
 	m_mous_y = 0.0f;
 	a_time = 0;
 	time_flag = false;
+
+	
+	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 }
 
 //アクション
@@ -37,16 +40,9 @@ void CObjTitle::Action()
 	{
 		if (m_mous_l == true)
 		{
+
 			time_flag = true;
-				//Audio::Start(1);
-				//a_time++;
-				//300秒後に画面移動
-				
-				//if(a_time<=300){
-			Scene::SetScene(new CSceneOperation()); //操作説明選択画面に移動
-					
-				//}
-			
+							
 		}
 	}
 
@@ -55,18 +51,20 @@ void CObjTitle::Action()
 		a_time++;
 	}
 
-	if (a_time == 100)
+	//10秒後に画面移動
+	if (a_time == 10)
 	{
+		a_time = 0;
 		Scene::SetScene(new CSceneOperation()); //操作説明選択画面に移動
+		
 	}
-	else if (a_time == 1)
+	else if (a_time ==1)
 	{
-		//Audio::Start(1);
+		
+		
+		Audio::Start(1);
 	}
-	else
-	{
-		//Audio::Stop(1);
-	}
+
 
 }
 

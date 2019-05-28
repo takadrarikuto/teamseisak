@@ -4,6 +4,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 
+#include "GameL\Audio.h"
 #include "GameHead.h"
 #include "ObjSelectPlanet.h"
 
@@ -19,6 +20,11 @@ void CObjSelectPlanet::Init()
 	m_mous_y = 0.0f;
 	m_start_flag = false;
 	time_back = 0;
+
+	time_flag = false;
+	a_time = 0;
+
+	Audio::LoadAudio(1, L"å¯â âπ.wav", EFFECT);
 }
 
 //ÉAÉNÉVÉáÉì
@@ -83,7 +89,8 @@ void CObjSelectPlanet::Action()
 		{
 			if (m_start_flag == true)
 			{
-				Scene::SetScene(new CSceneStarPicbook()); //êØê}ä”
+				
+				time_flag = true;
 			}
 		}
 	}
@@ -107,6 +114,25 @@ void CObjSelectPlanet::Action()
 				m_start_flag = true;
 			}
 		}
+	}
+
+	if (time_flag == true)
+	{
+		a_time++;
+	}
+
+	//10ïbå„Ç…âÊñ à⁄ìÆ
+	if (a_time == 10)
+	{
+		a_time = 0;
+		Scene::SetScene(new CSceneStarPicbook()); //êØê}ä”
+
+	}
+	else if (a_time == 1)
+	{
+
+
+		Audio::Start(1);
 	}
 
 }

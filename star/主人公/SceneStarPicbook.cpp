@@ -31,6 +31,8 @@ CSceneStarPicbook::~CSceneStarPicbook()
 //ゲームタイトル初期化メソッド
 void CSceneStarPicbook::InitScene()
 {
+	
+
 	//グラフィック読み込み
 	Draw::LoadImage(L"パステルブルータイルフレーム.png", 9, TEX_SIZE_512);
 	Draw::LoadImage(L"サイバー背景.png", 15, TEX_SIZE_512);
