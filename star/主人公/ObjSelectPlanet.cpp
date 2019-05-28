@@ -100,8 +100,7 @@ void CObjSelectPlanet::Action()
 		if (m_mous_l == true)
 		{
 			if (m_start_flag == true)
-			{
-				
+			{			
 				time_flag = true;
 			}
 		}
