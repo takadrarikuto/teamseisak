@@ -28,6 +28,11 @@ CSceneGameKuria::~CSceneGameKuria()
 //初期化メゾット
 void CSceneGameKuria::InitScene()
 {
+	
+	//外部グラフィック読み込み
+	Draw::LoadImage(L"ゲームクリア.png", 11, TEX_SIZE_512);
+
+
 	//タイトルオブジェクト生成
 	CObjGameKuria* obj_t = new CObjGameKuria();
 	Objs::InsertObj(obj_t, OBJ_GAMEKURIA, 11);

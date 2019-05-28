@@ -95,12 +95,12 @@ void CObjSelectPlanet::Action()
 
 	if (time_back > 30)
 	{
-		//bを押すとタイトル画面に移動
+		//bを押すと操作説明選択画面に移動
 		if (Input::GetVKey('B') == true)
 		{
 			if (m_start_flag == true)
 			{
-				Scene::SetScene(new CSceneTitle());
+				Scene::SetScene(new CSceneOperation()); 
 			}
 			else
 			{

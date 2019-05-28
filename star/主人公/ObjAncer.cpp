@@ -143,7 +143,6 @@ void CObjAncer::Action()
 				hitbox_size += 0.2f;
 				ancer_time -= 1.0f;
 				rope_time += 1.0f;	
-				Ancer_dabletapp = true;
 			}
 			//アンカーを下げる処理
 			//アンカー発射時間とロープ発射時間が0の時にかつアンカーフラグがtrueの時
@@ -155,7 +154,6 @@ void CObjAncer::Action()
 				m_sizex += 0.25f;
 				size += 0.35f;
 				hitbox_size -= 0.2f;	
-				Ancer_dabletapp = true;
 			}
 		}			
 	}
@@ -220,6 +218,7 @@ void CObjAncer::Action()
 	else if (m_pay < 535.0f)
 	{
 		ancer_flag = true;
+		Ancer_dabletapp = true;
 	}
 
 	//ロープ

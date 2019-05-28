@@ -50,6 +50,12 @@ void CObjExclamationMark::Action()
 		m_vx += 4.0f;
 	}
 
+	//マーク出現時にbで戻るとマークを消す
+	if (Input::GetVKey('B') == true)
+	{
+		EM_flag = false;
+	}
+
 	//画面外に出ないようにする処理
 	if (m_pemx < 4.0f)
 	{
