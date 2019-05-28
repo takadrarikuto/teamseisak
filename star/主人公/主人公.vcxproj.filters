@@ -184,6 +184,9 @@
     <ClCompile Include="ObjStarmodel.cpp">
       <Filter>ソースファイル\星図鑑\星座</Filter>
     </ClCompile>
+    <ClCompile Include="StarBook.cpp">
+      <Filter>ソースファイル\星図鑑</Filter>
+    </ClCompile>
     <ClCompile Include="ObjMeasurementAncer.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClCompile>
@@ -205,10 +208,7 @@
     </ClCompile>
     <ClCompile Include="StarData.cpp" />
     <ClCompile Include="ObjOperation.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClCompile>
-    <ClCompile Include="StarBook.cpp">
-      <Filter>ソースファイル\星図鑑\星</Filter>
+      <Filter>ヘッダーファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -333,6 +333,9 @@
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjPose.h">
