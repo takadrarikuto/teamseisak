@@ -215,10 +215,9 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	
+	//閲覧の制限
 	if (star_count >= 50)
 	{
-
 
 		//					　　	 X　		    Y　 大きさ
 		Font::StrDraw(L"アンタレス", 30 + fy * std, 330 + t * l, 30, c);
@@ -900,7 +899,7 @@ void CObjStarPresent::Draw()
 
 		if (crick == 14)
 		{
-			if (page == 14 )//上を変えたらここも変える
+			if (page ==1 )//上を変えたらここも変える
 			{
 				ver = 0;
 				Font::StrDraw(L"さそり座の恒星で3等星。", left_end, IO_y + Interval_y * ver, font_size, c);
