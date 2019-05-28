@@ -114,7 +114,7 @@ struct UserData
 #include "ObjFourthStar.h"
 #include "ObjOtherStar.h"
 #include "ObjBackground.h"
-//#include "ObjOperation.h"
+#include "CObjOperation.h"
 #include "ObjGamekuria.h"
 #include "CObjStarPicbook.h"
 #include "ObjStarPresent.h"
