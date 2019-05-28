@@ -57,7 +57,7 @@ void CObjStarCount::Action()
 
 
 	//ƒNƒŠƒA‰æ–ÊˆÚ“®
-	if (star_count >= 300)
+	if (star_count >= 650)
 	{
 		Scene::SetScene(new CSceneGameKuria());
 	}

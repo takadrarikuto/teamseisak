@@ -34,4 +34,6 @@ private:
 	wchar_t str9[256];
 
 	wchar_t strmous[256]; //マウスカーソル用
+
+	int Audio_co;
 };

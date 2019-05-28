@@ -9,7 +9,7 @@
 extern int lever;
 extern int crick;
 extern int cenge;
-
+extern int star_count;
 
 void CObjStarPresent11::Init()
 {
@@ -264,7 +264,8 @@ void CObjStarPresent11::Draw()
 		}
 	}
 
-
+	if (star_count >=550)
+	{
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"ルクバト", 20, 320 + t * l, 30, c);
 	l++;
@@ -1173,6 +1174,11 @@ void CObjStarPresent11::Draw()
 			page = 1;
 		}
 	}
-
+	}
+else
+	{
+	ver = 0;
+	Font::StrDraw(L"この星々を閲覧するには合計で星を550個集めてください", left_end, IO_y + Interval_y * ver, font_size, c);
+	}
 
 }

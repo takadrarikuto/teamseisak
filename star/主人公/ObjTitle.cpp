@@ -42,7 +42,7 @@ void CObjTitle::Action()
 		{
 
 			time_flag = true;
-							
+			
 		}
 	}
 
@@ -64,7 +64,6 @@ void CObjTitle::Action()
 		
 		Audio::Start(1);
 	}
-
 
 }
 

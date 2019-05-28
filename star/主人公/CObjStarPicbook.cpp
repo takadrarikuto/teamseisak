@@ -14,8 +14,9 @@ void CObjStarPicbook::Init()
 	starmodel_flag = false;
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
-	a_time = 0;
-	time_flag = false;
+
+	Audio_co = 0;
+
 	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 }
 
@@ -28,6 +29,24 @@ void CObjStarPicbook::Action()
 	//マウスのボタンの状態
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
+
+	if (m_mou_l == true)
+	{
+		Audio_co++;
+	}
+	else if (m_mou_l == false)
+	{
+		Audio_co = 0;
+	}
+
+	if (Audio_co == 1)
+	{
+		Audio::Start(1);
+	}
+	else if (Audio_co > 1)
+	{
+		Audio_co = 2;
+	}
 
 	//宇宙船へボタン
 	// left				 right            top            bottom         
