@@ -6,6 +6,7 @@
 #include "GameHead.h"
 #include "ObjStarPresent.h"
 extern int lever;
+extern int star_count;
 int crick = 0;
 int cenge = 0;
 
@@ -233,7 +234,7 @@ void CObjStarPresent::Draw()
 		}
 	
 
-	if (crick == 1)//上を変えたらここも変える
+	if (crick == 1&& star_count>15)//上を変えたらここも変える
 	{
 		
 		ver = VER_start; //文字間隔初期化
@@ -273,7 +274,7 @@ void CObjStarPresent::Draw()
 			}
 		}
 	
-	if (crick == 2)//上を変えたらここも変える
+	if (crick == 2 && star_count >10)//上を変えたらここも変える
 	{
 	
 		ver = VER_start; //文字間隔初期化
@@ -305,7 +306,7 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	if (crick == 3)
+	if (crick == 3 && star_count > 25)
 	{
 		if (page == 1)//上を変えたらここも変える
 		{
@@ -365,7 +366,7 @@ void CObjStarPresent::Draw()
 		}
 	
 
-		if (crick == 4)//上を変えたらここも変える
+		if (crick == 4 && star_count > 14)//上を変えたらここも変える
 		{
 			ver = 0;
 			Font::StrDraw(L"さそり座の恒星で2等星。 ", left_end, IO_y + Interval_y*ver, font_size, c);
@@ -407,7 +408,7 @@ void CObjStarPresent::Draw()
 
 
 
-		if (crick == 5)//上を変えたらここも変える
+		if (crick == 5 && star_count > 12)//上を変えたらここも変える
 		{
 			ver = VER_start; //文字間隔初期化
 			Font::StrDraw(L"薄黄色の輝巨星。2等星のA星と6等星のB星の二重星である。 ", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -445,7 +446,7 @@ void CObjStarPresent::Draw()
 			}
 		
 
-		if (crick == 6)//上を変えたらここも変える
+		if (crick == 6 && star_count > 10)//上を変えたらここも変える
 		{
 			
 
@@ -477,7 +478,7 @@ void CObjStarPresent::Draw()
 			}
 		}
 
-		if (crick == 7)
+		if (crick == 7 && star_count > 30)
 		{
 			if (page == 1)//上を変えたらここも変える
 			{
@@ -538,7 +539,7 @@ void CObjStarPresent::Draw()
 			}
 		}
 
-		if (crick == 8) 
+		if (crick == 8 && star_count > 35)
 		{
 			if (page == 1)//上を変えたらここも変える
 			{
@@ -607,7 +608,7 @@ void CObjStarPresent::Draw()
 		
 
 
-		if (crick == 9)//上を変えたらここも変える
+		if (crick == 9 && star_count > 1)//上を変えたらここも変える
 		{
 			ver = VER_start; //文字間隔初期化
 			Font::StrDraw(L"Pipirima は、タヒチの伝承に登場する双子の男女に由来する", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -632,7 +633,7 @@ void CObjStarPresent::Draw()
 			}
 		}
 
-		if (crick == 10) 
+		if (crick == 10 && star_count > 40)
 		{
 			if (page == 1)//上を変えたらここも変える
 			{
@@ -693,7 +694,8 @@ void CObjStarPresent::Draw()
 			}
 		}
 
-		if (crick == 11) {
+		if (crick == 11 && star_count > 32) 
+		{
 			if (page == 1)//上を変えたらここも変える
 			{
 				ver = 0;
@@ -752,7 +754,7 @@ void CObjStarPresent::Draw()
 			}
 		}
 
-		if (crick == 12)
+		if (crick == 12 && star_count > 38)
 		{
 			if (page == 1)//上を変えたらここも変える
 			{
@@ -811,7 +813,7 @@ void CObjStarPresent::Draw()
 				}
 			}
 		
-		if (crick == 13)
+		if (crick == 13 && star_count > 50)
 		{
 			if (page == 1)//上を変えたらここも変える
 			{
@@ -895,7 +897,7 @@ void CObjStarPresent::Draw()
 
 		if (crick == 14) 
 		{
-			if (page == 1)//上を変えたらここも変える
+			if (page == 14 && star_count > 54)//上を変えたらここも変える
 			{
 				ver = 0;
 				Font::StrDraw(L"さそり座の恒星で3等星。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -972,7 +974,7 @@ void CObjStarPresent::Draw()
 	
 
 
-			if (crick == 15)//上を変えたらここも変える
+			if (crick == 15 && star_count > 29)//上を変えたらここも変える
 			{
 
 				if (page == 1)
@@ -1020,6 +1022,7 @@ void CObjStarPresent::Draw()
 			}
 			swprintf_s(see, L"現在ページ数%d/最大ページ数%d", page, pagemax);
 			Font::StrDraw(see, 530, 5, 18, c);
-
 			
+			
+
 }
