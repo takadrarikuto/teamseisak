@@ -430,11 +430,9 @@ void CObjStarPresent::Draw()
 			}
 		}
 
-
 		//					　　	 X　		    Y　 大きさ
 		Font::StrDraw(L"ギルタブ", 30 + fy * std, 330 + t * l, 30, c);
 		l++;
-
 
 		// left								right						top								　bottom                            
 		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
@@ -447,10 +445,8 @@ void CObjStarPresent::Draw()
 			}
 		}
 
-
 		if (crick == 6 )//上を変えたらここも変える
 		{
-
 
 			ver = VER_start; //文字間隔初期化
 			Font::StrDraw(L"この恒星は分光連星で、主星はケフェウス座β型変光星である。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -458,6 +454,7 @@ void CObjStarPresent::Draw()
 			Font::StrDraw(L"分光観測により、公転周期は195日と測定された。", left_end, IO_y + Interval_y * ver, font_size, c);
 			ver++;
 			Font::StrDraw(L"明るさの変化は、4.80時間、4.93時間である。", left_end, IO_y + Interval_y * ver, font_size, c);
+			
 			//ページ制限
 			if (page < 1 || page > 1)
 			{
