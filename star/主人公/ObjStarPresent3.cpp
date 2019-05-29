@@ -9,7 +9,7 @@
 extern int lever;
 extern int crick;
 extern int cenge ;
-extern int star_count;
+
 
 void CObjStarPresent3::Init()
 {
@@ -275,8 +275,7 @@ void CObjStarPresent3::Draw()
 		}
 	}
 
-	if (star_count >=0)
-	{
+	
 		//					　　	            X　 Y　 大きさ
 		Font::StrDraw(L"ズベン・エル・ゲヌビ", 2, 330 + t * l, 20, c);
 		l++;
@@ -536,10 +535,4 @@ void CObjStarPresent3::Draw()
 			}
 		}
 
-	}
-	else
-	{
-		ver = 0;
-		Font::StrDraw(L"この星々を閲覧するには合計で星を150個集めてください", left_end, IO_y + Interval_y * ver, font_size, c);
-	}
 }

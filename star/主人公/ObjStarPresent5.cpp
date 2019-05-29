@@ -9,7 +9,7 @@
 extern int lever;
 extern int crick;
 extern int cenge;
-extern int star_count;
+
 
 void CObjStarPresent5::Init()
 {
@@ -277,8 +277,7 @@ void CObjStarPresent5::Draw()
 	}
 
 
-	if (star_count >=250)
-	{
+	
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"アルレシャ", 15, 320 + t * l, 30, c);
 	l++;
@@ -577,11 +576,7 @@ void CObjStarPresent5::Draw()
 		
 		
 	}
-	}
-else
-	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で星を250個集めてください", left_end, IO_y + Interval_y * ver, font_size, c);
-	}
+	
+
 
 }

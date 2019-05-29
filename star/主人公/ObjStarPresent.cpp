@@ -7,7 +7,6 @@
 #include "GameHead.h"
 #include "ObjStarPresent.h"
 extern int lever;
-extern int star_count;
 
 int crick = 0;
 int cenge = 0;
@@ -93,14 +92,16 @@ void CObjStarPresent::Action()
 	{
 		if (m_mou_l == true)
 		{
-			
+			time_flag = true;
+			if (a_time == 5)
+			{
 				lever = 0;
 				a_time = 0;
 				Back_time = 0.0f;
 				time_flag = false;
 				Scene::SetScene(new CSceneStarPicbook());
 				return;
-		
+			}
 		}
 	}
 	//ｂを押すと戻る
@@ -267,9 +268,7 @@ void CObjStarPresent::Draw()
 		}
 	}
 
-	//閲覧の制限
-	if (star_count >= 50)
-	{
+	
 
 		//					　　	 X　		    Y　 大きさ
 		Font::StrDraw(L"アンタレス", 30 + fy * std, 330 + t * l, 30, c);
@@ -1071,11 +1070,5 @@ void CObjStarPresent::Draw()
 		}
 		swprintf_s(see, L"現在ページ数%d/最大ページ数%d", page, pagemax);
 		Font::StrDraw(see, 530, 5, 18, c);
-	}
-	else
-	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で星を50個集めてください", left_end, IO_y + Interval_y * ver, font_size, c);
-	}
-
+	
 }

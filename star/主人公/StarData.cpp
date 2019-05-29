@@ -6,4 +6,3 @@ int g_second_star;
 int g_third_star;
 int g_fouth_star;
 int g_other_star;
-
