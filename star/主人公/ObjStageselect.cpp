@@ -14,12 +14,13 @@ using namespace GameL;
 //イニシャライズ
 void CObjStageselect::Init()
 {
-	
+
 }
 
 //アクション
 void CObjStageselect::Action()
 {
+
 
 }
 

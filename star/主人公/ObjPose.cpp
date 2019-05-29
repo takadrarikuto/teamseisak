@@ -36,9 +36,9 @@ void  CObjPose::Draw()
 
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	Font::StrDraw(L"タイトルに戻りますか?", 200, 120, 45, c);
+	Font::StrDraw(L"ステージ選択に戻りますか?", 130, 120, 45, c);
 	Font::StrDraw(L"いいえ(X)", 450, 300, 30, c);
-	Font::StrDraw(L"はい(Z)", 250, 300, 30, c);
+	Font::StrDraw(L"はい(B)", 250, 300, 30, c);
 	
 
 

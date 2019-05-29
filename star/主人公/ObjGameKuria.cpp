@@ -59,6 +59,12 @@ void CObjGameKuria::Action()
 	{
 		time_flag = true;
 	}
+	else if (m_mous_l == false && a_time > 1)
+	{
+		time_flag = false;
+		a_time++;
+	}
+
 
 	if (time_flag == true)
 	{
@@ -90,7 +96,7 @@ void CObjGameKuria::Draw()
 	//Ø‚èæ‚èˆÊ’u‚Ìİ’è
 	src.m_top = 0.0f;
 	src.m_left = 0.0f;
-	src.m_right = 700.0f;
+	src.m_right = 750.0f;
 	src.m_bottom = 600.0f;
 
 

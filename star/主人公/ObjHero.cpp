@@ -91,18 +91,6 @@ void CObjHero::Action()
 	}
 
 
-	//ステージ選択画面に戻る
-	if (Input::GetVKey('B') == true)
-	{
-		if (m_return_flag = true)
-		{
-			Scene::SetScene(new CSceneStageselect());
-		}
-	}
-	else
-	{
-		m_return_flag = true;
-	}
 
 	if (m_ani_time > 4)
 	{

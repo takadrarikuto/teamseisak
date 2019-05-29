@@ -72,8 +72,8 @@ void CObjstaminagauge::Action()
 	//‘Ì—ÍŒ¸­ˆ—
 	stamina_co += 1;
 
-	//5•b‚Å1_‘fŒ¸­
-	if (stamina_co == 300)
+	//3•b‚Å1_‘fŒ¸­
+	if (stamina_co == 180)
 	{
 		m_vstamina += 1.0f;
 		m_stamina -= 1;

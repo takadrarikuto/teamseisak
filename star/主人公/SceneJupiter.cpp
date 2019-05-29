@@ -146,11 +146,13 @@ void CSceneJupiter::InitScene()
 	Event_Conversion = 2;
 
 	EM_flag = false; //ビックリマーク出現フラグ初期化
+
 }
 
 //実行中メゾット
 void CSceneJupiter::Scene()
 {
+
 	CObjPose* pob = (CObjPose*)Objs::GetObj(OBJ_POSE);
 
 	//ポーズ
@@ -168,13 +170,12 @@ void CSceneJupiter::Scene()
 
 				while (1)
 				{
-					if (Input::GetVKey('Z') == true)
+					if (Input::GetVKey('B') == true) //Bキー入力時
 					{
-						Scene::SetScene(new CSceneTitle());
+						Scene::SetScene(new CSceneStageselect());
 						break;
 					}
-
-					if (Input::GetVKey('X') == true)//Xキー入力時
+					if (Input::GetVKey('X') == true) //Xキー入力時
 					{
 						if (m_Pf == true)
 						{

@@ -40,6 +40,7 @@ void CSceneStageselect::InitScene()
 	Draw::LoadImage(L"宇宙船背景.png", 11, TEX_SIZE_512);
 	Draw::LoadImage(L"惑星(透過済み).png", 12, TEX_SIZE_512);
 
+
 	//ステージ選択画面オブジェクト生成
 	CObjStageselect* obj_ss = new CObjStageselect();
 	Objs::InsertObj(obj_ss, OBJ_STAGESELECT, 11);

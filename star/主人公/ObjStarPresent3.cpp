@@ -75,6 +75,11 @@ void CObjStarPresent3::Action()
 		a_time = 0;
 		time_flag = false;
 	}
+	else if (m_mou_l == false && a_time > 1)
+	{
+		time_flag = false;
+		a_time++;
+	}
 
 	//SE”­¶ˆ—
 	if (time_flag == true)

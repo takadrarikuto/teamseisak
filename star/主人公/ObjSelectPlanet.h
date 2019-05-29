@@ -23,6 +23,12 @@ private:
 	int a_time;
 	bool time_flag;
 
+	bool Mars_up;
+	bool Venus_up;
+	bool Jupiter_up;
+	bool Saturn_up;
+	bool StarPic;
+
 	float Back_time; //連続移動防止タイム
 	float m_mou_time; //連続選択防止タイム
 };

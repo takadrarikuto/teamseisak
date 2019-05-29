@@ -53,6 +53,11 @@ void CObjTitle::Action()
 	{
 		time_flag = true;			
 	}
+	else if (m_mous_l == false && a_time > 1)
+	{
+		time_flag = false;
+		a_time++;
+	}
 
 	if (time_flag == true)
 	{

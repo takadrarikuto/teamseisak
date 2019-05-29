@@ -15,6 +15,8 @@ void CObjStarPicbook::Init()
 	m_mou_x = 0.0f;
 	m_mou_y = 0.0f;
 
+	Spaceship_back = false;
+
 	Audio_co = 0;
 	m_mou_time = 0.0f;
 
@@ -68,32 +70,34 @@ void CObjStarPicbook::Action()
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
+		Spaceship_back = true;
 		if (m_mou_l == true)
 		{
-			time_flag = true;
-			if (a_time == 10)
-			{
-				lever = 0;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				Scene::SetScene(new CSceneStageselect());
-			}
-			
+			time_flag = true;			
 		}
 
 	}
 
-	
+	if (Spaceship_back == true)
+	{
+		if (a_time >= 10)
+		{
+			lever = 0;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStageselect());
+		}
+	}
 
 	if (m_mou_l == true)
 	{
 		time_flag = true;
 	}
-	else if (m_mou_l == false)
+	else if (m_mou_l == false && a_time > 1)
 	{
-		a_time = 0;
 		time_flag = false;
+		a_time++;
 	}
 
 
@@ -104,7 +108,7 @@ void CObjStarPicbook::Action()
 
 	if (a_time == 1)
 	{
-	Audio::Start(1);
+		Audio::Start(1);
 	}
 
 	Back_time++;

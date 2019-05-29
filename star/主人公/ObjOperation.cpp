@@ -52,6 +52,11 @@ void CObjOperation::Action()
 	{
 		time_flag = true;
 	}
+	else if (m_mous_l == false && a_time > 1)
+	{
+		time_flag = false;
+		a_time++;
+	}
 
 		
 	if (time_flag == true)
@@ -67,7 +72,7 @@ void CObjOperation::Action()
 		Back_time = 0.0f;
 		m_mou_time = 0.0f;
 		time_flag = false;
-		Scene::SetScene(new CSceneStageselect()); //‘€ìà–¾‘I‘ğ‰æ–Ê‚ÉˆÚ“®
+		Scene::SetScene(new CSceneStageselect()); 
 
 	}
 	else if (a_time == 1)
