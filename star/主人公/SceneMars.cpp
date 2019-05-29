@@ -14,6 +14,7 @@ using namespace GameL;
 extern bool EM_flag;
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
+extern bool Increase_flag; //イベント時星発生率変更用
 
 //使用ヘッダー
 #include "SceneMars.h"
@@ -201,7 +202,7 @@ void CSceneMars::Scene()
 	}
 	occur++;
 
-	if (occur == 45)
+	if (occur == 45 || Increase_flag == true && occur == 22)
 	{
 		int Items[] = { 1, 5, 20,40,60 };
 		int result = WeightedPick(Items, 5);

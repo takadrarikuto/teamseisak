@@ -16,6 +16,7 @@ bool FiStar_Recovery = false;  //1“™¯Šm•Û_‘f‰ñ•œ
 bool SeStar_Recovery = false;  //2“™¯Šm•Û_‘f‰ñ•œ
 bool ThStar_Recovery = false;  //3“™¯Šm•Û_‘f‰ñ•œ
 extern bool Aitem_co; //ƒAƒCƒeƒ€¶Y
+extern int star_count;
 extern int Event_Conversion; //ƒCƒxƒ“ƒgƒGƒŠƒAØ‚è‘Ö‚¦
 
 //ƒXƒ^ƒ~ƒi¨_‘f•ÏX
@@ -161,7 +162,8 @@ void CObjstaminagauge::Action()
 	//_‘f‚ª–³‚­‚È‚é‚Æ‰F’ˆ‘D‚Ö
 	if (m_vx == m_stamina_max)
 	{
-		Scene::SetScene(new CSceneTitle());
+		star_count -= 100;
+		Scene::SetScene(new CSceneStageselect());
 	}
 
 	//_‘fÁ”ïˆ—

@@ -61,6 +61,10 @@ void CObjStarCount::Action()
 	{
 		Scene::SetScene(new CSceneGameKuria());
 	}
+	else if (star_count < 0)
+	{
+		star_count = 0;
+	}
 
 }
 
