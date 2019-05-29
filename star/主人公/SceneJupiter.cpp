@@ -6,6 +6,7 @@
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -13,6 +14,7 @@ using namespace GameL;
 extern bool EM_flag;
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
+extern bool Increase_flag; //イベント時星発生率変更用
 
 //使用ヘッダー
 #include "SceneJupiter.h"
@@ -56,10 +58,16 @@ int CSceneJupiter::WeightedPick(int* pArray, int Length) {
 //初期化メゾット
 void CSceneJupiter::InitScene()
 {
+	//音楽情報読み込み
+	Audio::LoadAudio(0, L"ステージ画面.wav", BACK_MUSIC);
+
+	Audio::Start(0);
+
 	occur = 0;
 	m_Pf = false;
 	m_key_f = false;//行動制御
 
+					
 	//グラフィック読み込み
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
@@ -136,6 +144,8 @@ void CSceneJupiter::InitScene()
 
 	Event_Star = false;
 	Event_Conversion = 2;
+
+	EM_flag = false; //ビックリマーク出現フラグ初期化
 }
 
 //実行中メゾット
@@ -191,7 +201,7 @@ void CSceneJupiter::Scene()
 	}
 	occur++;
 	//　3/4秒ごとに星を出現させる
-	if (occur == 45)
+	if (occur == 45 || Increase_flag == true && occur == 22)
 	{
 		//重み付けで出現させる星を決める
 		int Items[] = { 1, 5, 20,40,60 };
@@ -300,9 +310,6 @@ void CSceneJupiter::Scene()
 	}
 
 	
-	//QTE
-	//CObjQTE* obj_qte = new CObjQTE();
-	//Objs::InsertObj(obj_qte, OBJ_QTE, 20);
 
 }
 

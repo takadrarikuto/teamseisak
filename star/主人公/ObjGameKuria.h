@@ -18,4 +18,8 @@ private:
 	bool m_mous_l; //左クリックフラグ
 	bool m_start_flag;
 
+	int a_time;
+	bool time_flag;
+
+	float m_mou_time; //連続選択防止タイム
 };

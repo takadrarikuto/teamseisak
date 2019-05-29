@@ -14,6 +14,7 @@ using namespace GameL;
 bool Event_on = false; //イベント開始
 bool Event_Star = false; //イベント時星の移動方向変更
 int Event_Conversion = 0; //イベントエリア切り替え
+bool Increase_flag; //星増加フラグ
 
 //イニシャライズ
 void CObjEvent::Init()
@@ -22,6 +23,7 @@ void CObjEvent::Init()
 	E_Start = false;
 	//イベントスタートカウント初期化
 	E_Start_co = 0;
+	Increase_flag = false;
 
 	//背景操作用初期化
 	m_x1 = 0.0f;
@@ -105,6 +107,8 @@ void CObjEvent::Action()
 			Event_on = true;
 			Event_Star = true;
 			E_Start_co++;
+			Increase_flag = true;
+
 		}
 		//イベント終了処理
 		else if (E_Start_co == 4200)
@@ -113,6 +117,8 @@ void CObjEvent::Action()
 			Event_on = false;
 			Event_Star = false;
 			E_Start_co = 0;
+			Increase_flag = false;
+
 		}
 	}
 	else if (Event_Conversion == 1)
@@ -124,6 +130,7 @@ void CObjEvent::Action()
 			Event_on = true;
 			Event_Star = true;
 			E_Start_co++;
+			Increase_flag = true;
 		}
 		//イベント終了処理
 		else if (E_Start_co == 3600)
@@ -132,6 +139,7 @@ void CObjEvent::Action()
 			Event_on = false;
 			Event_Star = false;
 			E_Start_co = 0;
+			Increase_flag = false;
 		}
 	}
 	else if (Event_Conversion == 2)
@@ -143,6 +151,7 @@ void CObjEvent::Action()
 			Event_on = true;
 			Event_Star = true;
 			E_Start_co++;
+			Increase_flag = true;
 		}
 		//イベント終了処理
 		else if (E_Start_co == 3600)
@@ -151,6 +160,7 @@ void CObjEvent::Action()
 			Event_on = false;
 			Event_Star = false;
 			E_Start_co = 0;
+			Increase_flag = false;
 		}
 	}
 	else if (Event_Conversion == 3)
@@ -162,6 +172,7 @@ void CObjEvent::Action()
 			Event_on = true;
 			Event_Star = true;
 			E_Start_co++;
+			Increase_flag = true;
 		}
 		//イベント終了処理
 		else if (E_Start_co == 1800)
@@ -170,6 +181,7 @@ void CObjEvent::Action()
 			Event_on = false;
 			Event_Star = false;
 			E_Start_co = 0;
+			Increase_flag = false;
 		}
 	}
 

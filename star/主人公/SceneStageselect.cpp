@@ -5,6 +5,7 @@
 //GameLで使用するヘッダー
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -28,6 +29,13 @@ CSceneStageselect::~CSceneStageselect()
 //初期化メゾット
 void CSceneStageselect::InitScene()
 {
+	//音楽情報読み込み
+	Audio::LoadAudio(0, L"ステージ選択画面BGM.wav", BACK_MUSIC);
+
+
+	//バックミュージックスタート
+	Audio::Start(0);
+
 	//グラフィック読み込み
 	Draw::LoadImage(L"宇宙船背景.png", 11, TEX_SIZE_512);
 	Draw::LoadImage(L"惑星(透過済み).png", 12, TEX_SIZE_512);

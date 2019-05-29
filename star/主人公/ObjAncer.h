@@ -31,11 +31,6 @@ private:
 	float m_py;
 	float m_pax; //アンカー
 	float m_pay;
-	//アンカーサイズ変更用
-	float m_sizex;
-	float m_sizey;
-	float size;
-	float hitbox_size; //ヒットボックスサイズ調整用
 	float m_prx; //ロープ
 	float m_pry;
 
@@ -56,6 +51,6 @@ private:
 	int A_event; //イベントタイム処理
 	int Ev_ancer; //イベント時アンカー処理
 
-	bool Ancer_dabletapp; //二度押し対策用フラグ
+	bool Ancer_dabletapp;
 
 };

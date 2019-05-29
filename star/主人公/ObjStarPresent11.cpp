@@ -3,12 +3,13 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 
+#include "GameL\Audio.h"
 #include "GameHead.h"
 #include "ObjStarPresent11.h"
 extern int lever;
 extern int crick;
 extern int cenge;
-
+extern int star_count;
 
 void CObjStarPresent11::Init()
 {
@@ -29,16 +30,22 @@ void CObjStarPresent11::Init()
 	IO_y = 25; //y座標開始地点
 	Interval_y = 35;//文字の立幅間隔
 	left_end = 80;//説明文の左の限界を決める
-	pagex = 680; //ページ座標x
-	pagey = 10; //ページ座標y
-	pagesize = 20; //ページサイズ
+	pagex = 530; //ページ座標x
+	pagey = 5; //ページ座標y
+	pagesize = 18; //ページサイズ
 
-	start_time = 0.0f; //マウス操作開始時間
-	start_flag = false; //マウス操作開始フラグ
+	a_time = 0;
+	time_flag = false;
+	m_mou_time = 0.0f;
+
+	Back_time = 0.0f;
+
+	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 }
 
 void CObjStarPresent11::Action()
 {
+	
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
@@ -47,38 +54,68 @@ void CObjStarPresent11::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	//連続移動防止
+	if (m_mou_time == 60.0f)
+	{
+		;
+	}
+	else if (m_mou_time < 60.0f)
+	{
+		m_mou_time++;
+		m_mou_l = false;
+	}
+
+	//SE発生処理
+	if (m_mou_l == true)
+	{
+		time_flag = true;
+	}
+	else if (m_mou_l == false)
+	{
+		a_time = 0;
+		time_flag = false;
+	}
+
+	//SE発生処理
+	if (time_flag == true)
+	{
+		a_time++;
+	}
+	if (a_time == 1)
+	{
+		Audio::Start(1);
+	}
+
+	Back_time++;
+
 	//星座選択へボタン
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
 		if (m_mou_l == true)
 		{
-			lever = 0;
-			start_time = 0; //マウス操作開始時間
-			Scene::SetScene(new CSceneStarPicbook());
-
+			time_flag = true;
+			if (a_time == 10)
+			{
+				lever = 0;
+				a_time = 0;
+				Back_time = 0.0f;
+				time_flag = false;
+				Scene::SetScene(new CSceneStarPicbook());
+				return;
+			}
 		}
 	}
 	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
+	else if (Input::GetVKey('B') == true && Back_time > 60.0f)
 	{
 		lever = 0;
-		start_time = 0; //マウス操作開始時間
+		a_time = 0;
+		Back_time = 0.0f;
+		time_flag = false;
 		Scene::SetScene(new CSceneStarPicbook());
 	}
 
-	//30f後に表示
-	start_time++;
-
-	if (start_time > 30.0f)
-	{
-		start_flag = true;
-	}
-	else
-	{
-		m_mou_l = false;
-		start_flag = false;
-	}
 }
 
 void CObjStarPresent11::Draw()
@@ -238,21 +275,19 @@ void CObjStarPresent11::Draw()
 		}
 	}
 
-
+	if (star_count >=550)
+	{
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"ルクバト", 20, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true) 
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 1;
-				page = 0; //ページ初期化
-			}
+			crick = 1;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -261,16 +296,13 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"アルカブ・プリオル", 17, 330 + t * l, 18, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 2;
-				page = 0; //ページ初期化
-			}
+			crick = 2;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -279,16 +311,13 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"アルカブ・ポステリオル", 3, 340 + t * l, 18, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 3;
-				page = 0; //ページ初期化
-			}
+			crick = 3;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -296,16 +325,13 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"アルナスル", 20, 335 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 4;
-				page = 0; //ページ初期化
-			}
+			crick = 4;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -318,16 +344,13 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"カウス・メディア", 10 + 220, 330 + t * l, 18, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 5;
-				page = 0; //ページ初期化
-			}
+			crick = 5;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -335,16 +358,13 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"カウス・アウストラリス", 20 + 180, 335 + t * l, 18, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 6;
-				page = 0; //ページ初期化
-			}
+			crick = 6;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -352,32 +372,26 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"アスケラ", 20 + 220, 340 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 7;
-				page = 0; //ページ初期化
-			}
+			crick = 7;
+			page = 0; //ページ初期化
 		}
 	}
 	
 	Font::StrDraw(L"カウス・ボレアリス", 20 + 200, 355 + t * l, 18, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 8;
-				page = 0; //ページ初期化
-			}
+			crick = 8;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -390,16 +404,13 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"ポリス", 20 + 400, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 9;
-				page = 0; //ページ初期化
-			}
+			crick = 9;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -407,16 +418,13 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"アイン・アル・ラーミー", 1 + 400, 340 + t * l, 18, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 10;
-				page = 0; //ページ初期化
-			}
+			crick = 10;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -424,32 +432,26 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"アルバルダ", 20 + 400, 350 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 11;
-				page = 0; //ページ初期化
-			}
+			crick = 11;
+			page = 0; //ページ初期化
 		}
 	}
 	
 	Font::StrDraw(L"ヌンキ", 20 + 400, 360 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 12;
-				page = 0; //ページ初期化
-			}
+			crick = 12;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -462,16 +464,13 @@ void CObjStarPresent11::Draw()
 	Font::StrDraw(L"テレビルム", 20 + 600, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 13;
-				page = 0; //ページ初期化
-			}
+			crick = 13;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -483,7 +482,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		Font::StrDraw(L"いて座に属する4等星。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -511,7 +510,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -582,7 +581,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -649,7 +648,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -704,7 +703,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -745,7 +744,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -792,7 +791,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -841,7 +840,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -908,7 +907,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -953,7 +952,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -1014,7 +1013,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 
@@ -1047,7 +1046,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -1104,7 +1103,7 @@ void CObjStarPresent11::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -1147,6 +1146,11 @@ void CObjStarPresent11::Draw()
 			page = 1;
 		}
 	}
-
+	}
+else
+	{
+	ver = 0;
+	Font::StrDraw(L"この星々を閲覧するには合計で星を550個集めてください", left_end, IO_y + Interval_y * ver, font_size, c);
+	}
 
 }

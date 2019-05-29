@@ -15,5 +15,7 @@ public:
 	void Action();	//アクション
 	void Draw();	//ドロー
 private:
+	int a_time;
+	bool time_flag;
 
 };

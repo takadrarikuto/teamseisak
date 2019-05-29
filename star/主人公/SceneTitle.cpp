@@ -29,16 +29,18 @@ CSceneTitle::~CSceneTitle()
 //初期化メゾット
 void CSceneTitle::InitScene()
 {
-	/*
+	
 	//音楽情報読み込み
-	Audio::LoadAudio(0, L"ゲームプレイBGMTitle.wav", BACK_MUSIC);
-	Audio::LoadAudio(1, L"決定音.wav", EFFECT);
-
+	Audio::LoadAudio(0, L"メインBGM.wav", BACK_MUSIC);
 
 	//バックミュージックスタート
+	float v = Audio::VolumeMaster(0);
+	v = Audio::VolumeMaster(1.0 - v);
+
 	float Volume = Audio::VolumeMaster(-0.8f);
 	Audio::Start(0);
-	*/
+
+	
 
 	//グラフィック読み込み
 	Draw::LoadImage(L"星釣りタイトル修正.png", 11, TEX_SIZE_512);
@@ -53,5 +55,5 @@ void CSceneTitle::InitScene()
 //実行中メゾット
 void CSceneTitle::Scene()
 {
-
+	
 }

@@ -55,7 +55,14 @@ public:
 
 	float start_time; //マウス操作開始時間
 	bool start_flag; //マウス操作開始フラグ
+
+	int a_time;
+	bool time_flag;
+
+	float m_mou_time; //連続選択防止タイム
+	float Back_time; //連続移動防止タイム
 private:
+	
 
 };
 

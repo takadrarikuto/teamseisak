@@ -57,9 +57,13 @@ void CObjStarCount::Action()
 
 
 	//ƒNƒŠƒA‰æ–ÊˆÚ“®
-	if (star_count >= 300)
+	if (star_count >= 1000)
 	{
 		Scene::SetScene(new CSceneGameKuria());
+	}
+	else if (star_count < 0)
+	{
+		star_count = 0;
 	}
 
 }
@@ -69,19 +73,79 @@ void CObjStarCount::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	swprintf_s(str, L"¯‚Ì”~%3dŒÂ", star_count);
+	swprintf_s(str, L"¯‚Ì”~%4dŒÂ", star_count);
 	Font::StrDraw(str, 10, 570, 30, c);
 
 
 	//Ž_‘fŠm”F—pƒJƒEƒ“ƒg•\Ž¦
-	swprintf_s(strFis, L"1“™¯‚Ì”~%2d/%dŒÂ", FiStar_Reco, FiStar_Reco_max);
-	Font::StrDraw(strFis, 10, 510, 20, c);
+	swprintf_s(strFis, L"‚Ì”~%2d/%dŒÂ", FiStar_Reco, FiStar_Reco_max);
+	Font::StrDraw(strFis, 25, 507, 20, c);
 
-	swprintf_s(strFos, L"2“™¯‚Ì”~%2d/%dŒÂ", SeStar_Reco, SeStar_Reco_max);
-	Font::StrDraw(strFos, 10, 530, 20, c);
+	swprintf_s(strFos, L"‚Ì”~%2d/%dŒÂ", SeStar_Reco, SeStar_Reco_max);
+	Font::StrDraw(strFos, 25, 530, 20, c);
 
-	swprintf_s(strOts, L"3“™¯‚Ì”~%2d/%dŒÂ", ThStar_Reco, ThStar_Reco_max);
-	Font::StrDraw(strOts, 10, 550, 20, c);
+	swprintf_s(strOts, L"‚Ì”~%2d/%dŒÂ", ThStar_Reco, ThStar_Reco_max);
+	Font::StrDraw(strOts, 25, 550, 20, c);
 
+
+	RECT_F src;//•`‰æŒ³Ø‚èŽæ‚èˆÊ’u
+	RECT_F dst1;//•`‰ææ•\Ž¦ˆÊ’u
+	RECT_F dst2;//•`‰ææ•\Ž¦ˆÊ’u
+	RECT_F dst3;//•`‰ææ•\Ž¦ˆÊ’u
+
+
+	//1“™¯
+
+	//Ø‚èŽæ‚èˆÊ’u‚ÌÝ’è
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 100.0f;
+	src.m_bottom = 100.0f;
+
+
+	//•\Ž¦ˆÊ’u‚ÌÝ’è
+	dst1.m_top = 505.0f;
+	dst1.m_left = 0.0f;
+	dst1.m_right = 22.0f;
+	dst1.m_bottom = 527.0f;
+
+	//•`‰æ
+	Draw::Draw(16, &src, &dst1, c, 0.0f);
+
+	//2“™¯
+
+	//Ø‚èŽæ‚èˆÊ’u‚ÌÝ’è
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 100.0f;
+	src.m_bottom = 100.0f;
+
+
+	//•\Ž¦ˆÊ’u‚ÌÝ’è
+	dst2.m_top = 526.0f;
+	dst2.m_left = 0.0f;
+	dst2.m_right = 22.0f;
+	dst2.m_bottom = 548.0f;
+
+	//•`‰æ
+	Draw::Draw(17, &src, &dst2, c, 0.0f);
+
+	//3“™¯
+
+	//Ø‚èŽæ‚èˆÊ’u‚ÌÝ’è
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 100.0f;
+	src.m_bottom = 100.0f;
+
+
+	//•\Ž¦ˆÊ’u‚ÌÝ’è 22
+	dst3.m_top = 549.0f;
+	dst3.m_left = 0.0f;
+	dst3.m_right = 22.0f;
+	dst3.m_bottom = 571.0f;
+
+	//•`‰æ
+	Draw::Draw(18, &src, &dst3, c, 0.0f);
 
 }

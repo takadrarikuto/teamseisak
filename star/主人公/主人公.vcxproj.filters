@@ -118,9 +118,6 @@
     <ClCompile Include="SceneVenus.cpp">
       <Filter>ソースファイル\ステージ</Filter>
     </ClCompile>
-    <ClCompile Include="ObjQTE.cpp">
-      <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClCompile>
     <ClCompile Include="SceneOperation.cpp">
       <Filter>ソースファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClCompile>
@@ -187,9 +184,6 @@
     <ClCompile Include="ObjStarmodel.cpp">
       <Filter>ソースファイル\星図鑑\星座</Filter>
     </ClCompile>
-    <ClCompile Include="StarBook.cpp">
-      <Filter>ソースファイル\星図鑑</Filter>
-    </ClCompile>
     <ClCompile Include="ObjMeasurementAncer.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClCompile>
@@ -210,7 +204,6 @@
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="StarData.cpp" />
-    <ClCompile Include="ObjOperation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -318,9 +311,6 @@
     <ClInclude Include="ObjThirdStar.h">
       <Filter>ヘッダーファイル\星関係</Filter>
     </ClInclude>
-    <ClInclude Include="ObjGameKuria.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClInclude>
     <ClInclude Include="ObjPose.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
@@ -334,9 +324,6 @@
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjTitle.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjQTE.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
     <ClInclude Include="ObjPose.h">
@@ -409,6 +396,16 @@
       <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="CObjOperation.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="CObjOperation.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGameKuria.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">

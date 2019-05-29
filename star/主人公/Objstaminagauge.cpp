@@ -16,6 +16,7 @@ bool FiStar_Recovery = false;  //1“™¯Šm•Û_‘f‰ñ•œ
 bool SeStar_Recovery = false;  //2“™¯Šm•Û_‘f‰ñ•œ
 bool ThStar_Recovery = false;  //3“™¯Šm•Û_‘f‰ñ•œ
 extern bool Aitem_co; //ƒAƒCƒeƒ€¶Y
+extern int star_count;
 extern int Event_Conversion; //ƒCƒxƒ“ƒgƒGƒŠƒAØ‚è‘Ö‚¦
 
 //ƒXƒ^ƒ~ƒi¨_‘f•ÏX
@@ -63,8 +64,8 @@ void CObjstaminagauge::Action()
 	//_‘f‰ñ•œ
 	if (Aitem_on == true)
 	{
-		m_vx -= 30.0f; //_‘f‚ğ30‘‚â‚·
-		m_stamina += 30;
+		m_vx -= 100.0f; //_‘f‚ğ30‘‚â‚·
+		m_stamina += 100;
 		Aitem_on = false;
 	}
 	
@@ -91,14 +92,14 @@ void CObjstaminagauge::Action()
 	}
 	else if (SeStar_Recovery == true)
 	{
-		m_vx -= 20.0f;
-		m_stamina += 20.0f;
+		m_vx -= 50.0f;
+		m_stamina += 50.0f;
 		SeStar_Recovery = false;
 	}
 	else if (ThStar_Recovery == true)
 	{
-		m_vx -= 10.0f;
-		m_stamina += 10.0f;
+		m_vx -= 30.0f;
+		m_stamina += 30.0f;
 		ThStar_Recovery = false;
 	}
 	//ƒCƒxƒ“ƒg
@@ -161,7 +162,8 @@ void CObjstaminagauge::Action()
 	//_‘f‚ª–³‚­‚È‚é‚Æ‰F’ˆ‘D‚Ö
 	if (m_vx == m_stamina_max)
 	{
-		Scene::SetScene(new CSceneTitle());
+		star_count -= 100;
+		Scene::SetScene(new CSceneStageselect());
 	}
 
 	//_‘fÁ”ïˆ—

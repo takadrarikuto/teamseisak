@@ -6,6 +6,7 @@
 #include "GameL\SceneObjManager.h"
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
+#include "GameL\Audio.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -13,6 +14,7 @@ using namespace GameL;
 extern bool EM_flag;
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
+extern bool Increase_flag; //イベント時星発生率変更用
 
 //使用ヘッダー
 #include "SceneSaturn.h"
@@ -57,6 +59,12 @@ int CSceneSaturn::WeightedPick(int* pArray, int Length) {
 //初期化メゾット
 void CSceneSaturn::InitScene()
 {
+	//音楽情報読み込み
+	Audio::LoadAudio(0, L"ステージ画面.wav", BACK_MUSIC);
+
+	Audio::Start(0);
+
+
 	occur = 0;
 	m_Pf = false;
 	m_key_f = false;//行動制御
@@ -65,7 +73,7 @@ void CSceneSaturn::InitScene()
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"粒子.png", 9, TEX_SIZE_512);
-	Draw::LoadImage(L"火星地表.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"土星.png", 10, TEX_SIZE_512);
 
 	//主人公
 	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
@@ -94,8 +102,8 @@ void CSceneSaturn::InitScene()
 	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 8);
 	CObjEvent* obj_i = new CObjEvent();
 	Objs::InsertObj(obj_i, OBJ_EVENT, 9); //イベント背景	
-	CObjMars* obj_m = new CObjMars();
-	Objs::InsertObj(obj_m, OBJ_MARS, 10);
+	CObjSaturn* obj_s = new CObjSaturn();
+	Objs::InsertObj(obj_s, OBJ_SATURN, 10);
 
 	//主人公オブジェクト生成
 	CObjHero* obj = new CObjHero();
@@ -136,6 +144,8 @@ void CSceneSaturn::InitScene()
 
 	Event_Star = false;
 	Event_Conversion = 3;
+
+	EM_flag = false; //ビックリマーク出現フラグ初期化
 }
 
 //実行中メゾット
@@ -191,7 +201,7 @@ void CSceneSaturn::Scene()
 	}
 	occur++;
 	//　3/4秒ごとに星を出現させる
-	if (occur == 45)
+	if (occur == 45 || Increase_flag == true && occur == 22)
 	{
 		//重み付けで出現させる星を決める
 		int Items[] = { 1, 5, 20,40,60 };
