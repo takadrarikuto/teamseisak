@@ -79,7 +79,6 @@ enum HIT_ELEMENTS
 struct UserData
 {
 	int mSeveData;	//サンプルセーブデータ
-	int star_co = 0;//星の数カウント
 	int Aitem_co_max = 5; //アイテム個数
 
 };
@@ -136,7 +135,7 @@ struct UserData
 #include "Objstaminagaugeframe.h"
 #include "ObjPose.h"
 #include "ObjStarmodel.h"
-#include"ObjExclamationMark.h"
+#include "ObjExclamationMark.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -148,10 +147,10 @@ struct UserData
 #include "SceneVenus.h"
 #include "SceneSaturn.h"
 #include "SceneOperation.h"
-#include "SceneGamekuria.h"
+#include "SceneGameKuria.h"
 //------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneStarPicbook
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------

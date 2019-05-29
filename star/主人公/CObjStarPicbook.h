@@ -20,6 +20,8 @@ private:
 	bool m_mou_r;//マウスの右ボタン
 	bool m_mou_l;//マウスの左ボタン
 	bool starmodel_flag;
+	int a_time;
+	bool time_flag;
 
 	wchar_t str[256];
 	wchar_t str2[256];
@@ -34,4 +36,7 @@ private:
 	wchar_t strmous[256]; //マウスカーソル用
 
 	int Audio_co;
+	float m_mou_time; //連続選択防止タイム
+
+	float Back_time; //連続移動防止タイム
 };

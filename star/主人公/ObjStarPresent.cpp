@@ -3,6 +3,7 @@
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
 
+#include "GameL\Audio.h"
 #include "GameHead.h"
 #include "ObjStarPresent.h"
 extern int lever;
@@ -30,10 +31,19 @@ void CObjStarPresent::Init()
 	Interval_y = 35;//文字の立幅間隔35
 	left_end = 80;//説明文の左の限界を決める
 	 std = 0;//文字を横に移す変数
+
+	 a_time = 0;
+	 time_flag = false;
+	 m_mou_time = 0.0f;
+
+	 Back_time = 0.0f;
+
+	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 }
 
 void CObjStarPresent::Action()
 {
+
 	//マウスの位置を取得
 	m_mou_x = (float)Input::GetPosX();
 	m_mou_y = (float)Input::GetPosY();
@@ -43,21 +53,65 @@ void CObjStarPresent::Action()
 	m_mou_l = Input::GetMouButtonL();
 
 
+	//連続移動防止
+	if (m_mou_time == 60.0f)
+	{
+		;
+	}
+	else if (m_mou_time < 60.0f)
+	{
+		m_mou_time++;
+		m_mou_l = false;
+	}
+
+	//SE発生処理
+	if (m_mou_l == true)
+	{
+		time_flag = true;
+	}
+	else if (m_mou_l == false)
+	{
+		a_time = 0;
+		time_flag = false;
+	}
+
+	//SE発生処理
+	if (time_flag == true)
+	{
+		a_time++;
+	}
+	if (a_time == 1)
+	{
+		Audio::Start(1);
+	}
+
+	Back_time++;
+
 	//星座選択へボタン
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
 		if (m_mou_l == true)
 		{
-			lever = 0;
-			Scene::SetScene(new CSceneStarPicbook());
-			return;
+			time_flag = true;
+			if (a_time == 10)
+			{
+				lever = 0;
+				a_time = 0;
+				Back_time = 0.0f;
+				time_flag = false;
+				Scene::SetScene(new CSceneStarPicbook());
+				return;
+			}
 		}
 	}
 	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
+	else if (Input::GetVKey('B') == true && Back_time > 60.0f)
 	{
 		lever = 0;
+		a_time = 0;
+		Back_time = 0.0f;
+		time_flag = false;
 		Scene::SetScene(new CSceneStarPicbook());
 	}
 

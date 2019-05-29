@@ -59,8 +59,9 @@ int CSceneSaturn::WeightedPick(int* pArray, int Length) {
 void CSceneSaturn::InitScene()
 {
 	//音楽情報読み込み
-	Audio::LoadAudio(0, L"ゲームプレイBGMTitle.wav", BACK_MUSIC);
-	Audio::LoadAudio(1, L"決定音.wav", EFFECT);
+	Audio::LoadAudio(0, L"ステージ画面.wav", BACK_MUSIC);
+
+	Audio::Start(0);
 
 
 	occur = 0;
@@ -142,6 +143,8 @@ void CSceneSaturn::InitScene()
 
 	Event_Star = false;
 	Event_Conversion = 3;
+
+	EM_flag = false; //ビックリマーク出現フラグ初期化
 }
 
 //実行中メゾット
