@@ -207,9 +207,6 @@
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="StarData.cpp" />
-    <ClCompile Include="ObjOperation.h">
-      <Filter>ヘッダーファイル</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -317,9 +314,6 @@
     <ClInclude Include="ObjThirdStar.h">
       <Filter>ヘッダーファイル\星関係</Filter>
     </ClInclude>
-    <ClInclude Include="ObjGameKuria.h">
-      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
-    </ClInclude>
     <ClInclude Include="ObjPose.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
     </ClInclude>
@@ -408,7 +402,16 @@
       <Filter>ヘッダーファイル\星図鑑\星</Filter>
     </ClInclude>
     <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="CObjOperation.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
     <ClInclude Include="ObjPose.h" />
+    <ClInclude Include="CObjOperation.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjGameKuria.h">
+      <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="brown_star.png">

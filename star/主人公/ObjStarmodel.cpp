@@ -2,10 +2,12 @@
 #include "GameL\DrawTexture.h"
 #include "GameL\WinInputs.h"
 #include "GameL\DrawFont.h"
+#include "GameL\Audio.h"
 
 #include "GameHead.h"
 #include "ObjStarmodel.h"
 extern int lever;
+extern int star_count;
 
 void CObjStarmodel::Init()
 {
@@ -16,7 +18,13 @@ void CObjStarmodel::Init()
 	ver = 0;
 	VER_start = 0;
 
-	starmodel_flag = false;
+	a_time = 0;
+	time_flag = false;
+	m_mou_time = 0.0f;
+
+	Back_time = 0.0f;
+
+	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 }
 
 void CObjStarmodel::Action()
@@ -29,21 +37,66 @@ void CObjStarmodel::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	//連続移動防止
+	if (m_mou_time == 60.0f)
+	{
+		;
+	}
+	else if (m_mou_time < 60.0f)
+	{
+		m_mou_time++;
+		m_mou_l = false;
+	}
+
+	//SE発生処理
+	if (m_mou_l == true)
+	{
+		time_flag = true;
+	}
+	else if (m_mou_l == false)
+	{
+		a_time = 0;
+		time_flag = false;
+	}
+
+	//SE発生処理
+	if (time_flag == true)
+	{
+		a_time++;
+	}
+
+	if (a_time == 1)
+	{
+		Audio::Start(1);
+	}
+
+	Back_time++;
+
 	//星座選択へボタン
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
 		if (m_mou_l == true)
 		{
-			lever = 0;
-			Scene::SetScene(new CSceneStarPicbook());
-
+			time_flag = true;
+			if (a_time == 10)
+			{
+				lever = 0;
+				a_time = 0;
+				Back_time = 0.0f;
+				time_flag = false;
+				Scene::SetScene(new CSceneStarPicbook());
+				return;
+			}
 		}
 	}
 	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true)
+	else if (Input::GetVKey('B') == true && Back_time > 60.0f)
 	{
 		lever = 0;
+		a_time = 0;
+		Back_time = 0.0f;
+		time_flag = false;
 		Scene::SetScene(new CSceneStarPicbook());
 
 	}
@@ -57,6 +110,9 @@ void CObjStarmodel::Action()
 			if (starmodel_flag == true && lever < 24)
 			{
 				lever += 1;
+				a_time = 0;
+				Back_time = 0.0f;
+				time_flag = false;
 				ver = VER_start; //文字間隔初期化
 				starmodel_flag = false;
 			}
@@ -75,6 +131,9 @@ void CObjStarmodel::Action()
 			if (starmodel_flag == true && lever > 13)
 			{
 				lever -= 1;
+				a_time = 0;
+				Back_time = 0.0f;
+				time_flag = false;
 				ver = VER_start; //文字間隔初期化
 				starmodel_flag = false;
 			}
@@ -186,7 +245,7 @@ void CObjStarmodel::Draw()
 	}
 
 	//みずがめ座
-	if (lever == 13)
+	if (lever == 13 && star_count >= 200)
 	{	
 		ver = VER_start; //文字間隔初期化
 
@@ -212,8 +271,13 @@ void CObjStarmodel::Draw()
 		ver++;
 		Font::StrDraw(L"", font, m_y + size_y * ver, size, c);
 	}
+	else if (lever == 13 && star_count <= 200)
+	{
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を200個集めてください", 80, 0, 25, c);
+	}
 	//うお座
-	else if (lever == 14)
+	if (lever == 14 && star_count >= 250)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -236,8 +300,14 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"", font, m_y + size_y * ver, size, c);
 		ver++;
 	}
+	else if (lever == 14 && star_count <= 250)
+	{
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を250個集めてください", 80, 0, 25, c);
+	}
+
 	//ひつじ座
-	else if (lever == 15)
+	if (lever == 15 && star_count >= 300)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -260,8 +330,14 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"二十八舎（にじゅうはっしゃ）ともいう。", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
+	else if (lever == 15 && star_count <= 300)
+	{
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を300個集めてください", 80, 0, 25, c);
+	}
+
 	//うし座
-	else if (lever == 16)
+	if (lever == 16 && star_count >= 100)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -282,8 +358,14 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"見つかっており、特にプレアデス星団は多い。", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
+	else if (lever == 16 && star_count <= 100)
+	{
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を100個集めてください", 80, 0, 25, c);
+	}
+
 	//ふたご座
-	else if (lever == 17)
+	if (lever == 17 && star_count >= 350)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -305,8 +387,14 @@ void CObjStarmodel::Draw()
 		ver++;
 		Font::StrDraw(L"星座の星の並び同様、地球からの距離は同じとは限らず、空間的にはまとまっていない。", font, m_y + size_y * ver, size, c);
 	}
+	else if (lever == 17 && star_count <= 350)
+	{
+	ver = 0;
+	Font::StrDraw(L"この星々を閲覧するには合計で星を350個集めてください", 80, 0, 25, c);
+	}
+
 	//かに座
-	else if (lever == 18)
+	if (lever == 18 && star_count >= 400)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -333,8 +421,14 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"恒星が進化の終末期にとりうる形態の一つ。", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
+	else if (lever == 18 && star_count <= 400)
+	{
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を400個集めてください", 80, 0, 25, c);
+	}
+
 	//しし座
-	else if (lever == 19)
+	if (lever == 19 && star_count >= 450)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -355,8 +449,14 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
+	else if (lever == 19 && star_count <= 450)
+	{
+	ver = 0;
+	Font::StrDraw(L"この星々を閲覧するには合計で星を450個集めてください", 80, 0, 25, c);
+	}
+
 	//おとめ座
-	else if (lever == 20)
+	if (lever == 20 && star_count >= 500)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -377,8 +477,14 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"太陽を除き実視等級がマイナスとなる4つの恒星の1つ。", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
+	else if (lever == 20 && star_count <= 500)
+	{
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を500個集めてください", 80, 0, 25, c);
+	}
+
 	//てんびん座
-	else if (lever == 21)
+	if (lever == 21 && star_count >= 150)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -399,8 +505,14 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
+	else if (lever == 21 && star_count <= 150)
+	{
+	ver = 0;
+	Font::StrDraw(L"この星々を閲覧するには合計で星を150個集めてください", 80, 0, 25, c);
+	}
+
 	//さそり座
-	else if (lever == 22)
+	if (lever == 22 && star_count >= 50)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -421,8 +533,14 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
+	else if (lever == 22 && star_count <= 50)
+	{
+	ver = 0;
+	Font::StrDraw(L"この星々を閲覧するには合計で星を50個集めてください", 80, 0, 25, c);
+	}
+
 	//いて座
-	else if (lever == 23)
+	if (lever == 23 && star_count >= 550)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -443,8 +561,14 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
 		ver++;
 	}
+	else if (lever == 23 && star_count <= 550)
+	{
+	ver = 0;
+	Font::StrDraw(L"この星々を閲覧するには合計で星を550個集めてください", 80, 0, 25, c);
+	}
+
 	//やぎ座
-	else if (lever == 24)
+	if (lever == 24&& star_count >= 600)
 	{
 		ver = VER_start; //文字間隔初期化
 
@@ -465,6 +589,10 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"中心核に向かって非常に密度が高くなっている。", font, m_y + size_y * ver, size, c);
 		ver++;
 	}
-
+	else if(lever == 24 && star_count <= 600)
+	{
+	ver = 0;
+	Font::StrDraw(L"この星々を閲覧するには合計で星を600個集めてください", 80, 0,25, c);
+	}
 
 }

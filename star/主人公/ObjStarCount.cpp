@@ -57,7 +57,7 @@ void CObjStarCount::Action()
 
 
 	//クリア画面移動
-	if (star_count >= 300)
+	if (star_count >= 650)
 	{
 		Scene::SetScene(new CSceneGameKuria());
 	}
@@ -74,14 +74,74 @@ void CObjStarCount::Draw()
 
 
 	//酸素確認用カウント表示
-	swprintf_s(strFis, L"1等星の数×%2d/%d個", FiStar_Reco, FiStar_Reco_max);
-	Font::StrDraw(strFis, 10, 510, 20, c);
+	swprintf_s(strFis, L"の数×%2d/%d個", FiStar_Reco, FiStar_Reco_max);
+	Font::StrDraw(strFis, 25, 507, 20, c);
 
-	swprintf_s(strFos, L"2等星の数×%2d/%d個", SeStar_Reco, SeStar_Reco_max);
-	Font::StrDraw(strFos, 10, 530, 20, c);
+	swprintf_s(strFos, L"の数×%2d/%d個", SeStar_Reco, SeStar_Reco_max);
+	Font::StrDraw(strFos, 25, 530, 20, c);
 
-	swprintf_s(strOts, L"3等星の数×%2d/%d個", ThStar_Reco, ThStar_Reco_max);
-	Font::StrDraw(strOts, 10, 550, 20, c);
+	swprintf_s(strOts, L"の数×%2d/%d個", ThStar_Reco, ThStar_Reco_max);
+	Font::StrDraw(strOts, 25, 550, 20, c);
 
+
+	RECT_F src;//描画元切り取り位置
+	RECT_F dst1;//描画先表示位置
+	RECT_F dst2;//描画先表示位置
+	RECT_F dst3;//描画先表示位置
+
+
+	//1等星
+
+	//切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 100.0f;
+	src.m_bottom = 100.0f;
+
+
+	//表示位置の設定
+	dst1.m_top = 505.0f;
+	dst1.m_left = 0.0f;
+	dst1.m_right = 22.0f;
+	dst1.m_bottom = 527.0f;
+
+	//描画
+	Draw::Draw(16, &src, &dst1, c, 0.0f);
+
+	//2等星
+
+	//切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 100.0f;
+	src.m_bottom = 100.0f;
+
+
+	//表示位置の設定
+	dst2.m_top = 526.0f;
+	dst2.m_left = 0.0f;
+	dst2.m_right = 22.0f;
+	dst2.m_bottom = 548.0f;
+
+	//描画
+	Draw::Draw(19, &src, &dst2, c, 0.0f);
+
+	//3等星
+
+	//切り取り位置の設定
+	src.m_top = 0.0f;
+	src.m_left = 0.0f;
+	src.m_right = 100.0f;
+	src.m_bottom = 100.0f;
+
+
+	//表示位置の設定 22
+	dst3.m_top = 549.0f;
+	dst3.m_left = 0.0f;
+	dst3.m_right = 22.0f;
+	dst3.m_bottom = 571.0f;
+
+	//描画
+	Draw::Draw(18, &src, &dst3, c, 0.0f);
 
 }
