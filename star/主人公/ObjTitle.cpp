@@ -17,24 +17,25 @@ using namespace GameL;
 void CObjTitle::Init()
 {
 	m_mous_l = false;
-	m_start_flag = false;
 	m_mous_x = 0.0f;
 	m_mous_y = 0.0f;
+
 	a_time = 0;
 	time_flag = false;
 
+	
 	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
-
 }
 
 //アクション
 void CObjTitle::Action()
 {
-	m_mous_l = Input::GetMouButtonL();
-
 	//マウスの位置の取得
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
+
+	m_mous_l = Input::GetMouButtonL();
+
 
 	if (m_mous_x > 307 && m_mous_x < 480 && m_mous_y>440 && m_mous_y < 480)
 	{
@@ -48,14 +49,16 @@ void CObjTitle::Action()
 	{
 		a_time++;
 	}
-
-	//100秒後に画面移動
-	if (a_time == 100)
+	
+	//10秒後に画面移動
+	if (a_time == 10)
 	{
-		Scene::SetScene(new CSceneOperation()); //操作説明選択画面に移動
+		a_time = 0;
+		time_flag = false;
+		Scene::SetScene(new CSceneOperation()); //操作説明選択画面に移動	
 	}
 	else if (a_time == 1)
-	{
+	{		
 		Audio::Start(1);
 	}
 

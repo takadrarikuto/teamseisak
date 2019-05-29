@@ -135,7 +135,7 @@ struct UserData
 #include "Objstaminagaugeframe.h"
 #include "ObjPose.h"
 #include "ObjStarmodel.h"
-#include"ObjExclamationMark.h"
+#include "ObjExclamationMark.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
@@ -147,10 +147,10 @@ struct UserData
 #include "SceneVenus.h"
 #include "SceneSaturn.h"
 #include "SceneOperation.h"
-#include "SceneGamekuria.h"
+#include "SceneGameKuria.h"
 //------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneStageselect
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------

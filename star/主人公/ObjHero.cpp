@@ -99,14 +99,6 @@ void CObjHero::Action()
 			Scene::SetScene(new CSceneStageselect());
 		}
 	}
-	//Œ»İŠ‚µ‚Ä‚¢‚é¯‚Ì”Šm”F‰æ–Ê‚ÉˆÚ“®
-	else if (Input::GetVKey('S') == true)
-	{
-		if (m_return_flag = true)
-		{
-			Scene::SetScene(new CSceneStarPicbook());
-		}
-	}
 	else
 	{
 		m_return_flag = true;

@@ -63,8 +63,8 @@ void CObjstaminagauge::Action()
 	//_‘f‰ñ•œ
 	if (Aitem_on == true)
 	{
-		m_vx -= 30.0f; //_‘f‚ğ30‘‚â‚·
-		m_stamina += 30;
+		m_vx -= 100.0f; //_‘f‚ğ30‘‚â‚·
+		m_stamina += 100;
 		Aitem_on = false;
 	}
 	
@@ -91,14 +91,14 @@ void CObjstaminagauge::Action()
 	}
 	else if (SeStar_Recovery == true)
 	{
-		m_vx -= 20.0f;
-		m_stamina += 20.0f;
+		m_vx -= 50.0f;
+		m_stamina += 50.0f;
 		SeStar_Recovery = false;
 	}
 	else if (ThStar_Recovery == true)
 	{
-		m_vx -= 10.0f;
-		m_stamina += 10.0f;
+		m_vx -= 30.0f;
+		m_stamina += 30.0f;
 		ThStar_Recovery = false;
 	}
 	//ƒCƒxƒ“ƒg

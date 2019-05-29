@@ -33,10 +33,10 @@ void CSceneTitle::InitScene()
 	//音楽情報読み込み
 	Audio::LoadAudio(0, L"メインBGM.wav", BACK_MUSIC);
 
-
 	//バックミュージックスタート
 	float Volume = Audio::VolumeMaster(-0.8f);
 	Audio::Start(0);
+
 	
 
 	//グラフィック読み込み
@@ -52,5 +52,5 @@ void CSceneTitle::InitScene()
 //実行中メゾット
 void CSceneTitle::Scene()
 {
-
+	
 }
