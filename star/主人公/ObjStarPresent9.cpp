@@ -422,7 +422,7 @@ void CObjStarPresent9::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)

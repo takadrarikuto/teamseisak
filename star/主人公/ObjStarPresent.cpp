@@ -17,7 +17,7 @@ void CObjStarPresent::Init()
 	page = 0;//次のページへ行くための変数
 	page_flag = false;
 	page = 0;//現在のページ数
-	pagemax = 0;//最大ページ数
+	pagemax = 1;//最大ページ数
 	ver = 0;
 	VER_start = 0; //バー初期化
 	g = 200;//星枠の横幅

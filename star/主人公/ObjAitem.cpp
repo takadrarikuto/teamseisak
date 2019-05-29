@@ -71,7 +71,10 @@ void CObjAitem::Action()
 		Aitem_co = false;
 	}
 
-
+	if (((UserData*)Save::GetData())->Aitem_co_max > 5)
+	{
+		((UserData*)Save::GetData())->Aitem_co_max = 5; 
+	}
 }
 //ƒhƒ[
 void CObjAitem::Draw()
