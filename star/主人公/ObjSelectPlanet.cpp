@@ -132,12 +132,13 @@ void CObjSelectPlanet::Action()
 	}
 
 	//10•bŒã‚É‰æ–ÊˆÚ“®
-	if (a_time == 10)
+	if (a_time ==10)
 	{
 		a_time = 0;
 		Back_time = 0.0f;
 		m_mou_time = 0.0f;
 		time_flag = false;
+		m_start_flag = false;
 		Scene::SetScene(new CSceneStarPicbook()); //¯}ŠÓ
 
 	}
@@ -147,7 +148,7 @@ void CObjSelectPlanet::Action()
 	}
 
 	Back_time++;
-
+	
 	//‘€ìà–¾‘I‘ð‰æ–Ê‚ÉˆÚ“®
 	if (Input::GetVKey('B') == true && Back_time > 60.0f)
 	{

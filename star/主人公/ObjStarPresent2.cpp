@@ -9,7 +9,7 @@
 extern int lever;
 extern int crick;
 extern int cenge;
-extern int star_count;
+
 
 void CObjStarPresent2::Init()
 {
@@ -96,7 +96,7 @@ void CObjStarPresent2::Action()
 		if (m_mou_l == true)
 		{
 			time_flag = true;
-			if (a_time == 10)
+			if (a_time == 5)
 			{
 				lever = 0;
 				a_time = 0;
@@ -276,8 +276,7 @@ void CObjStarPresent2::Draw()
 		}
 	}
 
-	if (star_count >= 100) 
-{
+
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"アルデバラン", 15, 320 + t * l, 30, c);
 	l++;
@@ -1445,11 +1444,6 @@ void CObjStarPresent2::Draw()
 		}
 	}
 
- }
- else
-	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で星を100個集めてください", left_end, IO_y + Interval_y * ver, font_size, c);
-	}
+ 
 
 }
