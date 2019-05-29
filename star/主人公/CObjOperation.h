@@ -24,5 +24,5 @@ private:
 	int a_time;
 	float Back_time;
 
-
+	float m_mou_time;
 };

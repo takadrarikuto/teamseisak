@@ -24,4 +24,5 @@ private:
 	bool time_flag;
 
 	float Back_time; //連続移動防止タイム
+	float m_mou_time; //連続選択防止タイム
 };

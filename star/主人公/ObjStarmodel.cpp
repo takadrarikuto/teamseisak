@@ -268,8 +268,6 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"複数の恒星が天球上に形作るパターンである。星座の星の並び同様、地球からの距離", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"は同じとは限らず、空間的にはまとまっていない。", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y * ver, size, c);
 	}
 	else if (lever == 13 && star_count <= 200)
 	{
@@ -296,9 +294,6 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"複数の恒星が天球上に形作るパターンである。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"星座の星の並び同様、地球からの距離は同じとは限らず、空間的にはまとまっていない。", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y * ver, size, c);
-		ver++;
 	}
 	else if (lever == 14 && star_count <= 250)
 	{
@@ -328,7 +323,6 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"天球を、28のエリア（星宿）に不均等分割したもの。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"二十八舎（にじゅうはっしゃ）ともいう。", font, m_y + size_y* ver, size, c);
-		ver++;
 	}
 	else if (lever == 15 && star_count <= 300)
 	{
@@ -356,7 +350,6 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"プレアデス星団、ヒアデス星団、主星アルデバランに名づけられたものが", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"見つかっており、特にプレアデス星団は多い。", font, m_y + size_y* ver, size, c);
-		ver++;
 	}
 	else if (lever == 16 && star_count <= 100)
 	{
@@ -389,8 +382,8 @@ void CObjStarmodel::Draw()
 	}
 	else if (lever == 17 && star_count <= 350)
 	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で星を350個集めてください", 80, 0, 25, c);
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を350個集めてください", 80, 0, 25, c);
 	}
 
 	//かに座
@@ -419,7 +412,6 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"[白色矮星(はくしょくわいせい)とは]", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"恒星が進化の終末期にとりうる形態の一つ。", font, m_y + size_y* ver, size, c);
-		ver++;
 	}
 	else if (lever == 18 && star_count <= 400)
 	{
@@ -441,18 +433,11 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"おとめ座のα星スピカと形作る三角形は春の大三角と呼ばれる。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"日本ではこれを「樋掛け星（といかけぼし）」と呼ぶ地方がある。", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
 	}
 	else if (lever == 19 && star_count <= 450)
 	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で星を450個集めてください", 80, 0, 25, c);
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を450個集めてください", 80, 0, 25, c);
 	}
 
 	//おとめ座
@@ -475,7 +460,6 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"うしかい座で最も明るい恒星で全天21の1等星の1つである赤色巨星。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"太陽を除き実視等級がマイナスとなる4つの恒星の1つ。", font, m_y + size_y* ver, size, c);
-		ver++;
 	}
 	else if (lever == 20 && star_count <= 500)
 	{
@@ -499,16 +483,11 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"さそり座のはさみの部分であったことに起因する。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"α星、β星はてんびん棒の部分で、γ星とσ星はてんびんの皿にあたる。", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
 	}
 	else if (lever == 21 && star_count <= 150)
 	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で星を150個集めてください", 80, 0, 25, c);
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を150個集めてください", 80, 0, 25, c);
 	}
 
 	//さそり座
@@ -527,16 +506,11 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"全天でも明るい星座の一つである。α星は、全天21の1等星の1つであり", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"アンタレスと呼ばれる。", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
 	}
 	else if (lever == 22 && star_count <= 50)
 	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で星を50個集めてください", 80, 0, 25, c);
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を50個集めてください", 80, 0, 25, c);
 	}
 
 	//いて座
@@ -555,16 +529,11 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"大質量のブラックホールを含むかもしれないと考えている。", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"いて座Aは我々の銀河系の中心に存在する電波源の複合体である。", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
-		Font::StrDraw(L"", font, m_y + size_y* ver, size, c);
-		ver++;
 	}
 	else if (lever == 23 && star_count <= 550)
 	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で星を550個集めてください", 80, 0, 25, c);
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を550個集めてください", 80, 0, 25, c);
 	}
 
 	//やぎ座
@@ -587,12 +556,11 @@ void CObjStarmodel::Draw()
 		Font::StrDraw(L"球状星団は重力的に非常に強く束縛されており、そのために形状は球対称となり", font, m_y + size_y* ver, size, c);
 		ver++;
 		Font::StrDraw(L"中心核に向かって非常に密度が高くなっている。", font, m_y + size_y * ver, size, c);
-		ver++;
 	}
 	else if(lever == 24 && star_count <= 600)
 	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で星を600個集めてください", 80, 0,25, c);
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を600個集めてください", 80, 0,25, c);
 	}
 
 }

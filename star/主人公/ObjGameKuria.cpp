@@ -27,6 +27,8 @@ void CObjGameKuria::Init()
 	a_time = 0;
 	time_flag = false;
 
+	m_mou_time = 0.0f;
+
 	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
 
@@ -40,6 +42,18 @@ void CObjGameKuria::Action()
 	FiStar_Reco = 0;
 	SeStar_Reco = 0;
 	ThStar_Reco = 0;
+
+	//˜A‘±ˆÚ“®–hŽ~
+	if (m_mou_time == 60.0f)
+	{
+		;
+	}
+	else if (m_mou_time < 60.0f)
+	{
+		m_mou_time++;
+		m_mous_l = false;
+	}
+
 
 	if (m_mous_l == true)
 	{
@@ -55,6 +69,7 @@ void CObjGameKuria::Action()
 	if (a_time == 10)
 	{
 		a_time = 0;
+		m_mou_time = 0.0f;
 		time_flag = false;
 		Scene::SetScene(new CSceneTitle());
 	}

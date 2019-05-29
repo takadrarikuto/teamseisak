@@ -30,9 +30,9 @@ void CObjStarPresent6::Init()
 	IO_y = 25; //y座標開始地点
 	Interval_y = 35;//文字の立幅間隔
 	left_end = 80;//説明文の左の限界を決める
-	pagex = 680; //ページ座標x
-	pagey = 10; //ページ座標y
-	pagesize = 20; //ページサイズ
+	pagex = 530; //ページ座標x
+	pagey = 5; //ページ座標y
+	pagesize = 18; //ページサイズ
 
 	a_time = 0;
 	time_flag = false;
@@ -280,16 +280,13 @@ void CObjStarPresent6::Draw()
 	Font::StrDraw(L"ハマル", 20, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 1;
-				page = 0;
-			}
+			crick = 1;
+			page = 0;
 		}
 	}
 
@@ -298,16 +295,13 @@ void CObjStarPresent6::Draw()
 	Font::StrDraw(L"シェラタン", 20, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 2;
-				page = 0;
-			}
+			crick = 2;
+			page = 0;
 		}
 	}
 
@@ -316,16 +310,13 @@ void CObjStarPresent6::Draw()
 	Font::StrDraw(L"メサルティム", 15, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 3;
-				page = 0;
-			}
+			crick = 3;
+			page = 0;
 		}
 	}
 
@@ -333,16 +324,13 @@ void CObjStarPresent6::Draw()
 	Font::StrDraw(L"ボテイン", 20, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 4;
-				page = 0;
-			}
+			crick = 4;
+			page = 0;
 		}
 	}
 
@@ -354,16 +342,13 @@ void CObjStarPresent6::Draw()
 	//					　　	  X　        Y　    大きさ
 	Font::StrDraw(L"リリィブロア", 20 + 200, 320 + t * l, 30, c);
 	l++;
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 5;
-				page = 0;
-			}
+			crick = 5;
+			page = 0;
 		}
 	}
 
@@ -371,16 +356,13 @@ void CObjStarPresent6::Draw()
 	Font::StrDraw(L"バラニー", 20 + 200, 330 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 6;
-				page = 0;
-			}
+			crick = 6;
+			page = 0;
 		}
 	}
 
@@ -391,7 +373,7 @@ void CObjStarPresent6::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -453,7 +435,7 @@ void CObjStarPresent6::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -521,7 +503,7 @@ void CObjStarPresent6::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -580,7 +562,7 @@ void CObjStarPresent6::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -627,7 +609,7 @@ void CObjStarPresent6::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		Font::StrDraw(L"おひつじ座に属する。約170光年離れた位置にある5等級の", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -657,7 +639,7 @@ void CObjStarPresent6::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 

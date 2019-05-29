@@ -73,7 +73,7 @@ void CSceneSaturn::InitScene()
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"粒子.png", 9, TEX_SIZE_512);
-	Draw::LoadImage(L"火星地表.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"土星.png", 10, TEX_SIZE_512);
 
 	//主人公
 	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
@@ -102,8 +102,8 @@ void CSceneSaturn::InitScene()
 	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 8);
 	CObjEvent* obj_i = new CObjEvent();
 	Objs::InsertObj(obj_i, OBJ_EVENT, 9); //イベント背景	
-	CObjMars* obj_m = new CObjMars();
-	Objs::InsertObj(obj_m, OBJ_MARS, 10);
+	CObjSaturn* obj_s = new CObjSaturn();
+	Objs::InsertObj(obj_s, OBJ_SATURN, 10);
 
 	//主人公オブジェクト生成
 	CObjHero* obj = new CObjHero();

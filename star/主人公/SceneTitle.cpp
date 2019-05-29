@@ -34,6 +34,9 @@ void CSceneTitle::InitScene()
 	Audio::LoadAudio(0, L"メインBGM.wav", BACK_MUSIC);
 
 	//バックミュージックスタート
+	float v = Audio::VolumeMaster(0);
+	v = Audio::VolumeMaster(1.0 - v);
+
 	float Volume = Audio::VolumeMaster(-0.8f);
 	Audio::Start(0);
 
