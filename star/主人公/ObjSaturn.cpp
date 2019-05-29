@@ -34,18 +34,18 @@ void CObjSaturn::Draw()
 	RECT_F dst;//描画先表示位置
 
 	
-
 	//切り取り位置の設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 854.0f;
-	src.m_bottom = 656.0f;
+	src.m_top = 50.0f;
+	src.m_left = 280.0f;
+	src.m_right = 360.0f;
+	src.m_bottom = 120.0f;
 
 	//表示位置の設定
-	dst.m_top = 50.0f;
+	dst.m_top = 450.0f;
 	dst.m_left = 0.0f;
 	dst.m_right = 800.0f;
 	dst.m_bottom = 600.0f;
+
 
 	//描画
 	Draw::Draw(10, &src, &dst, c, 0.0f);

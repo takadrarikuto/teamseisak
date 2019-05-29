@@ -24,6 +24,7 @@ void CObjSelectPlanet::Init()
 	a_time = 0;
 
 	Back_time = 0.0f;
+	m_mou_time = 0.0f;
 
 	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
@@ -37,6 +38,17 @@ void CObjSelectPlanet::Action()
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
+	//˜A‘±ˆÚ“®–hŽ~
+	if (m_mou_time == 60.0f)
+	{
+		;
+	}
+	else if (m_mou_time < 60.0f)
+	{
+		m_mou_time++;
+		m_mous_l = false;
+	}
+
 
 	if (m_mous_x > 60 && m_mous_x < 190 && m_mous_y>130 && m_mous_y < 325)
 	{
@@ -46,6 +58,7 @@ void CObjSelectPlanet::Action()
 			{
 				a_time = 0;
 				Back_time = 0.0f;
+				m_mou_time = 0.0f;
 				time_flag = false;
 				Scene::SetScene(new CSceneMars()); //‰Î¯
 			}
@@ -59,6 +72,7 @@ void CObjSelectPlanet::Action()
 			{
 				a_time = 0;
 				Back_time = 0.0f;
+				m_mou_time = 0.0f;
 				time_flag = false;
 				Scene::SetScene(new CSceneVenus()); //‹à¯
 			}
@@ -72,6 +86,7 @@ void CObjSelectPlanet::Action()
 			{
 				a_time = 0;
 				Back_time = 0.0f;
+				m_mou_time = 0.0f;
 				time_flag = false;
 				Scene::SetScene(new CSceneJupiter()); //–Ø¯
 			}
@@ -85,6 +100,7 @@ void CObjSelectPlanet::Action()
 			{
 				a_time = 0;
 				Back_time = 0.0f;
+				m_mou_time = 0.0f;
 				time_flag = false;
 				Scene::SetScene(new CSceneSaturn()); //“y¯
 			}
@@ -110,12 +126,17 @@ void CObjSelectPlanet::Action()
 		m_start_flag = true;
 	}
 
+	if (time_flag == true)
+	{
+		a_time++;
+	}
 
 	//10•bŒã‚É‰æ–ÊˆÚ“®
 	if (a_time == 10)
 	{
 		a_time = 0;
 		Back_time = 0.0f;
+		m_mou_time = 0.0f;
 		time_flag = false;
 		Scene::SetScene(new CSceneStarPicbook()); //¯}ŠÓ
 
@@ -135,6 +156,7 @@ void CObjSelectPlanet::Action()
 	{
 		a_time = 0;
 		Back_time = 0.0f;
+		m_mou_time = 0.0f;
 		time_flag = false;
 		Scene::SetScene(new CSceneOperation()); 
 	}

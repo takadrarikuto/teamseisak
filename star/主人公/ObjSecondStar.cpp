@@ -151,9 +151,13 @@ void CObjSecondStar::Action()
 
 		SeStar_Reco += 1; //2等星酸素回復用カウント
 
-		g_second_star++;
-		star_count++;
+
+			g_second_star++;
+			star_count++;
+
+
 	}
+
 
 	
 

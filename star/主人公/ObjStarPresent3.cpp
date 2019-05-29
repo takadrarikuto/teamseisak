@@ -30,9 +30,9 @@ void CObjStarPresent3::Init()
 	IO_y = 25; //y座標開始地点
 	Interval_y = 35;//文字の立幅間隔
 	left_end = 80;//説明文の左の限界を決める
-	pagex = 680; //ページ座標x
-	pagey = 10; //ページ座標y
-	pagesize = 20; //ページサイズ
+	pagex = 530; //ページ座標x
+	pagey = 5; //ページ座標y
+	pagesize = 18; //ページサイズ
 
 	a_time = 0;
 	time_flag = false;	
@@ -281,8 +281,6 @@ void CObjStarPresent3::Draw()
 		Font::StrDraw(L"ズベン・エル・ゲヌビ", 2, 330 + t * l, 20, c);
 		l++;
 
-		if (start_flag == true)
-		{
 			// left				 right            top            bottom               
 			if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 			{
@@ -292,23 +290,19 @@ void CObjStarPresent3::Draw()
 					page = 0;
 				}
 			}
-		}
 
 
 		//					　　			    X　 Y　 大きさ
 		Font::StrDraw(L"ズベン・エス・カマリ", 2, 330 + t * l, 20, c);
 		l++;
 
-		if (start_flag == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			// left				 right            top            bottom               
-			if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+			if (m_mou_l == true)
 			{
-				if (m_mou_l == true)
-				{
-					crick = 2;
-					page = 0;
-				}
+				crick = 2;
+				page = 0;
 			}
 		}
 
@@ -317,16 +311,13 @@ void CObjStarPresent3::Draw()
 		Font::StrDraw(L"ズベンエルハクラビ", 10, 330 + t * l, 20, c);
 		l++;
 
-		if (start_flag == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			// left				 right            top            bottom               
-			if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+			if (m_mou_l == true)
 			{
-				if (m_mou_l == true)
-				{
-					crick = 3;
-					page = 0;
-				}
+				crick = 3;
+				page = 0;
 			}
 		}
 
@@ -334,16 +325,13 @@ void CObjStarPresent3::Draw()
 		Font::StrDraw(L"ブラキウム", 25, 330 + t * l, 20, c);
 		l++;
 
-		if (start_flag == true)
+		// left				 right            top            bottom               
+		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 		{
-			// left				 right            top            bottom               
-			if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+			if (m_mou_l == true)
 			{
-				if (m_mou_l == true)
-				{
-					crick = 4;
-					page = 0;
-				}
+				crick = 4;
+				page = 0;
 			}
 		}
 
@@ -355,7 +343,7 @@ void CObjStarPresent3::Draw()
 			ver = VER_start; //文字間隔初期化
 
 			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+			swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			if (page == 0)
@@ -404,7 +392,7 @@ void CObjStarPresent3::Draw()
 			ver = VER_start; //文字間隔初期化
 
 			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+			swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			Font::StrDraw(L"てんびん座に属する最も明るい恒星で3等星。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -435,7 +423,7 @@ void CObjStarPresent3::Draw()
 			ver = VER_start; //文字間隔初期化
 
 			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+			swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			if (page == 0)
@@ -496,7 +484,7 @@ void CObjStarPresent3::Draw()
 			ver = VER_start; //文字間隔初期化
 
 			//ページ数表示
-			swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+			swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 			Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 			if (page == 0)
@@ -551,7 +539,7 @@ void CObjStarPresent3::Draw()
 	}
 	else
 	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で星を150個集めてください", left_end, IO_y + Interval_y * ver, font_size, c);
+		ver = 0;
+		Font::StrDraw(L"この星々を閲覧するには合計で星を150個集めてください", left_end, IO_y + Interval_y * ver, font_size, c);
 	}
 }

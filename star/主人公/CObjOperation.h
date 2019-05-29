@@ -5,11 +5,11 @@
 using namespace GameL;
 
 //オブジェクト:タイトル
-class CObjGameKuria : public CObj
+class CObjOperation : public CObj
 {
 public:
-	CObjGameKuria() {};
-	~CObjGameKuria() {};
+	CObjOperation() {};
+	~CObjOperation() {};
 	void Init();      //イニシャライズ
 	void Action();    //アクション
 	void Draw();      //ドロー
@@ -17,9 +17,12 @@ public:
 private:
 	bool m_mous_l; //左クリックフラグ
 	bool m_start_flag;
+	float m_mous_x; //マウスの位置X
+	float m_mous_y; //マウスの位置Y
 
-	int a_time;
 	bool time_flag;
+	int a_time;
+	float Back_time;
 
-	float m_mou_time; //連続選択防止タイム
+	float m_mou_time;
 };
