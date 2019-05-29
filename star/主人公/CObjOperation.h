@@ -20,4 +20,9 @@ private:
 	float m_mous_x; //マウスの位置X
 	float m_mous_y; //マウスの位置Y
 
+	bool time_flag;
+	int a_time;
+	float Back_time;
+
+
 };
