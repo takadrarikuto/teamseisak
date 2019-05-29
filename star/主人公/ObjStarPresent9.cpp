@@ -30,9 +30,9 @@ void CObjStarPresent9::Init()
 	IO_y = 25; //y座標開始地点
 	Interval_y = 35;//文字の立幅間隔
 	left_end = 80;//説明文の左の限界を決める
-	pagex = 680; //ページ座標x
-	pagey = 10; //ページ座標y
-	pagesize = 20; //ページサイズ
+	pagex = 530; //ページ座標x
+	pagey = 5; //ページ座標y
+	pagesize = 18; //ページサイズ
 
 	a_time = 0;
 	time_flag = false;
@@ -74,6 +74,11 @@ void CObjStarPresent9::Action()
 	{
 		a_time = 0;
 		time_flag = false;
+	}
+	else if (m_mou_l == false && a_time > 1)
+	{
+		time_flag = false;
+		a_time++;
 	}
 
 	//SE発生処理
@@ -280,16 +285,13 @@ void CObjStarPresent9::Draw()
 	Font::StrDraw(L"レグルス", 20, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 1;
-				page = 0; //ページ初期化
-			}
+			crick = 1;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -298,16 +300,13 @@ void CObjStarPresent9::Draw()
 	Font::StrDraw(L"デネボラ", 20, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 2;
-				page = 0; //ページ初期化
-			}
+			crick = 2;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -316,16 +315,13 @@ void CObjStarPresent9::Draw()
 	Font::StrDraw(L"アルギエバ", 20, 330 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 3;
-				page = 0; //ページ初期化
-			}
+			crick = 3;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -333,16 +329,13 @@ void CObjStarPresent9::Draw()
 	Font::StrDraw(L"ゾスマ", 20, 340 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 4;
-				page = 0; //ページ初期化
-			}
+			crick = 4;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -355,16 +348,13 @@ void CObjStarPresent9::Draw()
 	Font::StrDraw(L"アダフェラ", 20 + 220, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 5;
-				page = 0; //ページ初期化
-			}
+			crick = 5;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -372,16 +362,13 @@ void CObjStarPresent9::Draw()
 	Font::StrDraw(L"シェルタン", 20 + 220, 330 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 6;
-				page = 0; //ページ初期化
-			}
+			crick = 6;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -389,16 +376,13 @@ void CObjStarPresent9::Draw()
 	Font::StrDraw(L"アルテルフ", 20 + 220, 340 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 7;
-				page = 0; //ページ初期化
-			}
+			crick = 7;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -406,16 +390,13 @@ void CObjStarPresent9::Draw()
 	Font::StrDraw(L"ラサラス", 20 + 220, 340 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 8;
-				page = 0; //ページ初期化
-			}
+			crick = 8;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -428,16 +409,13 @@ void CObjStarPresent9::Draw()
 	Font::StrDraw(L"スーバー", 20 + 400, 320 + t * l, 30, c);
 	l++;
 
-	if (start_flag == true)
+	// left				 right            top            bottom               
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		// left				 right            top            bottom               
-		if (m_mou_x > side_a + side_b * std && m_mou_x < side_b * (std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+		if (m_mou_l == true)
 		{
-			if (m_mou_l == true)
-			{
-				crick = 9;
-				page = 0; //ページ初期化
-			}
+			crick = 9;
+			page = 0; //ページ初期化
 		}
 	}
 	
@@ -449,7 +427,7 @@ void CObjStarPresent9::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -490,7 +468,7 @@ void CObjStarPresent9::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -551,7 +529,7 @@ void CObjStarPresent9::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -598,7 +576,7 @@ void CObjStarPresent9::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -651,7 +629,7 @@ void CObjStarPresent9::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -702,7 +680,7 @@ void CObjStarPresent9::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -753,7 +731,7 @@ void CObjStarPresent9::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)
@@ -794,7 +772,7 @@ void CObjStarPresent9::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		Font::StrDraw(L"しし座に属する恒星で4等星。", left_end, IO_y + Interval_y * ver, font_size, c);
@@ -820,7 +798,7 @@ void CObjStarPresent9::Draw()
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示
-		swprintf_s(strp, L"ページ数%d/%d", page + 1, page_max);
+		swprintf_s(strp, L"現在ページ数%d/最大ページ数%d", page + 1, page_max);
 		Font::StrDraw(strp, pagex, pagey, pagesize, c);
 
 		if (page == 0)

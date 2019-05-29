@@ -57,9 +57,13 @@ void CObjStarCount::Action()
 
 
 	//ƒNƒŠƒA‰æ–ÊˆÚ“®
-	if (star_count >= 650)
+	if (star_count >= 1000)
 	{
 		Scene::SetScene(new CSceneGameKuria());
+	}
+	else if (star_count < 0)
+	{
+		star_count = 0;
 	}
 
 }
@@ -69,7 +73,7 @@ void CObjStarCount::Draw()
 {
 	float c[4] = { 1.0f,1.0f,1.0f,1.0f };
 
-	swprintf_s(str, L"¯‚Ì”~%3dŒÂ", star_count);
+	swprintf_s(str, L"¯‚Ì”~%4dŒÂ", star_count);
 	Font::StrDraw(str, 10, 570, 30, c);
 
 
@@ -124,7 +128,7 @@ void CObjStarCount::Draw()
 	dst2.m_bottom = 548.0f;
 
 	//•`‰æ
-	Draw::Draw(19, &src, &dst2, c, 0.0f);
+	Draw::Draw(17, &src, &dst2, c, 0.0f);
 
 	//3“™¯
 

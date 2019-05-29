@@ -22,6 +22,8 @@ void CObjOperation::Init()
 
 	Back_time = 0.0f;
 
+	m_mou_time = 0.0f;
+
 	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
 
@@ -35,20 +37,28 @@ void CObjOperation::Action()
 	m_mous_x = (float)Input::GetPosX();
 	m_mous_y = (float)Input::GetPosY();
 
-	if (m_mous_x > 620 && m_mous_x < 730 && m_mous_y>480 && m_mous_y < 520)
+	//˜A‘±ˆÚ“®–h~
+	if (m_mou_time == 60.0f)
 	{
-		if (m_mous_l == true)
-		{
-			
-			if (m_mous_l == true)
-			{
-
-				time_flag = true;
-			}
-
-		}
-		
+		;
 	}
+	else if (m_mou_time < 60.0f)
+	{
+		m_mou_time++;
+		m_mous_l = false;
+	}
+
+	if (m_mous_l == true)
+	{
+		time_flag = true;
+	}
+	else if (m_mous_l == false && a_time > 1)
+	{
+		time_flag = false;
+		a_time++;
+	}
+
+		
 	if (time_flag == true)
 	{
 		a_time++;
@@ -60,8 +70,9 @@ void CObjOperation::Action()
 	{
 		a_time = 0;
 		Back_time = 0.0f;
+		m_mou_time = 0.0f;
 		time_flag = false;
-		Scene::SetScene(new CSceneStageselect()); //‘€ìà–¾‘I‘ğ‰æ–Ê‚ÉˆÚ“®
+		Scene::SetScene(new CSceneStageselect()); 
 
 	}
 	else if (a_time == 1)
@@ -76,6 +87,7 @@ void CObjOperation::Action()
 	{
 		a_time = 0;
 		Back_time = 0.0f;
+		m_mou_time = 0.0f;
 		time_flag = false;
 		Scene::SetScene(new CSceneTitle()); //‘€ìà–¾‘I‘ğ‰æ–Ê‚ÉˆÚ“®
 	}

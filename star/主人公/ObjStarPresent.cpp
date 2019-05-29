@@ -17,7 +17,7 @@ void CObjStarPresent::Init()
 	page = 0;//次のページへ行くための変数
 	page_flag = false;
 	page = 0;//現在のページ数
-	pagemax = 0;//最大ページ数
+	pagemax = 1;//最大ページ数
 	ver = 0;
 	VER_start = 0; //バー初期化
 	g = 200;//星枠の横幅
@@ -73,6 +73,11 @@ void CObjStarPresent::Action()
 	{
 		a_time = 0;
 		time_flag = false;
+	}
+	else if (m_mou_l == false && a_time > 1)
+	{
+		time_flag = false;
+		a_time++;
 	}
 
 	//SE発生処理

@@ -14,6 +14,7 @@ using namespace GameL;
 extern bool EM_flag;
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
+extern bool Increase_flag; //イベント時星発生率変更用
 
 //使用ヘッダー
 #include "SceneSaturn.h"
@@ -72,7 +73,7 @@ void CSceneSaturn::InitScene()
 	//背景
 	Draw::LoadImage(L"通常時背景.png", 8, TEX_SIZE_512);
 	Draw::LoadImage(L"粒子.png", 9, TEX_SIZE_512);
-	Draw::LoadImage(L"火星地表.png", 10, TEX_SIZE_512);
+	Draw::LoadImage(L"土星.png", 10, TEX_SIZE_512);
 
 	//主人公
 	Draw::LoadImage(L"主人公.png", 11, TEX_SIZE_512);
@@ -101,8 +102,8 @@ void CSceneSaturn::InitScene()
 	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 8);
 	CObjEvent* obj_i = new CObjEvent();
 	Objs::InsertObj(obj_i, OBJ_EVENT, 9); //イベント背景	
-	CObjMars* obj_m = new CObjMars();
-	Objs::InsertObj(obj_m, OBJ_MARS, 10);
+	CObjSaturn* obj_s = new CObjSaturn();
+	Objs::InsertObj(obj_s, OBJ_SATURN, 10);
 
 	//主人公オブジェクト生成
 	CObjHero* obj = new CObjHero();
@@ -145,11 +146,13 @@ void CSceneSaturn::InitScene()
 	Event_Conversion = 3;
 
 	EM_flag = false; //ビックリマーク出現フラグ初期化
+
 }
 
 //実行中メゾット
 void CSceneSaturn::Scene()
 {
+
 	CObjPose* pob = (CObjPose*)Objs::GetObj(OBJ_POSE);
 
 	//ポーズ
@@ -167,13 +170,12 @@ void CSceneSaturn::Scene()
 
 				while (1)
 				{
-					if (Input::GetVKey('Z') == true)
+					if (Input::GetVKey('B') == true) //Bキー入力時
 					{
-						Scene::SetScene(new CSceneTitle());
+						Scene::SetScene(new CSceneStageselect());
 						break;
 					}
-
-					if (Input::GetVKey('X') == true)//Xキー入力時
+					if (Input::GetVKey('X') == true) //Xキー入力時
 					{
 						if (m_Pf == true)
 						{
@@ -200,7 +202,7 @@ void CSceneSaturn::Scene()
 	}
 	occur++;
 	//　3/4秒ごとに星を出現させる
-	if (occur == 45)
+	if (occur == 45 || Increase_flag == true && occur == 22)
 	{
 		//重み付けで出現させる星を決める
 		int Items[] = { 1, 5, 20,40,60 };

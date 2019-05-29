@@ -51,6 +51,6 @@ private:
 	int A_event; //イベントタイム処理
 	int Ev_ancer; //イベント時アンカー処理
 
-	bool Ancer_dabletapp; //二度押し対策用フラグ
+	bool Ancer_dabletapp;
 
 };

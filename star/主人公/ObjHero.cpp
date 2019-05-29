@@ -91,26 +91,6 @@ void CObjHero::Action()
 	}
 
 
-	//ステージ選択画面に戻る
-	if (Input::GetVKey('B') == true)
-	{
-		if (m_return_flag = true)
-		{
-			Scene::SetScene(new CSceneStageselect());
-		}
-	}
-	//現在所持している星の数確認画面に移動
-	else if (Input::GetVKey('S') == true)
-	{
-		if (m_return_flag = true)
-		{
-			Scene::SetScene(new CSceneStarPicbook());
-		}
-	}
-	else
-	{
-		m_return_flag = true;
-	}
 
 	if (m_ani_time > 4)
 	{

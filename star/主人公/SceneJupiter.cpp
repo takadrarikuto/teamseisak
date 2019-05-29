@@ -14,6 +14,7 @@ using namespace GameL;
 extern bool EM_flag;
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
+extern bool Increase_flag; //イベント時星発生率変更用
 
 //使用ヘッダー
 #include "SceneJupiter.h"
@@ -145,11 +146,13 @@ void CSceneJupiter::InitScene()
 	Event_Conversion = 2;
 
 	EM_flag = false; //ビックリマーク出現フラグ初期化
+
 }
 
 //実行中メゾット
 void CSceneJupiter::Scene()
 {
+
 	CObjPose* pob = (CObjPose*)Objs::GetObj(OBJ_POSE);
 
 	//ポーズ
@@ -167,13 +170,12 @@ void CSceneJupiter::Scene()
 
 				while (1)
 				{
-					if (Input::GetVKey('Z') == true)
+					if (Input::GetVKey('B') == true) //Bキー入力時
 					{
-						Scene::SetScene(new CSceneTitle());
+						Scene::SetScene(new CSceneStageselect());
 						break;
 					}
-
-					if (Input::GetVKey('X') == true)//Xキー入力時
+					if (Input::GetVKey('X') == true) //Xキー入力時
 					{
 						if (m_Pf == true)
 						{
@@ -200,7 +202,7 @@ void CSceneJupiter::Scene()
 	}
 	occur++;
 	//　3/4秒ごとに星を出現させる
-	if (occur == 45)
+	if (occur == 45 || Increase_flag == true && occur == 22)
 	{
 		//重み付けで出現させる星を決める
 		int Items[] = { 1, 5, 20,40,60 };

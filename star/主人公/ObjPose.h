@@ -19,6 +19,5 @@ private:
 	bool m_Af; //ƒtƒ‰ƒO
 	bool m_Pf;
 
-
 };
 

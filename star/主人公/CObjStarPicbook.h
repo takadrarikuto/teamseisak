@@ -35,6 +35,8 @@ private:
 
 	wchar_t strmous[256]; //マウスカーソル用
 
+	bool Spaceship_back;
+
 	int Audio_co;
 	float m_mou_time; //連続選択防止タイム
 

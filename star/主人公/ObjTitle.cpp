@@ -23,6 +23,7 @@ void CObjTitle::Init()
 	a_time = 0;
 	time_flag = false;
 
+	m_mou_time = 0.0f;
 	
 	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
@@ -36,13 +37,26 @@ void CObjTitle::Action()
 
 	m_mous_l = Input::GetMouButtonL();
 
-
-	if (m_mous_x > 307 && m_mous_x < 480 && m_mous_y>440 && m_mous_y < 480)
+	//˜A‘±ˆÚ“®–h~
+	if (m_mou_time == 60.0f)
 	{
-		if (m_mous_l == true)
-		{
-			time_flag = true;			
-		}
+		;
+	}
+	else if (m_mou_time < 60.0f)
+	{
+		m_mou_time++;
+		m_mous_l = false;
+	}
+
+
+	if (m_mous_l == true)
+	{
+		time_flag = true;			
+	}
+	else if (m_mous_l == false && a_time > 1)
+	{
+		time_flag = false;
+		a_time++;
 	}
 
 	if (time_flag == true)
@@ -54,6 +68,7 @@ void CObjTitle::Action()
 	if (a_time == 10)
 	{
 		a_time = 0;
+		m_mou_time = 0.0f;
 		time_flag = false;
 		Scene::SetScene(new CSceneOperation()); //‘€ìà–¾‘I‘ğ‰æ–Ê‚ÉˆÚ“®	
 	}
