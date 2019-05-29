@@ -23,6 +23,9 @@ public:
 
 	bool hero_flag; //主人公フラグ
 	bool ancer_flag; //アンカーフラグ
+	bool stop_flag;//ストップフラグ
+	bool m_Sf;
+
 
 	wchar_t str[256];
 	int star_num;//星番号

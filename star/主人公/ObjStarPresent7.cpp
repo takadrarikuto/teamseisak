@@ -9,7 +9,7 @@
 extern int lever;
 extern int crick;
 extern int cenge;
-extern int star_count;
+
 
 void CObjStarPresent7::Init()
 {
@@ -221,7 +221,7 @@ void CObjStarPresent7::Draw()
 	Font::StrDraw(L"選択", 10, 50, 25, c);
 	Font::StrDraw(L"へ", 10, 75, 25, c);
 
-	
+
 
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
@@ -280,8 +280,7 @@ void CObjStarPresent7::Draw()
 		}
 	}
 
-	if (star_count >=350)
-	{
+
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"カストル", 20, 320 + t * l, 30, c);
 	l++;
@@ -295,7 +294,7 @@ void CObjStarPresent7::Draw()
 			page = 0; //ページ初期化
 		}
 	}
-	
+
 
 	//					　　	    X　 Y　 大きさ
 	Font::StrDraw(L"ポルックス", 20, 320 + t * l, 30, c);
@@ -310,7 +309,7 @@ void CObjStarPresent7::Draw()
 			page = 0; //ページ初期化
 		}
 	}
-	
+
 
 	//					　　	    X　        Y　    大きさ
 	Font::StrDraw(L"アルヘナ", 20, 320 + t * l, 30, c);
@@ -325,7 +324,7 @@ void CObjStarPresent7::Draw()
 			page = 0; //ページ初期化
 		}
 	}
-	
+
 	//					　　	  X　        Y　    大きさ
 	Font::StrDraw(L"ワサト", 20, 320 + t * l, 30, c);
 	l++;
@@ -339,7 +338,7 @@ void CObjStarPresent7::Draw()
 			page = 0; //ページ初期化
 		}
 	}
-	
+
 
 	t -= 4;
 	l -= 4;
@@ -358,7 +357,7 @@ void CObjStarPresent7::Draw()
 			page = 0; //ページ初期化
 		}
 	}
-	
+
 	//					　　	  X　        Y　    大きさ
 	Font::StrDraw(L"メクブダ", 20 + 220, 330 + t * l, 30, c);
 	l++;
@@ -372,7 +371,7 @@ void CObjStarPresent7::Draw()
 			page = 0; //ページ初期化
 		}
 	}
-	
+
 	//					  　　	    X　        Y　    大きさ
 	Font::StrDraw(L"プロプス", 20 + 220, 340 + t * l, 30, c);
 	l++;
@@ -386,7 +385,7 @@ void CObjStarPresent7::Draw()
 			page = 0; //ページ初期化
 		}
 	}
-	
+
 	//					　　	  X　        Y　    大きさ
 	Font::StrDraw(L"テジェット", 20 + 220, 350 + t * l, 30, c);
 	l++;
@@ -404,7 +403,7 @@ void CObjStarPresent7::Draw()
 
 	t -= 4;
 	l -= 4;
-	std=2;
+	std = 2;
 	//					　　	  X　        Y　    大きさ
 	Font::StrDraw(L"アルズラ", 20 + 420, 320 + t * l, 30, c);
 	l++;
@@ -519,7 +518,7 @@ void CObjStarPresent7::Draw()
 		ver++;
 		Font::StrDraw(L"黄みの橙色をした恒星。α星のカストルとともに、ふたご座の", left_end, IO_y + Interval_y * ver, font_size, c);
 		ver++;
-		Font::StrDraw(L"兄弟の頭に見立てられている。", left_end, IO_y + Interval_y * ver, font_size, c);	
+		Font::StrDraw(L"兄弟の頭に見立てられている。", left_end, IO_y + Interval_y * ver, font_size, c);
 
 		//ページ制限
 		if (page < 0 || page > 0)
@@ -986,12 +985,6 @@ void CObjStarPresent7::Draw()
 			page = 1;
 		}
 
-		
-	}
-	}
-else
-	{
-	ver = 0;
-	Font::StrDraw(L"この星々を閲覧するには合計で350星を個集めてください", left_end, IO_y + Interval_y * ver, font_size, c);
+
 	}
 }
