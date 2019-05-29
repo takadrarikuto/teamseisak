@@ -25,6 +25,7 @@ enum OBJ_NAME
 	OBJ_THIRDSTAR,
 	OBJ_FOURTHSTAR,
 	OBJ_OTHERSTAR,
+	OBJ_BONUSSTAR,
 	OBJ_OPERATION,
 	OBJ_BACKGROUND,
 	OBJ_GAMEKURIA,
@@ -51,6 +52,7 @@ enum OBJ_NAME
 	OBJ_QTE,
 	OBJ_STARMODEL,
 	OBJ_EM,
+	OBJ_TIMESTOP,
 };
 //------------------------------------------------
 
@@ -112,6 +114,7 @@ struct UserData
 #include "ObjThirdStar.h"
 #include "ObjFourthStar.h"
 #include "ObjOtherStar.h"
+#include "ObjBonusStar.h"
 #include "ObjBackground.h"
 #include "CObjOperation.h"
 #include "ObjGamekuria.h"
@@ -136,6 +139,7 @@ struct UserData
 #include "ObjPose.h"
 #include "ObjStarmodel.h"
 #include "ObjExclamationMark.h"
+#include "ObjTimeStop.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------

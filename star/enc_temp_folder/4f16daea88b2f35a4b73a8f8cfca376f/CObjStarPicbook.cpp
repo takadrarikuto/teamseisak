@@ -422,11 +422,10 @@ void CObjStarPicbook::Draw()
 					Back_time = 0.0f;
 					time_flag = false;
 					starmodel_flag = false;
-					//ƒV[ƒ“Äì¬–hŽ~(‰¼)
-					/*this->SetStatus(false);
+					this->SetStatus(false);
 					CObjStarPresent4* p = new CObjStarPresent4();
-					Objs::InsertObj(p, OBJ_STARPRESENT4, 9);*/
-					Scene::SetScene(new CSceneStarPicbook());
+					Objs::InsertObj(p, OBJ_STARPRESENT4, 9);
+					//Scene::SetScene(new CSceneStarPicbook());
 				}
 				
 			}

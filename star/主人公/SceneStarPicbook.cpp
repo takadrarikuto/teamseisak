@@ -34,7 +34,6 @@ void CSceneStarPicbook::InitScene()
 	//音楽情報読み込み
 	Audio::LoadAudio(0, L"星図鑑画面BGM.wav", BACK_MUSIC);
 
-
 	//バックミュージックスタート
 	Audio::Start(0);
 
