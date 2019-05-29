@@ -93,16 +93,14 @@ void CObjStarPresent::Action()
 	{
 		if (m_mou_l == true)
 		{
-			time_flag = true;
-			if (a_time == 10)
-			{
+			
 				lever = 0;
 				a_time = 0;
 				Back_time = 0.0f;
 				time_flag = false;
 				Scene::SetScene(new CSceneStarPicbook());
 				return;
-			}
+		
 		}
 	}
 	//‚‚‚ð‰Ÿ‚·‚Æ–ß‚é

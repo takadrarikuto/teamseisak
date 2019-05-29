@@ -95,7 +95,7 @@ void CObjStarPresent2::Action()
 		if (m_mou_l == true)
 		{
 			time_flag = true;
-			if (a_time == 10)
+			if (a_time == 5)
 			{
 				lever = 0;
 				a_time = 0;

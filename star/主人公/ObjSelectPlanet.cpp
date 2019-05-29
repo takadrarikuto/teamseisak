@@ -126,7 +126,10 @@ void CObjSelectPlanet::Action()
 	}
 
 	Back_time++;
-
+	if (time_flag == true)
+	{
+		a_time++;
+	}
 	//‘€ìà–¾‘I‘ð‰æ–Ê‚ÉˆÚ“®
 	if (Input::GetVKey('B') == true && Back_time > 60.0f)
 	{

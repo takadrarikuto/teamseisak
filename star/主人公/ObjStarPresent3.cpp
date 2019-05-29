@@ -95,7 +95,7 @@ void CObjStarPresent3::Action()
 		if (m_mou_l == true)
 		{
 			time_flag = true;
-			if (a_time == 10)
+			if (a_time == 5)
 			{
 				lever = 0;
 				a_time = 0;
@@ -275,7 +275,7 @@ void CObjStarPresent3::Draw()
 		}
 	}
 
-	if (star_count >=150)
+	if (star_count >=0)
 	{
 		//					　　	            X　 Y　 大きさ
 		Font::StrDraw(L"ズベン・エル・ゲヌビ", 2, 330 + t * l, 20, c);
