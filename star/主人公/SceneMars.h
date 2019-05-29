@@ -28,6 +28,8 @@ private:
 	float Star_time; //1等星作成警告用カウント
 	bool Star_flag; //1等星作成警告用フラグ
 	int star_count;
+	int i;
+	bool m_mou_l;//マウスの左ボタン
 
 
 };

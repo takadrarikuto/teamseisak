@@ -116,10 +116,11 @@ void CObjAncer::Action()
 			ancer_time += 1.0f; //アンカー発射時間増加
 			rope_time -= 1.0f; //ロープ発射時間増加
 			MAncer_dabletapp = false;
+
 		}	
-		else if (m_mous_l == false)
+		if (m_mous_l == false)
 		{
-			//アンカーを上げる処理
+			//アンカーを伸ばす処理
 			//アンカー発射時間とロープ発射時間が0じゃない時
 			MAncer_dabletapp = true;
 			if (ancer_time > Ancer_Rope_InitialTime && rope_time < Ancer_Rope_InitialTime)
@@ -130,7 +131,7 @@ void CObjAncer::Action()
 				rope_time += 1.0f;	
 				Ancer_dabletapp = true;
 			}
-			//アンカーを下げる処理
+			//アンカーを戻す処理
 			//アンカー発射時間とロープ発射時間が0の時にかつアンカーフラグがtrueの時
 			else if (ancer_flag == true && ancer_time == Ancer_Rope_InitialTime && rope_time == Ancer_Rope_InitialTime)
 			{

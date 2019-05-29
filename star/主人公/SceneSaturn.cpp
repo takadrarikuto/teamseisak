@@ -14,6 +14,7 @@ using namespace GameL;
 extern bool EM_flag;
 extern bool Event_Star;//イベント時星の移動方向変更
 extern int Event_Conversion; //イベントエリア切り替え
+extern bool Increase_flag; //イベント時星発生率変更用
 
 //使用ヘッダー
 #include "SceneSaturn.h"
@@ -200,7 +201,7 @@ void CSceneSaturn::Scene()
 	}
 	occur++;
 	//　3/4秒ごとに星を出現させる
-	if (occur == 45)
+	if (occur == 45 || Increase_flag == true && occur == 22)
 	{
 		//重み付けで出現させる星を決める
 		int Items[] = { 1, 5, 20,40,60 };

@@ -78,10 +78,6 @@ void CObjMeasurementAncer::Action()
 		m_vfx += 4.0f;
 	}
 
-
-	//自身のHitBoxを持ってくる
-	CHitBox* hit_a = Hits::GetHitBox(this);
-
 	//画面移動時起動防止用
 	if (time_co > 30)
 	{
@@ -135,11 +131,6 @@ void CObjMeasurementAncer::Action()
 	//位置更新
 	m_pafx += m_vfx;
 	m_pafy += m_vfy;
-
-
-	//HitBoxの位置の変更
-	hit_a->SetPos(m_pafx + hitbox_size, m_pafy, size, size);
-
 
 }
 
