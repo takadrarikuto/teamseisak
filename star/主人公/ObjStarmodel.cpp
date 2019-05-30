@@ -79,7 +79,7 @@ void CObjStarmodel::Action()
 		if (m_mou_l == true)
 		{
 			time_flag = true;
-			if (a_time == 10)
+			if (a_time == 8)
 			{
 				lever = 0;
 				a_time = 0;
@@ -111,7 +111,6 @@ void CObjStarmodel::Action()
 			{
 				lever += 1;
 				a_time = 0;
-				Back_time = 0.0f;
 				time_flag = false;
 				ver = VER_start; //•¶šŠÔŠu‰Šú‰»
 				starmodel_flag = false;
@@ -132,7 +131,6 @@ void CObjStarmodel::Action()
 			{
 				lever -= 1;
 				a_time = 0;
-				Back_time = 0.0f;
 				time_flag = false;
 				ver = VER_start; //•¶šŠÔŠu‰Šú‰»
 				starmodel_flag = false;

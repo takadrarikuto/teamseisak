@@ -39,6 +39,7 @@ void CObjStarPresent4::Init()
 	m_mou_time = 0.0f;
 
 	Back_time = 0.0f;
+	Spaceship_back = false;
 
 	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
 }
@@ -62,19 +63,25 @@ void CObjStarPresent4::Action()
 	}
 	else if (m_mou_l == false)
 	{
-		a_time = 0;
 		time_flag = false;
-	}
-	else if (m_mou_l == false && a_time > 1)
-	{
-		time_flag = false;
-		a_time++;
+		if (a_time > 1)
+		{
+			a_time++;
+		}
+		else
+		{
+			a_time = 0;
+		}
 	}
 
 	//SE発生処理
 	if (time_flag == true)
 	{
 		a_time++;
+	}
+	else if (time_flag == false)
+	{
+		a_time = 0;
 	}
 	if (a_time == 1)
 	{
@@ -87,22 +94,19 @@ void CObjStarPresent4::Action()
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
+		Spaceship_back = true;
 		if (m_mou_l == true)
 		{
 			time_flag = true;
-			if (a_time == 10)
-			{
-				lever = 0;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-				return;
-			}
 		}
 	}
+	else
+	{
+		Spaceship_back = false;
+	}
+
 	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true && Back_time > 60.0f)
+	if (Input::GetVKey('B') == true && Back_time > 60.0f)
 	{
 		lever = 0;
 		a_time = 0;
@@ -111,6 +115,17 @@ void CObjStarPresent4::Action()
 		Scene::SetScene(new CSceneStarPicbook());
 	}
 
+	if (Spaceship_back == true)
+	{
+		if (a_time >= 8)
+		{
+			lever = 0;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
 
 }
 
