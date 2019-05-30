@@ -22,10 +22,35 @@ void CObjStarPicbook::Init()
 	m_mou_y = 0.0f;
 
 	Spaceship_back = false;
+	StarPicbook = false;
+	StarPicbook2 = false;
+	StarPicbook3 = false;
+	StarPicbook4 = false;
+	StarPicbook5 = false;
+	StarPicbook6 = false;
+	StarPicbook7 = false;
+	StarPicbook8 = false;
+	StarPicbook9 = false;
+	StarPicbook10 = false;
+	StarPicbook11 = false;
+	StarPicbook12 = false;
+	Starmodel = false;
+	Starmodel2 = false;
+	Starmodel3 = false;
+	Starmodel4 = false;
+	Starmodel5 = false;
+	Starmodel6 = false;
+	Starmodel7 = false;
+	Starmodel8 = false;
+	Starmodel9 = false;
+	Starmodel10 = false;
+	Starmodel11 = false;
+	Starmodel12 = false;
 
-	Audio_co = 0;
 	m_mou_time = 0.0f;
 
+	a_time = 0;
+	a_time_max = 8;
 	Back_time = 0.0f;
 
 	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
@@ -42,6 +67,9 @@ void CObjStarPicbook::Action()
 	m_mou_r = Input::GetMouButtonR();
 	m_mou_l = Input::GetMouButtonL();
 
+	Spaceship_back = false;
+
+
 	//連続移動防止
 	if (m_mou_time == 60.0f)
 	{
@@ -53,25 +81,6 @@ void CObjStarPicbook::Action()
 		m_mou_l = false;
 	}
 
-	//SE発生処理
-	if (m_mou_l == true)
-	{
-		Audio_co++;
-	}
-	else if (m_mou_l == false)
-	{
-		Audio_co = 0;
-	}
-
-	//SE発生処理
-	if (Audio_co == 1)
-	{
-		Audio::Start(1);
-	}
-	else if (Audio_co > 1)
-	{
-		Audio_co = 2;
-	}
 
 	//宇宙船へボタン
 	// left				 right            top            bottom         
@@ -82,43 +91,11 @@ void CObjStarPicbook::Action()
 		{
 			time_flag = true;			
 		}
-
 	}
-
-	if (Spaceship_back == true)
+	else
 	{
-		if (a_time >= 10)
-		{
-			lever = 0;
-			a_time = 0;
-			Back_time = 0.0f;
-			time_flag = false;
-			Scene::SetScene(new CSceneStageselect());
-		}
+		Spaceship_back = false;
 	}
-
-	if (m_mou_l == true)
-	{
-		time_flag = true;
-	}
-	else if (m_mou_l == false && a_time > 1)
-	{
-		time_flag = false;
-		a_time++;
-	}
-
-
-	if (time_flag == true)
-	{
-		a_time++;
-	}
-
-	if (a_time == 1)
-	{
-		Audio::Start(1);
-	}
-
-	Back_time++;
 
 	//ｂを押すと戻る
 	if (Input::GetVKey('B') == true && Back_time > 60.0f)
@@ -129,6 +106,333 @@ void CObjStarPicbook::Action()
 		time_flag = false;
 		Scene::SetScene(new CSceneStageselect());
 	}
+
+	if (Spaceship_back == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 0;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStageselect());
+		}
+	}
+	else if (StarPicbook == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 1;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (StarPicbook2 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 2;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (StarPicbook3 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 3;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (StarPicbook4 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 4;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (StarPicbook5 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 5;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (StarPicbook6 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 6;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (StarPicbook7 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 7;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (StarPicbook8 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 8;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (StarPicbook9 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 9;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}		
+	}
+	else if (StarPicbook10 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 10;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}	
+	}
+	else if (StarPicbook11 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 11;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}		
+	}
+	else if (StarPicbook12 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 12;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (Starmodel == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 13;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+
+	}
+	else if (Starmodel2 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 14;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (Starmodel3 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 15;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (Starmodel4 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 16;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (Starmodel5 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 17;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (Starmodel6 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 18;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (Starmodel7 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 19;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (Starmodel8 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 20;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (Starmodel9 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 21;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+
+	}
+	else if (Starmodel10 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 22;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			starmodel_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (Starmodel11 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 23;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+	else if (Starmodel12 == true)
+	{
+		if (a_time >= a_time_max)
+		{
+			lever = 24;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+
+	//SE発生処理
+	if (m_mou_l == true)
+	{
+		time_flag = true;
+	}
+	else if (m_mou_l == false)
+	{
+		time_flag = false;
+		if (a_time > 1)
+		{
+			a_time++;
+		}
+		else
+		{
+			a_time = 0;
+		}
+	}
+
+
+
+	if (time_flag == true)
+	{
+		a_time++;
+	}
+	else if (time_flag == false)
+	{
+		a_time = 0;
+	}
+
+	//SE発生処理
+	if (a_time == 1)
+	{
+		Audio::Start(1);
+	}
+
+
+	Back_time++;
+
 
 
 }
@@ -410,26 +714,6 @@ void CObjStarPicbook::Draw()
 	//おうし座画像
 	Draw::Draw(2 + Dc, &src, &dst, c, 0.0f);
 
-	if (m_mou_l == true)
-	{
-		time_flag = true;
-	}
-	else if (m_mou_l == false)
-	{
-		a_time = 0;
-		time_flag = false;
-	}
-
-
-	if (time_flag == true)
-	{
-		a_time++;
-	}
-
-	if (a_time == 1)
-	{
-		Audio::Start(1);
-	}
 
 	//宇宙船への文字を描画する
 	//					　　X　Y　大きさ
@@ -441,38 +725,28 @@ void CObjStarPicbook::Draw()
 	//水瓶座の範囲
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
-		if (star_count <200 )
+		if (star_count < 200)
 		{
+			time_flag = false;
+			StarPicbook = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を200個集めてください", left_end, 260, font_size, c);
 		}
+		else if (star_count >= 200)
+		{
+			StarPicbook = true;
+		}
+		
 
 		if (m_mou_l == true && star_count >= 200)
 		{	
-			//    top            bottom  
-			//文字
-			if (starmodel_flag == true)
-			{
-				
-					lever = 1;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;
-					starmodel_flag = false;
-					//シーン再作成防止(仮)
-					/*this->SetStatus(false);
-					CObjStarPresent4* p = new CObjStarPresent4();
-					Objs::InsertObj(p, OBJ_STARPRESENT4, 9);*/
-					Scene::SetScene(new CSceneStarPicbook());
-			
-			}
-			
-			//画像
-			else 
-			{
-				starmodel_flag = true;
-			}
-
+			time_flag = true;
 		}
+	}
+	else
+	{
+		StarPicbook = false;
+	}
+
 
 	}
 
@@ -480,34 +754,25 @@ void CObjStarPicbook::Draw()
 	{
 		if (star_count < 200)
 		{
+			time_flag = false;
+			Starmodel = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を200個集めてください", left_end, 260, font_size, c);
+		}
+		else if (star_count >= 200)
+		{
+			Starmodel = true;
 		}
 
 		if (m_mou_l == true && star_count >= 200)
 		{
-			//    top            bottom  
-			//文字
-			if (starmodel_flag == true)
-			{
-
-				lever = 13;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				starmodel_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-
-			}
-
-			//画像
-			else
-			{
-				starmodel_flag = true;
-			}
-
+			time_flag = true;
 		}
 	}
-	
+	else
+	{
+		Starmodel = false;
+	}
+
 	
 	Font::StrDraw(L"魚座", 30 + fy * std, 330 + t*l, 30, c);
 	l++;
@@ -516,57 +781,49 @@ void CObjStarPicbook::Draw()
 	{
 		if (star_count < 250)
 		{
+			time_flag = false;
+			StarPicbook2 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を250個集めてください", left_end, 260, font_size, c);
+		}
+
+		if (star_count >= 250)
+		{
+			StarPicbook2 = true;
 		}
 
 		if (m_mou_l == true && star_count >= 250)
 		{
-			if (starmodel_flag = true)
-			{
-				
-					lever = 2;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;
-					starmodel_flag = false;
-					Scene::SetScene(new CSceneStarPicbook());
-				
-			}
-			
+			time_flag = true;				
 		}
-		else
-		{
-			starmodel_flag = true;
-		}
+	}
+	else
+	{
+		StarPicbook2 = false;
 	}
 
 	if (m_mou_x >150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
 	  {
 		if (star_count <250)
 		{
+			time_flag = false;
+			Starmodel2 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を250個集めてください", left_end, 260, font_size, c);
+		}
+
+		if (star_count >= 250)
+		{
+			Starmodel2 = true;
 		}
 
 		if (m_mou_l == true && star_count >= 250)
 		{
-			if (starmodel_flag = true)
-			{
-
-				lever = 14;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				starmodel_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-
-			}
-
+			time_flag = true;
 		}
-		else
-		{
-			starmodel_flag = true;
-		}
-	  }
+	}
+	else
+	{
+		Starmodel2 = false;
+	}
 
 	//牡羊座
 	Font::StrDraw(L"牡羊座", 30 + fy * std, 330 + t * l, 30, c);
@@ -575,56 +832,40 @@ void CObjStarPicbook::Draw()
 	{
 		if (star_count <0 )
 		{
+			time_flag = false;
+			StarPicbook3 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を300個集めてください", left_end, 260, font_size, c);
 		}
 
 		if (m_mou_l == true && star_count >=0)
 		{
-			if (starmodel_flag == true)
-			{
-				
-					lever = 3;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;
-					starmodel_flag = false;
-					Scene::SetScene(new CSceneStarPicbook());
-				
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;				
 		}
+	}
+	else
+	{
+		StarPicbook3 = false;
 	}
 
 	if (m_mou_x > 150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 0)
 		{
+			time_flag = false;
+			Starmodel3 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を300個集めてください", left_end, 260, font_size, c);
 		}
 
 		if (m_mou_l == true && star_count >= 0)
 		{
-			if (starmodel_flag == true)
-			{
-
-				lever = 15;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				starmodel_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
 	}
-	
+	else
+	{
+		Starmodel3 = false;
+	}
+
 	//牡牛座
 	Font::StrDraw(L"牡牛座", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
@@ -632,56 +873,48 @@ void CObjStarPicbook::Draw()
 	{
 		if (star_count < 100)
 		{
+			time_flag = false;
+			StarPicbook4 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を100個集めてください", left_end, 260, font_size, c);
+		}
+
+		if (star_count >= 100)
+		{
+			StarPicbook4 = true;
 		}
 
 		if (m_mou_l == true&&star_count>=100)
 		{
-			if (starmodel_flag = true)
-			{
-			
-					lever = 4;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;
-					starmodel_flag = false;
-					Scene::SetScene(new CSceneStarPicbook());
-				
-				
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
+	}
+	else
+	{
+		StarPicbook4 = false;
 	}
 
 	if (m_mou_x > 150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 100)
 		{
+			time_flag = false;
+			Starmodel4 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を100個集めてください", left_end, 260, font_size, c);
+		}
+
+		if (star_count >= 100)
+		{
+			Starmodel4 = true;
 		}
 
 		if (m_mou_l == true && star_count >= 100)
 		{
-			if (starmodel_flag = true)
-			{
-
-				lever = 16;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				starmodel_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-
-
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
+	}
+	else
+	{
+		Starmodel4 = false;
 	}
 
 	t -= 4;
@@ -695,52 +928,48 @@ void CObjStarPicbook::Draw()
 	{
 		if (star_count < 350)
 		{
+			time_flag = false;
+			StarPicbook5 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を350個集めてください", left_end, 260, font_size, c);
+		}
+
+		if (star_count >= 350)
+		{
+			StarPicbook5 = true;
 		}
 
 		if (m_mou_l == true && star_count >= 350)
 		{
-			if (starmodel_flag = true)
-			{
-				
-					lever = 5;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;
-					Scene::SetScene(new CSceneStarPicbook());
-				
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
+	}
+	else
+	{
+		StarPicbook5 = false;
 	}
 
 	if (m_mou_x > 325&& m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 350)
 		{
+			time_flag = false;
+			Starmodel5 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を350個集めてください", left_end, 260, font_size, c);
+		}
+
+		if (star_count >= 350)
+		{
+			Starmodel5 = true;
 		}
 
 		if (m_mou_l == true && star_count >= 350)
 		{
-			if (starmodel_flag = true)
-			{
-
-				lever = 17;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
+	}
+	else
+	{
+		Starmodel5 = false;
 	}
 
 	//蟹座
@@ -750,49 +979,47 @@ void CObjStarPicbook::Draw()
 	{
 		if (star_count < 400)
 		{
+			time_flag = false;
+			StarPicbook6 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を400個集めてください", left_end, 260, font_size, c);
 		}
+
+		if (star_count >= 400)
+		{
+			StarPicbook6 = true;
+		}
+
 		if (m_mou_l == true&&star_count >= 400)
 		{
-			if (starmodel_flag = true)
-			{
-				
-					lever = 6;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;
-					Scene::SetScene(new CSceneStarPicbook());
-				
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
+	}
+	else
+	{
+		StarPicbook6 = false;
 	}
 	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 400)
 		{
+			time_flag = false;
+			Starmodel6 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を400個集めてください", left_end, 260, font_size, c);
 		}
+
+		if (star_count >= 400)
+		{
+			Starmodel6 = true;
+		}
+
 		if (m_mou_l == true && star_count >= 400)
 		{
-			if (starmodel_flag == true)
-			{
-				
-					lever = 18;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;
-					Scene::SetScene(new CSceneStarPicbook());
-				
-			}
+			time_flag = true;
 		}
-		else
-		{
-			starmodel_flag = true;
-		}
+	}
+	else
+	{
+		Starmodel6 = false;
 	}
 
 	//獅子座
@@ -802,49 +1029,48 @@ void CObjStarPicbook::Draw()
 	{
 		if (star_count < 450)
 		{
+			time_flag = false;
+			StarPicbook7 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を450個集めてください", left_end, 260, font_size, c);
 		}
+
+		if (star_count >= 450)
+		{
+			StarPicbook7 = true;
+		}
+
 		if (m_mou_l == true && star_count >= 450)
 		{
-			if (starmodel_flag = true)
-			{
-				
-					lever = 7;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;					
-					Scene::SetScene(new CSceneStarPicbook());
-				
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
 	}
+	else
+	{
+		StarPicbook7 = false;
+	}
+
 	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 450)
 		{
+			time_flag = false;
+			Starmodel7 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を450個集めてください", left_end, 260, font_size, c);
 		}
+
+		if (star_count >= 450)
+		{
+			Starmodel7 = true;
+		}
+
 		if (m_mou_l == true && star_count >= 450)
 		{
-			if (starmodel_flag = true)
-			{
-
-				lever = 19;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
+	}
+	else
+	{
+		Starmodel7 = false;
 	}
 
 	//乙女座
@@ -854,51 +1080,48 @@ void CObjStarPicbook::Draw()
 	{
 		if (star_count <500)
 		{
+			time_flag = false;
+			StarPicbook8 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を500個集めてください", left_end, 260, font_size, c);
+		}
+
+		if (star_count >= 500)
+		{
+			StarPicbook8 = true;
 		}
 
 		if (m_mou_l == true && star_count >= 500)
 		{
-			if (starmodel_flag = true)
-			{
-				
-					lever = 8;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;
-					Scene::SetScene(new CSceneStarPicbook());
-				
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
 	}
+	else
+	{
+		StarPicbook8 = false;
+	}
+
 	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 500)
 		{
+			time_flag = false;
+			Starmodel8 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を500個集めてください", left_end, 260, font_size, c);
+		}
+
+		if (star_count >= 500)
+		{
+			Starmodel8 = true;
 		}
 
 		if (m_mou_l == true && star_count >= 500)
 		{
-			if (starmodel_flag = true)
-			{
-
-				lever = 20;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
+	}
+	else
+	{
+		Starmodel8 = false;
 	}
 
 	t -= 4;
@@ -911,174 +1134,154 @@ void CObjStarPicbook::Draw()
 	{
 		if (star_count <150 )
 		{
+			time_flag = false;
+			StarPicbook9 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を150個集めてください", left_end, 260, font_size, c);
 		}
-		if (m_mou_l == true)
+
+		if (star_count >= 150)
 		{
-			if (m_mou_l == true && star_count >= 150)
-			{
-				
-					lever = 9;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;
-					Scene::SetScene(new CSceneStarPicbook());
-				
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			StarPicbook9 = true;
 		}
+
+		if (m_mou_l == true && star_count >= 150)
+		{
+			time_flag = true;			
+		}
+	}
+	else
+	{
+		StarPicbook9 = false;
 	}
 	if (m_mou_x > 500 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 150)
 		{
+			time_flag = false;
+			Starmodel9 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を150個集めてください", left_end, 260, font_size, c);
 		}
+
+		if (star_count >= 150)
+		{
+			Starmodel9 = true;
+		}
+
 		if (m_mou_l == true)
 		{
-			if (m_mou_l == true && star_count >= 150)
-			{
-
-				lever = 21;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
 	}
-	
-Font::StrDraw(L"蠍座", 30 + fy * std, 330 + t*l, 30, c);
-l++;
+	else
+	{
+		Starmodel9 = false;
+	}
+
+	Font::StrDraw(L"蠍座", 30 + fy * std, 330 + t*l, 30, c);
+	l++;
 
 	//蠍座				left		     right							 top						 bottom       
-if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
-{// 閲覧の制限
-	if (star_count < 50 && g_other_star < 50)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		Font::StrDraw(L"この星々を閲覧するには合計で五等星を50個集めてください", left_end, 260, font_size, c);
-	}
-	
-	if (m_mou_l == true&& star_count >= 50&& g_other_star>=50)
-	{
-		
-
-			if (starmodel_flag == true)
-			{
-
-				lever = 10;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				starmodel_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-
-
-			}
-		
-	}
-	else
-	{
-		starmodel_flag = true;
-	}
-
-
-
-}
-
-//   left				  right			  top			 bottom                
-if (m_mou_x > 130+200*std&& m_mou_x < 197*(std+1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
-{
-	if (star_count < 50 || g_other_star < 50)
-	{
-		Font::StrDraw(L"この星々を閲覧するには合計で五等星を50個集めてください", left_end, 260, font_size, c);
-	}
-
-	if (m_mou_l == true && star_count >= 2 && g_other_star >= 50)
-	{
-
-
-		if (starmodel_flag == true)
+		// 閲覧の制限
+		if (star_count < 50 && g_other_star < 50)
 		{
-
-			lever = 22;
-			a_time = 0;
-			Back_time = 0.0f;
 			time_flag = false;
-			starmodel_flag = false;
-			Scene::SetScene(new CSceneStarPicbook());
+			StarPicbook10 = false;
+			Font::StrDraw(L"この星々を閲覧するには合計で五等星を50個集めてください", left_end, 260, font_size, c);
+		}
+	
+		if (star_count >= 50)
+		{
+			StarPicbook10 = true;
+		}
 
-
+		if (m_mou_l == true&& star_count >= 50&& g_other_star>=50)
+		{
+			time_flag = true;
 		}
 
 	}
 	else
 	{
-		starmodel_flag = true;
+		StarPicbook10 = false;
 	}
-}
+
+	//   left				  right			  top			 bottom                
+	if (m_mou_x > 130+200*std&& m_mou_x < 197*(std+1) && m_mou_y>302+k*(l-1) && m_mou_y < 300+73*l)
+	{
+		if (star_count < 50 && g_other_star < 50)
+		{
+			time_flag = false;
+			Starmodel10 = false;
+			Font::StrDraw(L"この星々を閲覧するには合計で五等星を50個集めてください", left_end, 260, font_size, c);
+		}
+
+		if (star_count >= 50)
+		{
+			Starmodel10 = true;
+		}
+
+		if (m_mou_l == true && star_count >= 50 && g_other_star >= 50)
+		{
+			time_flag = true;
+		}
+	}
+	else
+	{
+		Starmodel10 = false;
+	}
 
 	//射手座
-Font::StrDraw(L"射手座", 30 + fy * std, 350 + t * l, 30, c);
-l++;
-if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
-{
-	if (star_count < 550)
+	Font::StrDraw(L"射手座", 30 + fy * std, 350 + t * l, 30, c);
+	l++;
+	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		Font::StrDraw(L"この星々を閲覧するには合計で星を550個集めてください", left_end, 260, font_size, c);
-	}
-	if (m_mou_l == true && star_count >= 550)
-	{
-		if (starmodel_flag = true)
+		if (star_count < 550)
 		{
-		
-				lever = 11;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-			
-			
-		}
-		else
-		{
-			starmodel_flag = true;
-		}
-	}
-}
-if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
-{
-	if (star_count < 550)
-	{
-		Font::StrDraw(L"この星々を閲覧するには合計で星を550個集めてください", left_end, 260, font_size, c);
-	}
-	if (m_mou_l == true && star_count >= 550)
-	{
-		if (starmodel_flag = true)
-		{
-
-			lever = 23;
-			a_time = 0;
-			Back_time = 0.0f;
 			time_flag = false;
-			Scene::SetScene(new CSceneStarPicbook());
-
-
+			StarPicbook11 = false;
+			Font::StrDraw(L"この星々を閲覧するには合計で星を550個集めてください", left_end, 260, font_size, c);
 		}
-		else
+		if (star_count >= 550)
 		{
-			starmodel_flag = true;
+			StarPicbook11 = true;
+		}
+
+		if (m_mou_l == true && star_count >= 550)
+		{
+			time_flag = true;
 		}
 	}
-}
+	else
+	{
+		StarPicbook11 = false;
+	}
+
+	if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	{
+		if (star_count < 550)
+		{
+			time_flag = false;
+			Starmodel11 = false;
+			Font::StrDraw(L"この星々を閲覧するには合計で星を550個集めてください", left_end, 260, font_size, c);
+		}
+
+		if (star_count >= 550)
+		{
+			Starmodel11 = true;
+		}
+
+		if (m_mou_l == true && star_count >= 550)
+		{
+			time_flag = true;
+		}
+	}
+	else
+	{
+		Starmodel11 = false;
+	}
+
 	//山羊座
 	Font::StrDraw(L"山羊座", 30 + fy * std, 360 + t * l, 30, c);
 	l++;
@@ -1086,49 +1289,46 @@ if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>295 + k * (l - 1) && m
 	{
 		if (star_count < 600)
 		{
+			time_flag = false;
+			StarPicbook12 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を100個集めてください", left_end, 260, font_size, c);
 		}
+		if (star_count >= 600)
+		{
+			StarPicbook12 = true;
+		}
+
 		if (m_mou_l == true && star_count >= 600)
 		{
-			if (starmodel_flag = true)
-			{
-				
-					lever = 12;
-					a_time = 0;
-					Back_time = 0.0f;
-					time_flag = false;
-					Scene::SetScene(new CSceneStarPicbook());
-				
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
+	}
+	else
+	{
+		StarPicbook12 = false;
 	}
 	if (m_mou_x > 500 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 600)
 		{
+			time_flag = false;
+			Starmodel12 = false;
 			Font::StrDraw(L"この星々を閲覧するには合計で星を100個集めてください", left_end, 260, font_size, c);
 		}
+
+		if (star_count >= 600)
+		{
+			Starmodel12 = true;
+		}
+
 		if (m_mou_l == true && star_count >= 600)
 		{
-			if (starmodel_flag = true)
-			{
-
-				lever = 24;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-
-			}
-			else
-			{
-				starmodel_flag = true;
-			}
+			time_flag = true;
 		}
+	}
+	else
+	{
+		Starmodel12 = false;
 	}
 	std = 0;
 

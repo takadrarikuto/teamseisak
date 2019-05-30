@@ -202,7 +202,7 @@ void CSceneJupiter::Scene()
 	}
 	occur++;
 	//　0.75秒ごとに星を出現させる・イベント時は発生率1.5倍
-	if (occur == 45 || Increase_flag == true && occur == 22)
+	if (occur % 45 == 0 || Increase_flag == true && occur % 22 == 0)
 	{
 		//重み付けで出現させる星を決める
 		int Items[] = { 1, 5, 20,40,60 };

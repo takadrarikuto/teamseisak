@@ -78,13 +78,13 @@ void CObjStarCount::Draw()
 
 
 	//_‘fŠm”F—pƒJƒEƒ“ƒg•\¦
-	swprintf_s(strFis, L"‚Ì”~%2d/%dŒÂ", FiStar_Reco, FiStar_Reco_max);
+	swprintf_s(strFis, L"‚Ì”~%2d/%dŒÂ@ƒ{ƒ“ƒx‰ñ•œ", FiStar_Reco, FiStar_Reco_max);
 	Font::StrDraw(strFis, 25, 507, 20, c);
 
-	swprintf_s(strFos, L"‚Ì”~%2d/%dŒÂ", SeStar_Reco, SeStar_Reco_max);
+	swprintf_s(strFos, L"‚Ì”~%2d/%dŒÂ _‘f50‰ñ•œ", SeStar_Reco, SeStar_Reco_max);
 	Font::StrDraw(strFos, 25, 530, 20, c);
 
-	swprintf_s(strOts, L"‚Ì”~%2d/%dŒÂ", ThStar_Reco, ThStar_Reco_max);
+	swprintf_s(strOts, L"‚Ì”~%2d/%dŒÂ _‘f30‰ñ•œ", ThStar_Reco, ThStar_Reco_max);
 	Font::StrDraw(strOts, 25, 550, 20, c);
 
 

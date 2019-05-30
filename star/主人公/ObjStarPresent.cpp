@@ -13,7 +13,6 @@ int cenge = 0;
 
 void CObjStarPresent::Init()
 {
-	page = 0;//次のページへ行くための変数
 	page_flag = false;
 	page = 0;//現在のページ数
 	pagemax = 1;//最大ページ数
@@ -35,6 +34,7 @@ void CObjStarPresent::Init()
 	 time_flag = false;
 	 m_mou_time = 0.0f;
 
+	 Spaceship_back = false;
 	 Back_time = 0.0f;
 
 	Audio::LoadAudio(1, L"効果音.wav", EFFECT);
@@ -70,19 +70,25 @@ void CObjStarPresent::Action()
 	}
 	else if (m_mou_l == false)
 	{
-		a_time = 0;
 		time_flag = false;
-	}
-	else if (m_mou_l == false && a_time > 1)
-	{
-		time_flag = false;
-		a_time++;
+		if (a_time > 1)
+		{
+			a_time++;
+		}
+		else
+		{
+			a_time = 0;
+		}
 	}
 
 	//SE発生処理
 	if (time_flag == true)
 	{
 		a_time++;
+	}
+	else if (time_flag == false)
+	{
+		a_time = 0;
 	}
 	if (a_time == 1)
 	{
@@ -95,22 +101,18 @@ void CObjStarPresent::Action()
 	// left				 right            top            bottom         
 	if (m_mou_x > 0 && m_mou_x < 67 && m_mou_y>0 && m_mou_y < 100)
 	{
+		Spaceship_back = true;
 		if (m_mou_l == true)
 		{
 			time_flag = true;
-			if (a_time == 5)
-			{
-				lever = 0;
-				a_time = 0;
-				Back_time = 0.0f;
-				time_flag = false;
-				Scene::SetScene(new CSceneStarPicbook());
-				return;
-			}
 		}
 	}
+	else
+	{
+		Spaceship_back = false;
+	}
 	//ｂを押すと戻る
-	else if (Input::GetVKey('B') == true && Back_time > 60.0f)
+	if (Input::GetVKey('B') == true && Back_time > 60.0f)
 	{
 		lever = 0;
 		a_time = 0;
@@ -118,6 +120,20 @@ void CObjStarPresent::Action()
 		time_flag = false;
 		Scene::SetScene(new CSceneStarPicbook());
 	}
+
+	if (Spaceship_back == true)
+	{
+		if (a_time >= 8)
+		{
+			lever = 0;
+			a_time = 0;
+			Back_time = 0.0f;
+			time_flag = false;
+			Scene::SetScene(new CSceneStarPicbook());
+		}
+	}
+
+
 
 }
 
@@ -991,13 +1007,13 @@ void CObjStarPresent::Draw()
 			else if (page == 3)//上を変えたらここも変える
 			{
 				ver = 0;
-				Font::StrDraw(L"[白色矮星とは？]", left_end, Interval_y*ver, font_size, c);
+				Font::StrDraw(L"[白色矮星とは？]", left_end, IO_y + Interval_y*ver, font_size, c);
 				ver++;
-				Font::StrDraw(L"恒星が進化の終末期にとりうる形態の一つ。質量は太陽と同程 ", left_end, Interval_y*ver, font_size, c);
+				Font::StrDraw(L"恒星が進化の終末期にとりうる形態の一つ。質量は太陽と同程 ", left_end, IO_y + Interval_y*ver, font_size, c);
 				ver++;
-				Font::StrDraw(L"度から数分の1程度と大きいが、直径は地球と同程度かやや大", left_end, Interval_y*ver, font_size, c);
+				Font::StrDraw(L"度から数分の1程度と大きいが、直径は地球と同程度かやや大", left_end, IO_y + Interval_y*ver, font_size, c);
 				ver++;
-				Font::StrDraw(L"きいくらいに縮小しており、非常に高密度の天体である。", left_end, Interval_y*ver, font_size, c);
+				Font::StrDraw(L"きいくらいに縮小しており、非常に高密度の天体である。", left_end, IO_y + Interval_y*ver, font_size, c);
 			}
 			//ページ制限
 			else if (page < 1)
