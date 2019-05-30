@@ -69,6 +69,7 @@ void CObjStarPicbook::Action()
 
 	Spaceship_back = false;
 
+	
 
 	//連続移動防止
 	if (m_mou_time == 60.0f)
@@ -458,8 +459,7 @@ void CObjStarPicbook::Draw()
 	float p[4] = { 1.0f,1.0f,1.0f,0.6f, };
 
 	//カーソル表示(完成したら消す)
-	swprintf_s(strmous, L"x=%d,y=%d", (int)m_mou_x, (int)m_mou_y);
-	Font::StrDraw(strmous, 600, 20, 30, c);
+	
 
 
 	RECT_F src;//描画元切り取り位置
@@ -723,7 +723,7 @@ void CObjStarPicbook::Draw()
 	Font::StrDraw(L"水瓶座", 30 + fy * std, 330 + t*l, 30, c);
 	l++;         
 	//水瓶座の範囲
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 295 + k * l)
 	{
 		if (star_count < 200)
 		{
@@ -775,7 +775,7 @@ void CObjStarPicbook::Draw()
 	Font::StrDraw(L"魚座", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
 	//魚座の範囲
-    if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+    if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 250)
 		{
@@ -973,7 +973,7 @@ void CObjStarPicbook::Draw()
 	//蟹座
 	Font::StrDraw(L"蟹座", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 295 + k * l)
 	{
 		if (star_count < 400)
 		{
@@ -1023,7 +1023,7 @@ void CObjStarPicbook::Draw()
 	//獅子座
 	Font::StrDraw(L"獅子座", 30 + fy * std, 350 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 450)
 		{
@@ -1074,7 +1074,7 @@ void CObjStarPicbook::Draw()
 	//乙女座
 	Font::StrDraw(L"乙女座", 30 + fy * std, 350 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count <500)
 		{
@@ -1128,7 +1128,7 @@ void CObjStarPicbook::Draw()
 	//天秤座
 	Font::StrDraw(L"天秤座", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 295 + k * l)
 	{
 		if (star_count <150 )
 		{
@@ -1179,7 +1179,7 @@ void CObjStarPicbook::Draw()
 	l++;
 
 	//蠍座				left		     right							 top						 bottom       
-	if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 295 + k * l)
 	{
 		// 閲覧の制限
 		if (star_count < 50 && g_other_star < 50)
@@ -1233,7 +1233,7 @@ void CObjStarPicbook::Draw()
 	//射手座
 	Font::StrDraw(L"射手座", 30 + fy * std, 350 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 550)
 		{
@@ -1336,6 +1336,9 @@ void CObjStarPicbook::Draw()
 	Font::StrDraw(L"説明に入ります。", 80, 125, 25, c);
 	Font::StrDraw(L"ページをめくるには左にある次へをクリックします。", 80, 170,25, c);
 	Font::StrDraw(L"一つ前のページにしたい場合は戻るをクリックします。", 80, 195, 25, c);
+	
+	swprintf_s(strmous, L"x=%d,y=%d", (int)m_mou_x, (int)m_mou_y);
+	Font::StrDraw(strmous, 600, 290, 30, c);
 
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
