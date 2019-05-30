@@ -826,7 +826,7 @@ void CObjStarPicbook::Draw()
 	//牡羊座
 	Font::StrDraw(L"牡羊座", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 300 )
 		{
@@ -1348,8 +1348,8 @@ void CObjStarPicbook::Draw()
 	Font::StrDraw(L"ページをめくるには左にある次へをクリックします。", 80, 170,25, c);
 	Font::StrDraw(L"一つ前のページにしたい場合は戻るをクリックします。", 80, 195, 25, c);
 	
-	swprintf_s(strmous, L"x=%d,y=%d", (int)m_mou_x, (int)m_mou_y);
-	Font::StrDraw(strmous, 600, 290, 30, c);
+	/*swprintf_s(strmous, L"x=%d,y=%d", (int)m_mou_x, (int)m_mou_y);
+	Font::StrDraw(strmous, 600, 290, 30, c);*/
 
 	//次への文字をループして出す
 	wchar_t next[2][2]{ L"次",L"へ" };
