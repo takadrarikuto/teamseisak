@@ -155,5 +155,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneStarPicbook
+#define SET_GAME_START CSceneStageselect
 //-----------------------------------------------
