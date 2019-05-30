@@ -1193,7 +1193,7 @@ void CObjStarPicbook::Draw()
 	if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
 		// ‰{——‚Ì§ŒÀ
-		if (star_count < 50 && g_other_star < 50)
+		if (star_count < 50 || g_other_star < 50)
 		{
 			time_flag = false;
 			StarPicbook10 = false;
