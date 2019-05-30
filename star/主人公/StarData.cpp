@@ -1,5 +1,5 @@
 
-int star_count=600;//星総数カウント用
+int star_count=0;//星総数カウント用
 
 int g_first_star;//1等星カウント
 int g_second_star;//2等星カウント

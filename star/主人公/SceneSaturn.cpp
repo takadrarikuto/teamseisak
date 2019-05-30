@@ -96,6 +96,8 @@ void CSceneSaturn::InitScene()
 
 	//ビックリマーク
 	Draw::LoadImage(L"ビックリマーク.png", 23, TEX_SIZE_512);
+	//時間停止アイテム
+	Draw::LoadImage(L"TimeStop.png", 25, TEX_SIZE_512);
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
@@ -272,11 +274,11 @@ void CSceneSaturn::Scene()
 		CObjBonusStar* star6 = new CObjBonusStar(0.0f);
 		Objs::InsertObj(star6, OBJ_BONUSSTAR, 24);    //スターオブジェクト登録
 	}
-	if (occur % 100 == 0)
+	if (Increase_flag == true && occur % 100 == 0)
 	{
 		//特殊アイテム作成
-		CObjTimeStop* tstop = new CObjTimeStop();
-		Objs::InsertObj(tstop, OBJ_TIMESTOP, 25);    //スターオブジェクト登録
+		CObjMeteo* meteo = new CObjMeteo();
+		Objs::InsertObj(meteo, OBJ_METEO, 25);    //スターオブジェクト登録
 	}
 	if (occur == 9000)
 		occur = 0;

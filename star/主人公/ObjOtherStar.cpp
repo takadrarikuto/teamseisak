@@ -7,7 +7,6 @@
 
 #include"GameHead.h"
 #include"ObjSecondStar.h"
-#include "ObjTimeStop.h"
 
 //使用するネームスペース
 using namespace GameL;

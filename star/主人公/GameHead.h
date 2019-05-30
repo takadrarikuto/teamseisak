@@ -52,7 +52,7 @@ enum OBJ_NAME
 	OBJ_QTE,
 	OBJ_STARMODEL,
 	OBJ_EM,
-	OBJ_TIMESTOP,
+	OBJ_METEO,
 };
 //------------------------------------------------
 
@@ -139,7 +139,7 @@ struct UserData
 #include "ObjPose.h"
 #include "ObjStarmodel.h"
 #include "ObjExclamationMark.h"
-#include "ObjTimeStop.h"
+#include "ObjMeteo.h"
 //------------------------------------------------ 
 
 //ゲームシーンクラスヘッダ------------------------

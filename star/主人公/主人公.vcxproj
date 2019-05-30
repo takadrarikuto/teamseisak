@@ -167,7 +167,7 @@
     <ClInclude Include="ObjStarPresent8.h" />
     <ClInclude Include="ObjStarPresent9.h" />
     <ClInclude Include="ObjThirdStar.h" />
-    <ClInclude Include="ObjTimeStop.h" />
+    <ClInclude Include="ObjMeteo.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
     <ClInclude Include="ObjBackground.h">
@@ -249,7 +249,7 @@
     <ClCompile Include="ObjStarPresent8.cpp" />
     <ClCompile Include="ObjStarPresent9.cpp" />
     <ClCompile Include="ObjThirdStar.cpp" />
-    <ClCompile Include="ObjTimeStop.cpp" />
+    <ClCompile Include="ObjMeteo.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="ObjVenus.cpp" />
     <ClCompile Include="SceneGameKuria.cpp" />
