@@ -748,8 +748,6 @@ void CObjStarPicbook::Draw()
 	}
 
 
-	}
-
 	if (m_mou_x > 150 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 200)
@@ -774,7 +772,7 @@ void CObjStarPicbook::Draw()
 	}
 
 	
-	Font::StrDraw(L"‹›À", 30 + fy * std, 330 + t*l, 30, c);
+	Font::StrDraw(L"‹›À", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
 	//‹›À‚Ì”ÍˆÍ
     if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
