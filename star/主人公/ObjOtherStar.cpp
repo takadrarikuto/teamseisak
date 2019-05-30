@@ -44,10 +44,6 @@ void CObjOtherStar::Init()
 //アクション
 void CObjOtherStar::Action()
 {
-	CObjTimeStop* timer = (CObjTimeStop*)Objs::GetObj(OBJ_TIMESTOP);
-
-	if (timer == nullptr)
-		m_Sf = false;
 
 		//移動方向変更
 		if (Event_Conversion == 0)
@@ -103,16 +99,7 @@ void CObjOtherStar::Action()
 
 		m_px += m_vx;
 		m_py += m_vy;
-		while (1)
-		{
-			if (m_Sf == false)
-			{
-				m_px = 0;
-				m_py = 0;
-				m_Sf = true;
-			}
 
-		}
 
 		//自身のHitBoxを持ってくる
 		CHitBox* hit_s = Hits::GetHitBox(this);
