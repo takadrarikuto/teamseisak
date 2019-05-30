@@ -140,7 +140,7 @@ struct UserData
 #include "ObjStarmodel.h"
 #include "ObjExclamationMark.h"
 #include "ObjTimeStop.h"
-//------------------------------------------------
+//------------------------------------------------ 
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneTitle.h"
@@ -156,5 +156,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneTitle
+#define SET_GAME_START CSceneStarPicbook
 //-----------------------------------------------

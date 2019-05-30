@@ -136,7 +136,7 @@ void CObjStarPicbook::Action()
 void CObjStarPicbook::Draw()
 {
 	int g = 200.0f;//星枠の横幅 200.0f
-	int k = 75.0f;//星枠の立幅 75.0f
+	int k = 75;//星枠の立幅 75.0f
 	int t = 70;//星の名前の位置 70
 	int l = 0;//tと掛ける用の変数 0
 	int s = 0;//星のクリックの鍵 0
@@ -439,7 +439,7 @@ void CObjStarPicbook::Draw()
 	Font::StrDraw(L"水瓶座", 30 + fy * std, 330 + t*l, 30, c);
 	l++;         
 	//水瓶座の範囲
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count <200 )
 		{
@@ -476,7 +476,7 @@ void CObjStarPicbook::Draw()
 
 	}
 
-	if (m_mou_x > 130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 150 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 200)
 		{
@@ -540,9 +540,9 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x >150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
 	  {
-		if (star_count < 250)
+		if (star_count <250)
 		{
 			Font::StrDraw(L"この星々を閲覧するには合計で星を250個集めてください", left_end, 260, font_size, c);
 		}
@@ -573,12 +573,12 @@ void CObjStarPicbook::Draw()
 	l++;
 	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		if (star_count <300 )
+		if (star_count <0 )
 		{
 			Font::StrDraw(L"この星々を閲覧するには合計で星を300個集めてください", left_end, 260, font_size, c);
 		}
 
-		if (m_mou_l == true && star_count >= 300)
+		if (m_mou_l == true && star_count >=0)
 		{
 			if (starmodel_flag == true)
 			{
@@ -598,14 +598,14 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 60+130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
-		if (star_count < 300)
+		if (star_count < 0)
 		{
 			Font::StrDraw(L"この星々を閲覧するには合計で星を300個集めてください", left_end, 260, font_size, c);
 		}
 
-		if (m_mou_l == true && star_count >= 300)
+		if (m_mou_l == true && star_count >= 0)
 		{
 			if (starmodel_flag == true)
 			{
@@ -656,7 +656,7 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 130 * 1 * std&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 100)
 		{
@@ -691,7 +691,7 @@ void CObjStarPicbook::Draw()
 	//双子座
 	Font::StrDraw(L"双子座", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x <70*std+side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x <70*std+side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 350)
 		{
@@ -717,7 +717,7 @@ void CObjStarPicbook::Draw()
 		}
 	}
 
-	if (m_mou_x > 325&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 325&& m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 350)
 		{
@@ -746,7 +746,7 @@ void CObjStarPicbook::Draw()
 	//蟹座
 	Font::StrDraw(L"蟹座", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 400)
 		{
@@ -770,7 +770,7 @@ void CObjStarPicbook::Draw()
 			}
 		}
 	}
-	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 400)
 		{
@@ -907,7 +907,7 @@ void CObjStarPicbook::Draw()
 	//天秤座
 	Font::StrDraw(L"天秤座", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count <150 )
 		{
@@ -931,7 +931,7 @@ void CObjStarPicbook::Draw()
 			}
 		}
 	}
-	if (m_mou_x > 500 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 500 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 150)
 		{
@@ -960,7 +960,7 @@ Font::StrDraw(L"蠍座", 30 + fy * std, 330 + t*l, 30, c);
 l++;
 
 	//蠍座				left		     right							 top						 bottom       
-if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 {// 閲覧の制限
 	if (star_count < 50 && g_other_star < 50)
 	{
@@ -995,14 +995,14 @@ if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_
 }
 
 //   left				  right			  top			 bottom                
-if (m_mou_x > 130+200*std&& m_mou_x < 197*(std+1) && m_mou_y>302+k*(l-1) && m_mou_y < 300+73*l)
+if (m_mou_x > 130+200*std&& m_mou_x < 197*(std+1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 {
 	if (star_count < 50 || g_other_star < 50)
 	{
 		Font::StrDraw(L"この星々を閲覧するには合計で五等星を50個集めてください", left_end, 260, font_size, c);
 	}
 
-	if (m_mou_l == true && star_count >= 2 && g_other_star >= 2)
+	if (m_mou_l == true && star_count >= 2 && g_other_star >= 50)
 	{
 
 
@@ -1029,7 +1029,7 @@ if (m_mou_x > 130+200*std&& m_mou_x < 197*(std+1) && m_mou_y>302+k*(l-1) && m_mo
 	//射手座
 Font::StrDraw(L"射手座", 30 + fy * std, 350 + t * l, 30, c);
 l++;
-if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 {
 	if (star_count < 550)
 	{
@@ -1054,7 +1054,7 @@ if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m
 		}
 	}
 }
-if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 {
 	if (star_count < 550)
 	{
@@ -1082,7 +1082,7 @@ if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m
 	//山羊座
 	Font::StrDraw(L"山羊座", 30 + fy * std, 360 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x <70 * std + side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 600)
 		{
@@ -1106,7 +1106,7 @@ if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m
 			}
 		}
 	}
-	if (m_mou_x > 500 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 500 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 600)
 		{
@@ -1130,7 +1130,8 @@ if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m
 			}
 		}
 	}
-	
+	std = 0;
+
 	Font::StrDraw(L"星の名前にカーソル合わせて左クリックするとその星座にある", 80, 25, 25, c);
 	Font::StrDraw(L"主な星の説明がされます。", 80, 50, 25, c);
 	Font::StrDraw(L"星座の絵にカーソルを合わせてクリックすると星座そのものの", 80, 100, 25, c);
