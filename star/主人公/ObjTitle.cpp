@@ -92,8 +92,8 @@ void CObjTitle::Draw()
 	//切り取り位置の位置
 	src.m_top = 0.0;
 	src.m_left = 0.0f;
-	src.m_right = 800.0f;
-	src.m_bottom = 600.0f;
+	src.m_right = 512.0f;
+	src.m_bottom = 362.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f;
@@ -103,16 +103,6 @@ void CObjTitle::Draw()
 
 	Draw::Draw(11, &src, &dst, c, 0.0f);
 
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 130.0f;
-	src.m_bottom = 67.0f;
-
-	//星図鑑の枠を描画
-	dst.m_top = 440.0f;
-	dst.m_left = 307.0f;
-	dst.m_right = 480.0f;
-	dst.m_bottom =480.0f;
-	Draw::Draw(9, &src, &dst, c, 0.0f);
+	
 
 }

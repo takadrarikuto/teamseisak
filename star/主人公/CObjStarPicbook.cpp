@@ -997,12 +997,12 @@ if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_
 //   left				  right			  top			 bottom                
 if (m_mou_x > 130+200*std&& m_mou_x < 197*(std+1) && m_mou_y>302+k*(l-1) && m_mou_y < 300+73*l)
 {
-	if (star_count < 50 && g_other_star < 50)
+	if (star_count < 50 || g_other_star < 50)
 	{
 		Font::StrDraw(L"‚±‚Ì¯X‚ğ‰{——‚·‚é‚É‚Í‡Œv‚ÅŒÜ“™¯‚ğ50ŒÂW‚ß‚Ä‚­‚¾‚³‚¢", left_end, 260, font_size, c);
 	}
 
-	if (m_mou_l == true && star_count >= 50 && g_other_star >= 50)
+	if (m_mou_l == true && star_count >= 2 && g_other_star >= 2)
 	{
 
 
