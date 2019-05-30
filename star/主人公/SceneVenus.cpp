@@ -203,7 +203,7 @@ void CSceneVenus::Scene()
 	}
 	occur++;
 	//　3/4秒ごとに星を出現させる
-	if (occur == 45 || Increase_flag == true && occur == 22)
+	if (occur % 45 == 0 || Increase_flag == true && occur % 22 == 0)
 	{
 		//重み付けで出現させる星を決める
 		int Items[] = { 1, 5, 20,40,60 };
