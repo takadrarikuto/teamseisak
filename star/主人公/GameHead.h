@@ -139,7 +139,6 @@ struct UserData
 #include "ObjPose.h"
 #include "ObjStarmodel.h"
 #include "ObjExclamationMark.h"
-#include "ObjTimeStop.h"
 //------------------------------------------------ 
 
 //ゲームシーンクラスヘッダ------------------------

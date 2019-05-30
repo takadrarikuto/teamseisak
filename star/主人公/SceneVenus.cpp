@@ -87,6 +87,7 @@ void CSceneVenus::InitScene()
 	Draw::LoadImage(L"pink_star.png", 18, TEX_SIZE_512);
 	Draw::LoadImage(L"green_star.png", 19, TEX_SIZE_512);
 	Draw::LoadImage(L"brown_star.png", 20, TEX_SIZE_512);
+	Draw::LoadImage(L"blue_star.png", 24, TEX_SIZE_512);
 
 
 	//ゲージ関係
@@ -270,12 +271,6 @@ void CSceneVenus::Scene()
 		//ボーナススターオブジェクト作成
 		CObjBonusStar* star6 = new CObjBonusStar(0.0f);
 		Objs::InsertObj(star6, OBJ_BONUSSTAR, 24);    //スターオブジェクト登録
-	}
-	if (occur % 100 == 0)
-	{
-		//特殊アイテム作成
-		CObjTimeStop* tstop = new CObjTimeStop();
-		Objs::InsertObj(tstop, OBJ_TIMESTOP, 25);    //スターオブジェクト登録
 	}
 	if (occur == 9000)
 		occur = 0;
