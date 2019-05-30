@@ -826,16 +826,16 @@ void CObjStarPicbook::Draw()
 	//‰²—rÀ
 	Font::StrDraw(L"‰²—rÀ", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
-		if (star_count <0 )
+		if (star_count <300 )
 		{
 			time_flag = false;
 			StarPicbook3 = false;
 			Font::StrDraw(L"‚±‚Ì¯X‚ð‰{——‚·‚é‚É‚Í‡Œv‚Å¯‚ð300ŒÂW‚ß‚Ä‚­‚¾‚³‚¢", left_end, 260, font_size, c);
 		}
 
-		if (m_mou_l == true && star_count >=0)
+		if (m_mou_l == true && star_count >=300)
 		{
 			time_flag = true;				
 		}
@@ -847,14 +847,14 @@ void CObjStarPicbook::Draw()
 
 	if (m_mou_x > 150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
-		if (star_count < 0)
+		if (star_count < 300)
 		{
 			time_flag = false;
 			Starmodel3 = false;
 			Font::StrDraw(L"‚±‚Ì¯X‚ð‰{——‚·‚é‚É‚Í‡Œv‚Å¯‚ð300ŒÂW‚ß‚Ä‚­‚¾‚³‚¢", left_end, 260, font_size, c);
 		}
 
-		if (m_mou_l == true && star_count >= 0)
+		if (m_mou_l == true && star_count >= 300)
 		{
 			time_flag = true;
 		}
@@ -867,7 +867,7 @@ void CObjStarPicbook::Draw()
 	//‰²‹À
 	Font::StrDraw(L"‰²‹À", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
 		if (star_count < 100)
 		{
