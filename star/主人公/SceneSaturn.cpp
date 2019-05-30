@@ -202,7 +202,7 @@ void CSceneSaturn::Scene()
 	}
 	occur++;
 	//　3/4秒ごとに星を出現させる
-	if (occur == 45 || Increase_flag == true && occur == 22)
+	if (occur % 45 == 0 || Increase_flag == true && occur % 22 == 0)
 	{
 		//重み付けで出現させる星を決める
 		int Items[] = { 1, 5, 20,40,60 };
@@ -243,7 +243,6 @@ void CSceneSaturn::Scene()
 			CObjOtherStar* star5 = new CObjOtherStar(0.0f);
 			Objs::InsertObj(star5, OBJ_OTHERSTAR, 14);    //スターオブジェクト登録
 		}
-		occur = 0;
 	}
 
 	//1等星作成時警告処理
@@ -266,8 +265,19 @@ void CSceneSaturn::Scene()
 		EM_flag = false; //ビックリマーク出現フラグ初期化
 	}
 
-	//QTE
-	//CObjQTE* obj_qte = new CObjQTE();
-	//Objs::InsertObj(obj_qte, OBJ_QTE, 20);
 
+	if (Increase_flag == true && occur % 450 == 0)
+	{
+		//ボーナススターオブジェクト作成
+		CObjBonusStar* star6 = new CObjBonusStar(0.0f);
+		Objs::InsertObj(star6, OBJ_BONUSSTAR, 24);    //スターオブジェクト登録
+	}
+	if (occur % 100 == 0)
+	{
+		//特殊アイテム作成
+		CObjTimeStop* tstop = new CObjTimeStop();
+		Objs::InsertObj(tstop, OBJ_TIMESTOP, 25);    //スターオブジェクト登録
+	}
+	if (occur == 9000)
+		occur = 0;
 }

@@ -22,6 +22,7 @@ private:
 	float m_mous_y; //マウスの位置Y
 	int a_time;
 	bool time_flag;
+	int font_size;//文字の大きさ
 
 	float m_mou_time; //連続選択防止タイム
 };

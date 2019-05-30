@@ -322,16 +322,16 @@ void CSceneMars::Scene()
 
 	if (Increase_flag == true && occur % 450 == 0)
 	{
-		//スターオブジェクト作成
+		//ボーナススターオブジェクト作成
 		CObjBonusStar* star6 = new CObjBonusStar(0.0f);
 		Objs::InsertObj(star6, OBJ_BONUSSTAR, 24);    //スターオブジェクト登録
 	}
-	if (occur % 100 == 0)
+	/*if (occur % 100 == 0)
 	{
-		//スターオブジェクト作成
+		//特殊アイテム作成
 		CObjTimeStop* tstop = new CObjTimeStop();
 		Objs::InsertObj(tstop, OBJ_TIMESTOP, 25);    //スターオブジェクト登録
-	}
+	}*/
 	if (occur == 9000)
 		occur = 0;
 }

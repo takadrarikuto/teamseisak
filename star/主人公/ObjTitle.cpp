@@ -13,12 +13,16 @@
 //使用するネームスペース
 using namespace GameL;
 
+BYTE key[256];
+
 //イニシャライズ
 void CObjTitle::Init()
 {
 	m_mous_l = false;
 	m_mous_x = 0.0f;
 	m_mous_y = 0.0f;
+
+	font_size = 30;//文字の大きさ 30
 
 	a_time = 0;
 	time_flag = false;
@@ -36,6 +40,8 @@ void CObjTitle::Action()
 	m_mous_y = (float)Input::GetPosY();
 
 	m_mous_l = Input::GetMouButtonL();
+	
+	GetKeyboardState(key);
 
 	//連続移動防止
 	if (m_mou_time == 60.0f)
@@ -65,7 +71,7 @@ void CObjTitle::Action()
 	}
 	
 	//10秒後に画面移動
-	if (a_time == 10)
+	if (a_time == 5)
 	{
 		a_time = 0;
 		m_mou_time = 0.0f;
@@ -83,6 +89,8 @@ void CObjTitle::Action()
 void CObjTitle::Draw()
 {
 
+
+
 	//描画カラー情報
 	float c[4] = { 1.0f,1.0f,1.0f,100.0f };
 
@@ -92,8 +100,8 @@ void CObjTitle::Draw()
 	//切り取り位置の位置
 	src.m_top = 0.0;
 	src.m_left = 0.0f;
-	src.m_right = 800.0f;
-	src.m_bottom = 600.0f;
+	src.m_right = 400.0f;
+	src.m_bottom = 300.0f;
 
 	//表示位置の設定
 	dst.m_top = 0.0f;
@@ -103,16 +111,6 @@ void CObjTitle::Draw()
 
 	Draw::Draw(11, &src, &dst, c, 0.0f);
 
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 130.0f;
-	src.m_bottom = 67.0f;
-
-	//星図鑑の枠を描画
-	dst.m_top = 440.0f;
-	dst.m_left = 307.0f;
-	dst.m_right = 480.0f;
-	dst.m_bottom =480.0f;
-	Draw::Draw(9, &src, &dst, c, 0.0f);
-
+	float cs[4] = { 0.1f,0.1f,0.1f,1.0f };
+	Font::StrDraw(L"PLEASE CLICK", 280, 500, font_size, cs);
 }

@@ -201,8 +201,8 @@ void CSceneJupiter::Scene()
 		break;
 	}
 	occur++;
-	//　3/4秒ごとに星を出現させる
-	if (occur == 45 || Increase_flag == true && occur == 22)
+	//　0.75秒ごとに星を出現させる・イベント時は発生率1.5倍
+	if (occur % 45 == 0 || Increase_flag == true && occur % 22 == 0)
 	{
 		//重み付けで出現させる星を決める
 		int Items[] = { 1, 5, 20,40,60 };
@@ -279,7 +279,6 @@ void CSceneJupiter::Scene()
 				Objs::InsertObj(star5, OBJ_OTHERSTAR, 14);    //スターオブジェクト登録
 			}
 		}
-		occur = 0;
 	}
 
 	//1等星作成時警告処理
@@ -309,6 +308,22 @@ void CSceneJupiter::Scene()
 		Star_flag = false; //1等星作成警告用フラグ初期化
 		EM_flag = false; //ビックリマーク出現フラグ初期化
 	}
+
+
+	if (Increase_flag == true && occur % 450 == 0)
+	{
+		//ボーナススターオブジェクト作成
+		CObjBonusStar* star6 = new CObjBonusStar(0.0f);
+		Objs::InsertObj(star6, OBJ_BONUSSTAR, 24);    //スターオブジェクト登録
+	}
+	if (occur % 100 == 0)
+	{
+		//特殊アイテム作成
+		CObjTimeStop* tstop = new CObjTimeStop();
+		Objs::InsertObj(tstop, OBJ_TIMESTOP, 25);    //スターオブジェクト登録
+	}
+	if (occur == 9000)
+		occur = 0;
 
 	
 
