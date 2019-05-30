@@ -130,6 +130,7 @@
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjAitem.h" />
+    <ClInclude Include="ObjBonusStar.h" />
     <ClInclude Include="ObjEvent.h" />
     <ClInclude Include="ObjExclamationMark.h" />
     <ClInclude Include="ObjFirstStar.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="ObjStarPresent8.h" />
     <ClInclude Include="ObjStarPresent9.h" />
     <ClInclude Include="ObjThirdStar.h" />
+    <ClInclude Include="ObjTimeStop.h" />
     <ClInclude Include="ObjVenus.h" />
     <ClInclude Include="ObjSelectPlanet.h" />
     <ClInclude Include="ObjBackground.h">
@@ -206,6 +208,7 @@
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjAitem.cpp" />
     <ClCompile Include="ObjAncer.cpp" />
+    <ClCompile Include="ObjBonusStar.cpp" />
     <ClCompile Include="ObjEvent.cpp" />
     <ClCompile Include="ObjExclamationMark.cpp" />
     <ClCompile Include="ObjFirstStar.cpp" />
@@ -246,6 +249,7 @@
     <ClCompile Include="ObjStarPresent8.cpp" />
     <ClCompile Include="ObjStarPresent9.cpp" />
     <ClCompile Include="ObjThirdStar.cpp" />
+    <ClCompile Include="ObjTimeStop.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="ObjVenus.cpp" />
     <ClCompile Include="SceneGameKuria.cpp" />

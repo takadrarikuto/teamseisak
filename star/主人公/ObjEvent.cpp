@@ -101,7 +101,7 @@ void CObjEvent::Action()
 	if (Event_Conversion == 0)
 	{
 		//イベント開始処理
-		if (E_Start_co == 3600)
+		if (E_Start_co == 3000)
 		{
 			E_Start = true;
 			Event_on = true;

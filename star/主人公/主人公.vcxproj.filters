@@ -190,9 +190,6 @@
     <ClCompile Include="ObjExclamationMark.cpp">
       <Filter>ソースファイル\主人公・アンカー・アイテム・ビックリマーク</Filter>
     </ClCompile>
-    <ClCompile Include="StarBook.cpp">
-      <Filter>ソースファイル\星図鑑\星</Filter>
-    </ClCompile>
     <ClCompile Include="StarData.cpp">
       <Filter>ソースファイル\星関係</Filter>
       <Filter>ソースファイル\星関係</Filter>
@@ -204,6 +201,12 @@
       <Filter>ソースファイル\星図鑑</Filter>
     </ClCompile>
     <ClCompile Include="StarData.cpp" />
+    <ClCompile Include="ObjBonusStar.cpp">
+      <Filter>ソースファイル\星関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTimeStop.cpp">
+      <Filter>ソースファイル\イベント</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -405,6 +408,12 @@
     </ClInclude>
     <ClInclude Include="ObjGameKuria.h">
       <Filter>ヘッダーファイル\タイトル・クリア・ポーズ・操作説明・QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBonusStar.h">
+      <Filter>ヘッダーファイル\星関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTimeStop.h">
+      <Filter>ソースファイル\イベント</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

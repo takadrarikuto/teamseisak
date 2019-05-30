@@ -7,6 +7,7 @@
 
 #include"GameHead.h"
 #include"ObjSecondStar.h"
+#include "ObjTimeStop.h"
 
 //使用するネームスペース
 using namespace GameL;
@@ -20,6 +21,7 @@ extern int star_count;
 CObjOtherStar::CObjOtherStar(float x)
 {
 	m_px = x;
+
 }
 
 //イニシャライズ
@@ -43,117 +45,117 @@ void CObjOtherStar::Init()
 void CObjOtherStar::Action()
 {
 
-	//移動方向変更
-	if (Event_Conversion == 0)
-	{
-		if (Event_Star == false)
+		//移動方向変更
+		if (Event_Conversion == 0)
 		{
-			m_vx = 1.0f;
+			if (Event_Star == false)
+			{
+				m_vx = 1.0f;
+			}
+			else if (Event_Star == true)
+			{
+				m_vx = -1.0f;
+			}
 		}
-		else if (Event_Star == true)
+		else if (Event_Conversion == 1)
 		{
-			m_vx = -1.0f;
+			if (Event_Star == false)
+			{
+				m_vx = 1.0f;
+				m_vy = 0.0f;
+			}
+			else if (Event_Star == true)
+			{
+				m_vx = 1.0f;
+				m_vy = 0.5f;
+			}
 		}
-	}
-	else if (Event_Conversion == 1)
-	{
-		if (Event_Star == false)
+		else if (Event_Conversion == 2)
 		{
-			m_vx = 1.0f;
-			m_vy = 0.0f;
+			if (Event_Star == false)
+			{
+				m_vx = 1.0f;
+				m_vy = 0.0f;
+			}
+			else if (Event_Star == true)
+			{
+				m_vx = -2.0f;
+				m_vy = -0.5f;
+			}
 		}
-		else if (Event_Star == true)
+		else if (Event_Conversion == 3)
 		{
-			m_vx = 1.0f;
-			m_vy = 0.5f;
-		}
-	}
-	else if (Event_Conversion == 2)
-	{
-		if (Event_Star == false)
-		{
-			m_vx = 1.0f;
-			m_vy = 0.0f;
-		}
-		else if (Event_Star == true)
-		{
-			m_vx = -2.0f;
-			m_vy = -0.5f;
-		}
-	}
-	else if (Event_Conversion == 3)
-	{
-		if (Event_Star == false)
-		{
-			m_vx = 1.0f;
-		}
-		else if (Event_Star == true)
-		{
-			m_vx = 3.0f;
-		}
-	}
-
-	
-	m_px += m_vx;
-	m_py += m_vy;
-
-
-	//自身のHitBoxを持ってくる
-	CHitBox* hit_s = Hits::GetHitBox(this);
-
-	//HitBoxの位置の変更
-	hit_s->SetPos(m_px, m_py);
-
-	//アンカーの位置の取得
-	CObjAncer* Ancer = (CObjAncer*)Objs::GetObj(OBJ_ANCER);
-	float ax = Ancer->GetX();
-	float ay = Ancer->GetY();
-
-	//アンカーと当たっているか
-	if (hit_s->CheckObjNameHit(OBJ_ANCER) != nullptr)
-	{
-		m_px = ax - 13;
-		m_py = ay - 50;
-		ancer_flag = true;
-		//主人公の当たり判定に当たると主人公フラグをtrueにし、星の数をカウント
-		if (hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
-		{
-			hero_flag = true;
-
+			if (Event_Star == false)
+			{
+				m_vx = 1.0f;
+			}
+			else if (Event_Star == true)
+			{
+				m_vx = 3.0f;
+			}
 		}
 
-	}
 
-	//画面外に出たら星を削除
-	if (m_px > 800.0f || m_px < 0.0f || m_py > 500.0f  || m_px < 0.0f)
-	{
-		this->SetStatus(false); //自身に削除命令を出す
-		Hits::DeleteHitBox(this); //HitBox削除
 
-	}
-	//アンカーに当たっていなければy軸が350の位置で星を削除
-	if (ancer_flag == false)
-	{
-		if (m_py > 350.0f || m_py < 0.0f || m_py > 500.0f)
+		m_px += m_vx;
+		m_py += m_vy;
+
+
+		//自身のHitBoxを持ってくる
+		CHitBox* hit_s = Hits::GetHitBox(this);
+
+		//HitBoxの位置の変更
+		hit_s->SetPos(m_px, m_py);
+
+		//アンカーの位置の取得
+		CObjAncer* Ancer = (CObjAncer*)Objs::GetObj(OBJ_ANCER);
+		float ax = Ancer->GetX();
+		float ay = Ancer->GetY();
+
+		//アンカーと当たっているか
+		if (hit_s->CheckObjNameHit(OBJ_ANCER) != nullptr)
+		{
+			m_px = ax - 13;
+			m_py = ay - 50;
+			ancer_flag = true;
+			//主人公の当たり判定に当たると主人公フラグをtrueにし、星の数をカウント
+			if (hit_s->CheckObjNameHit(OBJ_HERO) != nullptr)
+			{
+				hero_flag = true;
+
+			}
+
+		}
+
+		//画面外に出たら星を削除
+		if (m_px > 800.0f || m_px < 0.0f || m_py > 500.0f || m_px < 0.0f)
 		{
 			this->SetStatus(false); //自身に削除命令を出す
 			Hits::DeleteHitBox(this); //HitBox削除
+
 		}
-	}
-	//アンカーに当たっている状態で主人公に当たると削除
-	else if (ancer_flag == true && hero_flag == true)
-	{
-		this->SetStatus(false); //自身に削除命令を出す
-		Hits::DeleteHitBox(this); //HitBox削除
-		ancer_flag = false;
-		hero_flag = false;
+		//アンカーに当たっていなければy軸が350の位置で星を削除
+		if (ancer_flag == false)
+		{
+			if (m_py > 350.0f || m_py < 0.0f || m_py > 500.0f)
+			{
+				this->SetStatus(false); //自身に削除命令を出す
+				Hits::DeleteHitBox(this); //HitBox削除
+			}
+		}
+		//アンカーに当たっている状態で主人公に当たると削除
+		else if (ancer_flag == true && hero_flag == true)
+		{
+			this->SetStatus(false); //自身に削除命令を出す
+			Hits::DeleteHitBox(this); //HitBox削除
+			ancer_flag = false;
+			hero_flag = false;
 
 
-		star_count++;
-		g_other_star++;
+			star_count++;
+			g_other_star++;
 
-	}
-	
+		}
 
 }
 //ドロー

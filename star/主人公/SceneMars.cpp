@@ -88,6 +88,7 @@ void CSceneMars::InitScene()
 	Draw::LoadImage(L"pink_star.png", 18, TEX_SIZE_512);
 	Draw::LoadImage(L"green_star.png", 19, TEX_SIZE_512);
 	Draw::LoadImage(L"brown_star.png", 20, TEX_SIZE_512);
+	Draw::LoadImage(L"blue_star.png", 24, TEX_SIZE_512);
 
 
 	//ゲージ関係
@@ -97,6 +98,8 @@ void CSceneMars::InitScene()
 
 	//ビックリマーク
 	Draw::LoadImage(L"ビックリマーク.png", 23, TEX_SIZE_512);
+	//時間停止アイテム
+	Draw::LoadImage(L"TimeStop.png", 25, TEX_SIZE_512);
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
@@ -155,6 +158,7 @@ void CSceneMars::Scene()
 {
 
 	CObjPose* pob = (CObjPose*)Objs::GetObj(OBJ_POSE);
+	
 
 	//ポーズ
 	if (pob == nullptr)
@@ -203,7 +207,7 @@ void CSceneMars::Scene()
 	}
 	occur++;
 
-	if (occur == 45 || Increase_flag == true && occur == 22)
+	if (occur % 45 == 0  || Increase_flag == true && occur % 22 == 0)
 	{
 		int Items[] = { 1, 5, 20,40,60 };
 		int result = WeightedPick(Items, 5);
@@ -285,7 +289,7 @@ void CSceneMars::Scene()
 
 			}
 		}
-		occur = 0;
+		
 	}
 	
 	//1等星作成時警告処理
@@ -316,4 +320,18 @@ void CSceneMars::Scene()
 		EM_flag = false; //ビックリマーク出現フラグ初期化
 	}
 
+	if (Increase_flag == true && occur % 450 == 0)
+	{
+		//スターオブジェクト作成
+		CObjBonusStar* star6 = new CObjBonusStar(0.0f);
+		Objs::InsertObj(star6, OBJ_BONUSSTAR, 24);    //スターオブジェクト登録
+	}
+	if (occur % 100 == 0)
+	{
+		//スターオブジェクト作成
+		CObjTimeStop* tstop = new CObjTimeStop();
+		Objs::InsertObj(tstop, OBJ_TIMESTOP, 25);    //スターオブジェクト登録
+	}
+	if (occur == 9000)
+		occur = 0;
 }
