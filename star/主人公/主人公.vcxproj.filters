@@ -204,9 +204,6 @@
     <ClCompile Include="ObjBonusStar.cpp">
       <Filter>ソースファイル\星関係</Filter>
     </ClCompile>
-    <ClCompile Include="ObjMeteo.cpp">
-      <Filter>ソースファイル\イベント</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -411,9 +408,6 @@
     </ClInclude>
     <ClInclude Include="ObjBonusStar.h">
       <Filter>ヘッダーファイル\星関係</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjMeteo.h">
-      <Filter>ソースファイル\イベント</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

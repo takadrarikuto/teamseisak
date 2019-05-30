@@ -139,7 +139,6 @@ struct UserData
 #include "ObjPose.h"
 #include "ObjStarmodel.h"
 #include "ObjExclamationMark.h"
-#include "ObjMeteo.h"
 //------------------------------------------------ 
 
 //ゲームシーンクラスヘッダ------------------------
@@ -156,5 +155,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneStarPicbook
+#define SET_GAME_START CSceneStageselect
 //-----------------------------------------------
