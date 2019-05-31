@@ -28,6 +28,10 @@ private:
 	int m_ani_time;		//アニメーションフレーム動作間隔
 	int m_ani_frame;	//描画フレーム
 
+	int m_time;//移動無効用
+	bool m_key_f;
+	bool m_f;
+
 	bool m_return_flag;
 
 	bool m_mous_l;

@@ -52,7 +52,7 @@ enum OBJ_NAME
 	OBJ_QTE,
 	OBJ_STARMODEL,
 	OBJ_EM,
-	OBJ_TIMESTOP,
+	OBJ_METEO,
 };
 //------------------------------------------------
 
@@ -155,5 +155,5 @@ struct UserData
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START CSceneStageselect
+#define SET_GAME_START CSceneTitle
 //-----------------------------------------------

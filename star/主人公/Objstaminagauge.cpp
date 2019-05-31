@@ -138,6 +138,7 @@ void CObjstaminagauge::Action()
 			m_stamina -= m_px / 70;
 		}
 	}
+
 	
 	//Á”ï_‘f‚ªÅ‘å’lAÅ¬’l‚ğ’´‚¦‚È‚¢‚æ‚¤‚É‚·‚éˆ—
 	if (m_vx < 0.0f)
