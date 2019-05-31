@@ -723,7 +723,7 @@ void CObjStarPicbook::Draw()
 	Font::StrDraw(L"…•rÀ", 30 + fy * std, 330 + t*l, 30, c);
 	l++;         
 	//…•rÀ‚Ì”ÍˆÍ
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 295 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 740)
 		{
@@ -747,8 +747,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook = false;
 	}
 
-
-	if (m_mou_x > 150 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > 130 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 740)
 		{
@@ -775,7 +774,7 @@ void CObjStarPicbook::Draw()
 	Font::StrDraw(L"‹›À", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
 	//‹›À‚Ì”ÍˆÍ
-    if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+    if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 800 && g_first_star < 3)
 		{
@@ -800,7 +799,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook2 = false;
 	}
 
-	if (m_mou_x >150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x >130&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
 	  {
 		if (star_count <800 && g_first_star < 3)
 		{
@@ -851,7 +850,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook3 = false;
 	}
 
-	if (m_mou_x > 150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 130&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 140)
 		{
@@ -903,7 +902,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook4 = false;
 	}
 
-	if (m_mou_x > 150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 130&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 200)
 		{
@@ -958,7 +957,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook5 = false;
 	}
 
-	if (m_mou_x > 325&& m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > 330&& m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 260)
 		{
@@ -1008,7 +1007,7 @@ void CObjStarPicbook::Draw()
 	{
 		StarPicbook6 = false;
 	}
-	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > 330 && m_mou_x < 197 * (std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 320)
 		{
@@ -1059,7 +1058,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook7 = false;
 	}
 
-	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 330 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 380)
 		{
@@ -1111,7 +1110,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook8 = false;
 	}
 
-	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 330 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 440 && g_other_star < 300)
 		{
@@ -1165,7 +1164,7 @@ void CObjStarPicbook::Draw()
 	{
 		StarPicbook9 = false;
 	}
-	if (m_mou_x > 500 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > 530 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 500)
 		{
@@ -1193,7 +1192,7 @@ void CObjStarPicbook::Draw()
 	l++;
 
 	//å¶À				left		     right							 top						 bottom       
-	if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 295 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		// ‰{——‚Ì§ŒÀ
 		if (star_count < 560)
@@ -1271,7 +1270,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook11 = false;
 	}
 
-	if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 530 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 620 && g_fouth_star < 600)
 		{
@@ -1321,7 +1320,7 @@ void CObjStarPicbook::Draw()
 	{
 		StarPicbook12 = false;
 	}
-	if (m_mou_x > 500 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > 530 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 680)
 		{
