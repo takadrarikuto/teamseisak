@@ -22,6 +22,7 @@ extern int star_count;
 int FiStar_Reco = 0; //1等星を一定の数数える
 int SeStar_Reco = 0; //2等星を一定の数数える
 int ThStar_Reco = 0; //3等星を一定の数数える
+extern int g_first_star;//1等星カウント
 
 
 //イニシャライズ
@@ -57,7 +58,7 @@ void CObjStarCount::Action()
 
 
 	//クリア画面移動
-	if (star_count >= 1000)
+	if (star_count >= 1000 && g_first_star >= 5)
 	{
 		Scene::SetScene(new CSceneGameKuria());
 	}

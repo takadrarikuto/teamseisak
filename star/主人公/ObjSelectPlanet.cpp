@@ -10,6 +10,8 @@
 
 //使用するネームスペース
 using namespace GameL;
+extern int g_first_star;//1等星カウント
+extern int star_count;//星総数カウント用
 
 
 //イニシャライズ
@@ -25,6 +27,9 @@ void CObjSelectPlanet::Init()
 	Jupiter_up = false;
 	Saturn_up = false;
 	StarPic = false;
+
+	Sart_flag = false;
+	FiStar_flag = false;
 
 	time_flag = false;
 	a_time = 0;
@@ -194,6 +199,24 @@ void CObjSelectPlanet::Action()
 		time_flag = false;
 		Scene::SetScene(new CSceneOperation()); 
 	}
+
+	if (star_count < 1000)
+	{
+		Sart_flag = false;
+	}
+	else if (star_count >= 1000)
+	{
+		Sart_flag = true;
+	}
+	else if (g_first_star < 5)
+	{
+		FiStar_flag = false;
+	}
+	else if (g_first_star >= 5)
+	{
+		FiStar_flag = true;
+	}
+	
 }
 
 //ドロー
@@ -210,6 +233,28 @@ void CObjSelectPlanet::Draw()
 	Font::StrDraw(L"木星", 460, 370, 30, c);
 	Font::StrDraw(L"土星", 640, 370, 30, c);
 
+	if (Sart_flag == false)
+	{
+		swprintf_s(str, L"クリアまでの星の合計数あと%4d個", 1000 - star_count);
+		Font::StrDraw(str, 10, 560, 20, c);
+	}
+	else if (Sart_flag == true)
+	{
+		swprintf_s(str, L"クリア　現在の星の合計%4d個", star_count);
+		Font::StrDraw(str, 10, 560, 20, c);
+	}
+	if (g_first_star == false)
+	{
+		swprintf_s(strFi, L"クリアまでの1等星の数あと×%d個", 5 - g_first_star);
+		Font::StrDraw(strFi, 24, 580, 20, c);
+	}
+	else if (g_first_star == true)
+	{
+		swprintf_s(strFi, L"クリア　現在の1等星の数×%d個", g_first_star);
+		Font::StrDraw(strFi, 24, 580, 20, c);
+	}
+	
+
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
 	RECT_F srcm; //描画元切り取り位置
@@ -220,6 +265,9 @@ void CObjSelectPlanet::Draw()
 	RECT_F dstj; //描画先表示位置
 	RECT_F srcs; //描画元切り取り位置
 	RECT_F dsts; //描画先表示位置
+	RECT_F srcFi; //描画元切り取り位置
+	RECT_F dstFi; //描画先表示位置
+
 
 
 	//切り取り位置の位置
@@ -304,4 +352,23 @@ void CObjSelectPlanet::Draw()
 		Draw::Draw(12, &srcs, &dsts, c, 0.0f);
 
 	}
+
+	//1等星
+
+	//切り取り位置の設定
+	srcFi.m_top = 0.0f;
+	srcFi.m_left = 0.0f;
+	srcFi.m_right = 100.0f;
+	srcFi.m_bottom = 100.0f;
+
+
+	//表示位置の設定
+	dstFi.m_top = 578.0f;
+	dstFi.m_left = 0.0f;
+	dstFi.m_right = 22.0f;
+	dstFi.m_bottom = 600.0f;
+
+	//描画
+	Draw::Draw(13, &srcFi, &dstFi, c, 0.0f);
+
 }

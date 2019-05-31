@@ -777,19 +777,20 @@ void CObjStarPicbook::Draw()
 	//魚座の範囲
     if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 300 + k * l)
 	{
-		if (star_count < 250)
+		if (star_count < 800 && g_first_star < 3)
 		{
 			time_flag = false;
 			StarPicbook2 = false;
-			Font::StrDraw(L"この星々を閲覧するには合計で星を250個集めてください", left_end, 260, font_size, c);
+			Font::StrDraw(L"この星々を閲覧するには合計で星を800個、1等星を3個", left_end, 240, font_size, c);
+			Font::StrDraw(L"集めてください", left_end, 270, font_size, c);
 		}
 
-		if (star_count >= 250)
+		if (star_count >= 800 && g_first_star >= 3)
 		{
 			StarPicbook2 = true;
 		}
 
-		if (m_mou_l == true && star_count >= 250)
+		if (m_mou_l == true && star_count >= 800 && g_first_star >= 3)
 		{
 			time_flag = true;				
 		}
@@ -801,19 +802,19 @@ void CObjStarPicbook::Draw()
 
 	if (m_mou_x >150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
 	  {
-		if (star_count <250)
+		if (star_count <800 && g_first_star < 3)
 		{
 			time_flag = false;
 			Starmodel2 = false;
-			Font::StrDraw(L"この星々を閲覧するには合計で星を250個集めてください", left_end, 260, font_size, c);
+			Font::StrDraw(L"この星々を閲覧するには合計で星を800個、1等星を3個集めてください", left_end, 260, font_size, c);
 		}
 
-		if (star_count >= 250)
+		if (star_count >= 800 && g_first_star >= 3)
 		{
 			Starmodel2 = true;
 		}
 
-		if (m_mou_l == true && star_count >= 250)
+		if (m_mou_l == true && star_count >= 800 && g_first_star >= 3)
 		{
 			time_flag = true;
 		}
