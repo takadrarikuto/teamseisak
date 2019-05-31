@@ -327,7 +327,7 @@ void CSceneMars::Scene()
 		if (Event_Star == false)
 		{
 			//ボーナススターオブジェクト作成
-			CObjBonusStar* star6 = new CObjBonusStar(0.0f);
+			CObjBonusStar* star6 = new CObjBonusStar(-32.0f);
 			Objs::InsertObj(star6, OBJ_BONUSSTAR, 24);    //スターオブジェクト登録
 		}
 		else if (Event_Star == true)
