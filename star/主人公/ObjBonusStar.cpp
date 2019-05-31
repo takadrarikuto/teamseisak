@@ -44,6 +44,51 @@ void CObjBonusStar::Init()
 //アクション
 void CObjBonusStar::Action()
 {
+	//移動方向変更
+	if (Event_Conversion == 0)
+	{
+		if (Event_Star == false)
+		{
+			m_vx = 5.0f;
+		}
+		else if (Event_Star == true)
+		{
+			m_vx = -5.0f;
+		}
+	}
+	else if (Event_Conversion == 1)
+	{
+		if (Event_Star == false)
+		{
+			m_vx = 5.0f;
+		}
+		else if (Event_Star == true)
+		{
+			m_vx = 5.0f;
+		}
+	}
+	else if (Event_Conversion == 2)
+	{
+		if (Event_Star == false)
+		{
+			m_vx = 5.0f;
+		}
+		else if (Event_Star == true)
+		{
+			m_vx = -6.0f;
+		}
+	}
+	else if (Event_Conversion == 3)
+	{
+		if (Event_Star == false)
+		{
+			m_vx = 5.0f;
+		}
+		else if (Event_Star == true)
+		{
+			m_vx = 7.0f;
+		}
+	}
 
 
 	m_px += m_vx;
