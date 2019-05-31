@@ -29,6 +29,13 @@ private:
 	bool Saturn_up;
 	bool StarPic;
 
+	bool Sart_flag;
+	bool FiStar_flag;
+
 	float Back_time; //連続移動防止タイム
 	float m_mou_time; //連続選択防止タイム
+
+	wchar_t str[256];
+	wchar_t strFi[256];
+
 };

@@ -16,6 +16,11 @@ extern int star_count;
 extern int FiStar_Reco; //1等星を一定の数数える
 extern int SeStar_Reco; //2等星を一定の数数える
 extern int ThStar_Reco; //3等星を一定の数数える
+extern int g_first_star;//1等星カウント
+extern int g_second_star;//2等星カウント
+extern int g_third_star;//3等星カウント
+extern int g_fouth_star;//4等星カウント
+extern int g_other_star;//5・6等星カウント
 
 
 //イニシャライズ
@@ -42,6 +47,12 @@ void CObjGameKuria::Action()
 	FiStar_Reco = 0;
 	SeStar_Reco = 0;
 	ThStar_Reco = 0;
+	g_first_star = 0;
+	g_second_star = 0;
+	g_third_star = 0;
+	g_fouth_star = 0;
+	g_other_star = 0;
+
 
 	//連続移動防止
 	if (m_mou_time == 60.0f)
