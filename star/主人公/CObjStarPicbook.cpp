@@ -723,7 +723,7 @@ void CObjStarPicbook::Draw()
 	Font::StrDraw(L"…•rÀ", 30 + fy * std, 330 + t*l, 30, c);
 	l++;         
 	//…•rÀ‚Ì”ÍˆÍ
-	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 295 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 740)
 		{
@@ -774,7 +774,7 @@ void CObjStarPicbook::Draw()
 	Font::StrDraw(L"‹›À", 30 + fy * std, 330 + t * l, 30, c);
 	l++;
 	//‹›À‚Ì”ÍˆÍ
-    if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+    if (m_mou_x > side_a + side_b * std && m_mou_x < side_c*(std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 800 && g_first_star < 3)
 		{
@@ -1192,7 +1192,7 @@ void CObjStarPicbook::Draw()
 	l++;
 
 	//å¶À				left		     right							 top						 bottom       
-	if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 295 + k * l)
+	if (m_mou_x > side_a + side_b * std && m_mou_x < 70 * std+side_c*(std + 1) && m_mou_y>300 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		// ‰{——‚Ì§ŒÀ
 		if (star_count < 560)
