@@ -36,6 +36,13 @@ private:
 	float m_mou_time; //連続選択防止タイム
 
 	wchar_t str[256];
+	wchar_t strFi_co[256];
+
 	wchar_t strFi[256];
+	wchar_t strSe[256];
+	wchar_t strTh[256];
+	wchar_t strFo[256];
+	wchar_t strOt[256];
+
 
 };

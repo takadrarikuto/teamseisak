@@ -40,6 +40,10 @@ void CSceneStageselect::InitScene()
 	Draw::LoadImage(L"宇宙船背景.png", 11, TEX_SIZE_512);
 	Draw::LoadImage(L"惑星(透過済み).png", 12, TEX_SIZE_512);
 	Draw::LoadImage(L"yellow_star.png", 13, TEX_SIZE_512);
+	Draw::LoadImage(L"red_star.png", 14, TEX_SIZE_512);
+	Draw::LoadImage(L"pink_star.png", 15, TEX_SIZE_512);
+	Draw::LoadImage(L"green_star.png", 16, TEX_SIZE_512);
+	Draw::LoadImage(L"brown_star.png", 17, TEX_SIZE_512);
 
 
 	//ステージ選択画面オブジェクト生成
