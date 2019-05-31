@@ -208,7 +208,7 @@ void CObjSelectPlanet::Action()
 	{
 		Sart_flag = true;
 	}
-	else if (g_first_star < 5)
+	if (g_first_star < 5)
 	{
 		FiStar_flag = false;
 	}
@@ -235,22 +235,22 @@ void CObjSelectPlanet::Draw()
 
 	if (Sart_flag == false)
 	{
-		swprintf_s(str, L"クリアまでの星の合計数あと%4d個", 1000 - star_count);
-		Font::StrDraw(str, 10, 560, 20, c);
+		swprintf_s(str, L"クリアまでの星の合計数あと　%4d個", 1000 - star_count);
+		Font::StrDraw(str, 1, 560, 20, c);
 	}
 	else if (Sart_flag == true)
 	{
-		swprintf_s(str, L"クリア　現在の星の合計%4d個", star_count);
-		Font::StrDraw(str, 10, 560, 20, c);
+		swprintf_s(str, L"クリア　現在の星の合計　%4d個", star_count);
+		Font::StrDraw(str, 1, 560, 20, c);
 	}
-	if (g_first_star == false)
+	if (FiStar_flag == false)
 	{
-		swprintf_s(strFi, L"クリアまでの1等星の数あと×%d個", 5 - g_first_star);
+		swprintf_s(strFi, L"クリアまでの1等星の数あと　%d個", 5 - g_first_star);
 		Font::StrDraw(strFi, 24, 580, 20, c);
 	}
-	else if (g_first_star == true)
+	else if (FiStar_flag == true)
 	{
-		swprintf_s(strFi, L"クリア　現在の1等星の数×%d個", g_first_star);
+		swprintf_s(strFi, L"クリア　現在の1等星の数　%d個", g_first_star);
 		Font::StrDraw(strFi, 24, 580, 20, c);
 	}
 	

@@ -179,8 +179,8 @@ void CSceneMars::Scene()
 						Scene::SetScene(new CSceneStageselect());
 						break;
 					}
-					if (Input::GetVKey('X') == true) //Xキー入力時
-					{
+					if (Input::GetVKey('N') == true) //Nキー入力時
+					{					
 						if (m_Pf == true) 
 						{
 							//ポーズオブジェクトを削除
