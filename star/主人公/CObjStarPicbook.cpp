@@ -1326,6 +1326,7 @@ void CObjStarPicbook::Draw()
 			Font::StrDraw(L"‚±‚Ì¯X‚ð‰{——‚·‚é‚É‚Í‡Œv‚Å¯‚ð740ŒÂW‚ß‚Ä‚­‚¾‚³‚¢", left_end, 260, font_size, c);
 		}
 
+
 		if (star_count >= 740)
 		{
 			Starmodel12 = true;
