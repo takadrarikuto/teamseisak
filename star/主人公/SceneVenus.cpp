@@ -98,6 +98,10 @@ void CSceneVenus::InitScene()
 	//ビックリマーク
 	Draw::LoadImage(L"ビックリマーク.png", 23, TEX_SIZE_512);
 
+
+	//ポーズ背景
+	Draw::LoadImage(L"ポーズ背景.png", 25, TEX_SIZE_512);
+
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
 	Objs::InsertObj(obj_h, OBJ_BACKGROUND, 8);
@@ -177,7 +181,7 @@ void CSceneVenus::Scene()
 						Scene::SetScene(new CSceneStageselect());
 						break;
 					}
-					if (Input::GetVKey('X') == true) //Xキー入力時
+					if (Input::GetVKey('N') == true) //Nキー入力時
 					{
 						if (m_Pf == true)
 						{
@@ -194,7 +198,7 @@ void CSceneVenus::Scene()
 			if (m_Pf == false) {
 				//ポーズオブジェクト作成
 				CObjPose* po = new CObjPose();       //ポーズオブジェクト作成
-				Objs::InsertObj(po, OBJ_POSE, 11);    //ポーズオブジェクト登録
+				Objs::InsertObj(po, OBJ_POSE, 100);    //ポーズオブジェクト登録
 				m_Pf = true;
 
 			}

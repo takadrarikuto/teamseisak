@@ -577,7 +577,7 @@ void CObjStarPresent8::Draw()
 	}
 	else if (crick == 3)
 	{
-		page_max = 3; //最大ページ数
+		page_max = 2; //最大ページ数
 		ver = VER_start; //文字間隔初期化
 
 		//ページ数表示

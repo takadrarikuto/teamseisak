@@ -1,4 +1,3 @@
-
 int star_count=0;//星総数カウント用
 
 int g_first_star;//1等星カウント

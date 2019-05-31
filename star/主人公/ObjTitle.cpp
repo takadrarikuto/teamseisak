@@ -13,7 +13,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-BYTE key[256];
 
 //イニシャライズ
 void CObjTitle::Init()
@@ -40,8 +39,6 @@ void CObjTitle::Action()
 	m_mous_y = (float)Input::GetPosY();
 
 	m_mous_l = Input::GetMouButtonL();
-	
-	GetKeyboardState(key);
 
 	//連続移動防止
 	if (m_mou_time == 60.0f)
