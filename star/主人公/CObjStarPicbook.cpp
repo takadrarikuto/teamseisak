@@ -1274,7 +1274,7 @@ void CObjStarPicbook::Draw()
 		{
 			time_flag = false;
 			Starmodel11 = false;
-			Font::StrDraw(L"この星々を閲覧するには合計で星を550個集めてください", left_end, 260, font_size, c);
+			Font::StrDraw(L"この星座を閲覧するには合計で星を550個集めてください", left_end, 260, font_size, c);
 		}
 
 		if (star_count >= 550)
