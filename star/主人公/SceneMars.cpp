@@ -99,6 +99,9 @@ void CSceneMars::InitScene()
 	//ビックリマーク
 	Draw::LoadImage(L"ビックリマーク.png", 23, TEX_SIZE_512);
 
+	//ポーズ背景
+	Draw::LoadImage(L"ポーズ背景.png", 25, TEX_SIZE_512);
+
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
@@ -180,7 +183,7 @@ void CSceneMars::Scene()
 						break;
 					}
 					if (Input::GetVKey('N') == true) //Nキー入力時
-					{					
+					{
 						if (m_Pf == true) 
 						{
 							//ポーズオブジェクトを削除
@@ -196,7 +199,7 @@ void CSceneMars::Scene()
 			if (m_Pf == false) {
 				//ポーズオブジェクト作成
 				CObjPose* po = new CObjPose();       //ポーズオブジェクト作成
-				Objs::InsertObj(po, OBJ_POSE, 11);    //ポーズオブジェクト登録
+				Objs::InsertObj(po, OBJ_POSE, 100);    //ポーズオブジェクト登録
 				m_Pf = true;
 
 			}
