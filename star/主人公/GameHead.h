@@ -52,7 +52,7 @@ enum OBJ_NAME
 	OBJ_QTE,
 	OBJ_STARMODEL,
 	OBJ_EM,
-	OBJ_TIMESTOP,
+	OBJ_METEO,
 };
 //------------------------------------------------
 

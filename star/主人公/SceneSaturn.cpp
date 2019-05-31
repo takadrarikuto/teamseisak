@@ -97,6 +97,8 @@ void CSceneSaturn::InitScene()
 
 	//ビックリマーク
 	Draw::LoadImage(L"ビックリマーク.png", 23, TEX_SIZE_512);
+	//時間停止アイテム
+	Draw::LoadImage(L"TimeStop.png", 25, TEX_SIZE_512);
 
 	//背景オブジェクト生成
 	CObjBackground* obj_h = new CObjBackground();
