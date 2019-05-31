@@ -34,6 +34,8 @@ void CObjGameKuria::Init()
 
 	m_mou_time = 0.0f;
 
+	((UserData*)Save::GetData())->Aitem_co_max;
+
 	Audio::LoadAudio(1, L"Œø‰Ê‰¹.wav", EFFECT);
 }
 
@@ -52,7 +54,7 @@ void CObjGameKuria::Action()
 	g_third_star = 0;
 	g_fouth_star = 0;
 	g_other_star = 0;
-
+	((UserData*)Save::GetData())->Aitem_co_max = 5;
 
 	//˜A‘±ˆÚ“®–hŽ~
 	if (m_mou_time == 60.0f)

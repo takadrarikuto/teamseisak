@@ -14,6 +14,7 @@ using namespace GameL;
 
 bool Aitem_on = false;
 bool Aitem_co = false; //アイテム生産
+int  Aitem_co_max = 5;
 
 //スタミナ→酸素変更
 
