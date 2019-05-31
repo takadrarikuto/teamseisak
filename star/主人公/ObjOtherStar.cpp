@@ -126,7 +126,7 @@ void CObjOtherStar::Action()
 		}
 
 		//画面外に出たら星を削除
-		if (m_px > 800.0f || m_px < -34.0f || m_py > 500.0f || m_py < 0.0f)
+		if (m_px > 800.0f || m_px < -34.0f || m_py > 500.0f || m_py < -20.0f)
 		{
 			this->SetStatus(false); //自身に削除命令を出す
 			Hits::DeleteHitBox(this); //HitBox削除
