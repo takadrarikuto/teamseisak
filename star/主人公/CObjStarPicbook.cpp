@@ -747,8 +747,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook = false;
 	}
 
-
-	if (m_mou_x > 150 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > 130 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 200)
 		{
@@ -800,13 +799,14 @@ void CObjStarPicbook::Draw()
 		StarPicbook2 = false;
 	}
 
-	if (m_mou_x >150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x >130&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k*(l - 1) && m_mou_y < 300 + 73 * l)
 	  {
 		if (star_count <800 && g_first_star < 3)
 		{
 			time_flag = false;
 			Starmodel2 = false;
-			Font::StrDraw(L"この星々を閲覧するには合計で星を800個、1等星を3個集めてください", left_end, 260, font_size, c);
+			Font::StrDraw(L"この星々を閲覧するには合計で星を800個、1等星を3個", left_end, 240, font_size, c);
+			Font::StrDraw(L"集めてください", left_end, 270, font_size, c);
 		}
 
 		if (star_count >= 800 && g_first_star >= 3)
@@ -851,7 +851,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook3 = false;
 	}
 
-	if (m_mou_x > 150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 130&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 140)
 		{
@@ -903,7 +903,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook4 = false;
 	}
 
-	if (m_mou_x > 150&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 130&& m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 200)
 		{
@@ -958,7 +958,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook5 = false;
 	}
 
-	if (m_mou_x > 325&& m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > 330&& m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 260)
 		{
@@ -1008,7 +1008,7 @@ void CObjStarPicbook::Draw()
 	{
 		StarPicbook6 = false;
 	}
-	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > 330 && m_mou_x < 197 * (std + 1) && m_mou_y>295 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 400)
 		{
@@ -1059,7 +1059,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook7 = false;
 	}
 
-	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 330 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 450)
 		{
@@ -1110,7 +1110,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook8 = false;
 	}
 
-	if (m_mou_x > 325 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 330 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 500)
 		{
@@ -1163,7 +1163,7 @@ void CObjStarPicbook::Draw()
 	{
 		StarPicbook9 = false;
 	}
-	if (m_mou_x > 500 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > 530 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 150)
 		{
@@ -1268,7 +1268,7 @@ void CObjStarPicbook::Draw()
 		StarPicbook11 = false;
 	}
 
-	if (m_mou_x > 520 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
+	if (m_mou_x > 530 && m_mou_x < 197 * (std + 1) && m_mou_y>302 + k * (l - 1) && m_mou_y < 300 + 73 * l)
 	{
 		if (star_count < 550)
 		{
@@ -1317,7 +1317,7 @@ void CObjStarPicbook::Draw()
 	{
 		StarPicbook12 = false;
 	}
-	if (m_mou_x > 500 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
+	if (m_mou_x > 530 && m_mou_x < 197 * (std + 1) && m_mou_y>290 + k * (l - 1) && m_mou_y < 290 + k * l)
 	{
 		if (star_count < 740)
 		{
