@@ -11,6 +11,11 @@
 //使用するネームスペース
 using namespace GameL;
 extern int g_first_star;//1等星カウント
+extern int g_second_star;//2等星カウント
+extern int g_third_star;//3等星カウント
+extern int g_fouth_star;//4等星カウント
+extern int g_other_star;//5・6等星カウント
+
 extern int star_count;//星総数カウント用
 
 
@@ -245,15 +250,26 @@ void CObjSelectPlanet::Draw()
 	}
 	if (FiStar_flag == false)
 	{
-		swprintf_s(strFi, L"クリアまでの1等星の数あと　%d個", 5 - g_first_star);
-		Font::StrDraw(strFi, 24, 580, 20, c);
+		swprintf_s(strFi_co, L"クリアまでの1等星の数あと　%d個", 5 - g_first_star);
+		Font::StrDraw(strFi_co, 24, 580, 20, c);
 	}
 	else if (FiStar_flag == true)
 	{
-		swprintf_s(strFi, L"クリア　現在の1等星の数　%d個", g_first_star);
-		Font::StrDraw(strFi, 24, 580, 20, c);
+		swprintf_s(strFi_co, L"クリア　現在の1等星の数　%d個", g_first_star);
+		Font::StrDraw(strFi_co, 24, 580, 20, c);
 	}
-	
+
+	swprintf_s(strFi, L"1等星の数　%d個", g_first_star);
+	Font::StrDraw(strFi, 24, 460, 20, c);
+	swprintf_s(strSe, L"2等星の数　%d個", g_second_star);
+	Font::StrDraw(strSe, 24, 480, 20, c);
+	swprintf_s(strTh, L"3等星の数　%d個", g_third_star);
+	Font::StrDraw(strTh, 24, 500, 20, c);
+	swprintf_s(strFo, L"4等星の数　%d個", g_fouth_star);
+	Font::StrDraw(strFo, 24, 520, 20, c);
+	swprintf_s(strOt, L"5等星の数　%d個", g_other_star);
+	Font::StrDraw(strOt, 24, 540, 20, c);
+
 
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
@@ -265,9 +281,14 @@ void CObjSelectPlanet::Draw()
 	RECT_F dstj; //描画先表示位置
 	RECT_F srcs; //描画元切り取り位置
 	RECT_F dsts; //描画先表示位置
-	RECT_F srcFi; //描画元切り取り位置
+	RECT_F srcStar; //描画元切り取り位置
 	RECT_F dstFi; //描画先表示位置
-
+	RECT_F dstSe; //描画先表示位置
+	RECT_F dstTh; //描画先表示位置
+	RECT_F dstFo; //描画先表示位置
+	RECT_F dstOt; //描画先表示位置
+	RECT_F srcFi_co; //描画元切り取り位置
+	RECT_F dstFi_co; //描画先表示位置
 
 
 	//切り取り位置の位置
@@ -353,22 +374,73 @@ void CObjSelectPlanet::Draw()
 
 	}
 
-	//1等星
+	//クリア条件用1等星
 
 	//切り取り位置の設定
-	srcFi.m_top = 0.0f;
-	srcFi.m_left = 0.0f;
-	srcFi.m_right = 100.0f;
-	srcFi.m_bottom = 100.0f;
+	srcStar.m_top = 0.0f;
+	srcStar.m_left = 0.0f;
+	srcStar.m_right = 100.0f;
+	srcStar.m_bottom = 100.0f;
 
 
 	//表示位置の設定
-	dstFi.m_top = 578.0f;
-	dstFi.m_left = 0.0f;
-	dstFi.m_right = 22.0f;
-	dstFi.m_bottom = 600.0f;
+	dstFi_co.m_top = 578.0f;
+	dstFi_co.m_left = 0.0f;
+	dstFi_co.m_right = 22.0f;
+	dstFi_co.m_bottom = 600.0f;
 
 	//描画
-	Draw::Draw(13, &srcFi, &dstFi, c, 0.0f);
+	Draw::Draw(13, &srcStar, &dstFi_co, c, 0.0f);
+
+	//1等星
+
+	//表示位置の設定
+	dstFi.m_top = 460.0f;
+	dstFi.m_left = 0.0f;
+	dstFi.m_right = 22.0f;
+	dstFi.m_bottom = 480.0f;
+
+	Draw::Draw(13, &srcStar, &dstFi, c, 0.0f);
+
+
+	//2等星
+
+	//表示位置の設定
+	dstSe.m_top = 480.0f;
+	dstSe.m_left = 0.0f;
+	dstSe.m_right = 22.0f;
+	dstSe.m_bottom = 500.0f;
+
+	Draw::Draw(14, &srcStar, &dstSe, c, 0.0f);
+
+	//3等星
+
+	//表示位置の設定
+	dstTh.m_top = 500.0f;
+	dstTh.m_left = 0.0f;
+	dstTh.m_right = 22.0f;
+	dstTh.m_bottom = 520.0f;
+
+	Draw::Draw(15, &srcStar, &dstTh, c, 0.0f);
+
+	//4等星
+
+	//表示位置の設定
+	dstFo.m_top = 520.0f;
+	dstFo.m_left = 0.0f;
+	dstFo.m_right = 22.0f;
+	dstFo.m_bottom = 540.0f;
+
+	Draw::Draw(16, &srcStar, &dstFo, c, 0.0f);
+
+	//5等星
+
+	//表示位置の設定
+	dstOt.m_top = 540.0f;
+	dstOt.m_left = 0.0f;
+	dstOt.m_right = 22.0f;
+	dstOt.m_bottom = 560.0f;
+
+	Draw::Draw(17, &srcStar, &dstOt, c, 0.0f);
 
 }

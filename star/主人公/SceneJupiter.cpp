@@ -319,9 +319,19 @@ void CSceneJupiter::Scene()
 
 	if (Increase_flag == true && occur % 450 == 0)
 	{
-		//ボーナススターオブジェクト作成
-		CObjBonusStar* star6 = new CObjBonusStar(-32.0f);
-		Objs::InsertObj(star6, OBJ_BONUSSTAR, 24);    //スターオブジェクト登録
+		if (Event_Star == false)
+		{
+			//ボーナススターオブジェクト作成
+			CObjBonusStar* star6 = new CObjBonusStar(0.0f);
+			Objs::InsertObj(star6, OBJ_BONUSSTAR, 24);    //スターオブジェクト登録
+		}
+		else if (Event_Star == true)
+		{
+			//ボーナススターオブジェクト作成
+			CObjBonusStar* star6 = new CObjBonusStar(790.0f);
+			Objs::InsertObj(star6, OBJ_BONUSSTAR, 24);    //スターオブジェクト登録
+		}
+
 	}
 	if (occur == 9000)
 		occur = 0;
